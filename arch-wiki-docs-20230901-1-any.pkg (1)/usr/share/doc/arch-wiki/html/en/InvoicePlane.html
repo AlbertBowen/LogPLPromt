@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>InvoicePlane - ArchWiki</title>
+<link rel="stylesheet" href="../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-InvoicePlane rootpage-InvoicePlane skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Installation" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Installation">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Installation</div>
+			</a>
+			
+			<ul id="toc-Installation-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Configuration" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Configuration">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Configuration</div>
+			</a>
+			
+				<button aria-controls="toc-Configuration-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Configuration subsection
+				</button>
+			
+			<ul id="toc-Configuration-sublist" class="sidebar-toc-list">
+				<li id="toc-Database" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Database">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.1</span>Database</div>
+			</a>
+			
+			<ul id="toc-Database-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Web_Server" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Web_Server">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.2</span>Web Server</div>
+			</a>
+			
+			<ul id="toc-Web_Server-sublist" class="sidebar-toc-list">
+				<li id="toc-Apache" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Apache">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.2.1</span>Apache</div>
+			</a>
+			
+			<ul id="toc-Apache-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Lighttpd" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Lighttpd">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.2.2</span>Lighttpd</div>
+			</a>
+			
+			<ul id="toc-Lighttpd-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-nginx" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#nginx">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.2.3</span>nginx</div>
+			</a>
+			
+			<ul id="toc-nginx-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Explicitly_permit_InvoicePlane_directories_for_php-fpm" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Explicitly_permit_InvoicePlane_directories_for_php-fpm">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.3</span>Explicitly permit InvoicePlane directories for php-fpm</div>
+			</a>
+			
+			<ul id="toc-Explicitly_permit_InvoicePlane_directories_for_php-fpm-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Installation_wizard" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Installation_wizard">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.4</span>Installation wizard</div>
+			</a>
+			
+			<ul id="toc-Installation_wizard-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Localization" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Localization">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>Localization</div>
+			</a>
+			
+			<ul id="toc-Localization-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-See_also" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#See_also">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4</span>See also</div>
+			</a>
+			
+			<ul id="toc-See_also-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../en/InvoicePlane.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="new mw-list-item"><a href="/index.php?title=Talk:InvoicePlane&amp;action=edit&amp;redlink=1" rel="discussion" title="Discussion about the content page (page does not exist) [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">English</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../en/InvoicePlane.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=InvoicePlane&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=InvoicePlane&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../en/InvoicePlane.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=InvoicePlane&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=InvoicePlane&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output">
+<p><a rel="nofollow" class="external text" href="https://invoiceplane.com">InvoicePlane</a> is a self-hosted open source application for managing your quotes, invoices, clients and payments.
+</p>
+<mw:tocplace></mw:tocplace>
+<h2><span class="mw-headline" id="Installation">Installation</span></h2>
+<p><a href="../en/Help:Reading.html#Installation_of_packages" class="mw-redirect" title="Install">Install</a> the <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/invoiceplane/">invoiceplane</a></span><sup><small>AUR</small></sup> package.
+</p>
+<h2><span class="mw-headline" id="Configuration">Configuration</span></h2>
+<h3><span class="mw-headline" id="Database">Database</span></h3>
+<p>Here is an example on how you could setup a database for Invoiceplane with <a href="../en/MariaDB.html" title="MariaDB">MariaDB</a> called <code>invoiceplane</code> for the user <code>invoiceplane</code> identified by the password <code>password</code>:
+</p>
+<pre>CREATE DATABASE invoiceplane;
+GRANT ALL PRIVILEGES ON invoiceplane.* TO invoiceplane@'localhost' IDENTIFIED BY 'password';
+FLUSH PRIVILEGES;
+</pre>
+<h3><span class="mw-headline" id="Web_Server">Web Server</span></h3>
+<h4><span class="mw-headline" id="Apache">Apache</span></h4>
+<p>Create the <a href="../en/Apache_HTTP_Server.html" title="Apache HTTP Server">Apache HTTP Server</a> configuration file:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/httpd/conf/extra/invoiceplane.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">Alias /invoiceplane "/usr/share/webapps/invoiceplane"
+&lt;Directory "/usr/share/webapps/invoiceplane"&gt;
+    DirectoryIndex index.php
+    AllowOverride All
+    Options FollowSymlinks
+    Require all granted
+&lt;/Directory&gt;
+</pre>
+<p>And include it in <code>/etc/httpd/conf/httpd.conf</code>:
+</p>
+<pre># InvoicePlane configuration
+Include conf/extra/invoiceplane.conf
+</pre>
+<h4><span class="mw-headline" id="Lighttpd">Lighttpd</span></h4>
+<p>Make an alias for invoiceplane in your <a href="../en/Lighttpd.html" title="Lighttpd">Lighttpd</a> configuration.
+</p>
+<pre> alias.url = ( "/invoiceplane" =&gt; "/usr/share/webapps/invoiceplane/")
+</pre>
+<p>Then enable <code>mod_alias</code>, <code>mod_fastcgi</code> and <code>mod_cgi</code> in the <code>server.modules</code> section.
+</p>
+<h4><span class="mw-headline" id="nginx">nginx</span></h4>
+<p>Here is an example configuration to include in <code>nginx.conf</code> for a subdomain with php-fpm:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/nginx/sites-available/invoiceplane.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">server {
+
+listen 443 ssl http2;
+listen [::]:443 ssl http2;
+
+        add_header X-Frame-Options "SAMEORIGIN";
+
+        root /usr/share/webapps/invoiceplane;
+        index index.php;
+                                                                                                       
+        server_name invoice.''domain.tld'';
+
+        client_body_timeout 60;
+
+    location / {
+        try_files $uri $uri/ /index.php?q=$uri&amp;$args;       
+    }
+
+    location ~ \.php$ {
+        fastcgi_param PHP_ADMIN_VALUE open_basedir=/tmp:/usr/share/webapps/invoiceplane:/dev/urandom:/usr/share/php;
+        fastcgi_split_path_info ^(.+\.php)(/.+)$;
+        include fastcgi_params;
+        fastcgi_param SCRIPT_FILENAME $realpath_root$fastcgi_script_name;
+        fastcgi_param DOCUMENT_ROOT $realpath_root;
+        fastcgi_param PATH_INFO $fastcgi_path_info;
+        fastcgi_pass unix:/run/php-fpm/php-fpm.sock;
+        client_max_body_size 100M;
+    }
+}
+</pre>
+<h3><span class="mw-headline" id="Explicitly_permit_InvoicePlane_directories_for_php-fpm">Explicitly permit InvoicePlane directories for php-fpm</span></h3>
+<p>Since version 7.4 php-fpm is hardened per default and revokes read/write access on <code>/usr</code> (and sub-directories). Therefore it is also necessary to explicitly give permissions on <code>/usr/share/webapps/invoiceplane</code> directories.
+</p>
+<p>Create a <a href="../en/Systemd.html#Drop-in_files" class="mw-redirect" title="Drop-in file">drop-in file</a> for <code>php-fpm.service</code>.
+</p>
+<p>Add and save it with the following content: 
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/systemd/system/php-fpm.service.d/override.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">[Service]
+ReadWritePaths = /usr/share/webapps/invoiceplane/ipconfig.php
+ReadWritePaths = /usr/share/webapps/invoiceplane/uploads/
+ReadWritePaths = /usr/share/webapps/invoiceplane/application/logs
+ReadWritePaths = /usr/share/webapps/invoiceplane/vendor/mpdf/mpdf/tmp</pre>
+<p>Afterwards <a href="../en/Help:Reading.html#Control_of_systemd_units" class="mw-redirect" title="Restart">restart</a> the <code>php-fpm</code> service and assign write permissions to the <code>http</code> user.
+</p>
+<h3><span class="mw-headline" id="Installation_wizard">Installation wizard</span></h3>
+<p>Once database and webserver have been setup, visit the installation wizard page at <code>http://<i>your-invoiceplane-domain.com</i>/index.php/setup</code> and follow the instructions.
+</p>
+<h2><span class="mw-headline" id="Localization">Localization</span></h2>
+<p>If you want to choose a different language than English visit <a rel="nofollow" class="external text" href="https://wiki.invoiceplane.com/en/1.0/system/translation-localization">Translation / Localization</a>.
+</p>
+<h2><span class="mw-headline" id="See_also">See also</span></h2>
+<ul>
+<li><a rel="nofollow" class="external text" href="https://invoiceplane.com">Official web page</a></li>
+<li><a rel="nofollow" class="external text" href="https://github.com/InvoicePlane/InvoicePlane/wiki">Documentation</a></li>
+</ul>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../Special:Categories.html" title="Special:Categories">Categories</a>: <ul>
+<li><a href="../en/Category:Office.html" title="Category:Office">Office</a></li>
+<li><a href="../en/Category:Web_applications.html" title="Category:Web applications">Web applications</a></li>
+</ul>
+</div></div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=InvoicePlane&amp;oldid=718797">https://wiki.archlinux.org/index.php?title=InvoicePlane&amp;oldid=718797</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 17 February 2022, at 14:11.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

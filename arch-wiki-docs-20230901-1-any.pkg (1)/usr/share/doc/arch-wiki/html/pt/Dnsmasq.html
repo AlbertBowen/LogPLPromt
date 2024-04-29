@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>dnsmasq (Português) - ArchWiki</title>
+<link rel="stylesheet" href="../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Dnsmasq_Português rootpage-Dnsmasq_Português skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Instalação" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#Instala%C3%A7%C3%A3o">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Instalação</div>
+			</a>
+			
+			<ul id="toc-Instalação-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Iniciar_o_daemon" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#Iniciar_o_daemon">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Iniciar o daemon</div>
+			</a>
+			
+			<ul id="toc-Iniciar_o_daemon-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Configuração" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#Configura%C3%A7%C3%A3o">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>Configuração</div>
+			</a>
+			
+				<button aria-controls="toc-Configuração-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Configuração subsection
+				</button>
+			
+			<ul id="toc-Configuração-sublist" class="sidebar-toc-list">
+				<li id="toc-Servidor_DNS" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Servidor_DNS">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.1</span>Servidor DNS</div>
+			</a>
+			
+			<ul id="toc-Servidor_DNS-sublist" class="sidebar-toc-list">
+				<li id="toc-Arquivo_de_endereços_DNS_e_encaminhamento" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Arquivo_de_endere%C3%A7os_DNS_e_encaminhamento">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.1.1</span>Arquivo de endereços DNS e encaminhamento</div>
+			</a>
+			
+			<ul id="toc-Arquivo_de_endereços_DNS_e_encaminhamento-sublist" class="sidebar-toc-list">
+				<li id="toc-openresolv" class="sidebar-toc-list-item sidebar-toc-level-4">
+			<a class="sidebar-toc-link" href="#openresolv">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.1.1.1</span>openresolv</div>
+			</a>
+			
+			<ul id="toc-openresolv-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Encaminhamento_manual" class="sidebar-toc-list-item sidebar-toc-level-4">
+			<a class="sidebar-toc-link" href="#Encaminhamento_manual">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.1.1.2</span>Encaminhamento manual</div>
+			</a>
+			
+			<ul id="toc-Encaminhamento_manual-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Adicionando_um_domínio_personalizado" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Adicionando_um_dom%C3%ADnio_personalizado">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.1.2</span>Adicionando um domínio personalizado</div>
+			</a>
+			
+			<ul id="toc-Adicionando_um_domínio_personalizado-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Testar" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Testar">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.1.3</span>Testar</div>
+			</a>
+			
+			<ul id="toc-Testar-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Servidor_DHCP" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Servidor_DHCP">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.2</span>Servidor DHCP</div>
+			</a>
+			
+			<ul id="toc-Servidor_DHCP-sublist" class="sidebar-toc-list">
+				<li id="toc-Testar_2" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Testar_2">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.2.1</span>Testar</div>
+			</a>
+			
+			<ul id="toc-Testar_2-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Servidor_TFTP" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Servidor_TFTP">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.3</span>Servidor TFTP</div>
+			</a>
+			
+			<ul id="toc-Servidor_TFTP-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Servidor_PXE" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Servidor_PXE">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.4</span>Servidor PXE</div>
+			</a>
+			
+			<ul id="toc-Servidor_PXE-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Dicas_e_truques" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#Dicas_e_truques">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4</span>Dicas e truques</div>
+			</a>
+			
+				<button aria-controls="toc-Dicas_e_truques-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Dicas e truques subsection
+				</button>
+			
+			<ul id="toc-Dicas_e_truques-sublist" class="sidebar-toc-list">
+				<li id="toc-Evitar_que_o_OpenDNS_redirecione_as_consultas_do_Google" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Evitar_que_o_OpenDNS_redirecione_as_consultas_do_Google">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.1</span>Evitar que o OpenDNS redirecione as consultas do Google</div>
+			</a>
+			
+			<ul id="toc-Evitar_que_o_OpenDNS_redirecione_as_consultas_do_Google-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Substituir_endereços" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Substituir_endere%C3%A7os">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.2</span>Substituir endereços</div>
+			</a>
+			
+			<ul id="toc-Substituir_endereços-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Mais_de_uma_instância" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Mais_de_uma_inst%C3%A2ncia">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.3</span>Mais de uma instância</div>
+			</a>
+			
+			<ul id="toc-Mais_de_uma_instância-sublist" class="sidebar-toc-list">
+				<li id="toc-Estático" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Est%C3%A1tico">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.3.1</span>Estático</div>
+			</a>
+			
+			<ul id="toc-Estático-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Dinâmico" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Din%C3%A2mico">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.3.2</span>Dinâmico</div>
+			</a>
+			
+			<ul id="toc-Dinâmico-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Colocar_domínios_em_lista_negra" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Colocar_dom%C3%ADnios_em_lista_negra">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.4</span>Colocar domínios em lista negra</div>
+			</a>
+			
+			<ul id="toc-Colocar_domínios_em_lista_negra-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Veja_também" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#Veja_tamb%C3%A9m">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5</span>Veja também</div>
+			</a>
+			
+			<ul id="toc-Veja_também-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../pt/Dnsmasq.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="new mw-list-item"><a href="/index.php?title=Talk:Dnsmasq_(Portugu%C3%AAs)&amp;action=edit&amp;redlink=1" rel="discussion" title="Discussion about the content page (page does not exist) [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">português</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../pt/Dnsmasq.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=Dnsmasq_(Portugu%C3%AAs)&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=Dnsmasq_(Portugu%C3%AAs)&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../pt/Dnsmasq.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Dnsmasq_(Portugu%C3%AAs)&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Dnsmasq_(Portugu%C3%AAs)&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="pt" dir="ltr">
+<div class="mw-parser-output">
+<p><span>
+</span>
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Status de tradução:</strong> Esse artigo é uma tradução de <a href="../en/Dnsmasq.html" title="Dnsmasq">Dnsmasq</a>. Data da última tradução: 2020-06-30. Você pode ajudar a sincronizar a tradução, se houver <a rel="nofollow" class="external text" href="https://wiki.archlinux.org/index.php?title=Dnsmasq&amp;diff=0&amp;oldid=622111">alterações</a> na versão em inglês.</div>
+<div class="archwiki-template-meta-related-articles-start">
+<p class="mw-no-invert">Artigos relacionados</p>
+<ul>
+<li><a href="../pt/Domain_name_resolution.html" class="mw-redirect" title="Resolução de nome de domínio">Resolução de nome de domínio</a></li>
+</ul>
+</div>
+<p><a rel="nofollow" class="external text" href="https://www.thekelleys.org.uk/dnsmasq/doc.html">dnsmasq</a> fornece um <a href="https://en.wikipedia.org/wiki/Name_server" class="extiw" title="wikipedia:Name server">servidor DNS</a>, um <a href="https://en.wikipedia.org/wiki/pt:Dynamic_Host_Configuration_Protocol" class="extiw" title="wikipedia:pt:Dynamic Host Configuration Protocol">servidor DHCP</a> com suporte a <a href="https://en.wikipedia.org/wiki/DHCPv6" class="extiw" title="wikipedia:DHCPv6">DHCPv6</a> e <a href="https://en.wikipedia.org/wiki/Preboot_Execution_Environment" class="extiw" title="wikipedia:Preboot Execution Environment">PXE</a>, e um <a href="https://en.wikipedia.org/wiki/Trivial_File_Transfer_Protocol" class="extiw" title="wikipedia:Trivial File Transfer Protocol">servidor TFTP</a>. Ele é projetado para ser leve e ter um tamanho reduzido, adequado para roteadores e firewalls com recursos restritos. O dnsmasq também pode ser configurado para armazenar em cache as consultas DNS para melhorar as velocidades de pesquisa de DNS nos sites visitados anteriormente.
+</p>
+<mw:tocplace></mw:tocplace>
+<h2>
+<span id="Instala.C3.A7.C3.A3o"></span><span class="mw-headline" id="Instalação">Instalação</span>
+</h2>
+<p><a href="../pt/Help:Reading.html#Instala%C3%A7%C3%A3o_de_pacotes" class="mw-redirect" title="Instale">Instale</a> o pacote <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=dnsmasq">dnsmasq</a></span>.
+</p>
+<h2><span class="mw-headline" id="Iniciar_o_daemon">Iniciar o daemon</span></h2>
+<p><a href="../pt/Systemd.html#Usando_units" class="mw-redirect" title="Inicie/habilite">Inicie/habilite</a> <code>dnsmasq.service</code>.
+</p>
+<p>Para ver se o dnsmasq iniciou adequadamente, verifique o journal do sistema:
+</p>
+<pre># journalctl -u dnsmasq.service
+</pre>
+<p>A rede também precisará ser reiniciada de forma que o cliente DHCP possa criar um novo <code>/etc/resolv.conf</code>.
+</p>
+<h2>
+<span id="Configura.C3.A7.C3.A3o"></span><span class="mw-headline" id="Configuração">Configuração</span>
+</h2>
+<p>Para configurar o dnsmasq, edite <code>/etc/dnsmasq.conf</code>. O arquivo contém comentários explicando as opções. Para todas as opções disponíveis, veja <span class="plainlinks archwiki-template-man" title="$ man 8 dnsmasq"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/dnsmasq.8">dnsmasq(8)</a></span>.
+</p>
+<div class="archwiki-template-box archwiki-template-box-warning">
+<strong>Atenção:</strong> A configuração padrão do dnsmasq habilita seus servidores DNS. Se você não quiser este serviço, você precisa desabilitá-lo explicitamente definindo a porta DNS para <code>0</code>:
+<pre>port=0</pre>
+</div>
+<div class="archwiki-template-box archwiki-template-box-tip">
+<strong>Dica:</strong> Para verificar a sintaxe do(s) arquivo(s) de configuração, execute:
+<pre>$ dnsmasq --test
+</pre>
+</div>
+<h3><span class="mw-headline" id="Servidor_DNS">Servidor DNS</span></h3>
+<p>Para configurar o dnsmasq como um daemon de cache DNS em um único computador, especifique uma diretiva <code>listen-address</code>, adicionando o endereço IP do host local:
+</p>
+<pre>listen-address=::1,127.0.0.1
+</pre>
+<p>Para usar este computador para ouvir em seu endereço IP da LAN para outros computadores na rede. Recomenda-se que você use um IP de LAN estático neste caso. Por exemplo:
+</p>
+<pre>listen-address=::1,127.0.0.1,192.168.1.1
+</pre>
+<p>Defina o número de nomes de domínios em cache com <code>cache-size=<i>tamanho</i></code> (o padrão é <code>150</code>):
+</p>
+<pre>cache-size=1000
+</pre>
+<p>Para validar o <a href="../pt/DNSSEC.html" title="DNSSEC (Português)">DNSSEC</a> carregue as âncoras de confiança DNSSEC fornecidas pelo pacote <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=dnsmasq">dnsmasq</a></span> e defina a opção <code>dnssec</code>:
+</p>
+<pre>conf-file=/usr/share/dnsmasq/trust-anchors.conf
+dnssec
+</pre>
+<p>Veja o <span class="plainlinks archwiki-template-man" title="$ man 8 dnsmasq"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/dnsmasq.8">dnsmasq(8)</a></span> para mais opções que você pode querer usar.
+</p>
+<h4>
+<span id="Arquivo_de_endere.C3.A7os_DNS_e_encaminhamento"></span><span class="mw-headline" id="Arquivo_de_endereços_DNS_e_encaminhamento">Arquivo de endereços DNS e encaminhamento</span>
+</h4>
+<p>Depois de configurar o dnsmasq, você precisa adicionar os endereços de host local como os únicos servidores de nomes em <code>/etc/resolv.conf</code>. Isso faz com que todas as consultas sejam enviadas para o dnsmasq.
+</p>
+<p>Como o dnsmasq é um <i>stub resolver</i>, isto é, não é um servidor DNS recursivo, você deve configurar o encaminhamento para um servidor DNS externo. Isso pode ser feito automaticamente usando <a href="../pt/Openresolv.html" title="Openresolv (Português)">openresolv</a> ou especificando manualmente o endereço do servidor DNS na configuração do dnsmasq.
+</p>
+<h5><span class="mw-headline" id="openresolv">openresolv</span></h5>
+<p>Se seu gerenciador de rede tiver suporte a <i>resolvconf</i>, em vez de alterar diretamente o <code>/etc/resolv.conf</code>, você pode usar o <a href="../pt/Openresolv.html" title="Openresolv (Português)">openresolv</a> para gerenciar arquivos de configuração para o dnsmasq. <a rel="nofollow" class="external autonumber" href="https://roy.marples.name/projects/openresolv/configuration/">[1]</a>
+</p>
+<p>Edite <code>/etc/resolvconf.conf</code> e adicione os endereços de loopback como servidores de nomes e configure o openresolv para escrever a configuração do dnsmasq:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/resolvconf.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;"># Usa o servidor de nomes local
+name_servers="::1 127.0.0.1"
+
+# Escreve os arquivos resolv e de configuração estendida do dnsmasq
+dnsmasq_conf=/etc/dnsmasq-conf.conf
+dnsmasq_resolv=/etc/dnsmasq-resolv.conf</pre>
+<p>Executa <code>resolvconf -u</code> de forma que os arquivos de configuração sejam criados. Se os arquivos não existirem, <code>dnsmasq.service</code> vai falhar ao iniciar.
+</p>
+<p>Edite o arquivo de configuração do dnsmasq para usar a configuração gerada do openresolv:
+</p>
+<pre># Leia a configuração gerada pelo openresolv
+conf-file=/etc/dnsmasq-conf.conf
+resolv-file=/etc/dnsmasq-resolv.conf
+</pre>
+<h5><span class="mw-headline" id="Encaminhamento_manual">Encaminhamento manual</span></h5>
+<p>Primeiro, você deve definir endereços de localhost como os únicos servidores de nomes no <code>/etc/resolv.conf</code>:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/resolv.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">nameserver ::1
+nameserver 127.0.0.1
+</pre>
+<p>Certifique-se de proteger <code>/etc/resolv.conf</code> de modificações conforme descrito em <a href="../pt/Domain_name_resolution.html#Sobrescrita_do_/etc/resolv.conf" class="mw-redirect" title="Resolução de nome de domínio">Resolução de nome de domínio#Sobrescrita do /etc/resolv.conf</a>.
+</p>
+<p>Os endereços de servidor DNS upstream devem então ser especificados no arquivo de configuração do dnsmasq como <code>server=<i>endereço_servidor</i></code>. Também adicione <code>no-resolv</code> para que o dnsmasq não leia desnecessariamente <code>/etc/resolv.conf</code> que contém apenas os endereços de host local de si mesmo.
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/dnsmasq.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">[...]
+no-resolv
+
+# Servidores do Google, por exemplo
+server=8.8.8.8
+server=8.8.4.4</pre>
+<p>Agora, as consultas de DNS serão resolvidas com dnsmasq, verificando somente os servidores externos se não puder responder à consulta de seu cache.
+</p>
+<h4>
+<span id="Adicionando_um_dom.C3.ADnio_personalizado"></span><span class="mw-headline" id="Adicionando_um_domínio_personalizado">Adicionando um domínio personalizado</span>
+</h4>
+<p>É possível adicionar um domínio personalizado a hosts em sua rede (local):
+</p>
+<pre>local=/lan/
+domain=lan
+</pre>
+<p>Neste exemplo é possível pingar um host/dispositivo (p.ex., definido em seu arquivo <code>/etc/hosts</code>) como <code><i>hostname</i>.lan</code>.
+</p>
+<p>Descomente <code>expand-hosts</code> para adicionar um domínio personalizado a entradas de host:
+</p>
+<pre>expand-hosts
+</pre>
+<p>Sem essa configuração, você terá que adicionar o domínio às entradas de <code>/etc/hosts</code>.
+</p>
+<h4><span class="mw-headline" id="Testar">Testar</span></h4>
+<p>Para fazer um teste de velocidade de pesquisa, escolha um site que não tenha sido visitado desde que o dnsmasq foi iniciado (o <i>drill</i> faz parte do pacote <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=ldns">ldns</a></span>):
+</p>
+<pre>$ drill archlinux.org | grep "Query time"
+</pre>
+<p>Executar o comando novamente usará o IP do DNS em cache e resultará em um tempo de pesquisa mais rápido se o dnsmasq estiver configurado corretamente:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">$ drill archlinux.org | grep "Query time"</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">;; Query time: 18 msec
+</pre>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">$ drill archlinux.org | grep "Query time"</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">;; Query time: 2 msec
+</pre>
+<p>Para testar se a validação do DNSSEC está funcionando, veja <a href="../pt/DNSSEC.html#Testando" title="DNSSEC (Português)">DNSSEC (Português)#Testando</a>.
+</p>
+<h3><span class="mw-headline" id="Servidor_DHCP">Servidor DHCP</span></h3>
+<p>Por padrão, o dnsmasq tem a funcionalidade de DHCP desativada, se você quiser usá-la, deve ativá-la. Aqui estão as configurações importantes:
+</p>
+<pre># Ouve apenas à placa de rede 'LAN-NIC' dos roteadores. Fazer isso abre
+# a porta 53 tcp/udp para o localhost e a porta 67 udp para o mundo:
+interface=&lt;LAN-NIC&gt;
+
+# O dnsmasq vai abrir a porta 53 tcp/udp e porta 67 udp para o mundo
+# para ajudar com interfaces dinâmicas (atribuição de IPs dinâmicos).
+# O dnsmasq vai descartar requisições do mundo a elas, mas os paranoicos
+# podem querer fechá-las e deixar o kernel lidar com elas:
+bind-interfaces
+
+# Opcionalmente, defina um nome de domínio
+domain=example.com
+
+# Defina o gateway padrão
+dhcp-option=3,0.0.0.0
+
+# Defina os servidores DNS para anunciar
+dhcp-option=6,0.0.0.0
+
+# Se seu servidor dnsmasq também fizer o roteamento de sua rede,
+# você pode usar a opção 121 para aplicar uma rota estática.
+# x.x.x.x é a LAN de destino, yy pe a notação CIDR (geralmente /24), 
+# e z.z.z.z é o host que vai fazer o roteamento.
+dhcp-option=121,x.x.x.x/yy,z.z.z.z
+
+# Intervalo dinâmico de IPs para disponibilizar ao computador e o tempo
+# de concessão. Idealmente, defina o tempo de concessão para 5m apenas
+# no começo para testar se tudo funciona bem antes de você definir
+# registros duradouros:
+dhcp-range=192.168.111.50,192.168.111.100,12h
+
+# Fornece concessões IPv6 de DHCP por meio de Router Advertisements (RAs)
+# para a sub-rede aaaa:bbbb:cccc:dddd::/64
+dhcp-range=aaaa:bbbb:cccc:dddd::,ra-only,infinite
+
+# Se você quiser ter o dnsmasq atribuindo IPs estáticos para alguns
+# clientes, vincule os endereços MAC da placa de rede dos computadores:
+dhcp-host=aa:bb:cc:dd:ee:ff,192.168.111.50
+dhcp-host=aa:bb:cc:ff:dd:ee,192.168.111.51
+</pre>
+<p>Veja <span class="plainlinks archwiki-template-man" title="$ man 8 dnsmasq"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/dnsmasq.8">dnsmasq(8)</a></span> para mais opções.
+</p>
+<h4><span class="mw-headline" id="Testar_2">Testar</span></h4>
+<p>A partir de um computador conectado ao dnsmasq, configure-o para usar o DHCP para atribuição automática de endereço IP e, em seguida, tente efetuar login na rede normalmente.
+</p>
+<p>Se você inspecionar o arquivo <code>/var/lib/misc/dnsmasq.leases</code> no servidor, poderá ver a concessão.
+</p>
+<h3><span class="mw-headline" id="Servidor_TFTP">Servidor TFTP</span></h3>
+<p>O dnsmasq tem um servidor <a href="../pt/TFTP.html" title="TFTP (Português)">TFTP</a> embutido.
+</p>
+<p>Para usá-lo, crie um diretório para a raiz do TFTP (p.ex., <code>/srv/tftp</code>) para colocar arquivos transferíveis nele.
+</p>
+<p>Para aumentar a segurança, é aconselhável usar o modo seguro de TFTP do dnsmasq. No modo seguro, apenas os arquivos pertencentes ao usuário <code>dnsmasq</code> serão atendidos pelo TFTP. Você precisará fazer <a href="../pt/File_permissions_and_attributes.html#Alterando_o_propriet%C3%A1rio" class="mw-redirect" title="Chown (Português)">chown</a> na raiz do TFTP e todos os arquivos nele para o usuário <code>dnsmasq</code> usar este recurso.
+</p>
+<p>Habilite o TFTP:
+</p>
+<pre>enable-tftp
+tftp-root=/srv/tftp
+tftp-secure
+</pre>
+<p>Veja <span class="plainlinks archwiki-template-man" title="$ man 8 dnsmasq"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/dnsmasq.8">dnsmasq(8)</a></span> para mais opções.
+</p>
+<h3><span class="mw-headline" id="Servidor_PXE">Servidor PXE</span></h3>
+<p>O PXE requer servidores DHCP e TFTP, ambas as funções podem ser fornecidas pelo dnsmasq.
+</p>
+<div class="archwiki-template-box archwiki-template-box-tip">
+<strong>Dica:</strong> O dnsmasq pode ser executado no modo "proxy-DHCP" e adicionar opções de inicialização PXE a uma rede com um servidor DHCP já em execução:
+<pre>interface=<i>enp0s0</i>
+bind-dynamic
+dhcp-range=<i>192.168.0.1</i>,proxy</pre>
+</div>
+<ol>
+<li>defina <a href="#Servidor_TFTP">#Servidor TFTP</a> e <a href="#Servidor_DHCP">#Servidor DHCP</a>
+</li>
+<li>copie e configure um gerenciador de boot compatível com PXE (p.ex., <a href="../en/Syslinux.html#PXELINUX" class="mw-redirect" title="PXELINUX">PXELINUX</a>) na raiz do TFTP</li>
+<li>habilite PXE no <code>/etc/dnsmasq.conf</code>:</li>
+</ol>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Nota:</strong> 
+<ul>
+<li>caminhos de arquivos são relativos à raiz do TFTP</li>
+<li>se o arquivo tem um sufixo <code>.0</code>, você deve excluir o sufixo nas opções <code>pxe-service</code>
+</li>
+</ul>
+</div>
+<p>Para apenas enviar um arquivo:
+</p>
+<pre>dhcp-boot=lpxelinux.0
+</pre>
+<p>Para enviar um arquivo dependente da arquitetura do cliente:
+</p>
+<pre>pxe-service=x86PC, "PXELINUX (BIOS)", "bios/lpxelinux"
+pxe-service=X86-64_EFI, "PXELINUX (EFI)", "efi64/syslinux.efi"
+</pre>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Nota:</strong> No caso de <code>pxe-service</code> não funcionar (especialmente para clientes baseados em UEFI), a combinação de <code>dhcp-match</code> e <code>dhcp-boot</code> pode ser usada. Veja <a rel="nofollow" class="external text" href="https://tools.ietf.org/html/rfc4578#section-2.1">RFC4578</a> para mais números de <code>client-arch</code> para usar com o protocolo de inicialização de dhcp.</div>
+<pre>dhcp-match=set:efi-x86_64,option:client-arch,7
+dhcp-match=set:efi-x86_64,option:client-arch,9
+dhcp-match=set:efi-x86,option:client-arch,6
+dhcp-match=set:bios,option:client-arch,0
+dhcp-boot=tag:efi-x86_64,"efi64/syslinux.efi"
+dhcp-boot=tag:efi-x86,"efi32/syslinux.efi"
+dhcp-boot=tag:bios,"bios/lpxelinux.0"
+</pre>
+<p>Veja <span class="plainlinks archwiki-template-man" title="$ man 8 dnsmasq"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/dnsmasq.8">dnsmasq(8)</a></span> para mais opções.
+</p>
+<p>O resto é por conta do <a href="../pt/Arch_boot_process.html#Gerenciador_de_boot" class="mw-redirect" title="Gerenciador de boot">gerenciador de boot</a>.
+</p>
+<h2><span class="mw-headline" id="Dicas_e_truques">Dicas e truques</span></h2>
+<h3><span class="mw-headline" id="Evitar_que_o_OpenDNS_redirecione_as_consultas_do_Google">Evitar que o OpenDNS redirecione as consultas do Google</span></h3>
+<p>Para evitar que o OpenDNS redirecione todas as consultas do Google para seu próprio servidor de pesquisa, adicione ao <code>/etc/dnsmasq.conf</code>:
+</p>
+<pre>server=/www.google.com/&lt;IP do DNS do provedor&gt;</pre>
+<h3>
+<span id="Substituir_endere.C3.A7os"></span><span class="mw-headline" id="Substituir_endereços">Substituir endereços</span>
+</h3>
+<p>Em alguns casos, como ao operar um portal cativo, pode ser útil resolver nomes de domínios específicos para um conjunto de endereços codificados. Isso é feito com a configuração <code>address</code>:
+</p>
+<pre>address=/example.com/1.2.3.4
+</pre>
+<p>Além disso, é possível retornar um endereço específico para todos os nomes de domínio que não são respondidos de <code>/etc/hosts</code> ou DHCP usando um curinga especial:
+</p>
+<pre>address=/#/1.2.3.4
+</pre>
+<h3>
+<span id="Mais_de_uma_inst.C3.A2ncia"></span><span class="mw-headline" id="Mais_de_uma_instância">Mais de uma instância</span>
+</h3>
+<p>Se quisermos que dois ou mais servidores dnsmasq funcionem por interface(s).
+</p>
+<h4>
+<span id="Est.C3.A1tico"></span><span class="mw-headline" id="Estático">Estático</span>
+</h4>
+<p>Para fazer isso de forma estática, servidor por interface, use as opções <code>interface</code> e <code>bind-interface</code>. Esta execução inicial segundo dnsmasq.
+</p>
+<h4>
+<span id="Din.C3.A2mico"></span><span class="mw-headline" id="Dinâmico">Dinâmico</span>
+</h4>
+<p>Neste caso, podemos excluir por interface e vincular quaisquer outras:
+</p>
+<pre>except-interface=lo
+bind-dynamic
+</pre>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Nota:</strong> Esse é o padrão no <a href="../en/Libvirt.html" title="Libvirt">libvirt</a>.</div>
+<h3>
+<span id="Colocar_dom.C3.ADnios_em_lista_negra"></span><span class="mw-headline" id="Colocar_domínios_em_lista_negra">Colocar domínios em lista negra</span>
+</h3>
+<p>Para fazer um <i>blacklist</i> em domínios, ou seja, as respostas a consultas para eles com NXDOMAIN, use a opção <code>address</code> sem especificar o endereço IP:
+</p>
+<pre>address=/blacklisted.example/
+address=/another.blacklisted.example/
+</pre>
+<p>Para facilitar o uso, coloque a lista negra em um arquivo separado, como, por exemplo, <code>/etc/dnsmasq.d/blacklist.conf</code>, e carregue-o a partir de <code>/etc/dnsmasq.conf</code> com <code>conf-file=/etc/dnsmasq.d/blacklist.conf</code> ou <code>conf-dir=/etc/dnsmasq.d/,*.conf</code>.
+</p>
+<div class="archwiki-template-box archwiki-template-box-tip">
+<strong>Dica:</strong> Uma lista de fontes potenciais para a lista negra pode ser encontrada no <a rel="nofollow" class="external text" href="https://github.com/openwrt/packages/blob/master/net/adblock/files/README.md">README do pacote de bloqueador de propagandas do OpenWrt</a>.</div>
+<h2>
+<span id="Veja_tamb.C3.A9m"></span><span class="mw-headline" id="Veja_também">Veja também</span>
+</h2>
+<ul><li><a rel="nofollow" class="external text" href="https://www.g-loaded.eu/2010/09/18/caching-nameserver-using-dnsmasq/">Fazendo cache de servidor de nome usando dnsmasq e algumas outras dicas e truques.</a></li></ul>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../Special:Categories.html" title="Special:Categories">Categories</a>: <ul>
+<li><a href="../pt/Category:Domain_Name_System.html" title="Category:Domain Name System (Português)">Domain Name System (Português)</a></li>
+<li><a href="../pt/Category:DHCP.html" title="Category:DHCP (Português)">DHCP (Português)</a></li>
+</ul>
+</div></div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=Dnsmasq_(Portugu%C3%AAs)&amp;oldid=751464">https://wiki.archlinux.org/index.php?title=Dnsmasq_(Português)&amp;oldid=751464</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 6 October 2022, at 14:50.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

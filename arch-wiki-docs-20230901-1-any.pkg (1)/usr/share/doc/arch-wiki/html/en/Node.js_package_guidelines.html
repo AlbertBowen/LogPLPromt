@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>Node.js package guidelines - ArchWiki</title>
+<link rel="stylesheet" href="../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Node_js_package_guidelines rootpage-Node_js_package_guidelines skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Package_naming" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Package_naming">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Package naming</div>
+			</a>
+			
+			<ul id="toc-Package_naming-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Source" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Source">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Source</div>
+			</a>
+			
+			<ul id="toc-Source-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Using_npm" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Using_npm">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>Using npm</div>
+			</a>
+			
+				<button aria-controls="toc-Using_npm-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Using npm subsection
+				</button>
+			
+			<ul id="toc-Using_npm-sublist" class="sidebar-toc-list">
+				<li id="toc-Setting_temporary_cache" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Setting_temporary_cache">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.1</span>Setting temporary cache</div>
+			</a>
+			
+			<ul id="toc-Setting_temporary_cache-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Package_contains_reference_to_$srcdir/$pkgdir" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Package_contains_reference_to_$srcdir/$pkgdir">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.2</span>Package contains reference to $srcdir/$pkgdir</div>
+			</a>
+			
+			<ul id="toc-Package_contains_reference_to_$srcdir/$pkgdir-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Using_nvm" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Using_nvm">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4</span>Using nvm</div>
+			</a>
+			
+				<button aria-controls="toc-Using_nvm-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Using nvm subsection
+				</button>
+			
+			<ul id="toc-Using_nvm-sublist" class="sidebar-toc-list">
+				<li id="toc-Example_PKGBUILD_usage" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Example_PKGBUILD_usage">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.1</span>Example PKGBUILD usage</div>
+			</a>
+			
+			<ul id="toc-Example_PKGBUILD_usage-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../en/Node.js_package_guidelines.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="mw-list-item"><a href="../en/Talk:Node.js_package_guidelines.html" rel="discussion" title="Discussion about the content page [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">English</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../en/Node.js_package_guidelines.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=Node.js_package_guidelines&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=Node.js_package_guidelines&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../en/Node.js_package_guidelines.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Node.js_package_guidelines&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Node.js_package_guidelines&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output">
+<div class="toc" style="display:block; text-align: center; margin-bottom: 1em;">
+<b><a href="../en/Arch_package_guidelines.html" title="Arch package guidelines">Arch package guidelines</a></b>
+<hr>
+<p><a href="../en/32-bit_package_guidelines.html" title="32-bit package guidelines">32-bit</a> – <a href="../en/CLR_package_guidelines.html" title="CLR package guidelines">CLR</a> – <a href="../en/CMake_package_guidelines.html" title="CMake package guidelines">CMake</a> – <a href="../en/Cross-compiling_tools_package_guidelines.html" title="Cross-compiling tools package guidelines">Cross</a> – <a href="../en/DKMS_package_guidelines.html" title="DKMS package guidelines">DKMS</a> – <a href="../en/Eclipse_plugin_package_guidelines.html" title="Eclipse plugin package guidelines">Eclipse</a> – <a href="../en/Electron_package_guidelines.html" title="Electron package guidelines">Electron</a> – <a href="../en/Font_package_guidelines.html" title="Font package guidelines">Font</a> – <a href="../en/Free_Pascal_package_guidelines.html" title="Free Pascal package guidelines">Free Pascal</a> – <a href="../en/GNOME_package_guidelines.html" title="GNOME package guidelines">GNOME</a> – <a href="../en/Go_package_guidelines.html" title="Go package guidelines">Go</a> – <a href="../en/Haskell_package_guidelines.html" title="Haskell package guidelines">Haskell</a> – <a href="../en/Java_package_guidelines.html" title="Java package guidelines">Java</a> – <a href="../en/KDE_package_guidelines.html" title="KDE package guidelines">KDE</a> – <a href="../en/Kernel_module_package_guidelines.html" title="Kernel module package guidelines">Kernel</a> – <a href="../en/Lisp_package_guidelines.html" title="Lisp package guidelines">Lisp</a> – <a href="../en/Meson_package_guidelines.html" title="Meson package guidelines">Meson</a> – <a href="../en/MinGW_package_guidelines.html" title="MinGW package guidelines">MinGW</a> – <a class="mw-selflink selflink">Node.js</a> – <a href="../en/Nonfree_applications_package_guidelines.html" title="Nonfree applications package guidelines">Nonfree</a> – <a href="../en/OCaml_package_guidelines.html" title="OCaml package guidelines">OCaml</a> – <a href="../en/Perl_package_guidelines.html" title="Perl package guidelines">Perl</a> – <a href="../en/PHP_package_guidelines.html" title="PHP package guidelines">PHP</a> – <a href="../en/Python_package_guidelines.html" title="Python package guidelines">Python</a> – <a href="../en/R_package_guidelines.html" title="R package guidelines">R</a> – <a href="../en/Ruby_package_guidelines.html" title="Ruby package guidelines">Ruby</a> – <a href="../en/Rust_package_guidelines.html" title="Rust package guidelines">Rust</a> – <a href="../en/Shell_package_guidelines.html" title="Shell package guidelines">Shell</a> – <a href="../en/VCS_package_guidelines.html" title="VCS package guidelines">VCS</a> – <a href="../en/Web_application_package_guidelines.html" title="Web application package guidelines">Web</a> – <a href="../en/Wine_package_guidelines.html" title="Wine package guidelines">Wine</a>
+</p>
+</div>
+<p>This document covers standards and guidelines on writing <a href="../en/PKGBUILD.html" title="PKGBUILD">PKGBUILDs</a> for <a href="../en/Node.js.html" title="Node.js">Node.js</a> packages.
+</p>
+<mw:tocplace></mw:tocplace>
+<h2><span class="mw-headline" id="Package_naming">Package naming</span></h2>
+<div class="archwiki-template-box archwiki-template-box-tip">
+<strong>Tip:</strong> A custom <code>_pkgname</code> variable can be used instead of <code>pkgname</code>. This variable can generically be defined as follows: <code>_pkgname=${pkgname#nodejs-}</code>
+</div>
+<p>Package names for Node.js libraries should start with a <code>nodejs-</code> prefix. For standalone applications, just use the program name.
+</p>
+<h2><span class="mw-headline" id="Source">Source</span></h2>
+<p><a href="../en/Node.js.html#Node_Packaged_Modules" class="mw-redirect" title="Npm">npm</a> provides a stable naming scheme for download URLs. <a href="../en/PKGBUILD.html#source" title="PKGBUILD">PKGBUILD#source</a> <code>source=()</code> array can use the following URL template:
+</p>
+<pre>https://registry.npmjs.org/$_pkgname/-/$_pkgname-$pkgver.tgz
+</pre>
+<h2><span class="mw-headline" id="Using_npm">Using npm</span></h2>
+<p>When installing with <a href="../en/Node.js.html#Node_Packaged_Modules" class="mw-redirect" title="Npm">npm</a>, add it as a build dependency:
+</p>
+<pre>makedepends=('npm')
+</pre>
+<p>There is also usually no need to extract the tarball:
+</p>
+<pre>noextract=("${_pkgname}-${pkgver}.tgz")
+</pre>
+<p>This is a minimal <a href="../en/Creating_packages.html#package()" title="Creating packages">package</a> function:
+</p>
+<pre>package() {
+    npm install -g --prefix "${pkgdir}/usr" "${srcdir}/${_pkgname}-${pkgver}.tgz"
+}
+</pre>
+<h3><span class="mw-headline" id="Setting_temporary_cache">Setting temporary cache</span></h3>
+<p>When <i>npm</i> processes <code>package.json</code> in order to build a package it downloads dependencies to its default cache folder at <code>$HOME/.npm</code>. To avoid littering user's home folder we can temporarily set a different cache folder with <code>--cache</code> flag.
+</p>
+<p>Download dependencies to <code>${srcdir}/npm-cache</code> and install them in package directory:
+</p>
+<pre>npm install --cache "${srcdir}/npm-cache" 
+</pre>
+<p>Continue with packaging as usual:
+</p>
+<pre>npm run packager
+</pre>
+<h3>
+<span id="Package_contains_reference_to_.24srcdir.2F.24pkgdir"></span><span class="mw-headline" id="Package_contains_reference_to_$srcdir/$pkgdir">Package contains reference to $srcdir/$pkgdir</span>
+</h3>
+<div class="noprint archwiki-template-message">
+<p><a href="../File:Tango-view-refresh-red.png" class="image"><img alt="Tango-view-refresh-red.png" src="../File:Tango-view-refresh-red.png" decoding="async" width="48" height="48"></a><b>This article or section is out of date.</b><a href="../File:Tango-view-refresh-red.png" class="image"><img alt="Tango-view-refresh-red.png" src="../File:Tango-view-refresh-red.png" decoding="async" width="48" height="48"></a></p>
+<div>
+<b>Reason:</b> The package used as an example was <a rel="nofollow" class="external text" href="https://lists.archlinux.org/archives/list/aur-requests@lists.archlinux.org/message/SGRO7PXC7M6SJ42XOGKN2TPDVRKWQIYY/">dropped from AUR</a>. (Discuss in <a rel="nofollow" class="external text" href="https://wiki.archlinux.org/title/Talk:Node.js_package_guidelines">Talk:Node.js package guidelines</a>)</div>
+</div>
+<p><i>npm</i> unfortunately creates references to the source dir and the pkg dir, this is <a rel="nofollow" class="external text" href="https://github.com/npm/cli/issues/3828">a known issue</a>. However, you may remove those references manually since they are not used in any way.
+</p>
+<p>All dependencies will contain a reference to <code>$pkgdir</code>, in the <code>_where</code> attribute. You can usually remove those attributes with some <i>sed</i> magic as follows:
+</p>
+<pre>find "$pkgdir" -name package.json -print0 | xargs -r -0 sed -i '/_where/d'
+</pre>
+<p>Your main package will have some other references too. The easiest way to remove those is to remove all underscored properties, but that is not as easy with <i>sed</i>. Instead, you can use <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=jq">jq</a></span> for similar results as follows:
+</p>
+<pre>local tmppackage="$(mktemp)"
+local pkgjson="$pkgdir/usr/lib/node_modules/$_pkgname/package.json"
+jq '.|=with_entries(select(.key|test("_.+")|not))' "$pkgjson" &gt; "$tmppackage"
+mv "$tmppackage" "$pkgjson"
+chmod 644 "$pkgjson"
+</pre>
+<p>Another place where you may find references to <code>$pkgdir</code> is the <code>man</code> attributes of packages. If you do not care about man pages (they will not be installed for dependencies anyway), you may delete them like this:
+</p>
+<pre>find "$pkgdir" -type f -name package.json | while read pkgjson; do
+    local tmppackage="$(mktemp)"
+    jq 'del(.man)' "$pkgjson" &gt; "$tmppackage"
+    mv "$tmppackage" "$pkgjson"
+    chmod 644 "$pkgjson"
+done
+</pre>
+<p>An example of all three of these techniques can be seen in <a rel="nofollow" class="external text" href="https://aur.archlinux.org/cgit/aur.git/tree/PKGBUILD?h=readability-cli">readability-cli's old PKGBUILD</a>.
+</p>
+<h2><span class="mw-headline" id="Using_nvm">Using nvm</span></h2>
+<p>When a <a href="../en/Node.js.html" title="Node.js">node.js</a>-based application requires different version for <b>building</b> or <b>packaging</b>, then <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/nvm/">nvm</a></span><sup><small>AUR</small></sup> can be leveraged.
+</p>
+<div class="archwiki-template-box archwiki-template-box-warning">
+<strong>Warning:</strong> This applies only for building/packaging needs of the application and does not replace runtime dependency</div>
+<p>Add it as a build dependency:
+</p>
+<pre>makedepends=('npm' 'nvm')
+</pre>
+<p><span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/nvm/">nvm</a></span><sup><small>AUR</small></sup> uses <code>NVM_DIR</code> <a href="../en/Environment_variables.html" class="mw-redirect" title="Environment variable">environment variable</a> to look for its prefix, which is set to <code>$HOME/.nvm</code> if not specified before <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/nvm/">nvm</a></span><sup><small>AUR</small></sup> initialization.
+</p>
+<p>You can use the following function to create and isolate your custom prefix from user's location:
+</p>
+<pre>_ensure_local_nvm() {
+    # let's be sure we are starting clean
+    which nvm &gt;/dev/null 2&gt;&amp;1 &amp;&amp; nvm deactivate &amp;&amp; nvm unload
+    export NVM_DIR="${srcdir}/.nvm"
+
+    # The init script returns 3 if version specified
+    # in ./.nvrc is not (yet) installed in $NVM_DIR
+    # but nvm itself still gets loaded ok
+    source /usr/share/nvm/init-nvm.sh || [[ $? != 1 ]]
+}
+</pre>
+<p>This function should be called before interacting with <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/nvm/">nvm</a></span><sup><small>AUR</small></sup>, <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=npm">npm</a></span> or any other <a href="../en/Node.js.html" title="Node.js">Node.js</a> based programs that should use the specified version.
+</p>
+<h3><span class="mw-headline" id="Example_PKGBUILD_usage">Example PKGBUILD usage</span></h3>
+<pre>prepare() {
+    _ensure_local_nvm
+    nvm install 14.15.0
+}
+
+build() {
+    _ensure_local_nvm
+    npm install
+}
+</pre>
+<p>Alternatively, bare <code>nvm install</code> will look for a version string in <code>.nvrc</code> file in the current directory.
+</p>
+<p>An example of this usage can be seen in <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/insomnia/">insomnia</a></span><sup><small>AUR</small></sup>. See <a href="../en/PKGBUILD.html" title="PKGBUILD">PKGBUILD</a> for more information.
+</p>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface">
+<div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="../en/Category:Arch_package_guidelines.html" title="Category:Arch package guidelines">Arch package guidelines</a></li></ul>
+</div>
+<div id="mw-hidden-catlinks" class="mw-hidden-catlinks mw-hidden-cats-hidden">Hidden category: <ul><li><a href="../en/Category:Pages_or_sections_flagged_with_Template:Out_of_date.html" title="Category:Pages or sections flagged with Template:Out of date">Pages or sections flagged with Template:Out of date</a></li></ul>
+</div>
+</div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=Node.js_package_guidelines&amp;oldid=782877">https://wiki.archlinux.org/index.php?title=Node.js_package_guidelines&amp;oldid=782877</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 9 July 2023, at 21:44.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

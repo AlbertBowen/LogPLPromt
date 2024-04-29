@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>Network configuration (Русский)/Ethernet (Русский) - ArchWiki</title>
+<link rel="stylesheet" href="../../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Network_configuration_Русский_Ethernet_Русский rootpage-Network_configuration_Русский skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Драйвер_устройства" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#%D0%94%D1%80%D0%B0%D0%B9%D0%B2%D0%B5%D1%80_%D1%83%D1%81%D1%82%D1%80%D0%BE%D0%B9%D1%81%D1%82%D0%B2%D0%B0">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Драйвер устройства</div>
+			</a>
+			
+				<button aria-controls="toc-Драйвер_устройства-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Драйвер устройства subsection
+				</button>
+			
+			<ul id="toc-Драйвер_устройства-sublist" class="sidebar-toc-list">
+				<li id="toc-Проверка_состояния" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#%D0%9F%D1%80%D0%BE%D0%B2%D0%B5%D1%80%D0%BA%D0%B0_%D1%81%D0%BE%D1%81%D1%82%D0%BE%D1%8F%D0%BD%D0%B8%D1%8F">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.1</span>Проверка состояния</div>
+			</a>
+			
+			<ul id="toc-Проверка_состояния-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Загрузка_модуля" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#%D0%97%D0%B0%D0%B3%D1%80%D1%83%D0%B7%D0%BA%D0%B0_%D0%BC%D0%BE%D0%B4%D1%83%D0%BB%D1%8F">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.2</span>Загрузка модуля</div>
+			</a>
+			
+			<ul id="toc-Загрузка_модуля-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Советы_и_рекомендации" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#%D0%A1%D0%BE%D0%B2%D0%B5%D1%82%D1%8B_%D0%B8_%D1%80%D0%B5%D0%BA%D0%BE%D0%BC%D0%B5%D0%BD%D0%B4%D0%B0%D1%86%D0%B8%D0%B8">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Советы и рекомендации</div>
+			</a>
+			
+				<button aria-controls="toc-Советы_и_рекомендации-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Советы и рекомендации subsection
+				</button>
+			
+			<ul id="toc-Советы_и_рекомендации-sublist" class="sidebar-toc-list">
+				<li id="toc-ifplugd_для_ноутбуков" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#ifplugd_%D0%B4%D0%BB%D1%8F_%D0%BD%D0%BE%D1%83%D1%82%D0%B1%D1%83%D0%BA%D0%BE%D0%B2">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.1</span>ifplugd для ноутбуков</div>
+			</a>
+			
+			<ul id="toc-ifplugd_для_ноутбуков-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Решение_проблем" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#%D0%A0%D0%B5%D1%88%D0%B5%D0%BD%D0%B8%D0%B5_%D0%BF%D1%80%D0%BE%D0%B1%D0%BB%D0%B5%D0%BC">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>Решение проблем</div>
+			</a>
+			
+				<button aria-controls="toc-Решение_проблем-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Решение проблем subsection
+				</button>
+			
+			<ul id="toc-Решение_проблем-sublist" class="sidebar-toc-list">
+				<li id="toc-Смена_компьютера_при_использовании_кабельного_модема" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#%D0%A1%D0%BC%D0%B5%D0%BD%D0%B0_%D0%BA%D0%BE%D0%BC%D0%BF%D1%8C%D1%8E%D1%82%D0%B5%D1%80%D0%B0_%D0%BF%D1%80%D0%B8_%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B8_%D0%BA%D0%B0%D0%B1%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE%D0%B3%D0%BE_%D0%BC%D0%BE%D0%B4%D0%B5%D0%BC%D0%B0">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.1</span>Смена компьютера при использовании кабельного модема</div>
+			</a>
+			
+			<ul id="toc-Смена_компьютера_при_использовании_кабельного_модема-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Явное_уведомление_о_перегруженности" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#%D0%AF%D0%B2%D0%BD%D0%BE%D0%B5_%D1%83%D0%B2%D0%B5%D0%B4%D0%BE%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5_%D0%BE_%D0%BF%D0%B5%D1%80%D0%B5%D0%B3%D1%80%D1%83%D0%B6%D0%B5%D0%BD%D0%BD%D0%BE%D1%81%D1%82%D0%B8">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.2</span>Явное уведомление о перегруженности</div>
+			</a>
+			
+			<ul id="toc-Явное_уведомление_о_перегруженности-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Realtek:_нет_соединения_/_проблема_WOL" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Realtek:_%D0%BD%D0%B5%D1%82_%D1%81%D0%BE%D0%B5%D0%B4%D0%B8%D0%BD%D0%B5%D0%BD%D0%B8%D1%8F_/_%D0%BF%D1%80%D0%BE%D0%B1%D0%BB%D0%B5%D0%BC%D0%B0_WOL">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.3</span>Realtek: нет соединения / проблема WOL</div>
+			</a>
+			
+			<ul id="toc-Realtek:_нет_соединения_/_проблема_WOL-sublist" class="sidebar-toc-list">
+				<li id="toc-Включение_сетевого_интерфейса_в_Linux" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#%D0%92%D0%BA%D0%BB%D1%8E%D1%87%D0%B5%D0%BD%D0%B8%D0%B5_%D1%81%D0%B5%D1%82%D0%B5%D0%B2%D0%BE%D0%B3%D0%BE_%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D1%84%D0%B5%D0%B9%D1%81%D0%B0_%D0%B2_Linux">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.3.1</span>Включение сетевого интерфейса в Linux</div>
+			</a>
+			
+			<ul id="toc-Включение_сетевого_интерфейса_в_Linux-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Откат/замена_драйвера_для_Windows" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#%D0%9E%D1%82%D0%BA%D0%B0%D1%82/%D0%B7%D0%B0%D0%BC%D0%B5%D0%BD%D0%B0_%D0%B4%D1%80%D0%B0%D0%B9%D0%B2%D0%B5%D1%80%D0%B0_%D0%B4%D0%BB%D1%8F_Windows">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.3.2</span>Откат/замена драйвера для Windows</div>
+			</a>
+			
+			<ul id="toc-Откат/замена_драйвера_для_Windows-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Включение_WOL_в_драйвере_для_Windows" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#%D0%92%D0%BA%D0%BB%D1%8E%D1%87%D0%B5%D0%BD%D0%B8%D0%B5_WOL_%D0%B2_%D0%B4%D1%80%D0%B0%D0%B9%D0%B2%D0%B5%D1%80%D0%B5_%D0%B4%D0%BB%D1%8F_Windows">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.3.3</span>Включение WOL в драйвере для Windows</div>
+			</a>
+			
+			<ul id="toc-Включение_WOL_в_драйвере_для_Windows-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Включение_LAN_Boot_ROM_в_BIOS/CMOS" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#%D0%92%D0%BA%D0%BB%D1%8E%D1%87%D0%B5%D0%BD%D0%B8%D0%B5_LAN_Boot_ROM_%D0%B2_BIOS/CMOS">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.3.4</span>Включение LAN Boot ROM в BIOS/CMOS</div>
+			</a>
+			
+			<ul id="toc-Включение_LAN_Boot_ROM_в_BIOS/CMOS-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Broadcom_BCM57780" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Broadcom_BCM57780">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.4</span>Broadcom BCM57780</div>
+			</a>
+			
+			<ul id="toc-Broadcom_BCM57780-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Realtek_RTL8111/8168B" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Realtek_RTL8111/8168B">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.5</span>Realtek RTL8111/8168B</div>
+			</a>
+			
+			<ul id="toc-Realtek_RTL8111/8168B-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Материнская_плата_Gigabyte_с_интерфейсом_Realtek_8111/8168/8411" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#%D0%9C%D0%B0%D1%82%D0%B5%D1%80%D0%B8%D0%BD%D1%81%D0%BA%D0%B0%D1%8F_%D0%BF%D0%BB%D0%B0%D1%82%D0%B0_Gigabyte_%D1%81_%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D1%84%D0%B5%D0%B9%D1%81%D0%BE%D0%BC_Realtek_8111/8168/8411">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.6</span>Материнская плата Gigabyte с интерфейсом Realtek 8111/8168/8411</div>
+			</a>
+			
+			<ul id="toc-Материнская_плата_Gigabyte_с_интерфейсом_Realtek_8111/8168/8411-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Материнская_плата_MicroStar_с_интерфейсом_Realtek_8111/8168/8411" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#%D0%9C%D0%B0%D1%82%D0%B5%D1%80%D0%B8%D0%BD%D1%81%D0%BA%D0%B0%D1%8F_%D0%BF%D0%BB%D0%B0%D1%82%D0%B0_MicroStar_%D1%81_%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D1%84%D0%B5%D0%B9%D1%81%D0%BE%D0%BC_Realtek_8111/8168/8411">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.7</span>Материнская плата MicroStar с интерфейсом Realtek 8111/8168/8411</div>
+			</a>
+			
+			<ul id="toc-Материнская_плата_MicroStar_с_интерфейсом_Realtek_8111/8168/8411-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../../ru/Network_configuration/Ethernet.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="new mw-list-item"><a href="/index.php?title=Talk:Network_configuration_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)/Ethernet_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)&amp;action=edit&amp;redlink=1" rel="discussion" title="Discussion about the content page (page does not exist) [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">русский</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../../ru/Network_configuration/Ethernet.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=Network_configuration_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)/Ethernet_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=Network_configuration_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)/Ethernet_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../../ru/Network_configuration/Ethernet.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Network_configuration_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)/Ethernet_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Network_configuration_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)/Ethernet_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					<div id="contentSub"><span class="subpages">&lt; <a href="../../ru/Network_configuration.html" title="Network configuration (Русский)">Network configuration (Русский)</a></span></div>
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="ru" dir="ltr">
+<div class="mw-parser-output">
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Состояние перевода:</strong> На этой странице представлен перевод статьи <a href="../../en/Network_configuration/Ethernet.html" title="Network configuration/Ethernet">Network configuration/Ethernet</a>. Дата последней синхронизации: 12 июля 2021. Вы можете <a href="../../ru/ArchWiki:Translation_Team.html" title="ArchWiki:Translation Team (Русский)">помочь</a> синхронизировать перевод, если в английской версии произошли <a rel="nofollow" class="external text" href="https://wiki.archlinux.org/index.php?title=Network_configuration/Ethernet&amp;diff=0&amp;oldid=665813">изменения</a>.</div>
+<p>В статье описана настройка <a href="https://en.wikipedia.org/wiki/ru:Ethernet" class="extiw" title="wikipedia:ru:Ethernet">Ethernet</a>; общие вопросы по настройке подключения к сети можно найти в статье <a href="../../ru/Network_configuration.html" class="mw-redirect" title="Настройка сети">Настройка сети</a>.
+</p>
+<mw:tocplace></mw:tocplace>
+<h2>
+<span id=".D0.94.D1.80.D0.B0.D0.B9.D0.B2.D0.B5.D1.80_.D1.83.D1.81.D1.82.D1.80.D0.BE.D0.B9.D1.81.D1.82.D0.B2.D0.B0"></span><span class="mw-headline" id="Драйвер_устройства">Драйвер устройства</span>
+</h2>
+<h3>
+<span id=".D0.9F.D1.80.D0.BE.D0.B2.D0.B5.D1.80.D0.BA.D0.B0_.D1.81.D0.BE.D1.81.D1.82.D0.BE.D1.8F.D0.BD.D0.B8.D1.8F"></span><span class="mw-headline" id="Проверка_состояния">Проверка состояния</span>
+</h3>
+<p><a href="../../ru/Udev.html" title="Udev (Русский)">udev</a> должен автоматически определить <a href="https://en.wikipedia.org/wiki/ru:%D0%A1%D0%B5%D1%82%D0%B5%D0%B2%D0%B0%D1%8F_%D0%BF%D0%BB%D0%B0%D1%82%D0%B0" class="extiw" title="wikipedia:ru:Сетевая плата">контроллер сетевого интерфейса</a> и загрузить необходимый <a href="../../ru/Kernel_module.html" class="mw-redirect" title="Модули ядра">модуль ядра</a> во время загрузки системы. Найдите пункт "Ethernet controller" (или похожий) в выводе команды <code>lspci -v</code>. В нём содержится информация о модуле ядра с драйвером интерфейса:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">$ lspci -v</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">02:00.0 Ethernet controller: Attansic Technology Corp. L1 Gigabit Ethernet Adapter (rev b0)
+ 	...
+ 	Kernel driver in use: atl1
+ 	Kernel modules: atl1
+</pre>
+<p>Выполните <code>dmesg | grep <i>имя-модуля</i></code> чтобы проверить, был ли драйвер загружен:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;"># dmesg | grep atl1</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">...
+atl1 0000:02:00.0: eth0 link is up 100 Mbps full duplex
+</pre>
+<p>Если драйвер загружен, то следующий раздел можно пропустить. В противном случае выясните имя необходимого модуля.
+</p>
+<h3>
+<span id=".D0.97.D0.B0.D0.B3.D1.80.D1.83.D0.B7.D0.BA.D0.B0_.D0.BC.D0.BE.D0.B4.D1.83.D0.BB.D1.8F"></span><span class="mw-headline" id="Загрузка_модуля">Загрузка модуля</span>
+</h3>
+<p>Найдите в интернете необходимый для вашего чипсета модуль/драйвер. Некоторые распространённые модули — <code>8139too</code> для чипсетов Realtek, <code>sis900</code> для чипсетов SiS. Выяснив название модуля, попробуйте <a href="../../ru/Kernel_module.html#%D0%A3%D0%BF%D1%80%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5_%D0%BC%D0%BE%D0%B4%D1%83%D0%BB%D1%8F%D0%BC%D0%B8_%D0%B2%D1%80%D1%83%D1%87%D0%BD%D1%83%D1%8E" class="mw-redirect" title="Модули ядра">загрузить его вручную</a>. Появление сообщения об ошибке "модуль не найден" означает, что данный драйвер не был включён в ядро. Попробуйте найти модуль в <a href="../../ru/Arch_User_Repository.html" title="Arch User Repository (Русский)">AUR</a>.
+</p>
+<p>Если <i>udev</i> не определяет и не загружает нужный модуль автоматически во время запуска системы, изучите к раздел <a href="../../ru/Kernel_module.html#%D0%90%D0%B2%D1%82%D0%BE%D0%BC%D0%B0%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B0%D1%8F_%D0%B7%D0%B0%D0%B3%D1%80%D1%83%D0%B7%D0%BA%D0%B0_%D0%BC%D0%BE%D0%B4%D1%83%D0%BB%D0%B5%D0%B9_%D1%81_%D0%BF%D0%BE%D0%BC%D0%BE%D1%89%D1%8C%D1%8E_systemd" class="mw-redirect" title="Модули ядра">Модули ядра#Автоматическая загрузка модулей с помощью systemd</a>.
+</p>
+<h2>
+<span id=".D0.A1.D0.BE.D0.B2.D0.B5.D1.82.D1.8B_.D0.B8_.D1.80.D0.B5.D0.BA.D0.BE.D0.BC.D0.B5.D0.BD.D0.B4.D0.B0.D1.86.D0.B8.D0.B8"></span><span class="mw-headline" id="Советы_и_рекомендации">Советы и рекомендации</span>
+</h2>
+<h3>
+<span id="ifplugd_.D0.B4.D0.BB.D1.8F_.D0.BD.D0.BE.D1.83.D1.82.D0.B1.D1.83.D0.BA.D0.BE.D0.B2"></span><span class="mw-headline" id="ifplugd_для_ноутбуков">ifplugd для ноутбуков</span>
+</h3>
+<div class="archwiki-template-box archwiki-template-box-tip">
+<strong>Совет:</strong> <a href="../../ru/Dhcpcd.html" title="Dhcpcd (Русский)">dhcpcd</a> предоставляет ту же функциональность "из коробки".</div>
+<p><span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=ifplugd">ifplugd</a></span> — демон, который автоматически настраивает Ethernet-устройство при подключении кабеля и удаляет конфигурацию при его отключении. Это удобно для ноутбуков со встроенными сетевыми интерфейсами, поскольку последний будет настраиваться лишь при реальном подключении кабеля. Другой вариант использования — когда необходимо перезапустить сеть, но вы не хотите перезагружать компьютер или делать это в оболочке.
+</p>
+<p>По умолчанию ifplugd настроен на работу с устройством <code>eth0</code>. Эту и другие настройки, такие как время задержки, можно изменить в файле <code>/etc/ifplugd/ifplugd.conf</code>.
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Примечание:</strong> Пакет <a href="../../en/Netctl.html" class="mw-redirect" title="Netctl (Русский)">netctl</a> предоставляет службу <code>netctl-ifplugd@.service</code>; также можно воспользоваться службой <code>ifplugd@.service</code> из пакета <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=ifplugd">ifplugd</a></span>. Например, <a href="../../ru/Systemd.html#%D0%98%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5_%D1%8E%D0%BD%D0%B8%D1%82%D0%BE%D0%B2" class="mw-redirect" title="Включите">включите</a> <code>ifplugd@eth0.service</code>.</div>
+<h2>
+<span id=".D0.A0.D0.B5.D1.88.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BF.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC"></span><span class="mw-headline" id="Решение_проблем">Решение проблем</span>
+</h2>
+<h3>
+<span id=".D0.A1.D0.BC.D0.B5.D0.BD.D0.B0_.D0.BA.D0.BE.D0.BC.D0.BF.D1.8C.D1.8E.D1.82.D0.B5.D1.80.D0.B0_.D0.BF.D1.80.D0.B8_.D0.B8.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B8_.D0.BA.D0.B0.D0.B1.D0.B5.D0.BB.D1.8C.D0.BD.D0.BE.D0.B3.D0.BE_.D0.BC.D0.BE.D0.B4.D0.B5.D0.BC.D0.B0"></span><span class="mw-headline" id="Смена_компьютера_при_использовании_кабельного_модема">Смена компьютера при использовании кабельного модема</span>
+</h3>
+<p>Некоторые провайдеры кабельных интернет-услуг (например, videotron) настраивают кабельный модем на работу только с одним клиентом-компьютером по MAC-адресу его сетевого интерфейса. Как только модем запомнит MAC-адрес первого подключенного компьютера или оборудования, он ни при каких обстоятельствах не будет отвечать на запросы, идущие с других MAC-адресов. Таким образом, если вы поменяете один компьютер на другой (или поставите маршрутизатор), новый компьютер (или маршрутизатор) не будет работать с кабельным модемом из-за другого MAC-адреса. Выключите питание кабельного модема и включите его снова, чтобы сбросить настройки. Как только модем загрузится и подключится к сети, перезагрузите новый компьютер, чтобы он выполнил DHCP-запрос, или отправьте запрос DHCP-аренды вручную.
+</p>
+<p>Если это не поможет, попробуйте скопировать MAC-адрес предыдущей машины (см. <a href="../../ru/MAC_address_spoofing.html" class="mw-redirect" title="Подмена MAC-адреса">Подмена MAC-адреса</a>).
+</p>
+<h3>
+<span id=".D0.AF.D0.B2.D0.BD.D0.BE.D0.B5_.D1.83.D0.B2.D0.B5.D0.B4.D0.BE.D0.BC.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BE_.D0.BF.D0.B5.D1.80.D0.B5.D0.B3.D1.80.D1.83.D0.B6.D0.B5.D0.BD.D0.BD.D0.BE.D1.81.D1.82.D0.B8"></span><span class="mw-headline" id="Явное_уведомление_о_перегруженности">Явное уведомление о перегруженности</span>
+</h3>
+<p>Явное уведомление о перегруженности (<a href="https://en.wikipedia.org/wiki/ru:Explicit_Congestion_Notification" class="extiw" title="wikipedia:ru:Explicit Congestion Notification">Explicit Congestion Notification</a>, ECN) может стать причиной проблем с передачей информации на старых/плохих маршрутизаторах. Для <a rel="nofollow" class="external text" href="https://github.com/systemd/systemd/issues/9748">systemd 239</a> это касается как входящего, так и исходящего трафика.
+</p>
+<p>Чтобы включать ECN только по требованию входящих соединений (безопасно, настройка ядра по-умолчанию), выполните:
+</p>
+<pre># sysctl net.ipv4.tcp_ecn=2
+</pre>
+<p>Для полного отключения ECN (например, чтобы проверить, действительно ли причина возникших проблем в ECN) выполните:
+</p>
+<pre># sysctl net.ipv4.tcp_ecn=0
+</pre>
+<p>Подробнее см. <a rel="nofollow" class="external text" href="https://docs.kernel.org/networking/ip-sysctl.html">документации ядра</a>.
+</p>
+<h3>
+<span id="Realtek:_.D0.BD.D0.B5.D1.82_.D1.81.D0.BE.D0.B5.D0.B4.D0.B8.D0.BD.D0.B5.D0.BD.D0.B8.D1.8F_.2F_.D0.BF.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC.D0.B0_WOL"></span><span class="mw-headline" id="Realtek:_нет_соединения_/_проблема_WOL">Realtek: нет соединения / проблема WOL</span>
+</h3>
+<p>Пользователи с сетевыми интерфейсами на основе Realtek 8168 8169 8101 8111(C) (отдельными/встроенными) могут заметить, что карта отключена во время загрузки системы и лампочка-индикатор не горит. Такое часто встречается на машинах с двумя операционными системами, одна из которых — Windows. Похоже, что причиной являются официальные драйверы Realtek (датированные маем 2007 г. и позднее) для Windows. Эти новые драйверы отключают функцию Wake-On-LAN, выключая интерфейс при завершении работы Windows, в результате чего между загрузками Windows он не работает. Пока Windows не загрузится, индикатор соединения не горит; во время завершения её работы индикатор выключается. В нормальном состоянии лампочка должна гореть всё время работы системы, даже во время POST. Проблема затрагивает и другие операционные системы, не имеющие новейших драйверов (например, Live CD). Есть несколько способов решения.
+</p>
+<h4>
+<span id=".D0.92.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_.D1.81.D0.B5.D1.82.D0.B5.D0.B2.D0.BE.D0.B3.D0.BE_.D0.B8.D0.BD.D1.82.D0.B5.D1.80.D1.84.D0.B5.D0.B9.D1.81.D0.B0_.D0.B2_Linux"></span><span class="mw-headline" id="Включение_сетевого_интерфейса_в_Linux">Включение сетевого интерфейса в Linux</span>
+</h4>
+<p>Включите сетевой интерфейс в соотстветсвии с <a href="../../ru/Network_configuration.html#%D0%92%D0%BA%D0%BB%D1%8E%D1%87%D0%B5%D0%BD%D0%B8%D0%B5_%D0%B8_%D0%BE%D1%82%D0%BA%D0%BB%D1%8E%D1%87%D0%B5%D0%BD%D0%B8%D0%B5_%D1%81%D0%B5%D1%82%D0%B5%D0%B2%D1%8B%D1%85_%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D1%84%D0%B5%D0%B9%D1%81%D0%BE%D0%B2" class="mw-redirect" title="Настройка сети">Настройка сети#Включение и отключение сетевых интерфейсов</a>.
+</p>
+<h4>
+<span id=".D0.9E.D1.82.D0.BA.D0.B0.D1.82.2F.D0.B7.D0.B0.D0.BC.D0.B5.D0.BD.D0.B0_.D0.B4.D1.80.D0.B0.D0.B9.D0.B2.D0.B5.D1.80.D0.B0_.D0.B4.D0.BB.D1.8F_Windows"></span><span class="mw-headline" id="Откат/замена_драйвера_для_Windows">Откат/замена драйвера для Windows</span>
+</h4>
+<p>Вы можете откатить ваш драйвер сетевой платы в Windows на тот, который предоставляет Microsoft (если это возможно), или откатить/установить официальный драйвер Realtek, имеющий дату выпуска ранее мая 2007 г. (может найтись на компакт-диске, идущем в комплекте с вашим аппаратным обеспечением).
+</p>
+<h4>
+<span id=".D0.92.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_WOL_.D0.B2_.D0.B4.D1.80.D0.B0.D0.B9.D0.B2.D0.B5.D1.80.D0.B5_.D0.B4.D0.BB.D1.8F_Windows"></span><span class="mw-headline" id="Включение_WOL_в_драйвере_для_Windows">Включение WOL в драйвере для Windows</span>
+</h4>
+<p>Наверное, самое лучшее и быстрое решение — изменить эту настройку в драйвере Windows. Тогда это затронет всю систему, в том числе Arch (а также live CD и другие операционные системы). В менеджере устройств Windows найдите ваш сетевой адаптер Realtek и сделайте на нем двойной щелчок мыши. Во вкладке "Дополнительно" измените значение "Wake-on-LAN после завершения работы" (Wake-on-LAN after shutdown) на "Включено".
+</p>
+<p>В Windows XP (пример):
+</p>
+<pre>Кликните правой кнопкой мыши на "Мой компьютер" и зайдите в "Свойства"
+--&gt; Вкладка "Аппаратное обеспечение" (Hardware)
+  --&gt; Менеджер устройств
+    --&gt; Сетевые адаптеры
+      --&gt; "двойной клик" на Realtek ...
+        --&gt; Вкладка "Дополнительно"
+          --&gt; Wake-On-Lan после завершения работы
+            --&gt; Включено
+</pre>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Примечание:</strong> В новых драйверах Realtek для Windows (протестировано на <i>Realtek 8111/8169 LAN Driver v5.708.1030.2008</i>, датированном 2009/01/22, от GIGABYTE) доступ к этой опции может быть немного иным, например, <i>Shutdown Wake-On-LAN --&gt; Включено</i>. Похоже, что ее переключение в значение <code>Отключено</code> не дает эффекта (вы увидите, что индикатор соединения по-прежнему выключается при завершении работы Windows). Довольно грязный обходной путь — загрузиться в Windows и просто перезагрузить (reset) систему (плохой restart/shutdown), что не даст драйверу Windows никаких шансов отключить LAN. Лампочка будет по-прежнему гореть, а адаптер LAN останется доступен после POST до тех пор, пока вы опять не запустите Windows и правильно завершите его работу.</div>
+<h4>
+<span id=".D0.92.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_LAN_Boot_ROM_.D0.B2_BIOS.2FCMOS"></span><span class="mw-headline" id="Включение_LAN_Boot_ROM_в_BIOS/CMOS">Включение LAN Boot ROM в BIOS/CMOS</span>
+</h4>
+<p>Похоже, что установка <i>Интегрированная периферия (Integrated Peripherals) --&gt; Встроенный (Onboard) LAN Boot ROM --&gt; Включено</i> в BIOS/CMOS возобновляет работу чипа Realtek LAN при загрузке системы, несмотря на то, что драйвер Windows отключает его при завершении работы ОС.
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Примечание:</strong> Этот способ был несколько раз протестирован на материнской плате GIGABYTE GA-G31M-ES2L с BIOS версии F8, выпущенным 2009/02/05</div>
+<h3><span class="mw-headline" id="Broadcom_BCM57780">Broadcom BCM57780</span></h3>
+<p>Этот чипсет Broadcom иногда работает плохо, если не указать порядок загрузки модулей. Необходимые модули — <code>broadcom</code> и <code>tg3</code>, и загружаться они должны именно в таком порядке.
+</p>
+<p>Если в вашем компьютере используется этот чипсет, сделайте следующее:
+</p>
+<ul><li>Найдите вашу сетевой интерфейс в выводе <i>lspci</i>:</li></ul>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">$ lspci | grep Ethernet</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">02:00.0 Ethernet controller: Broadcom Corporation NetLink BCM57780 Gigabit Ethernet PCIe (rev 01)
+</pre>
+<ul><li>Если Ethernet-соединение не функционирует, выдерните кабель и выполните команды:</li></ul>
+<pre># modprobe -r tg3
+# modprobe broadcom
+# modprobe tg3
+</pre>
+<ul><li>Подключите обратно сетевой кабель и проверьте работу модуля:</li></ul>
+<pre># dmesg | grep tg3
+</pre>
+<ul><li>Если это решило проблему, сделайте изменения постоянными, добавив модули <code>broadcom</code> и <code>tg3</code> (в этом порядке) в массив <code>MODULES</code>:</li></ul>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/mkinitcpio.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">MODULES=(.. broadcom tg3 ..)
+</pre>
+<ul><li>Пересоберите initramfs:</li></ul>
+<pre># mkinitcpio -p linux
+</pre>
+<ul><li>В качестве альтернативы можно создать файл <code>/etc/modprobe.d/broadcom.conf</code> со следующим содержимым:</li></ul>
+<pre>softdep tg3 pre: broadcom
+</pre>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Примечание:</strong> Этот способ может помочь и для других чипсетов, например, BCM57760.</div>
+<h3>
+<span id="Realtek_RTL8111.2F8168B"></span><span class="mw-headline" id="Realtek_RTL8111/8168B">Realtek RTL8111/8168B</span>
+</h3>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;"># lspci | grep Ethernet</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">03:00.0 Ethernet controller: Realtek Semiconductor Co., Ltd. RTL8111/8168B PCI Express Gigabit Ethernet controller (rev 02)
+</pre>
+<p>За распознавание и работу этого сетевого интерфейса отвечает модуль <code>r8169</code>, однако некоторые ревизии данного драйвера работают с ошибками — происходит постоянное включение/выключение устройства. Для решения проблемы можно установить модуль <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=r8168">r8168</a></span>. Если <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=r8168">r8168</a></span> не загружается автоматически менеджером <a href="../../ru/Udev.html" title="Udev (Русский)">udev</a>, то нужно <a href="../../ru/Kernel_module.html#%D0%97%D0%B0%D0%BF%D1%80%D0%B5%D1%82_%D0%B7%D0%B0%D0%B3%D1%80%D1%83%D0%B7%D0%BA%D0%B8" class="mw-redirect" title="Модули ядра">запретить загрузку</a> модуля <code>r8169</code>. Подробнее загрузка модулей описана в статье <a href="../../ru/Kernel_module.html#%D0%90%D0%B2%D1%82%D0%BE%D0%BC%D0%B0%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B0%D1%8F_%D0%B7%D0%B0%D0%B3%D1%80%D1%83%D0%B7%D0%BA%D0%B0_%D0%BC%D0%BE%D0%B4%D1%83%D0%BB%D0%B5%D0%B9_%D1%81_%D0%BF%D0%BE%D0%BC%D0%BE%D1%89%D1%8C%D1%8E_systemd" class="mw-redirect" title="Модули ядра">Модули ядра#Автоматическая загрузка модулей с помощью systemd</a>.
+</p>
+<p>Ещё одной проблемой некоторых ревизий драйвера этого адаптера является плохая поддержка IPv6. В случае зависания страниц и низкой скорости подключения может помочь <a href="../../ru/IPv6.html#%D0%9E%D1%82%D0%BA%D0%BB%D1%8E%D1%87%D0%B5%D0%BD%D0%B8%D0%B5_%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D0%BE%D0%BD%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D1%81%D1%82%D0%B8" title="IPv6 (Русский)">отключение функциональности IPv6</a>.
+</p>
+<h3>
+<span id=".D0.9C.D0.B0.D1.82.D0.B5.D1.80.D0.B8.D0.BD.D1.81.D0.BA.D0.B0.D1.8F_.D0.BF.D0.BB.D0.B0.D1.82.D0.B0_Gigabyte_.D1.81_.D0.B8.D0.BD.D1.82.D0.B5.D1.80.D1.84.D0.B5.D0.B9.D1.81.D0.BE.D0.BC_Realtek_8111.2F8168.2F8411"></span><span class="mw-headline" id="Материнская_плата_Gigabyte_с_интерфейсом_Realtek_8111/8168/8411">Материнская плата Gigabyte с интерфейсом Realtek 8111/8168/8411</span>
+</h3>
+<p>При загрузке с выключенным (настройка по умолчанию) <a href="https://en.wikipedia.org/wiki/ru:IOMMU" class="extiw" title="wikipedia:ru:IOMMU">IOMMU</a> могут возникнуть проблемы с сетевым интерфейсом на материнских платах Gigabyte (например, <i>Gigabyte GA-990FXA-UD3</i>). Сетевое подключение будет неустойчивым, с малой пропускной способностью или отсутствовать вовсе. Сказанное в равной мере касается как встроенных интерфейсов, так и внешних сетевых плат на шине PCI, поскольку настройки IOMMU влияют на все сетевые интерфейсы материнской платы. Если <a href="../../en/PCI_passthrough_via_OVMF.html#Setting_up_IOMMU" title="PCI passthrough via OVMF">включить</a> IOMMU и загрузиться с установочного устройства, то на секунду появится сообщение об ошибке AMD I-10/xhci, после чего загрузка продолжится обычным образом. В результате сетевой интерфейс будет функционировать нормально (даже с модулем <code>r8169</code>).
+</p>
+<p>Если добавить <a href="../../ru/Kernel_parameters.html" title="Kernel parameters (Русский)">параметр ядра</a> <code>iommu=soft</code>, то при загрузке сообщение об ошибке будет подавляться.
+</p>
+<h3>
+<span id=".D0.9C.D0.B0.D1.82.D0.B5.D1.80.D0.B8.D0.BD.D1.81.D0.BA.D0.B0.D1.8F_.D0.BF.D0.BB.D0.B0.D1.82.D0.B0_MicroStar_.D1.81_.D0.B8.D0.BD.D1.82.D0.B5.D1.80.D1.84.D0.B5.D0.B9.D1.81.D0.BE.D0.BC_Realtek_8111.2F8168.2F8411"></span><span class="mw-headline" id="Материнская_плата_MicroStar_с_интерфейсом_Realtek_8111/8168/8411">Материнская плата MicroStar с интерфейсом Realtek 8111/8168/8411</span>
+</h3>
+<p>В случае некоторых материнских плат вроде "MicroStar B450M MORTAR TITANIUM" отключение/подключение Ethernet-кабеля или перезапуск DHCP-сервера на маршрутизаторе может привести к переходу <code>r8169</code> в состояние "downshifted", в результате чего гигабитное соединение сократится до 100-мегабитного. В логах ядра появятся следующие записи:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;"># dmesg | grep r8169</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">Generic FE-GE Realtek PHY r8169-2200:00: Downshift occurred from negotiated speed 1Gbps to actual speed 100Mbps, check cabling!
+r8169 0000:22:00.0 enp34s0: Link is Up - 100Mbps/Full (downshifted) - flow control rx/tx
+</pre>
+<p>В этом случае необходимо перезапустить интерфейс (выключить и включить снова):
+</p>
+<pre># ip link set dev enp34s0 down
+# ip link set dev enp34s0 up
+</pre>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../../Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="../../ru/Category:Network_configuration.html" title="Category:Network configuration (Русский)">Network configuration (Русский)</a></li></ul>
+</div></div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=Network_configuration_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)/Ethernet_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)&amp;oldid=782378">https://wiki.archlinux.org/index.php?title=Network_configuration_(Русский)/Ethernet_(Русский)&amp;oldid=782378</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 3 July 2023, at 13:07.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

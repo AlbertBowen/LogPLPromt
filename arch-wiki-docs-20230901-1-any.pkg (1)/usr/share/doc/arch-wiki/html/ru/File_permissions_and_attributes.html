@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>File permissions and attributes (Русский) - ArchWiki</title>
+<link rel="stylesheet" href="../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-File_permissions_and_attributes_Русский rootpage-File_permissions_and_attributes_Русский skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Просмотр_разрешений" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#%D0%9F%D1%80%D0%BE%D1%81%D0%BC%D0%BE%D1%82%D1%80_%D1%80%D0%B0%D0%B7%D1%80%D0%B5%D1%88%D0%B5%D0%BD%D0%B8%D0%B9">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Просмотр разрешений</div>
+			</a>
+			
+				<button aria-controls="toc-Просмотр_разрешений-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Просмотр разрешений subsection
+				</button>
+			
+			<ul id="toc-Просмотр_разрешений-sublist" class="sidebar-toc-list">
+				<li id="toc-Примеры" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#%D0%9F%D1%80%D0%B8%D0%BC%D0%B5%D1%80%D1%8B">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.1</span>Примеры</div>
+			</a>
+			
+			<ul id="toc-Примеры-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Изменение_разрешений" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#%D0%98%D0%B7%D0%BC%D0%B5%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5_%D1%80%D0%B0%D0%B7%D1%80%D0%B5%D1%88%D0%B5%D0%BD%D0%B8%D0%B9">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Изменение разрешений</div>
+			</a>
+			
+				<button aria-controls="toc-Изменение_разрешений-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Изменение разрешений subsection
+				</button>
+			
+			<ul id="toc-Изменение_разрешений-sublist" class="sidebar-toc-list">
+				<li id="toc-Текстовый_метод" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#%D0%A2%D0%B5%D0%BA%D1%81%D1%82%D0%BE%D0%B2%D1%8B%D0%B9_%D0%BC%D0%B5%D1%82%D0%BE%D0%B4">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.1</span>Текстовый метод</div>
+			</a>
+			
+			<ul id="toc-Текстовый_метод-sublist" class="sidebar-toc-list">
+				<li id="toc-Сокращения_для_текстового_метода" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#%D0%A1%D0%BE%D0%BA%D1%80%D0%B0%D1%89%D0%B5%D0%BD%D0%B8%D1%8F_%D0%B4%D0%BB%D1%8F_%D1%82%D0%B5%D0%BA%D1%81%D1%82%D0%BE%D0%B2%D0%BE%D0%B3%D0%BE_%D0%BC%D0%B5%D1%82%D0%BE%D0%B4%D0%B0">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.1.1</span>Сокращения для текстового метода</div>
+			</a>
+			
+			<ul id="toc-Сокращения_для_текстового_метода-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Копирование_разрешений" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#%D0%9A%D0%BE%D0%BF%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5_%D1%80%D0%B0%D0%B7%D1%80%D0%B5%D1%88%D0%B5%D0%BD%D0%B8%D0%B9">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.1.2</span>Копирование разрешений</div>
+			</a>
+			
+			<ul id="toc-Копирование_разрешений-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Числовой_метод" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#%D0%A7%D0%B8%D1%81%D0%BB%D0%BE%D0%B2%D0%BE%D0%B9_%D0%BC%D0%B5%D1%82%D0%BE%D0%B4">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.2</span>Числовой метод</div>
+			</a>
+			
+			<ul id="toc-Числовой_метод-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Массовое_изменение_разрешений" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#%D0%9C%D0%B0%D1%81%D1%81%D0%BE%D0%B2%D0%BE%D0%B5_%D0%B8%D0%B7%D0%BC%D0%B5%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5_%D1%80%D0%B0%D0%B7%D1%80%D0%B5%D1%88%D0%B5%D0%BD%D0%B8%D0%B9">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.3</span>Массовое изменение разрешений</div>
+			</a>
+			
+			<ul id="toc-Массовое_изменение_разрешений-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Изменение_владельца" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#%D0%98%D0%B7%D0%BC%D0%B5%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5_%D0%B2%D0%BB%D0%B0%D0%B4%D0%B5%D0%BB%D1%8C%D1%86%D0%B0">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>Изменение владельца</div>
+			</a>
+			
+			<ul id="toc-Изменение_владельца-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Списки_управления_доступом" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#%D0%A1%D0%BF%D0%B8%D1%81%D0%BA%D0%B8_%D1%83%D0%BF%D1%80%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F_%D0%B4%D0%BE%D1%81%D1%82%D1%83%D0%BF%D0%BE%D0%BC">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4</span>Списки управления доступом</div>
+			</a>
+			
+			<ul id="toc-Списки_управления_доступом-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Umask" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Umask">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5</span>Umask</div>
+			</a>
+			
+			<ul id="toc-Umask-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Атрибуты_файла" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#%D0%90%D1%82%D1%80%D0%B8%D0%B1%D1%83%D1%82%D1%8B_%D1%84%D0%B0%D0%B9%D0%BB%D0%B0">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6</span>Атрибуты файла</div>
+			</a>
+			
+			<ul id="toc-Атрибуты_файла-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Расширенные_атрибуты" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#%D0%A0%D0%B0%D1%81%D1%88%D0%B8%D1%80%D0%B5%D0%BD%D0%BD%D1%8B%D0%B5_%D0%B0%D1%82%D1%80%D0%B8%D0%B1%D1%83%D1%82%D1%8B">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">7</span>Расширенные атрибуты</div>
+			</a>
+			
+				<button aria-controls="toc-Расширенные_атрибуты-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Расширенные атрибуты subsection
+				</button>
+			
+			<ul id="toc-Расширенные_атрибуты-sublist" class="sidebar-toc-list">
+				<li id="toc-Пользовательские_расширенные_атрибуты" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#%D0%9F%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D1%81%D0%BA%D0%B8%D0%B5_%D1%80%D0%B0%D1%81%D1%88%D0%B8%D1%80%D0%B5%D0%BD%D0%BD%D1%8B%D0%B5_%D0%B0%D1%82%D1%80%D0%B8%D0%B1%D1%83%D1%82%D1%8B">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">7.1</span>Пользовательские расширенные атрибуты</div>
+			</a>
+			
+			<ul id="toc-Пользовательские_расширенные_атрибуты-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Сохранение_расширенных_атрибутов" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#%D0%A1%D0%BE%D1%85%D1%80%D0%B0%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5_%D1%80%D0%B0%D1%81%D1%88%D0%B8%D1%80%D0%B5%D0%BD%D0%BD%D1%8B%D1%85_%D0%B0%D1%82%D1%80%D0%B8%D0%B1%D1%83%D1%82%D0%BE%D0%B2">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">7.2</span>Сохранение расширенных атрибутов</div>
+			</a>
+			
+			<ul id="toc-Сохранение_расширенных_атрибутов-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Советы_и_рекомендации" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#%D0%A1%D0%BE%D0%B2%D0%B5%D1%82%D1%8B_%D0%B8_%D1%80%D0%B5%D0%BA%D0%BE%D0%BC%D0%B5%D0%BD%D0%B4%D0%B0%D1%86%D0%B8%D0%B8">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">8</span>Советы и рекомендации</div>
+			</a>
+			
+				<button aria-controls="toc-Советы_и_рекомендации-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Советы и рекомендации subsection
+				</button>
+			
+			<ul id="toc-Советы_и_рекомендации-sublist" class="sidebar-toc-list">
+				<li id="toc-Preserve_root" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Preserve_root">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">8.1</span>Preserve root</div>
+			</a>
+			
+			<ul id="toc-Preserve_root-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Смотрите_также" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#%D0%A1%D0%BC%D0%BE%D1%82%D1%80%D0%B8%D1%82%D0%B5_%D1%82%D0%B0%D0%BA%D0%B6%D0%B5">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">9</span>Смотрите также</div>
+			</a>
+			
+			<ul id="toc-Смотрите_также-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../ru/File_permissions_and_attributes.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="new mw-list-item"><a href="/index.php?title=Talk:File_permissions_and_attributes_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)&amp;action=edit&amp;redlink=1" rel="discussion" title="Discussion about the content page (page does not exist) [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">русский</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../ru/File_permissions_and_attributes.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=File_permissions_and_attributes_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=File_permissions_and_attributes_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../ru/File_permissions_and_attributes.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=File_permissions_and_attributes_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=File_permissions_and_attributes_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="ru" dir="ltr">
+<div class="mw-parser-output">
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Состояние перевода:</strong> На этой странице представлен перевод статьи <a href="../en/File_permissions_and_attributes.html" title="File permissions and attributes">File permissions and attributes</a>. Дата последней синхронизации: 10 февраля 2022. Вы можете <a href="../ru/ArchWiki:Translation_Team.html" title="ArchWiki:Translation Team (Русский)">помочь</a> синхронизировать перевод, если в английской версии произошли <a rel="nofollow" class="external text" href="https://wiki.archlinux.org/index.php?title=File_permissions_and_attributes&amp;diff=0&amp;oldid=714138">изменения</a>.</div>
+<div class="archwiki-template-meta-related-articles-start">
+<p class="mw-no-invert">Ссылки по теме</p>
+<ul>
+<li><a href="../ru/Users_and_groups.html" class="mw-redirect" title="Пользователи и группы">Пользователи и группы</a></li>
+<li><a href="../ru/Umask.html" title="Umask (Русский)">umask (Русский)</a></li>
+<li><a href="../ru/Access_Control_Lists.html" class="mw-redirect" title="Списки управления доступом">Списки управления доступом</a></li>
+<li><a href="../en/Capabilities.html" title="Capabilities">Capabilities</a></li>
+</ul>
+</div>
+<p><a href="../ru/File_systems.html" class="mw-redirect" title="Файловые системы">Файловые системы</a> используют <a href="https://en.wikipedia.org/wiki/ru:%D0%9F%D1%80%D0%B0%D0%B2%D0%B0_%D0%B4%D0%BE%D1%81%D1%82%D1%83%D0%BF%D0%B0" class="extiw" title="wikipedia:ru:Права доступа">разрешения</a> и <a href="https://en.wikipedia.org/wiki/ru:%D0%90%D1%82%D1%80%D0%B8%D0%B1%D1%83%D1%82_%D1%84%D0%B0%D0%B9%D0%BB%D0%B0" class="extiw" title="wikipedia:ru:Атрибут файла">атрибуты</a> для регулирования уровня взаимодействия, которые системные процессы могут иметь с файлами и каталогами.
+</p>
+<div class="archwiki-template-box archwiki-template-box-warning">
+<strong>Важно:</strong> При использовании в целях безопасности разрешения и атрибуты защищают только от атак, запускаемых из запущенной системы. Для защиты хранимых данных от злоумышленника с физическим доступом необходимо реализовать <a href="../en/Data-at-rest_encryption.html" class="mw-redirect" title="Disk encryption">шифрование диска</a>.</div>
+<mw:tocplace></mw:tocplace>
+<h2>
+<span id=".D0.9F.D1.80.D0.BE.D1.81.D0.BC.D0.BE.D1.82.D1.80_.D1.80.D0.B0.D0.B7.D1.80.D0.B5.D1.88.D0.B5.D0.BD.D0.B8.D0.B9"></span><span class="mw-headline" id="Просмотр_разрешений">Просмотр разрешений</span>
+</h2>
+<p>Чтобы посмотреть разрешения (или <b>права файла</b>), используйте команду <a href="../ru/Core_utilities.html#%D0%9E%D1%81%D0%BD%D0%BE%D0%B2%D0%BD%D1%8B%D0%B5" title="Core utilities (Русский)">ls</a> с опцией <code>-l</code> для просмотра содержимого каталога, например:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">$ ls -l /путь/к/каталогу</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">итого 128
+-rw-rw-r-- 1 archie users  5120 апр 27 08:28 customers.ods
+-rw-r--r-- 1 archie users  3339 апр 27 08:28 todo
+-rwxr-xr-x 1 archie users  2048 май  6 12:56 myscript.sh
+drwxr-xr-x 6 archie users  4096 июл  5 17:37 Документы
+drwxr-xr-x 2 archie users  4096 июл  5 13:45 Загрузки
+drwxr-xr-x 2 archie users  4096 июл  5 21:03 Рабочий стол
+</pre>
+<p>Здесь мы должны сосредоточиться на первом столбце. Например, обратив внимания на значение <code> drwxrwxrwx+</code>, каждый символ которого объясняется в следующих таблицах:
+</p>
+<table class="wikitable">
+
+<tbody>
+<tr style="text-align:center;">
+<td>
+<code>d</code>
+</td>
+<td>
+<code>rwx</code>
+</td>
+<td>
+<code>rwx</code>
+</td>
+<td>
+<code>rwx</code>
+</td>
+<td>
+<code>+</code>
+</td>
+</tr>
+<tr>
+<td>Обозначет тип файла, технически не относится к разрешениям. Смотрите <a href="https://en.wikipedia.org/wiki/ru:%D0%A2%D0%B8%D0%BF%D1%8B_%D1%84%D0%B0%D0%B9%D0%BB%D0%BE%D0%B2_(UNIX)" class="extiw" title="wikipedia:ru:Типы файлов (UNIX)">типы файлов (UNIX)</a> для ознакомления со всеми возможными значениями.
+</td>
+<td>Разрешения, которые имеет владелец к файлу (объяснения ниже).
+</td>
+<td>Разрешения, которые имеет группа к файлу (объяснения ниже).
+</td>
+<td>Разрешения, которые имеют все остальные пользователи к файлу (объяснения ниже).
+</td>
+<td>Одиночный символ, который указывает на применение альтернативного метода доступа. Пробел указывает на отсутствие альтернативного метода доступа. Символ <code>.</code> обозначает файл с контекстом безопасности, но без другого альтернативного метода доступа. Файл с любой другой комбинацией альтернативных методов доступа помечается символом <code>+</code>, например в случае <a href="../ru/Access_Control_Lists.html" title="Access Control Lists (Русский)">Access Control Lists (Русский)</a>.
+</td>
+</tr>
+</tbody>
+</table>
+<p>Каждая из трёх триад разрешений (<code>rwx</code> в примере выше) может состоять из следующих символов:
+</p>
+<table class="wikitable">
+<tbody>
+<tr>
+<th scope="col" style="width: 10%;">
+</th>
+<th scope="col" style="width: 10%;">Символ
+</th>
+<th scope="col" style="width: 30%;">Влияние на файлы
+</th>
+<th scope="col" style="width: 50%;">Влияние на директории
+</th>
+</tr>
+<tr>
+<th rowspan="2" style="text-align:left;">Разрешение на чтение (первый символ)
+</th>
+<td style="text-align:center;">
+<code>-</code>
+</td>
+<td>Файл не может быть прочитан.
+</td>
+<td>Содержимое каталога не может быть показано.
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+<code>r</code>
+</td>
+<td>Файл можно прочитать.
+</td>
+<td>Содержимое каталога может быть показано.
+</td>
+</tr>
+<tr>
+<th rowspan="2" style="text-align:left;">Разрешение на запись (второй символ)
+</th>
+<td style="text-align:center;">
+<code>-</code>
+</td>
+<td>Файл не может быть изменён.
+</td>
+<td>Содержимое каталога не может быть изменено.
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+<code>w</code>
+</td>
+<td>Файл может быть изменён.
+</td>
+<td>Содержимое каталога может быть изменено (создание новых файлов или папок; переименовывание и удаление существующих файлов или папок); дополнительно требуется разрешение на выполнение, в противном случае, это разрешение не действует.
+</td>
+</tr>
+<tr>
+<th rowspan="6" style="text-align:left;">Разрешение на выполнение (третий символ)
+</th>
+<td style="text-align:center;">
+<code>-</code>
+</td>
+<td>Файл не может быть выполнен.
+</td>
+<td>Каталог не может быть доступен с помощью <a href="../ru/Core_utilities.html#%D0%9E%D1%81%D0%BD%D0%BE%D0%B2%D0%BD%D1%8B%D0%B5" title="Core utilities (Русский)">cd</a>.
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+<code>x</code>
+</td>
+<td>Файл может быть выполнен.
+</td>
+<td>Доступ к каталогу можно получить с помощью <a href="../ru/Core_utilities.html#%D0%9E%D1%81%D0%BD%D0%BE%D0%B2%D0%BD%D1%8B%D0%B5" title="Core utilities (Русский)">cd</a>. Это единственный бит, который на практике можно считать «наследуемым» от каталогов-предков; фактически, если какой-либо каталог в пути не имеет установленного бита <code>x</code>, конечный файл или каталог также оказывается недоступен независимо от его разрешений; подробнее смотрите <span class="plainlinks archwiki-template-man" title="$ man 7 path_resolution"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/path_resolution.7">path_resolution(7)</a></span>.
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+<code>s</code>
+</td>
+<td colspan="2">Показывает установленный <a href="https://en.wikipedia.org/wiki/ru:suid" class="extiw" title="wikipedia:ru:suid">suid</a> бит: в триаде пользователя — <b>setuid</b>; в триаде группы — <b>setgid</b>; в триаде остальных не встречается; также подразумевает, что установлен бит <code>x</code>.
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+<code>S</code>
+</td>
+<td colspan="2">То же, что и <code>s</code>, но бит <code>x</code> не установлен; редко встречается у обычных файлов, бесполезен для каталогов.
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+<code>t</code>
+</td>
+<td colspan="2">
+<a href="https://en.wikipedia.org/wiki/ru:Sticky_bit" class="extiw" title="wikipedia:ru:Sticky bit">Sticky bit</a>; встречается только в триаде остальных; также подразумевает, что установлен бит <code>x</code>.
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+<code>T</code>
+</td>
+<td colspan="2">То же, что и <code>t</code>, но бит <code>x</code> не установлен; редко встречается у обычных файлов.
+</td>
+</tr>
+</tbody>
+</table>
+<p>Смотрите <code>info Coreutils -n "Mode Structure"</code> и <span class="plainlinks archwiki-template-man" title="$ man 1 chmod"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/chmod.1">chmod(1)</a></span> для более подробной информации.
+</p>
+<div class="archwiki-template-box archwiki-template-box-tip">
+<strong>Совет:</strong> Также можно посмотреть разрешения с помощью команды <code>namei -l <i>путь</i></code>.</div>
+<h3>
+<span id=".D0.9F.D1.80.D0.B8.D0.BC.D0.B5.D1.80.D1.8B"></span><span class="mw-headline" id="Примеры">Примеры</span>
+</h3>
+<p>Давайте посмотрим несколько примеров для лучшего понимания:
+</p>
+<pre><b>drwx------</b> 6 archie users  4096 июл  5 17:37 Документы
+</pre>
+<p>Archie имеет полный доступ к каталогу Документы. Он может просматривать, создавать, переименовывать и удалять любые файлы в Документах, независимо от прав доступа к файлам. Его возможность получить доступ к файлам зависит от разрешений самого файла.
+</p>
+<pre><b>dr-x------</b> 6 archie users  4096 июл  5 17:37 Документы
+</pre>
+<p>Archie имеет полный доступ, за исключением создания, переименовывания и удаления файлов. Он может просматривать список файлов и (если позволяют разрешения к файлам) может получить доступ к существующему файлу в Документах.
+</p>
+<pre><b>d-wx------</b> 6 archie users  4096 июл  5 17:37 Документы
+</pre>
+<p>Archie не может выполнить <a href="../ru/Core_utilities.html#%D0%9E%D1%81%D0%BD%D0%BE%D0%B2%D0%BD%D1%8B%D0%B5" title="Core utilities (Русский)">ls</a> в Документах, но если он знает имя существующего файла, то он может просмотреть, переименовать и удалить или (если позволяют разрешения) получить доступ к нему. Также он может создавать новые файлы.
+</p>
+<pre><b>d--x------</b> 6 archie users  4096 июл  5 17:37 Документы
+</pre>
+<p>Archie может только (если позволяют разрешения файла) получить доступ к тем файлам в Документах, о которых он знает. Он не может просмотреть уже существующие файлы или создавать, переименовывать и удалить любой из них.
+</p>
+<p>Имейте в виду, что мы рассматриваем права доступа к каталога, но это не имеет ничего общего с правами доступа к отдельным файлам. При создании нового файла выполняется изменение каталога, в котором он создаётся. Вот почему нужно иметь разрешение на запись в каталог.
+</p>
+<p>Давайте посмотрим на другой пример, на этот раз файл, а не каталог:
+</p>
+<pre><b>-rw-r--r--</b> 1 archie users  5120 июн 27 08:28 foobar
+</pre>
+<p>Здесь мы видим первой буквой не <code>d</code>, а <code>-</code>. Таким образом мы знаем, что это файл, а не директория. Благодаря разрешению <code>rw-</code> владелец может читать и писать, но не выполнять. Может показаться странным, что у владельца нет всех трёх разрешений, но разрешение <code>x</code> не требуется, так как это файл текста/данных, который может быть прочитан текстовым редактором, например Gedit, EMACS или программным обеспечением подобно R, а не исполнятся самим файлом (если он содержит что-то вроде программного кода на Python, то тогда подобное вполне возможно). Для группы установлены права доступа <code>r--</code>, поэтому у группы есть возможность читать файл, но не записывать и не редактировать его - фактически это установка чего-либо только для чтения. Мы видим, что подобные разрешения применимы и ко всем остальным пользователям.
+</p>
+<h2>
+<span id=".D0.98.D0.B7.D0.BC.D0.B5.D0.BD.D0.B5.D0.BD.D0.B8.D0.B5_.D1.80.D0.B0.D0.B7.D1.80.D0.B5.D1.88.D0.B5.D0.BD.D0.B8.D0.B9"></span><span class="mw-headline" id="Изменение_разрешений">Изменение разрешений</span>
+</h2>
+<p><a href="https://en.wikipedia.org/wiki/ru:chmod" class="extiw" title="wikipedia:ru:chmod">chmod</a> это команда в Linux и других Unix-подобных операционных системах, которая позволяет изменять права доступа к файлам или каталогам.
+</p>
+<h3>
+<span id=".D0.A2.D0.B5.D0.BA.D1.81.D1.82.D0.BE.D0.B2.D1.8B.D0.B9_.D0.BC.D0.B5.D1.82.D0.BE.D0.B4"></span><span class="mw-headline" id="Текстовый_метод">Текстовый метод</span>
+</h3>
+<p>Для изменения прав доступа - или <i>режима доступа</i> - к файлу используйте команду <i>chmod</i> в терминале. Ниже приведена общая структура команды:
+</p>
+<pre>chmod <i>кто</i>=<i>разрешения</i> <i>имя_файла</i>
+</pre>
+<p>Где <code><i>кто</i></code> - любая из нескольких букв, каждая из которых обозначает, кому дано разрешение. Они следующие:
+</p>
+<ul>
+<li>
+<code>u</code> (<b>u</b>ser): <a href="../ru/Users_and_groups.html" title="Users and groups (Русский)">пользователь</a>, который является владельцем файла.</li>
+<li>
+<code>g</code> (<b>g</b>roup): <a href="../ru/Users_and_groups.html#%D0%A3%D0%BF%D1%80%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5_%D0%B3%D1%80%D1%83%D0%BF%D0%BF%D0%B0%D0%BC%D0%B8" title="Users and groups (Русский)">группа пользователей</a>, которой принадлежит этот файл.</li>
+<li>
+<code>o</code> (<b>o</b>ther): другие пользователи, то есть все остальные.</li>
+<li>
+<code>a</code> (<b>a</b>ll): все сразу; используйте вместо <code>ugo</code>.</li>
+</ul>
+<p>Права доступа обозначаются так же, как описано в разделе <a href="#%D0%9F%D1%80%D0%BE%D1%81%D0%BC%D0%BE%D1%82%D1%80_%D1%80%D0%B0%D0%B7%D1%80%D0%B5%D1%88%D0%B5%D0%BD%D0%B8%D0%B9">#Просмотр разрешений</a> (<code>r</code>, <code>w</code> и <code>x</code>).
+</p>
+<p>Теперь посмотрите на некоторые примеры использования этой команды. Предположим, вы захотели сильно защитить каталог Документы и отказать всем, кроме себя, в разрешении на чтение, запись и выполнение (или, в данном случае, поиск/просмотр) внутри него:
+</p>
+<p>До: <code>drwxr-xr-x 6 archie users  4096 июл  5 17:37 Документы</code>
+</p>
+<pre>$ chmod g= Документы
+$ chmod o= Документы
+</pre>
+<p>После: <code>drwx------ 6 archie users  4096 июл  6 17:32 Документы</code>
+</p>
+<p>Здесь, поскольку вы хотите отказать в разрешениях, вы не ставите никаких букв после <code>=</code>, где будут введены разрешения. Из этого видно, что только разрешения владельца - это <code>rwx</code>, а все остальные разрешения - это <code>-</code>.
+</p>
+<p>Это можно восстановить с помощью:
+</p>
+<p>До: <code>drwx------ 6 archie users  4096 июл  6 17:32 Документы</code>
+</p>
+<pre>$ chmod g=rx Документы
+$ chmod o=rx Документы
+</pre>
+<p>После: <code>drwxr-xr-x 6 archie users  4096 июл  6 17:32 Документы</code>
+</p>
+<p>В следующем примере вы предоставляете права на чтение и выполнение группе и другим пользователям, поэтому вы ставите следующие буквы для этих прав (<code>r</code> и <code>x</code>) после <code>=</code>, не оставляя пробелов.
+</p>
+<p>Вы можете упростить это поместив более одной буквы <code><i>кто</i></code> в одну и ту же команду, например:
+</p>
+<pre>$ chmod go=rx Документы
+</pre>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Примечание:</strong> Не имеет значения, в каком порядке вы ставите буквы <code><i>кто</i></code> или буквы разрешений в команде <code>chmod</code>: команды <code>chmod go=rx file</code> и <code>chmod og=xr file</code> делают одно и то же.</div>
+<p>Рассмотрим ещё один пример: предположим, вы хотите изменить файл <code>foobar</code> так, чтобы у вас были разрешения на чтение и запись, а коллеги из группы <code>users</code>, которые могут совместно работать с файлом <code>foobar</code>, также могли читать и записывать файл, а все остальные пользователи могли только читать его:
+</p>
+<p>До: <code>-rw-r--r-- 1 archie users  5120 июн 27 08:28 foobar</code>
+</p>
+<pre>$ chmod g=rw foobar
+</pre>
+<p>После: <code>-rw-rw-r-- 1 archie users  5120 июн 27 08:28 foobar</code>
+</p>
+<p>Это точно такой же пример, как и первый, но с файлом, а не каталогом, и вы предоставляете разрешение на запись (просто для того, чтобы привести пример предоставления каждого разрешения).
+</p>
+<h4>
+<span id=".D0.A1.D0.BE.D0.BA.D1.80.D0.B0.D1.89.D0.B5.D0.BD.D0.B8.D1.8F_.D0.B4.D0.BB.D1.8F_.D1.82.D0.B5.D0.BA.D1.81.D1.82.D0.BE.D0.B2.D0.BE.D0.B3.D0.BE_.D0.BC.D0.B5.D1.82.D0.BE.D0.B4.D0.B0"></span><span class="mw-headline" id="Сокращения_для_текстового_метода">Сокращения для текстового метода</span>
+</h4>
+<p>Команда <i>chmod</i> позволяет добавлять и вычитать разрешения из существующих, используя <code>+</code> или <code>-</code> вместо <code>=</code>. Это отличается от описанных выше команд, которые по сути переписывают разрешения (например, чтобы изменить разрешения с <code>r--</code> на <code>rw-</code>, вам всё равно нужно указать <code>r</code> и <code>w</code> после <code>=</code> в вызове команды <i>chmod</i>. Если вы пропустите <code>r</code>, то <code>=</code> перезапишет разрешения и таким образом удалит разрешение <code>r</code>. Использование <code>+</code> и <code>-</code> позволяет избежать этого, добавляя или отнимая текущий набор разрешений).
+</p>
+<p>Давайте попробуем применить <code>+</code> и <code>-</code> на предыдущем примере добавления разрешений на запись в группу:
+</p>
+<p>До: <code>-rw-r--r-- 1 archie users 5120 июн 27 08:28 foobar</code>
+</p>
+<pre>$ chmod g+w foobar
+</pre>
+<p>После: <code>-rw-rw-r-- 1 archie users  5120 июн 27 08:28 foobar</code>
+</p>
+<p>Ещё пример, который запрещает запись абсолютно всем (<b>a</b>):
+</p>
+<p>До: <code>-rw-rw-r-- 1 archie users  5120 июн 27 08:28 foobar</code>
+</p>
+<pre>$ chmod a-w foobar
+</pre>
+<p>После: <code>-r--r--r-- 1 archie users  5120 июн 27 08:28 foobar</code>
+</p>
+<p>Также есть специальный режим <code>X</code>: это не настоящий файловый режим, но он часто используется вместе с опцией <code>-R</code>, чтобы добавить бит выполнения только каталогам, но оставить его нетронутым у файлов. Типичный пример использования:
+</p>
+<pre>$ chmod -R a+rX ./data/
+</pre>
+<h4>
+<span id=".D0.9A.D0.BE.D0.BF.D0.B8.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_.D1.80.D0.B0.D0.B7.D1.80.D0.B5.D1.88.D0.B5.D0.BD.D0.B8.D0.B9"></span><span class="mw-headline" id="Копирование_разрешений">Копирование разрешений</span>
+</h4>
+<p>С помощью <i>chmod</i> можно взять разрешения у одного класса, например владельца, и выставить те же разрешения группе или даже всем. Для этого вместо <code>r</code>, <code>w</code> или <code>x</code> после <code>=</code> поставьте нужную вам букву <i>кто</i>. Например:
+</p>
+<p>До: <code>-rw-r--r-- 1 archie users 5120 июн 27 08:28 foobar</code>
+</p>
+<pre>$ chmod g=u foobar
+</pre>
+<p>После: <code>-rw-rw-r-- 1 archie users 5120 июн 27 08:28 foobar</code>
+</p>
+<p>Эта команда по сути означает «изменить разрешения группы (<code>g=</code>), чтобы они были такими же, как у владельца (<code>=u</code>)». Обратите внимание, что вы не можете скопировать одновременно несколько разрешений или добавить новые, то есть такая команда:
+</p>
+<pre>$ chmod g=wu foobar
+</pre>
+<p>выдаст ошибку.
+</p>
+<h3>
+<span id=".D0.A7.D0.B8.D1.81.D0.BB.D0.BE.D0.B2.D0.BE.D0.B9_.D0.BC.D0.B5.D1.82.D0.BE.D0.B4"></span><span class="mw-headline" id="Числовой_метод">Числовой метод</span>
+</h3>
+<p>Команда <i>chmod</i> позволяет задавать разрешения в виде чисел.
+</p>
+<p>Использование чисел — это ещё один метод, который позволяет редактировать разрешения одновременно для владельца, группы и остальных, а также биты setuid, setgid и sticky. Основная структура такова:
+</p>
+<pre>$ chmod <i>xxx</i> <i>путь</i>
+</pre>
+<p>где <code><b>xxx</b></code> это три цифры, каждое их которых может иметь значение от 0 до 7. Первая цифра задаёт разрешения для владельца, вторая — для группы, а третья — для всех остальных.
+</p>
+<p>Права <code>r</code>, <code>w</code> и <code>x</code> соответствуют следующим числам:
+</p>
+<pre>r=4
+w=2
+x=1
+</pre>
+<p>Чтобы объединить нужные права в одно трёхзначное число, нужно суммировать соответствующие значения. Например, если вы хотите предоставить владельцу каталога права на чтение, запись и выполнение, а группе и всем остальным — только права на чтение и выполнение, то числовые значения будут выглядеть следующим образом:
+</p>
+<ul>
+<li>Владелец: <code>rwx</code>=4+2+1=7</li>
+<li>Группа: <code>r-x</code>=4+0+1=5</li>
+<li>Остальные: <code>r-x</code>=4+0+1=5</li>
+</ul>
+<pre>$ chmod 755 <i>путь</i>
+</pre>
+<p>Это эквивалентно следующим двум командам:
+</p>
+<pre>$ chmod u=rwx <i>путь</i>
+$ chmod go=rx <i>путь</i>
+</pre>
+<p>Чтобы посмотреть текущие права в числовом виде, можно использовать команду <span class="plainlinks archwiki-template-man" title="$ man 1 stat"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/stat.1">stat(1)</a></span>:
+</p>
+<pre>$ stat -c %a <i>путь</i>
+</pre>
+<p>где %a задаёт числовой формат вывода.
+</p>
+<p>Большинство каталогов имеют значение <code>755</code>, которое разрешает чтение, запись и выполнение для владельца, но запрещает запись для всех остальных, а файлы обычно имеют значение <code>644</code>, разрешающее чтение и запись для владельца, но только чтение для всех остальных; так как большинство файлов не являются исполняемыми, то бит выполнения <code>x</code> у них не установлен.
+</p>
+<p>Чтобы увидеть этот метод в действии, рассмотрим тот же пример с файлом, который уже использовался, но вместо него используем числовой метод:
+</p>
+<p>До: <code>-rw-r--r-- 1 archie users  5120 июн 27 08:28 foobar</code>
+</p>
+<pre>$ chmod 664 foobar
+</pre>
+<p>После: <code>-rw-rw-r-- 1 archie users  5120 июн 27 08:28 foobar</code>
+</p>
+<p>Для исполняемого файла вы могли бы задать <code>774</code>, если бы вы хотели предоставить разрешение на исполнение владельцу и группе. Если бы вы хотели, чтобы у всех было разрешение только на чтение, число было бы <code>444</code>. Если рассматривать <code>r</code> как 4, <code>w</code> как 2 и <code>x</code> как 1, то это, вероятно, самый простой способ вычислить числовые значения для использования <code>chmod <i>xxx</i> <i>путь</i></code>, но существует также двоичный метод, при котором каждое разрешение рассматривается как двоичное число, а затем они объединяются в обычное десятичное число. Этот способ немного более запутанный, но для полноты картины он здесь приведён.
+</p>
+<p>Рассмотрим такой набор разрешений:
+</p>
+<pre>-rwxr-xr--
+</pre>
+<p>Если вы пропишите 1 на месте каждого выданного разрешения и 0 на месте отсутствующих разрешений, получится такое двоичное число:
+</p>
+<pre>-rwxrwxr-x
+ 111111101
+</pre>
+<p>Затем можно преобразовать двоичные числа:
+</p>
+<pre>000=0	    100=4
+001=1	    101=5
+010=2	    110=6
+011=3	    111=7
+</pre>
+<p>Итоговое значение получается 775.
+</p>
+<p>Допустим, мы хотим удалить разрешение на запись из группы:
+</p>
+<pre>-rwxr-xr-x
+ 111101101
+</pre>
+<p>Итоговое значение будет равно 755, и вы можете использовать команду <code>chmod 755 <i>имяфайла</i></code>, чтобы снять разрешение на запись. Обратите внимание, что вы получите одно и то же трёхзначное число независимо от того, какой метод вы используете. Используете ли вы текст или цифры, зависит от личных предпочтений и скорости набора текста. Если вы хотите вернуть файлу или каталогу права по умолчанию, например, разрешение на чтение и запись (и выполнение) для владельца, но запретить запись для всех остальных, может быть быстрее использовать <code>chmod 755/644 <i>имяфайла</i></code>. Однако если вы меняете разрешения на что-то нестандартное, проще и быстрее использовать текстовый метод, а не выполнять преобразование в числа, в процессе которого можно случайно ошибиться. Для пользователя, который использует <i>chmod</i> изредка, вероятно, нет существенной разницы в скорости использования обоих методов.
+</p>
+<p>Вы также можете использовать числовой метод для установки битов <code>setuid</code>, <code>setgid</code> и <code>sticky</code>, используя четыре цифры.
+</p>
+<pre>setuid=4
+setgid=2
+sticky=1
+</pre>
+<p>Например, <code>chmod 2777 <i>имяфайла</i></code> выдаст всем права на чтение/запись/выполнение и включит бит <code>setgid</code>.
+</p>
+<h3>
+<span id=".D0.9C.D0.B0.D1.81.D1.81.D0.BE.D0.B2.D0.BE.D0.B5_.D0.B8.D0.B7.D0.BC.D0.B5.D0.BD.D0.B5.D0.BD.D0.B8.D0.B5_.D1.80.D0.B0.D0.B7.D1.80.D0.B5.D1.88.D0.B5.D0.BD.D0.B8.D0.B9"></span><span class="mw-headline" id="Массовое_изменение_разрешений">Массовое изменение разрешений</span>
+</h3>
+<p>Как правило, каталоги и файлы не должны иметь одинаковые разрешения. Если необходимо массово изменить дерево каталогов, используйте <a href="../ru/Core_utilities.html#%D0%9E%D1%81%D0%BD%D0%BE%D0%B2%D0%BD%D1%8B%D0%B5" title="Core utilities (Русский)">find</a> для выборочного изменения чего-то одного.
+</p>
+<p>Чтобы выставить разрешения 755 только каталогам:
+</p>
+<pre>$ find <i>каталог</i> -type d -exec chmod 755 {} +
+</pre>
+<p>Чтобы выставить разрешения 644 только файлам в каталоге:
+</p>
+<pre>$ find <i>каталог</i> -type f -exec chmod 644 {} +
+</pre>
+<h2>
+<span id=".D0.98.D0.B7.D0.BC.D0.B5.D0.BD.D0.B5.D0.BD.D0.B8.D0.B5_.D0.B2.D0.BB.D0.B0.D0.B4.D0.B5.D0.BB.D1.8C.D1.86.D0.B0"></span><span class="mw-headline" id="Изменение_владельца">Изменение владельца</span>
+</h2>
+<p><a href="https://en.wikipedia.org/wiki/ru:chown" class="extiw" title="wikipedia:ru:chown">chown</a> изменяет владельца файла или каталога, что в некоторых случаях быстрее и проще, чем изменение прав доступа.
+</p>
+<p>Рассмотрим следующий пример: создание нового раздела с помощью <a href="../ru/Parted.html" title="Parted (Русский)">GParted</a> для резервного копирования данных. Gparted делает всё это от имени root, поэтому по умолчанию всё принадлежит root. Всё это хорошо, но обычные пользователи не смогут записать данные в смонтированный раздел.
+</p>
+<pre>brw-rw---- 1 root disk 8,    9 июл  6 16:02 sda9
+drwxr-xr-x 5 root root    4096 июл  6 16:01 Backup
+</pre>
+<p>В данном примере устройством в <code>/dev</code> владеет root, как и каталогом для монтирования (<code>/media/Backup</code>). Чтобы изменить владельца каталога, можно сделать следующее:
+</p>
+<p>До: <code>drwxr-xr-x 5 root  root 4096 июл  6 16:01 Backup</code>
+</p>
+<pre># chown archie /media/Backup
+</pre>
+<p>После: <code>drwxr-xr-x 5 archie  root 4096 июл  6 16:01 Backup</code>
+</p>
+<p>Теперь новый владелец archie может записывать данные в этот раздел без изменения разрешений (потому что изначально уже стояли права <code>rwx</code>, разрешающие запись владельцу).
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Примечание:</strong> 
+<ul>
+<li>
+<code>chown</code> всегда сбрасывает биты setuid и setgid.</li>
+<li>Обычные пользователи не могут использовать <code>chown</code> для «передачи» файлов, которыми они владеют, другому пользователю.</li>
+</ul>
+</div>
+<h2>
+<span id=".D0.A1.D0.BF.D0.B8.D1.81.D0.BA.D0.B8_.D1.83.D0.BF.D1.80.D0.B0.D0.B2.D0.BB.D0.B5.D0.BD.D0.B8.D1.8F_.D0.B4.D0.BE.D1.81.D1.82.D1.83.D0.BF.D0.BE.D0.BC"></span><span class="mw-headline" id="Списки_управления_доступом">Списки управления доступом</span>
+</h2>
+<p><a href="../ru/Access_Control_Lists.html" class="mw-redirect" title="Списки управления доступом">Списки управления доступом</a> (Access Control Lists, ACL) предоставляют дополнительный, более гибкий механизм разрешений для файловых систем, позволяя устанавливать разрешения для любого пользователя или группы на любой файл.
+</p>
+<h2><span class="mw-headline" id="Umask">Umask</span></h2>
+<p>Утилита <a href="../ru/Umask.html" title="Umask (Русский)">umask</a> используется для управления маской режима, которая определяет начальное значение битов разрешения файлов для создаваемых файлов.
+</p>
+<h2>
+<span id=".D0.90.D1.82.D1.80.D0.B8.D0.B1.D1.83.D1.82.D1.8B_.D1.84.D0.B0.D0.B9.D0.BB.D0.B0"></span><span class="mw-headline" id="Атрибуты_файла">Атрибуты файла</span>
+</h2>
+<p>Помимо битов режима файла, которые управляют разрешениями <a href="../ru/Users_and_groups.html" title="Users and groups (Русский)">пользователей и групп</a> на чтение, запись и выполнение, некоторые файловые системы поддерживают атрибуты файла, которые позволяют дополнительно настраивать допустимые операции с файлами.
+</p>
+<div class="archwiki-template-box archwiki-template-box-warning">
+<strong>Важно:</strong> По умолчанию <a href="../ru/Core_utilities.html#%D0%9E%D1%81%D0%BD%D0%BE%D0%B2%D0%BD%D1%8B%D0%B5" title="Core utilities (Русский)">cp</a>, <a href="../ru/Rsync.html" title="Rsync (Русский)">rsync</a> и другие подобные программы не сохраняют эти атрибуты.</div>
+<p>Пакет <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=e2fsprogs">e2fsprogs</a></span> содержит программы <span class="plainlinks archwiki-template-man" title="$ man 1 lsattr"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/lsattr.1">lsattr(1)</a></span> и <span class="plainlinks archwiki-template-man" title="$ man 1 chattr"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/chattr.1">chattr(1)</a></span>, которые позволяют просмотреть и изменить атрибуты файла соответственно.
+</p>
+<p>Здесь приведены некоторые полезные атрибуты. Не все файловые системы поддерживают каждый упомянутый атрибут.
+</p>
+<ul>
+<li>
+<code>a</code> - append only: Файл может быть открыт только для добавления.</li>
+<li>
+<code>c</code> - compressed: Включить сжатие на уровне файловой системы для файла.</li>
+<li>
+<code>i</code> - immutable: Не может быть изменён, удалён или переименован. Может быть установлен только пользователем root.</li>
+<li>
+<code>j</code> - data journaling: Использовать <a href="../ru/File_systems.html#%D0%96%D1%83%D1%80%D0%BD%D0%B0%D0%BB%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5" title="File systems (Русский)">журнал</a> для записи данных файла так же, как и метаданных.</li>
+<li>
+<code>m</code> - no compression: Отключить сжатие на уровне файловой системы для файла.</li>
+<li>
+<code>A</code> - no atime update: Время получения доступа к файлу не будет обновляться.</li>
+<li>
+<code>C</code> - no copy on write: Отключение  copy-on-write на поддерживающих это файловых системах.</li>
+</ul>
+<p>Полный список атрибутов и подробную информацию о них можно прочитать в <span class="plainlinks archwiki-template-man" title="$ man 1 chattr"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/chattr.1">chattr(1)</a></span>.
+</p>
+<p>Пример установки атрибута immutable:
+</p>
+<pre># chattr +i <i>/путь/к/файлу</i>
+</pre>
+<p>Для снятия атрибута замените <code>+</code> на <code>-</code>.
+</p>
+<h2>
+<span id=".D0.A0.D0.B0.D1.81.D1.88.D0.B8.D1.80.D0.B5.D0.BD.D0.BD.D1.8B.D0.B5_.D0.B0.D1.82.D1.80.D0.B8.D0.B1.D1.83.D1.82.D1.8B"></span><span class="mw-headline" id="Расширенные_атрибуты">Расширенные атрибуты</span>
+</h2>
+<p>Расширенные атрибуты (Extended attributes) — это пары ключ-значение, привязанные к файлу или каталогу. Существует четыре их класса: security, system, trusted и user.
+</p>
+<div class="archwiki-template-box archwiki-template-box-warning">
+<strong>Важно:</strong> По умолчанию <a href="../ru/Core_utilities.html#%D0%9E%D1%81%D0%BD%D0%BE%D0%B2%D0%BD%D1%8B%D0%B5" title="Core utilities (Русский)">cp</a>, <a href="../ru/Rsync.html" title="Rsync (Русский)">rsync</a> и другие подобные программы не сохраняют расширенные атрибуты, смотртие <a href="#%D0%A1%D0%BE%D1%85%D1%80%D0%B0%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5_%D1%80%D0%B0%D1%81%D1%88%D0%B8%D1%80%D0%B5%D0%BD%D0%BD%D1%8B%D1%85_%D0%B0%D1%82%D1%80%D0%B8%D0%B1%D1%83%D1%82%D0%BE%D0%B2">#Сохранение расширенных атрибутов</a>.</div>
+<p>Расширенные атрибуты используются для <a href="../en/Capabilities.html" title="Capabilities">Capabilities</a>.
+</p>
+<h3>
+<span id=".D0.9F.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D1.82.D0.B5.D0.BB.D1.8C.D1.81.D0.BA.D0.B8.D0.B5_.D1.80.D0.B0.D1.81.D1.88.D0.B8.D1.80.D0.B5.D0.BD.D0.BD.D1.8B.D0.B5_.D0.B0.D1.82.D1.80.D0.B8.D0.B1.D1.83.D1.82.D1.8B"></span><span class="mw-headline" id="Пользовательские_расширенные_атрибуты">Пользовательские расширенные атрибуты</span>
+</h3>
+<p>Класс user может использоваться для хранения дополнительной информации о файле. Пример создания атрибута:
+</p>
+<pre>$ setfattr -n user.checksum -v "3baf9ebce4c664ca8d9e5f6314fb47fb" foo.txt
+</pre>
+<p>Просмотр имеющихся атрибутов:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">$ getfattr -d foo.txt</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;"># file: foo.txt
+user.checksum="3baf9ebce4c664ca8d9e5f6314fb47fb"</pre>
+<p>Удаление атрибута:
+</p>
+<pre>$ setfattr -x user.checksum foo.txt
+</pre>
+<h3>
+<span id=".D0.A1.D0.BE.D1.85.D1.80.D0.B0.D0.BD.D0.B5.D0.BD.D0.B8.D0.B5_.D1.80.D0.B0.D1.81.D1.88.D0.B8.D1.80.D0.B5.D0.BD.D0.BD.D1.8B.D1.85_.D0.B0.D1.82.D1.80.D0.B8.D0.B1.D1.83.D1.82.D0.BE.D0.B2"></span><span class="mw-headline" id="Сохранение_расширенных_атрибутов">Сохранение расширенных атрибутов</span>
+</h3>
+<table class="wikitable">
+<tbody>
+<tr>
+<th>Команда</th>
+<th>Требуемый флаг
+</th>
+</tr>
+<tr>
+<td><code>cp</code></td>
+<td>
+<code>--preserve=mode,ownership,timestamps,xattr</code>
+</td>
+</tr>
+<tr>
+<td><code>mv</code></td>
+<td data-sort-value="3" style="background: #ffa; color: inherit; vertical-align: middle; text-align: center;">сохраняет по умолчанию<sup>1</sup>
+</td>
+</tr>
+<tr>
+<td><code>tar</code></td>
+<td>
+<code>--xattrs</code> для создания <code>--xattrs-include='*'</code> для извлечения
+</td>
+</tr>
+<tr>
+<td><code>bsdtar</code></td>
+<td>
+<code>-p</code> для извлечения
+</td>
+</tr>
+<tr>
+<td><a href="../ru/Rsync.html" title="Rsync (Русский)">rsync</a></td>
+<td>
+<code>--xattrs</code>
+</td>
+</tr>
+</tbody>
+</table>
+<ol><li>mv без предупреждения убирает расширенные атрибуты, если целевая файловая система их не поддерживает.</li></ol>
+<p>Чтобы сохранить расширенные атрибуты в текстовых редакторах, настройте их на усечение (truncate) файлов при сохранении вместо использования <span class="plainlinks archwiki-template-man" title="$ man 2 rename"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/rename.2">rename(2)</a></span>.<a rel="nofollow" class="external autonumber" href="https://unix.stackexchange.com/questions/45407">[1]</a>
+</p>
+<h2>
+<span id=".D0.A1.D0.BE.D0.B2.D0.B5.D1.82.D1.8B_.D0.B8_.D1.80.D0.B5.D0.BA.D0.BE.D0.BC.D0.B5.D0.BD.D0.B4.D0.B0.D1.86.D0.B8.D0.B8"></span><span class="mw-headline" id="Советы_и_рекомендации">Советы и рекомендации</span>
+</h2>
+<h3><span class="mw-headline" id="Preserve_root">Preserve root</span></h3>
+<p>Используйте флаг <code>--preserve-root</code>, чтобы предотвратить рекурсивное выполнение <code>chmod</code> на <code>/</code>. Это поможет, например, предотвратить удаление бита выполнения во всей системе и тем самым сломать систему. Чтобы использовать этот флаг всегда, пропишите его в <a href="../ru/Bash.html#%D0%9F%D1%81%D0%B5%D0%B2%D0%B4%D0%BE%D0%BD%D0%B8%D0%BC%D1%8B" title="Bash (Русский)">псевдониме</a>. Смотрите также <a rel="nofollow" class="external autonumber" href="https://www.reddit.com/r/linux/comments/4ni3xe/tifu_sudo_chmod_644/">[2]</a>.
+</p>
+<h2>
+<span id=".D0.A1.D0.BC.D0.BE.D1.82.D1.80.D0.B8.D1.82.D0.B5_.D1.82.D0.B0.D0.BA.D0.B6.D0.B5"></span><span class="mw-headline" id="Смотрите_также">Смотрите также</span>
+</h2>
+<ul>
+<li>
+<a href="https://en.wikipedia.org/wiki/ru:chattr" class="extiw" title="wikipedia:ru:chattr">chattr</a> — Википедия</li>
+<li><a rel="nofollow" class="external text" href="https://www.hackinglinuxexposed.com/articles/20030417.html">Linux File Permission Confusion</a></li>
+<li><a rel="nofollow" class="external text" href="https://www.hackinglinuxexposed.com/articles/20030424.html">Linux File Permission Confusion part 2</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Extended_file_attributes#Linux" class="extiw" title="wikipedia:Extended file attributes">wikipedia:Extended file attributes#Linux</a></li>
+<li><a rel="nofollow" class="external text" href="https://www.lesbonscomptes.com/pages/extattrs.html">Extended attributes: the good, the not so good, the bad.</a></li>
+<li><a rel="nofollow" class="external text" href="https://legacy-documentation.concrete5.org/tutorials/backup-and-restore-file-permissions-in-linux">Backup and restore file permissions in Linux</a></li>
+<li><a rel="nofollow" class="external text" href="https://serverfault.com/questions/364677/why-is-chmod-r-777-destructive">Why is "chmod -R 777 /" destructive?</a></li>
+</ul>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../Special:Categories.html" title="Special:Categories">Categories</a>: <ul>
+<li><a href="../ru/Category:File_systems.html" title="Category:File systems (Русский)">File systems (Русский)</a></li>
+<li><a href="../ru/Category:Command-line.html" title="Category:Command-line (Русский)">Command-line (Русский)</a></li>
+</ul>
+</div></div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=File_permissions_and_attributes_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)&amp;oldid=757399">https://wiki.archlinux.org/index.php?title=File_permissions_and_attributes_(Русский)&amp;oldid=757399</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 18 November 2022, at 14:53.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

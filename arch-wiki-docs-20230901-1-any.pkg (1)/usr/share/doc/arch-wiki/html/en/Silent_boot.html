@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>Silent boot - ArchWiki</title>
+<link rel="stylesheet" href="../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Silent_boot rootpage-Silent_boot skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Kernel_parameters" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Kernel_parameters">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Kernel parameters</div>
+			</a>
+			
+			<ul id="toc-Kernel_parameters-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Remove_console_cursor_blinking" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Remove_console_cursor_blinking">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Remove console cursor blinking</div>
+			</a>
+			
+			<ul id="toc-Remove_console_cursor_blinking-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-sysctl" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#sysctl">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>sysctl</div>
+			</a>
+			
+			<ul id="toc-sysctl-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-agetty" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#agetty">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4</span>agetty</div>
+			</a>
+			
+			<ul id="toc-agetty-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-startx" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#startx">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5</span>startx</div>
+			</a>
+			
+			<ul id="toc-startx-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-fsck" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#fsck">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6</span>fsck</div>
+			</a>
+			
+			<ul id="toc-fsck-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Make_GRUB_silent" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Make_GRUB_silent">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">7</span>Make GRUB silent</div>
+			</a>
+			
+			<ul id="toc-Make_GRUB_silent-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Retaining_or_disabling_the_vendor_logo_from_BIOS" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Retaining_or_disabling_the_vendor_logo_from_BIOS">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">8</span>Retaining or disabling the vendor logo from BIOS</div>
+			</a>
+			
+				<button aria-controls="toc-Retaining_or_disabling_the_vendor_logo_from_BIOS-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Retaining or disabling the vendor logo from BIOS subsection
+				</button>
+			
+			<ul id="toc-Retaining_or_disabling_the_vendor_logo_from_BIOS-sublist" class="sidebar-toc-list">
+				<li id="toc-Disabling_deferred_takeover" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Disabling_deferred_takeover">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">8.1</span>Disabling deferred takeover</div>
+			</a>
+			
+			<ul id="toc-Disabling_deferred_takeover-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../en/Silent_boot.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="mw-list-item"><a href="../en/Talk:Silent_boot.html" rel="discussion" title="Discussion about the content page [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">English</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../en/Silent_boot.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=Silent_boot&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=Silent_boot&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../en/Silent_boot.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Silent_boot&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Silent_boot&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output">
+<div class="archwiki-template-meta-related-articles-start">
+<p class="mw-no-invert">Related articles</p>
+<ul>
+<li><a href="../en/Plymouth.html" title="Plymouth">Plymouth</a></li>
+</ul>
+</div>
+<p>This page is for those who prefer to limit the verbosity of their system to a strict minimum, either for aesthetics or other reasons. Following this guide will remove all text from the bootup process. <a rel="nofollow" class="external text" href="https://www.youtube.com/watch?v=tuqhsqrhXk0">Video demonstration</a>
+</p>
+<mw:tocplace></mw:tocplace>
+<h2><span class="mw-headline" id="Kernel_parameters">Kernel parameters</span></h2>
+<p>Change the <a href="../en/Kernel_parameters.html" title="Kernel parameters">kernel parameters</a> using the configuration options of your <a href="../en/Arch_boot_process.html#Boot_loader" class="mw-redirect" title="Boot loader">boot loader</a>, to include the following parameters:
+</p>
+<pre>quiet
+</pre>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> Adding <code>vga=current</code> as a kernel argument avoids weird behaviors like <a rel="nofollow" class="external text" href="https://bugs.archlinux.org/task/32309">FS#32309</a>. Keep in mind that this conflicts with <a href="../en/Kernel_mode_setting.html" class="mw-redirect" title="KMS">KMS</a>, so only use this argument if you are affected by said bug.</div>
+<p>If you are still getting messages printed to the console, it may be <a href="../en/Core_utilities.html#Essentials" class="mw-redirect" title="Dmesg">dmesg</a> sending you what it thinks are important messages. You can change the level at which these messages will be printed by using <code>quiet loglevel=<i>level</i></code>, where <code><i>level</i></code> is any number between 0 and 7, where 0 is the most critical, and 7 is debug levels of printing.
+</p>
+<pre>quiet loglevel=3
+</pre>
+<p>Note that this only seems to work if both <code>quiet</code> and <code>loglevel=<i>level</i></code> are both used, and they must be in that order (quiet first). The loglevel parameter will only change that which is printed to the console, the levels of <i>dmesg</i> itself will not be affected and will still be available through the journal as well as <i>dmesg</i>. For more information, see <a rel="nofollow" class="external text" href="https://docs.kernel.org/admin-guide/kernel-parameters.html">kernel parameters</a>.
+</p>
+<p>If you also want to stop systemd from printing its version number when booting, you should also append <code>udev.log_level=3</code> to your kernel parameters. If systemd is used in an <a href="../en/Arch_boot_process.html#initramfs" class="mw-redirect" title="Initramfs">initramfs</a>, append <code>rd.udev.log_level=3</code> instead. See <span class="plainlinks archwiki-template-man" title="$ man 8 systemd-udevd.service"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/systemd-udevd.service.8#KERNEL_COMMAND_LINE">systemd-udevd.service(8) § KERNEL COMMAND LINE</a></span> for details.
+</p>
+<p>If you are using the <code>systemd</code> hook in the <a href="../en/Arch_boot_process.html#initramfs" class="mw-redirect" title="Initramfs">initramfs</a>, you may get systemd messages during initramfs initialization. You can pass <code>systemd.show_status=false</code> to disable them, or <code>systemd.show_status=auto</code> to only suppress successful messages (so in case of errors you can still see them). Actually, <code>auto</code> is already passed to <code>systemd.show_status=auto</code> when <code>quiet</code> is used, however for some motive sometimes systemd inside initramfs does not get it. Below are the parameters that you need to pass to your kernel to get a completely clean boot with systemd in your <a href="../en/Arch_boot_process.html#initramfs" class="mw-redirect" title="Initramfs">initramfs</a>:
+</p>
+<pre>quiet loglevel=3 systemd.show_status=auto rd.udev.log_level=3
+</pre>
+<p>Also <code>touch ~/.hushlogin</code> to remove the Last login message.
+</p>
+<h2><span class="mw-headline" id="Remove_console_cursor_blinking">Remove console cursor blinking</span></h2>
+<p>The console cursor at boot keeps blinking if you follow these instructions. This can be solved by passing <code>vt.global_cursor_default=0</code> to the kernel <a rel="nofollow" class="external autonumber" href="http://www.friendlyarm.net/forum/topic/2998">[1]</a>.
+</p>
+<p>To recover the cursor in the TTY, run:
+</p>
+<pre># setterm -cursor on &gt;&gt; /etc/issue
+</pre>
+<h2><span class="mw-headline" id="sysctl">sysctl</span></h2>
+<p>To hide any kernel messages from the console, add or modify the <code>kernel.printk</code> line according to <a rel="nofollow" class="external autonumber" href="https://unix.stackexchange.com/a/45525">[2]</a>:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/sysctl.d/20-quiet-printk.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">kernel.printk = 3 3 3 3</pre>
+<h2><span class="mw-headline" id="agetty">agetty</span></h2>
+<p>To hide agetty printed issue and "login:" prompt line from the console<a rel="nofollow" class="external autonumber" href="https://github.com/karelzak/util-linux/commit/933956cb499e12d0d0e5228b6de34ffa5c9a9e08">[3]</a>, create a <a href="../en/Systemd.html#Drop-in_files" class="mw-redirect" title="Drop-in snippet">drop-in snippet</a> for <code>getty@tty1.service</code>.
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/systemd/system/getty@tty1.service.d/skip-prompt.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">[Service]
+ExecStart=
+ExecStart=-/usr/bin/agetty <b>--skip-login</b> --nonewline --noissue --autologin <i>username</i> --noclear %I $TERM</pre>
+<h2><span class="mw-headline" id="startx">startx</span></h2>
+<p>To hide <code>startx</code> messages, you could redirect its output to <code>/dev/null</code>, in your <a rel="nofollow" class="external text" href="https://github.com/kaihendry/Kai-s--HOME/blob/master/.bash_profile">.bash_profile</a> like so:
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> Redirection is broken with rootless login. See <a href="../en/Xorg.html#Session_log_redirection" title="Xorg">Xorg#Session log redirection</a>.</div>
+<pre>$ [[ $(fgconsole 2&gt;/dev/null) == 1 ]] &amp;&amp; exec startx -- vt1 &amp;&gt; /dev/null
+</pre>
+<h2><span class="mw-headline" id="fsck">fsck</span></h2>
+<p>To hide fsck messages during boot, let systemd check the root filesystem. For this, replace <i>udev</i> hook with <i>systemd</i>:
+</p>
+<pre>HOOKS=( base systemd fsck ) 
+</pre>
+<p>in <code>/etc/mkinitcpio.conf</code> and <a href="../en/Mkinitcpio.html#Image_creation_and_activation" class="mw-redirect" title="Regenerate the initramfs">regenerate the initramfs</a>.
+</p>
+<p>Now <a href="../en/Systemd.html#Editing_provided_units" class="mw-redirect" title="Edit">edit</a> <code>systemd-fsck-root.service</code> and <code>systemd-fsck@.service</code> and configure <code>StandardOutput</code> and <code>StandardError</code> like this:
+</p>
+<pre>[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/usr/lib/systemd/systemd-fsck
+StandardOutput=null
+StandardError=journal+console
+TimeoutSec=0
+</pre>
+<p>See <span class="plainlinks archwiki-template-man" title="$ man 8 systemd-fsck@.service"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/systemd-fsck%40.service.8">systemd-fsck@.service(8)</a></span> for more info on the options you can pass to <code>systemd-fsck</code> - you can change how often the service will check (or not) your filesystems.
+</p>
+<h2><span class="mw-headline" id="Make_GRUB_silent">Make GRUB silent</span></h2>
+<p>To hide GRUB welcome and boot messages, you may install unofficial <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/grub-silent/">grub-silent</a></span><sup><small>AUR</small></sup> package.
+</p>
+<p>After the installation, it is required to reinstall <a href="../en/GRUB.html" title="GRUB">GRUB</a> to necessary partition first.
+</p>
+<p>Then, take an example as <code>/etc/default/grub.silent</code>, and make necessary changes to <code>/etc/default/grub</code>.
+</p>
+<p>Below three lines are necessary:
+</p>
+<pre>GRUB_DEFAULT=0
+GRUB_TIMEOUT=0
+GRUB_RECORDFAIL_TIMEOUT=$GRUB_TIMEOUT
+</pre>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> If you set <code>GRUB_TIMEOUT=0</code> and <code>GRUB_HIDDEN_TIMEOUT=1</code> (or any positive value), set <code>GRUB_RECORDFAIL_TIMEOUT=$GRUB_HIDDEN_TIMEOUT</code> instead of <code>GRUB_RECORDFAIL_TIMEOUT=$GRUB_TIMEOUT</code>. Otherwise pressing <code>Esc</code> on boot to show GRUB menu will not work.</div>
+<p>Lastly, regenerate <code>grub.cfg</code> file.
+</p>
+<h2><span class="mw-headline" id="Retaining_or_disabling_the_vendor_logo_from_BIOS">Retaining or disabling the vendor logo from BIOS</span></h2>
+<p>Modern UEFI systems display a vendor logo on boot until handing over control to the bootloader; e.g. Lenovo laptops display a bright red Lenovo logo. This vendor logo is typically blanked by the bootloader (if standard GRUB is used) or by the kernel.
+</p>
+<p>To prevent the kernel from blanking the vendor logo, Linux 4.19 introduced a new configuration option <code>FRAMEBUFFER_CONSOLE_DEFERRED_TAKEOVER</code> that retains the contents of the framebuffer until text needs to be printed on the framebuffer console. As of November 2018 (Linux 4.19.1), the official Arch Linux kernels are compiled with <code>CONFIG_FRAMEBUFFER_CONSOLE_DEFERRED_TAKEOVER=y</code>.
+</p>
+<p>When combined with a low loglevel (to prevent text from being printed), the vendor logo can be retained while the system is initialized. Note that GRUB in the standard configuration blanks the screen; consider using <a href="../en/EFISTUB.html" title="EFISTUB">EFISTUB</a> booting instead to boot directly into the kernel and thus leverage deferred takeover.
+</p>
+<p><a rel="nofollow" class="external text" href="https://www.youtube.com/watch?v=5DW2JgJmsuY">Video demonstration</a>
+</p>
+<p>The kernel command line should use <code>loglevel=3</code> or <code>rd.udev.log_level=3</code> as mentioned above. Note that if you often receive <code>Core temperature above threshold, cpu clock throttled</code> messages in the kernel log, you need to use log level 2 to silence these at boot time. Alternatively, if you compile your own kernel, adjust the log level of the message in <code>arch/x86/kernel/cpu/mcheck/therm_throt.c</code>.
+</p>
+<p>If you use <a href="../en/Intel_graphics.html" title="Intel graphics">Intel graphics</a>, see also <a href="../en/Intel_graphics.html#Fastboot" title="Intel graphics">Intel graphics#Fastboot</a>.
+</p>
+<p>Further reading:
+</p>
+<ul>
+<li><a rel="nofollow" class="external text" href="https://www.phoronix.com/scan.php?page=news_item&amp;px=Linux-4.19-FBDEV-Defer-Console">Phoronix: Linux 4.19 Adds Deferred Console Takeover Support For FBDEV - Cleaner Boot Process</a></li>
+<li><a rel="nofollow" class="external text" href="https://lists.fedoraproject.org/archives/list/kernel@lists.fedoraproject.org/thread/3MWCKJ2DVJPC4INXPKB4ECFZLA7X5RTI/">Hans de Goede: Adding deferred fbcon console takeover to the Fedora kernels</a></li>
+</ul>
+<h3><span class="mw-headline" id="Disabling_deferred_takeover">Disabling deferred takeover</span></h3>
+<p>If the new behavior leads to issues, you can disable deferred takeover by using the <code>fbcon=nodefer</code> <a href="../en/Kernel_parameters.html" class="mw-redirect" title="Kernel parameter">kernel parameter</a>.
+</p>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="../en/Category:Boot_process.html" title="Category:Boot process">Boot process</a></li></ul>
+</div></div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=Silent_boot&amp;oldid=782322">https://wiki.archlinux.org/index.php?title=Silent_boot&amp;oldid=782322</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 2 July 2023, at 02:56.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

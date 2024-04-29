@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>Jenkins - ArchWiki</title>
+<link rel="stylesheet" href="../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Jenkins rootpage-Jenkins skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Installation" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Installation">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Installation</div>
+			</a>
+			
+			<ul id="toc-Installation-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Configuration" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Configuration">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Configuration</div>
+			</a>
+			
+				<button aria-controls="toc-Configuration-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Configuration subsection
+				</button>
+			
+			<ul id="toc-Configuration-sublist" class="sidebar-toc-list">
+				<li id="toc-Log_in_as_the_Jenkins_user" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Log_in_as_the_Jenkins_user">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.1</span>Log in as the Jenkins user</div>
+			</a>
+			
+			<ul id="toc-Log_in_as_the_Jenkins_user-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Running_Jenkins_with_access_to_the_display" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Running_Jenkins_with_access_to_the_display">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.2</span>Running Jenkins with access to the display</div>
+			</a>
+			
+			<ul id="toc-Running_Jenkins_with_access_to_the_display-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-See_also" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#See_also">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>See also</div>
+			</a>
+			
+			<ul id="toc-See_also-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../en/Jenkins.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="mw-list-item"><a href="../en/Talk:Jenkins.html" rel="discussion" title="Discussion about the content page [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">English</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../en/Jenkins.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=Jenkins&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=Jenkins&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../en/Jenkins.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Jenkins&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Jenkins&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output">
+<p><a rel="nofollow" class="external text" href="https://jenkins-ci.org/">Jenkins</a> is an open source <a href="https://en.wikipedia.org/wiki/Continuous_integration" class="extiw" title="wikipedia:Continuous integration">continuous integration</a> server written in <a href="../en/Java.html" title="Java">Java</a>. It is capable of running scheduled automated builds and test suites of managed software projects. The build or tests for example may be triggered on a per commit basis or in a calendar driven manner. Jenkins thereby relies on the code being managed via a version control system (see <a href="../en/Git.html" title="Git">git</a>) and an automated build process. Note that Jenkins is not limited to Java applications and is suitable to manage projects in all common languages. Its capabilities can be further expanded by plugins.
+</p>
+<mw:tocplace></mw:tocplace>
+<h2><span class="mw-headline" id="Installation">Installation</span></h2>
+<p><a href="../en/Help:Reading.html#Installation_of_packages" class="mw-redirect" title="Install">Install</a> <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=jenkins">jenkins</a></span> for the latest stable release or <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/jenkins-lts/">jenkins-lts</a></span><sup><small>AUR</small></sup> for the long-term-support version. The package will create a Jenkins user for the daemon using systemd-sysusers.
+If running on a server with only console access, also install packages <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=fontconfig">fontconfig</a></span> and <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=freetype2">freetype2</a></span>.
+</p>
+<h2><span class="mw-headline" id="Configuration">Configuration</span></h2>
+<p>In order to enable <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=jenkins">jenkins</a></span>, you need to have <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=jre11-openjdk">jre11-openjdk</a></span> or <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=jre17-openjdk">jre17-openjdk</a></span> and the path to your version of Java Runtime Environment must be in the first line of the jenkins config file at <code>/etc/conf.d/jenkins</code>, if this is not the case, the <code>jenkins.service</code> will fail to start
+</p>
+<p>Project configuration can be done using the built-in web interface. To access it <a href="../en/Help:Reading.html#Control_of_systemd_units" class="mw-redirect" title="Start/enable">start/enable</a> <code>jenkins.service</code>.
+</p>
+<p>You can now open <code><a rel="nofollow" class="external free" href="http://localhost:8090">http://localhost:8090</a></code> with your browser and start setting up Jenkins.
+</p>
+<p>The configuration file of the daemon running Jenkins is located at <code>/etc/conf.d/jenkins</code>. It is sourced by the according <code>.service</code> file and takes effect immediately after a restart.
+</p>
+<p>jenkins listens on <code>0.0.0.0</code> and is immediately available remotely. If this is unwanted, for example on a test server, consider adding <code>--httpListenAddress=127.0.0.1</code> to the configuration file (e.g. in <code>JENKINS_OPTS</code>).
+</p>
+<h3><span class="mw-headline" id="Log_in_as_the_Jenkins_user">Log in as the Jenkins user</span></h3>
+<p>The default Admin username is Admin. When you log into the Web interface at <code><a rel="nofollow" class="external free" href="http://localhost:8090">http://localhost:8090</a></code>; you will need to view the file at <code>/var/lib/jenkins/secrets/initialAdminPassword</code> or run <code>journalctl -u jenkins.service</code> and search for the default password that was created upon installation.
+</p>
+<p>The home folder of the <code>jenkins</code> user is located at <code>/var/lib/jenkins</code>. The Jenkins user does not have a default shell, so if you need to log in this user (for example to manage SSH keys) you need to specify which shell you want to use:
+</p>
+<pre># su -s /bin/bash jenkins
+</pre>
+<h3><span class="mw-headline" id="Running_Jenkins_with_access_to_the_display">Running Jenkins with access to the display</span></h3>
+<p>If Jenkins needs to run graphical applications that fail without a display (for example, the Unity Editor), you must run it from a desktop session. If you are running <a href="../en/GNOME.html" title="GNOME">GNOME</a>, you can do the following to automatically run Jenkins with access to the display:
+</p>
+<ul><li>Give Jenkins a login shell.</li></ul>
+<pre># usermod -s /bin/bash jenkins
+</pre>
+<ul><li>Give Jenkins a password.</li></ul>
+<pre># passwd jenkins
+</pre>
+<ul><li>Set Jenkins to automatically login using <a href="../en/GDM.html#Automatic_login" title="GDM">GDM</a>.</li></ul>
+ <pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/gdm/custom.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;"># Enable automatic login for user
+[daemon]
+AutomaticLogin=jenkins
+AutomaticLoginEnable=True</pre>
+<ul><li>Add a new autostart application of your favorite terminal running jenkins.</li></ul>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/var/lib/jenkins/.config/autostart/jenkins.desktop</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;"># Launch a gnome terminal, using a bash shell to launch jenkins.
+[Desktop Entry]
+Type=Application
+Exec=gnome-terminal -x bash -c "JENKINS_HOME=~ java -jar /usr/share/java/jenkins/jenkins.war; exec bash"
+Hidden=false
+X-GNOME-Autostart-enabled=true
+Name=jenkins
+Comment=Jenkins auto-start</pre>
+<p>After a reboot, GDM should automatically log into a gnome session. Then gnome should launch a terminal running a jenkins instance. This instance should be able to build Unity games without issue!
+</p>
+<h2><span class="mw-headline" id="See_also">See also</span></h2>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Jenkins_(software)" class="extiw" title="wikipedia:Jenkins (software)">Wikipedia:Jenkins_(software)</a></li>
+<li><a rel="nofollow" class="external text" href="https://www.jenkins.io/doc/">Jenkins Official Documentation</a></li>
+</ul>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../Special:Categories.html" title="Special:Categories">Categories</a>: <ul>
+<li><a href="../en/Category:Development.html" title="Category:Development">Development</a></li>
+<li><a href="../en/Category:Web_applications.html" title="Category:Web applications">Web applications</a></li>
+</ul>
+</div></div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=Jenkins&amp;oldid=765716">https://wiki.archlinux.org/index.php?title=Jenkins&amp;oldid=765716</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 30 January 2023, at 11:14.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>fscrypt - ArchWiki</title>
+<link rel="stylesheet" href="../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Fscrypt rootpage-Fscrypt skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Alternatives_to_consider" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Alternatives_to_consider">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Alternatives to consider</div>
+			</a>
+			
+			<ul id="toc-Alternatives_to_consider-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Preparations" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Preparations">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Preparations</div>
+			</a>
+			
+				<button aria-controls="toc-Preparations-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Preparations subsection
+				</button>
+			
+			<ul id="toc-Preparations-sublist" class="sidebar-toc-list">
+				<li id="toc-Kernel" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Kernel">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.1</span>Kernel</div>
+			</a>
+			
+			<ul id="toc-Kernel-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-File_system" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#File_system">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.2</span>File system</div>
+			</a>
+			
+			<ul id="toc-File_system-sublist" class="sidebar-toc-list">
+				<li id="toc-ext4" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#ext4">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.2.1</span>ext4</div>
+			</a>
+			
+			<ul id="toc-ext4-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-F2FS" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#F2FS">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.2.2</span>F2FS</div>
+			</a>
+			
+			<ul id="toc-F2FS-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Userspace_tool" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Userspace_tool">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.3</span>Userspace tool</div>
+			</a>
+			
+			<ul id="toc-Userspace_tool-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-PAM_module" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#PAM_module">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.4</span>PAM module</div>
+			</a>
+			
+			<ul id="toc-PAM_module-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Encrypt_a_directory" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Encrypt_a_directory">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>Encrypt a directory</div>
+			</a>
+			
+			<ul id="toc-Encrypt_a_directory-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Lock/unlock_a_directory" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Lock/unlock_a_directory">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4</span>Lock/unlock a directory</div>
+			</a>
+			
+			<ul id="toc-Lock/unlock_a_directory-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Encrypt_a_home_directory" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Encrypt_a_home_directory">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5</span>Encrypt a home directory</div>
+			</a>
+			
+			<ul id="toc-Encrypt_a_home_directory-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Encryption_within_Linux_Containers_(lxc)" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Encryption_within_Linux_Containers_(lxc)">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6</span>Encryption within Linux Containers (lxc)</div>
+			</a>
+			
+				<button aria-controls="toc-Encryption_within_Linux_Containers_(lxc)-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Encryption within Linux Containers (lxc) subsection
+				</button>
+			
+			<ul id="toc-Encryption_within_Linux_Containers_(lxc)-sublist" class="sidebar-toc-list">
+				<li id="toc-Lock_directory_when_container_is_stopped" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Lock_directory_when_container_is_stopped">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6.1</span>Lock directory when container is stopped</div>
+			</a>
+			
+			<ul id="toc-Lock_directory_when_container_is_stopped-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Troubleshooting" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Troubleshooting">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">7</span>Troubleshooting</div>
+			</a>
+			
+			<ul id="toc-Troubleshooting-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-See_also" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#See_also">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">8</span>See also</div>
+			</a>
+			
+			<ul id="toc-See_also-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../en/Fscrypt.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="new mw-list-item"><a href="/index.php?title=Talk:Fscrypt&amp;action=edit&amp;redlink=1" rel="discussion" title="Discussion about the content page (page does not exist) [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">English</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../en/Fscrypt.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=Fscrypt&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=Fscrypt&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../en/Fscrypt.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Fscrypt&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Fscrypt&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output">
+<p><span>
+</span>
+</p>
+<div class="archwiki-template-meta-related-articles-start">
+<p class="mw-no-invert">Related articles</p>
+<ul>
+<li><a href="../en/Data-at-rest_encryption.html" title="Data-at-rest encryption">Data-at-rest encryption</a></li>
+<li><a href="../en/Ext4.html" title="Ext4">Ext4</a></li>
+<li><a href="../en/F2FS.html" title="F2FS">F2FS</a></li>
+</ul>
+</div>
+<p><b>fscrypt</b> is a tool for managing the native file encryption support of the <a href="../en/Ext4.html" title="Ext4">ext4</a>, <a href="../en/F2FS.html" title="F2FS">F2FS</a>, and <a href="https://en.wikipedia.org/wiki/UBIFS" class="extiw" title="wikipedia:UBIFS">UBIFS</a> <a href="../en/File_systems.html" title="File systems">file systems</a>.
+</p>
+<p>The <a rel="nofollow" class="external text" href="https://docs.kernel.org/filesystems/fscrypt.html">underlying encryption mechanism in the kernel</a>, which is integrated into the above file systems, is also sometimes called "fscrypt". To avoid ambiguity, this article calls the kernel feature "Linux native file encryption". With Linux native file encryption, different directories can use different encryption keys. In an encrypted directory, all file contents, filenames, and symlinks are encrypted. All subdirectories are encrypted too. Non-filename metadata, such as timestamps, the sizes and number of files, and extended attributes, is not encrypted.
+</p>
+<p>As this article assumes the use of the <i>fscrypt</i> tool (and optionally <i>pam_fscrypt</i>, which goes along with <i>fscrypt</i>), most of it is not applicable to other userspace tools that can set up Linux native file encryption, for example <a href="../en/Systemd-homed.html" title="Systemd-homed">systemd-homed</a>.
+</p>
+<div class="noprint archwiki-template-message">
+<p><a href="../File:Tango-view-fullscreen.png" class="image"><img alt="Tango-view-fullscreen.png" src="../File:Tango-view-fullscreen.png" decoding="async" width="48" height="48"></a><b>This article or section needs expansion.</b><a href="../File:Tango-view-fullscreen.png" class="image"><img alt="Tango-view-fullscreen.png" src="../File:Tango-view-fullscreen.png" decoding="async" width="48" height="48"></a></p>
+<div>
+<b>Reason:</b> A reference should be added for <a rel="nofollow" class="external text" href="https://docs.kernel.org/filesystems/fscrypt.html#access-semantics">access semantics</a> (multi-user system ACLs, limitation of encrypted directory backup and ext4 fallback to data-ordered-mode). (Discuss in <a rel="nofollow" class="external text" href="https://wiki.archlinux.org/title/Talk:Fscrypt">Talk:Fscrypt</a>)</div>
+</div>
+<mw:tocplace></mw:tocplace>
+<h2><span class="mw-headline" id="Alternatives_to_consider">Alternatives to consider</span></h2>
+<p>To protect an entire file system with one password, block device encryption with <a href="../en/Dm-crypt.html" title="Dm-crypt">dm-crypt</a> (LUKS) is generally a better option, as it ensures that <b>all</b> files on the file system are encrypted, and also that all file system metadata is encrypted. <i>fscrypt</i> is most useful to encrypt specific directories, or to enable different encrypted directories to be unlockable independently—for example, per-user encrypted home directories.
+</p>
+<p>Compared to <a href="../en/ECryptfs.html" title="ECryptfs">eCryptfs</a>, the Linux native file encryption controlled by <i>fscrypt</i> does not use file system stacking, which makes it more memory-efficient. It also uses more up-to-date cryptography and does not require root privileges to set up, which avoids the need for setuid binaries. eCryptfs is also no longer being actively developed, and its largest users (Ubuntu and Chrome OS) have migrated to other solutions.
+</p>
+<p>See <a href="../en/Data-at-rest_encryption.html" title="Data-at-rest encryption">data-at-rest encryption</a> for more information about other encryption solutions, and about what encryption does and does not do.
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> 
+<ul>
+<li>It is possible to use <i>fscrypt</i> in combination with <a href="../en/Dm-crypt.html" title="Dm-crypt">dm-crypt</a>, with each encryption layer serving a different purpose. For example, the file system itself could be protected by dm-crypt using a less secure method, like a TPM tied into "secure boot" or a password known to all the system's users, while each user's home directory could also be protected by <i>fscrypt</i> using a password known only to that user.</li>
+<li>The <i>e4crypt</i> tool from <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=e2fsprogs">e2fsprogs</a></span> can be used as an alternative to the <i>fscrypt</i> tool.  However, this is not recommended since <i>e4crypt</i> is missing many basic features and is no longer being actively developed.</li>
+<li>
+<i>f2fscrypt</i> from <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=f2fs-tools">f2fs-tools</a></span> is just a copy of <i>e4crypt</i> and likewise is not recommended.</li>
+</ul>
+</div>
+<h2><span class="mw-headline" id="Preparations">Preparations</span></h2>
+<h3><span class="mw-headline" id="Kernel">Kernel</span></h3>
+<p>All <a href="../en/Kernel.html#Officially_supported_kernels" title="Kernel">officially supported kernels</a> support native file encryption on ext4, F2FS, and UBIFS.
+</p>
+<p>Users of custom kernels, make sure <code>CONFIG_FS_ENCRYPTION=y</code> is set.
+</p>
+<h3><span class="mw-headline" id="File_system">File system</span></h3>
+<h4><span class="mw-headline" id="ext4">ext4</span></h4>
+<p>For <a href="../en/Ext4.html" title="Ext4">ext4</a>, the file system on which encryption is to be used must have the <code>encrypt</code> feature flag enabled. To enable it, run:
+</p>
+<pre># tune2fs -O encrypt <i>/dev/device</i>
+</pre>
+<div class="archwiki-template-box archwiki-template-box-tip">
+<strong>Tip:</strong> When creating a new file system, one can enable the <code>encrypt</code> feature immediately with <code>mkfs.ext4 -O encrypt</code>.</div>
+<h4><span class="mw-headline" id="F2FS">F2FS</span></h4>
+<p>For <a href="../en/F2FS.html" title="F2FS">F2FS</a>, use <code>mkfs.f2fs -O encrypt</code> when creating the file system or <code>fsck.f2fs -O encrypt</code> at a later time.
+</p>
+<h3><span class="mw-headline" id="Userspace_tool">Userspace tool</span></h3>
+<p><a href="../en/Help:Reading.html#Installation_of_packages" class="mw-redirect" title="Install">Install</a> the <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=fscrypt">fscrypt</a></span> package. Then run:
+</p>
+<pre># fscrypt setup
+</pre>
+<p>This creates the file <code>/etc/fscrypt.conf</code> and the directory <code>/.fscrypt</code>.
+</p>
+<p>Then, if the file system on which encryption is to be used is not the root file system, also run:
+</p>
+<pre># fscrypt setup <i>mountpoint</i>
+</pre>
+<p>where <code><i>mountpoint</i></code> is where the file system is mounted, e.g. <code>/home</code>.
+</p>
+<p>This creates the directory <code><i>mountpoint</i>/.fscrypt</code> to store <i>fscrypt</i> policies and protectors.
+</p>
+<div class="archwiki-template-box archwiki-template-box-warning">
+<strong>Warning:</strong> Never delete the <code>.fscrypt</code> directory; otherwise ALL access to encrypted files will be lost!</div>
+<h3><span class="mw-headline" id="PAM_module">PAM module</span></h3>
+<p>To unlock login passphrase-protected directories automatically at login, and to keep login passphrase-protected directories in sync with changes to the login passphrase, adjust the system <a href="../en/PAM.html" title="PAM">PAM</a> configuration to enable <i>pam_fscrypt</i>.
+</p>
+<p><a href="../en/Help:Reading.html#Append,_add,_create,_edit" class="mw-redirect" title="Append">Append</a> the following line to the <i>auth</i> section in <code>/etc/pam.d/system-login</code>:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/pam.d/system-login</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">auth       optional   pam_fscrypt.so
+</pre>
+<p>Insert the following lines <b>before</b> <code>session include system-auth</code> in the <i>session</i> section:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/pam.d/system-login</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">session    [success=1 default=ignore]  pam_succeed_if.so  service = systemd-user quiet 
+session    optional                    pam_fscrypt.so</pre>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> The first line, taken from <a rel="nofollow" class="external text" href="https://github.com/google/fscrypt/issues/95#issuecomment-377389231">https://github.com/google/fscrypt/issues/95</a>, is a bypass for the <code>systemd --user</code> session which <a rel="nofollow" class="external text" href="https://github.com/systemd/systemd/issues/8598">does not properly close its PAM session</a> and would otherwise block the locking on logout.</div>
+<p>Finally, <a href="../en/Help:Reading.html#Append,_add,_create,_edit" class="mw-redirect" title="Append">append</a> the following line to <code>/etc/pam.d/passwd</code>:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/pam.d/passwd</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">password    optional    pam_fscrypt.so
+</pre>
+<h2><span class="mw-headline" id="Encrypt_a_directory">Encrypt a directory</span></h2>
+<p>To encrypt an empty directory, run:
+</p>
+<pre>$ fscrypt encrypt <i>dir</i>
+</pre>
+<p>Follow the prompts to create or choose a "protector". A protector is the secret or information that protects the directory's encryption key. The types of protectors include:
+</p>
+<ul>
+<li>"custom_passphrase". This is exactly what it sounds like, a user defined passphrase.</li>
+<li>"pam_passphrase". This is the login passphrase for a particular user. Directories using this type of protector will be automatically unlocked by <i>pam_fscrypt</i> (if enabled) when that user logs in. Be sure to follow the <a rel="nofollow" class="external text" href="https://github.com/google/fscrypt#securing-your-login-passphrase">security recommendations</a> before using this type of protector.</li>
+</ul>
+<p>In both cases, the passphrase can be changed later, or the directory can be re-protected with another method.
+</p>
+<p>Example for custom passphrase:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">$ fscrypt encrypt private/</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">Should we create a new protector? [y/N] y
+Your data can be protected with one of the following sources:
+1 - Your login passphrase (pam_passphrase)
+2 - A custom passphrase (custom_passphrase)
+3 - A raw 256-bit key (raw_key)
+Enter the source number for the new protector [2 - custom_passphrase]: 2
+Enter a name for the new protector: Super Secret
+Enter custom passphrase for protector "Super Secret":
+Confirm passphrase:
+"private/" is now encrypted, unlocked, and ready for use.
+</pre>
+<p>Example for PAM passphrase:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">$ fscrypt encrypt private/</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">Should we create a new protector? [y/N] y
+Your data can be protected with one of the following sources:
+1 - Your login passphrase (pam_passphrase)
+2 - A custom passphrase (custom_passphrase)
+3 - A raw 256-bit key (raw_key)
+Enter the source number for the new protector [2 - custom_passphrase]: 1
+Enter login passphrase for testuser:
+"private/" is now encrypted, unlocked, and ready for use.
+</pre>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> Encryption can only be enabled on an empty directory. To encrypt an existing directory, first copy the contents elsewhere and then delete the original files, e.g.:
+<pre>$ mkdir <i>new_dir</i>
+$ fscrypt encrypt <i>new_dir</i>
+$ cp -a -T <i>old_dir</i> <i>new_dir</i>
+$ find <i>old_dir</i> -type f -print0 | xargs -0 shred -n1 --remove=unlink
+$ rm -rf <i>old_dir</i>
+</pre>
+Beware that the original unencrypted files may still be forensically recoverable from disk even after being shredded and deleted, especially if using an SSD. It is better to encrypt data from the start.</div>
+<h2>
+<span id="Lock.2Funlock_a_directory"></span><span class="mw-headline" id="Lock/unlock_a_directory">Lock/unlock a directory</span>
+</h2>
+<p>To unlock an encrypted directory, run:
+</p>
+<pre>$ fscrypt unlock <i>dir</i>
+</pre>
+<p><i>fscrypt</i> will prompt for the passphrase.
+</p>
+<p>To lock an encrypted directory, run:
+</p>
+<pre>$ fscrypt lock <i>dir</i>
+</pre>
+<h2><span class="mw-headline" id="Encrypt_a_home_directory">Encrypt a home directory</span></h2>
+<div class="archwiki-template-box archwiki-template-box-warning">
+<strong>Warning:</strong> 
+<ul>
+<li>Login protectors are only as secure as the system's passphrase hashing in <code>/etc/shadow</code>. Before using a login protector, be sure to follow the <a rel="nofollow" class="external text" href="https://github.com/google/fscrypt#securing-your-login-passphrase">security recommendations</a>.</li>
+<li>If a user's home directory is encrypted, <a href="../en/Secure_Shell.html" class="mw-redirect" title="SSH">SSH</a> for that user may not work until their home directory has been unlocked.</li>
+</ul>
+</div>
+<p>To encrypt a user's home directory, first ensure that all <a href="#Preparations">preparations</a> have been completed, including enabling <i>pam_fscrypt</i>.
+</p>
+<p>Then, create a new encrypted directory for the user:
+</p>
+<pre># mkdir /home/newhome
+# chown <i>user</i>:<i>user</i> /home/newhome 
+# fscrypt encrypt /home/newhome --user=<i>user</i>
+</pre>
+<p>Select the option to protect the directory with the user's login passphrase.
+</p>
+<p>Then copy the contents of the user's old home directory into the encrypted directory:
+</p>
+<pre># cp -a -T /home/<i>user</i> /home/newhome
+</pre>
+<div class="archwiki-template-box archwiki-template-box-tip">
+<strong>Tip:</strong> If there is not enough disk space for a second copy of the home directory, consider using <code>mv -T /home/<i>user</i> /home/newhome</code> instead.  However, this is unsafe.  Making a <a href="../en/System_maintenance.html#Backup" class="mw-redirect" title="Backup">backup</a> first is strongly recommended.</div>
+<p>If the <i>cp</i> method was used, check whether the directory is being automatically unlocked on login before actually switching to using it. The simplest way to do this is to reboot and log in as that user. Afterwards, run:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">$ fscrypt status /home/newhome</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">"/home/newhome" is encrypted with fscrypt.
+
+Policy:   d80f252996aae181204403043b0ada25
+Options:  padding:32 contents:AES_256_XTS filenames:AES_256_CTS policy_version:2
+Unlocked: Yes
+
+Protected with 1 protector:
+PROTECTOR         LINKED  DESCRIPTION
+5952c84ebaf0f98d  No      login protector for testuser</pre>
+<p>If it says <code>Unlocked: No</code> instead, then something is wrong with the PAM configuration, or the incorrect type of protector was selected.
+</p>
+<p>Otherwise, replace the home directory:
+</p>
+<pre># mv /home/<i>user</i> /home/oldhome
+# mv /home/newhome /home/<i>user</i>
+# reboot
+</pre>
+<p>If everything is working as expected, delete the old home directory:
+</p>
+<pre># find /home/oldhome -type f -print0 | xargs -0 shred -n1 --remove=unlink
+# rm -rf /home/oldhome
+</pre>
+<div class="archwiki-template-box archwiki-template-box-tip">
+<strong>Tip:</strong> Running <a href="../en/Securely_wipe_disk.html#shred" class="mw-redirect" title="Shred">shred</a> is optional, but strongly recommended.</div>
+<h2>
+<span id="Encryption_within_Linux_Containers_.28lxc.29"></span><span class="mw-headline" id="Encryption_within_Linux_Containers_(lxc)">Encryption within Linux Containers (lxc)</span>
+</h2>
+<p>Support to use <i>fscrypt</i> inside <a href="../en/Linux_Containers.html" title="Linux Containers">Linux Containers</a> (lxc), or more generally in <span class="plainlinks archwiki-template-man" title="$ man 7 mount_namespaces"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/mount_namespaces.7">mount_namespaces(7)</a></span> where the file system's root directory is not visible has been added in v0.2.8.
+</p>
+<h3><span class="mw-headline" id="Lock_directory_when_container_is_stopped">Lock directory when container is stopped</span></h3>
+<p>A <a href="../en/Systemd/User.html" title="Systemd/User">systemd/User</a> unit within the container can lock an encrypted directory when the container is stopped:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">~/.config/systemd/user/lock-directory.service</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">[Unit]
+Description=lock encrypted directory on shutdown
+DefaultDependencies=no
+Before=shutdown.target
+
+[Service]
+Type=oneshot
+ExecStart=/bin/sh -c "/usr/bin/fscrypt lock /home/facade/target"
+TimeoutStartSec=0
+
+[Install]
+WantedBy=shutdown.target</pre>
+<h2><span class="mw-headline" id="Troubleshooting">Troubleshooting</span></h2>
+<p>See <a rel="nofollow" class="external free" href="https://github.com/google/fscrypt/blob/master/README.md#troubleshooting">https://github.com/google/fscrypt/blob/master/README.md#troubleshooting</a> for solutions to some common problems and also the <a rel="nofollow" class="external text" href="https://github.com/google/fscrypt/issues">open issues on Github</a>.
+</p>
+<h2><span class="mw-headline" id="See_also">See also</span></h2>
+<ul>
+<li><a rel="nofollow" class="external text" href="https://github.com/google/fscrypt/blob/master/README.md">Documentation for the fscrypt tool</a></li>
+<li><a rel="nofollow" class="external text" href="https://docs.kernel.org/filesystems/fscrypt.html">Documentation for Linux native file encryption</a></li>
+<li><a rel="nofollow" class="external text" href="https://goo.gl/55cCrI">The design document for the fscrypt tool</a></li>
+</ul>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface">
+<div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="../en/Category:Data-at-rest_encryption.html" title="Category:Data-at-rest encryption">Data-at-rest encryption</a></li></ul>
+</div>
+<div id="mw-hidden-catlinks" class="mw-hidden-catlinks mw-hidden-cats-hidden">Hidden category: <ul><li><a href="../en/Category:Pages_or_sections_flagged_with_Template:Expansion.html" title="Category:Pages or sections flagged with Template:Expansion">Pages or sections flagged with Template:Expansion</a></li></ul>
+</div>
+</div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=Fscrypt&amp;oldid=774647">https://wiki.archlinux.org/index.php?title=Fscrypt&amp;oldid=774647</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 3 April 2023, at 21:18.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>GNOME/Tips and tricks - ArchWiki</title>
+<link rel="stylesheet" href="../../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-GNOME_Tips_and_tricks rootpage-GNOME skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Keyboard" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#Keyboard">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Keyboard</div>
+			</a>
+			
+				<button aria-controls="toc-Keyboard-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Keyboard subsection
+				</button>
+			
+			<ul id="toc-Keyboard-sublist" class="sidebar-toc-list">
+				<li id="toc-Turn_on_NumLock_on_login" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Turn_on_NumLock_on_login">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.1</span>Turn on NumLock on login</div>
+			</a>
+			
+			<ul id="toc-Turn_on_NumLock_on_login-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Hotkey_alternatives" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Hotkey_alternatives">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.2</span>Hotkey alternatives</div>
+			</a>
+			
+			<ul id="toc-Hotkey_alternatives-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-XkbOptions_keyboard_options" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#XkbOptions_keyboard_options">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.3</span>XkbOptions keyboard options</div>
+			</a>
+			
+			<ul id="toc-XkbOptions_keyboard_options-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-De-bind_the_Super_key" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#De-bind_the_Super_key">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.4</span>De-bind the Super key</div>
+			</a>
+			
+			<ul id="toc-De-bind_the_Super_key-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Modify_Nautilus_hotkeys" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Modify_Nautilus_hotkeys">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.5</span>Modify Nautilus hotkeys</div>
+			</a>
+			
+			<ul id="toc-Modify_Nautilus_hotkeys-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Disks" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#Disks">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Disks</div>
+			</a>
+			
+			<ul id="toc-Disks-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Hiding_applications_from_the_menu" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#Hiding_applications_from_the_menu">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>Hiding applications from the menu</div>
+			</a>
+			
+			<ul id="toc-Hiding_applications_from_the_menu-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Screencast_recording" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#Screencast_recording">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4</span>Screencast recording</div>
+			</a>
+			
+			<ul id="toc-Screencast_recording-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Screenshot" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#Screenshot">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5</span>Screenshot</div>
+			</a>
+			
+			<ul id="toc-Screenshot-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Log_out_delay" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#Log_out_delay">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6</span>Log out delay</div>
+			</a>
+			
+			<ul id="toc-Log_out_delay-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Disable_animations" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#Disable_animations">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">7</span>Disable animations</div>
+			</a>
+			
+			<ul id="toc-Disable_animations-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Retina_(HiDPI)_display_support" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#Retina_(HiDPI)_display_support">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">8</span>Retina (HiDPI) display support</div>
+			</a>
+			
+			<ul id="toc-Retina_(HiDPI)_display_support-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Passwords_and_keys_(PGP_Keys)" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#Passwords_and_keys_(PGP_Keys)">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">9</span>Passwords and keys (PGP Keys)</div>
+			</a>
+			
+			<ul id="toc-Passwords_and_keys_(PGP_Keys)-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Terminal" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#Terminal">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">10</span>Terminal</div>
+			</a>
+			
+				<button aria-controls="toc-Terminal-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Terminal subsection
+				</button>
+			
+			<ul id="toc-Terminal-sublist" class="sidebar-toc-list">
+				<li id="toc-Change_default_terminal_size" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Change_default_terminal_size">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">10.1</span>Change default terminal size</div>
+			</a>
+			
+			<ul id="toc-Change_default_terminal_size-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-New_terminals_adopt_current_directory" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#New_terminals_adopt_current_directory">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">10.2</span>New terminals adopt current directory</div>
+			</a>
+			
+			<ul id="toc-New_terminals_adopt_current_directory-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Pad_the_terminal" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Pad_the_terminal">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">10.3</span>Pad the terminal</div>
+			</a>
+			
+			<ul id="toc-Pad_the_terminal-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Disable_blinking_cursor" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Disable_blinking_cursor">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">10.4</span>Disable blinking cursor</div>
+			</a>
+			
+			<ul id="toc-Disable_blinking_cursor-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Disable_confirmation_window_when_closing_Terminal" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Disable_confirmation_window_when_closing_Terminal">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">10.5</span>Disable confirmation window when closing Terminal</div>
+			</a>
+			
+			<ul id="toc-Disable_confirmation_window_when_closing_Terminal-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Color_palette" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Color_palette">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">10.6</span>Color palette</div>
+			</a>
+			
+			<ul id="toc-Color_palette-sublist" class="sidebar-toc-list">
+				<li id="toc-Terminal_color_scheme" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Terminal_color_scheme">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">10.6.1</span>Terminal color scheme</div>
+			</a>
+			
+			<ul id="toc-Terminal_color_scheme-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Middle_mouse_button" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#Middle_mouse_button">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">11</span>Middle mouse button</div>
+			</a>
+			
+			<ul id="toc-Middle_mouse_button-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Enable_button_and_menu_icons" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#Enable_button_and_menu_icons">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">12</span>Enable button and menu icons</div>
+			</a>
+			
+			<ul id="toc-Enable_button_and_menu_icons-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Use_custom_colours_and_gradients_for_desktop_background" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#Use_custom_colours_and_gradients_for_desktop_background">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">13</span>Use custom colours and gradients for desktop background</div>
+			</a>
+			
+			<ul id="toc-Use_custom_colours_and_gradients_for_desktop_background-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Transitioning_backgrounds" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#Transitioning_backgrounds">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">14</span>Transitioning backgrounds</div>
+			</a>
+			
+			<ul id="toc-Transitioning_backgrounds-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Custom_GNOME_sessions" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#Custom_GNOME_sessions">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">15</span>Custom GNOME sessions</div>
+			</a>
+			
+			<ul id="toc-Custom_GNOME_sessions-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Redirect_certain_URLs_to_specific_web_browsers" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#Redirect_certain_URLs_to_specific_web_browsers">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">16</span>Redirect certain URLs to specific web browsers</div>
+			</a>
+			
+			<ul id="toc-Redirect_certain_URLs_to_specific_web_browsers-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Removing_film_holes/film_strip_from_video_thumbnails_in_Nautilus" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#Removing_film_holes/film_strip_from_video_thumbnails_in_Nautilus">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">17</span>Removing film holes/film strip from video thumbnails in Nautilus</div>
+			</a>
+			
+			<ul id="toc-Removing_film_holes/film_strip_from_video_thumbnails_in_Nautilus-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-GNOME_Software_integration_with_pacman" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#GNOME_Software_integration_with_pacman">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">18</span>GNOME Software integration with pacman</div>
+			</a>
+			
+			<ul id="toc-GNOME_Software_integration_with_pacman-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Increase_volume_above_and_beyond_100%" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#Increase_volume_above_and_beyond_100%">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">19</span>Increase volume above and beyond 100%</div>
+			</a>
+			
+			<ul id="toc-Increase_volume_above_and_beyond_100%-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Adjust_volume_in_smaller_steps" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#Adjust_volume_in_smaller_steps">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">20</span>Adjust volume in smaller steps</div>
+			</a>
+			
+			<ul id="toc-Adjust_volume_in_smaller_steps-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Show_volume_sound_percentage_next_to_top_panel_icon" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#Show_volume_sound_percentage_next_to_top_panel_icon">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">21</span>Show volume sound percentage next to top panel icon</div>
+			</a>
+			
+			<ul id="toc-Show_volume_sound_percentage_next_to_top_panel_icon-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Launch_on_discrete_GPU" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#Launch_on_discrete_GPU">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">22</span>Launch on discrete GPU</div>
+			</a>
+			
+			<ul id="toc-Launch_on_discrete_GPU-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Window_list" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#Window_list">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">23</span>Window list</div>
+			</a>
+			
+			<ul id="toc-Window_list-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Navigation" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#Navigation">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">24</span>Navigation</div>
+			</a>
+			
+			<ul id="toc-Navigation-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../../en/GNOME/Tips_and_tricks.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="mw-list-item"><a href="../../en/Talk:GNOME/Tips_and_tricks.html" rel="discussion" title="Discussion about the content page [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">English</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../../en/GNOME/Tips_and_tricks.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=GNOME/Tips_and_tricks&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=GNOME/Tips_and_tricks&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../../en/GNOME/Tips_and_tricks.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=GNOME/Tips_and_tricks&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=GNOME/Tips_and_tricks&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					<div id="contentSub"><span class="subpages">&lt; <a href="../../en/GNOME.html" title="GNOME">GNOME</a></span></div>
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output">
+<mw:tocplace></mw:tocplace>
+<h2><span class="mw-headline" id="Keyboard">Keyboard</span></h2>
+<h3><span class="mw-headline" id="Turn_on_NumLock_on_login">Turn on NumLock on login</span></h3>
+<p>See <a href="../../en/Activating_numlock_on_bootup.html#GNOME" title="Activating numlock on bootup">Activating numlock on bootup#GNOME</a>
+</p>
+<h3><span class="mw-headline" id="Hotkey_alternatives">Hotkey alternatives</span></h3>
+<p>A lot of hotkeys can be changed via GNOME Settings. For example, to re-enable the show desktop keybinding:  
+</p>
+<p><i>Settings &gt; Keyboard &gt; Customize Shortcuts &gt; Navigation &gt; Hide all normal windows</i>
+</p>
+<p>However, certain hotkeys cannot be changed directly via Settings. In order to change these keys, use <i>dconf-editor</i> or <i>gsettings</i>. An example of particular note is the hotkey <code>Alt+`</code> (the key above <code>Tab</code> on US keyboard layouts). In GNOME Shell it is pre-configured to cycle through windows of an application, however it is also a hotkey often used in the <a href="../../en/Emacs.html" title="Emacs">Emacs</a> editor. It can be changed by using one of the aforementioned tools to modify the <i>switch-group</i> key found in <code>org.gnome.desktop.wm.keybindings</code>.
+</p>
+<h3><span class="mw-headline" id="XkbOptions_keyboard_options">XkbOptions keyboard options</span></h3>
+<p>Using the <b>dconf-editor</b>, navigate to the <code>xkb-options</code> key under the <code>org.gnome.desktop.input-sources</code> schema and add desired XkbOptions (e.g. <i>caps:swapescape</i>) to the list.
+</p>
+<p>See <code>/usr/share/X11/xkb/rules/xorg</code> for all XkbOptions and <code>/usr/share/X11/xkb/symbols/*</code> for the respective descriptions.
+</p>
+<h3><span class="mw-headline" id="De-bind_the_Super_key">De-bind the Super key</span></h3>
+<p>By default, the <code>Super</code> key will open the GNOME Shell overview mode. You can unbind this key by running the command below:
+</p>
+<pre>$ gsettings set org.gnome.mutter overlay-key ''
+</pre>
+<h3><span class="mw-headline" id="Modify_Nautilus_hotkeys">Modify Nautilus hotkeys</span></h3>
+<p>Since 3.15 it is not possible to use the <b>accel</b> file anymore, but it is possible to rebind keys by utilizing <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=python-nautilus">python-nautilus</a></span>. Install the package and add the following file:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">~/.local/share/nautilus-python/extensions/modify_keybindings.py</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">import os, gi
+gi.require_version('Nautilus', '3.0')
+from gi.repository import GObject, Nautilus, Gtk, Gio, GLib
+
+def rebind():
+    app = Gtk.Application.get_default()
+    # Search for open_accels and nautilus_application_set_accelerators in:
+    #   https://github.com/GNOME/nautilus/blob/master/src/nautilus-files-view.c
+    app.set_accels_for_action( "win.back", ["&lt;alt&gt;Left", "BackSpace"] )
+
+    # if you want to figure out which hotkey belongs to which action try this:
+    # print(f'Alt+Left is: {app.get_actions_for_accel("&lt;alt&gt;Left")}')
+
+class BackspaceBack(GObject.GObject, Nautilus.LocationWidgetProvider):
+    def __init__(self):
+        pass
+
+    def get_widget(self, uri, window):
+        rebind()
+        return None
+
+</pre>
+<p>Restart Nautilus:
+</p>
+<pre>$ nautilus -q; nautilus
+</pre>
+<h2><span class="mw-headline" id="Disks">Disks</span></h2>
+<p>GNOME provides a disk utility to manipulate storage drive settings. These are some of its features:
+</p>
+<ul><li>
+<b>Enable write cache</b> is a feature that most hard drives provide. Data is cached and allocated at chosen times to improve system performance. You most likely have this feature already enabled by default (not through disk utility). To check, use <code>hdparm -W /dev/sdX</code>.</li></ul>
+<dl>
+<dd><i>Settings &gt; Drive Settings &gt; Write Cache &gt; <b>On</b></i></dd>
+<dd><div class="archwiki-template-box archwiki-template-box-warning">
+<strong>Warning:</strong> This performance boost comes with the possibility of data loss in case of a sudden power loss, take that into consideration before enabling write cache.</div></dd>
+</dl>
+<ul><li>
+<b>User Session Defaults</b> Enable to use your own options in <code>/etc/fstab</code>, and disable to automatically add default and recommended mount options to drives and partitions that are GPT-based.</li></ul>
+<dl>
+<dd><i>Partition Settings &gt; Edit Mount Options &gt; Automatic Mount Options &gt; <b>On</b></i></dd>
+<dd><div class="archwiki-template-box archwiki-template-box-warning">
+<strong>Warning:</strong> This setting erases related <a href="../../en/Fstab.html" title="Fstab">fstab</a> entries.</div></dd>
+</dl>
+<h2><span class="mw-headline" id="Hiding_applications_from_the_menu">Hiding applications from the menu</span></h2>
+<div class="archwiki-template-box archwiki-template-box-tip">
+<strong>Tip:</strong> 
+<ul>
+<li>Desktop entries can be hidden by editing the <i>.desktop</i> files themselves. See <a href="../../en/Desktop_entries.html#Hide_desktop_entries" title="Desktop entries">Desktop entries#Hide desktop entries</a>.</li>
+<li>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/Menulibre/">Menulibre</a></span><sup><small>AUR</small></sup> provides a menu editor without GNOME dependencies.</li>
+</ul>
+</div>
+<p>Use the <i>Main Menu</i> application (provided by the <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=alacarte">alacarte</a></span> package) to hide any applications you do not wish to show in the menu.
+</p>
+<h2><span class="mw-headline" id="Screencast_recording">Screencast recording</span></h2>
+<p>GNOME features built-in screencast recording with the <code>Ctrl+Shift+Alt+r</code> key combination. A red circle is displayed in the right side of the top bar near the system status area, while the recording is in progress. After the recording is finished, a file named <code>Screencast from %d%u-%c.webm</code> is saved in the <code>Videos</code> directory.
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> The recording filename may be translated depending on your system's language.</div>
+<p>In order to use the screencast feature, some <a rel="nofollow" class="external text" href="https://archlinux.org/packages/?q=gst-plugin">gst-plugin packages</a> need to be installed. For example, the <a rel="nofollow" class="external text" href="https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/dbusServices/screencast/screencastService.js#L26">screencast pipeline</a> depends on the <a rel="nofollow" class="external text" href="https://gstreamer.freedesktop.org/documentation/vpx/vp8enc.html?gi-language=c#vp8enc-page">vp8enc</a> and <a rel="nofollow" class="external text" href="https://gstreamer.freedesktop.org/documentation/matroska/webmmux.html?gi-language=c">webmmux</a> elements from <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=gst-plugins-good">gst-plugins-good</a></span>. If you get an error about missing "pipewiresrc" module when trying to record, install <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=gst-plugin-pipewire">gst-plugin-pipewire</a></span>.
+</p>
+<div class="archwiki-template-box archwiki-template-box-tip">
+<strong>Tip:</strong> Use <a rel="nofollow" class="external text" href="https://github.com/EasyScreenCast/EasyScreenCast">EasyScreenCast</a> for a convenient way to "configure various settings of the desktop recording" (including customizing the aforementioned <a href="../../en/GStreamer.html" title="GStreamer">GStreamer</a> pipeline). EasyScreenCast is also available as <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/gnome-shell-extension-easyscreencast/">gnome-shell-extension-easyscreencast</a></span><sup><small>AUR</small></sup>.</div>
+<p>The maximum screencast length is 30 seconds by default. This can be changed as follows:
+</p>
+<pre>$ gsettings set org.gnome.settings-daemon.plugins.media-keys max-screencast-length <i>length_in_seconds</i>
+</pre>
+<p>Set <code><i>length_in_seconds</i></code> to <code>0</code> for unlimited length (per the description of <code>max-screencast-length</code>).
+</p>
+<h2><span class="mw-headline" id="Screenshot">Screenshot</span></h2>
+<p><span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=gnome-screenshot">gnome-screenshot</a></span> by default saves the image in the directory of the last save, which you can query:
+</p>
+<pre>$ gsettings get org.gnome.gnome-screenshot last-save-directory
+</pre>
+<p>Instead of using the above directory, you can set an auto save  directory. e.g. for automatically saving screenshots to the <code><i>user</i></code>'s desktop directory:
+</p>
+<pre>$ gsettings set org.gnome.gnome-screenshot auto-save-directory file:///home/<i>user</i>/Desktop
+</pre>
+<p>Check the <span class="plainlinks archwiki-template-man" title="$ man 1 gnome-screenshot"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/gnome-screenshot.1">gnome-screenshot(1)</a></span> man page for more options.
+</p>
+<h2><span class="mw-headline" id="Log_out_delay">Log out delay</span></h2>
+<p>To eliminate the default 60 second delay when logging out:
+</p>
+<pre>$ gsettings set org.gnome.SessionManager logout-prompt false
+</pre>
+<h2><span class="mw-headline" id="Disable_animations">Disable animations</span></h2>
+<p>To disable Shell animations (such as "Show Applications" and the wave animation in the top left activities hot corner), run:
+</p>
+<pre>$ gsettings set org.gnome.desktop.interface enable-animations false
+</pre>
+<p>or via <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=gnome-tweaks">gnome-tweaks</a></span>, in <i>General</i> tab, switch <i>Animations</i> to off.
+</p>
+<h2>
+<span id="Retina_.28HiDPI.29_display_support"></span><span class="mw-headline" id="Retina_(HiDPI)_display_support">Retina (HiDPI) display support</span>
+</h2>
+<p>GNOME introduced HiDPI support in version 3.10. If your display does not provide the correct screen size through EDID, this can lead to incorrectly scaled UI elements. As a workaround you can open <i>dconf-editor</i> and find the key <code>scaling-factor</code> in <code>org.gnome.desktop.interface</code>. Set it to <code>1</code> to get the standard scale.
+</p>
+<p>Also see <a href="../../en/HiDPI.html" title="HiDPI">HiDPI</a>.
+</p>
+<h2>
+<span id="Passwords_and_keys_.28PGP_Keys.29"></span><span class="mw-headline" id="Passwords_and_keys_(PGP_Keys)">Passwords and keys (PGP Keys)</span>
+</h2>
+<p>You can use the Passwords and Keys program <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=seahorse">seahorse</a></span> to create a PGP key as it is a front end for <a href="../../en/GnuPG.html" title="GnuPG">GnuPG</a> and installs it as dependency. This may be useful in the future (for instance if to encrypt a file). Create a key as shown below (the process may take about 10 minutes):
+</p>
+<p><i>File &gt; New &gt; PGP Key &gt; Name &gt; Email &gt; Defaults &gt; Passphrase</i>.
+</p>
+<h2><span class="mw-headline" id="Terminal">Terminal</span></h2>
+<h3><span class="mw-headline" id="Change_default_terminal_size">Change default terminal size</span></h3>
+<p>The default size of a new terminal can be adjusted in your profile's preferences. Select <i>Preferences</i> from the menu and select your profile under <i>Profiles</i> to access the settings to change the initial terminal size.
+</p>
+<h3><span class="mw-headline" id="New_terminals_adopt_current_directory">New terminals adopt current directory</span></h3>
+<p>New terminals open in the <code>$HOME</code> directory by default. You can configure the terminal to <a rel="nofollow" class="external text" href="https://unix.stackexchange.com/questions/93476/gnome-terminal-keep-track-of-directory-in-new-tab">adopt the current working directory</a> by adding <code>source /etc/profile.d/vte.sh</code> to your shell configuration file.
+</p>
+<h3><span class="mw-headline" id="Pad_the_terminal">Pad the terminal</span></h3>
+<p>To pad the terminal (create a small, invisible border between the window edges and the terminal contents) create the file below:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">~/.config/gtk-3.0/gtk.css</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">vte-terminal,
+terminal-window {
+    padding: 10px 10px 10px 10px;
+    -vte-terminal-inner-border: 10px 10px 10px 10px;
+}</pre>
+<h3><span class="mw-headline" id="Disable_blinking_cursor">Disable blinking cursor</span></h3>
+<p>To disable the blinking cursor in GNOME 3.8 and above use:
+</p>
+<pre>$ gsettings set org.gnome.desktop.interface cursor-blink false
+</pre>
+<p>To disable the blinking cursor in Terminal only use:
+</p>
+<pre>$ gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$(gsettings get org.gnome.Terminal.ProfilesList default | tr -d \')/ cursor-blink-mode off
+</pre>
+<p>Note that <code>gnome-settings-daemon</code>, from the package of the same name, must be running for this and other settings changes to take effect in GNOME applications - see <a href="../../en/GNOME.html#Configuration" title="GNOME">GNOME#Configuration</a>.
+</p>
+<h3><span class="mw-headline" id="Disable_confirmation_window_when_closing_Terminal">Disable confirmation window when closing Terminal</span></h3>
+<p>The Terminal will always display a confirmation window when trying to close the window while one is logged in as root. To avoid this, execute the following:
+</p>
+<pre>$ gsettings set org.gnome.Terminal.Legacy.Settings confirm-close false
+</pre>
+<h3><span class="mw-headline" id="Color_palette">Color palette</span></h3>
+<p>The Terminal has support to change its color palette to your liking. Simply, go to <b>Preferences</b>, select your profile and finally edit the color palette.
+</p>
+<h4><span class="mw-headline" id="Terminal_color_scheme">Terminal color scheme</span></h4>
+<p>Install the <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/gogh-git/">gogh-git</a></span><sup><small>AUR</small></sup> package, which provides a set of custom schemes made for the GNOME Terminal. After you <a rel="nofollow" class="external text" href="https://gogh-co.github.io/Gogh/">choose a scheme (or more than one)</a>, run <code>gogh</code> and input the number(s) of the scheme(s) that you chose.
+</p>
+<div class="archwiki-template-box archwiki-template-box-warning">
+<strong>Warning:</strong> Do not install all color schemes at once with gogh when prompted, as they would be very hard to remove. Install individual schemes by selection instead.</div>
+<p>After installation, go to <b>Preferences</b> of the Terminal, go to the <b>Colors</b> tab and select the name of the color scheme you installed from the left side of the window. You will see a small arrow next to the name, click it and select <b>Set as default</b>.
+</p>
+<p>From here, further configuration can be taken. You may easily change certain colors you do not like.
+</p>
+<p>To remove a scheme, make another one your default if you had that scheme as your default. Then select its name and click <b>Delete</b>.
+</p>
+<h2><span class="mw-headline" id="Middle_mouse_button">Middle mouse button</span></h2>
+<div class="noprint archwiki-template-message">
+<p><a href="../../File:Tango-view-refresh-red.png" class="image"><img alt="Tango-view-refresh-red.png" src="../../File:Tango-view-refresh-red.png" decoding="async" width="48" height="48"></a><b>This article or section is out of date.</b><a href="../../File:Tango-view-refresh-red.png" class="image"><img alt="Tango-view-refresh-red.png" src="../../File:Tango-view-refresh-red.png" decoding="async" width="48" height="48"></a></p>
+<div>
+<b>Reason:</b> The <code>org.gnome.settings-daemon.peripherals.mouse</code> key doesn't exist anymore in Gnome 4x, this apply only to GNOME 3 (Discuss in <a rel="nofollow" class="external text" href="https://wiki.archlinux.org/title/Talk:GNOME/Tips_and_tricks">Talk:GNOME/Tips and tricks</a>)</div>
+</div>
+<p>By default, GNOME 3 disables middle mouse button emulation regardless of <a href="../../en/Xorg.html" title="Xorg">Xorg</a> settings (<b>Emulate3Buttons</b>). To enable middle mouse button emulation use:
+</p>
+<pre>$ gsettings set org.gnome.settings-daemon.peripherals.mouse middle-button-enabled true
+</pre>
+<h2><span class="mw-headline" id="Enable_button_and_menu_icons">Enable button and menu icons</span></h2>
+<p>Since GTK 3.10, the GSettings key 'menus-have-icons' has been deprecated. Icons in buttons and menus can still be enabled by setting the following overrides:
+</p>
+<pre>$ gsettings set org.gnome.settings-daemon.plugins.xsettings overrides "{'Gtk/ButtonImages': &lt;1&gt;, 'Gtk/MenuImages': &lt;1&gt;}"
+</pre>
+<h2><span class="mw-headline" id="Use_custom_colours_and_gradients_for_desktop_background">Use custom colours and gradients for desktop background</span></h2>
+<p>To use custom colours and gradients for your desktop background, you will first need to set either a transparent picture or else a non-existent picture as your desktop background. For instance, the command below will set a non-existent picture as the background.
+</p>
+<pre>$ gsettings set org.gnome.desktop.background picture-uri none
+</pre>
+<p>At this point, the desktop background should be a flat colour - the default colour setting is for a deep blue.
+</p>
+<p>For a different flat colour you need only change the primary colour setting:
+</p>
+<pre>$ gsettings set org.gnome.desktop.background primary-color &lt;my color&gt;
+</pre>
+<p>where &lt;my color&gt; is a hex value (such as <i>ffffff</i> for white).
+</p>
+<p>For a colour gradient, you will also need to change secondary colour setting <code>org.gnome.desktop.background secondary-color</code> and select a shading type. For instance, if you want a horizontal gradient, execute the following:
+</p>
+<pre>$ gsettings set org.gnome.desktop.background color-shading-type horizontal
+</pre>
+<p>If you are using a transparent picture as your background, you can set the opacity by executing the following:
+</p>
+<pre>$ gsettings set org.gnome.desktop.background picture-opacity &lt;value&gt;
+</pre>
+<p>where value is a number between 1 and 100 (100 for maximum opacity).
+</p>
+<h2><span class="mw-headline" id="Transitioning_backgrounds">Transitioning backgrounds</span></h2>
+<p>GNOME can transition between different wallpapers at specific time intervals. This is done by creating an XML file specifying the pictures to be used and the time interval. For more information on creating such files, see the following <a rel="nofollow" class="external text" href="https://www.linuxjournal.com/content/create-custom-transitioning-background-your-gnome-228-desktop">article</a>.
+</p>
+<p>Alternatively, a number of tools are available to automate the process:
+</p>
+<ul><li>
+<b>mkwlppr</b> — This script creates XML files that can act as dynamic wallpapers for GNOME by referring to multiple wallpapers.</li></ul>
+<dl><dd>
+<a rel="nofollow" class="external free" href="https://pastebin.com/019G2rCy">https://pastebin.com/019G2rCy</a><sup title="Last check status: 404">[<a href="https://en.wikipedia.org/wiki/Wikipedia:Link_rot" class="extiw" title="wikipedia:Wikipedia:Link rot">dead link</a> 2023-07-30 ⓘ]</sup> || see <a rel="nofollow" class="external text" href="https://pastebin.com/019G2rCy">mkwlppr</a><sup title="Last check status: 404">[<a href="https://en.wikipedia.org/wiki/Wikipedia:Link_rot" class="extiw" title="wikipedia:Wikipedia:Link rot">dead link</a> 2023-07-30 ⓘ]</sup>
+</dd></dl>
+<h2><span class="mw-headline" id="Custom_GNOME_sessions">Custom GNOME sessions</span></h2>
+<p>It is possible to create custom GNOME sessions which use the GNOME session manager but start different sets of components (<a href="../../en/Openbox.html" title="Openbox">Openbox</a> with <a href="../../en/Tint2.html" title="Tint2">tint2</a> instead of GNOME Shell for example).
+</p>
+<p>Two files are required for a custom GNOME session: a session file in <code>/usr/share/gnome-session/sessions/</code> which defines the components to be started and a <a href="../../en/Desktop_entries.html" class="mw-redirect" title="Desktop entry">desktop entry</a> in <code>/usr/share/xsessions</code> which is read by the <a href="../../en/Display_manager.html" title="Display manager">display manager</a>. An example session file is provided below:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/usr/share/gnome-session/sessions/gnome-openbox.session</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">[GNOME Session]
+Name=GNOME Openbox
+RequiredComponents=openbox;tint2;gnome-settings-daemon;</pre>
+<p>And an example desktop file:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/usr/share/xsessions/gnome-openbox.desktop</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">[Desktop Entry]
+Name=GNOME Openbox
+Exec=gnome-session --session=gnome-openbox</pre>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> GNOME Session calls upon the <i>.desktop</i> files of each of the components to be started. If a component you wish to start does not provide a <i>.desktop</i> file, you must create a suitable <a href="../../en/Desktop_entries.html" class="mw-redirect" title="Desktop entry">desktop entry</a> entry in a directory such as <code>/usr/local/share/applications</code>.</div>
+<h2><span class="mw-headline" id="Redirect_certain_URLs_to_specific_web_browsers">Redirect certain URLs to specific web browsers</span></h2>
+<p>This shows how to use <a href="../../en/Chromium.html" title="Chromium">Chromium</a> for certain types of URLs while maintaining <a href="../../en/Firefox.html" title="Firefox">Firefox</a> as default browser for all other tasks.
+</p>
+<p>Make sure <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=pcre">pcre</a></span> is <a href="../../en/Help:Reading.html#Installation_of_packages" class="mw-redirect" title="Install">installed</a>, to use <i>pcregrep</i>.
+</p>
+<p>Setup custom <i>xdg-open</i>:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/usr/local/bin/xdg-open</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">#!/bin/bash
+DOMAIN_LIST_FILE=~/'domains.txt'
+OTHER_BROWSER='/usr/bin/chromium-browser'
+BROWSER_OPTIONS='' # Optional, for command line options passed to browser
+XDG_OPEN='/usr/bin/xdg-open'
+DEFAULT_BROWSER='/usr/bin/firefox'
+
+if echo "$1" | pcregrep -q '^https?://'; then
+    matching=0
+    while read domain; do
+	if echo "$1" | pcregrep -q "^https?://${domain}"; then
+	    matching=1
+	    break
+	fi
+    done &lt; "$DOMAIN_LIST_FILE"
+
+    if [[ $matching -eq 1 ]]; then
+	"$OTHER_BROWSER" $BROWSER_OPTIONS ${*}
+	exit 0
+    fi
+
+    "$DEFAULT_BROWSER" ${*}
+    exit 0
+else
+    "$XDG_OPEN" ${*}
+fi
+</pre>
+<p>Configure domains for redirect to <i>Chromium</i>:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">$HOME/domains.txt</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">stackexchange.com
+stackoverflow.com
+superuser.com
+www.youtube.com
+github.com
+</pre>
+<p>Setup <i>xdg-open web</i> as desktop application:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">$HOME/.local/share/applications/xdg-open-web.desktop</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">[Desktop Entry]
+Version=1.0
+Name=xdg-open web
+GenericName=Web Browser
+Exec=xdg-open %u
+Terminal=false
+Type=Application
+MimeType=text/html;text/xml;application/xhtml+xml;application/vnd.mozilla.xul+xml;text/mml;x-scheme-handler/http;x-scheme-handler/https;
+StartupNotify=true
+Categories=Network;WebBrowser;
+Keywords=web;browser;internet;
+Actions=new-window;new-private-window;</pre>
+<pre>$ update-desktop-database $HOME/.local/share/applications/
+</pre>
+<p>Set <i>xdg-open web</i> as default Web application in GNOME settings: Go to <i>GNOME Settings &gt; Default Applications</i> and  set <i>Web</i> to <i>xdg-open web</i>.
+</p>
+<h2>
+<span id="Removing_film_holes.2Ffilm_strip_from_video_thumbnails_in_Nautilus"></span><span class="mw-headline" id="Removing_film_holes/film_strip_from_video_thumbnails_in_Nautilus">Removing film holes/film strip from video thumbnails in Nautilus</span>
+</h2>
+<p>Nautilus (Files) overlays the film holes/film strip effect on video thumbnails since Gnome 3.12. To remove or override this effect, the environment variable <code>G_RESOURCE_OVERLAYS</code> can be used to reference the path of a compiled resource (in this instance <code>filmholes.png</code>) and specify the path for the relevant overlay. This environment variable has only been available since GLib 2.50 and will have no effect on versions before this.
+</p>
+<p>Extract <code>filmholes.png</code> from Nautilus:
+</p>
+<pre>$ gresource extract /usr/bin/nautilus /org/gnome/nautilus/icons/filmholes.png &gt; filmholes.png
+</pre>
+<p>Edit <code>filmholes.png</code> using your preferred editor and remove the film effect from the image, leaving the transparency and dimensions intact, then overwriting the extracted image.
+</p>
+<p>Copy or move the extracted image where desired, such as <code>/usr/share/icons/</code> and edit <code>~/.profile</code>, adding the following export, changing <code>/usr/share/icons/</code> as needed to the location you placed the file:
+</p>
+<pre>export G_RESOURCE_OVERLAYS=/org/gnome/nautilus/icons/filmholes.png=/usr/share/icons/filmholes.png
+</pre>
+<p>If <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=ffmpegthumbnailer">ffmpegthumbnailer</a></span> has been installed as a dependency for another file manager that may generate thumbnails, the <code>Exec</code> line in <code>/usr/share/thumbnailers/ffmpegthumbnailer.thumbnailer</code> should be modified removing the <code>-f</code> flag.
+</p>
+<p>To ensure that no thumbnails remain that may already have the film effect embedded, remove the thumbnail cache:
+</p>
+<pre>$ rm -r ~/.cache/thumbnails
+</pre>
+<p>Log out and back in to your session and you should no longer have the film holes/film strip effect on your thumbnails in Nautilus.
+</p>
+<h2><span class="mw-headline" id="GNOME_Software_integration_with_pacman">GNOME Software integration with pacman</span></h2>
+<p><span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=packagekit">packagekit</a></span> integration was previously available through a package named <i>gnome-software-packagekit-plugin</i> but has been <a rel="nofollow" class="external text" href="https://gitlab.archlinux.org/archlinux/packaging/packages/gnome-software/-/commit/df4431b3707e05832e49b9b9c3164ac53e0e3a6f">voluntarily disabled</a> and is <a rel="nofollow" class="external text" href="https://github.com/archlinux/archinstall/issues/1321#issuecomment-1151343223">considered unsupported</a>.
+</p>
+<h2>
+<span id="Increase_volume_above_and_beyond_100.25"></span><span class="mw-headline" id="Increase_volume_above_and_beyond_100%">Increase volume above and beyond 100%</span>
+</h2>
+<p>Install the extension <a rel="nofollow" class="external text" href="https://extensions.gnome.org/extension/858/volume-mixer/">volume mixer</a>. Then use the mouse to scroll above the volume icon in the top panel to increase the volume above and beyond 100%.
+</p>
+<p>Alternatively, open GNOME Tweaks and toggle <i>General &gt; Over-Amplification</i>.
+</p>
+<h2><span class="mw-headline" id="Adjust_volume_in_smaller_steps">Adjust volume in smaller steps</span></h2>
+<p>By default, pressing the keyboard's volume keys adjusts the volume by 6%. If smaller steps are desired, holding <code>Shift</code> while pressing the volume keys adjusts the volume in 2% steps.
+</p>
+<p>Also, as of GNOME 3.36, it is now possible to directly adjust the volume step via a dconf setting. For example, to set the volume step to 2% execute the following:
+</p>
+<pre>$ gsettings set org.gnome.settings-daemon.plugins.media-keys volume-step 2
+</pre>
+<h2><span class="mw-headline" id="Show_volume_sound_percentage_next_to_top_panel_icon">Show volume sound percentage next to top panel icon</span></h2>
+<p>Install the extension <a rel="nofollow" class="external text" href="https://github.com/maoschanz/sound-percentage-gs-extension">sound percentage</a> to display the current output volume level next to the sound icon in the top panel.
+</p>
+<h2><span class="mw-headline" id="Launch_on_discrete_GPU">Launch on discrete GPU</span></h2>
+<p>Install <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=switcheroo-control">switcheroo-control</a></span> or <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/switcheroo-control-git/">switcheroo-control-git</a></span><sup><small>AUR</small></sup> and <a href="../../en/Help:Reading.html#Control_of_systemd_units" class="mw-redirect" title="Start/enable">start/enable</a> <code>switcheroo-control.service</code>.
+</p>
+<h2><span class="mw-headline" id="Window_list">Window list</span></h2>
+<p>If you like having a tasks list on the bottom but dislike the default black color of this extension, first copy its directory:
+</p>
+<pre>$ cp -r /usr/share/gnome-shell/extensions/window-list@gnome-shell-extensions.gcampax.github.com/ ~/.local/share/gnome-shell/extensions/
+</pre>
+<p>Then edit the CSS to your liking. For example, to make the window list transparent, edit <code>stylesheet.css</code> as follows:
+</p>
+<pre><b>.bottom-panel {</b>
+<b>  background: transparent;</b>
+<b>}</b>
+...
+.window-button &gt; StWidget,
+.window-picker-toggle &gt; StWidget {
+  color: #bbb;
+  <b>background-color: transparent;</b>
+  ...
+</pre>
+<h2><span class="mw-headline" id="Navigation">Navigation</span></h2>
+<p>To mimic the behavior of Windows when switching between windows, first disable the default which restricts the window switching to those in the current workspace: 
+</p>
+<pre>$ gsettings set org.gnome.shell.app-switcher current-workspace-only false
+</pre>
+<p>then, bind <code>Alt+Tab</code> and <code>Alt+Shift+Tab</code> to switch between windows, and not applications: 
+</p>
+<pre>$ gsettings set org.gnome.desktop.wm.keybindings switch-windows "['&lt;Alt&gt;Tab']"
+$ gsettings set org.gnome.desktop.wm.keybindings switch-windows-backward "['&lt;Shift&gt;&lt;Alt&gt;Tab']"
+</pre>
+<p>additionally, one can rebind the switching between applications (this example uses <code>Super</code> instead of the default <code>Alt</code>): 
+</p>
+<pre>$ gsettings set org.gnome.desktop.wm.keybindings switch-applications "['&lt;Super&gt;Tab']"
+$ gsettings set org.gnome.desktop.wm.keybindings switch-applications-backward "['&lt;Shift&gt;&lt;Super&gt;Tab']"
+</pre>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface">
+<div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../../Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="../../en/Category:GNOME.html" title="Category:GNOME">GNOME</a></li></ul>
+</div>
+<div id="mw-hidden-catlinks" class="mw-hidden-catlinks mw-hidden-cats-hidden">Hidden categories: <ul>
+<li><a href="../../en/Category:Pages_or_sections_flagged_with_Template:Out_of_date.html" title="Category:Pages or sections flagged with Template:Out of date">Pages or sections flagged with Template:Out of date</a></li>
+<li><a href="../../en/Category:Pages_with_dead_links.html" title="Category:Pages with dead links">Pages with dead links</a></li>
+</ul>
+</div>
+</div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=GNOME/Tips_and_tricks&amp;oldid=783992">https://wiki.archlinux.org/index.php?title=GNOME/Tips_and_tricks&amp;oldid=783992</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 30 July 2023, at 08:21.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

@@ -1,0 +1,1311 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>Wine - ArchWiki</title>
+<link rel="stylesheet" href="../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Wine rootpage-Wine skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Installation" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#Installation">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Installation</div>
+			</a>
+			
+				<button aria-controls="toc-Installation-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Installation subsection
+				</button>
+			
+			<ul id="toc-Installation-sublist" class="sidebar-toc-list">
+				<li id="toc-Third-party_applications" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Third-party_applications">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.1</span>Third-party applications</div>
+			</a>
+			
+			<ul id="toc-Third-party_applications-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Configuration" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#Configuration">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Configuration</div>
+			</a>
+			
+				<button aria-controls="toc-Configuration-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Configuration subsection
+				</button>
+			
+			<ul id="toc-Configuration-sublist" class="sidebar-toc-list">
+				<li id="toc-WINEPREFIX" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#WINEPREFIX">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.1</span>WINEPREFIX</div>
+			</a>
+			
+			<ul id="toc-WINEPREFIX-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-WINEARCH" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#WINEARCH">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.2</span>WINEARCH</div>
+			</a>
+			
+			<ul id="toc-WINEARCH-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Graphics_drivers" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Graphics_drivers">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.3</span>Graphics drivers</div>
+			</a>
+			
+			<ul id="toc-Graphics_drivers-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Sound" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Sound">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.4</span>Sound</div>
+			</a>
+			
+			<ul id="toc-Sound-sublist" class="sidebar-toc-list">
+				<li id="toc-MIDI_support" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#MIDI_support">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.4.1</span>MIDI support</div>
+			</a>
+			
+			<ul id="toc-MIDI_support-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Other_dependencies" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Other_dependencies">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.5</span>Other dependencies</div>
+			</a>
+			
+			<ul id="toc-Other_dependencies-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Fonts" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Fonts">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.6</span>Fonts</div>
+			</a>
+			
+			<ul id="toc-Fonts-sublist" class="sidebar-toc-list">
+				<li id="toc-Enable_font_smoothing" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Enable_font_smoothing">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.6.1</span>Enable font smoothing</div>
+			</a>
+			
+			<ul id="toc-Enable_font_smoothing-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Desktop_launcher_menus" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Desktop_launcher_menus">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.7</span>Desktop launcher menus</div>
+			</a>
+			
+			<ul id="toc-Desktop_launcher_menus-sublist" class="sidebar-toc-list">
+				<li id="toc-Creating_menu_entries_for_Wine_utilities" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Creating_menu_entries_for_Wine_utilities">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.7.1</span>Creating menu entries for Wine utilities</div>
+			</a>
+			
+			<ul id="toc-Creating_menu_entries_for_Wine_utilities-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Removing_menu_entries" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Removing_menu_entries">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.7.2</span>Removing menu entries</div>
+			</a>
+			
+			<ul id="toc-Removing_menu_entries-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Appearance" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Appearance">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.8</span>Appearance</div>
+			</a>
+			
+			<ul id="toc-Appearance-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Printing" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Printing">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.9</span>Printing</div>
+			</a>
+			
+			<ul id="toc-Printing-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Networking" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Networking">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.10</span>Networking</div>
+			</a>
+			
+			<ul id="toc-Networking-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Usage" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#Usage">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>Usage</div>
+			</a>
+			
+				<button aria-controls="toc-Usage-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Usage subsection
+				</button>
+			
+			<ul id="toc-Usage-sublist" class="sidebar-toc-list">
+				<li id="toc-Wayland" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Wayland">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.1</span>Wayland</div>
+			</a>
+			
+			<ul id="toc-Wayland-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Stop_running_Wine" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Stop_running_Wine">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.2</span>Stop running Wine</div>
+			</a>
+			
+			<ul id="toc-Stop_running_Wine-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Tips_and_tricks" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#Tips_and_tricks">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4</span>Tips and tricks</div>
+			</a>
+			
+				<button aria-controls="toc-Tips_and_tricks-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Tips and tricks subsection
+				</button>
+			
+			<ul id="toc-Tips_and_tricks-sublist" class="sidebar-toc-list">
+				<li id="toc-Wineconsole" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Wineconsole">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.1</span>Wineconsole</div>
+			</a>
+			
+			<ul id="toc-Wineconsole-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Winetricks" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Winetricks">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.2</span>Winetricks</div>
+			</a>
+			
+			<ul id="toc-Winetricks-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Performance" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Performance">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.3</span>Performance</div>
+			</a>
+			
+			<ul id="toc-Performance-sublist" class="sidebar-toc-list">
+				<li id="toc-CSMT" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#CSMT">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.3.1</span>CSMT</div>
+			</a>
+			
+			<ul id="toc-CSMT-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Force_OpenGL_mode_in_games" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Force_OpenGL_mode_in_games">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.3.2</span>Force OpenGL mode in games</div>
+			</a>
+			
+			<ul id="toc-Force_OpenGL_mode_in_games-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-VKD3D-Proton" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#VKD3D-Proton">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.3.3</span>VKD3D-Proton</div>
+			</a>
+			
+			<ul id="toc-VKD3D-Proton-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-DXVK" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#DXVK">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.3.4</span>DXVK</div>
+			</a>
+			
+			<ul id="toc-DXVK-sublist" class="sidebar-toc-list">
+				<li id="toc-HDR_support" class="sidebar-toc-list-item sidebar-toc-level-4">
+			<a class="sidebar-toc-link" href="#HDR_support">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.3.4.1</span>HDR support</div>
+			</a>
+			
+			<ul id="toc-HDR_support-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Gallium_Nine" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Gallium_Nine">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.3.5</span>Gallium Nine</div>
+			</a>
+			
+			<ul id="toc-Gallium_Nine-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Unregister_existing_Wine_file_associations" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Unregister_existing_Wine_file_associations">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.4</span>Unregister existing Wine file associations</div>
+			</a>
+			
+			<ul id="toc-Unregister_existing_Wine_file_associations-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Prevent_Wine_from_creating_filetype_associations" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Prevent_Wine_from_creating_filetype_associations">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.5</span>Prevent Wine from creating filetype associations</div>
+			</a>
+			
+			<ul id="toc-Prevent_Wine_from_creating_filetype_associations-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Execute_Windows_binaries_with_Wine_implicitly" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Execute_Windows_binaries_with_Wine_implicitly">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.6</span>Execute Windows binaries with Wine implicitly</div>
+			</a>
+			
+			<ul id="toc-Execute_Windows_binaries_with_Wine_implicitly-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Dual_Head_with_different_resolutions" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Dual_Head_with_different_resolutions">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.7</span>Dual Head with different resolutions</div>
+			</a>
+			
+			<ul id="toc-Dual_Head_with_different_resolutions-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Burning_optical_media" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Burning_optical_media">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.8</span>Burning optical media</div>
+			</a>
+			
+			<ul id="toc-Burning_optical_media-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Proper_mounting_of_optical_media_images" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Proper_mounting_of_optical_media_images">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.9</span>Proper mounting of optical media images</div>
+			</a>
+			
+			<ul id="toc-Proper_mounting_of_optical_media_images-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Show_FPS_overlay_in_games" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Show_FPS_overlay_in_games">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.10</span>Show FPS overlay in games</div>
+			</a>
+			
+			<ul id="toc-Show_FPS_overlay_in_games-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Running_Wine_under_a_separate_user_account" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Running_Wine_under_a_separate_user_account">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.11</span>Running Wine under a separate user account</div>
+			</a>
+			
+			<ul id="toc-Running_Wine_under_a_separate_user_account-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Temp_directory_on_tmpfs" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Temp_directory_on_tmpfs">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.12</span>Temp directory on tmpfs</div>
+			</a>
+			
+			<ul id="toc-Temp_directory_on_tmpfs-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Prevent_installing_Mono/Gecko" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Prevent_installing_Mono/Gecko">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.13</span>Prevent installing Mono/Gecko</div>
+			</a>
+			
+			<ul id="toc-Prevent_installing_Mono/Gecko-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Vulkan" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Vulkan">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.14</span>Vulkan</div>
+			</a>
+			
+			<ul id="toc-Vulkan-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Remove_Wine_file_bindings" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Remove_Wine_file_bindings">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.15</span>Remove Wine file bindings</div>
+			</a>
+			
+			<ul id="toc-Remove_Wine_file_bindings-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Wine_is_setting_its_own_applications_as_defaults" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Wine_is_setting_its_own_applications_as_defaults">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.16</span>Wine is setting its own applications as defaults</div>
+			</a>
+			
+			<ul id="toc-Wine_is_setting_its_own_applications_as_defaults-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-WineASIO" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#WineASIO">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.17</span>WineASIO</div>
+			</a>
+			
+			<ul id="toc-WineASIO-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Disable_starting_explorer.exe" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Disable_starting_explorer.exe">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.18</span>Disable starting explorer.exe</div>
+			</a>
+			
+			<ul id="toc-Disable_starting_explorer.exe-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Troubleshooting" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#Troubleshooting">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5</span>Troubleshooting</div>
+			</a>
+			
+				<button aria-controls="toc-Troubleshooting-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Troubleshooting subsection
+				</button>
+			
+			<ul id="toc-Troubleshooting-sublist" class="sidebar-toc-list">
+				<li id="toc-General_installation_issues" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#General_installation_issues">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5.1</span>General installation issues</div>
+			</a>
+			
+			<ul id="toc-General_installation_issues-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Error_loading_libc.so.6" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Error_loading_libc.so.6">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5.2</span>Error loading libc.so.6</div>
+			</a>
+			
+			<ul id="toc-Error_loading_libc.so.6-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Xwayland_problems" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Xwayland_problems">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5.3</span>Xwayland problems</div>
+			</a>
+			
+			<ul id="toc-Xwayland_problems-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Keyboard_input_not_working" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Keyboard_input_not_working">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5.4</span>Keyboard input not working</div>
+			</a>
+			
+			<ul id="toc-Keyboard_input_not_working-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Application_fails_to_start" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Application_fails_to_start">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5.5</span>Application fails to start</div>
+			</a>
+			
+			<ul id="toc-Application_fails_to_start-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-See_also" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#See_also">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6</span>See also</div>
+			</a>
+			
+			<ul id="toc-See_also-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../en/Wine.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="mw-list-item"><a href="../en/Talk:Wine.html" rel="discussion" title="Discussion about the content page [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">English</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../en/Wine.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=Wine&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=Wine&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../en/Wine.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Wine&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Wine&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output">
+<div class="archwiki-template-meta-related-articles-start">
+<p class="mw-no-invert">Related articles</p>
+<ul>
+<li><a href="../en/CrossOver.html" title="CrossOver">CrossOver</a></li>
+<li><a href="../en/Deepin-wine.html" title="Deepin-wine">Deepin-wine</a></li>
+<li><a href="../en/Wine_package_guidelines.html" title="Wine package guidelines">Wine package guidelines</a></li>
+</ul>
+</div>
+<p><a href="https://en.wikipedia.org/wiki/Wine_(software)" class="extiw" title="wikipedia:Wine (software)">Wine</a> is a <i>compatibility layer</i> capable of running Microsoft Windows applications on Unix-like operating systems. Programs running in Wine act as native programs would, without the performance/memory penalties of an emulator.
+</p>
+<div class="archwiki-template-box archwiki-template-box-warning">
+<strong>Warning:</strong> 
+<ul>
+<li>Wine is not isolated from your system.</li>
+<li>If you can access a file or resource with your user account, programs running in Wine can too. See <a href="#Running_Wine_under_a_separate_user_account">#Running Wine under a separate user account</a> and <a href="../en/Security.html#Sandboxing_applications" title="Security">Security#Sandboxing applications</a> for possible precautions.</li>
+<li>Wine can also run Malware (see <a rel="nofollow" class="external text" href="https://wiki.winehq.org/FAQ#Is_Wine_malware-compatible.3F">Wine FAQ on Malware compatibility</a>)</li>
+</ul>
+</div>
+<mw:tocplace></mw:tocplace>
+<h2><span class="mw-headline" id="Installation">Installation</span></h2>
+<p>Wine can be installed by enabling the <a href="../en/Official_repositories.html#multilib" class="mw-redirect" title="Multilib">multilib</a> repository and <a href="../en/Help:Reading.html#Installation_of_packages" class="mw-redirect" title="Install">installing</a> the <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=wine">wine</a></span> (development), <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/wine-stable/">wine-stable</a></span><sup><small>AUR</small></sup> (stable) or <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=wine-staging">wine-staging</a></span> (testing) package. <a rel="nofollow" class="external text" href="https://wine-staging.com/">Wine Staging</a> is a patched version of <a rel="nofollow" class="external text" href="https://www.winehq.org/">Wine</a>, which contains bug fixes and features that have not been integrated into the stable or development branch yet. 
+</p>
+<p>See also <a href="#Graphics_drivers">#Graphics drivers</a> and <a href="#Sound">#Sound</a> for additional requirements.
+</p>
+<p>Consider installing <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=wine-gecko">wine-gecko</a></span> and <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=wine-mono">wine-mono</a></span> for applications that depend on Internet Explorer and .NET, respectively. These packages are not strictly required as Wine will download the relevant files as needed. However, having the files downloaded in advance allows you to work off-line and makes it so Wine does not download the files for each Wine prefix needing them.
+</p>
+<h3><span class="mw-headline" id="Third-party_applications">Third-party applications</span></h3>
+<p>These have their own communities and websites, and are <b>not supported</b> by the main Wine community. See <a rel="nofollow" class="external text" href="https://wiki.winehq.org/Third_Party_Applications">Wine Wiki</a> for more details.
+</p>
+<ul><li>
+<b><a href="../en/CrossOver.html" title="CrossOver">CrossOver</a></b> — Official paid version of Wine which provides a graphical interface and more comprehensive end-user support.</li></ul>
+<dl><dd>
+<a rel="nofollow" class="external free" href="https://www.codeweavers.com">https://www.codeweavers.com</a> || <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/crossover/">crossover</a></span><sup><small>AUR</small></sup>
+</dd></dl>
+<ul><li>
+<b>icoextract</b> — Generates thumbnails for Windows executable files (.exe and .dll).</li></ul>
+<dl><dd>
+<a rel="nofollow" class="external free" href="https://github.com/jlu5/icoextract">https://github.com/jlu5/icoextract</a> || <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/icoextract/">icoextract</a></span><sup><small>AUR</small></sup>
+</dd></dl>
+<ul><li>
+<b><a href="https://en.wikipedia.org/wiki/Lutris" class="extiw" title="wikipedia:Lutris">Lutris</a></b> — Gaming launcher for all types of games, including Wine games (with prefix management), native Linux games and emulators.</li></ul>
+<dl><dd>
+<a rel="nofollow" class="external free" href="https://lutris.net">https://lutris.net</a> || <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=lutris">lutris</a></span>
+</dd></dl>
+<ul><li>
+<b><a href="https://en.wikipedia.org/wiki/PlayOnLinux" class="extiw" title="wikipedia:PlayOnLinux">PlayOnLinux</a></b> — Graphical prefix manager for Wine. Contains scripts to assist with program installation and configuration.</li></ul>
+<dl><dd>
+<a rel="nofollow" class="external free" href="https://www.playonlinux.com">https://www.playonlinux.com</a> || <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/playonlinux/">playonlinux</a></span><sup><small>AUR</small></sup>
+</dd></dl>
+<ul><li>
+<b><a href="../en/Steam.html#Proton_Steam-Play" class="mw-redirect" title="Proton">Proton</a></b> — Compatibility tool made for <a href="../en/Steam.html" title="Steam">Steam</a> based on Wine and additional components. See <a rel="nofollow" class="external text" href="https://www.protondb.com/">ProtonDB</a> for compatibility list.</li></ul>
+<dl><dd>
+<a rel="nofollow" class="external free" href="https://github.com/ValveSoftware/Proton">https://github.com/ValveSoftware/Proton</a> || <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/proton/">proton</a></span><sup><small>AUR</small></sup>
+</dd></dl>
+<ul><li>
+<b>PyWinery</b> — Simple graphical prefix manager for Wine.</li></ul>
+<dl><dd>
+<a rel="nofollow" class="external free" href="https://github.com/ergoithz/pywinery">https://github.com/ergoithz/pywinery</a> || <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/pywinery/">pywinery</a></span><sup><small>AUR</small></sup>
+</dd></dl>
+<ul><li>
+<b>Q4Wine</b> — Graphical prefix manager for Wine. Can export <a href="../en/Qt.html" title="Qt">Qt</a> themes into the Wine configuration for better integration.</li></ul>
+<dl><dd>
+<a rel="nofollow" class="external free" href="https://sourceforge.net/projects/q4wine/">https://sourceforge.net/projects/q4wine/</a> || <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/q4wine-git/">q4wine-git</a></span><sup><small>AUR</small></sup>
+</dd></dl>
+<ul><li>
+<b><a href="../en/Bottles.html" title="Bottles">Bottles</a></b> — Graphical prefix and runners manager for Wine based on GTK.</li></ul>
+<dl><dd>
+<a rel="nofollow" class="external free" href="https://usebottles.com/">https://usebottles.com/</a> || <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/bottles/">bottles</a></span><sup><small>AUR</small></sup>
+</dd></dl>
+<ul><li>
+<b>WINEgui</b> — A user-friendly WINE graphical interface.</li></ul>
+<dl><dd>
+<a rel="nofollow" class="external free" href="https://gitlab.melroy.org/melroy/winegui">https://gitlab.melroy.org/melroy/winegui</a> || <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/winegui/">winegui</a></span><sup><small>AUR</small></sup>, <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/winegui-bin/">winegui-bin</a></span><sup><small>AUR</small></sup>
+</dd></dl>
+<h2><span class="mw-headline" id="Configuration">Configuration</span></h2>
+<p>Configuring Wine is typically accomplished using:
+</p>
+<ul>
+<li>
+<a rel="nofollow" class="external text" href="https://wiki.winehq.org/Winecfg">winecfg</a> is a GUI configuration tool for Wine, which can be started by running <code>winecfg</code>.</li>
+<li>
+<a rel="nofollow" class="external text" href="https://wiki.winehq.org/Regedit">regedit</a> is Wine's registry editing tool,  which can be started by running <code>regedit</code>. See WineHQ's article on <a rel="nofollow" class="external text" href="https://wiki.winehq.org/Useful_Registry_Keys">Useful Registry Keys</a>.</li>
+<li>
+<a rel="nofollow" class="external text" href="https://wiki.winehq.org/Control">control</a> is Wine's implementation of the Windows Control Panel, which can be started by running <code>wine control</code>.</li>
+<li>See WineHQ's <a rel="nofollow" class="external text" href="https://wiki.winehq.org/List_of_Commands">List of Commands</a> for the full list.</li>
+</ul>
+<h3><span class="mw-headline" id="WINEPREFIX">WINEPREFIX</span></h3>
+<p>By default, Wine stores its configuration files and installed Windows programs in <code>~/.wine</code>. This directory is commonly called a "Wine prefix" or "Wine bottle". It is created/updated automatically whenever you run a Windows program or one of Wine's bundled programs such as <i>winecfg</i>. The prefix directory also contains a tree which your Windows programs will see as <code>C:</code> (the C-drive).
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> Wine prefixes are not forward compatible. New versions of Wine will automatically upgrade old prefixes if necessary, at which point they may become broken for old Wine versions. <a rel="nofollow" class="external autonumber" href="https://github.com/GloriousEggroll/wine-ge-custom/releases/tag/7.0-GE-8-LoL">[1]</a>
+</div>
+<p>You can override the location Wine uses for a prefix with the <code>WINEPREFIX</code> <a href="../en/Environment_variables.html" class="mw-redirect" title="Environment variable">environment variable</a>. This is useful if you want to use separate configurations for different Windows programs. The first time a program is run with a new Wine prefix, Wine will automatically create a directory with a bare C-drive and registry.
+</p>
+<p>For example, if you run one program with <code>env WINEPREFIX=~/.win-a wine program-a.exe</code>, and another with <code>env WINEPREFIX=~/.win-b wine program-b.exe</code>, the two programs will each have a separate C-drive and separate registries.
+</p>
+<div class="archwiki-template-box archwiki-template-box-warning">
+<strong>Warning:</strong> Wine prefixes are not <a href="https://en.wikipedia.org/wiki/Sandbox_(computer_security)" class="extiw" title="wikipedia:Sandbox (computer security)">sandboxes</a>! Programs running under Wine can still access the rest of the system! (for example, <code>Z:</code> is mapped to <code>/</code>, regardless of the Wine prefix).</div>
+<p>To create a default prefix without running a Windows program or other GUI tool you can use:
+</p>
+<pre>$ env WINEPREFIX=~/.customprefix wineboot -u
+</pre>
+<h3><span class="mw-headline" id="WINEARCH">WINEARCH</span></h3>
+<p>Wine will start a 64-bit environment by default. You can change this behavior using the <code>WINEARCH</code> <a href="../en/Environment_variables.html" class="mw-redirect" title="Environment variable">environment variable</a>. Rename your <code>~/.wine</code> directory and create a new Wine environment by running <code>$ WINEARCH=win32 winecfg</code>. This will get you a 32-bit Wine environment. Not setting <code>WINEARCH</code> will get you a 64-bit one.
+</p>
+<p>You can combine this with <code>WINEPREFIX</code> to make a separate <code>win32</code> and <code>win64</code> environment:
+</p>
+<pre>$ WINEARCH=win32 WINEPREFIX=~/win32 winecfg
+$ WINEPREFIX=~/win64 winecfg
+</pre>
+<p>You can also use <code>WINEARCH</code> in combination with other Wine programs, such as <i>winetricks</i> (using Steam as an example):
+</p>
+<pre>WINEARCH=win32 WINEPREFIX=~/.local/share/wineprefixes/steam winetricks steam
+</pre>
+<p>In order to see the architecture of an existing prefix you can check its registry file. The command below reads the system registry of the <code>~/.wine</code> prefix and returns <code>#arch=win32</code> or <code>#arch=win64</code> depending on the architecture type:
+</p>
+<pre>$ grep '#arch' ~/.wine/system.reg
+</pre>
+<h3><span class="mw-headline" id="Graphics_drivers">Graphics drivers</span></h3>
+<p>You need to install the 32-bit version of your graphics driver. Please install the package that is listed in the <i>OpenGL (multilib)</i> column in the table in <a href="../en/Xorg.html#Driver_installation" title="Xorg">Xorg#Driver installation</a>.
+</p>
+<p>A good sign that your drivers are inadequate or not properly configured is when Wine reports the following in your terminal window:
+</p>
+<pre>Direct rendering is disabled, most likely your OpenGL drivers have not been installed correctly
+</pre>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> You might need to restart X after having installed the correct library.</div>
+<h3><span class="mw-headline" id="Sound">Sound</span></h3>
+<p>By default sound issues may arise when running Wine applications. Ensure only one sound device is selected in <i>winecfg</i>.
+</p>
+<p>Install the correct packages for the audio driver you want to use:
+</p>
+<ul>
+<li>For <a href="../en/Advanced_Linux_Sound_Architecture.html" class="mw-redirect" title="ALSA">ALSA</a> install <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=lib32-alsa-lib">lib32-alsa-lib</a></span> and <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=lib32-alsa-plugins">lib32-alsa-plugins</a></span>
+</li>
+<li>For <a href="../en/PulseAudio.html" title="PulseAudio">PulseAudio</a> install <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=lib32-libpulse">lib32-libpulse</a></span>
+</li>
+<li>For <a href="../en/PipeWire.html" title="PipeWire">PipeWire</a> install <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=lib32-pipewire">lib32-pipewire</a></span> and either:
+<ul>
+<li>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=pipewire-pulse">pipewire-pulse</a></span> and <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=lib32-libpulse">lib32-libpulse</a></span> to use PulseAudio as a frontend.</li>
+<li>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=pipewire-alsa">pipewire-alsa</a></span>, <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=lib32-alsa-lib">lib32-alsa-lib</a></span>, and <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=lib32-alsa-plugins">lib32-alsa-plugins</a></span> to use ALSA as a frontend.</li>
+</ul>
+</li>
+<li>For <a href="../en/Open_Sound_System.html" class="mw-redirect" title="OSS">OSS</a> install <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=lib32-alsa-oss">lib32-alsa-oss</a></span>
+</li>
+</ul>
+<p>If <i>winecfg</i> <b>still</b> fails to detect the audio driver (Selected driver: (none)), <a rel="nofollow" class="external text" href="https://wiki.winehq.org/Wine_User's_Guide#Using_Regedit">configure it via the registry</a>. For example, in a case where the microphone was not working in a 32-bit Windows application on a 64-bit stock install of wine-1.9.7, this provided full access to the sound hardware (sound playback and mic): open <i>regedit</i>, look for the key <i>HKEY_CURRENT_USER &gt; Software &gt; Wine &gt; Drivers</i>, and add a string called <i>Audio</i> and give it the value <i>alsa</i>. Also, it may help to <a href="#WINEARCH">recreate the prefix</a>.
+</p>
+<h4><span class="mw-headline" id="MIDI_support">MIDI support</span></h4>
+<p><a href="../en/MIDI.html" title="MIDI">MIDI</a> was a quite popular system for video games music in the 90's. If you are trying out old games, it is not uncommon that the music will not play out of the box.
+Wine has excellent MIDI support. However you first need to make it work on your host system, as explained in <a href="../en/MIDI.html" title="MIDI">MIDI</a>. Last but not least you need to make sure Wine will use the correct MIDI output.
+</p>
+<h3><span class="mw-headline" id="Other_dependencies">Other dependencies</span></h3>
+<p>Some applications may require additional packages <a rel="nofollow" class="external autonumber" href="https://wiki.winehq.org/Building_Wine#Satisfying_Build_Dependencies">[2]</a>:
+</p>
+<ul>
+<li>For encryption support install <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=lib32-gnutls">lib32-gnutls</a></span>
+</li>
+<li>For joystick and gamepad support in a 32-bit prefix, install <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=lib32-sdl2">lib32-sdl2</a></span>
+</li>
+<li>For media playback in 32-bit programs install <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=lib32-gst-plugins-base">lib32-gst-plugins-base</a></span>, <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=lib32-gst-plugins-good">lib32-gst-plugins-good</a></span>, <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/lib32-gst-plugins-bad/">lib32-gst-plugins-bad</a></span><sup><small>AUR</small></sup> and <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/lib32-gst-plugins-ugly/">lib32-gst-plugins-ugly</a></span><sup><small>AUR</small></sup>
+</li>
+<li>For <a href="https://en.wikipedia.org/wiki/NTLM" class="extiw" title="wikipedia:NTLM">NTLM</a> authentication install <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=samba">samba</a></span>
+</li>
+</ul>
+<h3><span class="mw-headline" id="Fonts">Fonts</span></h3>
+<p>If Wine applications are not showing easily readable fonts, you may not have any fonts installed. To easily link all of the system fonts so they are accessible from wine:
+</p>
+<pre>$ cd ${WINEPREFIX:-~/.wine}/drive_c/windows/Fonts &amp;&amp; for i in /usr/share/fonts/**/*.{ttf,otf}; do ln -s "$i"; done
+</pre>
+<p>Wine uses FreeType to render fonts, and FreeType's defaults changed a few releases ago. Try using this environment setting for wine programs:
+</p>
+<pre>FREETYPE_PROPERTIES="truetype:interpreter-version=35"
+</pre>
+<p>Another possibility is to <a href="../en/Microsoft_fonts.html#Installation" title="Microsoft fonts">install Microsoft's TrueType fonts</a> into your wine prefix. If this does not help, try running <code>winetricks corefonts</code> first, then <code>winetricks allfonts</code> as a last resort.
+</p>
+<p>After running such programs, kill all Wine servers and run <code>winecfg</code>. Fonts should be legible now.
+</p>
+<p>If the fonts look somehow smeared, import the following text file into the Wine registry with <a rel="nofollow" class="external text" href="https://wiki.winehq.org/FAQ#How_do_I_edit_the_Wine_registry.3F">regedit</a>:
+</p>
+<pre>Windows Registry Editor Version 5.00
+[HKEY_CURRENT_USER\Software\Wine\X11 Driver]
+"ClientSideWithRender"="N"
+</pre>
+<p>For high resolution displays, you can adjust dpi values in winecfg.
+</p>
+<p>See also <a href="../en/Font_configuration.html#Applications_without_fontconfig_support" title="Font configuration">Font configuration#Applications without fontconfig support</a>.
+</p>
+<h4><span class="mw-headline" id="Enable_font_smoothing">Enable font smoothing</span></h4>
+<p>A good way to improve wine font rendering is to enable cleartype font smoothing.
+To enable "Subpixel smoothing (ClearType) RGB":
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/tmp/fontsmoothing.reg</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">REGEDIT4
+
+[HKEY_CURRENT_USER\Control Panel\Desktop]
+"FontSmoothing"="2"
+"FontSmoothingOrientation"=dword:00000001
+"FontSmoothingType"=dword:00000002
+"FontSmoothingGamma"=dword:00000578
+EOF</pre>
+<pre>$ WINE=${WINE:-wine} WINEPREFIX=${WINEPREFIX:-$HOME/.wine} $WINE regedit /tmp/fontsmoothing.reg 2&gt; /dev/null
+</pre>
+<p>For more information, check <a rel="nofollow" class="external text" href="https://askubuntu.com/a/219795">the original answer</a>
+</p>
+<h3><span class="mw-headline" id="Desktop_launcher_menus">Desktop launcher menus</span></h3>
+<p>When a Windows application installer creates a shortcut Wine creates a <a href="../en/Desktop_entries.html" class="mw-redirect" title=".desktop">.desktop</a> file instead. The default locations for those files in Arch Linux are:
+</p>
+<ul>
+<li>Desktop shortcuts are put in <code>~/Desktop</code>
+</li>
+<li>Start menu shortcuts are put in <code>~/.local/share/applications/wine/Programs/</code>
+</li>
+</ul>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> Wine does not support installing Windows applications for all users, so it will not put <i>.desktop</i> files in <code>/usr/share/applications</code>. See WineHQ bug <a rel="nofollow" class="external text" href="https://bugs.winehq.org/show_bug.cgi?id=11112">11112</a>
+</div>
+<div class="archwiki-template-box archwiki-template-box-tip">
+<strong>Tip:</strong> If menu items were <i>not</i> created while installing software or have been lost, <code>wine winemenubuilder</code> may be of some use.</div>
+<h4><span class="mw-headline" id="Creating_menu_entries_for_Wine_utilities">Creating menu entries for Wine utilities</span></h4>
+<p>By default, installation of Wine does not create desktop menus/icons for the software which comes with Wine (e.g. for <i>winecfg</i>, <i>winebrowser</i>, etc). This can be achieved by installing <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/wine-installer/">wine-installer</a></span><sup><small>AUR</small></sup> or <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/wine-installer-git/">wine-installer-git</a></span><sup><small>AUR</small></sup> meta-package (the latter has no additional dependencies), otherwise these instructions will add entries for these applications.
+</p>
+<p>First, install a Windows program using Wine to create the base menu. After the base menu is created, you can create the following files in <code>~/.local/share/applications/wine/</code>:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">wine-browsedrive.desktop</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">[Desktop Entry]
+Name=Browse C: Drive
+Comment=Browse your virtual C: drive
+Exec=wine winebrowser c:
+Terminal=false
+Type=Application
+Icon=folder-wine
+Categories=Wine;</pre>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">wine-uninstaller.desktop</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">[Desktop Entry]
+Name=Uninstall Wine Software
+Comment=Uninstall Windows applications for Wine
+Exec=wine uninstaller
+Terminal=false
+Type=Application
+Icon=wine-uninstaller
+Categories=Wine;</pre>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">wine-winecfg.desktop</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">[Desktop Entry]
+Name=Configure Wine
+Comment=Change application-specific and general Wine options
+Exec=winecfg
+Terminal=false
+Icon=wine-winecfg
+Type=Application
+Categories=Wine;</pre>
+<p>And create the following file in <code>~/.config/menus/applications-merged/</code>:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">wine.menu</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">&lt;!DOCTYPE Menu PUBLIC "-//freedesktop//DTD Menu 1.0//EN"
+"http://www.freedesktop.org/standards/menu-spec/menu-1.0.dtd"&gt;
+&lt;Menu&gt;
+  &lt;Name&gt;Applications&lt;/Name&gt;
+  &lt;Menu&gt;
+    &lt;Name&gt;wine-wine&lt;/Name&gt;
+    &lt;Directory&gt;wine-wine.directory&lt;/Directory&gt;
+    &lt;Include&gt;
+      &lt;Category&gt;Wine&lt;/Category&gt;
+    &lt;/Include&gt;
+  &lt;/Menu&gt;
+&lt;/Menu&gt;
+</pre>
+<p>If these settings produce a ugly/non-existent icon, it means that there are no icons for these launchers in the icon set that you have enabled. You should replace the icon settings with the explicit location of the icon that you want. Clicking the icon in the launcher's properties menu will have the same effect. A great icon set that supports these shortcuts is <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/gnome-colors-icon-theme/">gnome-colors-icon-theme</a></span><sup><small>AUR</small></sup>.
+</p>
+<h4><span class="mw-headline" id="Removing_menu_entries">Removing menu entries</span></h4>
+<p>Menu entries created by Wine are located in <code>~/.local/share/applications/wine/Programs/</code>. Remove the program's <i>.desktop</i> entry to remove the application from the menu.
+</p>
+<p>In addition to remove unwanted extensions binding by Wine, execute the following commands: <a rel="nofollow" class="external autonumber" href="https://wiki.winehq.org/FAQ#How_do_I_clean_the_Open_With_List.3F">[3]</a>
+</p>
+<pre>$ rm ~/.local/share/mime/packages/x-wine*
+$ rm ~/.local/share/applications/wine-extension*
+$ rm ~/.local/share/icons/hicolor/*/*/application-x-wine-extension*
+$ rm ~/.local/share/mime/application/x-wine-extension*
+</pre>
+<p>Sometimes you should also remove <code>wine-*.menu</code> files from <code>/.config/menus/</code> to completely remove items from Wine submenu in KDE.
+</p>
+<h3><span class="mw-headline" id="Appearance">Appearance</span></h3>
+<p>A similar to XP-looking theme can be <a rel="nofollow" class="external text" href="https://archive.org/download/zune-desktop-theme/ZuneDesktopTheme.msi">downloaded</a>. To install it, see <a rel="nofollow" class="external text" href="https://wiki.winehq.org/Wine_User%27s_Guide#Running_.msi_files">this upstream wiki article</a>. Lastly, use <i>winecfg</i> to select it.
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> The theme linked above can only be installed on 32-bit prefixes with Windows XP as the prefix version. To install it on 64-bit prefixes, you might want to create a temporary 32-bit prefix, install the theme and copy the <code>Zune</code> folder and <code>Zune.theme</code> files from <code>drive_c/Windows/Resources/Themes</code> in that prefix to the same location in your usual prefix.</div>
+<p>Wine staging users may instead want to try enabling the option <i>Enable GTK3 Theming</i> under the Staging section of <i>winecfg</i> for a theme that matches the current GTK theme.
+</p>
+<h3><span class="mw-headline" id="Printing">Printing</span></h3>
+<p>In order to use your installed printers (both local and network) with wine applications in <i>win32 prefixes</i> (e.g. MS Word), install the <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=lib32-libcups">lib32-libcups</a></span> package, reboot wine (<i>wineboot</i>) and restart your wine application.
+</p>
+<h3><span class="mw-headline" id="Networking">Networking</span></h3>
+<p>After installation, the <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=lib32-gnutls">lib32-gnutls</a></span> package may need to be <a href="../en/Help:Reading.html#Installation_of_packages" class="mw-redirect" title="Install">installed</a> for applications making TLS or HTTPS connections to work.
+</p>
+<p>For ICMP (ping), Wine may need the network access as described in the <a rel="nofollow" class="external text" href="https://wiki.winehq.org/FAQ#Failed_to_use_ICMP_.28network_ping.29.2C_this_requires_special_permissions">WineHQ FAQ</a>:
+</p>
+<pre># setcap cap_net_raw+epi /usr/bin/wine-preloader
+</pre>
+<p>If issues arise after this (such as an unhandled exception or privileged instruction), remove via:
+</p>
+<pre># setcap -r /usr/bin/wine-preloader
+</pre>
+<h2><span class="mw-headline" id="Usage">Usage</span></h2>
+<div class="archwiki-template-box archwiki-template-box-warning">
+<strong>Warning:</strong> Do not run or install Wine applications as root! See <a rel="nofollow" class="external text" href="https://wiki.winehq.org/FAQ#Should_I_run_Wine_as_root.3F">Wine FAQ</a> for details.</div>
+<p>See <a rel="nofollow" class="external text" href="https://wiki.winehq.org/Wine_User%27s_Guide#Using_Wine">Wine User's Guide</a> for general information on Wine usage.
+</p>
+<p>See <a rel="nofollow" class="external text" href="https://appdb.winehq.org/">Wine Application Database (AppDB)</a> for additional information on specific Windows applications in Wine.
+</p>
+<h3><span class="mw-headline" id="Wayland">Wayland</span></h3>
+<p>Currently Wine does not support Wayland directly, but you can use <a href="../en/Wayland.html#Xwayland" class="mw-redirect" title="Xwayland">Xwayland</a> instead.
+</p>
+<p>There are some efforts to support Wayland though:
+</p>
+<ul>
+<li>Experimental Wayland driver for Wine, which supports using OpenGL- and Windows GDI-applications. See <a rel="nofollow" class="external text" href="https://www.winehq.org/pipermail/wine-devel/2020-December/178575.html">this</a> and <a rel="nofollow" class="external text" href="https://www.winehq.org/pipermail/wine-devel/2021-February/181325.html">this</a> wine-devel maillist entries.</li>
+<li>
+<a rel="nofollow" class="external text" href="https://github.com/varmd/wine-wayland">wine-wayland</a>: a custom version of Wine, which supports Wayland via Vulkan (so it supports only: DirectX 9, 10 and 11 via <a href="#DXVK">#DXVK</a> and Vulkan-compatible applications).</li>
+</ul>
+<h3><span class="mw-headline" id="Stop_running_Wine">Stop running Wine</span></h3>
+<p>Stopping started executables, <code>wine</code> with Ctrl+Z or <code>wineconsole</code> with Ctrl+C, might leave processes running in the background. See for example:
+</p>
+<pre>$ ps -xo pid,cmd
+    PID CMD
+    297 -bash
+    933 /usr/bin/wineserver
+    939 C:\windows\system32\services.exe
+    942 C:\windows\system32\winedevice.exe
+    950 C:\windows\system32\explorer.exe /desktop
+    954 C:\windows\system32\winedevice.exe
+    965 C:\windows\system32\plugplay.exe
+    977 C:\windows\system32\svchost.exe -k LocalServiceNetworkRestricted
+    984 C:\windows\system32\rpcss.exe
+    997 mbserver.exe
+   1017 start.exe /exec
+   1019 C:\windows\system32\conhost.exe --unix --width 169 --height 40 --server 0x10
+   1021 Z:\home\wineuser\mbserver.exe
+   1030 ps -xo pid,cmd</pre>
+<p>All running <code>wine</code> and <code>wineconsole</code> processes are stopped at once using the <a rel="nofollow" class="external text" href="https://wiki.winehq.org/Wine_User%27s_Guide#-k_%5Bn%5D">wineserver -k</a> command. For example:
+</p>
+<pre>$ wineserver -k 15</pre>
+<p>An equivalent command to gracefully finish both executables in the above example is:
+</p>
+<pre>$ kill 997 1021</pre>
+<h2><span class="mw-headline" id="Tips_and_tricks">Tips and tricks</span></h2>
+<h3><span class="mw-headline" id="Wineconsole">Wineconsole</span></h3>
+<p>Often you may need to run <i>.exe'</i>s to patch game files, for example a widescreen mod for an old game, and running the <i>.exe</i> normally through Wine might yield nothing happening. In this case, you can open a terminal and run the following command:
+</p>
+<pre>$ wineconsole cmd
+</pre>
+<p>Then navigate to the directory and run the <i>.exe</i> file from there.
+</p>
+<h3><span class="mw-headline" id="Winetricks">Winetricks</span></h3>
+<p><a rel="nofollow" class="external text" href="https://wiki.winehq.org/Winetricks">Winetricks</a> is a script to allow one to install base requirements needed to run Windows programs. Installable components include DirectX 9.x, MSXML (required by Microsoft Office 2007 and Internet Explorer), Visual Runtime libraries and many more.
+</p>
+<p><a href="../en/Help:Reading.html#Installation_of_packages" class="mw-redirect" title="Install">Install</a> the <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=winetricks">winetricks</a></span> package (or alternatively <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/winetricks-git/">winetricks-git</a></span><sup><small>AUR</small></sup>). Then run it with:
+</p>
+<pre>$ winetricks
+</pre>
+<p>For using GUI you can <a href="../en/Help:Reading.html#Installation_of_packages" class="mw-redirect" title="Install">install</a> either <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=zenity">zenity</a></span>(GTK) or <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=kdialog">kdialog</a></span>(Qt).
+</p>
+<h3><span class="mw-headline" id="Performance">Performance</span></h3>
+<h4><span class="mw-headline" id="CSMT">CSMT</span></h4>
+<p>CSMT is a technology used by Wine to use a separate thread for the OpenGL calls to improve performance noticeably. Since Wine 3.2, CSMT is enabled by default. 
+</p>
+<p>Note that CSMT may actually hurt performance for some applications - if this is the case, disable it by runing <code>wine regedit</code> and set the DWORD value for <i>HKEY_CURRENT_USER -&gt; Software &gt; Wine &gt; Direct3D &gt; csmt</i> to 0x00 (disabled).
+</p>
+<p>Further information:
+</p>
+<dl><dd>
+<a rel="nofollow" class="external text" href="https://www.phoronix.com/forums/showthread.php?93967-Wine-s-Big-Command-Stream-D3D-Patch-Set-Updated/page3&amp;s=7775d7c3d4fa698089d5492bb7b1a435">Phoronix Forum discussion</a> with the CSMT developer Stefan Dösinger</dd></dl>
+<h4><span class="mw-headline" id="Force_OpenGL_mode_in_games">Force OpenGL mode in games</span></h4>
+<p>Some games might have an OpenGL mode which <i>may</i> perform better than their default DirectX mode. While the steps to enable OpenGL rendering is <i>application specific</i>, many games accept the <code>-opengl</code> parameter.
+</p>
+<pre>$ wine <i>/path/to/3d_game.exe</i> -opengl
+</pre>
+<p>You should of course refer to your application's documentation and Wine's <a rel="nofollow" class="external text" href="https://appdb.winehq.org">AppDB</a> for such application specific information.
+</p>
+<h4><span class="mw-headline" id="VKD3D-Proton">VKD3D-Proton</span></h4>
+<p><a rel="nofollow" class="external text" href="https://github.com/HansKristian-Work/vkd3d-proton">VKD3D-Proton</a> is a fork of <a rel="nofollow" class="external text" href="https://wiki.winehq.org/Vkd3d">VKD3D</a> which aims to implement the full Direct3D 12 API using Vulkan. The project serves as the development effort for Direct3D 12 support in Proton improving performance and compatibility for DirectX 12 games.
+</p>
+<p>To use it, install <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/vkd3d-proton-mingw/">vkd3d-proton-mingw</a></span><sup><small>AUR</small></sup> or <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/vkd3d-proton-bin/">vkd3d-proton-bin</a></span><sup><small>AUR</small></sup>. Then run the following command to activate it in your Wineprefix (by default <code>~/.wine</code>):
+</p>
+<pre>$ WINEPREFIX=<i>your-prefix</i> setup_vkd3d_proton install
+</pre>
+<div class="archwiki-template-box archwiki-template-box-warning">
+<strong>Warning:</strong> VKD3D-Proton overrides the DirectX 12 DLL, which may be considered cheating in online multiplayer games, and may get your account <b>banned</b>. Use at your own risk!</div>
+<h4><span class="mw-headline" id="DXVK">DXVK</span></h4>
+<p><a rel="nofollow" class="external text" href="https://github.com/doitsujin/dxvk">DXVK</a> is a promising new implementation for DirectX 9, 10 &amp; 11 over Vulkan. This should allow for greater performance, and in some cases, even better compatibility. Battlefield 1 for example, only runs under DXVK. On the other hand, DXVK does not support all Wine games (yet).
+</p>
+<p>To use it, install <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/dxvk-mingw/">dxvk-mingw</a></span><sup><small>AUR</small></sup> or <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/dxvk-bin/">dxvk-bin</a></span><sup><small>AUR</small></sup>. Then run the following command to activate it in your Wineprefix (by default <code>~/.wine</code>):
+</p>
+<pre>$ WINEPREFIX=<i>your-prefix</i> setup_dxvk install
+</pre>
+<div class="archwiki-template-box archwiki-template-box-warning">
+<strong>Warning:</strong> DXVK overrides the DirectX 10 and 11 DLLs, which may be considered cheating in online multiplayer games, and may get your account <b>banned</b>. Use at your own risk!</div>
+<p>While using DXVK with a dual graphics setup, Wine prefers the dedicated GPU. On laptops for power saving, this can be overridden:
+</p>
+<pre>$ VK_ICD_FILENAMES=/usr/share/vulkan/icd.d/<i>your_gpu.json</i> wine <i>executable</i>
+</pre>
+<h5><span class="mw-headline" id="HDR_support">HDR support</span></h5>
+<p>When paired with <a href="../en/Gamescope.html" title="Gamescope">Gamescope</a>, DXVK (V2.1+) offers support for HDR10 displays (for <a href="../en/AMDGPU.html" title="AMDGPU">AMDGPU</a> users only). See <a href="../en/HDR_monitor_support.html" title="HDR monitor support">HDR monitor support</a> for details.
+</p>
+<h4><span class="mw-headline" id="Gallium_Nine">Gallium Nine</span></h4>
+<p>With the open-source gallium-based drivers (mostly AMD and Intel cards) there is a <a rel="nofollow" class="external text" href="https://wiki.ixit.cz/d3d9">Gallium Direct3D state tracker</a> that aims to provide nearly-native performance for DirectX 9. In most cases it has less visual glitches than the upstream wine and doubles the performances. It consumes much less CPU time than CSMT.
+</p>
+<p>Install <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=wine-nine">wine-nine</a></span> to use it. This is a standalone package that can be installed with any Wine version. Use <code>wine ninewinecfg</code> to check if it is enabled.
+</p>
+<p>For older Intel graphics (gen4-7: GMA 3000, GMA 4500, HD 2000-5000; year 2006-2014) Crocus Gallium driver should be used instead of i965 since Mesa 21.2. <a href="../en/Environment_variables.html" class="mw-redirect" title="Export">Export</a> the following environment variable before running Wine: 
+</p>
+<pre>MESA_LOADER_DRIVER_OVERRIDE=crocus
+</pre>
+<h3><span class="mw-headline" id="Unregister_existing_Wine_file_associations">Unregister existing Wine file associations</span></h3>
+<p>By default, Wine takes over as the default application for a lot of formats. Some (e.g. <code>vbs</code> or <code>chm</code>) are Windows-specific, and opening them with Wine can be a convenience. However, having other formats (e.g. <code>gif</code>, <code>jpeg</code>, <code>txt</code>, <code>js</code>) open in Wine's bare-bones simulations of Internet Explorer and Notepad can be annoying.
+</p>
+<p>Wine's file associations are set in <code>~/.local/share/applications/</code> as <code>wine-extension-<i>extension</i>.desktop</code> files. Delete the files corresponding to the extensions you want to unregister. Or, to remove all wine extensions:
+</p>
+<pre>$ rm -f ~/.local/share/applications/wine-extension*.desktop
+$ rm -f ~/.local/share/icons/hicolor/*/*/application-x-wine-extension*
+</pre>
+<p>Next, remove the old cache:
+</p>
+<pre>$ rm -f ~/.local/share/applications/mimeinfo.cache
+$ rm -f ~/.local/share/mime/packages/x-wine*
+$ rm -f ~/.local/share/mime/application/x-wine-extension*
+</pre>
+<p>And, update the cache:
+</p>
+<pre>$ update-desktop-database ~/.local/share/applications
+$ update-mime-database ~/.local/share/mime/
+</pre>
+<p>Please note Wine will still create new file associations and even recreate the file associations if the application sets the file associations again.
+</p>
+<h3><span class="mw-headline" id="Prevent_Wine_from_creating_filetype_associations">Prevent Wine from creating filetype associations</span></h3>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> This has to be done for each WINEPREFIX which should not update file associations unless you opt to change <code>/usr/share/wine/wine.inf</code> .</div>
+<p>This method prevents the creation of filetype associations but retains the creation of XDG .desktop files (that you might see e.g. in menus).
+</p>
+<p>If you want to stop wine from creating filetype associations via winecfg you have to uncheck the "Manage File Associations" checkbox under the Desktop Integration tab. See <a rel="nofollow" class="external text" href="https://wiki.winehq.org/FAQ#How_can_I_prevent_Wine_from_changing_the_filetype_associations_on_my_system_or_adding_unwanted_menu_entries.2Fdesktop_links.3F">Wine FAQ</a>
+</p>
+<p>To make the same change via registry add the string <code>Enable</code> with value <code>N</code> under:
+</p>
+<pre>HKEY_CURRENT_USER\Software\Wine\FileOpenAssociations
+</pre>
+<p><i>You might have to create the key <code>FileOpenAssociations</code> first!</i>
+</p>
+<p>To make this change via the command-line, run the following command:
+</p>
+<pre>$ wine reg add "HKEY_CURRENT_USER\Software\Wine\FileOpenAssociations" /v Enable /d N
+</pre>
+<p>If you want to apply this by default for new WINEPREFIXES, edit <code>/usr/share/wine/wine.inf</code> and add this line for example under the <code>[Services]</code> section:
+</p>
+<pre>HKCU,"Software\Wine\FileOpenAssociations","Enable",2,"N"
+</pre>
+<p>To prevent a package upgrade from overriding the modified file, create a pacman hook to make the change automatically:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/pacman.d/hooks/stop-wine-associations.hook</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">[Trigger]
+Operation = Install
+Operation = Upgrade
+Type = Path
+Target = usr/share/wine/wine.inf
+
+[Action]
+Description = Stopping Wine from hijacking file associations...
+When = PostTransaction
+Exec = /bin/sh -c '/usr/bin/grep -q "HKCU,\"Software\\\Wine\\\FileOpenAssociations\",\"Enable\",2,\"N\"" /usr/share/wine/wine.inf || /usr/bin/sed -i "s/\[Services\]/\[Services\]\nHKCU,\"Software\\\Wine\\\FileOpenAssociations\",\"Enable\",2,\"N\"/g" /usr/share/wine/wine.inf'</pre>
+<p>See <a href="../en/Pacman.html#Hooks" title="Pacman">Pacman#Hooks</a> for more information.
+</p>
+<h3><span class="mw-headline" id="Execute_Windows_binaries_with_Wine_implicitly">Execute Windows binaries with Wine implicitly</span></h3>
+<p>The <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=wine">wine</a></span> package installs a <i>binfmt</i> file which will allows you to run Windows programs directly, e.g. <code><i>./myprogram.exe</i></code> will launch as if you had typed <code>wine <i>./myprogram.exe</i></code>. Service starts by default on boot, if you have not rebooted after installing Wine you can <a href="../en/Help:Reading.html#Control_of_systemd_units" class="mw-redirect" title="Start">start</a> <code>systemd-binfmt.service</code> to use it right away.
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> Make sure the Windows binary is <a href="../en/Help:Reading.html#Make_executable" class="mw-redirect" title="Executable">executable</a>, otherwise the binary will not run.</div>
+<h3><span class="mw-headline" id="Dual_Head_with_different_resolutions">Dual Head with different resolutions</span></h3>
+<p>If you have issues with dual-head setups and different display resolutions you are probably missing <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=lib32-libxrandr">lib32-libxrandr</a></span>.
+</p>
+<p>Also installing <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=lib32-libxinerama">lib32-libxinerama</a></span> might fix dual-head issues with wine (for example, unclickable buttons and menus of application in the right most or bottom most monitor, not redrawable interface of application in that zone, dragging mouse cursor state stucked after leaving application area).
+</p>
+<h3><span class="mw-headline" id="Burning_optical_media">Burning optical media</span></h3>
+<p>To burn CDs or DVDs, you will need to load the <code>sg</code> <a href="../en/Kernel_module.html" title="Kernel module">kernel module</a>.
+</p>
+<h3><span class="mw-headline" id="Proper_mounting_of_optical_media_images">Proper mounting of optical media images</span></h3>
+<p>Some applications will check for the disc to be in drive. They may check for data only, in which case it might be enough to configure the corresponding path as being a CD-ROM drive in <i>winecfg</i>.
+However, other applications will look for a name and/or a serial number, in which case the image has to be mounted with these special properties.
+</p>
+<p>Some virtual drive tools do not handle these metadata, like fuse-based virtual drives (Acetoneiso for instance). <a href="../en/CDemu.html" title="CDemu">CDemu</a> will handle it correctly.
+</p>
+<h3><span class="mw-headline" id="Show_FPS_overlay_in_games">Show FPS overlay in games</span></h3>
+<p>Wine features an embedded FPS monitor which works for all graphical applications if the environment variable <code>WINEDEBUG=fps</code> is set. This will output the framerate to stdout. You can display the FPS on top of the window thanks to <code>osd_cat</code> from the <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=xosd">xosd</a></span> package. See <a rel="nofollow" class="external text" href="https://gist.github.com/anonymous/844aefd70bb50bf72b35">winefps.sh</a> for a helper script.
+</p>
+<h3><span class="mw-headline" id="Running_Wine_under_a_separate_user_account">Running Wine under a separate user account</span></h3>
+<p>It may be desirable to run Wine under a specifically created user account in order to reduce concerns about Windows applications having access to your home directory.
+</p>
+<p>First, create a <a href="../en/Users_and_groups.html" class="mw-redirect" title="User account">user account</a> for Wine:
+</p>
+<pre># useradd -m -s /bin/bash wineuser
+</pre>
+<p>Now switch to another TTY and start your X WM or DE as you normally would or keep reading...
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> The following approach only works when enabling root for Xorg. See <a href="../en/Xorg.html#Rootless_Xorg" title="Xorg">Xorg#Rootless Xorg</a> for more information on how to execute the <code>xhost</code> command under your main user.</div>
+<p>Afterwards, in order to open Wine applications using this new user account you need to add the new user to the X server permissions list:
+</p>
+<pre>$ xhost +SI:localuser:wineuser
+</pre>
+<p>Finally, you can run Wine via the following command, which uses <code>env</code> to launch Wine with the environment variables it expects:
+</p>
+<pre>$ sudo -u wineuser env HOME=/home/wineuser USER=wineuser USERNAME=wineuser LOGNAME=wineuser wine <i>arguments</i>
+</pre>
+<p>It is possible to automate the process of running Windows applications with Wine via this method by using a shell script as follows:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/usr/local/bin/runaswine</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">#!/bin/sh
+xhost +SI:localuser:wineuser
+sudo -u wineuser env HOME=/home/wineuser USER=wineuser USERNAME=wineuser LOGNAME=wineuser wine "$@"</pre>
+<p>Wine applications can then be launched via:
+</p>
+<pre>$ runaswine <i>"C:\path\to\application.exe"</i>
+</pre>
+<p>In order to not be asked for a password each time Wine is run as another user the following entry can be added to the sudoers file: <code><i>mainuser</i>	ALL=(wineuser) NOPASSWD: ALL</code>. See <a href="../en/Sudo.html#Configuration" title="Sudo">Sudo#Configuration</a> for more information.
+</p>
+<p>It is recommended to run <code>winecfg</code> as the Wine user and remove all bindings for directories outside the home directory of the Wine user in the "Desktop Integration" section of the configuration window so no program run with Wine has read access to any file outside the special user's home directory.
+</p>
+<p>Keep in mind that audio will probably be non-functional in Wine programs which are run this way if <a href="../en/PulseAudio.html" title="PulseAudio">PulseAudio</a> is used. See <a href="../en/PulseAudio/Examples.html#Allowing_multiple_users_to_share_a_PulseAudio_daemon" title="PulseAudio/Examples">PulseAudio/Examples#Allowing multiple users to share a PulseAudio daemon</a> for information about allowing the Wine user to access the PulseAudio daemon of the principal user.
+</p>
+<h3><span class="mw-headline" id="Temp_directory_on_tmpfs">Temp directory on tmpfs</span></h3>
+<p>To prevent Wine from writing its temporary files to a physical disk, one can define an alternative location, like <i>tmpfs</i>. Remove Wine's default directory for temporary files and creating a symlink:
+</p>
+<pre>$ rm -r ~/.wine/drive_c/users/$USER/Temp ~/.wine/drive_c/windows/temp
+$ ln -s /tmp/ ~/.wine/drive_c/users/$USER/Temp
+$ ln -s /tmp/ ~/.wine/drive_c/windows/temp
+</pre>
+<h3>
+<span id="Prevent_installing_Mono.2FGecko"></span><span class="mw-headline" id="Prevent_installing_Mono/Gecko">Prevent installing Mono/Gecko</span>
+</h3>
+<p>If Gecko and/or Mono are not present on the system nor in the Wine prefix, Wine will prompt to download them from the internet. If you do not need Gecko and/or Mono, you might want to disable this dialog, by  setting the <code>WINEDLLOVERRIDES</code> <a href="../en/Environment_variables.html" class="mw-redirect" title="Environment variable">environment variable</a> to <code>mscoree=d;mshtml=d</code>.
+</p>
+<h3><span class="mw-headline" id="Vulkan">Vulkan</span></h3>
+<p>The default Wine Vulkan ICD loader works fine for most applications, but does not support advanced features, like Vulkan layers. To use these features, you have to install the official Vulkan SDK, see step 2-4 on the original Vulkan patches author's <a rel="nofollow" class="external text" href="https://github.com/roderickc/wine-vulkan">GitHub page</a>.
+</p>
+<h3><span class="mw-headline" id="Remove_Wine_file_bindings">Remove Wine file bindings</span></h3>
+<p>For security reasons it may be useful to remove the preinstalled Wine bindings so Windows applications cannot be launched directly from a file manager or from the browser (Firefox offers to open EXE files directly with Wine!).
+If you want to do this, you may add the following to the <code>[options]</code> section in <code>/etc/pacman.conf</code>
+</p>
+<pre>NoExtract = usr/lib/binfmt.d/wine.conf
+NoExtract = usr/share/applications/wine.desktop
+</pre>
+<h3><span class="mw-headline" id="Wine_is_setting_its_own_applications_as_defaults">Wine is setting its own applications as defaults</span></h3>
+<p>Every time Wine creates (or updates) a prefix it will set its own bundled apps like Notepad and Winebrowser as the default text editor and web browser accordingly.
+</p>
+<p>A way to work around this undesirable behavior is by using this <a href="../en/Environment_variables.html" class="mw-redirect" title="Environment variable">environment variable</a>:
+</p>
+<pre>$ WINEDLLOVERRIDES=winemenubuilder.exe=d ...
+</pre>
+<h3><span class="mw-headline" id="WineASIO">WineASIO</span></h3>
+<p>If you need professional audio support under wine you can use <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/wineasio/">wineasio</a></span><sup><small>AUR</small></sup> which provides an ASIO interface for wine that you can then use with <a href="../en/JACK_Audio_Connection_Kit.html" class="mw-redirect" title="JACK">JACK</a>.
+</p>
+<p>In order to use wineasio you must add yourself to the <code>realtime</code> <a href="../en/Users_and_groups.html#Group_management" class="mw-redirect" title="User group">user group</a>.
+</p>
+<p>Next you need to register wineasio in your desired wine prefix. Register the 32-bit and/or 64-bit version as needed:
+</p>
+<pre>$ regsvr32 /usr/lib32/wine/i386-windows/wineasio.dll
+$ wine64 regsvr32 /usr/lib/wine/x86_64-windows/wineasio.dll
+</pre>
+<h3><span class="mw-headline" id="Disable_starting_explorer.exe">Disable starting explorer.exe</span></h3>
+<p>If you run a text mode (<a rel="nofollow" class="external text" href="https://www.winehq.org/docs/wineusr-guid%3Cbr%20/%3Ee/cui-programs">Command User Interface</a>) executable without X installed, these errors might appear while starting the executable:
+</p>
+<pre>0060:err:winediag:nodrv_CreateWindow Application tried to create a window, but no driver could be loaded.
+0060:err:winediag:nodrv_CreateWindow L"The explorer process failed to start."
+0060:err:systray:initialize_systray Could not create tray window
+</pre>
+<p>This is because <code>wine</code> by default starts explorer.exe. Even <code>wineconsole</code> starts <code>explorer.exe /desktop</code> according to <code>ps</code> output.
+</p>
+<p>Starting explorer including systray can be disabled with this environment setting:
+</p>
+<pre>$ WINEDLLOVERRIDES="explorer.exe=d" wine program.exe
+</pre>
+<p>Depending on your CUI program, you might be able to use it with lowest memory footprint by disabling services.exe too:
+</p>
+<pre>$ WINEDLLOVERRIDES="explorer.exe,services.exe=d" wine program.exe
+</pre>
+<h2><span class="mw-headline" id="Troubleshooting">Troubleshooting</span></h2>
+<p>See <a rel="nofollow" class="external text" href="https://wiki.winehq.org/Wine_User%27s_Guide#Troubleshooting_.2F_Reporting_bugs">Wine User's Guide</a> and <a rel="nofollow" class="external text" href="https://wiki.winehq.org/FAQ">Wine FAQ</a> (especially its <a rel="nofollow" class="external text" href="https://wiki.winehq.org/FAQ#Troubleshooting">Troubleshooting</a> section) for general tips.
+</p>
+<p>Also refer to the <a rel="nofollow" class="external text" href="https://appdb.winehq.org/">Wine AppDB</a> for an advice on specific applications.
+</p>
+<h3><span class="mw-headline" id="General_installation_issues">General installation issues</span></h3>
+<p>Each <a href="#Wine_prefix">#Wine prefix</a><sup>[<a href="../en/Help:Procedures.html#Fix_broken_section_links" title="Help:Procedures">broken link</a>: invalid section]</sup> has a lot of persistent state, between the installed programs and the registry. The first step to troubleshooting issues with program installation should be to either create an isolated prefix, or clear the default prefix via <code>rm -rf ~/.wine</code>. The latter will delete any of the programs and settings you have added to the default prefix.
+</p>
+<h3><span class="mw-headline" id="Error_loading_libc.so.6">Error loading libc.so.6</span></h3>
+<p>You might get the following error when running wine:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">$ wine cmd</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">/usr/bin/wine: error while loading shared libraries: libc.so.6: cannot create shared object descriptor: Operation not permitted
+</pre>
+<p>This is caused by the syscall to <code>mmap2</code> failing:
+</p>
+<pre>mmap2(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = -1 EPERM (Operation not permitted)
+</pre>
+<p>This is a known <a rel="nofollow" class="external text" href="https://bugzilla.kernel.org/show_bug.cgi?id=198355">bug in the kernel</a>.
+</p>
+<p>Changing the <code>vm.mmap_min_addr</code> <a href="../en/Sysctl.html" title="Sysctl">sysctl</a> value from the default of <code>65536</code> seems to fix the problem:
+</p>
+<pre># sysctl -w vm.mmap_min_addr=32768
+</pre>
+<h3><span class="mw-headline" id="Xwayland_problems">Xwayland problems</span></h3>
+<p>If you use Wine under <a href="../en/Wayland.html#Xwayland" class="mw-redirect" title="Xwayland">Xwayland</a>, you can activate the option for "Emulating a virtual desktop" in the Graphics Tab in winecfg, to avoid problems with:
+</p>
+<ul>
+<li>flickering;</li>
+<li>wrong window location;</li>
+<li>wrong mouse cursor location and clicks;</li>
+<li>keyboard detection.</li>
+</ul>
+<p>If disabling the Virtual Desktop left you unable to interact with the winecfg window with mouse &amp; keyboard anymore, you can explicitly start winecfg on a Virtual Desktop anyway and reenable it with:
+</p>
+<pre>$ wine explorer /desktop=name,800x600 winecfg
+</pre>
+<h3><span class="mw-headline" id="Keyboard_input_not_working">Keyboard input not working</span></h3>
+<p>This could be caused by the window manager not switching focus. In the <i>Graphics</i> tab of <i>winecfg</i>, disable the 'Allow the window manager...' options, or set windowed mode with 'Emulate a virtual desktop'.
+</p>
+<ul><li>Some suggest to toggle all the <i>Window settings</i>, click <i>Apply</i>, then change them back. If that does not work, try the above.</li></ul>
+<p>If the keyboard does not work after unfocusing the application, try editing the registry:
+</p>
+<ul>
+<li>Under <code>HKEY_CURRENT_USER\Software\Wine\X11 Driver</code>, add a string value <code>UseTakeFocus</code> and set it to <code>N</code>.</li>
+<li>Alternatively, you can use winetricks to set the value: <pre>$ winetricks usetakefocus=n</pre>
+</li>
+</ul>
+<h3><span class="mw-headline" id="Application_fails_to_start">Application fails to start</span></h3>
+<p>Some older games and applications assume that the current <a href="https://en.wikipedia.org/wiki/Working_directory" class="extiw" title="wikipedia:Working directory">working directory</a> is the same as that which the executable is in. Launching these executables from other locations will prevent them from staring correctly. Use <code>cd <i>path_containing_exe</i></code> before invoking Wine to rule this possibility out.
+</p>
+<h2><span class="mw-headline" id="See_also">See also</span></h2>
+<ul>
+<li><a rel="nofollow" class="external text" href="https://www.winehq.org/">Wine Homepage</a></li>
+<li><a rel="nofollow" class="external text" href="https://wiki.winehq.org/">Wine Wiki</a></li>
+<li>
+<a rel="nofollow" class="external text" href="https://appdb.winehq.org/">Wine Application Database (AppDB)</a> - Information about running specific Windows applications (Known issues, ratings, guides, etc tailored to specific applications)</li>
+<li>
+<a rel="nofollow" class="external text" href="https://forum.winehq.org/">Wine Forums</a> - A great place to ask questions <i>after</i> you have looked through the FAQ and AppDB</li>
+<li><a href="https://wiki.gentoo.org/wiki/Wine" class="extiw" title="gentoo:Wine">Gentoo:Wine</a></li>
+<li>
+<a rel="nofollow" class="external text" href="https://www.darlinghq.org/">Darling</a> - a similar project for MacOS software</li>
+<li>
+<a rel="nofollow" class="external text" href="https://github.com/wineasio/wineasio">WineASIO</a> - GitHub page of the WineASIO project with further information</li>
+</ul>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface">
+<div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../Special:Categories.html" title="Special:Categories">Categories</a>: <ul>
+<li><a href="../en/Category:Emulation.html" title="Category:Emulation">Emulation</a></li>
+<li><a href="../en/Category:Gaming.html" title="Category:Gaming">Gaming</a></li>
+</ul>
+</div>
+<div id="mw-hidden-catlinks" class="mw-hidden-catlinks mw-hidden-cats-hidden">Hidden category: <ul><li><a href="../en/Category:Pages_with_broken_section_links.html" title="Category:Pages with broken section links">Pages with broken section links</a></li></ul>
+</div>
+</div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=Wine&amp;oldid=785610">https://wiki.archlinux.org/index.php?title=Wine&amp;oldid=785610</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 17 August 2023, at 02:49.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

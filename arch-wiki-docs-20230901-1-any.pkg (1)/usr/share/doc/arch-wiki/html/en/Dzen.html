@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>Dzen - ArchWiki</title>
+<link rel="stylesheet" href="../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Dzen rootpage-Dzen skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Installation" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Installation">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Installation</div>
+			</a>
+			
+			<ul id="toc-Installation-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Usage" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Usage">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Usage</div>
+			</a>
+			
+				<button aria-controls="toc-Usage-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Usage subsection
+				</button>
+			
+			<ul id="toc-Usage-sublist" class="sidebar-toc-list">
+				<li id="toc-Options" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Options">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.1</span>Options</div>
+			</a>
+			
+			<ul id="toc-Options-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Making_a_pop-up_with_dzen" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Making_a_pop-up_with_dzen">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>Making a pop-up with dzen</div>
+			</a>
+			
+			<ul id="toc-Making_a_pop-up_with_dzen-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Configuration" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Configuration">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4</span>Configuration</div>
+			</a>
+			
+			<ul id="toc-Configuration-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Tips_and_tricks" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Tips_and_tricks">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5</span>Tips and tricks</div>
+			</a>
+			
+				<button aria-controls="toc-Tips_and_tricks-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Tips and tricks subsection
+				</button>
+			
+			<ul id="toc-Tips_and_tricks-sublist" class="sidebar-toc-list">
+				<li id="toc-Using_custom_fonts_with_dzen" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Using_custom_fonts_with_dzen">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5.1</span>Using custom fonts with dzen</div>
+			</a>
+			
+			<ul id="toc-Using_custom_fonts_with_dzen-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Dzen_and_Conky" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Dzen_and_Conky">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5.2</span>Dzen and Conky</div>
+			</a>
+			
+			<ul id="toc-Dzen_and_Conky-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Clickable_areas_and_popups" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Clickable_areas_and_popups">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5.3</span>Clickable areas and popups</div>
+			</a>
+			
+			<ul id="toc-Clickable_areas_and_popups-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Gadgets" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Gadgets">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5.4</span>Gadgets</div>
+			</a>
+			
+			<ul id="toc-Gadgets-sublist" class="sidebar-toc-list">
+				<li id="toc-dbar" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#dbar">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5.4.1</span>dbar</div>
+			</a>
+			
+			<ul id="toc-dbar-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-gdbar" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#gdbar">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5.4.2</span>gdbar</div>
+			</a>
+			
+			<ul id="toc-gdbar-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Others" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Others">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5.4.3</span>Others</div>
+			</a>
+			
+			<ul id="toc-Others-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-See_also" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#See_also">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6</span>See also</div>
+			</a>
+			
+			<ul id="toc-See_also-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../en/Dzen.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="mw-list-item"><a href="../en/Talk:Dzen.html" rel="discussion" title="Discussion about the content page [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">English</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../en/Dzen.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=Dzen&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=Dzen&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../en/Dzen.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Dzen&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Dzen&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output">
+<p><a rel="nofollow" class="external text" href="https://robm.github.io/dzen/">Dzen</a> is "a general purpose messaging, notification and menuing program for X11. It was designed to be scriptable in any language and integrate well with window managers like <a href="../en/Dwm.html" title="Dwm">dwm</a>, wmii and <a href="../en/Xmonad.html" title="Xmonad">xmonad</a> though it will work with any window manager."
+</p>
+<mw:tocplace></mw:tocplace>
+<h2><span class="mw-headline" id="Installation">Installation</span></h2>
+<p><a href="../en/Help:Reading.html#Installation_of_packages" class="mw-redirect" title="Install">Install</a> the <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=dzen2">dzen2</a></span> package, which includes Xft, XPM, and Xinerama support.
+</p>
+<h2><span class="mw-headline" id="Usage">Usage</span></h2>
+<p>Dzen receives string from a pipe and output it graphically, this fact makes dzen scriptable in any language.
+Example:
+</p>
+<pre>$ echo "Hello World" | dzen2 -p
+</pre>
+<h3><span class="mw-headline" id="Options">Options</span></h3>
+<p>Dzen has a lot of options. The following list explains some of them:
+</p>
+<ul>
+<li>
+<code>-fg</code> Foreground color.</li>
+<li>
+<code>-bg</code> Background color.</li>
+<li>
+<code>-fn</code> Font.</li>
+<li>
+<code>-ta</code> Align the title window content, <b>l</b>(eft), <b>c</b>(enter), <b>r</b>(ight).</li>
+<li>
+<code>-tw</code> Width of the title window.</li>
+<li>
+<code>-sa</code> Align the slave window content. See <code>-ta</code>.</li>
+<li>
+<code>-l</code> Number of lines in the slave window.</li>
+<li>
+<code>-e</code> Events and action.</li>
+<li>
+<code>-m</code> Menu mode.</li>
+<li>
+<code>-u</code> Update contents of title and slave window simultaneously.</li>
+<li>
+<code>-p</code> Persist EOF (optional timeout in seconds).</li>
+<li>
+<code>-x</code> X position .</li>
+<li>
+<code>-y</code> Y position .</li>
+<li>
+<code>-h</code> Height of the line (default: fontheight + 2 pixels).</li>
+<li>
+<code>-w</code> Width of the window.</li>
+<li>
+<code>-v</code> Version.</li>
+</ul>
+<div class="archwiki-template-box archwiki-template-box-warning">
+<strong>Warning:</strong> The <code>-u</code> option is deprecated.</div>
+<h2><span class="mw-headline" id="Making_a_pop-up_with_dzen">Making a pop-up with dzen</span></h2>
+<p>The following code will open a dzen window in the top right corner of the screen. It will have a width of 100px, a height of 15px with a black foreground and white background (right button click to close dzen).
+</p>
+<pre>$ seq 1 3 | dzen2 -p -w '100' -h '15' -fg '#000000' -bg '#FFFFFF'
+</pre>
+<p>Note that the window is with the number 3 in the middle, try to run the same code with <code>-l</code> option.
+</p>
+<pre>$ seq 1 3 | dzen2 -p -w '100' -h '15' -fg '#000000' -bg '#FFFFFF' -l '2'
+</pre>
+<p>Now when you hover the mouse through the dzen it will uncollapse the slave window. If you click on the lines in the slave window nothing will happen, try to use the <code>-m</code> option.
+</p>
+<pre>$ seq 1 3 | dzen2 -p -w '100' -h '15' -fg '#000000' -bg '#FFFFFF' -l '2' -m
+</pre>
+<p>Now if you click on the lines it will print the numbers in your terminal. This feature is useful to make menus.
+</p>
+<p>But if you want to center the numbers and align the title to the left, you will need the options: <code>-sa</code> and <code>-ta</code>.
+</p>
+<pre>$ seq 1 3 | dzen2 -p -w '100' -h '15' -fg '#000000' -bg '#FFFFFF' -l '2' -m -ta 'l' -sa 'c'
+</pre>
+<h2><span class="mw-headline" id="Configuration">Configuration</span></h2>
+<p>Dzen is able to read font and color settings from <a href="../en/X_resources.html" title="X resources">X resources</a>. As an example, you can add following lines to <code>~/.Xresources</code>:
+</p>
+<pre>dzen2.font:       -*-fixed-*-*-*-*-*-*-*-*-*-*-*-*
+dzen2.foreground: #22EE11
+dzen2.background: black
+</pre>
+<h2><span class="mw-headline" id="Tips_and_tricks">Tips and tricks</span></h2>
+<h3><span class="mw-headline" id="Using_custom_fonts_with_dzen">Using custom fonts with dzen</span></h3>
+<p>Dzen follows the <a href="../en/X_Logical_Font_Description.html" title="X Logical Font Description">X Logical Font Description</a>, so it will only find fonts in the X font path. See <a href="../en/Fonts.html#Older_applications" title="Fonts">Fonts#Older applications</a> for details.
+</p>
+<h3><span class="mw-headline" id="Dzen_and_Conky">Dzen and Conky</span></h3>
+<p><a href="../en/Conky.html" title="Conky">Conky</a> can be used to pipe information directly to dzen for output in a status bar.  
+This can be done with <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=conky">conky</a></span> and <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/conky-cli/">conky-cli</a></span><sup><small>AUR</small></sup>, a stripped-down version of the Conky status utility.
+</p>
+<p>The following example displays the average load values in red and the current time in the default dzen foreground colour:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">~/.conkyrc</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">conky.config = {
+      background = false
+    , out_to_console = true
+    , out_to_x = false
+    , update_interval = 1.0
+    , total_run_times = 0
+    , use_spacer = none
+}
+
+conky.text = [[^fg(\#ff0000)${loadavg 1 2 3} ^fg()${time %a %b %d %I:%M%P}]]
+</pre>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">~/bin/dzconky</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;"> #!/bin/sh
+ 
+ FG='#aaaaaa'
+ BG='#1a1a1a'
+ FONT='-*-terminus-*-r-normal-*-*-120-*-*-*-*-iso8859-*'
+ conky | dzen2 -e - -h '16' -w '600' -ta r -fg $FG -bg $BG -fn $FONT &amp;
+</pre>
+<p>Simply execute <code>dzconky</code> in your startup scripts.
+</p>
+<h3><span class="mw-headline" id="Clickable_areas_and_popups">Clickable areas and popups</span></h3>
+<p>dzen2 allows you to define clickable areas using <code>^ca(<i>button</i>, <i>command</i>)Text^ca()</code>.
+You can use this property to create popups giving arbitrary information, as seen in various screenshot gifs like <a rel="nofollow" class="external text" href="https://i.imgur.com/bZegioR.gif">this</a>.
+</p>
+<p>A simple example can be:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">sysinfo_popup.sh</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;"> #/bin/bash
+
+ #A simple popup showing system information
+
+ HOST=$(uname -n)
+ KERNEL=$(uname -r)
+ UPTIME=$( uptime | sed 's/.* up //' | sed 's/[0-9]* us.*//' | sed 's/ day, /d /'\
+          | sed 's/ days, /d /' | sed 's/:/h /' | sed 's/ min//'\
+            |  sed 's/,/m/' | sed 's/  / /')
+ PACKAGES=$(pacman -Q | wc -l)
+ UPDATED=$(awk '/upgraded/ {line=$0;} END { $0=line; gsub(/[\[\]]/,"",$0); \
+          printf "%s %s",$1,$2;}' /var/log/pacman.log)
+
+ (
+ echo "System Information" # Fist line goes to title
+ # The following lines go to slave window
+ echo "Host: $HOST "
+ echo "Kernel: $KERNEL"
+ echo "Uptime: $UPTIME "
+ echo "Pacman: $PACKAGES packages"
+ echo "Last updated on: $UPDATED"
+ ) | dzen2 -p -x "500" -y "30" -w "220" -l "5" -sa 'l' -ta 'c'\
+    -title-name 'popup_sysinfo' -e 'onstart=uncollapse;button1=exit;button3=exit'
+
+ # "onstart=uncollapse" ensures that slave window is visible from start.
+</pre>
+<p>Save this script and make it executable and then use the <code>^ca()</code> attribute in your conkyrc (or the script that you pipe to dzen2) to trigger it.
+</p>
+<pre><code>^ca(1,<i>&lt;path to your script&gt;</i>)Sysinfo^ca()</code>
+</pre>
+<p>This will bind the script to mouse button 1 and execute it when it is clicked over the text.
+</p>
+<h3><span class="mw-headline" id="Gadgets">Gadgets</span></h3>
+<p>There are some gadgets on dzen that may be used to make a good customize. Follow below some of they with a brief explanation and examples.
+</p>
+<h4><span class="mw-headline" id="dbar">dbar</span></h4>
+<p>Dbar receive a pipe from another command with any number and outputs a semi-graphical progress bar with it, by default the max number of <i>100%</i> is <code>100</code>. The maximum and minimum values can be changed with <code>-max</code>/<code>-min</code> respectively.
+</p>
+<p>Output example:
+</p>
+<pre>50% [=============            ]
+</pre>
+<p>Code example:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">~/test</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">#!/bin/sh
+
+(
+amixer get Master | \
+awk '/Left:/{gsub(/[[:punct:]]/,"",$5);left=$5}
+     /Right:/{gsub(/[[:punct:]]/,"",$5);right=$5}
+     END {print left ORS right}'
+) | dbar -max 100 -min 0 -s '|' -l 'Vol'
+</pre>
+<p>See <a rel="nofollow" class="external text" href="https://github.com/robm/dzen/blob/master/gadgets/README.dbar">README.dbar</a> for details.
+</p>
+<h4><span class="mw-headline" id="gdbar">gdbar</span></h4>
+<p>Gdbar as well as <a href="#dbar">dbar</a> outputs a progress bar based on a value of <i>100%</i>, but here it is full-graphical. Gdbar have the same options of dbar with some additional options. Some of the options are:
+</p>
+<ul>
+<li>
+<code>-fg</code> set the foreground.</li>
+<li>
+<code>-bg</code> set the background.</li>
+<li>
+<code>-w</code>/<code>-h</code> set the width and height respectively.</li>
+</ul>
+<p>Code example:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">~/test</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">#!/bin/sh
+
+(
+amixer get Master | \
+awk '/Left:/{gsub(/[[:punct:]]/,"",$5);left=$5}
+     /Right:/{gsub(/[[:punct:]]/,"",$5);right=$5}
+     END{print left ORS right}'
+) | gdbar -max 100 -min 0 -l 'Vol ' -bg '#777777' -fg '#00ff00' -ss '2' | dzen2 -p -l '1' -w '150' -y '100' -x '100' -ta c -sa c -e 'onstartup=uncollapse;button3=exit'
+</pre>
+<p>See <a rel="nofollow" class="external text" href="https://github.com/robm/dzen/blob/master/gadgets/README.gdbar">README.gdbar</a> for details.
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> Gdbar will only be useful in combination with dzen &gt;= 0.7.0.</div>
+<h4><span class="mw-headline" id="Others">Others</span></h4>
+<p>Information about others gadgets can be found <a rel="nofollow" class="external text" href="https://github.com/robm/dzen/tree/master/gadgets">here</a>.
+</p>
+<h2><span class="mw-headline" id="See_also">See also</span></h2>
+<ul><li>
+<a rel="nofollow" class="external text" href="https://robm.github.io/dzen/">Official website</a>, <a rel="nofollow" class="external text" href="https://github.com/robm/dzen/wiki/_pages">wiki</a>, and <a rel="nofollow" class="external text" href="https://github.com/robm/dzen">source</a>
+</li></ul>
+<p><b>Forum threads</b>
+</p>
+<ul><li>2007-12-04 - Arch Linux - <a rel="nofollow" class="external text" href="https://bbs.archlinux.org/viewtopic.php?id=40637">dzen &amp; xmobar Hacking Thread</a>
+</li></ul>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../Special:Categories.html" title="Special:Categories">Categories</a>: <ul>
+<li><a href="../en/Category:Notification.html" title="Category:Notification">Notification</a></li>
+<li><a href="../en/Category:Eye_candy.html" title="Category:Eye candy">Eye candy</a></li>
+</ul>
+</div></div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=Dzen&amp;oldid=761561">https://wiki.archlinux.org/index.php?title=Dzen&amp;oldid=761561</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 19 December 2022, at 13:15.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

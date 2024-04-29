@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>Funkwhale - ArchWiki</title>
+<link rel="stylesheet" href="../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Funkwhale rootpage-Funkwhale skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Installation" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Installation">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Installation</div>
+			</a>
+			
+				<button aria-controls="toc-Installation-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Installation subsection
+				</button>
+			
+			<ul id="toc-Installation-sublist" class="sidebar-toc-list">
+				<li id="toc-Installation_from_AUR" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Installation_from_AUR">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.1</span>Installation from AUR</div>
+			</a>
+			
+			<ul id="toc-Installation_from_AUR-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Manual_install" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Manual_install">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.2</span>Manual install</div>
+			</a>
+			
+			<ul id="toc-Manual_install-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Docker_install" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Docker_install">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.3</span>Docker install</div>
+			</a>
+			
+			<ul id="toc-Docker_install-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Configuration" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Configuration">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Configuration</div>
+			</a>
+			
+				<button aria-controls="toc-Configuration-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Configuration subsection
+				</button>
+			
+			<ul id="toc-Configuration-sublist" class="sidebar-toc-list">
+				<li id="toc-Host_config" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Host_config">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.1</span>Host config</div>
+			</a>
+			
+			<ul id="toc-Host_config-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Configure_nginx" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Configure_nginx">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.2</span>Configure nginx</div>
+			</a>
+			
+			<ul id="toc-Configure_nginx-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Configure_apache" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Configure_apache">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.3</span>Configure apache</div>
+			</a>
+			
+			<ul id="toc-Configure_apache-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Configure_PostgreSQL" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Configure_PostgreSQL">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.4</span>Configure PostgreSQL</div>
+			</a>
+			
+			<ul id="toc-Configure_PostgreSQL-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Initialization" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Initialization">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>Initialization</div>
+			</a>
+			
+				<button aria-controls="toc-Initialization-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Initialization subsection
+				</button>
+			
+			<ul id="toc-Initialization-sublist" class="sidebar-toc-list">
+				<li id="toc-Funkwhale_user" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Funkwhale_user">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.1</span>Funkwhale user</div>
+			</a>
+			
+			<ul id="toc-Funkwhale_user-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Database_setup" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Database_setup">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.2</span>Database setup</div>
+			</a>
+			
+			<ul id="toc-Database_setup-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Version_upgrade" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Version_upgrade">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4</span>Version upgrade</div>
+			</a>
+			
+				<button aria-controls="toc-Version_upgrade-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Version upgrade subsection
+				</button>
+			
+			<ul id="toc-Version_upgrade-sublist" class="sidebar-toc-list">
+				<li id="toc-Automatic" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Automatic">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.1</span>Automatic</div>
+			</a>
+			
+			<ul id="toc-Automatic-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Manual" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Manual">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.2</span>Manual</div>
+			</a>
+			
+			<ul id="toc-Manual-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Usage" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Usage">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5</span>Usage</div>
+			</a>
+			
+			<ul id="toc-Usage-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Troubleshooting" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Troubleshooting">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6</span>Troubleshooting</div>
+			</a>
+			
+				<button aria-controls="toc-Troubleshooting-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Troubleshooting subsection
+				</button>
+			
+			<ul id="toc-Troubleshooting-sublist" class="sidebar-toc-list">
+				<li id="toc-Proxy_logs" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Proxy_logs">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6.1</span>Proxy logs</div>
+			</a>
+			
+			<ul id="toc-Proxy_logs-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../en/Funkwhale.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="mw-list-item"><a href="../en/Talk:Funkwhale.html" rel="discussion" title="Discussion about the content page [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">English</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../en/Funkwhale.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=Funkwhale&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=Funkwhale&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../en/Funkwhale.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Funkwhale&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Funkwhale&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output">
+<div class="archwiki-template-meta-related-articles-start">
+<p class="mw-no-invert">Related articles</p>
+<ul>
+<li><a href="../en/Django.html" title="Django">Django</a></li>
+<li><a href="../en/Apache_HTTP_Server.html" title="Apache HTTP Server">Apache HTTP Server</a></li>
+<li><a href="../en/Nginx.html" title="Nginx">Nginx</a></li>
+<li><a href="../en/OpenSSL.html" title="OpenSSL">OpenSSL</a></li>
+<li><a href="../en/Certbot.html" title="Certbot">Certbot</a></li>
+<li><a href="../en/Redis.html" title="Redis">Redis</a></li>
+<li><a href="../en/PostgreSQL.html" title="PostgreSQL">PostgreSQL</a></li>
+</ul>
+</div>
+<p>Quoting the <a rel="nofollow" class="external text" href="https://docs.funkwhale.audio/index.html">main documentation page</a>: 
+</p>
+<dl><dd>
+<a rel="nofollow" class="external text" href="https://funkwhale.audio/">Funkwhale</a> is a self-hosted, modern, free and open-source music server, heavily inspired by Grooveshark.</dd></dl>
+<p>Instances can be federated via the ActivityPub protocol.
+</p>
+<mw:tocplace></mw:tocplace>
+<h2><span class="mw-headline" id="Installation">Installation</span></h2>
+<p>Funkwhale requires a reverse proxy (<a rel="nofollow" class="external autonumber" href="https://docs.funkwhale.audio/installation/index.html">[1]</a>),
+so <a href="../en/Nginx.html" title="Nginx">nginx</a> or <a href="../en/Apache_HTTP_Server.html" title="Apache HTTP Server">Apache HTTP Server</a> need to be installed.
+</p>
+<p>It also needs a configured <a href="../en/PostgreSQL.html" title="PostgreSQL">PostgreSQL</a> database and a <a href="../en/Redis.html" title="Redis">Redis</a> cache server.
+See <a href="#Configuration">#Configuration</a> and the respective pages for information.
+</p>
+<h3><span class="mw-headline" id="Installation_from_AUR">Installation from AUR</span></h3>
+<p><a href="../en/Help:Reading.html#Installation_of_packages" class="mw-redirect" title="Install">Install</a> the <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/funkwhale-venv/">funkwhale-venv</a></span><sup><small>AUR</small></sup> package (recommended).
+</p>
+<div class="archwiki-template-box archwiki-template-box-warning">
+<strong>Warning:</strong> Alternatively install the <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/funkwhale/">funkwhale</a></span><sup><small>AUR</small></sup> package but it does not use a python virtualenv, so all the python dependencies are installed system-wide, mainly from the AUR. Package versions may differ from the upstream requirements and cause problems.</div>
+<h3><span class="mw-headline" id="Manual_install">Manual install</span></h3>
+<p>Follow instructions for the Arch installation at <a rel="nofollow" class="external autonumber" href="https://docs.funkwhale.audio/installation/debian.html">[2]</a>.
+This will install all components in <code>/srv/funkwhale</code>.
+</p>
+<h3><span class="mw-headline" id="Docker_install">Docker install</span></h3>
+<p>Follow instructions for the Docker installation at <a rel="nofollow" class="external autonumber" href="https://docs.funkwhale.audio/installation/docker.html">[3]</a>.
+</p>
+<h2><span class="mw-headline" id="Configuration">Configuration</span></h2>
+<p>The following sections assume <code>funkwhale-venv</code> was installed from AUR,
+for a manual installation the folders should be changed appropriately.
+</p>
+<p>It also assumes that you are using Funkwhale on a local network.
+See the official <a rel="nofollow" class="external text" href="https://docs.funkwhale.audio/index.html">documentation</a> for making it accessible outside,
+especially for the certificates using <a href="../en/Certbot.html" title="Certbot">Certbot</a>.
+</p>
+<h3><span class="mw-headline" id="Host_config">Host config</span></h3>
+<p>Make sure your <code>/etc/hosts</code> file is setup correctly.
+The Funkwhale server is running on <code>127.0.0.1</code> with alias <code>funkwhale.local</code>, but this can be changed.
+</p>
+<p>Your <code>/etc/hosts</code> file should look something like the following,
+</p>
+<pre>#&lt;ip-address&gt;   &lt;hostname.domain.org&gt;   &lt;hostname&gt;
+127.0.0.1       localhost
+::1             localhost
+127.0.0.1       funkwhale.local</pre>
+<h3><span class="mw-headline" id="Configure_nginx">Configure nginx</span></h3>
+<p>The upstream template of the Nginx configuration file is provided in <code>/etc/webapps/funkwhale/nginx.template</code>.
+However, this file contains variables that need to be replaced by their value from the <code>env</code> file
+(see section <a href="#Initialization">#Initialization</a> on how to create this file):
+</p>
+<pre>$ set -a &amp;&amp; source /srv/funkwhale/config/env &amp;&amp; set +a
+$ envsubst "`env | awk -F = '{printf \" $%s\", $$1}'`" \
+   &lt; /etc/webapps/funkwhale/nginx.template \
+   &gt; /etc/nginx/sites-available/funkwhale.conf
+</pre>
+<p>The paths to the certificates should also be modified accordingly.
+</p>
+<p>Then enable the site:
+</p>
+<pre>$ ln -s /etc/nginx/sites-available/funkwhale.conf /etc/nginx/sites-enabled/
+</pre>
+<p>And <a href="../en/Help:Reading.html#Control_of_systemd_units" class="mw-redirect" title="Start">start</a> the <code>nginx.service</code>.
+</p>
+<h3><span class="mw-headline" id="Configure_apache">Configure apache</span></h3>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> You will need <a href="../en/Apache_HTTP_Server.html" title="Apache HTTP Server">Apache HTTP Server</a> configured to run with <a href="../en/Redis.html" title="Redis">Redis</a>, <a href="../en/PostgreSQL.html" title="PostgreSQL">PostgreSQL</a> and Apache <a href="../en/Transport_Layer_Security.html" class="mw-redirect" title="TLS">TLS</a> support.</div>
+<p>A template Apache configuration file is provided in <code>/etc/webapps/funkwhale/apache-funkwhale.conf</code>. It configures the Funkwhale instance to be accessible at <code><a rel="nofollow" class="external free" href="https://funkwhale.local">https://funkwhale.local</a></code>.
+</p>
+<p>The folder names should be change to fit your installation. More explanation on which lines need to be modified is provided in <a rel="nofollow" class="external autonumber" href="https://docs.funkwhale.audio/installation/index.html#reverse-proxy-setup">[4]</a>.
+</p>
+<p>Copy the template to the apache configuration folder,
+</p>
+<pre>$ cp /etc/webapps/funkwhale/apache-funkwhale.conf /etc/httpd/conf/extra/funkwhale.conf
+</pre>
+<p>Next, edit the <a href="../en/Apache_HTTP_Server.html" title="Apache HTTP Server">Apache HTTP Server</a> configuration file and add the following:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;"># /etc/httpd/conf/httpd.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">Include conf/extra/funkwhale.conf
+</pre>
+<p>For the changes to be applied, you need to restart <code>httpd.service</code> (Apache) using <a href="../en/Systemd.html#Using_units" title="Systemd">systemd</a>.
+</p>
+<h3><span class="mw-headline" id="Configure_PostgreSQL">Configure PostgreSQL</span></h3>
+<p>Here we follow the official documentation: <a rel="nofollow" class="external autonumber" href="https://docs.funkwhale.audio/installation/external_dependencies.html">[5]</a><sup title="Last check status: 404">[<a href="https://en.wikipedia.org/wiki/Wikipedia:Link_rot" class="extiw" title="wikipedia:Wikipedia:Link rot">dead link</a> 2023-07-30 ⓘ]</sup>
+</p>
+<p>Connect to the <a href="../en/PostgreSQL.html" title="PostgreSQL">PostgreSQL</a> command line using the <code>postgres</code> user to create the <code>funkwhale</code> user and the database.
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">$ sudo -u postgres psql</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">CREATE DATABASE "funkwhale"
+ WITH ENCODING 'utf8';
+CREATE USER funkwhale;
+ALTER DATABASE funkwhale OWNER TO funkwhale;
+\c funkwhale;
+CREATE EXTENSION "unaccent";
+CREATE EXTENSION "citext";</pre>
+<p>The last three lines load the <code>unaccent</code> and <code>citext</code> extensions,
+which are needed for funkwhale to work (<code>citext</code> since version 0.20).
+</p>
+<h2><span class="mw-headline" id="Initialization">Initialization</span></h2>
+<h3><span class="mw-headline" id="Funkwhale_user">Funkwhale user</span></h3>
+<p>Funkwhale should be run as the <code>funkwhale</code> user. It is automatically created by the AUR package.
+If you followed the manual installation, create it with
+</p>
+<pre># useradd -r -d /srv/funkwhale -m funkwhale -c "Funkwhale music server -s /sbin/nologin"
+</pre>
+<p>Create Funkwhale's data folders in <code>/srv/funkwhale</code>,
+owned by the <code>funkwhale</code> user:
+</p>
+<pre># mkdir /srv/funkwhale
+# chown funkwhale:funkwhale /srv/funkwhale
+</pre>
+<p>Run the following commands as the <code>funkwhale</code> user.
+</p>
+<p>Create sub-folders for API files and storage.
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">$ sudo -u funkwhale -H bash</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">[funkwhale]$ cd /srv/funkwhale
+[funkwhale]$ mkdir -p api data/static data/media data/music config</pre>
+<p>To work, Funkwhale needs several environment variables to be present, these should be defined in the environment file <code>/srv/funkwhale/config/env</code>.
+There is a template at <code>/etc/webapps/funkwhale/env.template</code>, copy and modify it to fit your installation.
+</p>
+<pre>[funkwhale]$ cp /etc/webapps/funkwhale/env.template /srv/funkwhale/config/env
+</pre>
+<p>The <code>FUNKWHALE_HOSTNAME</code> variable should correspond to the hostname in <code>/etc/hosts</code>.
+<code>DJANGO_ALLOWED_HOSTS</code> needs also to match the address where the funkwhale instance will be reached.
+You should generate a unique <code>DJANGO_SECRET_KEY</code> and change the paths accordingly to your installation.
+</p>
+<div class="archwiki-template-box archwiki-template-box-tip">
+<strong>Tip:</strong> As you will need to run several commands as the <code>funkwhale</code> user with the environment variables loaded, you can use the following command-line after logging in:
+<pre>[funkwhale]$ export $(grep -v ^#  /srv/funkwhale/config/env | xargs)
+</pre>
+<p>For convenience, you can copy this line to <code>/srv/funkwhale/.bashrc</code> (or whichever shell you are using), so it is loaded automatically every time you log in to the funkwhale user.
+</p>
+</div>
+<h3><span class="mw-headline" id="Database_setup">Database setup</span></h3>
+<p>If you installed <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/funkwhale-venv/">funkwhale-venv</a></span><sup><small>AUR</small></sup> from AUR, use <code>/usr/bin/funkwhale_manage</code> to run the <code>/usr/share/webapps/funkwhale/api/manage.py</code> command as <code>funkwhale</code> user.
+</p>
+<p>Initialize the database before launching the application:
+</p>
+<pre># funkwhale_manage migrate
+</pre>
+<p>Create a superuser for your Funkwhale instance:
+</p>
+<pre># funkwhale_manage createsuperuser
+</pre>
+<p>Collect the static files for the webapp:
+</p>
+<pre># funkwhale_manage collectstatic
+</pre>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> If you do not use <code>funkwhale_manage</code>, you need to first activate the python virtualenv and then run the commands as the <code>funkwhale</code> user.
+<pre>$ source /usr/share/webapps/funkwhale/virtualenv/bin/activate
+$ sudo -u funkwhale -H bash
+[funkwhale]$ python /usr/share/webapps/funkwhale/api/manage.py migrate
+[funkwhale]$ python /usr/share/webapps/funkwhale/api/manage.py createsuperuser
+[funkwhale]$ python /usr/share/webapps/funkwhale/api/manage.py collectstatic
+[funkwhale]$ deactivate
+$
+</pre>
+</div>
+<h2><span class="mw-headline" id="Version_upgrade">Version upgrade</span></h2>
+<h3><span class="mw-headline" id="Automatic">Automatic</span></h3>
+<p>If you installed <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/funkwhale-venv/">funkwhale-venv</a></span><sup><small>AUR</small></sup> from AUR, there is nothing special to do. In case of an error, use the <code>/usr/bin/funkwhale_manage</code> script to run the <code>/usr/share/webapps/funkwhale/api/manage.py</code> commands (it should be run as root or using sudo).
+</p>
+<div class="archwiki-template-box archwiki-template-box-warning">
+<strong>Warning:</strong> 
+<ul><li>Check that the Apache or nginx configuration file did not change before restarting the service. Consult the official documentation for incompatible changes.</li></ul>
+</div>
+<h3><span class="mw-headline" id="Manual">Manual</span></h3>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> Before version 1.3.0, the AUR package used <code>funkwhale.service</code>, after it uses <code>funkwhale.target</code> like upstream.</div>
+<p>If you installed <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/funkwhale/">funkwhale</a></span><sup><small>AUR</small></sup> from AUR use the following instructions.
+</p>
+<p><a href="../en/Help:Reading.html#Control_of_systemd_units" class="mw-redirect" title="Stop">Stop</a> the <code>funkwhale.target</code> before upgrading.
+</p>
+<p>All commands should be entered as <code>funkwhale</code> <a href="#Funkwhale_user">user</a>.
+</p>
+<p>The static files have to be collected again:
+</p>
+<pre>[funkwhale]$ funkwhale_manage collectstatic --no-input
+</pre>
+<p>Apply database migrations:
+</p>
+<pre>[funkwhale]$ funkwhale_manage migrate
+</pre>
+<div class="archwiki-template-box archwiki-template-box-warning">
+<strong>Warning:</strong> 
+<ul><li>Check that the Apache or nginx configuration file did not change before restarting the service. Consult the official documentation for incompatible changes.</li></ul>
+</div>
+<p>After completing all these steps, the <code>funkwhale.target</code> can be <a href="../en/Help:Reading.html#Control_of_systemd_units" class="mw-redirect" title="Started">started</a> again.
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> All the instructions for upgrading are given on the official documentation <a rel="nofollow" class="external autonumber" href="https://docs.funkwhale.audio/upgrading/index.html">[6]</a>.</div>
+<h2><span class="mw-headline" id="Usage">Usage</span></h2>
+<p>Upstream provides systemd services that are already installed with the AUR package.
+</p>
+<p>To start the instance, just <a href="../en/Help:Reading.html#Control_of_systemd_units" class="mw-redirect" title="Start">start</a> <code>funkwhale.target</code>.
+</p>
+<p>This starts three services, you can check their status with:
+</p>
+<pre>$ systemctl status funkwhale-\*
+</pre>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> Before version 1.3.0, the AUR package used <code>funkwhale.service</code>, after it uses <code>funkwhale.target</code> like upstream.</div>
+<h2><span class="mw-headline" id="Troubleshooting">Troubleshooting</span></h2>
+<p>See <a rel="nofollow" class="external free" href="https://docs.funkwhale.audio/admin/troubleshooting.html">https://docs.funkwhale.audio/admin/troubleshooting.html</a><sup title="Last check status: 404">[<a href="https://en.wikipedia.org/wiki/Wikipedia:Link_rot" class="extiw" title="wikipedia:Wikipedia:Link rot">dead link</a> 2023-07-30 ⓘ]</sup>
+</p>
+<h3><span class="mw-headline" id="Proxy_logs">Proxy logs</span></h3>
+<p>Apache logs for funkwhale:
+</p>
+<pre>$ tail -f /var/log/httpd/funkwhale/error.log
+</pre>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface">
+<div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../Special:Categories.html" title="Special:Categories">Categories</a>: <ul>
+<li><a href="../en/Category:Media_servers.html" title="Category:Media servers">Media servers</a></li>
+<li><a href="../en/Category:Music.html" title="Category:Music">Music</a></li>
+<li><a href="../en/Category:Web_applications.html" title="Category:Web applications">Web applications</a></li>
+</ul>
+</div>
+<div id="mw-hidden-catlinks" class="mw-hidden-catlinks mw-hidden-cats-hidden">Hidden category: <ul><li><a href="../en/Category:Pages_with_dead_links.html" title="Category:Pages with dead links">Pages with dead links</a></li></ul>
+</div>
+</div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=Funkwhale&amp;oldid=783990">https://wiki.archlinux.org/index.php?title=Funkwhale&amp;oldid=783990</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 30 July 2023, at 08:16.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>OpenFOAM - ArchWiki</title>
+<link rel="stylesheet" href="../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-OpenFOAM rootpage-OpenFOAM skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Installation" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Installation">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Installation</div>
+			</a>
+			
+				<button aria-controls="toc-Installation-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Installation subsection
+				</button>
+			
+			<ul id="toc-Installation-sublist" class="sidebar-toc-list">
+				<li id="toc-Basic" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Basic">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.1</span>Basic</div>
+			</a>
+			
+			<ul id="toc-Basic-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Development" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Development">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.2</span>Development</div>
+			</a>
+			
+			<ul id="toc-Development-sublist" class="sidebar-toc-list">
+				<li id="toc-Prerequisites" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Prerequisites">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.2.1</span>Prerequisites</div>
+			</a>
+			
+			<ul id="toc-Prerequisites-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Obtain_source_files" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Obtain_source_files">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.2.2</span>Obtain source files</div>
+			</a>
+			
+			<ul id="toc-Obtain_source_files-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Environment_variables" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Environment_variables">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.2.3</span>Environment variables</div>
+			</a>
+			
+			<ul id="toc-Environment_variables-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Compilation" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Compilation">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.2.4</span>Compilation</div>
+			</a>
+			
+			<ul id="toc-Compilation-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Testing" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Testing">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.2.5</span>Testing</div>
+			</a>
+			
+			<ul id="toc-Testing-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Troubleshooting" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Troubleshooting">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Troubleshooting</div>
+			</a>
+			
+				<button aria-controls="toc-Troubleshooting-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Troubleshooting subsection
+				</button>
+			
+			<ul id="toc-Troubleshooting-sublist" class="sidebar-toc-list">
+				<li id="toc-zsh" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#zsh">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.1</span>zsh</div>
+			</a>
+			
+			<ul id="toc-zsh-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Paraview_not_installed" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Paraview_not_installed">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.2</span>Paraview not installed</div>
+			</a>
+			
+			<ul id="toc-Paraview_not_installed-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-See_also" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#See_also">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>See also</div>
+			</a>
+			
+			<ul id="toc-See_also-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../en/OpenFOAM.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="mw-list-item"><a href="../en/Talk:OpenFOAM.html" rel="discussion" title="Discussion about the content page [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">English</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../en/OpenFOAM.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=OpenFOAM&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=OpenFOAM&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../en/OpenFOAM.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=OpenFOAM&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=OpenFOAM&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output">
+<p>According to <a href="https://en.wikipedia.org/wiki/OpenFOAM" class="extiw" title="wikipedia:OpenFOAM">Wikipedia</a>:
+</p>
+<dl><dd>OpenFOAM (for "Open source Field Operation And Manipulation") is a <a href="../en/C.html" class="mw-redirect" title="C++">C++</a> toolbox for the development of customized <a href="https://en.wikipedia.org/wiki/numerical_analysis" class="extiw" title="wikipedia:numerical analysis">numerical solvers</a>, and pre-/post-processing utilities for the solution of <a href="https://en.wikipedia.org/wiki/continuum_mechanics" class="extiw" title="wikipedia:continuum mechanics">continuum mechanics</a> problems, including <a href="https://en.wikipedia.org/wiki/computational_fluid_dynamics" class="extiw" title="wikipedia:computational fluid dynamics">computational fluid dynamics</a> (CFD).</dd></dl>
+<mw:tocplace></mw:tocplace>
+<h2><span class="mw-headline" id="Installation">Installation</span></h2>
+<div class="noprint archwiki-template-message">
+<p><a href="../File:Tango-view-fullscreen.png" class="image"><img alt="Tango-view-fullscreen.png" src="../File:Tango-view-fullscreen.png" decoding="async" width="48" height="48"></a><b>This article or section needs expansion.</b><a href="../File:Tango-view-fullscreen.png" class="image"><img alt="Tango-view-fullscreen.png" src="../File:Tango-view-fullscreen.png" decoding="async" width="48" height="48"></a></p>
+<div>
+<b>Reason:</b> Explain the difference between <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/openfoam-org/">openfoam-org</a></span><sup><small>AUR</small></sup> and <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/openfoam-com/">openfoam-com</a></span><sup><small>AUR</small></sup>. (Discuss in <a rel="nofollow" class="external text" href="https://wiki.archlinux.org/title/Talk:OpenFOAM">Talk:OpenFOAM</a>)</div>
+</div>
+<h3><span class="mw-headline" id="Basic">Basic</span></h3>
+<p>If you do not plan on doing development tasks with OpenFOAM, there is an updated version of the program available as <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/openfoam-org/">openfoam-org</a></span><sup><small>AUR</small></sup> and git versions <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/openfoam2.4-git/">openfoam2.4-git</a></span><sup><small>AUR</small></sup> or <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/openfoam3.0-git/">openfoam3.0-git</a></span><sup><small>AUR</small></sup>. For most users, this will be everything needed to get an installation up and running.
+</p>
+<p>OpenFOAM is installed in the <code>/opt</code> directory and provides a script in <code>/etc/profile.d/</code> that allows to activate the OpenFOAM environment with the <code>ofoam</code> command (a shell alias).
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> Scripts in <code>/etc/profile.d/</code> are sourced only at the start of a session, so the command will not be available right after installation.</div>
+<h3><span class="mw-headline" id="Development">Development</span></h3>
+<p>For installation of OpenFOAM in a development environment, the process is fairly straight forward on Arch Linux. The basic steps are as follows:
+</p>
+<ol>
+<li>Obtain source files from OpenFOAM</li>
+<li>Prepare build directory</li>
+<li>Create Preference File and Set Environment Variables for your installation</li>
+<li>
+<a rel="nofollow" class="external text" href="https://openfoam.org/download/source/compiling-openfoam/">Compile</a> OpenFOAM sources</li>
+<li>Test OpenFOAM installation</li>
+</ol>
+<h4><span class="mw-headline" id="Prerequisites">Prerequisites</span></h4>
+<ul>
+<li><span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=openmpi">openmpi</a></span></li>
+<li><span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=paraview">paraview</a></span></li>
+<li>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/parmetis/">parmetis</a></span><sup><small>AUR</small></sup>
+</li>
+<li>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/scotch/">scotch</a></span><sup><small>AUR</small></sup>
+</li>
+<li><span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=boost-libs">boost-libs</a></span></li>
+<li><span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=boost">boost</a></span></li>
+</ul>
+<h4><span class="mw-headline" id="Obtain_source_files">Obtain source files</span></h4>
+<p>Since OpenFoam is a picky about its location, create a directory following its naming convention and extract the source code there:
+</p>
+<pre>$ mkdir $HOME/OpenFOAM
+$ wget -P $HOME/OpenFOAM https://dl.openfoam.com/source/<i>v2206</i>/OpenFOAM-<i>v2206</i>.tgz
+$ tar -xvfz $HOME/OpenFOAM/OpenFOAM-<i>v2206</i>.tgz -C $HOME/OpenFOAM
+</pre>
+<h4><span class="mw-headline" id="Environment_variables">Environment variables</span></h4>
+<p>Paste the following code into your <a href="../en/Bash.html#Configuration_files" class="mw-redirect" title=".bashrc">.bashrc</a> file. Whenever you want to run OpenFOAM you just have to run <code>of2206</code> to initialize the environment. This has to be done prior to compilation.
+</p>
+<pre>$ export FOAM_INST_DIR="$HOME/OpenFOAM"
+$ alias of2206='source $FOAM_INST_DIR/OpenFOAM-v2206/etc/bashrc'
+</pre>
+<h4><span class="mw-headline" id="Compilation">Compilation</span></h4>
+<p>Run <code>of2206</code> to initialize the environment. Use <code>foamSystemCheck</code> to check if all requirements are installed, then <code>foam</code> to change into the project directory. Then you can use the following command to compile:
+</p>
+<pre>$ ./Allwmake -j -s -q -l
+</pre>
+<p>This compiles with all cores (-j), reduced output (-s, -silent), with queuing (-q, -queue) and logs (-l, -log) that can be inspected later.
+</p>
+<h4><span class="mw-headline" id="Testing">Testing</span></h4>
+<p>To test for successful installation, run any test case, for example:
+</p>
+<pre>foamInstallationTest -full incompressible/simpleFoam/pitzDaily</pre>
+<h2><span class="mw-headline" id="Troubleshooting">Troubleshooting</span></h2>
+<h3><span class="mw-headline" id="zsh">zsh</span></h3>
+<p>Some things do not work correctly if you are not using bash. In the case of using zsh, you will need the <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=bash-completion">bash-completion</a></span> package, and add the following to your <a href="../en/Zsh.html#Configure_Zsh" class="mw-redirect" title="Zshrc">zshrc</a> for the OpenFOAM scripts to work:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">zshrc</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">autoload bashcompinit
+bashcompinit
+alias ofoam="source ${FOAM_INST_DIR}/OpenFOAM-10/etc/bashrc"</pre>
+<p>Then add the following <a href="../en/Environment_variables.html" title="Environment variables">environment variables</a>, preferably into a zshenv file:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">zshenv</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">export FOAM_INST_DIR=/opt/OpenFOAM
+export BASH=/bin/bash</pre>
+<h3><span class="mw-headline" id="Paraview_not_installed">Paraview not installed</span></h3>
+<p>This happens because the dependencies are installed as separate packages, and not in the third-party apps directory of OpenFOAM. Either;
+</p>
+<ul>
+<li>Add <code>alias paraFoam='paraFoam -builtin'</code> to your <code>/opt/OpenFOAM/Open-FOAM-<i>X.X</i>/etc/bashrc</code>.</li>
+<li>For each project, <code>touch $(echo "${PWD##*/}").foam</code> and then open the touched file from paraview.</li>
+</ul>
+<h2><span class="mw-headline" id="See_also">See also</span></h2>
+<ul><li><a rel="nofollow" class="external text" href="https://openfoam.org/">Official website</a></li></ul>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface">
+<div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="../en/Category:Science.html" title="Category:Science">Science</a></li></ul>
+</div>
+<div id="mw-hidden-catlinks" class="mw-hidden-catlinks mw-hidden-cats-hidden">Hidden category: <ul><li><a href="../en/Category:Pages_or_sections_flagged_with_Template:Expansion.html" title="Category:Pages or sections flagged with Template:Expansion">Pages or sections flagged with Template:Expansion</a></li></ul>
+</div>
+</div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=OpenFOAM&amp;oldid=785346">https://wiki.archlinux.org/index.php?title=OpenFOAM&amp;oldid=785346</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 13 August 2023, at 08:47.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>Gopro-webcam - ArchWiki</title>
+<link rel="stylesheet" href="../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Gopro-webcam rootpage-Gopro-webcam skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Installation" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Installation">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Installation</div>
+			</a>
+			
+			<ul id="toc-Installation-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Usage" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Usage">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Usage</div>
+			</a>
+			
+			<ul id="toc-Usage-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Examples" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Examples">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>Examples</div>
+			</a>
+			
+			<ul id="toc-Examples-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Start_on_boot" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Start_on_boot">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4</span>Start on boot</div>
+			</a>
+			
+			<ul id="toc-Start_on_boot-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Start_on_plug_in" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Start_on_plug_in">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5</span>Start on plug in</div>
+			</a>
+			
+			<ul id="toc-Start_on_plug_in-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Troubleshooting" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Troubleshooting">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6</span>Troubleshooting</div>
+			</a>
+			
+				<button aria-controls="toc-Troubleshooting-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Troubleshooting subsection
+				</button>
+			
+			<ul id="toc-Troubleshooting-sublist" class="sidebar-toc-list">
+				<li id="toc-Cannot_find_network_device_for_GoPro" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Cannot_find_network_device_for_GoPro">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6.1</span>Cannot find network device for GoPro</div>
+			</a>
+			
+			<ul id="toc-Cannot_find_network_device_for_GoPro-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../en/Gopro-webcam.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="new mw-list-item"><a href="/index.php?title=Talk:Gopro-webcam&amp;action=edit&amp;redlink=1" rel="discussion" title="Discussion about the content page (page does not exist) [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">English</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../en/Gopro-webcam.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=Gopro-webcam&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=Gopro-webcam&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../en/Gopro-webcam.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Gopro-webcam&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Gopro-webcam&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output">
+<div class="noprint archwiki-template-message">
+<p><a href="../File:Tango-edit-clear.png" class="image"><img alt="Tango-edit-clear.png" src="../File:Tango-edit-clear.png" decoding="async" width="48" height="48"></a><b>This article or section needs language, wiki syntax or style improvements. See <a href="../en/Help:Style.html" title="Help:Style">Help:Style</a> for reference.</b><a href="../File:Tango-edit-clear.png" class="image"><img alt="Tango-edit-clear.png" src="../File:Tango-edit-clear.png" decoding="async" width="48" height="48"></a></p>
+<div>
+<b>Reason:</b> A lot of content repeats with <a rel="nofollow" class="external text" href="https://github.com/NewoIsTaken/gopro-webcam">GitHub wiki</a> (Discuss in <a rel="nofollow" class="external text" href="https://wiki.archlinux.org/title/Talk:Gopro-webcam">Talk:Gopro-webcam</a>)</div>
+</div>
+<p>Currently there is no official support for using your GoPro 8 and 9 (the only versions that offer this feature natively) as a webcam on Linux. The web is full of incomplete tutorials for this topic. This page tries to simplify this effort.
+</p>
+<mw:tocplace></mw:tocplace>
+<h2><span class="mw-headline" id="Installation">Installation</span></h2>
+<p><a href="../en/Help:Reading.html#Installation_of_packages" class="mw-redirect" title="Install">Install</a> the <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/gopro-webcam/">gopro-webcam</a></span><sup><small>AUR</small></sup> package.
+</p>
+<h2><span class="mw-headline" id="Usage">Usage</span></h2>
+<p>The following command starts the tool in the interactive mode and tries to identify the GoPro's device, find the interface and ultimately start the webcam mode:
+</p>
+<pre># gopro webcam
+</pre>
+<p>There are a couple of options you can also set. See the <code>--help</code> option.
+</p>
+<h2><span class="mw-headline" id="Examples">Examples</span></h2>
+<p>Start the webcam at a resolution of 1080p and with the linear FOV and start <a href="../en/FFmpeg.html" title="FFmpeg">FFmpeg</a> to expose the device to the OS:
+</p>
+<pre># gopro webcam -a -r 1080 -f linear
+</pre>
+<p>Find a device that matches the pattern <code>enx</code> and starts the webcam mode without asking for user input (it also starts <code>ffmpeg</code> to expose the device to the OS):
+</p>
+<pre># gopro webcam -p enx -n -a
+</pre>
+<p>Use the provided device <code>enxenx9245589250e7</code> and do not ask for user input (just start VLC to preview the output you will get from the Camera):
+</p>
+<pre># gopro webcam -d enxenx9245589250e7 -n -v
+</pre>
+<p>Use the provided IP <code>172.27.187.52</code> and automatically start <code>ffmpeg</code> to expose the device to the OS (and do not ask for user input):
+</p>
+<pre># gopro webcam -i 172.27.187.52 -a -n
+</pre>
+<h2><span class="mw-headline" id="Start_on_boot">Start on boot</span></h2>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> The GoPro needs to be plugged in and be in 'standby' mode (Charger symbol) when the computer boots.</div>
+<p>In order to start the webcam on boot, <a href="../en/Help:Reading.html#Control_of_systemd_units" class="mw-redirect" title="Enable">enable</a> <code>gopro_webcam.service</code>.
+</p>
+<p>If you would like to change the start parameters, <a href="../en/Systemd.html#Editing_provided_units" class="mw-redirect" title="Edit">edit</a> <code>gopro_webcam.service</code>.
+</p>
+<h2><span class="mw-headline" id="Start_on_plug_in">Start on plug in</span></h2>
+<p><i>gopro-webcam</i> comes with a <a href="../en/Udev.html#About_udev_rules" class="mw-redirect" title="Udev rule">udev rule</a> that will automatically start the <code>gopro_webcam</code> service when a GoPro Hero9 is plugged in, which may be undesirable to some users. The <i>udev</i> rule can be disabled as follows:
+</p>
+<pre># ln -s /dev/null /etc/udev/rules.d/60-gopro.rules
+</pre>
+<p>To have the <i>udev</i> rule work with a GoPro Hero8 Black instead, change <code>GoPro HERO9</code> in <code>60-gopro.rules</code> to <code>HERO8 Black</code>.
+</p>
+<h2><span class="mw-headline" id="Troubleshooting">Troubleshooting</span></h2>
+<h3><span class="mw-headline" id="Cannot_find_network_device_for_GoPro">Cannot find network device for GoPro</span></h3>
+<p>Double check that the USB connection mode is <i>GoPro Connect</i> and not <i>MTP</i> under <i>Preferences &gt; Connections &gt; USB Connection</i>. If that option does not exist, you likely need a firmware upgrade. Instructions can be found at <a rel="nofollow" class="external free" href="https://gopro.com/en/us/update">https://gopro.com/en/us/update</a>.
+</p>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface">
+<div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="../en/Category:Digital_imaging.html" title="Category:Digital imaging">Digital imaging</a></li></ul>
+</div>
+<div id="mw-hidden-catlinks" class="mw-hidden-catlinks mw-hidden-cats-hidden">Hidden category: <ul><li><a href="../en/Category:Pages_or_sections_flagged_with_Template:Style.html" title="Category:Pages or sections flagged with Template:Style">Pages or sections flagged with Template:Style</a></li></ul>
+</div>
+</div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=Gopro-webcam&amp;oldid=757892">https://wiki.archlinux.org/index.php?title=Gopro-webcam&amp;oldid=757892</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 24 November 2022, at 11:41.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

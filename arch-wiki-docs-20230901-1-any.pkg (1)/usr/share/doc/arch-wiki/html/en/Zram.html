@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>zram - ArchWiki</title>
+<link rel="stylesheet" href="../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Zram rootpage-Zram skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Usage_as_swap" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Usage_as_swap">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Usage as swap</div>
+			</a>
+			
+				<button aria-controls="toc-Usage_as_swap-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Usage as swap subsection
+				</button>
+			
+			<ul id="toc-Usage_as_swap-sublist" class="sidebar-toc-list">
+				<li id="toc-Manually" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Manually">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.1</span>Manually</div>
+			</a>
+			
+			<ul id="toc-Manually-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Using_a_udev_rule" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Using_a_udev_rule">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.2</span>Using a udev rule</div>
+			</a>
+			
+			<ul id="toc-Using_a_udev_rule-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Using_zram-generator" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Using_zram-generator">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.3</span>Using zram-generator</div>
+			</a>
+			
+			<ul id="toc-Using_zram-generator-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Using_zramswap" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Using_zramswap">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.4</span>Using zramswap</div>
+			</a>
+			
+			<ul id="toc-Using_zramswap-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Using_zramd" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Using_zramd">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.5</span>Using zramd</div>
+			</a>
+			
+			<ul id="toc-Using_zramd-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Tips_and_tricks" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Tips_and_tricks">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Tips and tricks</div>
+			</a>
+			
+				<button aria-controls="toc-Tips_and_tricks-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Tips and tricks subsection
+				</button>
+			
+			<ul id="toc-Tips_and_tricks-sublist" class="sidebar-toc-list">
+				<li id="toc-Checking_zram_statistics" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Checking_zram_statistics">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.1</span>Checking zram statistics</div>
+			</a>
+			
+			<ul id="toc-Checking_zram_statistics-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Multiple_zram_devices" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Multiple_zram_devices">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.2</span>Multiple zram devices</div>
+			</a>
+			
+			<ul id="toc-Multiple_zram_devices-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Optimizing_swap_on_zram" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Optimizing_swap_on_zram">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.3</span>Optimizing swap on zram</div>
+			</a>
+			
+			<ul id="toc-Optimizing_swap_on_zram-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-See_also" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#See_also">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>See also</div>
+			</a>
+			
+			<ul id="toc-See_also-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../en/Zram.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="mw-list-item"><a href="../en/Talk:Zram.html" rel="discussion" title="Discussion about the content page [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">English</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../en/Zram.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=Zram&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=Zram&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../en/Zram.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Zram&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Zram&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output">
+<p><span>
+</span>
+</p>
+<div class="archwiki-template-meta-related-articles-start">
+<p class="mw-no-invert">Related articles</p>
+<ul>
+<li><a href="../en/Swap.html" title="Swap">Swap</a></li>
+<li><a href="../en/Zswap.html" title="Zswap">zswap</a></li>
+</ul>
+</div>
+<p><a rel="nofollow" class="external text" href="https://docs.kernel.org/admin-guide/blockdev/zram.html">zram</a>, formerly called compcache, is a Linux kernel module for creating a compressed block device in RAM, i.e. a RAM disk with on-the-fly disk compression. The block device created with zram can then be used for swap or as a general-purpose RAM disk. The two most common uses for zram are for the storage of temporary files (<code>/tmp</code>) and as a swap device. Initially, zram had only the former function, hence the original name "compcache" ("compressed cache").
+</p>
+<mw:tocplace></mw:tocplace>
+<h2><span class="mw-headline" id="Usage_as_swap">Usage as swap</span></h2>
+<p>Initially the created zram block device does not reserve or use any RAM. Only as files need or want to be swapped out, they will be compressed and moved into the zram block device. The zram block device will then dynamically grow or shrink as required. 
+</p>
+<p>For example, consider an example system with 32 GiB RAM where zram is configured with 64 GiB capacity. Assuming that zstd employs a 1:4 compression ratio, the actual compressed zram block size on physical RAM when fully occupied will be around 16 GiB. Therefore:
+</p>
+<ul>
+<li>RAM and zram completely occupied: 16 GiB RAM + 64 GiB zram (~16 GiB in RAM)</li>
+<li>Normal usage without swapping: 32 GiB RAM + 0 GiB zram</li>
+<li>Normal usage with light swapping: 30 GiB RAM + 8 GiB zram (~2 GiB in RAM)</li>
+<li>Without any zram configuration: 32 GiB RAM</li>
+</ul>
+<p>Therefore, zram always offers the advantage of being able to store more content in RAM. 
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> 
+<ul>
+<li>If the related <a href="../en/Zswap.html" title="Zswap">zswap</a> kernel feature remains enabled, it will prevent zram from being used effectively. This is because zswap functions as a swap cache in front of zram, intercepting and compressing evicted memory pages before they can reach zram. Despite the output of <span class="plainlinks archwiki-template-man" title="$ man 8 zramctl"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/zramctl.8">zramctl(8)</a></span>, most of zswap is unused in this circumstance.</li>
+<li>As discussed above, when configuring zram, the size of the zram device controls the maximum uncompressed amount of data it can store, NOT the maximum compressed size. You can configure the zram's size to be equal to or even greater than your system's physical RAM capacity, as long as the compressed size on physical RAM will not exceed your system's physical RAM capacity.</li>
+<li>Hibernating to swap on zram is not supported, even when zram is configured with a backing device on permanent storage. <i>logind</i> will protect against trying to hibernate to a swap space on zram.</li>
+</ul>
+</div>
+<h3><span class="mw-headline" id="Manually">Manually</span></h3>
+<p>First, <a href="../en/Zswap.html#Toggling_zswap" title="Zswap">disable zswap</a> via sysfs:
+</p>
+<pre># echo 0 &gt; /sys/module/zswap/parameters/enabled
+</pre>
+<p>Then, to set up one zstd compressed zram device with 32GiB capacity and a higher-than-normal priority (only for the current session):
+</p>
+<pre># modprobe zram
+# zramctl /dev/zram0 --algorithm zstd --size 32G
+# mkswap -U clear /dev/zram0
+# swapon --priority 100 /dev/zram0
+</pre>
+<p>To disable it again, either reboot or run:
+</p>
+<pre># swapoff /dev/zram0
+# modprobe -r zram
+# echo 1 &gt; /sys/module/zswap/parameters/enabled
+</pre>
+<p>A detailed explanation of all steps, options and potential problems is provided in the <a rel="nofollow" class="external text" href="https://docs.kernel.org/admin-guide/blockdev/zram.html">official documentation of the zram module</a>.
+</p>
+<p>For a permanent solution, use a method from one of the following sections.
+</p>
+<h3><span class="mw-headline" id="Using_a_udev_rule">Using a udev rule</span></h3>
+<p>The example below describes how to set up swap on zram automatically at boot with a single udev rule. No extra package should be needed to make this work.
+</p>
+<p>Before starting, permanently <a href="../en/Zswap.html#Toggling_zswap" title="Zswap">disable zswap</a> using the kernel parameter or sysctl knob.
+</p>
+<p>Explicitly <a href="../en/Kernel_module.html#Automatic_module_loading" class="mw-redirect" title="Load the module at boot">load the module at boot</a>:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/modules-load.d/zram.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">zram
+</pre>
+<p>Create the following <a href="../en/Udev.html#About_udev_rules" class="mw-redirect" title="Udev rule">udev rule</a> adjusting the <code>disksize</code> attribute as necessary: 
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/udev/rules.d/99-zram.rules</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">ACTION=="add", KERNEL=="zram0", ATTR{comp_algorithm}="zstd", ATTR{disksize}="4G", RUN="/usr/bin/mkswap -U clear /dev/%k", TAG+="systemd"</pre>
+<p>Add <code>/dev/zram</code> to your <a href="../en/Fstab.html" title="Fstab">fstab</a> with a higher than default priority:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/fstab</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">/dev/zram0 none swap defaults,pri=100 0 0</pre>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> The swap space on zram cannot be referred to by its LABEL or UUID in fstab since <a href="../en/Udev.html" title="Udev">udev</a> does not create <code>/dev/disk/by-label/*</code> and <code>/dev/disk/by-uuid/*</code> symlinks for zram devices.</div>
+<h3><span class="mw-headline" id="Using_zram-generator">Using zram-generator</span></h3>
+<p><a rel="nofollow" class="external text" href="https://github.com/systemd/zram-generator/blob/main/README.md">zram-generator</a> provides a <code>systemd-zram-setup@.service</code> unit to automatically initialize zram devices without users needing to <a href="../en/Help:Reading.html#Control_of_systemd_units" class="mw-redirect" title="Enable/start">enable/start</a> the template or its instances. See <span class="plainlinks archwiki-template-man" title="$ man 8 zram-generator"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/zram-generator.8">zram-generator(8)</a></span> and <span class="plainlinks archwiki-template-man" title="$ man 5 zram-generator.conf"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/zram-generator.conf.5">zram-generator.conf(5)</a></span>.
+</p>
+<p>Before starting, permanently <a href="../en/Zswap.html#Toggling_zswap" title="Zswap">disable zswap</a> using the kernel parameter or sysctl knob. <a rel="nofollow" class="external autonumber" href="https://github.com/systemd/zram-generator/issues/156">[1]</a>
+</p>
+<p>Then, to create a zram swap device using <code>zstd</code> and half of the entire available ram, <a href="../en/Help:Reading.html#Installation_of_packages" class="mw-redirect" title="Install">install</a> <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=zram-generator">zram-generator</a></span>, then create <code>/etc/systemd/zram-generator.conf</code> with the following:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/systemd/zram-generator.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">[zram0]
+zram-size = ram / 2
+compression-algorithm = zstd
+swap-priority = 100
+fs-type = swap</pre>
+<p>Run <a href="../en/Help:Reading.html#Control_of_systemd_units" class="mw-redirect" title="Daemon-reload">daemon-reload</a>, then <a href="../en/Help:Reading.html#Control_of_systemd_units" class="mw-redirect" title="Start">start</a> your configured <code>systemd-zram-setup@zram<i>N</i>.service</code> instance(s).
+</p>
+<p>You can <a href="../en/Swap.html#Swap_space" title="Swap">check the swap status</a> of your configured <code>/dev/zram<i>N</i></code> devices by reading the <a href="../en/Help:Reading.html#Control_of_systemd_units" class="mw-redirect" title="Unit status">unit status</a> of your <code>systemd-zram-setup@zram<i>N</i>.service</code> instance(s), or by using <span class="plainlinks archwiki-template-man" title="$ man 8 zramctl"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/zramctl.8">zramctl(8)</a></span>.
+</p>
+<h3><span class="mw-headline" id="Using_zramswap">Using zramswap</span></h3>
+<p><span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/zramswap/">zramswap</a></span><sup><small>AUR</small></sup> provides an automated script for setting up a swap with a higher priority and a default size of 20% of the RAM size of your system. To do this automatically on every boot, <a href="../en/Help:Reading.html#Control_of_systemd_units" class="mw-redirect" title="Enable">enable</a> <code>zramswap.service</code>.
+</p>
+<h3><span class="mw-headline" id="Using_zramd">Using zramd</span></h3>
+<p><span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/zramd/">zramd</a></span><sup><small>AUR</small></sup> allows to setup zram automatically using zstd compression by default, its configuration can be changed at <code>/etc/default/zramd</code>. It can be started at boot by enabling the <code>zramd.service</code> unit.
+</p>
+<h2><span class="mw-headline" id="Tips_and_tricks">Tips and tricks</span></h2>
+<h3><span class="mw-headline" id="Checking_zram_statistics">Checking zram statistics</span></h3>
+<p>Use <span class="plainlinks archwiki-template-man" title="$ man 8 zramctl"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/zramctl.8">zramctl(8)</a></span>. Example:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">$ zramctl</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">NAME       ALGORITHM DISKSIZE  DATA  COMPR  TOTAL STREAMS MOUNTPOINT
+/dev/zram0 zstd           32G  1.9G 318.6M 424.9M      16 [SWAP]
+</pre>
+<ul>
+<li>DISKSIZE = 32G: this zram device will store up to 32G of uncompressed data.</li>
+<li>DATA = 1.9G: currently, 1.9G (uncompressed) of data is being stored in this zram device</li>
+<li>COMPR = 318.6M: the 1.9G uncompressed data was compressed to 318.6M</li>
+<li>TOTAL = 424.9M: including metadata, the 1.9G of uncompressed data is using up 424.9M of physical RAM</li>
+</ul>
+<h3><span class="mw-headline" id="Multiple_zram_devices">Multiple zram devices</span></h3>
+<p>By default, loading the <code>zram</code> module creates a single <code>/dev/zram0</code> device.
+</p>
+<p>If you need more than one <code>/dev/zram</code> device, specify the amount using the <code>num_devices</code> <a href="../en/Kernel_module.html#Setting_module_options" class="mw-redirect" title="Kernel module parameter">kernel module parameter</a> or <a rel="nofollow" class="external text" href="https://docs.kernel.org/admin-guide/blockdev/zram.html#add-remove-zram-devices">add them as needed afterwards</a>.
+</p>
+<h3><span class="mw-headline" id="Optimizing_swap_on_zram">Optimizing swap on zram</span></h3>
+<p>Since zram behaves differently than disk swap, we can configure the system's swap to take full potential of the zram advantages:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/sysctl.d/99-vm-zram-parameters.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">vm.swappiness = 180
+vm.watermark_boost_factor = 0
+vm.watermark_scale_factor = 125
+vm.page-cluster = 0</pre>
+<p>Explanation of the configuration:
+</p>
+<p>These values are <a rel="nofollow" class="external text" href="https://github.com/pop-os/default-settings/pull/163">what Pop!_OS uses</a>. That Pop!_OS GitHub PR also links to <a rel="nofollow" class="external text" href="https://old.reddit.com/r/Fedora/comments/mzun99/new_zram_tuning_benchmarks/">some testing done by users on r/Fedora</a>, which determined that <code>vm.page-cluster = 0</code> is ideal. They also found a high swappiness value to be ideal, which matches what is suggested by <a rel="nofollow" class="external text" href="https://docs.kernel.org/admin-guide/sysctl/vm.html">the kernel docs</a>:
+</p>
+<p>"The default value is 60. For in-memory swap, like zram or zswap, as well as hybrid setups that have swap on faster devices than the filesystem, values beyond 100 can be considered. For example, if the random IO against the swap device is on average 2x faster than IO from the filesystem, swappiness should be 133 (x + 2x = 200, 2x = 133.33)."
+</p>
+<p>On a system with a hard drive, random IO against the zswap device would be orders of magnitude faster than IO against the filesystem, so swappiness should be ~200. Even on a system with a fast SSD, a high swappiness value may be ideal.
+</p>
+<h2><span class="mw-headline" id="See_also">See also</span></h2>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/zram" class="extiw" title="wikipedia:zram">Wikipedia:zram</a></li>
+<li><a rel="nofollow" class="external free" href="https://github.com/pop-os/default-settings/pull/163">https://github.com/pop-os/default-settings/pull/163</a></li>
+<li><a rel="nofollow" class="external free" href="https://www.reddit.com/r/pop_os/comments/znh9n6/help_test_a_zram_optimization_for_pop_os/">https://www.reddit.com/r/pop_os/comments/znh9n6/help_test_a_zram_optimization_for_pop_os/</a></li>
+</ul>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="../en/Category:Kernel.html" title="Category:Kernel">Kernel</a></li></ul>
+</div></div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=Zram&amp;oldid=783941">https://wiki.archlinux.org/index.php?title=Zram&amp;oldid=783941</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 29 July 2023, at 21:14.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

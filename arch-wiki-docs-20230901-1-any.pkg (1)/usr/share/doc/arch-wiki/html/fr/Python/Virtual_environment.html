@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>Python (Français)/Virtual environment (Français) - ArchWiki</title>
+<link rel="stylesheet" href="../../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Python_Français_Virtual_environment_Français rootpage-Python_Français skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Vue_d'ensemble" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Vue_d'ensemble">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Vue d'ensemble</div>
+			</a>
+			
+			<ul id="toc-Vue_d'ensemble-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Installation" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Installation">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Installation</div>
+			</a>
+			
+				<button aria-controls="toc-Installation-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Installation subsection
+				</button>
+			
+			<ul id="toc-Installation-sublist" class="sidebar-toc-list">
+				<li id="toc-Paquets" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Paquets">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.1</span>Paquets</div>
+			</a>
+			
+			<ul id="toc-Paquets-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Utilisation" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Utilisation">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>Utilisation</div>
+			</a>
+			
+				<button aria-controls="toc-Utilisation-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Utilisation subsection
+				</button>
+			
+			<ul id="toc-Utilisation-sublist" class="sidebar-toc-list">
+				<li id="toc-Création" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Cr%C3%A9ation">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.1</span>Création</div>
+			</a>
+			
+			<ul id="toc-Création-sublist" class="sidebar-toc-list">
+				<li id="toc-venv" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#venv">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.1.1</span>venv</div>
+			</a>
+			
+			<ul id="toc-venv-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-virtualenv" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#virtualenv">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.1.2</span>virtualenv</div>
+			</a>
+			
+			<ul id="toc-virtualenv-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Activation" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Activation">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.2</span>Activation</div>
+			</a>
+			
+			<ul id="toc-Activation-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Versions_de_Python" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Versions_de_Python">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4</span>Versions de Python</div>
+			</a>
+			
+			<ul id="toc-Versions_de_Python-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-virtualenvwrapper" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#virtualenvwrapper">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5</span>virtualenvwrapper</div>
+			</a>
+			
+				<button aria-controls="toc-virtualenvwrapper-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle virtualenvwrapper subsection
+				</button>
+			
+			<ul id="toc-virtualenvwrapper-sublist" class="sidebar-toc-list">
+				<li id="toc-Installation_2" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Installation_2">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5.1</span>Installation</div>
+			</a>
+			
+			<ul id="toc-Installation_2-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Utilisation_de_base" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Utilisation_de_base">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5.2</span>Utilisation de base</div>
+			</a>
+			
+			<ul id="toc-Utilisation_de_base-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Pipenv" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Pipenv">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6</span>Pipenv</div>
+			</a>
+			
+				<button aria-controls="toc-Pipenv-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Pipenv subsection
+				</button>
+			
+			<ul id="toc-Pipenv-sublist" class="sidebar-toc-list">
+				<li id="toc-Installation_3" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Installation_3">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6.1</span>Installation</div>
+			</a>
+			
+			<ul id="toc-Installation_3-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Utilisation_de_base_2" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Utilisation_de_base_2">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6.2</span>Utilisation de base</div>
+			</a>
+			
+			<ul id="toc-Utilisation_de_base_2-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Voir_aussi" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Voir_aussi">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">7</span>Voir aussi</div>
+			</a>
+			
+			<ul id="toc-Voir_aussi-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../../fr/Python/Virtual_environment.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="new mw-list-item"><a href="/index.php?title=Talk:Python_(Fran%C3%A7ais)/Virtual_environment_(Fran%C3%A7ais)&amp;action=edit&amp;redlink=1" rel="discussion" title="Discussion about the content page (page does not exist) [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">français</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../../fr/Python/Virtual_environment.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=Python_(Fran%C3%A7ais)/Virtual_environment_(Fran%C3%A7ais)&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=Python_(Fran%C3%A7ais)/Virtual_environment_(Fran%C3%A7ais)&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../../fr/Python/Virtual_environment.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Python_(Fran%C3%A7ais)/Virtual_environment_(Fran%C3%A7ais)&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Python_(Fran%C3%A7ais)/Virtual_environment_(Fran%C3%A7ais)&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="fr" dir="ltr">
+<div class="mw-parser-output">
+<p><i>virtualenv</i> est un outil utilisé pour créer un espace de travail isolé pour une application <a href="../../en/Python.html" title="Python">Python</a>. Il présente divers avantages tels que la possibilité d'installer des modules localement, d'exporter un environnement de travail et d'exécuter un programme <a href="../../en/Python.html" title="Python">Python</a> dans cet environnement.
+</p>
+<mw:tocplace></mw:tocplace>
+<h2>
+<span id="Vue_d.27ensemble"></span><span class="mw-headline" id="Vue_d'ensemble">Vue d'ensemble</span>
+</h2>
+<p>Un environnement virtuel est un répertoire dans lequel sont installés des binaires et des scripts shell. Les binaires comprennent <i>python</i> pour l'exécution des scripts et <i>pip</i> pour l'installation d'autres modules dans l'environnement. Il existe également des scripts shell (un pour <a href="../../en/Bash.html" title="Bash">bash</a>, csh et <a href="../../en/Fish.html" title="Fish">fish</a>) pour activer l'environnement. Essentiellement, un environnement virtuel imite une installation complète de <a href="../../en/Python.html" title="Python">Python</a> et de tous les modules souhaités sans interférer avec le système sur lequel l'application pourrait s'exécuter.
+</p>
+<p>En 2017, <a rel="nofollow" class="external text" href="https://pipenv.readthedocs.io/">Pipenv</a> a été publié et gère tous les outils ci-dessus - la gestion des environnements virtuels des interprètes python, les dépendances des paquets, leur activation et le verrouillage reproductible des versions dans les Pipfiles.
+</p>
+<h2><span class="mw-headline" id="Installation">Installation</span></h2>
+<p><a href="../../en/Python.html" title="Python">Python</a> 3.3+ est livré avec un module appelé <i>venv</i>. Pour les applications qui nécessitent une version plus ancienne de Python, il faut utiliser <i>virtualenv</i>.
+</p>
+<h3><span class="mw-headline" id="Paquets">Paquets</span></h3>
+<p><a href="../../fr/Help:Reading.html#Installation_de_paquets" class="mw-redirect" title="Installer">Installer</a> un de ces paquets pour utiliser un environnement virtuel Python : 
+</p>
+<ul>
+<li>Python 3.3+: <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=python">python</a></span>
+</li>
+<li>Python 3: <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=python-virtualenv">python-virtualenv</a></span>
+</li>
+</ul>
+<p>Pour Pipenv:
+</p>
+<ul><li>Python 3: <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=python-pipenv">python-pipenv</a></span>
+</li></ul>
+<h2><span class="mw-headline" id="Utilisation">Utilisation</span></h2>
+<p>Les trois outils utilisent un procédé similaire.
+</p>
+<h3>
+<span id="Cr.C3.A9ation"></span><span class="mw-headline" id="Création">Création</span>
+</h3>
+<p>Utilisez <i>venv</i> ou <i>virtualenv</i> pour créer l'environnement virtuel dans le répertoire de votre projet. Assurez-vous d'exclure le répertoire venv du contrôle de version - une copie de <code>pip freeze</code> suffira à le reconstruire.
+</p>
+<h4><span class="mw-headline" id="venv">venv</span></h4>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> Cette méthode remplace le script <i>pyvenv</i>, qui est supprimé dans <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=python">python</a></span> 3.8.</div>
+<p>Cet outil est fourni par <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=python">python</a></span> (3.3+) :
+</p>
+<pre>$ python -m venv <i>envname</i>
+</pre>
+<h4><span class="mw-headline" id="virtualenv">virtualenv</span></h4>
+<p>Utilisez <i>virtualenv</i> pour Python 3, disponible dans <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=python-virtualenv">python-virtualenv</a></span>.
+</p>
+<pre>$ virtualenv <i>envname</i>
+</pre>
+<h3><span class="mw-headline" id="Activation">Activation</span></h3>
+<p>Utilisez l'un des scripts shell fournis pour activer et désactiver l'environnement. Cet exemple suppose que l'on utilise bash.
+</p>
+<pre>$ source <i>envname</i>/bin/activate
+(<i>envname</i>) $
+</pre>
+<p>Une fois dans l'environnement virtuel, les modules peuvent être installés avec <i>pip</i> et les scripts peuvent être exécutés de façon normale.
+</p>
+<p>Pour quitter l'environnement virtuel, exécutez la fonction fournie par <code>bin/activate</code> :
+</p>
+<pre>(<i>envname</i>) $ deactivate
+</pre>
+<h2><span class="mw-headline" id="Versions_de_Python">Versions de Python</span></h2>
+<p>Par défaut, les environnements virtuels sont créés à l'aide du système Python. Le binaire <i>bin/python</i> est juste un lien symbolique vers le système <i>python</i> :
+</p>
+<pre>$ ls -l <i>envname</i>/bin/python
+lrwxrwxrwx 1 foo foo 15 Jan 29 18:48 <i>envname</i>/bin/python -&gt; /usr/bin/python
+</pre>
+<p>Si vous souhaitez utiliser une version différente de Python dans l'environnement virtuel, vous pouvez utiliser l'option <code>-p</code>/<code>--python</code> de <i>virtualenv</i> :
+</p>
+<pre>$ virtualenv -p 3.8 <i>envname</i>
+$ ls -l <i>envname</i>/bin/python
+lrwxrwxrwx 1 foo foo 18 Jan 29 18:48 <i>envname</i>/bin/python -&gt; /usr/bin/python3.8
+</pre>
+<p><span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=pypy3">pypy3</a></span> peut également être utilisé :
+</p>
+<pre>$ virtualenv -p pypy3 <i>envname</i>
+</pre>
+<h2><span class="mw-headline" id="virtualenvwrapper">virtualenvwrapper</span></h2>
+<p><i>virtualenvwrapper</i> permet une interaction plus naturelle en ligne de commande avec vos environnements virtuels en exposant plusieurs commandes utiles pour créer, activer et supprimer des environnements virtuels. Ce paquet est un wrapper pour <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=python-virtualenv">python-virtualenv</a></span>.
+</p>
+<h3><span class="mw-headline" id="Installation_2">Installation</span></h3>
+<p><a href="../../fr/Help:Reading.html#Installation_de_paquets" class="mw-redirect" title="Installer">Installer</a> le paquet <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=python-virtualenvwrapper">python-virtualenvwrapper</a></span> et ajoutez les lignes suivantes à votre <code>~/.bashrc</code> :
+</p>
+<pre>export WORKON_HOME=~/.virtualenvs
+source /usr/bin/virtualenvwrapper.sh
+</pre>
+<p>La ligne <code>source /usr/bin/virtualenvwrapper.sh</code> peut causer des ralentissements lors du démarrage d'un nouveau shell. Pour corriger cela, essayez d'utiliser <code>source /usr/bin/virtualenvwrapper_lazy.sh</code>, qui chargera virtualenvwrapper la première fois que les fonctions de virtualenvwrapper seront appelées.
+</p>
+<p>Rouvrez votre console pour appliquer les changements. Le répertoire <code>WORKON_HOME</code> sera créé automatiquement.
+</p>
+<h3><span class="mw-headline" id="Utilisation_de_base">Utilisation de base</span></h3>
+<p>Voir <a rel="nofollow" class="external free" href="https://virtualenvwrapper.readthedocs.io/en/latest/">https://virtualenvwrapper.readthedocs.io/en/latest/</a> pour l'utilisation (et les possibilités d'extension).
+</p>
+<p>Créer l'environnement virtuel (toutes les options de la ligne de commande sauf <code>-a</code>, <code>-i</code>, <code>-r</code>, et <code>-h</code> sont transmises directement à <i>virtualenv</i>, vous pouvez donc utiliser <code>-p</code> pour sélectionner la version de Python) :
+</p>
+<pre>$ mkvirtualenv <i>envname</i>
+</pre>
+<p>Activer l'environnement virtuel :
+</p>
+<pre>$ workon <i>envname</i>
+</pre>
+<p>Installer un paquet dans l'environnement virtuel (par exemple, <a href="../../en/Django.html" title="Django">Django</a>) :
+</p>
+<pre>(<i>envname</i>) $ pip install django
+</pre>
+<p>Une fois que vous avez fait ce que vous aviez à faire, quittez l'environnement virtuel :
+</p>
+<h2><span class="mw-headline" id="Pipenv">Pipenv</span></h2>
+<p><i>pipenv</i> permet de mieux gérer les interactions avec l'interface de programmation en fournissant un programme unique qui exécute toutes les fonctions des outils ci-dessus.
+</p>
+<h3><span class="mw-headline" id="Installation_3">Installation</span></h3>
+<p><a href="../../fr/Help:Reading.html#Installation_de_paquets" class="mw-redirect" title="Installer">Installer</a> le paquet <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=python-pipenv">python-pipenv</a></span>.
+</p>
+<h3><span class="mw-headline" id="Utilisation_de_base_2">Utilisation de base</span></h3>
+<p>Toutes les commandes peuvent être exécutées dans le dossier du projet, et pipenv reconnaîtra la situation spécifique - si un virtualenv existe dans le répertoire, il le localisera, et s'exécutera sur l'interpréteur virtuel spécifique lorsque pipenv sera exécuté.
+</p>
+<p>Plus d'information à <a rel="nofollow" class="external autonumber" href="https://pipenv.readthedocs.io/en/latest/">[1]</a>, <a rel="nofollow" class="external autonumber" href="https://realpython.com/pipenv-guide/">[2]</a>, <a rel="nofollow" class="external autonumber" href="https://docs.python-guide.org/dev/virtualenvs/#pipenv-virtual-environments">[3]</a>.
+</p>
+<h2><span class="mw-headline" id="Voir_aussi">Voir aussi</span></h2>
+<ul>
+<li><a rel="nofollow" class="external text" href="https://docs.python.org/3/library/venv.html">Python venv</a></li>
+<li><a rel="nofollow" class="external text" href="https://pypi.org/project/virtualenv/">virtualenv PyPI page</a></li>
+<li><a rel="nofollow" class="external text" href="https://virtualenvwrapper.readthedocs.io/en/latest/">virtualenvwrapper documentation</a></li>
+</ul>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../../Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="../../fr/Category:Programming_languages.html" title="Category:Programming languages (Français)">Programming languages (Français)</a></li></ul>
+</div></div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=Python_(Fran%C3%A7ais)/Virtual_environment_(Fran%C3%A7ais)&amp;oldid=782831">https://wiki.archlinux.org/index.php?title=Python_(Français)/Virtual_environment_(Français)&amp;oldid=782831</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 9 July 2023, at 07:47.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

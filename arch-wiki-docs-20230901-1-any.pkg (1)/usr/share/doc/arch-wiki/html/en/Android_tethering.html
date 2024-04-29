@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>Android tethering - ArchWiki</title>
+<link rel="stylesheet" href="../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Android_tethering rootpage-Android_tethering skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Wi-Fi_access_point" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Wi-Fi_access_point">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Wi-Fi access point</div>
+			</a>
+			
+			<ul id="toc-Wi-Fi_access_point-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-USB_tethering" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#USB_tethering">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>USB tethering</div>
+			</a>
+			
+				<button aria-controls="toc-USB_tethering-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle USB tethering subsection
+				</button>
+			
+			<ul id="toc-USB_tethering-sublist" class="sidebar-toc-list">
+				<li id="toc-Using_systemd-networkd_with_udev" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Using_systemd-networkd_with_udev">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.1</span>Using systemd-networkd with udev</div>
+			</a>
+			
+			<ul id="toc-Using_systemd-networkd_with_udev-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-USB_tethering_with_EasyTether" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#USB_tethering_with_EasyTether">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>USB tethering with EasyTether</div>
+			</a>
+			
+			<ul id="toc-USB_tethering_with_EasyTether-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Reverse_tethering" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Reverse_tethering">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4</span>Reverse tethering</div>
+			</a>
+			
+			<ul id="toc-Reverse_tethering-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Tethering_via_Bluetooth" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Tethering_via_Bluetooth">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5</span>Tethering via Bluetooth</div>
+			</a>
+			
+			<ul id="toc-Tethering_via_Bluetooth-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Tethering_with_SOCKS_proxy" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Tethering_with_SOCKS_proxy">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6</span>Tethering with SOCKS proxy</div>
+			</a>
+			
+				<button aria-controls="toc-Tethering_with_SOCKS_proxy-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Tethering with SOCKS proxy subsection
+				</button>
+			
+			<ul id="toc-Tethering_with_SOCKS_proxy-sublist" class="sidebar-toc-list">
+				<li id="toc-Tools_needed" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Tools_needed">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6.1</span>Tools needed</div>
+			</a>
+			
+			<ul id="toc-Tools_needed-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Instructions" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Instructions">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6.2</span>Instructions</div>
+			</a>
+			
+			<ul id="toc-Instructions-sublist" class="sidebar-toc-list">
+				<li id="toc-Tetherbot" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Tetherbot">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6.2.1</span>Tetherbot</div>
+			</a>
+			
+			<ul id="toc-Tetherbot-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Proxoid" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Proxoid">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6.2.2</span>Proxoid</div>
+			</a>
+			
+			<ul id="toc-Proxoid-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Android_Proxy_Server" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Android_Proxy_Server">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6.2.3</span>Android Proxy Server</div>
+			</a>
+			
+			<ul id="toc-Android_Proxy_Server-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+	</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../en/Android_tethering.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="mw-list-item"><a href="../en/Talk:Android_tethering.html" rel="discussion" title="Discussion about the content page [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">English</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../en/Android_tethering.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=Android_tethering&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=Android_tethering&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../en/Android_tethering.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Android_tethering&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Android_tethering&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output">
+<p><a href="https://en.wikipedia.org/wiki/Tethering" class="extiw" title="wikipedia:Tethering">Tethering</a> is a way to have internet access on your PC through your smartphone using its network connection. USB tethering and Wi-Fi access point tethering are natively supported since Android 2.2 "Froyo". USB <a href="#Reverse_tethering">#Reverse tethering</a>, to have internet access on your smartphone through your PC, is also possible.
+</p>
+<mw:tocplace></mw:tocplace>
+<h2><span class="mw-headline" id="Wi-Fi_access_point">Wi-Fi access point</span></h2>
+<p>Using an Android phone as a Wi-Fi access point (to a 3G/4G mobile internet connection) is available for devices running Android 2.2 "Froyo" or newer.
+</p>
+<p>Enable it via one of the following:
+</p>
+<ul>
+<li><i>Settings &gt; Wireless &amp; networks &gt; Internet tethering &gt; Wi-Fi access point</i></li>
+<li><i>Settings &gt; More... &gt; Tethering &amp; mobile hotspot &gt; Mobile Wi-Fi hotspot</i></li>
+</ul>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> On some phones, this method will discharge the battery rapidly and tends to cause intense heating, unlike USB.</div>
+<h2><span class="mw-headline" id="USB_tethering">USB tethering</span></h2>
+<div class="noprint archwiki-template-message">
+<p><a href="../File:Tango-view-fullscreen.png" class="image"><img alt="Tango-view-fullscreen.png" src="../File:Tango-view-fullscreen.png" decoding="async" width="48" height="48"></a><b>This article or section needs expansion.</b><a href="../File:Tango-view-fullscreen.png" class="image"><img alt="Tango-view-fullscreen.png" src="../File:Tango-view-fullscreen.png" decoding="async" width="48" height="48"></a></p>
+<div>
+<b>Reason:</b> Should have a new section for RNDIS networking, which mostly just works. (Discuss in <a rel="nofollow" class="external text" href="https://wiki.archlinux.org/title/Talk:Android_tethering">Talk:Android tethering</a>)</div>
+</div>
+<p>USB tethering is available since Android 2.2 "Froyo".
+</p>
+<ul>
+<li>Connect the phone to your computer via USB (the USB connection mode -- Phone Portal, Memory Card or Charge only -- is not important, but please note that you will not be able to change the USB mode during tethering)</li>
+<li>Enable the tethering option from your phone. This is usually done from one of:
+<ul>
+<li>
+<i>Settings -&gt; Wireless &amp; networks -&gt; Internet tethering</i> (or <i>Tethering &amp; portable hotspot</i>, for more recent versions)</li>
+<li><i>Settings -&gt; More... -&gt; Tethering &amp; mobile hotspot -&gt; USB tethering</i></li>
+</ul>
+</li>
+<li>Install the <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=usb_modeswitch">usb_modeswitch</a></span> package. See <a href="../en/Mobile_broadband_modem.html#Mode_switching" title="Mobile broadband modem">Mobile broadband modem#Mode switching</a> for more information.</li>
+<li>Follow <a href="../en/Network_configuration.html" title="Network configuration">Network configuration</a>.</li>
+</ul>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> The network interface name may change depending on the USB port you use. You may want to <a href="../en/Network_configuration.html#Change_interface_name" title="Network configuration">change the interface name</a> to create a unique name for your device regardless of the USB port.</div>
+<ul><li>If you are using a cellular data plan and you have recently entered a new billing period, you may need to restart your phone.</li></ul>
+<h3><span class="mw-headline" id="Using_systemd-networkd_with_udev">Using systemd-networkd with udev</span></h3>
+<p>Using <a href="../en/Systemd-networkd.html" title="Systemd-networkd">systemd-networkd</a> you can automatically adjust the networking to use the phone as the gateway when plugged in.
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/udev/rules.d/90-android-tethering.rules</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;"># Execute pairing program when appropriate
+ACTION=="add|remove", SUBSYSTEM=="net", ATTR{idVendor}=="18d1" ENV{ID_USB_DRIVER}=="rndis_host", SYMLINK+="android"
+</pre>
+<p>You may have to adjust the <code>idVendor</code> attribute depending on your phone. You can check using <i>udevadm</i>:
+</p>
+<pre>$ udevadm info /sys/class/net/enp0s26u1u2
+</pre>
+<p>Then create the corresponding systemd-networkd file:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/systemd/network/50-enp0s26u1u2.network</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">[Match]
+Name=enp0s26u1u2
+
+[Network]
+DHCP=ipv4
+</pre>
+<h2><span class="mw-headline" id="USB_tethering_with_EasyTether">USB tethering with EasyTether</span></h2>
+<p>Get the <a rel="nofollow" class="external text" href="http://www.mobile-stream.com/easytether/drivers.html">easytether</a> linux client software. The commands to set it up and run it are as follows.
+</p>
+<pre># pacman -U easytether-0.8.5-2-x86_64.pkg.tar.xz
+# easytether-usb
+# dhcpcd tap-easytether
+</pre>
+<p>Make sure you have the EasyTether android app installed on your phone for it to connect to. Note: The Lite app disables some connections and you must have the paid app for full functionality. For this reason, using the AziLink setup is recommended instead.
+</p>
+<h2><span class="mw-headline" id="Reverse_tethering">Reverse tethering</span></h2>
+<p>Reverse tethering is to provide internet connection to Android through PC. <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/gnirehtet/">gnirehtet</a></span><sup><small>AUR</small></sup> provides reverse tethering.
+</p>
+<p>Connect your phone to your computer via USB like mentioned above and start: 
+</p>
+<pre>$ gnirehtet run
+</pre>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/gnirehtet/">gnirehtet</a></span><sup><small>AUR</small></sup> currently only supports USB.</div>
+<h2><span class="mw-headline" id="Tethering_via_Bluetooth">Tethering via Bluetooth</span></h2>
+<p>Android (from at least 4.0 onwards, possibly earlier) can provide a Bluetooth personal-area network (PAN) in access point mode.
+</p>
+<p>NetworkManager can perform this action and handle the network initialisation itself; consult its documentation for more details. 
+</p>
+<p>Alternatively: pair and ensure you can connect your computer and Android device, as described on <a href="../en/Bluetooth.html" title="Bluetooth">Bluetooth</a>, then, substituting the address of the Android device (here given as <code>AA_BB_CC_DD_EE_FF</code>), do:
+</p>
+<pre>$ dbus-send --system --type=method_call --dest=org.bluez /org/bluez/hci0/dev_AA_BB_CC_DD_EE_FF org.bluez.Network1.Connect string:'nap'</pre>
+<p>This will create a network interface <code>bnep0</code>.  Finally, <a href="../en/Network_configuration.html" title="Network configuration">configure a network connection</a> on this interface; Android offers DHCP by default.
+</p>
+<h2><span class="mw-headline" id="Tethering_with_SOCKS_proxy">Tethering with SOCKS proxy</span></h2>
+<p>With this method tethering is achieved by port forwarding from the phone to the PC. This is suitable only for browsing. For Firefox, you should set <code>network.proxy.socks_remote_dns</code> to <code>true</code> in <code>about:config</code> ( address bar )
+</p>
+<h3><span class="mw-headline" id="Tools_needed">Tools needed</span></h3>
+<ul>
+<li>The <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=android-tools">android-tools</a></span> and <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=android-udev">android-udev</a></span> packages</li>
+<li>USB connection cable from your phone to PC</li>
+<li>Either <a rel="nofollow" class="external text" href="https://web.archive.org/web/20171121193952/http://graha.ms/androidproxy/">Tetherbot</a>, <a rel="nofollow" class="external text" href="https://code.google.com/p/proxoid/">Proxoid</a>, or <a rel="nofollow" class="external text" href="https://play.google.com/store/apps/details?id=cn.adonet.proxyevery">Android Proxy Server</a>
+</li>
+</ul>
+<h3><span class="mw-headline" id="Instructions">Instructions</span></h3>
+<h4><span class="mw-headline" id="Tetherbot">Tetherbot</span></h4>
+<p>Tetherbot is <i>an experimental SOCKS proxy and Port Bouncer that should allow you to connect your laptop to the internet using the internet connection (EDGE, 3G or Wifi) of your T-Mobile G1 Cellphone.</i> It is discontinued and its website is down, but still can be accessed from Wayback Machine<a rel="nofollow" class="external autonumber" href="https://web.archive.org/web/20171121193952/http://graha.ms/androidproxy/">[1]</a> where its APK can also be downloaded from.
+</p>
+<p>In order to do SOCKS proxy via Tetherbot to connect your browser to the Internet, do:
+</p>
+<ol>
+<li>For your phone, open the application <i>Tetherbot</i>, decline Phone &amp; Storage permissions, and press the <i>Start Socks</i> button</li>
+<li>Forward the port to your local computer: <pre># adb forward tcp:1080 tcp:1080</pre>
+</li>
+<li>Now go to your web browser's proxy settings, set a manual proxy configuration with the proxy host address <code>localhost</code> and port <code>1080</code>, leaving the rest blank.</li>
+</ol>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> Remember to disable these proxy settings in your web browser if you want to stop using your phone's connection.</div>
+<h4><span class="mw-headline" id="Proxoid">Proxoid</span></h4>
+<p>Follow the instructions demonstrated in the following <a rel="nofollow" class="external text" href="http://www.linux-magazine.com/Online/Blogs/Productivity-Sauce/Tether-an-Android-Phone-Using-Proxoid">link</a>.
+</p>
+<h4><span class="mw-headline" id="Android_Proxy_Server">Android Proxy Server</span></h4>
+<p>Currently available on the <a rel="nofollow" class="external text" href="https://play.google.com/store/apps/details?id=cn.adonet.proxyevery">Google Play store</a> and supports HTTP/HTTPS, Socks5, Shadowsocks, and TCP Relay proxies.
+</p>
+<p>To initiate a SOCKS proxy to connect your browser to the Internet, do:
+</p>
+<ol>
+<li>Open the app <i>Android Proxy Server</i>, and enable the <i>Socks5 Proxy</i> ticker</li>
+<li>Forward the port to your local computer: <pre># adb forward tcp:1088 tcp:1088</pre>
+</li>
+<li>Now go to your web browser's proxy settings, set a manual proxy configuration with the proxy host address <code>localhost</code> and port <code>1088</code>, leaving the rest blank.</li>
+</ol>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> Remember to disable these proxy settings in your web browser if you want to stop using your phone's connection.</div>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface">
+<div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../Special:Categories.html" title="Special:Categories">Categories</a>: <ul>
+<li><a href="../en/Category:Android.html" title="Category:Android">Android</a></li>
+<li><a href="../en/Category:Network_sharing.html" title="Category:Network sharing">Network sharing</a></li>
+</ul>
+</div>
+<div id="mw-hidden-catlinks" class="mw-hidden-catlinks mw-hidden-cats-hidden">Hidden category: <ul><li><a href="../en/Category:Pages_or_sections_flagged_with_Template:Expansion.html" title="Category:Pages or sections flagged with Template:Expansion">Pages or sections flagged with Template:Expansion</a></li></ul>
+</div>
+</div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=Android_tethering&amp;oldid=769571">https://wiki.archlinux.org/index.php?title=Android_tethering&amp;oldid=769571</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 27 February 2023, at 19:16.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

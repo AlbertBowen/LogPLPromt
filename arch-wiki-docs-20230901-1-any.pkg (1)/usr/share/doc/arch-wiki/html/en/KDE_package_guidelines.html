@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>KDE package guidelines - ArchWiki</title>
+<link rel="stylesheet" href="../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-KDE_package_guidelines rootpage-KDE_package_guidelines skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Build_directory" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Build_directory">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Build directory</div>
+			</a>
+			
+			<ul id="toc-Build_directory-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Install_prefix" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Install_prefix">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Install prefix</div>
+			</a>
+			
+			<ul id="toc-Install_prefix-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Build_type" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Build_type">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>Build type</div>
+			</a>
+			
+			<ul id="toc-Build_type-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Force_Qt_version" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Force_Qt_version">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4</span>Force Qt version</div>
+			</a>
+			
+			<ul id="toc-Force_Qt_version-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-KF5_package_naming" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#KF5_package_naming">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5</span>KF5 package naming</div>
+			</a>
+			
+				<button aria-controls="toc-KF5_package_naming-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle KF5 package naming subsection
+				</button>
+			
+			<ul id="toc-KF5_package_naming-sublist" class="sidebar-toc-list">
+				<li id="toc-Plasma_widgets" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Plasma_widgets">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5.1</span>Plasma widgets</div>
+			</a>
+			
+			<ul id="toc-Plasma_widgets-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Runners" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Runners">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5.2</span>Runners</div>
+			</a>
+			
+			<ul id="toc-Runners-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Service_menus" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Service_menus">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5.3</span>Service menus</div>
+			</a>
+			
+			<ul id="toc-Service_menus-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Themes" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Themes">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5.4</span>Themes</div>
+			</a>
+			
+			<ul id="toc-Themes-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Icons_and_.desktop_files_installation" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Icons_and_.desktop_files_installation">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6</span>Icons and .desktop files installation</div>
+			</a>
+			
+			<ul id="toc-Icons_and_.desktop_files_installation-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../en/KDE_package_guidelines.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="mw-list-item"><a href="../en/Talk:KDE_package_guidelines.html" rel="discussion" title="Discussion about the content page [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">English</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../en/KDE_package_guidelines.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=KDE_package_guidelines&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=KDE_package_guidelines&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../en/KDE_package_guidelines.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=KDE_package_guidelines&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=KDE_package_guidelines&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output">
+<div class="toc" style="display:block; text-align: center; margin-bottom: 1em;">
+<b><a href="../en/Arch_package_guidelines.html" title="Arch package guidelines">Arch package guidelines</a></b>
+<hr>
+<p><a href="../en/32-bit_package_guidelines.html" title="32-bit package guidelines">32-bit</a> – <a href="../en/CLR_package_guidelines.html" title="CLR package guidelines">CLR</a> – <a href="../en/CMake_package_guidelines.html" title="CMake package guidelines">CMake</a> – <a href="../en/Cross-compiling_tools_package_guidelines.html" title="Cross-compiling tools package guidelines">Cross</a> – <a href="../en/DKMS_package_guidelines.html" title="DKMS package guidelines">DKMS</a> – <a href="../en/Eclipse_plugin_package_guidelines.html" title="Eclipse plugin package guidelines">Eclipse</a> – <a href="../en/Electron_package_guidelines.html" title="Electron package guidelines">Electron</a> – <a href="../en/Font_package_guidelines.html" title="Font package guidelines">Font</a> – <a href="../en/Free_Pascal_package_guidelines.html" title="Free Pascal package guidelines">Free Pascal</a> – <a href="../en/GNOME_package_guidelines.html" title="GNOME package guidelines">GNOME</a> – <a href="../en/Go_package_guidelines.html" title="Go package guidelines">Go</a> – <a href="../en/Haskell_package_guidelines.html" title="Haskell package guidelines">Haskell</a> – <a href="../en/Java_package_guidelines.html" title="Java package guidelines">Java</a> – <a class="mw-selflink selflink">KDE</a> – <a href="../en/Kernel_module_package_guidelines.html" title="Kernel module package guidelines">Kernel</a> – <a href="../en/Lisp_package_guidelines.html" title="Lisp package guidelines">Lisp</a> – <a href="../en/Meson_package_guidelines.html" title="Meson package guidelines">Meson</a> – <a href="../en/MinGW_package_guidelines.html" title="MinGW package guidelines">MinGW</a> – <a href="../en/Node.js_package_guidelines.html" title="Node.js package guidelines">Node.js</a> – <a href="../en/Nonfree_applications_package_guidelines.html" title="Nonfree applications package guidelines">Nonfree</a> – <a href="../en/OCaml_package_guidelines.html" title="OCaml package guidelines">OCaml</a> – <a href="../en/Perl_package_guidelines.html" title="Perl package guidelines">Perl</a> – <a href="../en/PHP_package_guidelines.html" title="PHP package guidelines">PHP</a> – <a href="../en/Python_package_guidelines.html" title="Python package guidelines">Python</a> – <a href="../en/R_package_guidelines.html" title="R package guidelines">R</a> – <a href="../en/Ruby_package_guidelines.html" title="Ruby package guidelines">Ruby</a> – <a href="../en/Rust_package_guidelines.html" title="Rust package guidelines">Rust</a> – <a href="../en/Shell_package_guidelines.html" title="Shell package guidelines">Shell</a> – <a href="../en/VCS_package_guidelines.html" title="VCS package guidelines">VCS</a> – <a href="../en/Web_application_package_guidelines.html" title="Web application package guidelines">Web</a> – <a href="../en/Wine_package_guidelines.html" title="Wine package guidelines">Wine</a>
+</p>
+</div>
+<div class="noprint archwiki-template-message">
+<p><a href="../File:Tango-view-refresh-red.png" class="image"><img alt="Tango-view-refresh-red.png" src="../File:Tango-view-refresh-red.png" decoding="async" width="48" height="48"></a><b>This article or section is out of date.</b><a href="../File:Tango-view-refresh-red.png" class="image"><img alt="Tango-view-refresh-red.png" src="../File:Tango-view-refresh-red.png" decoding="async" width="48" height="48"></a></p>
+<div>
+<b>Reason:</b> References kde4, looks really outdated in general (Discuss in <a rel="nofollow" class="external text" href="https://wiki.archlinux.org/title/Talk:KDE_package_guidelines">Talk:KDE package guidelines</a>)</div>
+</div>
+<p>The <a href="../en/KDE.html" title="KDE">KDE</a> packages on Arch Linux follow a certain schema.
+</p>
+<mw:tocplace></mw:tocplace>
+<h2><span class="mw-headline" id="Build_directory">Build directory</span></h2>
+<p>A good way of building <a href="https://en.wikipedia.org/wiki/CMake" class="extiw" title="wikipedia:CMake">CMake</a> packages is to make a build directory outside the root of the project and run cmake from that directory. The <a href="../en/PKGBUILD.html" title="PKGBUILD">PKGBUILD</a> should look this way:
+</p>
+<pre>prepare() {
+  mkdir -p build
+}
+
+build() {
+  cd build
+  cmake ../${pkgname}-${pkgver}
+}
+</pre>
+<h2><span class="mw-headline" id="Install_prefix">Install prefix</span></h2>
+<p>Every packages must set the <code>CMAKE_INSTALL_PREFIX</code> variable, but also we have to respect custom built versions of KDE, so please use:
+</p>
+<pre>-DCMAKE_INSTALL_PREFIX=$(kde4-config --prefix)
+</pre>
+<p>or for KDE 5:
+</p>
+<pre>-DCMAKE_INSTALL_PREFIX=$(kf5-config --prefix)
+</pre>
+<p>When a package is moved to <i>extra</i> that line must be changed to:
+</p>
+<pre>-DCMAKE_INSTALL_PREFIX=/usr
+</pre>
+<h2><span class="mw-headline" id="Build_type">Build type</span></h2>
+<p>Generally you should not specify the build type; this makes CMake honor environmental variables like such as <code>CFLAGS</code>, <code>CPPFLAGS</code>, etc. <a rel="nofollow" class="external autonumber" href="https://lists.archlinux.org/archives/list/arch-dev-public@lists.archlinux.org/thread/ACV4TTGMC5RRSXYOO2GSI5WFLKQDBEFX/">[1]</a>
+</p>
+<h2><span class="mw-headline" id="Force_Qt_version">Force Qt version</span></h2>
+<div class="noprint archwiki-template-message">
+<p><a href="../File:Tango-view-fullscreen.png" class="image"><img alt="Tango-view-fullscreen.png" src="../File:Tango-view-fullscreen.png" decoding="async" width="48" height="48"></a><b>This article or section needs expansion.</b><a href="../File:Tango-view-fullscreen.png" class="image"><img alt="Tango-view-fullscreen.png" src="../File:Tango-view-fullscreen.png" decoding="async" width="48" height="48"></a></p>
+<div>
+<b>Reason:</b> Is this the same for Qt6? (Discuss in <a rel="nofollow" class="external text" href="https://wiki.archlinux.org/title/Talk:KDE_package_guidelines">Talk:KDE package guidelines</a>)</div>
+</div>
+<h2><span class="mw-headline" id="KF5_package_naming">KF5 package naming</span></h2>
+<h3><span class="mw-headline" id="Plasma_widgets">Plasma widgets</span></h3>
+<p>Plasma widgets (formerly Plasmoids) packages should be named <code>plasma5-applets-<i>widgetname</i></code> so that they are recognizable as Plasma 5-related packages; this also distinguishes them from the official packages.
+</p>
+<h3><span class="mw-headline" id="Runners">Runners</span></h3>
+<p>Plasma runners packages should be named <code>plasma5-runners-<i>runnername</i></code> so that they are recognizable as Plasma 5-related packages; this also distinguishes them from the official packages.
+</p>
+<h3><span class="mw-headline" id="Service_menus">Service menus</span></h3>
+<p>Service menus packages should be named <code>kf5-servicemenus-<i>servicename</i></code> so that they are recognizable as KF5-related packages
+</p>
+<h3><span class="mw-headline" id="Themes">Themes</span></h3>
+<p>Plasma themes packages should be named <code>plasma5-themes-<i>themename</i></code> so that they are recognizable as Plasma 5-related packages.
+</p>
+<h2><span class="mw-headline" id="Icons_and_.desktop_files_installation">Icons and .desktop files installation</span></h2>
+<p>Some <a href="../en/KDE.html" title="KDE">KDE</a> software provide icons in the hicolor icon theme and <code>.desktop</code> files, which must be installed via <a href="../en/Pacman.html#Hooks" class="mw-redirect" title="Pacman hooks">pacman hooks</a>. Refrain from using installation command for these type of files in a <code>.install</code>, as it would result in unnecessary double execution of them.
+</p>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface">
+<div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="../en/Category:Arch_package_guidelines.html" title="Category:Arch package guidelines">Arch package guidelines</a></li></ul>
+</div>
+<div id="mw-hidden-catlinks" class="mw-hidden-catlinks mw-hidden-cats-hidden">Hidden categories: <ul>
+<li><a href="../en/Category:Pages_or_sections_flagged_with_Template:Out_of_date.html" title="Category:Pages or sections flagged with Template:Out of date">Pages or sections flagged with Template:Out of date</a></li>
+<li><a href="../en/Category:Pages_or_sections_flagged_with_Template:Expansion.html" title="Category:Pages or sections flagged with Template:Expansion">Pages or sections flagged with Template:Expansion</a></li>
+</ul>
+</div>
+</div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=KDE_package_guidelines&amp;oldid=779452">https://wiki.archlinux.org/index.php?title=KDE_package_guidelines&amp;oldid=779452</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 24 May 2023, at 05:45.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

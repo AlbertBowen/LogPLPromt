@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>Xfwm - ArchWiki</title>
+<link rel="stylesheet" href="../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Xfwm rootpage-Xfwm skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Installation" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Installation">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Installation</div>
+			</a>
+			
+			<ul id="toc-Installation-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Starting" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Starting">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Starting</div>
+			</a>
+			
+			<ul id="toc-Starting-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Configuration" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Configuration">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>Configuration</div>
+			</a>
+			
+				<button aria-controls="toc-Configuration-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Configuration subsection
+				</button>
+			
+			<ul id="toc-Configuration-sublist" class="sidebar-toc-list">
+				<li id="toc-Composite_manager" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Composite_manager">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.1</span>Composite manager</div>
+			</a>
+			
+			<ul id="toc-Composite_manager-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Window_roll-up" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Window_roll-up">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.2</span>Window roll-up</div>
+			</a>
+			
+			<ul id="toc-Window_roll-up-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Window_tiling" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Window_tiling">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.3</span>Window tiling</div>
+			</a>
+			
+			<ul id="toc-Window_tiling-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Extra_settings_provided_by_the_Xfce_settings_manager" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Extra_settings_provided_by_the_Xfce_settings_manager">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.4</span>Extra settings provided by the Xfce settings manager</div>
+			</a>
+			
+			<ul id="toc-Extra_settings_provided_by_the_Xfce_settings_manager-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Additional_themes" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Additional_themes">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.5</span>Additional themes</div>
+			</a>
+			
+			<ul id="toc-Additional_themes-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Tips_&amp;_Tricks" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Tips_&amp;_Tricks">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4</span>Tips &amp; Tricks</div>
+			</a>
+			
+				<button aria-controls="toc-Tips_&amp;_Tricks-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Tips &amp; Tricks subsection
+				</button>
+			
+			<ul id="toc-Tips_&amp;_Tricks-sublist" class="sidebar-toc-list">
+				<li id="toc-Hide_the_titlebar_when_window_is_maximized" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Hide_the_titlebar_when_window_is_maximized">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.1</span>Hide the titlebar when window is maximized</div>
+			</a>
+			
+			<ul id="toc-Hide_the_titlebar_when_window_is_maximized-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Troubleshooting" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Troubleshooting">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5</span>Troubleshooting</div>
+			</a>
+			
+				<button aria-controls="toc-Troubleshooting-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Troubleshooting subsection
+				</button>
+			
+			<ul id="toc-Troubleshooting-sublist" class="sidebar-toc-list">
+				<li id="toc-No_icons_shown_in_browser_for_downloaded_items" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#No_icons_shown_in_browser_for_downloaded_items">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5.1</span>No icons shown in browser for downloaded items</div>
+			</a>
+			
+			<ul id="toc-No_icons_shown_in_browser_for_downloaded_items-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Number_of_workspaces_changes_unexpectedly" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Number_of_workspaces_changes_unexpectedly">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5.2</span>Number of workspaces changes unexpectedly</div>
+			</a>
+			
+			<ul id="toc-Number_of_workspaces_changes_unexpectedly-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Video_tearing" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Video_tearing">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5.3</span>Video tearing</div>
+			</a>
+			
+			<ul id="toc-Video_tearing-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Horizontal_line_above_dock_windows" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Horizontal_line_above_dock_windows">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5.4</span>Horizontal line above dock windows</div>
+			</a>
+			
+			<ul id="toc-Horizontal_line_above_dock_windows-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-See_also" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#See_also">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6</span>See also</div>
+			</a>
+			
+			<ul id="toc-See_also-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../en/Xfwm.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="new mw-list-item"><a href="/index.php?title=Talk:Xfwm&amp;action=edit&amp;redlink=1" rel="discussion" title="Discussion about the content page (page does not exist) [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">English</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../en/Xfwm.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=Xfwm&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=Xfwm&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../en/Xfwm.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Xfwm&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Xfwm&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output">
+<div class="archwiki-template-meta-related-articles-start">
+<p class="mw-no-invert">Related articles</p>
+<ul>
+<li><a href="../en/Desktop_environment.html" title="Desktop environment">Desktop environment</a></li>
+<li><a href="../en/Window_manager.html" title="Window manager">Window manager</a></li>
+<li><a href="../en/Xfce.html" title="Xfce">Xfce</a></li>
+<li><a href="../en/Xorg.html" title="Xorg">Xorg</a></li>
+</ul>
+</div>
+<p><b>xfwm</b> is the window manager for the <a href="../en/Xfce.html" title="Xfce">Xfce</a> environment.
+</p>
+<mw:tocplace></mw:tocplace>
+<h2><span class="mw-headline" id="Installation">Installation</span></h2>
+<p><a href="../en/Help:Reading.html#Installation_of_packages" class="mw-redirect" title="Install">Install</a> the <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=xfwm4">xfwm4</a></span> package.
+</p>
+<h2><span class="mw-headline" id="Starting">Starting</span></h2>
+<p>Run <code>xfwm4</code> with <a href="../en/Xinit.html" title="Xinit">xinit</a>.
+</p>
+<h2><span class="mw-headline" id="Configuration">Configuration</span></h2>
+<p>Most xfwm settings can be accessed through <code>xfwm4-settings</code>, for window behavior and shortcuts, <code>xfwm4-tweaks-settings</code>, for advanced settings and compositing, and <code>xfwm4-workspace-settings</code>, for the number of workspaces and their names.
+</p>
+<h3><span class="mw-headline" id="Composite_manager">Composite manager</span></h3>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> 
+<ul>
+<li>This compositor may cause video tearing in applications, see <a href="#Video_tearing">#Video tearing</a>.</li>
+<li>From Xfwm 4.12 onward, the compositor is enabled by default.</li>
+</ul>
+</div>
+<p>To enable or disable the Xfwm compositor and adjust its settings, go to <i>Window Manager Tweaks</i>:
+</p>
+<pre>$ xfwm4-tweaks-settings
+</pre>
+<p>Alternatively, it can be enabled with <code>--compositor</code> or using <i>xfconf</i>. For example:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">~/.xinitrc</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">exec xfwm4 --compositor=on</pre>
+<pre>$ xfconf-query -c xfwm4 -p /general/use_compositing -s <i>true</i>
+</pre>
+<h3><span class="mw-headline" id="Window_roll-up">Window roll-up</span></h3>
+<p>Double clicking the titlebar, or clicking <i>roll window up</i> in the window menu, causes the window contents to disappear leaving only the titlebar. To disable this functionality with <code>xfconf</code>, run:
+</p>
+<pre>$ xfconf-query -c xfwm4 -p /general/mousewheel_rollup -s false
+</pre>
+<h3><span class="mw-headline" id="Window_tiling">Window tiling</span></h3>
+<p>Xfwm can "tile" a window automatically when it is moved to an edge of the screen. It does so by resizing it to fit the top half of the screen. To enable or disable this behaviour with <code>xfconf</code>, run:
+</p>
+<pre>$ xfconf-query -c xfwm4 -p /general/tile_on_move -s false
+$ xfconf-query -c xfwm4 -p /general/tile_on_move -s true
+</pre>
+<p>Alternatively, (un)check <i>Window Manager Tweaks</i> &gt; <i>Accessibility</i> &gt; <i>Automatically tile windows when moving toward the screen edge</i>.
+</p>
+<h3><span class="mw-headline" id="Extra_settings_provided_by_the_Xfce_settings_manager">Extra settings provided by the Xfce settings manager</span></h3>
+<p><a href="../en/Help:Reading.html#Installation_of_packages" class="mw-redirect" title="Install">Install</a> the <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=xfce4-settings">xfce4-settings</a></span> package.
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong>  Installing <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=xfce4-settings">xfce4-settings</a></span> may change the default applications for certain tasks. See <a href="../en/Xdg-utils.html#xdg-open" class="mw-redirect" title="Xdg-open">xdg-open</a> to set the default applications to your liking.</div>
+<h3><span class="mw-headline" id="Additional_themes">Additional themes</span></h3>
+<p><a href="../en/Help:Reading.html#Installation_of_packages" class="mw-redirect" title="Install">Install</a> the <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=xfwm4-themes">xfwm4-themes</a></span> package.
+</p>
+<p>The themes installed will be shown in the <code>xfwm4-settings</code> window.
+</p>
+<h2>
+<span id="Tips_.26_Tricks"></span><span class="mw-headline" id="Tips_&amp;_Tricks">Tips &amp; Tricks</span>
+</h2>
+<h3><span class="mw-headline" id="Hide_the_titlebar_when_window_is_maximized">Hide the titlebar when window is maximized</span></h3>
+<p>Go to <code>Accessibility</code> and check <code>Hide title of windows when maximized</code>.
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> Install <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/xfce4-windowck-plugin/">xfce4-windowck-plugin</a></span><sup><small>AUR</small></sup> if you want to put the titlebar of the currently maximized window on your panel.</div>
+<h2><span class="mw-headline" id="Troubleshooting">Troubleshooting</span></h2>
+<h3><span class="mw-headline" id="No_icons_shown_in_browser_for_downloaded_items">No icons shown in browser for downloaded items</span></h3>
+<p>This is fixed by <a href="../en/Help:Reading.html#Installation_of_packages" class="mw-redirect" title="Install">installing</a> the <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=xfce4-settings">xfce4-settings</a></span> package.
+</p>
+<h3><span class="mw-headline" id="Number_of_workspaces_changes_unexpectedly">Number of workspaces changes unexpectedly</span></h3>
+<p>Keep in mind <i>Xfwm</i> assigns shortcuts to adding and removing workspaces. By default these are <code>Alt+Delete</code> and <code>Alt+Insert</code>, respectively.
+</p>
+<p>If the number of workspaces resets at login, change the amount <b>after</b> Xfwm is started. This is ensured by the <code>sleep</code> command. <a rel="nofollow" class="external autonumber" href="https://bugs.launchpad.net/ubuntu/+source/xfwm4/+bug/787934">[1]</a>
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">~/.xinitrc</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">(sleep 3 &amp;&amp; xfconf-query -v -c xfwm4 -p /general/workspace_count -s <i>number</i>) &amp;
+exec xfwm4
+</pre>
+<p>or, from <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=xfce4-session">xfce4-session</a></span>:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">~/.config/autostart/workspace.desktop</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">[Desktop Entry]
+Exec=sh -c "sleep 3 &amp;&amp; xfconf-query -v -c xfwm4 -p /general/workspace_count -s <i>number</i>"</pre>
+<p>See also: <a rel="nofollow" class="external text" href="https://forum.xfce.org/viewtopic.php?id=6056">Logout alters workspaces</a>
+</p>
+<h3><span class="mw-headline" id="Video_tearing">Video tearing</span></h3>
+<p>If you experience video tearing, you could try to change the <code>--vblank</code> mode option of xfwm (<i>glx</i>, <i>xpresent</i> or <i>off</i>), try it whith this command<a rel="nofollow" class="external autonumber" href="https://forum.xfce.org/viewtopic.php?id=13092">[2]</a>:
+</p>
+<pre>$ xfwm4 --replace --vblank=glx &amp;
+</pre>
+<p>in order to save it:
+</p>
+<pre>$ xfconf-query -c xfwm4 -p /general/vblank_mode -s glx
+</pre>
+<p>If you use Intel graphics and you have already enabled "TearFree" option in Xorg as described in <a href="../en/Intel_graphics.html#Tearing" title="Intel graphics">Intel graphics#Tearing</a>, then disable <i>Synchronize drawing to the vertical blank</i> option.
+</p>
+<p>If this does not fix the tearing, consider disabling Xfwm's compositor and using an alternative <a href="../en/Xorg.html#Composite" class="mw-redirect" title="Composite manager">composite manager</a>.
+</p>
+<h3><span class="mw-headline" id="Horizontal_line_above_dock_windows">Horizontal line above dock windows</span></h3>
+<p>Xfwm may incorrectly render shadows above some dock windows (e.g.<a href="../en/Plank.html" title="Plank">Plank</a>). This would result in a horizontal line across the screen. A workaround is to disable <i>Show shadows under dock windows</i> under <i>Settings &gt; Window Manager Tweaks &gt; Compositor</i>.
+</p>
+<h2><span class="mw-headline" id="See_also">See also</span></h2>
+<ul><li><a rel="nofollow" class="external text" href="https://docs.xfce.org/xfce/xfwm4/introduction">Xfwm - Introduction</a></li></ul>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../Special:Categories.html" title="Special:Categories">Categories</a>: <ul>
+<li><a href="../en/Category:Stacking_window_managers.html" title="Category:Stacking window managers">Stacking window managers</a></li>
+<li><a href="../en/Category:Xfce.html" title="Category:Xfce">Xfce</a></li>
+</ul>
+</div></div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=Xfwm&amp;oldid=748812">https://wiki.archlinux.org/index.php?title=Xfwm&amp;oldid=748812</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 27 September 2022, at 14:20.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>Cairo-Dock - ArchWiki</title>
+<link rel="stylesheet" href="../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Cairo-Dock rootpage-Cairo-Dock skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Installation" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Installation">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Installation</div>
+			</a>
+			
+				<button aria-controls="toc-Installation-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Installation subsection
+				</button>
+			
+			<ul id="toc-Installation-sublist" class="sidebar-toc-list">
+				<li id="toc-Plugin_dependencies" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Plugin_dependencies">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.1</span>Plugin dependencies</div>
+			</a>
+			
+			<ul id="toc-Plugin_dependencies-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Configuration" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Configuration">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Configuration</div>
+			</a>
+			
+				<button aria-controls="toc-Configuration-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Configuration subsection
+				</button>
+			
+			<ul id="toc-Configuration-sublist" class="sidebar-toc-list">
+				<li id="toc-Running_the_dock" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Running_the_dock">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.1</span>Running the dock</div>
+			</a>
+			
+			<ul id="toc-Running_the_dock-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Running_the_dock_at_startup" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Running_the_dock_at_startup">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.2</span>Running the dock at startup</div>
+			</a>
+			
+			<ul id="toc-Running_the_dock_at_startup-sublist" class="sidebar-toc-list">
+				<li id="toc-Cairo-Dock_method" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Cairo-Dock_method">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.2.1</span>Cairo-Dock method</div>
+			</a>
+			
+			<ul id="toc-Cairo-Dock_method-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Openbox/Fluxbox" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Openbox/Fluxbox">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.2.2</span>Openbox/Fluxbox</div>
+			</a>
+			
+			<ul id="toc-Openbox/Fluxbox-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Xfce" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Xfce">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.2.3</span>Xfce</div>
+			</a>
+			
+			<ul id="toc-Xfce-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-GNOME" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#GNOME">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.2.4</span>GNOME</div>
+			</a>
+			
+			<ul id="toc-GNOME-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Configuring_the_dock" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Configuring_the_dock">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.3</span>Configuring the dock</div>
+			</a>
+			
+			<ul id="toc-Configuring_the_dock-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Troubleshooting" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Troubleshooting">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>Troubleshooting</div>
+			</a>
+			
+				<button aria-controls="toc-Troubleshooting-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Troubleshooting subsection
+				</button>
+			
+			<ul id="toc-Troubleshooting-sublist" class="sidebar-toc-list">
+				<li id="toc-Two_Cairo-Docks_are_running" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Two_Cairo-Docks_are_running">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.1</span>Two Cairo-Docks are running</div>
+			</a>
+			
+			<ul id="toc-Two_Cairo-Docks_are_running-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-The_background_is_black" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#The_background_is_black">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.2</span>The background is black</div>
+			</a>
+			
+			<ul id="toc-The_background_is_black-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Wifi_plugin_does_not_show_the_network_strength" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Wifi_plugin_does_not_show_the_network_strength">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.3</span>Wifi plugin does not show the network strength</div>
+			</a>
+			
+			<ul id="toc-Wifi_plugin_does_not_show_the_network_strength-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-See_also" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#See_also">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4</span>See also</div>
+			</a>
+			
+			<ul id="toc-See_also-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../en/Cairo-Dock.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="new mw-list-item"><a href="/index.php?title=Talk:Cairo-Dock&amp;action=edit&amp;redlink=1" rel="discussion" title="Discussion about the content page (page does not exist) [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">English</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../en/Cairo-Dock.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=Cairo-Dock&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=Cairo-Dock&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../en/Cairo-Dock.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Cairo-Dock&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Cairo-Dock&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output">
+<p>Cairo-Dock is a highly customizable dock written in C.
+</p>
+<mw:tocplace></mw:tocplace>
+<h2><span class="mw-headline" id="Installation">Installation</span></h2>
+<p><a href="../en/Help:Reading.html#Installation_of_packages" class="mw-redirect" title="Install">Install</a> the <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=cairo-dock">cairo-dock</a></span> package. 
+</p>
+<p>The core package provides only the strict minimum to run Cairo-Dock — to use applets, animations, views, effects and dialogs you will also need <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=cairo-dock-plug-ins">cairo-dock-plug-ins</a></span>.
+</p>
+<p>You can also try the development branch with <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/cairo-dock-git/">cairo-dock-git</a></span><sup><small>AUR</small></sup> and <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/cairo-dock-plug-ins-git/">cairo-dock-plug-ins-git</a></span><sup><small>AUR</small></sup>.
+</p>
+<h3><span class="mw-headline" id="Plugin_dependencies">Plugin dependencies</span></h3>
+<p>The applets in <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=cairo-dock-plug-ins">cairo-dock-plug-ins</a></span> require quite a lot of dependencies, therefore all of them have been made optional not to bloat your system if you do not use a particular applet. Please refer to the optdepends list and install those you need.
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> If for some reason an applet is not working, make sure you have GVFS installed, it is required for several applets as well as GNOME, XFCE and KDE integration.</div>
+<h2><span class="mw-headline" id="Configuration">Configuration</span></h2>
+<h3><span class="mw-headline" id="Running_the_dock">Running the dock</span></h3>
+<p>Run the dock in the background:
+</p>
+<pre>$ cairo-dock &amp;
+</pre>
+<p>This will generate a startup message that will ask you to choose a backend for the current session (OpenGL or <a rel="nofollow" class="external text" href="https://www.cairographics.org/">Cairo</a>). There is an option to remember the choice and if not choosing to remember the choice, a startup message will be generated each time Cairo-Dock is run without backend options. To supress the startup message, you can specify which backend to use when running Cairo-Dock by specifying it as an option.
+</p>
+<p>Run the dock with OpenGL backend:
+</p>
+<pre>$ cairo-dock -o &amp;
+</pre>
+<p>Run the dock with Cairo backend:
+</p>
+<pre>$ cairo-dock -c &amp;
+</pre>
+<div class="archwiki-template-box archwiki-template-box-tip">
+<strong>Tip:</strong> All using ATI graphics cards should use this option. Some cards/drivers do not support OpenGL, which may prevent Cairo-Dock from running correctly.</div>
+<h3><span class="mw-headline" id="Running_the_dock_at_startup">Running the dock at startup</span></h3>
+<p>This depends on which desktop environment or window manager that is being used and which backend Cairo-Dock should be run with. The following section shows how to run Cairo-Dock at startup without forcing a backend.
+</p>
+<h4><span class="mw-headline" id="Cairo-Dock_method">Cairo-Dock method</span></h4>
+<p>Run Cairo-Dock and right-click the dock and go to <i>Cairo-Dock &gt; Launch Cairo-Dock on startup</i>. The settings will be stored in <code>~/.config/autostart/</code> and sourced the next time you login.
+</p>
+<h4>
+<span id="Openbox.2FFluxbox"></span><span class="mw-headline" id="Openbox/Fluxbox">Openbox/Fluxbox</span>
+</h4>
+<p>Add the following to <code>~/.config/openbox/autostart</code> or <code>~/.fluxbox/startup</code> accordingly:
+</p>
+<pre>cairo-dock &amp;
+</pre>
+<h4><span class="mw-headline" id="Xfce">Xfce</span></h4>
+<p>If you have <code>xfce4-autostart-editor</code> installed, simply run it and add an entry for Cairo-Dock. If you are not using a session manager you can add the following to <code>~/.config/xfce4/xinitrc</code> or <code>~/Desktop/Autostart</code>:
+</p>
+<pre>cairo-dock &amp;
+</pre>
+<h4><span class="mw-headline" id="GNOME">GNOME</span></h4>
+<p>Add a Cairo-Dock entry to Startup Programs using
+</p>
+<pre>$ gnome-session-properties
+</pre>
+<h3><span class="mw-headline" id="Configuring_the_dock">Configuring the dock</span></h3>
+<p>To configure the dock, right-click the dock and go to <i>Cairo-Dock &gt; Configure</i>.
+</p>
+<h2><span class="mw-headline" id="Troubleshooting">Troubleshooting</span></h2>
+<h3><span class="mw-headline" id="Two_Cairo-Docks_are_running">Two Cairo-Docks are running</span></h3>
+<p>This is most likely a result of saved sessions being runned at login. If you are using a desktop environment like <a href="../en/GNOME.html" title="GNOME">GNOME</a>, <a href="../en/KDE.html" title="KDE">KDE</a> or <a href="../en/Xfce.html" title="Xfce">Xfce</a> you need to disable automatic startup of sessions in your session manager settings. You may also need to delete the sessions cache:
+</p>
+<pre>$ rm ~/.cache/sessions/x*
+</pre>
+<p>If you are not using a desktop environment with a session manager or choose to have Cairo-Dock startup by itself, you need to remove autostart files generated by Cairo-Dock:
+</p>
+<pre>$ rm ~/.config/autostart/cairo-dock*
+</pre>
+<h3><span class="mw-headline" id="The_background_is_black">The background is black</span></h3>
+<p>This is most likely caused by not running a composite manager, like <a href="../en/Xcompmgr.html" title="Xcompmgr">Xcompmgr</a>. Cairo-Dock uses the transparency feature of the composite manager to display the dock, and without it the dock will be displayed with a black background. If you are using a desktop environment, simply enable the composite manager or desktop effects in the settings. 
+</p>
+<p>An alternative solution that does not require a composite manager is to enable fake transparency in Cairo-Dock. To do this, right-click the dock and go to <i>Cairo-Dock &gt; Configure &gt; Advanced Mode &gt; System &gt; Composition</i>. Then enable both <i>Emulate composition with fake transparency</i> and <i>Make the config panel transparent</i>.
+</p>
+<h3><span class="mw-headline" id="Wifi_plugin_does_not_show_the_network_strength">Wifi plugin does not show the network strength</span></h3>
+<p>If you added the wifi plugin, and it is not showing the network strength, you have to certify that you have iwconfig installed (the plugin depends on it) and that you have permission to read the full output of iwconfig.
+</p>
+<p>Install <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=wireless_tools">wireless_tools</a></span> to get iwconfig.
+</p>
+<p>And to get the permission to read the full output of the iwconfig as a normal user (read more about <a href="../en/Capabilities.html" title="Capabilities">Capabilities</a>):
+</p>
+<pre># setcap cap_net_raw,cap_net_admin=eip /usr/bin/iwconfig
+</pre>
+<h2><span class="mw-headline" id="See_also">See also</span></h2>
+<ul>
+<li><a rel="nofollow" class="external text" href="https://www.glx-dock.org/index.php">glx-dock.org</a></li>
+<li><a rel="nofollow" class="external text" href="https://launchpad.net/cairo-dock/">Launchpad</a></li>
+</ul>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../Special:Categories.html" title="Special:Categories">Categories</a>: <ul>
+<li><a href="../en/Category:Application_launchers.html" title="Category:Application launchers">Application launchers</a></li>
+<li><a href="../en/Category:Eye_candy.html" title="Category:Eye candy">Eye candy</a></li>
+</ul>
+</div></div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=Cairo-Dock&amp;oldid=759924">https://wiki.archlinux.org/index.php?title=Cairo-Dock&amp;oldid=759924</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 11 December 2022, at 17:47.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

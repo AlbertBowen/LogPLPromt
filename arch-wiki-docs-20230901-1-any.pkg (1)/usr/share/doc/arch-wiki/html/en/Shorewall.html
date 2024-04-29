@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>Shorewall - ArchWiki</title>
+<link rel="stylesheet" href="../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Shorewall rootpage-Shorewall skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Installation" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Installation">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Installation</div>
+			</a>
+			
+			<ul id="toc-Installation-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Configuration" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Configuration">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Configuration</div>
+			</a>
+			
+				<button aria-controls="toc-Configuration-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Configuration subsection
+				</button>
+			
+			<ul id="toc-Configuration-sublist" class="sidebar-toc-list">
+				<li id="toc-/etc/shorewall/interfaces" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#/etc/shorewall/interfaces">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.1</span>/etc/shorewall/interfaces</div>
+			</a>
+			
+			<ul id="toc-/etc/shorewall/interfaces-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-/etc/shorewall/policy" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#/etc/shorewall/policy">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.2</span>/etc/shorewall/policy</div>
+			</a>
+			
+			<ul id="toc-/etc/shorewall/policy-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-/etc/shorewall/rules" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#/etc/shorewall/rules">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.3</span>/etc/shorewall/rules</div>
+			</a>
+			
+			<ul id="toc-/etc/shorewall/rules-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-/etc/shorewall/masq" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#/etc/shorewall/masq">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.4</span>/etc/shorewall/masq</div>
+			</a>
+			
+			<ul id="toc-/etc/shorewall/masq-sublist" class="sidebar-toc-list">
+				<li id="toc-SSH" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#SSH">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.4.1</span>SSH</div>
+			</a>
+			
+			<ul id="toc-SSH-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Port_forwarding_(DNAT)" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Port_forwarding_(DNAT)">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.4.2</span>Port forwarding (DNAT)</div>
+			</a>
+			
+			<ul id="toc-Port_forwarding_(DNAT)-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-/etc/shorewall/stoppedrules" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#/etc/shorewall/stoppedrules">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.5</span>/etc/shorewall/stoppedrules</div>
+			</a>
+			
+			<ul id="toc-/etc/shorewall/stoppedrules-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-/etc/shorewall/shorewall.conf" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#/etc/shorewall/shorewall.conf">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.6</span>/etc/shorewall/shorewall.conf</div>
+			</a>
+			
+			<ul id="toc-/etc/shorewall/shorewall.conf-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Start" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Start">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>Start</div>
+			</a>
+			
+			<ul id="toc-Start-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Traffic_shaping" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Traffic_shaping">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4</span>Traffic shaping</div>
+			</a>
+			
+			<ul id="toc-Traffic_shaping-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../en/Shorewall.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="mw-list-item"><a href="../en/Talk:Shorewall.html" rel="discussion" title="Discussion about the content page [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">English</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../en/Shorewall.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=Shorewall&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=Shorewall&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../en/Shorewall.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Shorewall&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Shorewall&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output">
+<div class="noprint archwiki-template-message">
+<p><a href="../File:Tango-view-fullscreen.png" class="image"><img alt="Tango-view-fullscreen.png" src="../File:Tango-view-fullscreen.png" decoding="async" width="48" height="48"></a><b>This article or section needs expansion.</b><a href="../File:Tango-view-fullscreen.png" class="image"><img alt="Tango-view-fullscreen.png" src="../File:Tango-view-fullscreen.png" decoding="async" width="48" height="48"></a></p>
+<div>
+<b>Reason:</b> This is mostly config dumps, there are no explanations why to configure things this way (Discuss in <a rel="nofollow" class="external text" href="https://wiki.archlinux.org/title/Talk:Shorewall">Talk:Shorewall</a>)</div>
+</div>
+<p><a rel="nofollow" class="external text" href="https://shorewall.org/">The Shoreline Firewall</a>, more commonly known as "Shorewall", is a high-level tool for configuring Netfilter. 
+</p>
+<p>You describe your firewall/gateway requirements using entries in a set of configuration files. Shorewall reads those configuration files and with the help of the iptables utility, Shorewall configures Netfilter to match your requirements. 
+</p>
+<p>Shorewall can be used on a dedicated firewall system, a multi-function gateway/router/server or on a standalone GNU/Linux system. Shorewall does not use Netfilter's ipchains compatibility mode and can thus take advantage of Netfilter's connection state tracking capabilities.
+</p>
+<mw:tocplace></mw:tocplace>
+<h2><span class="mw-headline" id="Installation">Installation</span></h2>
+<p><a href="../en/Help:Reading.html#Installation_of_packages" class="mw-redirect" title="Install">Install</a> the <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/shorewall/">shorewall</a></span><sup><small>AUR</small></sup> or <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/shorewall6/">shorewall6</a></span><sup><small>AUR</small></sup> package.
+</p>
+<h2><span class="mw-headline" id="Configuration">Configuration</span></h2>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> If you use systemd for logging set <code>LOGFILE="systemd"</code> in <code>/etc/shorewall/shorewall.conf</code> for the <code>shorewall show</code> command to work. <a rel="nofollow" class="external autonumber" href="https://shorewall.org/manpages/shorewall.conf.html">[1]</a>
+</div>
+<p>These settings are based on the <a rel="nofollow" class="external text" href="https://www.shorewall.org/two-interface.htm">two-interface documentation on the Shorewall web site</a>.
+</p>
+<p>Use some example configuration files that come with the shorewall package
+</p>
+<pre># cp /usr/share/doc/shorewall/Samples/one-interface/* /etc/shorewall/     # If you have a desktop-type system with a single network interface
+# cp /usr/share/doc/shorewall6/Samples6/one-interface/* /etc/shorewall6/  # If you have a desktop-type system with a single network interface, pkg shorewall6
+# cp /usr/share/doc/shorewall/Samples/two-interfaces/* /etc/shorewall/    # If you have a router with two network interfaces
+# cp /usr/share/doc/shorewall/Samples/three-interfaces/* /etc/shorewall/  # If you have a router with three network interfaces
+</pre>
+<h3>
+<span id=".2Fetc.2Fshorewall.2Finterfaces"></span><span class="mw-headline" id="/etc/shorewall/interfaces">/etc/shorewall/interfaces</span>
+</h3>
+<p><b>Change</b> the interface settings to match the names used for our Ethernet devices and to allow DHCP traffic on the local network. Edit <code>/etc/shorewall/interfaces</code>
+</p>
+<p>original
+</p>
+<pre>net     eth0          dhcp,tcpflags,nosmurfs,routefilter,logmartians
+loc     eth1          tcpflags,nosmurfs,routefilter,logmartians
+</pre>
+<p>new
+</p>
+<pre>net     wan          dhcp,tcpflags,nosmurfs,routefilter,logmartians
+loc     lan          dhcp,tcpflags,nosmurfs,routefilter,logmartians
+</pre>
+<h3>
+<span id=".2Fetc.2Fshorewall.2Fpolicy"></span><span class="mw-headline" id="/etc/shorewall/policy">/etc/shorewall/policy</span>
+</h3>
+<p><b>Change</b> the policy file to allow the router (this machine) to access the Internet. Edit <code>/etc/shorewall/policy</code>
+</p>
+<p>original
+</p>
+<pre>###############################################################################
+#SOURCE         DEST            POLICY          LOG LEVEL       LIMIT:BURST
+
+loc             net             ACCEPT
+net             all             DROP            info
+# THE FOLLOWING POLICY MUST BE LAST
+all             all             REJECT          info
+</pre>
+<p>new
+</p>
+<pre>###############################################################################
+#SOURCE         DEST            POLICY          LOG LEVEL       LIMIT:BURST
+$FW             net             ACCEPT
+loc             net             ACCEPT
+net             all             DROP            info
+# THE FOLLOWING POLICY MUST BE LAST
+all             all             REJECT          info
+</pre>
+<h3>
+<span id=".2Fetc.2Fshorewall.2Frules"></span><span class="mw-headline" id="/etc/shorewall/rules">/etc/shorewall/rules</span>
+</h3>
+<p>DNS look-ups are handled (actually forwarded) by dnsmasq, so Shorewall needs to allow those connections. <b>Add</b> these lines to <code>/etc/shorewall/rules</code>
+</p>
+<pre>#       Accept DNS connections from the local network to the firewall
+#
+DNS(ACCEPT)     loc              $FW
+</pre>
+<h3>
+<span id=".2Fetc.2Fshorewall.2Fmasq"></span><span class="mw-headline" id="/etc/shorewall/masq">/etc/shorewall/masq</span>
+</h3>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> 
+<p>As of version 5.0.14, /etc/shorewall/masq has been deprecated in favor of /etc/shorewall/snat. Add the following line to /etc/shorewall/snat instead of modifying masq.
+</p>
+<pre>MASQUERADE        192.168.1.0/24        eth0
+</pre>
+</div>
+<p><b>Change</b> the network interface to the one connected to your external (WAN) network and <b>change</b> the IP to the one used in your local network.
+</p>
+<pre>eth0        192.168.1.0/24
+</pre>
+<h4><span class="mw-headline" id="SSH">SSH</span></h4>
+<p><b>OPTIONAL:</b> You can <b>add</b> these lines to /etc/shorewall/rules if you want to be able to SSH into the router from computers on the Internet
+</p>
+<pre>#       Accept SSH connections from the internet for administration
+#
+SSH(ACCEPT)     net             $FW         TCP      &lt;SSH port used&gt;
+</pre>
+<h4>
+<span id="Port_forwarding_.28DNAT.29"></span><span class="mw-headline" id="Port_forwarding_(DNAT)">Port forwarding (DNAT)</span>
+</h4>
+<ul><li>/etc/shorewall/rules : here is an example for a webserver on our LAN with IP 10.0.0.85. You can reach it on port 5000 of our "external" IP.</li></ul>
+<pre>DNAT        net        loc:10.0.0.85:80        tcp        5000
+</pre>
+<h3>
+<span id=".2Fetc.2Fshorewall.2Fstoppedrules"></span><span class="mw-headline" id="/etc/shorewall/stoppedrules">/etc/shorewall/stoppedrules</span>
+</h3>
+<p>If you have a network name other than eth1 for the network interface in /etc/shorewall/interfaces, you need to update stoppedrules with the correct name.
+</p>
+<h3>
+<span id=".2Fetc.2Fshorewall.2Fshorewall.conf"></span><span class="mw-headline" id="/etc/shorewall/shorewall.conf">/etc/shorewall/shorewall.conf</span>
+</h3>
+<p>When you are finished making above changes, enable shorewall by a <b>change</b> in its configuration file <code>/etc/shorewall/shorewall.conf</code>:
+</p>
+<p>original
+</p>
+<pre>STARTUP_ENABLED=No
+</pre>
+<p>new
+</p>
+<pre>STARTUP_ENABLED=Yes
+</pre>
+<p>See <span class="plainlinks archwiki-template-man" title="$ man 5 shorewall.conf"><a rel="nofollow" class="external text" href="https://shorewall.org/manpages/shorewall.conf.html">shorewall.conf(5)</a></span> for more information.
+</p>
+<h2><span class="mw-headline" id="Start">Start</span></h2>
+<p><a href="../en/Help:Reading.html#Control_of_systemd_units" class="mw-redirect" title="Start">Start</a>/<a href="../en/Help:Reading.html#Control_of_systemd_units" class="mw-redirect" title="Enable">enable</a> <code>shorewall.service</code>.
+</p>
+<h2><span class="mw-headline" id="Traffic_shaping">Traffic shaping</span></h2>
+<p>Read <a rel="nofollow" class="external text" href="https://www.shorewall.org/traffic_shaping.htm">Shorewall's Traffic Shaping/Control</a> guide.
+</p>
+<p>Here is a configuration as an example:
+</p>
+<ul><li>/etc/shorewall/tcdevices : here is where you define the interface you want to have shaped and its rates. I have got a ADSL connection with a 4MBit down/256KBit up profile.</li></ul>
+<pre>ppp0        4mbit        256kbit 
+</pre>
+<ul><li>/etc/shorewall/tcclasses : here you define the minimum (rate) and maximum (ceil) throughput per class. You will assign each one to a type of traffic to shape.</li></ul>
+<pre># interactive traffic (ssh)
+ppp0            1       full    full    0
+# online gaming
+ppp0            2       full/2  full    5
+# http
+ppp0            3       full/4  full    10
+# rest
+ppp0            4       full/6  full    15              default
+</pre>
+<ul><li>/etc/shorewall/tcrules : this file contains the types of traffic and the class it belongs to.</li></ul>
+<pre>1       0.0.0.0/0       0.0.0.0/0       tcp     ssh
+2       0.0.0.0/0       0.0.0.0/0       udp     27000:28000
+3       0.0.0.0/0       0.0.0.0/0       tcp     http
+3       0.0.0.0/0       0.0.0.0/0       tcp     https
+</pre>
+<p>I have split it up my traffic in 4 groups: 
+</p>
+<ol>
+<li>interactive traffic or ssh: although it takes up almost no bandwidth, it is very annoying if it lags due to leechers on the LAN. This gets the highest priority.</li>
+<li>online gaming: needless to say you cannot play when your ping sucks. ;)</li>
+<li>webtraffic: can be a bit slower</li>
+<li>everything else: every sort of download, they are the cause of the lag anyway.</li>
+</ol>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface">
+<div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="../en/Category:Firewalls.html" title="Category:Firewalls">Firewalls</a></li></ul>
+</div>
+<div id="mw-hidden-catlinks" class="mw-hidden-catlinks mw-hidden-cats-hidden">Hidden category: <ul><li><a href="../en/Category:Pages_or_sections_flagged_with_Template:Expansion.html" title="Category:Pages or sections flagged with Template:Expansion">Pages or sections flagged with Template:Expansion</a></li></ul>
+</div>
+</div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=Shorewall&amp;oldid=775180">https://wiki.archlinux.org/index.php?title=Shorewall&amp;oldid=775180</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 9 April 2023, at 16:58.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

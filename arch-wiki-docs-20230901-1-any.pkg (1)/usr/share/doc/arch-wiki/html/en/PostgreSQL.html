@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>PostgreSQL - ArchWiki</title>
+<link rel="stylesheet" href="../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-PostgreSQL rootpage-PostgreSQL skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Installation" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#Installation">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Installation</div>
+			</a>
+			
+			<ul id="toc-Installation-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Initial_configuration" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#Initial_configuration">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Initial configuration</div>
+			</a>
+			
+			<ul id="toc-Initial_configuration-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Create_your_first_database/user" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#Create_your_first_database/user">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>Create your first database/user</div>
+			</a>
+			
+			<ul id="toc-Create_your_first_database/user-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Familiarize_with_PostgreSQL" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#Familiarize_with_PostgreSQL">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4</span>Familiarize with PostgreSQL</div>
+			</a>
+			
+				<button aria-controls="toc-Familiarize_with_PostgreSQL-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Familiarize with PostgreSQL subsection
+				</button>
+			
+			<ul id="toc-Familiarize_with_PostgreSQL-sublist" class="sidebar-toc-list">
+				<li id="toc-Access_the_database_shell" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Access_the_database_shell">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.1</span>Access the database shell</div>
+			</a>
+			
+			<ul id="toc-Access_the_database_shell-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Optional_configuration" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#Optional_configuration">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5</span>Optional configuration</div>
+			</a>
+			
+				<button aria-controls="toc-Optional_configuration-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Optional configuration subsection
+				</button>
+			
+			<ul id="toc-Optional_configuration-sublist" class="sidebar-toc-list">
+				<li id="toc-Restricts_access_rights_to_the_database_superuser_by_default" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Restricts_access_rights_to_the_database_superuser_by_default">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5.1</span>Restricts access rights to the database superuser by default</div>
+			</a>
+			
+			<ul id="toc-Restricts_access_rights_to_the_database_superuser_by_default-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Require_password_for_login" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Require_password_for_login">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5.2</span>Require password for login</div>
+			</a>
+			
+			<ul id="toc-Require_password_for_login-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Configure_PostgreSQL_to_be_accessible_exclusively_through_UNIX_Sockets" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Configure_PostgreSQL_to_be_accessible_exclusively_through_UNIX_Sockets">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5.3</span>Configure PostgreSQL to be accessible exclusively through UNIX Sockets</div>
+			</a>
+			
+			<ul id="toc-Configure_PostgreSQL_to_be_accessible_exclusively_through_UNIX_Sockets-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Configure_PostgreSQL_to_be_accessible_from_remote_hosts" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Configure_PostgreSQL_to_be_accessible_from_remote_hosts">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5.4</span>Configure PostgreSQL to be accessible from remote hosts</div>
+			</a>
+			
+			<ul id="toc-Configure_PostgreSQL_to_be_accessible_from_remote_hosts-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Configure_PostgreSQL_authenticate_against_PAM" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Configure_PostgreSQL_authenticate_against_PAM">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5.5</span>Configure PostgreSQL authenticate against PAM</div>
+			</a>
+			
+			<ul id="toc-Configure_PostgreSQL_authenticate_against_PAM-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Change_default_data_directory" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Change_default_data_directory">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5.6</span>Change default data directory</div>
+			</a>
+			
+			<ul id="toc-Change_default_data_directory-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Change_default_encoding_of_new_databases_to_UTF-8" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Change_default_encoding_of_new_databases_to_UTF-8">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5.7</span>Change default encoding of new databases to UTF-8</div>
+			</a>
+			
+			<ul id="toc-Change_default_encoding_of_new_databases_to_UTF-8-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Enable_data_checksumming" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Enable_data_checksumming">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5.8</span>Enable data checksumming</div>
+			</a>
+			
+			<ul id="toc-Enable_data_checksumming-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Graphical_tools" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#Graphical_tools">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6</span>Graphical tools</div>
+			</a>
+			
+			<ul id="toc-Graphical_tools-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Upgrading_PostgreSQL" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#Upgrading_PostgreSQL">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">7</span>Upgrading PostgreSQL</div>
+			</a>
+			
+				<button aria-controls="toc-Upgrading_PostgreSQL-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Upgrading PostgreSQL subsection
+				</button>
+			
+			<ul id="toc-Upgrading_PostgreSQL-sublist" class="sidebar-toc-list">
+				<li id="toc-pg_upgrade" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#pg_upgrade">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">7.1</span>pg_upgrade</div>
+			</a>
+			
+			<ul id="toc-pg_upgrade-sublist" class="sidebar-toc-list">
+				<li id="toc-Caveats" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Caveats">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">7.1.1</span>Caveats</div>
+			</a>
+			
+			<ul id="toc-Caveats-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Manual_dump_and_reload" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Manual_dump_and_reload">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">7.2</span>Manual dump and reload</div>
+			</a>
+			
+			<ul id="toc-Manual_dump_and_reload-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Troubleshooting" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#Troubleshooting">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">8</span>Troubleshooting</div>
+			</a>
+			
+				<button aria-controls="toc-Troubleshooting-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Troubleshooting subsection
+				</button>
+			
+			<ul id="toc-Troubleshooting-sublist" class="sidebar-toc-list">
+				<li id="toc-Improve_performance_of_small_transactions" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Improve_performance_of_small_transactions">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">8.1</span>Improve performance of small transactions</div>
+			</a>
+			
+			<ul id="toc-Improve_performance_of_small_transactions-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Prevent_disk_writes_when_idle" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Prevent_disk_writes_when_idle">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">8.2</span>Prevent disk writes when idle</div>
+			</a>
+			
+			<ul id="toc-Prevent_disk_writes_when_idle-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-pgAdmin_4_issues_after_upgrade_to_PostgreSQL_12" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#pgAdmin_4_issues_after_upgrade_to_PostgreSQL_12">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">8.3</span>pgAdmin 4 issues after upgrade to PostgreSQL 12</div>
+			</a>
+			
+			<ul id="toc-pgAdmin_4_issues_after_upgrade_to_PostgreSQL_12-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-PostgreSQL_database_unable_to_start_after_package_update_when_using_extensions" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#PostgreSQL_database_unable_to_start_after_package_update_when_using_extensions">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">8.4</span>PostgreSQL database unable to start after package update when using extensions</div>
+			</a>
+			
+			<ul id="toc-PostgreSQL_database_unable_to_start_after_package_update_when_using_extensions-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Failing_to_start_a_PostgreSQL_server_with_the_older_version_of_the_database_while_upgrading_to_the_newer_version_with_extensions" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Failing_to_start_a_PostgreSQL_server_with_the_older_version_of_the_database_while_upgrading_to_the_newer_version_with_extensions">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">8.5</span>Failing to start a PostgreSQL server with the older version of the database while upgrading to the newer version with extensions</div>
+			</a>
+			
+			<ul id="toc-Failing_to_start_a_PostgreSQL_server_with_the_older_version_of_the_database_while_upgrading_to_the_newer_version_with_extensions-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../en/PostgreSQL.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="mw-list-item"><a href="../en/Talk:PostgreSQL.html" rel="discussion" title="Discussion about the content page [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">English</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../en/PostgreSQL.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=PostgreSQL&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=PostgreSQL&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../en/PostgreSQL.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=PostgreSQL&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=PostgreSQL&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output">
+<div class="archwiki-template-meta-related-articles-start">
+<p class="mw-no-invert">Related articles</p>
+<ul>
+<li><a href="../en/PhpPgAdmin.html" title="PhpPgAdmin">PhpPgAdmin</a></li>
+</ul>
+</div>
+<p><a rel="nofollow" class="external text" href="https://www.postgresql.org/">PostgreSQL</a> is an open source, community driven, standard compliant object-relational database system.
+</p>
+<mw:tocplace></mw:tocplace>
+<h2><span class="mw-headline" id="Installation">Installation</span></h2>
+<div class="archwiki-template-box archwiki-template-box-warning">
+<strong>Warning:</strong> See <a href="#Upgrading_PostgreSQL">#Upgrading PostgreSQL</a> for necessary steps before installing new versions of the PostgreSQL packages.</div>
+<p><a href="../en/Help:Reading.html#Installation_of_packages" class="mw-redirect" title="Install">Install</a> the <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=postgresql">postgresql</a></span> package. It will also create a system user called <i>postgres</i>.
+</p>
+<p>You can now switch to the <i>postgres</i> user using a <a href="../en/List_of_applications/Security.html#Privilege_elevation" title="List of applications/Security">privilege elevation program</a>. 
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> Commands that should be run as the <i>postgres</i> user are prefixed by <code>[postgres]$</code> in this article.</div>
+<p>You can switch to the PostgreSQL user by executing the following command:
+</p>
+<ul>
+<li>If you have <a href="../en/Sudo.html" title="Sudo">sudo</a> and are in <a href="../en/Sudo.html#Configuration" class="mw-redirect" title="Sudoers">sudoers</a>: <pre>$ sudo -iu postgres</pre>
+</li>
+<li>Otherwise using <a href="../en/Su.html" title="Su">su</a>: <pre>$ su
+# su -l postgres
+</pre>
+</li>
+</ul>
+<p>See <span class="plainlinks archwiki-template-man" title="$ man 8 sudo"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/sudo.8">sudo(8)</a></span> or <span class="plainlinks archwiki-template-man" title="$ man 1 su"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/su.1">su(1)</a></span> for their usage.
+</p>
+<h2><span class="mw-headline" id="Initial_configuration">Initial configuration</span></h2>
+<p>Before PostgreSQL can function correctly, the database cluster must be initialized:
+</p>
+<pre>[postgres]$ initdb -D /var/lib/postgres/data
+</pre>
+<p>Where <code>-D</code> is the default location where the database cluster must be stored (see <a href="#Change_default_data_directory">#Change default data directory</a> if you want to use a different one). <code>initdb</code> accepts a number of extra arguments:
+</p>
+<div class="noprint archwiki-template-message">
+<p><a href="../File:Tango-view-fullscreen.png" class="image"><img alt="Tango-view-fullscreen.png" src="../File:Tango-view-fullscreen.png" decoding="async" width="48" height="48"></a><b>This article or section needs expansion.</b><a href="../File:Tango-view-fullscreen.png" class="image"><img alt="Tango-view-fullscreen.png" src="../File:Tango-view-fullscreen.png" decoding="async" width="48" height="48"></a></p>
+<div>
+<b>Reason:</b> PostgreSQL also supports ICU locales.<a rel="nofollow" class="external autonumber" href="https://www.postgresql.org/docs/current/locale.html#id-1.6.11.3.7">[1]</a> (Discuss in <a rel="nofollow" class="external text" href="https://wiki.archlinux.org/title/Talk:PostgreSQL">Talk:PostgreSQL</a>)</div>
+</div>
+<ul>
+<li>By default, the <a rel="nofollow" class="external text" href="https://www.postgresql.org/docs/current/static/locale.html">locale and the encoding for the database cluster</a> are derived from your current environment (using <a href="../en/Locale.html#LANG:_default_locale" title="Locale">$LANG</a> value). If this is not what you want, you can override the defaults using <code>--locale=<i>locale</i></code> (where <i>locale</i> is to be chosen amongst the system's <a href="../en/Locale.html#Generating_locales" title="Locale">available locales</a>) and <code>--encoding=<i>encoding</i></code> (which must match the chosen locale). (Once the database is up, you can check which values were used with <code>[postgres]$ psql -l</code>.) <div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> Using a locale other than <code>C.UTF-8</code>, <code>C</code>, <code>POSIX</code> or <code>ucs_basic</code> can result in a collation version mismatch that will require reindexing if the library providing the locale (<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=glibc">glibc</a></span> or <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=icu">icu</a></span>) gets updated. See <a rel="nofollow" class="external text" href="https://bugs.archlinux.org/task/77445">FS#77445</a>.</div>
+</li>
+<li>If your data directory resides on a file system without data checksumming, you may wish to enable PostgreSQL's built-in <a rel="nofollow" class="external text" href="https://www.postgresql.org/docs/current/checksums.html">checksumming</a> for increased integrity guarantees - add the <code>--data-checksums</code> argument to do so. Read <a href="#Enable_data_checksumming">#Enable data checksumming</a> for more information. (Once the database is up, you can check if it is enabled with <code>[postgres]$ psql -c "SHOW data_checksums"</code>.)</li>
+<li>The <i>trust</i> authentication method is used by default, meaning that anyone on the host can connect as any database user. You can use <code>--auth-local=peer --auth-host=scram-sha-256</code> for safer authentication methods.</li>
+<li>For more options, see <code>initdb --help</code> and <a rel="nofollow" class="external text" href="https://www.postgresql.org/docs/current/creating-cluster.html">official documentation</a>.</li>
+</ul>
+<p>Example:
+</p>
+<pre>[postgres]$ initdb --locale=C.UTF-8 --encoding=UTF8 -D /var/lib/postgres/data --data-checksums
+</pre>
+<p>Many lines should now appear on the screen with several ending by <code>... ok</code>:
+</p>
+<pre>The files belonging to this database system will be owned by user "postgres".
+This user must also own the server process.
+
+The database cluster will be initialized with locale "C.UTF-8".
+The default text search configuration will be set to "english".
+
+Data page checksums are enabled.
+
+creating directory /var/lib/postgres/data ... ok
+creating subdirectories ... ok
+selecting dynamic shared memory implementation ... posix
+selecting default max_connections ... 100
+selecting default shared_buffers ... 128MB
+selecting default time zone ... UTC
+creating configuration files ... ok
+running bootstrap script ... ok
+performing post-bootstrap initialization ... ok
+syncing data to disk ... ok
+
+initdb: warning: enabling "trust" authentication for local connections
+initdb: hint: You can change this by editing pg_hba.conf or using the option -A, or --auth-local and --auth-host, the next time you run initdb.
+
+Success. You can now start the database server using:
+
+    pg_ctl -D /var/lib/postgres/data -l logfile start
+</pre>
+<p>If these are the kind of lines you see, then the process succeeded. Return to the regular user using <code>exit</code>.
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> To read more about this <code>WARNING</code>, see <a href="#Restricts_access_rights_to_the_database_superuser_by_default">#Restricts access rights to the database superuser by default</a>.</div>
+<div class="archwiki-template-box archwiki-template-box-tip">
+<strong>Tip:</strong> If you change the root to something other than <code>/var/lib/postgres</code>, you will have to <a href="../en/Systemd.html#Editing_provided_units" class="mw-redirect" title="Edit">edit</a> the service file. If the root is under <code>home</code>, make sure to set <code>ProtectHome</code> to false.</div>
+<div class="archwiki-template-box archwiki-template-box-warning">
+<strong>Warning:</strong> 
+<ul>
+<li>If the database resides on a <a href="../en/Btrfs.html" title="Btrfs">Btrfs</a> file system, you should consider disabling <a href="../en/Btrfs.html#Copy-on-Write_(CoW)" title="Btrfs">Copy-on-Write</a> for the directory before creating any database.</li>
+<li>If the database resides on a <a href="../en/ZFS.html" title="ZFS">ZFS</a> file system, you should consult <a href="../en/ZFS.html#Databases" title="ZFS">ZFS#Databases</a> before creating any database.</li>
+</ul>
+</div>
+<p>Finally, <a href="../en/Help:Reading.html#Control_of_systemd_units" class="mw-redirect" title="Start">start</a> and <a href="../en/Help:Reading.html#Control_of_systemd_units" class="mw-redirect" title="Enable">enable</a> the <code>postgresql.service</code>.
+</p>
+<h2>
+<span id="Create_your_first_database.2Fuser"></span><span class="mw-headline" id="Create_your_first_database/user">Create your first database/user</span>
+</h2>
+<div class="archwiki-template-box archwiki-template-box-tip">
+<strong>Tip:</strong> If you create a PostgreSQL role/user with the same name as your Linux username, it allows you to access the PostgreSQL database shell without having to specify a user to login (which makes it quite convenient).</div>
+<p>Become the postgres user. Add a new database role/user using the <a rel="nofollow" class="external text" href="https://www.postgresql.org/docs/current/static/app-createuser.html">createuser</a> command:
+</p>
+<pre>[postgres]$ createuser --interactive
+</pre>
+<p>Create a new database over which the above user has read/write privileges using the <a rel="nofollow" class="external text" href="https://www.postgresql.org/docs/current/static/app-createdb.html">createdb</a> command (execute this command from your login shell if the database user has the same name as your Linux user, otherwise add <code>-O <i>database-username</i></code> to the following command):
+</p>
+<pre>$ createdb myDatabaseName
+</pre>
+<div class="archwiki-template-box archwiki-template-box-tip">
+<strong>Tip:</strong> If you did not grant your new user database creation privileges, add <code>-U postgres</code> to the previous command.</div>
+<h2><span class="mw-headline" id="Familiarize_with_PostgreSQL">Familiarize with PostgreSQL</span></h2>
+<h3><span class="mw-headline" id="Access_the_database_shell">Access the database shell</span></h3>
+<p>Become the postgres user. Start the primary database shell, <a rel="nofollow" class="external text" href="https://www.postgresql.org/docs/current/static/app-psql.html">psql</a>, where you can do all your creation of databases/tables, deletion, set permissions, and run raw SQL commands. Use the <code>-d</code> option to connect to the database you created (without specifying a database, <code>psql</code> will try to access a database that matches your username).
+</p>
+<pre>[postgres]$ psql -d <i>myDatabaseName</i>
+</pre>
+<p>Some helpful commands:
+</p>
+<p>Get help:
+</p>
+<pre>=&gt; \help
+</pre>
+<p>List all databases:
+</p>
+<pre>=&gt; \l
+</pre>
+<p>Connect to a particular database:
+</p>
+<pre>=&gt; \c <i>database</i>
+</pre>
+<p>List all users and their permission levels:
+</p>
+<pre>=&gt; \du
+</pre>
+<p>Show summary information about all tables in the current database:
+</p>
+<pre>=&gt; \dt
+</pre>
+<p>Exit/quit the <code>psql</code> shell:
+</p>
+<pre>=&gt; \q
+</pre>
+<p>or press <code>Ctrl+d</code>.
+</p>
+<p>There are of course many more meta-commands, but these should help you get started. To see all meta-commands run: 
+</p>
+<pre>=&gt; \?
+</pre>
+<h2><span class="mw-headline" id="Optional_configuration">Optional configuration</span></h2>
+<p>The PostgreSQL database server configuration file is <code>postgresql.conf</code>. This file is located in the data directory of the server, typically <code>/var/lib/postgres/data</code>. This folder also houses the other main configuration files, including the <code>pg_hba.conf</code> which defines authentication settings, for both <a href="#Restricts_access_rights_to_the_database_superuser_by_default">local users</a> and <a href="#Configure_PostgreSQL_to_be_accessible_from_remote_hosts">other hosts ones</a>.
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> By default, this folder will not be browsable or searchable by a regular user. This is why <code>find</code> and <code>locate</code> are not finding the configuration files.</div>
+<h3><span class="mw-headline" id="Restricts_access_rights_to_the_database_superuser_by_default">Restricts access rights to the database superuser by default</span></h3>
+<p>The defaults <code>pg_hba.conf</code> <b>allow any local user to connect as any database user</b>, including the database superuser.
+This is likely not what you want, so in order to restrict global access to the <i>postgres</i> user, change the following line:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/var/lib/postgres/data/pg_hba.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;"># TYPE  DATABASE        USER            ADDRESS                 METHOD
+
+# "local" is for Unix domain socket connections only
+local   all             all                                     trust</pre>
+<p>To:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/var/lib/postgres/data/pg_hba.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;"># TYPE  DATABASE        USER            ADDRESS                 METHOD
+
+# "local" is for Unix domain socket connections only
+local   all             postgres                                peer</pre>
+<p>You might later add additional lines depending on your needs or software ones.
+</p>
+<h3><span class="mw-headline" id="Require_password_for_login">Require password for login</span></h3>
+<p>Edit <code>/var/lib/postgres/data/pg_hba.conf</code> and set the authentication method for each user (or "all" to affect all users) to <code>scram-sha-256</code> (preferred), or <code>md5</code> (less secure; should be avoided if possible):
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/var/lib/postgres/data/pg_hba.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;"># TYPE  DATABASE        USER            ADDRESS                 METHOD                                                                                               
+                                                                                                                                                                                                                                                              
+# "local" is for Unix domain socket connections only                                                                                                                        
+local   all             <i>user</i>                                    scram-sha-256</pre>
+<p>If you choose <code>scram-sha-256</code>, you must also edit <code>/var/lib/postgres/data/postgresql.conf</code> and set:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/var/lib/postgres/data/postgresql.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">password_encryption = scram-sha-256</pre>
+<p><a href="../en/Help:Reading.html#Control_of_systemd_units" class="mw-redirect" title="Restart">Restart</a> <code>postgresql.service</code>, and then re-add each user's password using <code>ALTER USER <i>user</i> WITH ENCRYPTED PASSWORD '<i>password</i>';</code>.
+</p>
+<h3><span class="mw-headline" id="Configure_PostgreSQL_to_be_accessible_exclusively_through_UNIX_Sockets">Configure PostgreSQL to be accessible exclusively through UNIX Sockets</span></h3>
+<p>In the connections and authentications section of your configuration, set:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/var/lib/postgres/data/postgresql.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">listen_addresses = ''</pre>
+<p>This will disable network listening completely.
+After this you should <a href="../en/Help:Reading.html#Control_of_systemd_units" class="mw-redirect" title="Restart">restart</a> <code>postgresql.service</code> for the changes to take effect.
+</p>
+<h3><span class="mw-headline" id="Configure_PostgreSQL_to_be_accessible_from_remote_hosts">Configure PostgreSQL to be accessible from remote hosts</span></h3>
+<p>In the connections and authentications section, set the <code>listen_addresses</code> line to your needs:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/var/lib/postgres/data/postgresql.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">listen_addresses = 'localhost,<i>my_local_ip_address'</i></pre>
+<p>You can use <code>'*'</code> to listen on all available addresses.
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> PostgreSQL uses TCP port <code>5432</code> by default for remote connections. Make sure this port is open in your <a href="../en/Category:Firewalls.html" class="mw-redirect" title="Firewall">firewall</a> and able to receive incoming connections. You can also change it in the configuration file, right below <code>listen_addresses</code>
+</div>
+<p>Then add a line like the following to the authentication config:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/var/lib/postgres/data/pg_hba.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;"># TYPE  DATABASE        USER            ADDRESS                 METHOD
+# IPv4 local connections:
+host    all             all             <i>ip_address</i>/32   md5</pre>
+<p>where <code><i>ip_address</i></code> is the IP address of the remote client.
+</p>
+<p>See the documentation for <a rel="nofollow" class="external text" href="https://www.postgresql.org/docs/current/static/auth-pg-hba-conf.html">pg_hba.conf</a>.
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> Neither sending your plain password nor the md5 hash (used in the example above) over the Internet is secure if it is not done over an SSL-secured connection. See <a rel="nofollow" class="external text" href="https://www.postgresql.org/docs/current/static/ssl-tcp.html">Secure TCP/IP Connections with SSL</a> for how to configure PostgreSQL with SSL.</div>
+<p>After this you should <a href="../en/Help:Reading.html#Control_of_systemd_units" class="mw-redirect" title="Restart">restart</a> <code>postgresql.service</code> for the changes to take effect.
+</p>
+<p>For troubleshooting take a look in the server log file:
+</p>
+<pre># journalctl -u postgresql.service
+</pre>
+<h3><span class="mw-headline" id="Configure_PostgreSQL_authenticate_against_PAM">Configure PostgreSQL authenticate against PAM</span></h3>
+<p>PostgreSQL offers a number of authentication methods. If you would like to allow users to authenticate with their system password, additional steps are necessary. First you need to enable <a href="../en/PAM.html" title="PAM">PAM</a> for the connection.
+</p>
+<p>For example, the same configuration as above, but with PAM enabled:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/var/lib/postgres/data/pg_hba.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;"># IPv4 local connections:
+host   all   all   <i>my_remote_client_ip_address</i>/32   pam</pre>
+<p>The PostgreSQL server is however running without root privileges and will not be able to access <code>/etc/shadow</code>. We can work around that by allowing the postgres group to access this file:
+</p>
+<pre># setfacl -m g:postgres:r /etc/shadow
+</pre>
+<h3><span class="mw-headline" id="Change_default_data_directory">Change default data directory</span></h3>
+<p>The default directory where all your newly created databases will be stored is <code>/var/lib/postgres/data</code>. To change this, follow these steps:
+</p>
+<p>Create the new directory and make the postgres user its owner:
+</p>
+<pre># mkdir -p /pathto/pgroot/data
+# chown -R postgres:postgres /pathto/pgroot
+</pre>
+<p>Become the postgres user, and initialize the new cluster:
+</p>
+<pre>[postgres]$ initdb -D /pathto/pgroot/data
+</pre>
+<p><a href="../en/Systemd.html#Editing_provided_units" class="mw-redirect" title="Edit">Edit</a> <code>postgresql.service</code> to create a <a href="../en/Systemd.html#Drop-in_files" class="mw-redirect" title="Drop-in file">drop-in file</a> and override the <code>Environment</code> and <code>PIDFile</code> settings. For example:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/systemd/system/postgresql.service.d/PGROOT.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">[Service]
+Environment=PGROOT=<i>/pathto/pgroot</i>
+PIDFile=<i>/pathto/pgroot/</i>data/postmaster.pid</pre>
+<p>If you want to use <code>/home</code> directory for default directory or for tablespaces, add one more line in this file:
+</p>
+<pre>ProtectHome=false
+</pre>
+<h3><span class="mw-headline" id="Change_default_encoding_of_new_databases_to_UTF-8">Change default encoding of new databases to UTF-8</span></h3>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> If you ran <code>initdb</code> with <code>-E UTF8</code> or while using an UTF-8 locale, these steps are not required.</div>
+<p>When creating a new database (e.g. with <code>createdb blog</code>) PostgreSQL actually copies a template database. There are two predefined templates: <code>template0</code> is vanilla, while <code>template1</code> is meant as an on-site template changeable by the administrator and is used by default. In order to change the encoding of a new database, one of the options is to change on-site <code>template1</code>. To do this, log into PostgreSQL shell (<code>psql</code>) and execute the following:
+</p>
+<p>First, we need to drop <code>template1</code>. Templates cannot be dropped, so we first modify it so it is an ordinary database:
+</p>
+<pre>UPDATE pg_database SET datistemplate = FALSE WHERE datname = 'template1';
+</pre>
+<p>Now we can drop it:
+</p>
+<pre>DROP DATABASE template1;
+</pre>
+<p>The next step is to create a new database from <code>template0</code>, with a new default encoding:
+</p>
+<pre>CREATE DATABASE template1 WITH TEMPLATE = template0 ENCODING = 'UNICODE';
+</pre>
+<p>Now modify <code>template1</code> so it is actually a template:
+</p>
+<pre>UPDATE pg_database SET datistemplate = TRUE WHERE datname = 'template1';
+</pre>
+<p>Optionally, if you do not want anyone connecting to this template, set <code>datallowconn</code> to <code>FALSE</code>:
+</p>
+<pre>UPDATE pg_database SET datallowconn = FALSE WHERE datname = 'template1';
+</pre>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> This last step can create problems when upgrading via <code>pg_upgrade</code>.</div>
+<p>Now you can create a new database:
+</p>
+<pre>[postgres]$ createdb blog
+</pre>
+<p>If you log back in to <code>psql</code> and check the databases, you should see the proper encoding of your new database:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">\l</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">                              List of databases
+  Name    |  Owner   | Encoding  | Collation | Ctype |   Access privileges
+-----------+----------+-----------+-----------+-------+----------------------
+blog      | postgres | UTF8      | C         | C     |
+postgres  | postgres | SQL_ASCII | C         | C     |
+template0 | postgres | SQL_ASCII | C         | C     | =c/postgres
+                                                     : postgres=CTc/postgres
+template1 | postgres | UTF8      | C         | C     |
+</pre>
+<h3><span class="mw-headline" id="Enable_data_checksumming">Enable data checksumming</span></h3>
+<p>If your database files reside on a file system without checksumming, its data is suspectible to silent data corruption due to bit rot and broken hardware. While those events are rare, you might want to enable <a rel="nofollow" class="external text" href="https://www.postgresql.org/docs/current/checksums.html">PostgreSQL's built-in data checksumming</a> if you care about data integrity. This feature must be enabled on the cluster level, not per-database or per-table.
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> This feature has a number of caveats:
+<ul>
+<li>There is a <a rel="nofollow" class="external text" href="https://web.archive.org/web/20170218093959/https://blog.endpoint.com/2015/12/postgres-checksum-performance-impact.html">minimal performance impact</a>, especially while reading large datasets from disk. In-memory operations are not affected.</li>
+<li>PostgreSQL is unable to repair corrupt data - it will only abort transactions reading from corrupt pages to prevent further damage or invalid execution results.</li>
+<li>Checksums cover on-disk data (row) pages only, not metadata or control structures. In-memory pages are not checksummed. Error-corrected storage and ECC memory is still beneficial.</li>
+</ul>
+</div>
+<ul>
+<li>To enable checksumming during cluster creation, add the <code>--data-checksums</code> argument to <code>initdb</code>.</li>
+<li>To verify whenever checksumming is enabled, run <code>[postgres]$ psql -c "SHOW data_checksums"</code> (which should print <code>off</code> or <code>on</code>).</li>
+<li>To toggle checksumming on an existing cluster:</li>
+</ul>
+<ol>
+<li>
+<a href="../en/Help:Reading.html#Control_of_systemd_units" class="mw-redirect" title="Stop">Stop</a> <code>postgresql.service</code>.</li>
+<li>Run <code>[postgres]$ pg_checksums --pgdata /var/lib/postgres/data --enable</code> (or <code>--disable</code> if you no longer want checksumming). Enabling checksums will rewrite all database pages, which will take a while for large database instances.</li>
+<li>
+<a href="../en/Help:Reading.html#Control_of_systemd_units" class="mw-redirect" title="Start">Start</a> <code>postgresql.service</code>.</li>
+</ol>
+<h2><span class="mw-headline" id="Graphical_tools">Graphical tools</span></h2>
+<ul><li>
+<b><a href="../en/PhpPgAdmin.html" title="PhpPgAdmin">phpPgAdmin</a></b> — Web-based administration tool for PostgreSQL.</li></ul>
+<dl><dd>
+<a rel="nofollow" class="external free" href="https://github.com/phppgadmin/phppgadmin">https://github.com/phppgadmin/phppgadmin</a> || <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/phppgadmin/">phppgadmin</a></span><sup><small>AUR</small></sup>
+</dd></dl>
+<ul><li>
+<b>pgAdmin</b> — Comprehensive design and management GUI for PostgreSQL.</li></ul>
+<dl><dd>
+<a rel="nofollow" class="external free" href="https://www.pgadmin.org/">https://www.pgadmin.org/</a> || <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/pgadmin3/">pgadmin3</a></span><sup><small>AUR</small></sup> or <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=pgadmin4">pgadmin4</a></span>
+</dd></dl>
+<ul><li>
+<b>pgModeler</b> — Graphical schema designer for PostgreSQL.</li></ul>
+<dl><dd>
+<a rel="nofollow" class="external free" href="https://pgmodeler.io/">https://pgmodeler.io/</a> || <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/pgmodeler/">pgmodeler</a></span><sup><small>AUR</small></sup>
+</dd></dl>
+<p>For tools supporting multiple DBMSs, see <a href="../en/List_of_applications/Documents.html#Database_tools" title="List of applications/Documents">List of applications/Documents#Database tools</a>.
+</p>
+<h2><span class="mw-headline" id="Upgrading_PostgreSQL">Upgrading PostgreSQL</span></h2>
+<div class="noprint archwiki-template-message">
+<p><a href="../File:Tango-view-fullscreen.png" class="image"><img alt="Tango-view-fullscreen.png" src="../File:Tango-view-fullscreen.png" decoding="async" width="48" height="48"></a><b>This article or section needs expansion.</b><a href="../File:Tango-view-fullscreen.png" class="image"><img alt="Tango-view-fullscreen.png" src="../File:Tango-view-fullscreen.png" decoding="async" width="48" height="48"></a></p>
+<div>
+<b>Reason:</b> How to upgrade when using third party extensions? (Discuss in <a href="../en/Talk:PostgreSQL.html#pg_upgrade_problem_if_extensions_(like_postgis)_are_used" title="Talk:PostgreSQL">Talk:PostgreSQL#pg_upgrade problem if extensions (like postgis) are used</a>)</div>
+</div>
+<p>Upgrading major PostgreSQL versions (e.g. version 14.x to version 15.y) requires some extra maintenance.
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> Official PostgreSQL <a rel="nofollow" class="external text" href="https://www.postgresql.org/docs/current/static/upgrading.html">upgrade documentation</a> should be followed.</div>
+<div class="archwiki-template-box archwiki-template-box-warning">
+<strong>Warning:</strong> The following instructions could cause data loss. Do not run the commands below blindly, without understanding what they do. <a rel="nofollow" class="external text" href="https://www.postgresql.org/docs/current/static/backup.html">Backup database</a> first.</div>
+<p>Get the currently used database version via
+</p>
+<pre># cat /var/lib/postgres/data/PG_VERSION
+</pre>
+<p>To ensure you do not accidentally upgrade the database to an incompatible version, it is recommended to <a href="../en/Pacman.html#Skip_package_from_being_upgraded" title="Pacman">skip updates</a> to the PostgreSQL packages.
+</p>
+<p>Minor version upgrades are safe to perform. However, if you do an accidental upgrade to a different major version, you might not be able to access any of your data. Always check the <a rel="nofollow" class="external text" href="https://www.postgresql.org/">PostgreSQL home page</a> to be sure of what steps are required for each upgrade. For a bit about why this is the case, see the <a rel="nofollow" class="external text" href="https://www.postgresql.org/support/versioning">versioning policy</a>.
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> If you use extensions check <a href="#PostgreSQL_database_unable_to_start_after_package_update_when_using_extensions">#PostgreSQL database unable to start after package update when using extensions</a> and <a href="#Failing_to_start_a_PostgreSQL_server_with_the_older_version_of_the_database_while_upgrading_to_the_newer_version_with_extensions">#Failing to start a PostgreSQL server with the older version of the database while upgrading to the newer version with extensions</a>.</div>
+<p>There are two main ways to upgrade your PostgreSQL database. Read the official documentation for details.
+</p>
+<h3><span class="mw-headline" id="pg_upgrade">pg_upgrade</span></h3>
+<p>The <code>pg_upgrade</code> utility attempts to copy over as much compatible data as possible between clusters and upgrading everything else. It is generally the fastest method to upgrade most instances, although it requires access to binaries for both source and target PostgreSQL versions. Read the <span class="plainlinks archwiki-template-man" title="$ man 1 pg_upgrade"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/pg_upgrade.1">pg_upgrade(1)</a></span> man page to understand what actions it performs. For non-trivial instances (e.g. with streaming replication or log-shipping), <a rel="nofollow" class="external text" href="https://www.postgresql.org/docs/current/pgupgrade.html">read the upstream documentation first</a>.
+</p>
+<p>For those wishing to use <code>pg_upgrade</code>, a <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=postgresql-old-upgrade">postgresql-old-upgrade</a></span> package is available that will always run one major version behind the real PostgreSQL package. This can be installed side-by-side with the new version of PostgreSQL. To upgrade from older versions of PostgreSQL there are AUR packages available, e.g. <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/postgresql-12-upgrade/">postgresql-12-upgrade</a></span><sup><small>AUR</small></sup>. (You must use the <code>pg_upgrade</code> version packaged with the PostgreSQL version you are upgrading to.)
+</p>
+<p>Note that the database cluster directory does not change from version to version, so before running <code>pg_upgrade</code>, it is necessary to rename your existing data directory and migrate into a new directory. The new database cluster must be initialized using the same parameters as the old one.
+</p>
+<p>When you are ready to begin the upgrade: 
+</p>
+<ol>
+<li>While the old database cluster is still online, collect the <code>initdb</code> arguments used to create it. Refer to <a href="#Initial_configuration">#Initial configuration</a> for more information.</li>
+<li>
+<a href="../en/Help:Reading.html#Control_of_systemd_units" class="mw-redirect" title="Stop">Stop</a> <code>postgresql.service</code>. (Check the <a href="../en/Help:Reading.html#Control_of_systemd_units" class="mw-redirect" title="Unit status">unit status</a> to be sure that PostgresSQL was stopped correctly. If it failed, <code>pg_upgrade</code> will fail too.)</li>
+<li>
+<a href="../en/System_maintenance.html#Upgrading_the_system" class="mw-redirect" title="Upgrade">Upgrade</a> <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=postgresql">postgresql</a></span>, <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=postgresql-libs">postgresql-libs</a></span>, and <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=postgresql-old-upgrade">postgresql-old-upgrade</a></span>.</li>
+<li>Rename the old cluster directory, then create a new cluster and temporary working directory: <pre># mv /var/lib/postgres/data /var/lib/postgres/olddata
+# mkdir /var/lib/postgres/data /var/lib/postgres/tmp
+# chown postgres:postgres /var/lib/postgres/data /var/lib/postgres/tmp
+[postgres]$ cd /var/lib/postgres/tmp</pre>
+</li>
+<li>Initialize the new cluster using the same <code>initdb</code> arguments as were used for the old cluster: <pre>[postgres]$ initdb -D /var/lib/postgres/data --locale=C.UTF-8 --encoding=UTF8 --data-checksums</pre>
+</li>
+<li>Upgrade the cluster, replacing <code><i>PG_VERSION</i></code> below, with the old PostgreSQL version number (e.g. <code>14</code>): <pre>[postgres]$ pg_upgrade -b /opt/pgsql-<i>PG_VERSION</i>/bin -B /usr/bin -d /var/lib/postgres/olddata -D /var/lib/postgres/data</pre> <div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> If necessary, adjust the configuration files of new cluster (e.g. <code>pg_hba.conf</code> and <code>postgresql.conf</code>) to match the old cluster.</div>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> If <code>pg_upgrade</code> fails with <code>The source cluster was not shut down cleanly</code>, PostgreSQL was not stopped before attempting the upgrade. Stop it, then restart the cluster with old database binaries to recover old cluster files: <pre>[postgres]$ /opt/pgsql-<i>PG_VERSION</i>/bin/pg_ctl start -D /var/lib/postgres/olddata &amp;&amp; /opt/pgsql-<i>PG_VERSION</i>/bin/pg_ctl stop -D /var/lib/postgres/olddata</pre> You can now safely retry the <code>pg_upgrade</code> command. If the upgrade process still fails, shut down any database processes, <a href="../en/Downgrading_packages.html" class="mw-redirect" title="Downgrade">downgrade</a> PostgreSQL packages to their previous versions, recover your previous cluster data from backups and restart the upgrade process.</div>
+</li>
+<li>
+<a href="../en/Help:Reading.html#Control_of_systemd_units" class="mw-redirect" title="Start">Start</a> <code>postgresql.service</code> again.</li>
+<li>
+<b>Optional:</b> Run <code>[postgres]$ vacuumdb --all --analyze-in-stages</code> to recalculate query analyzer statistics, which <a rel="nofollow" class="external text" href="https://www.cybertec-postgresql.com/en/postgresql-analyze-and-optimizer-statistics/">should improve query performance</a> shortly after the upgrade. (Adding <code>--jobs=<i>NUMBER_OF_CPU_CORES</i></code> argument may improve this command's performance.)</li>
+<li>
+<b>Optional:</b> Back up the <code>/var/lib/postgres/olddata</code> directory in case you need to restore a previous PostgreSQL version.</li>
+<li>Delete the <code>/var/lib/postgres/olddata</code> directory with old cluster data.</li>
+<li>Delete the <code>/var/lib/postgres/tmp</code> directory.</li>
+</ol>
+<h4><span class="mw-headline" id="Caveats">Caveats</span></h4>
+<div class="noprint archwiki-template-message">
+<p><a href="../File:Tango-inaccurate.png" class="image"><img alt="Tango-inaccurate.png" src="../File:Tango-inaccurate.png" decoding="async" width="48" height="48"></a><b>The factual accuracy of this article or section is disputed.</b><a href="../File:Tango-inaccurate.png" class="image"><img alt="Tango-inaccurate.png" src="../File:Tango-inaccurate.png" decoding="async" width="48" height="48"></a></p>
+<div>
+<b>Reason:</b> This section is not backed up with references and is too informal. See <a href="../en/Help:Style.html#Language_register" title="Help:Style">Help:Style#Language register</a>. The intended scope overlaps with <a href="#Troubleshooting">#Troubleshooting</a>. (Discuss in <a rel="nofollow" class="external text" href="https://wiki.archlinux.org/title/Talk:PostgreSQL">Talk:PostgreSQL</a>)</div>
+</div>
+<p><code>pg_upgrade</code> is said to be tricky.  On a talk in a recent postgresql conference, the presenter asked everyone that had used <code>pg_upgrade</code>
+to raise their hands, followed up by the next question - how many have used <code>pg_upgrade</code> and it just worked on the first attempt without any errors?  Very few hands to be seen on the second question.  This section is intended to be a list of problems people have observed when upgrading PostgreSQL under Archlinux (problems should preferably be reported upstream, too).
+</p>
+<ul><li>When upgrading from Postgresql 14 to Postgresql 15, old postgresql did not start - it insisted on fetching data from <code>/var/lib/postgres/data</code> rather than <code>/var/lib/postgres/data.old</code> and threw an error message that the directory was created with pg 15 and not pg 14.  Moving the old directory to <code>/var/lib/postgres/data</code> and the new directory to <code>/var/lib/postgres/15</code> did not help - then things were apparently freezing.  What did help was to edit <code>/var/lib/postgres/data.old/postgres.conf</code> and remove <code>data_directory</code> from that file.  (Hm ... perhaps a user error to have that thing there at all, if the config file is in the data directory, obviously postgresql has already found the data directory and should not need that directive.  Postgresql was installed through <code>puppetlabs-postgresql</code> puppet module, it is managing the configuration).</li></ul>
+<h3><span class="mw-headline" id="Manual_dump_and_reload">Manual dump and reload</span></h3>
+<p>You could also do something like this (after the upgrade and install of <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=postgresql-old-upgrade">postgresql-old-upgrade</a></span>).
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> 
+<ul>
+<li>Below are the commands for upgrading from PostgreSQL 14. You can find similar commands in <code>/opt/</code> for your version of PostgreSQL cluster, provided you have matching version of <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=postgresql-old-upgrade">postgresql-old-upgrade</a></span> package installed.</li>
+<li>If you had customized your <code>pg_hba.conf</code> file, you may have to temporarily modify it to allow full access to old database cluster from local system. After upgrade is complete set your customization to new database cluster as well and <a href="../en/Help:Reading.html#Control_of_systemd_units" class="mw-redirect" title="Restart">restart</a> <code>postgresql.service</code>.</li>
+</ul>
+</div>
+<p><a href="../en/Help:Reading.html#Control_of_systemd_units" class="mw-redirect" title="Stop">Stop</a> <code>postgresql.service</code>
+</p>
+<pre># mv /var/lib/postgres/data /var/lib/postgres/olddata
+# mkdir /var/lib/postgres/data
+# chown postgres:postgres /var/lib/postgres/data
+[postgres]$ initdb -D /var/lib/postgres/data --locale=C.UTF-8 --encoding=UTF8 --data-checksums
+[postgres]$ /opt/pgsql-14/bin/pg_ctl -D /var/lib/postgres/olddata/ start
+# cp /usr/lib/postgresql/postgis-3.so /opt/pgsql-14/lib/ # Only if postgis installed
+[postgres]$ pg_dumpall -h /tmp -f /tmp/old_backup.sql
+[postgres]$ /opt/pgsql-14/bin/pg_ctl -D /var/lib/postgres/olddata/ stop
+</pre>
+<p><a href="../en/Help:Reading.html#Control_of_systemd_units" class="mw-redirect" title="Start">Start</a> <code>postgresql.service</code>
+</p>
+<pre>[postgres]$ psql -f /tmp/old_backup.sql postgres
+</pre>
+<h2><span class="mw-headline" id="Troubleshooting">Troubleshooting</span></h2>
+<h3><span class="mw-headline" id="Improve_performance_of_small_transactions">Improve performance of small transactions</span></h3>
+<p>If you are using PostgresSQL on a local machine for development and it seems slow, you could try turning <a rel="nofollow" class="external text" href="https://www.postgresql.org/docs/current/static/runtime-config-wal.html#GUC-SYNCHRONOUS-COMMIT">synchronous_commit off</a> in the configuration. Beware of the <a rel="nofollow" class="external text" href="https://www.postgresql.org/docs/current/static/runtime-config-wal.html#GUC-SYNCHRONOUS-COMMIT">caveats</a>, however.
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/var/lib/postgres/data/postgresql.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">synchronous_commit = off</pre>
+<h3><span class="mw-headline" id="Prevent_disk_writes_when_idle">Prevent disk writes when idle</span></h3>
+<div class="noprint archwiki-template-message">
+<p><a href="../File:Tango-view-refresh-red.png" class="image"><img alt="Tango-view-refresh-red.png" src="../File:Tango-view-refresh-red.png" decoding="async" width="48" height="48"></a><b>This article or section is out of date.</b><a href="../File:Tango-view-refresh-red.png" class="image"><img alt="Tango-view-refresh-red.png" src="../File:Tango-view-refresh-red.png" decoding="async" width="48" height="48"></a></p>
+<div>
+<b>Reason:</b> This is deprecated in PostgreSQL 15 and newer. <a rel="nofollow" class="external autonumber" href="https://pgpedia.info/s/stats_temp_directory.html">[2]</a> (Discuss in <a rel="nofollow" class="external text" href="https://wiki.archlinux.org/title/Talk:PostgreSQL">Talk:PostgreSQL</a>)</div>
+</div>
+<p>PostgreSQL periodically updates its internal "statistics" file. By default, this file is stored on disk, which prevents disks from spinning down on laptops and causes hard drive seek noise. It is simple and safe to relocate this file to a memory-only file system with the following configuration option:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/var/lib/postgres/data/postgresql.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">stats_temp_directory = '/run/postgresql'</pre>
+<h3><span class="mw-headline" id="pgAdmin_4_issues_after_upgrade_to_PostgreSQL_12">pgAdmin 4 issues after upgrade to PostgreSQL 12</span></h3>
+<p>If you see errors about <code>string indices must be integers</code> when navigating the tree on the left, or about <code>column rel.relhasoids does not exist</code> when viewing the data, remove the server from the connection list in pgAdmin and add a fresh server instance. pgAdmin will otherwise continue to treat the server as a PostgreSQL 11 server resulting in these issues.
+</p>
+<h3><span class="mw-headline" id="PostgreSQL_database_unable_to_start_after_package_update_when_using_extensions">PostgreSQL database unable to start after package update when using extensions</span></h3>
+<p>The cause in this case is mostly the existing package is not compiled for the newer version (and it may be up-to-date), the solution is <a href="../en/Arch_build_system.html" title="Arch build system">rebuilding</a> the package either manually or waiting for an update to the extension package.
+</p>
+<h3><span class="mw-headline" id="Failing_to_start_a_PostgreSQL_server_with_the_older_version_of_the_database_while_upgrading_to_the_newer_version_with_extensions">Failing to start a PostgreSQL server with the older version of the database while upgrading to the newer version with extensions</span></h3>
+<p>This is caused because the old version of postgres from the package <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=postgresql-old-upgrade">postgresql-old-upgrade</a></span> does not have the required extensions (<i>.so</i> files) in its lib directory, the current solution is dirty, and might cause a lot of problems so keep a backup of the database just in case, basically copy the required extension <i>.so</i> files from <code>/usr/lib/postgresql/</code> to <code>/opt/pgsql-XX/lib/</code> (remember to replace XX with the major version of <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=postgresql-old-upgrade">postgresql-old-upgrade</a></span>).
+</p>
+<p>For example, for timescaledb
+</p>
+<pre># cp /usr/lib/postgresql/timescaledb*.so /opt/pgsql-13/lib/
+</pre>
+<div class="archwiki-template-box archwiki-template-box-warning">
+<strong>Warning:</strong> while copying the <i>.so</i> files was enough for me, it might be required to copy more files to the correct directories under <code>/opt/pgsql-XX/</code>
+</div>
+<p>to know the exact files to copy, check the contant of the package of the extension using :
+</p>
+<pre>$ pacman -Ql <i>package_name</i>
+</pre>
+<div class="archwiki-template-box archwiki-template-box-warning">
+<strong>Warning:</strong> This is a very dirty solution that may break or cause data loss in the database, so keep a backup</div>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface">
+<div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="../en/Category:Relational_DBMSs.html" title="Category:Relational DBMSs">Relational DBMSs</a></li></ul>
+</div>
+<div id="mw-hidden-catlinks" class="mw-hidden-catlinks mw-hidden-cats-hidden">Hidden categories: <ul>
+<li><a href="../en/Category:Pages_or_sections_flagged_with_Template:Expansion.html" title="Category:Pages or sections flagged with Template:Expansion">Pages or sections flagged with Template:Expansion</a></li>
+<li><a href="../en/Category:Pages_or_sections_flagged_with_Template:Accuracy.html" title="Category:Pages or sections flagged with Template:Accuracy">Pages or sections flagged with Template:Accuracy</a></li>
+<li><a href="../en/Category:Pages_or_sections_flagged_with_Template:Out_of_date.html" title="Category:Pages or sections flagged with Template:Out of date">Pages or sections flagged with Template:Out of date</a></li>
+</ul>
+</div>
+</div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=PostgreSQL&amp;oldid=785086">https://wiki.archlinux.org/index.php?title=PostgreSQL&amp;oldid=785086</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 11 August 2023, at 06:13.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

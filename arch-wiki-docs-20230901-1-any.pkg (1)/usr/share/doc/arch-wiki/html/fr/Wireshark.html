@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>Wireshark (Français) - ArchWiki</title>
+<link rel="stylesheet" href="../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Wireshark_Français rootpage-Wireshark_Français skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Installation" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Installation">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Installation</div>
+			</a>
+			
+			<ul id="toc-Installation-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Privilèges_de_capture" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Privil%C3%A8ges_de_capture">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Privilèges de capture</div>
+			</a>
+			
+			<ul id="toc-Privilèges_de_capture-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Quelques_techniques_de_capture" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Quelques_techniques_de_capture">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>Quelques techniques de capture</div>
+			</a>
+			
+				<button aria-controls="toc-Quelques_techniques_de_capture-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Quelques techniques de capture subsection
+				</button>
+			
+			<ul id="toc-Quelques_techniques_de_capture-sublist" class="sidebar-toc-list">
+				<li id="toc-Filtrage_des_paquets_TCP" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Filtrage_des_paquets_TCP">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.1</span>Filtrage des paquets TCP</div>
+			</a>
+			
+			<ul id="toc-Filtrage_des_paquets_TCP-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Filtrer_les_paquets_UDP" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Filtrer_les_paquets_UDP">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.2</span>Filtrer les paquets UDP</div>
+			</a>
+			
+			<ul id="toc-Filtrer_les_paquets_UDP-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Filtrer_les_paquets_vers_une_adresse_IP_spécifique" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Filtrer_les_paquets_vers_une_adresse_IP_sp%C3%A9cifique">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.3</span>Filtrer les paquets vers une adresse IP spécifique</div>
+			</a>
+			
+			<ul id="toc-Filtrer_les_paquets_vers_une_adresse_IP_spécifique-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Exclure_les_paquets_provenant_d'une_adresse_IP_spécifique" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Exclure_les_paquets_provenant_d'une_adresse_IP_sp%C3%A9cifique">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.4</span>Exclure les paquets provenant d'une adresse IP spécifique</div>
+			</a>
+			
+			<ul id="toc-Exclure_les_paquets_provenant_d'une_adresse_IP_spécifique-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Filtrer_les_paquets_vers_le_LAN" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Filtrer_les_paquets_vers_le_LAN">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.5</span>Filtrer les paquets vers le LAN</div>
+			</a>
+			
+			<ul id="toc-Filtrer_les_paquets_vers_le_LAN-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Filtrer_les_paquets_par_port" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Filtrer_les_paquets_par_port">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.6</span>Filtrer les paquets par port</div>
+			</a>
+			
+			<ul id="toc-Filtrer_les_paquets_par_port-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Capture_«headless»_avec_dumpcap" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Capture_%C2%ABheadless%C2%BB_avec_dumpcap">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.7</span>Capture «headless» avec dumpcap</div>
+			</a>
+			
+			<ul id="toc-Capture_«headless»_avec_dumpcap-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../fr/Wireshark.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="new mw-list-item"><a href="/index.php?title=Talk:Wireshark_(Fran%C3%A7ais)&amp;action=edit&amp;redlink=1" rel="discussion" title="Discussion about the content page (page does not exist) [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">français</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../fr/Wireshark.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=Wireshark_(Fran%C3%A7ais)&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=Wireshark_(Fran%C3%A7ais)&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../fr/Wireshark.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Wireshark_(Fran%C3%A7ais)&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Wireshark_(Fran%C3%A7ais)&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="fr" dir="ltr">
+<div class="mw-parser-output">
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>État de la traduction:</strong> Cet article est la version francophone de <a href="../en/Wireshark.html" title="Wireshark">Wireshark</a>. Date de la dernière traduction: 2022-10-03. Vous pouvez aider à synchroniser la traduction s'il y a eu des <a rel="nofollow" class="external text" href="https://wiki.archlinux.org/index.php?title=Wireshark&amp;diff=0&amp;oldid=737744">changements</a> dans la version anglaise.</div>
+<p><a rel="nofollow" class="external text" href="https://www.wireshark.org/">Wireshark</a> est un analyseur de paquets gratuit et open-source. Il est utilisé pour le dépannage des réseaux, l'analyse, le développement de logiciels et de protocoles de communication, et l'éducation.
+</p>
+<mw:tocplace></mw:tocplace>
+<h2><span class="mw-headline" id="Installation">Installation</span></h2>
+<p><a href="../fr/Help:Reading.html#Installation_de_paquets" class="mw-redirect" title="Installez">Installez</a> le paquet <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=wireshark-qt">wireshark-qt</a></span> pour l'interface graphique de Wireshark ou <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=wireshark-cli">wireshark-cli</a></span> pour la CLI simple <span class="plainlinks archwiki-template-man" title="$ man 1 tshark"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/tshark.1">tshark(1)</a></span>.
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> L'interface GTK obsolète a été supprimée dans Wireshark 3.0.</div>
+<p><span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=termshark">termshark</a></span> est une interface utilisateur alternative pour le terminal.
+</p>
+<h2>
+<span id="Privil.C3.A8ges_de_capture"></span><span class="mw-headline" id="Privilèges_de_capture">Privilèges de capture</span>
+</h2>
+<p>N'exécutez pas Wireshark en tant que root, ce n'est pas sûr. Wireshark a implémenté la séparation des privilèges, ce qui signifie que l'interface graphique de Wireshark (ou la CLI de tshark) peut s'exécuter en tant qu'utilisateur normal tandis que l'utilitaire de capture dumpcap s'exécute en tant que root <a rel="nofollow" class="external autonumber" href="https://gitlab.com/wireshark/wireshark/-/wikis/CaptureSetup/CapturePrivileges#most-unixes">[1]</a>.
+</p>
+<p>Le <a href="../fr/PKGBUILD.html#install" title="PKGBUILD (Français)">script d'installation</a> du paquet <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=wireshark-cli">wireshark-cli</a></span> définit les <a href="../en/Capabilities.html" title="Capabilities">capacités</a> de capture de paquets sur l'exécutable <code>/usr/bin/dumpcap</code>.
+</p>
+<p><code>/usr/bin/dumpcap</code> ne peut être exécuté que par root et les membres du groupe <code>wireshark</code>, donc pour utiliser Wireshark en tant qu'utilisateur normal vous devez ajouter votre utilisateur au <a href="../fr/Users_and_groups.html#Gestion_des_groupes" title="Users and groups (Français)">groupe d'utilisateurs</a> <code>wireshark</code>.
+</p>
+<h2><span class="mw-headline" id="Quelques_techniques_de_capture">Quelques techniques de capture</span></h2>
+<p>Il existe plusieurs façons de capturer exactement ce que vous recherchez dans Wireshark, en appliquant des <a rel="nofollow" class="external text" href="https://gitlab.com/wireshark/wireshark/-/wikis/CaptureFilters">filtres de capture</a> ou des <a rel="nofollow" class="external text" href="https://gitlab.com/wireshark/wireshark/-/wikis/DisplayFilters">filtres d'affichage</a>.
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> Pour connaître la syntaxe des filtres de capture, consultez <span class="plainlinks archwiki-template-man" title="$ man 7 pcap-filter"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/pcap-filter.7">pcap-filter(7)</a></span>. Pour les filtres d'affichage, consultez <span class="plainlinks archwiki-template-man" title="$ man 4 wireshark-filter"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/wireshark-filter.4">wireshark-filter(4)</a></span>.</div>
+<h3><span class="mw-headline" id="Filtrage_des_paquets_TCP">Filtrage des paquets TCP</span></h3>
+<p>Si vous voulez consulter tous les paquets TCP actuels, tapez <code>tcp</code> dans la barre <i>Filtre</i> ou dans le CLI, entrez :
+</p>
+<pre>$ tshark -f "tcp"
+</pre>
+<h3><span class="mw-headline" id="Filtrer_les_paquets_UDP">Filtrer les paquets UDP</span></h3>
+<p>Si vous voulez consulter tous les paquets UDP actuels, tapez <code>udp</code> dans la barre <i>Filtre</i> ou dans la CLI, entrez : $ tshark -f "tcp" ===
+</p>
+<pre>$ tshark -f "udp"
+</pre>
+<h3>
+<span id="Filtrer_les_paquets_vers_une_adresse_IP_sp.C3.A9cifique"></span><span class="mw-headline" id="Filtrer_les_paquets_vers_une_adresse_IP_spécifique">Filtrer les paquets vers une adresse IP spécifique</span>
+</h3>
+<ul>
+<li>Si vous souhaitez consulter tout le trafic allant vers une adresse spécifique, entrez display filter <code>ip.dst == 1.2.3.4</code>, en remplaçant <code>1.2.3.4</code> par l'adresse IP vers laquelle le trafic sortant est envoyé.</li>
+<li>Si vous souhaitez consulter tout le trafic entrant pour une adresse spécifique, entrez le filtre d'affichage <code>ip.src == 1.2.3.4</code>, en remplaçant <code>1.2.3.4</code> par l'adresse IP vers laquelle le trafic entrant est envoyé.</li>
+<li>Si vous souhaitez consulter tout le trafic entrant et sortant pour une adresse spécifique, saisissez un filtre d'affichage <code>ip.addr == 1.2.3.4</code>, en remplaçant <code>1.2.3.4</code> par l'adresse IP concernée.</li>
+</ul>
+<h3>
+<span id="Exclure_les_paquets_provenant_d.27une_adresse_IP_sp.C3.A9cifique"></span><span class="mw-headline" id="Exclure_les_paquets_provenant_d'une_adresse_IP_spécifique">Exclure les paquets provenant d'une adresse IP spécifique</span>
+</h3>
+<pre>ip.addr != 1.2.3.4
+</pre>
+<h3><span class="mw-headline" id="Filtrer_les_paquets_vers_le_LAN">Filtrer les paquets vers le LAN</span></h3>
+<p>Pour consulter uniquement le trafic du réseau local et pas celui d'Internet, exécutez
+</p>
+<pre>(ip.src==10.0.0/8 AND ip.dst==10.0.0/8) OR (ip.src==172.16.0.0/12 AND ip.dst==172.16.0.0/12) OR (ip.src==192.168.0.0/16 and ip.dst==192.168.0.0/16)
+</pre>
+<p>Cela permettra de filtrer le trafic dans n'importe quel espace du réseau privé.
+</p>
+<h3><span class="mw-headline" id="Filtrer_les_paquets_par_port">Filtrer les paquets par port</span></h3>
+<p>Consultez tout le trafic sur deux ports ou plus :
+</p>
+<pre>tcp.port==80||tcp.port==3306
+tcp.port==80||tcp.port==3306||tcp.port==443
+</pre>
+<h3>
+<span id="Capture_.C2.ABheadless.C2.BB_avec_dumpcap"></span><span class="mw-headline" id="Capture_«headless»_avec_dumpcap">Capture «headless» avec dumpcap</span>
+</h3>
+<p><i>dumpcap</i> fait partie de Wireshark et peut être utilisé pour capturer des paquets sans l'interface graphique. Utilisé en combinaison avec <a href="../en/Tmux.html" title="Tmux">tmux</a>, il permettra la capture de paquets dans une session détachée.
+</p>
+<p>Pour voir toutes les options de dumpcap, utilisez le paramètre <code>-h</code>.
+</p>
+<p>L'exemple suivant fournira une capture de ringbuffer. Il capture vingt fichiers <code>.pcap</code> de 100 Mo chacun, en remplaçant le fichier le plus ancien par le vingt-et-unième et ainsi de suite... Cela permet une capture continue sans épuiser l'espace disque.
+</p>
+<pre># dumpcap -i 1 -b filesize:100000 -b files:20 -w <i>mycapture</i>.pcapng
+</pre>
+<ul><li>
+<code>-i</code> — numéro d'interface (listé à partir de <code>dumpcap -D</code>)</li></ul>
+<ul><li>
+<code>-b filesize:</code> — taille du fichier en kB avant le démarrage d'un nouveau fichier <code>.pcap</code>.</li></ul>
+<ul><li>
+<code>-b files:</code> — le nombre de fichiers à capturer avant d'écraser le plus ancien</li></ul>
+<ul><li>
+<code>-w</code> — écrit la sortie dans le fichier <code>mycapture<i>identifiant</i>.pcap</code>
+</li></ul>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../Special:Categories.html" title="Special:Categories">Categories</a>: <ul>
+<li><a href="../fr/Category:Security.html" title="Category:Security (Français)">Security (Français)</a></li>
+<li><a href="../fr/Category:Networking.html" title="Category:Networking (Français)">Networking (Français)</a></li>
+</ul>
+</div></div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=Wireshark_(Fran%C3%A7ais)&amp;oldid=758544">https://wiki.archlinux.org/index.php?title=Wireshark_(Français)&amp;oldid=758544</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 1 December 2022, at 11:47.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

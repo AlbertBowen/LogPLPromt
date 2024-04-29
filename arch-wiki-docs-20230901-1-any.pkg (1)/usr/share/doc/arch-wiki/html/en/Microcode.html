@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>Microcode - ArchWiki</title>
+<link rel="stylesheet" href="../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Microcode rootpage-Microcode skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Loading_microcode" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#Loading_microcode">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Loading microcode</div>
+			</a>
+			
+				<button aria-controls="toc-Loading_microcode-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Loading microcode subsection
+				</button>
+			
+			<ul id="toc-Loading_microcode-sublist" class="sidebar-toc-list">
+				<li id="toc-Microcode_built_in_the_initramfs" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Microcode_built_in_the_initramfs">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.1</span>Microcode built in the initramfs</div>
+			</a>
+			
+			<ul id="toc-Microcode_built_in_the_initramfs-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Early_loading" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Early_loading">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.2</span>Early loading</div>
+			</a>
+			
+			<ul id="toc-Early_loading-sublist" class="sidebar-toc-list">
+				<li id="toc-Unified_kernel_images" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Unified_kernel_images">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.2.1</span>Unified kernel images</div>
+			</a>
+			
+			<ul id="toc-Unified_kernel_images-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Initrd_images" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Initrd_images">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.2.2</span>Initrd images</div>
+			</a>
+			
+			<ul id="toc-Initrd_images-sublist" class="sidebar-toc-list">
+				<li id="toc-Enabling_early_microcode_loading_in_custom_kernels" class="sidebar-toc-list-item sidebar-toc-level-4">
+			<a class="sidebar-toc-link" href="#Enabling_early_microcode_loading_in_custom_kernels">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.2.2.1</span>Enabling early microcode loading in custom kernels</div>
+			</a>
+			
+			<ul id="toc-Enabling_early_microcode_loading_in_custom_kernels-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-GRUB" class="sidebar-toc-list-item sidebar-toc-level-4">
+			<a class="sidebar-toc-link" href="#GRUB">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.2.2.2</span>GRUB</div>
+			</a>
+			
+			<ul id="toc-GRUB-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-systemd-boot" class="sidebar-toc-list-item sidebar-toc-level-4">
+			<a class="sidebar-toc-link" href="#systemd-boot">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.2.2.3</span>systemd-boot</div>
+			</a>
+			
+			<ul id="toc-systemd-boot-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-EFISTUB" class="sidebar-toc-list-item sidebar-toc-level-4">
+			<a class="sidebar-toc-link" href="#EFISTUB">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.2.2.4</span>EFISTUB</div>
+			</a>
+			
+			<ul id="toc-EFISTUB-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-rEFInd" class="sidebar-toc-list-item sidebar-toc-level-4">
+			<a class="sidebar-toc-link" href="#rEFInd">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.2.2.5</span>rEFInd</div>
+			</a>
+			
+			<ul id="toc-rEFInd-sublist" class="sidebar-toc-list">
+				<li id="toc-Manual_boot_stanzas" class="sidebar-toc-list-item sidebar-toc-level-5">
+			<a class="sidebar-toc-link" href="#Manual_boot_stanzas">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.2.2.5.1</span>Manual boot stanzas</div>
+			</a>
+			
+			<ul id="toc-Manual_boot_stanzas-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Syslinux" class="sidebar-toc-list-item sidebar-toc-level-4">
+			<a class="sidebar-toc-link" href="#Syslinux">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.2.2.6</span>Syslinux</div>
+			</a>
+			
+			<ul id="toc-Syslinux-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-LILO" class="sidebar-toc-list-item sidebar-toc-level-4">
+			<a class="sidebar-toc-link" href="#LILO">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.2.2.7</span>LILO</div>
+			</a>
+			
+			<ul id="toc-LILO-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Limine" class="sidebar-toc-list-item sidebar-toc-level-4">
+			<a class="sidebar-toc-link" href="#Limine">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.2.2.8</span>Limine</div>
+			</a>
+			
+			<ul id="toc-Limine-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Late_loading" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Late_loading">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.3</span>Late loading</div>
+			</a>
+			
+			<ul id="toc-Late_loading-sublist" class="sidebar-toc-list">
+				<li id="toc-Late_loading_microcode_updates" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Late_loading_microcode_updates">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.3.1</span>Late loading microcode updates</div>
+			</a>
+			
+			<ul id="toc-Late_loading_microcode_updates-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Verifying_that_microcode_got_updated_on_boot" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#Verifying_that_microcode_got_updated_on_boot">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Verifying that microcode got updated on boot</div>
+			</a>
+			
+			<ul id="toc-Verifying_that_microcode_got_updated_on_boot-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Which_CPUs_accept_microcode_updates" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#Which_CPUs_accept_microcode_updates">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>Which CPUs accept microcode updates</div>
+			</a>
+			
+				<button aria-controls="toc-Which_CPUs_accept_microcode_updates-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Which CPUs accept microcode updates subsection
+				</button>
+			
+			<ul id="toc-Which_CPUs_accept_microcode_updates-sublist" class="sidebar-toc-list">
+				<li id="toc-Detecting_available_microcode_update" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Detecting_available_microcode_update">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.1</span>Detecting available microcode update</div>
+			</a>
+			
+			<ul id="toc-Detecting_available_microcode_update-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-See_also" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#See_also">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4</span>See also</div>
+			</a>
+			
+			<ul id="toc-See_also-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../en/Microcode.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="mw-list-item"><a href="../en/Talk:Microcode.html" rel="discussion" title="Discussion about the content page [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">English</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../en/Microcode.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=Microcode&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=Microcode&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../en/Microcode.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Microcode&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Microcode&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output">
+<div class="noprint archwiki-template-message">
+<p><a href="../File:Tango-view-fullscreen.png" class="image"><img alt="Tango-view-fullscreen.png" src="../File:Tango-view-fullscreen.png" decoding="async" width="48" height="48"></a><b>This article or section needs expansion.</b><a href="../File:Tango-view-fullscreen.png" class="image"><img alt="Tango-view-fullscreen.png" src="../File:Tango-view-fullscreen.png" decoding="async" width="48" height="48"></a></p>
+<div>
+<b>Reason:</b> Needs to be updated to reflect that late loading on AMD is considered supported and <a rel="nofollow" class="external text" href="https://lore.kernel.org/lkml/20230411125056.2333-1-bp@alien8.de/">no longer taints the kernel</a>. (Discuss in <a rel="nofollow" class="external text" href="https://wiki.archlinux.org/title/Talk:Microcode">Talk:Microcode</a>)</div>
+</div>
+<p>Processor manufacturers release stability and security updates to the processor <a href="https://en.wikipedia.org/wiki/Microcode" class="extiw" title="wikipedia:Microcode">microcode</a>. These updates provide bug fixes that can be critical to the stability of your system. Without them, you may experience spurious crashes or unexpected system halts that can be difficult to track down.
+</p>
+<p>All users with an AMD or Intel CPU should install the microcode updates to ensure system stability. In virtual machines and containers, the microcode updates belongs on the host, not in the guest system.
+</p>
+<mw:tocplace></mw:tocplace>
+<h2><span class="mw-headline" id="Loading_microcode">Loading microcode</span></h2>
+<p>Microcode updates are usually shipped with the motherboard's firmware and applied during firmware initialization. Since OEMs might not release firmware updates in a timely fashion and old systems do not get new firmware updates at all, the ability to apply CPU microcode updates during boot was added to the Linux kernel. <a rel="nofollow" class="external text" href="https://docs.kernel.org/arch/x86/microcode.html">The Linux microcode loader</a> supports three loading methods:
+</p>
+<ol>
+<li>
+<b>Built-in microcode</b> can be compiled into the kernel and then applied by the early loader.</li>
+<li>
+<b>Early loading</b> updates the microcode very early during boot, before the initramfs stage, and is preferred over late loading. This is mandatory for CPUs with severe hardware bugs, like the Intel Haswell and Broadwell processor families.</li>
+<li>
+<b>Late loading</b> (<a rel="nofollow" class="external text" href="https://docs.kernel.org/arch/x86/microcode.html#why-is-late-loading-dangerous">dangerous</a>) updates the microcode after booting which could be too late since the CPU might have already tried to use a faulty instruction. Even if already using early loading, late loading can still be used to apply a newer microcode update without needing to reboot.</li>
+</ol>
+<p>To acquire updated microcode, depending on the processor, <a href="../en/Help:Reading.html#Installation_of_packages" class="mw-redirect" title="Install">install</a> one of the following packages:
+</p>
+<ul>
+<li>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=amd-ucode">amd-ucode</a></span> for AMD processors,</li>
+<li>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=intel-ucode">intel-ucode</a></span> for Intel processors.</li>
+</ul>
+<h3><span class="mw-headline" id="Microcode_built_in_the_initramfs">Microcode built in the initramfs</span></h3>
+<div class="noprint archwiki-template-message">
+<p><a href="../File:Tango-view-fullscreen.png" class="image"><img alt="Tango-view-fullscreen.png" src="../File:Tango-view-fullscreen.png" decoding="async" width="48" height="48"></a><b>This article or section needs expansion.</b><a href="../File:Tango-view-fullscreen.png" class="image"><img alt="Tango-view-fullscreen.png" src="../File:Tango-view-fullscreen.png" decoding="async" width="48" height="48"></a></p>
+<div>
+<b>Reason:</b> 
+<ul>
+<li>This should have a change in structure splitting unified kernel images like the output of dracut or a manually/"voluntarily" generated one and the other images like the default configuration of <a rel="nofollow" class="external text" href="https://github.com/anatol/booster/discussions/159">Booster</a> or mkinitcpio.</li>
+<li>The <a href="#top">introduction</a> does not cover this section.</li>
+</ul>
+ (Discuss in <a rel="nofollow" class="external text" href="https://wiki.archlinux.org/title/Talk:Microcode">Talk:Microcode</a>)</div>
+</div>
+<p>One can <a rel="nofollow" class="external text" href="https://docs.kernel.org/arch/x86/microcode.html#early-load-microcode">prepend the microcode cpio into the initramfs</a>. Some initramfs generators, like <a href="../en/Dracut.html" title="Dracut">dracut</a> (see <span class="plainlinks archwiki-template-man" title="$ man 5 dracut.conf"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/dracut.conf.5#DESCRIPTION">dracut.conf(5) § DESCRIPTION</a></span>), do this by default. This makes <a href="#Early_loading">#Early loading</a> and <a href="#Late_loading">#Late loading</a> unnecessary. However, Arch Linux defaults to using <a href="../en/Mkinitcpio.html" title="Mkinitcpio">mkinitcpio</a> to generate its initial ramdisk (initramfs), which does not support this. It does, however, support loading the microcode via a UEFI stub: see <a href="#Unified_kernel_images">#Unified kernel images</a>.
+</p>
+<h3><span class="mw-headline" id="Early_loading">Early loading</span></h3>
+<p>If not compiled into the kernel, microcode must be loaded by the early loader. It can be passed to the loader as part of a unified kernel image, or as an initrd image by your <a href="../en/Arch_boot_process.html#Boot_loader" class="mw-redirect" title="Boot loader">boot loader</a>.
+</p>
+<p>Note that because of the wide variability in users' early-boot configuration, microcode updates may not be triggered automatically by Arch's default configuration.
+</p>
+<h4><span class="mw-headline" id="Unified_kernel_images">Unified kernel images</span></h4>
+<p>See <a href="../en/Unified_kernel_image.html" title="Unified kernel image">Unified kernel images</a> for guidance on how to include microcode in single-file images.
+</p>
+<h4><span class="mw-headline" id="Initrd_images">Initrd images</span></h4>
+<p>Microcode updates must otherwise be enabled by adding <code>/boot/amd-ucode.img</code> or <code>/boot/intel-ucode.img</code> as the <b>first initrd in the bootloader configuration file</b>. This is before the normal initrd file. See below for instructions for common bootloaders.
+</p>
+<p>In the following sections replace <code><i>cpu_manufacturer</i></code> with your CPU manufacturer, i.e. <code>amd</code> or <code>intel</code>.
+</p>
+<div class="archwiki-template-box archwiki-template-box-tip">
+<strong>Tip:</strong> For <a href="../en/Install_Arch_Linux_on_a_removable_medium.html" title="Install Arch Linux on a removable medium">Arch Linux on a removable drive</a>, which could be run on any of these processors, install both packages and add both microcode files as <code>initrd</code> to the boot loader configuration. Their order does not matter as long as they both are specified before the initramfs image.</div>
+<h5><span class="mw-headline" id="Enabling_early_microcode_loading_in_custom_kernels">Enabling early microcode loading in custom kernels</span></h5>
+<p>In order for early loading to work in custom kernels, "CPU microcode loading support" needs to be compiled into the kernel, <b>not</b> compiled as a module. This will enable the "Early load microcode" prompt which should be set to <code>Y</code>.
+</p>
+<pre>CONFIG_BLK_DEV_INITRD=Y
+CONFIG_MICROCODE=y
+CONFIG_MICROCODE_INTEL=Y
+CONFIG_MICROCODE_AMD=y
+</pre>
+<h5><span class="mw-headline" id="GRUB">GRUB</span></h5>
+<p><i>grub-mkconfig</i> will automatically detect the microcode update and configure <a href="../en/GRUB.html" title="GRUB">GRUB</a> appropriately. After installing the microcode package, regenerate the GRUB configuration to activate loading the microcode update by running:
+</p>
+<pre># grub-mkconfig -o /boot/grub/grub.cfg
+</pre>
+<p>Alternatively, users that manage their GRUB configuration file manually can add <code>/boot/<i>cpu_manufacturer</i>-ucode.img</code> (or <code>/<i>cpu_manufacturer</i>-ucode.img</code> if <code>/boot</code> is a separate partition) as follows:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/boot/grub/grub.cfg</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">...
+echo 'Loading initial ramdisk'
+initrd	<b>/boot/<i>cpu_manufacturer</i>-ucode.img</b> /boot/initramfs-linux.img
+...
+</pre>
+<p>Repeat it for each menu entry.
+</p>
+<h5><span class="mw-headline" id="systemd-boot">systemd-boot</span></h5>
+<p>Use the <code>initrd</code> option to load the microcode, before the initial ramdisk, as follows:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/boot/loader/entries/<i>entry</i>.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">title   Arch Linux
+linux   /vmlinuz-linux
+<b>initrd  /<i>cpu_manufacturer</i>-ucode.img</b>
+initrd  /initramfs-linux.img
+...
+</pre>
+<p>The latest microcode <code><i>cpu_manufacturer</i>-ucode.img</code> must be available at boot time in your <a href="../en/EFI_system_partition.html" title="EFI system partition">EFI system partition</a> (ESP). The ESP must be mounted as <code>/boot</code> in order to have the microcode updated every time <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=amd-ucode">amd-ucode</a></span> or <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=intel-ucode">intel-ucode</a></span> is updated. Otherwise, copy <code>/boot/<i>cpu_manufacturer</i>-ucode.img</code> to your ESP at every update of the microcode package.
+</p>
+<h5><span class="mw-headline" id="EFISTUB">EFISTUB</span></h5>
+<p>Append two <code>initrd=</code> options:
+</p>
+<pre><b>initrd=\<i>cpu_manufacturer</i>-ucode.img</b> initrd=\initramfs-linux.img
+</pre>
+<h5><span class="mw-headline" id="rEFInd">rEFInd</span></h5>
+<div class="archwiki-template-box archwiki-template-box-tip">
+<strong>Tip:</strong> Users who previously did not specify an <code>initrd</code> kernel parameter need to follow the steps described in <a href="../en/REFInd.html#Configuration" title="REFInd">rEFInd#Configuration</a> to enable the passing of multiple <code>initrd</code> parameters.</div>
+<p>Edit boot options in <code>/boot/refind_linux.conf</code>
+and add an <code>initrd=</code> option for the microcode image as the first <code>initrd</code> argument passed. Use either <code>initrd=boot\<i>cpu_manufacturer</i>-ucode.img</code> or <code>initrd=<i>cpu_manufacturer</i>-ucode.img</code> depending if the files in <code>/boot</code> are in the root of a separate partition.
+</p>
+<p>The microcode is required to be the first initramfs declared for the boot options list. For example:
+</p>
+<pre>"Boot using default options"  "root=PARTUUID=<i>XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX</i> rw add_efi_memmap initrd=boot\<i>cpu_manufacturer</i>-ucode.img initrd=boot\initramfs-%v.img"
+</pre>
+<h6><span class="mw-headline" id="Manual_boot_stanzas">Manual boot stanzas</span></h6>
+<p>Users employing <a href="../en/REFInd.html#For_manual_boot_stanzas" title="REFInd">manual stanzas</a> in <code><i>esp</i>/EFI/refind/refind.conf</code> to define  kernels should add the <code>initrd=</code> parameter with the proper path within the boot partition. This parameter is required as part of the options line, and not in the main part of the stanza. E.g.:
+</p>
+<pre>options  "root=PARTUUID=<i>XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX</i> rw add_efi_memmap <b>initrd=boot\<i>cpu_manufacturer</i>-ucode.img</b>"
+</pre>
+<h5><span class="mw-headline" id="Syslinux">Syslinux</span></h5>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> There must be no spaces between the <code><i>cpu_manufacturer</i>-ucode.img</code> and <code>initramfs-linux.img</code> initrd files. The <code>INITRD</code> line must be exactly as illustrated below.</div>
+<p>Multiple initrd's can be separated by commas in <code>/boot/syslinux/syslinux.cfg</code>:
+</p>
+<pre>LABEL arch
+    MENU LABEL Arch Linux
+    LINUX ../vmlinuz-linux
+    INITRD <b>../<i>cpu_manufacturer</i>-ucode.img</b>,../initramfs-linux.img
+...
+</pre>
+<h5><span class="mw-headline" id="LILO">LILO</span></h5>
+<p><a href="../en/LILO.html" title="LILO">LILO</a> and potentially other old bootloaders do not support multiple initrd images. In that case, <code><i>cpu_manufacturer</i>-ucode.img</code> and <code>initramfs-linux.img</code> will have to be merged into one image.
+</p>
+<div class="archwiki-template-box archwiki-template-box-warning">
+<strong>Warning:</strong> The merged image must be recreated after each kernel update!</div>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> The order is important. The original image <code>initramfs-linux.img</code> must be placed <b>after</b> <code><i>cpu_manufacturer</i>-ucode.img</code> in the resulting image.</div>
+<p>To merge both images into one image named <code>initramfs-merged.img</code>, the following command can be used:
+</p>
+<pre># cat /boot/<i>cpu_manufacturer</i>-ucode.img /boot/initramfs-linux.img &gt; /boot/initramfs-merged.img
+</pre>
+<p>Now, edit <code>/etc/lilo.conf</code> to load the new image.
+</p>
+<pre>...
+initrd=/boot/initramfs-merged.img
+...
+</pre>
+<p>And run <code>lilo</code> as root:
+</p>
+<pre># lilo
+</pre>
+<h5><span class="mw-headline" id="Limine">Limine</span></h5>
+<p>For <a href="../en/Limine.html" title="Limine">Limine</a> you will just need to add the path to the microcode through the <code>MODULE_PATH</code> option in your <a href="../en/Limine.html#Configuration" title="Limine">limine.cfg</a> file. Here is an example:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">limine.cfg</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">DEFAULT_ENTRY=1
+TIMEOUT=3
+
+:Arch
+    COMMENT=Arch Linux
+
+    PROTOCOL=linux
+    KERNEL_PATH=boot:///vmlinuz-linux
+    CMDLINE=root=UUID=c0748521-eca9-4f38-989c-43811b6e39a1 rw loglevel=3
+    <b>MODULE_PATH=boot:///<i>cpu_manufacturer-ucode</i>.img</b>
+    MODULE_PATH=boot:///initramfs-linux.img</pre>
+<h3><span class="mw-headline" id="Late_loading">Late loading</span></h3>
+<div class="archwiki-template-box archwiki-template-box-warning">
+<strong>Warning:</strong> Late microcode loading is considered dangerous, using it on Linux 5.19 and later will taint the kernel.<a rel="nofollow" class="external autonumber" href="https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=9784edd73a08ea08d0ce5606e1f0f729df688c59">[1]</a>
+</div>
+<p>Late loading of microcode updates happens after the system has booted. It uses files in <code>/usr/lib/firmware/amd-ucode/</code> and <code>/usr/lib/firmware/intel-ucode/</code>. On Linux 5.19 and later, late loading requires the kernel to be built with <code>CONFIG_MICROCODE_LATE_LOADING=y</code>.
+</p>
+<p>For AMD processors the microcode update files are provided by <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=linux-firmware">linux-firmware</a></span>.
+</p>
+<p>For Intel processors no package provides the microcode update files (<a rel="nofollow" class="external text" href="https://bugs.archlinux.org/task/59841">FS#59841</a>). To use late loading you need to manually extract <code>intel-ucode/</code> from <a rel="nofollow" class="external text" href="https://github.com/intel/Intel-Linux-Processor-Microcode-Data-Files/releases">Intel's provided archive</a>.
+</p>
+<h4><span class="mw-headline" id="Late_loading_microcode_updates">Late loading microcode updates</span></h4>
+<p>To manually reload the microcode, e.g. after updating the microcode files in <code>/usr/lib/firmware/amd-ucode/</code> or <code>/usr/lib/firmware/intel-ucode/</code>, run:
+</p>
+<pre># echo 1 &gt; /sys/devices/system/cpu/microcode/reload
+</pre>
+<p>This allows to apply newer microcode updates without rebooting the system.
+</p>
+<h2><span class="mw-headline" id="Verifying_that_microcode_got_updated_on_boot">Verifying that microcode got updated on boot</span></h2>
+<p>Check the kernel messages with <i>journalctl</i> to see if the microcode has been updated:
+</p>
+<pre># journalctl -k --grep=microcode
+</pre>
+<p>On Intel systems one should see something similar to the following on every boot, indicating that microcode is updated very early on:
+</p>
+<pre>microcode: microcode updated early to revision 0xde, date = 2020-05-18
+microcode: sig=0x806ec, pf=0x80, revision=0xde
+microcode: Microcode Update Driver: v2.2.
+</pre>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> The date displayed does not correspond to the version of the <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=intel-ucode">intel-ucode</a></span> package installed. It does show the last time Intel updated the microcode that corresponds to the specific hardware being updated.</div>
+<p>It is entirely possible, particularly with newer hardware, that there is no microcode update for the CPU. In that case, the output may look like this:
+</p>
+<pre>microcode: sig=0x806ec, pf=0x80, revision=0xde
+microcode: Microcode Update Driver: v2.2.
+</pre>
+<p>On AMD systems using early loading the output would look something like this:
+</p>
+<pre>microcode: microcode updated early to new patch_level=0x0700010f
+microcode: CPU0: patch_level=0x0700010f
+microcode: CPU1: patch_level=0x0700010f
+microcode: CPU2: patch_level=0x0700010f
+microcode: CPU3: patch_level=0x0700010f
+microcode: Microcode Update Driver: v2.2.
+</pre>
+<p>On AMD systems using late loading the output will show the version of the old microcode before reloading the microcode and the new one once it is reloaded. It would look something like this:
+</p>
+<pre>microcode: CPU0: patch_level=0x0700010b
+microcode: CPU1: patch_level=0x0700010b
+microcode: CPU2: patch_level=0x0700010b
+microcode: CPU3: patch_level=0x0700010b
+microcode: Microcode Update Driver: v2.2.
+microcode: CPU2: new patch_level=0x0700010f
+microcode: CPU0: new patch_level=0x0700010f
+microcode: CPU1: new patch_level=0x0700010f
+microcode: CPU3: new patch_level=0x0700010f
+x86/CPU: CPU features have changed after loading microcode, but might not take effect.
+</pre>
+<h2><span class="mw-headline" id="Which_CPUs_accept_microcode_updates">Which CPUs accept microcode updates</span></h2>
+<p>Users may consult either Intel own website or Gentoo's wiki on AMD at the following links to see if a particular model is supported:
+</p>
+<ul>
+<li>
+<a href="https://wiki.gentoo.org/wiki/AMD_microcode#Specific_firmware_only" class="extiw" title="gentoo:AMD microcode">Gentoo:AMD microcode#Specific firmware only</a>.</li>
+<li>
+<a rel="nofollow" class="external text" href="https://downloadcenter.intel.com/SearchResult.aspx?lang=eng&amp;keyword=processor%20microcode%20data%20file">Intel's download center</a><sup title="Last check status: 404">[<a href="https://en.wikipedia.org/wiki/Wikipedia:Link_rot" class="extiw" title="wikipedia:Wikipedia:Link rot">dead link</a> 2023-07-30 ⓘ]</sup>.</li>
+</ul>
+<h3><span class="mw-headline" id="Detecting_available_microcode_update">Detecting available microcode update</span></h3>
+<p>It is possible to find out if the <code>intel-ucode.img</code> contains a microcode image for the running CPU with <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=iucode-tool">iucode-tool</a></span>.
+</p>
+<ol>
+<li>
+<a href="../en/Help:Reading.html#Installation_of_packages" class="mw-redirect" title="Install">Install</a> <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=intel-ucode">intel-ucode</a></span> (changing initrd is not required for detection)</li>
+<li>
+<a href="../en/Help:Reading.html#Installation_of_packages" class="mw-redirect" title="Install">Install</a> <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=iucode-tool">iucode-tool</a></span>
+</li>
+<li>Load the <code>cpuid</code> kernel module: <pre># modprobe cpuid</pre>
+</li>
+<li>Extract microcode image and search it for your cpuid:<br><pre># bsdtar -Oxf /boot/intel-ucode.img | iucode_tool -tb -lS -</pre>
+</li>
+<li>If an update is available, it should show up below <i>selected microcodes</i>
+</li>
+<li>The microcode might already be in your vendor bios and not show up loading in <i>dmesg</i>. Compare to the current microcode running <code>grep microcode /proc/cpuinfo</code>
+</li>
+</ol>
+<h2><span class="mw-headline" id="See_also">See also</span></h2>
+<ul>
+<li><a rel="nofollow" class="external text" href="https://flossexperiences.wordpress.com/2013/11/17/updating-microcodes/">Updating microcodes – Experiences in the community</a></li>
+<li><a rel="nofollow" class="external text" href="http://inertiawar.com/microcode/">Notes on Intel Microcode updates – Ben Hawkes</a></li>
+<li><a rel="nofollow" class="external text" href="https://docs.kernel.org/arch/x86/microcode.html">Kernel microcode loader – kernel documentation</a></li>
+<li><a rel="nofollow" class="external text" href="https://www.anandtech.com/show/8376/intel-disables-tsx-instructions-erratum-found-in-haswell-haswelleep-broadwelly">Erratum found in Haswell/Broadwell – AnandTech</a></li>
+<li><a rel="nofollow" class="external text" href="https://gitlab.com/iucode-tool/iucode-tool">iucode-tool GitLab project</a></li>
+<li><a rel="nofollow" class="external text" href="https://github.com/platomav/CPUMicrocodes">Intel, AMD, VIA &amp; Freescale CPU Microcode Repositories</a></li>
+<li><a rel="nofollow" class="external text" href="http://users.atw.hu/instlatx64/">CPUID dumps</a></li>
+</ul>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface">
+<div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../Special:Categories.html" title="Special:Categories">Categories</a>: <ul>
+<li><a href="../en/Category:CPU.html" title="Category:CPU">CPU</a></li>
+<li><a href="../en/Category:Security.html" title="Category:Security">Security</a></li>
+</ul>
+</div>
+<div id="mw-hidden-catlinks" class="mw-hidden-catlinks mw-hidden-cats-hidden">Hidden categories: <ul>
+<li><a href="../en/Category:Pages_or_sections_flagged_with_Template:Expansion.html" title="Category:Pages or sections flagged with Template:Expansion">Pages or sections flagged with Template:Expansion</a></li>
+<li><a href="../en/Category:Pages_with_dead_links.html" title="Category:Pages with dead links">Pages with dead links</a></li>
+</ul>
+</div>
+</div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=Microcode&amp;oldid=786016">https://wiki.archlinux.org/index.php?title=Microcode&amp;oldid=786016</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 23 August 2023, at 14:24.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

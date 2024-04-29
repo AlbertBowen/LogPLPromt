@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>Yabsnap - ArchWiki</title>
+<link rel="stylesheet" href="../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Yabsnap rootpage-Yabsnap skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Installation" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Installation">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Installation</div>
+			</a>
+			
+			<ul id="toc-Installation-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Configuration" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Configuration">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Configuration</div>
+			</a>
+			
+			<ul id="toc-Configuration-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Main_commands" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Main_commands">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>Main commands</div>
+			</a>
+			
+				<button aria-controls="toc-Main_commands-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Main commands subsection
+				</button>
+			
+			<ul id="toc-Main_commands-sublist" class="sidebar-toc-list">
+				<li id="toc-Viewing_snapshots" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Viewing_snapshots">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.1</span>Viewing snapshots</div>
+			</a>
+			
+			<ul id="toc-Viewing_snapshots-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Creating_snapshots" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Creating_snapshots">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.2</span>Creating snapshots</div>
+			</a>
+			
+			<ul id="toc-Creating_snapshots-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Cleaning_up_or_deleting_snapshots" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Cleaning_up_or_deleting_snapshots">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4</span>Cleaning up or deleting snapshots</div>
+			</a>
+			
+				<button aria-controls="toc-Cleaning_up_or_deleting_snapshots-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Cleaning up or deleting snapshots subsection
+				</button>
+			
+			<ul id="toc-Cleaning_up_or_deleting_snapshots-sublist" class="sidebar-toc-list">
+				<li id="toc-Automatic_cleanups" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Automatic_cleanups">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.1</span>Automatic cleanups</div>
+			</a>
+			
+			<ul id="toc-Automatic_cleanups-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Deleting_snapshots" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Deleting_snapshots">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.2</span>Deleting snapshots</div>
+			</a>
+			
+			<ul id="toc-Deleting_snapshots-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Creating_a_rollback" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Creating_a_rollback">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5</span>Creating a rollback</div>
+			</a>
+			
+				<button aria-controls="toc-Creating_a_rollback-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Creating a rollback subsection
+				</button>
+			
+			<ul id="toc-Creating_a_rollback-sublist" class="sidebar-toc-list">
+				<li id="toc-Rollback_requirement:_Mount_by_subvol_and_not_subvolid" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Rollback_requirement:_Mount_by_subvol_and_not_subvolid">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5.1</span>Rollback requirement: Mount by subvol and not subvolid</div>
+			</a>
+			
+			<ul id="toc-Rollback_requirement:_Mount_by_subvol_and_not_subvolid-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Rollback_operation" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Rollback_operation">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5.2</span>Rollback operation</div>
+			</a>
+			
+			<ul id="toc-Rollback_operation-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Comparison_with_Snapper" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Comparison_with_Snapper">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6</span>Comparison with Snapper</div>
+			</a>
+			
+			<ul id="toc-Comparison_with_Snapper-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-See_also" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#See_also">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">7</span>See also</div>
+			</a>
+			
+			<ul id="toc-See_also-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../en/Yabsnap.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="new mw-list-item"><a href="/index.php?title=Talk:Yabsnap&amp;action=edit&amp;redlink=1" rel="discussion" title="Discussion about the content page (page does not exist) [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">English</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../en/Yabsnap.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=Yabsnap&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=Yabsnap&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../en/Yabsnap.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Yabsnap&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Yabsnap&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output">
+<div class="archwiki-template-meta-related-articles-start">
+<p class="mw-no-invert">Related articles</p>
+<ul>
+<li><a href="../en/Btrfs.html" title="Btrfs">Btrfs</a></li>
+<li><a href="../en/Snapper.html" title="Snapper">Snapper</a></li>
+</ul>
+</div>
+<p><a rel="nofollow" class="external text" href="https://github.com/hirak99/yabsnap">Yabsnap</a> is a scheduled snapshot manager for <a href="../en/Btrfs.html" title="Btrfs">Btrfs</a> partitions written for Arch.
+</p>
+<mw:tocplace></mw:tocplace>
+<h2><span class="mw-headline" id="Installation">Installation</span></h2>
+<p><a href="../en/Help:Reading.html#Installation_of_packages" class="mw-redirect" title="Install">Install</a> the <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/yabsnap/">yabsnap</a></span><sup><small>AUR</small></sup> package, the development version can be installed from <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/yabsnap-git/">yabsnap-git</a></span><sup><small>AUR</small></sup>.
+</p>
+<h2><span class="mw-headline" id="Configuration">Configuration</span></h2>
+<p>Run the following to create a skeleton config: 
+</p>
+<pre># yabsnap create-config 'configname'
+</pre>
+<p>This will create <code>/etc/yabsnap/configs/confignane.conf</code>. Edit the file to specify the following: 
+</p>
+<ul>
+<li>
+<code>source</code> - The location where a subvolume is mounted. E.g. <code>/home</code>.</li>
+<li>
+<code>dest_prefix</code> - The full path and prefix for the snapshot names to be created. E.g. <code>/.snapshot/@home-</code> will create files snapshot backups such as <code>/.snapshot/@home-20230525120000</code>.</li>
+</ul>
+<p>You can also edit other parameters to specify when backups will be triggered and cleaned up.
+</p>
+<h2><span class="mw-headline" id="Main_commands">Main commands</span></h2>
+<h3><span class="mw-headline" id="Viewing_snapshots">Viewing snapshots</span></h3>
+<p>To review existing snapshots, use: 
+</p>
+<pre>$ yabsnap list
+</pre>
+<h3><span class="mw-headline" id="Creating_snapshots">Creating snapshots</span></h3>
+<p>To create snapshots for all configs, use: 
+</p>
+<pre># yabsnap create --comment 'COMMENT'
+</pre>
+<p>You can also restrict to a specific mounted subvolume. Yabsnap will automatically find the right config for it and use it: 
+</p>
+<pre># yabsnap --source '/home' create --comment 'COMMENT'
+</pre>
+<h2><span class="mw-headline" id="Cleaning_up_or_deleting_snapshots">Cleaning up or deleting snapshots</span></h2>
+<h3><span class="mw-headline" id="Automatic_cleanups">Automatic cleanups</span></h3>
+<p>Yabsnap will automatically delete snapshots based on the configurations in <code>/etc/yabsnap/configs/*.conf</code>.
+</p>
+<h3><span class="mw-headline" id="Deleting_snapshots">Deleting snapshots</span></h3>
+<p>You can also manually remove snapshots, with the following commands: 
+</p>
+<p>Specifying full path deletes a specific snapshot: 
+</p>
+<pre># yabsnap delete /.snapshots/@home-20230525120000
+</pre>
+<p>Specifying a timestamp deletes all matching snapshots that were taken together: 
+</p>
+<pre># yabsnap delete 20230525120000
+</pre>
+<h2><span class="mw-headline" id="Creating_a_rollback">Creating a rollback</span></h2>
+<h3><span class="mw-headline" id="Rollback_requirement:_Mount_by_subvol_and_not_subvolid">Rollback requirement: Mount by subvol and not subvolid</span></h3>
+<p>It is recommended that you mount all the volumes with subvol instead of subvolid.
+</p>
+<p>For example, this can be your <a href="../en/Fstab.html" title="Fstab">fstab</a> entry: 
+</p>
+<pre>UUID=[YOUR_UUID] / btrfs rw,noatime,ssd,space_cache=v2,compress=zstd,subvol=/@ 0 0
+</pre>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> The notation used is <code>subvol=/@</code>. <b>Do not</b> use <code>subvolid=</code>.</div>
+<p>The reason this works is because rollback mechanism will not edit your fstab file, it will simply ensure that the correct snapshots are mounted in the respective locations.
+</p>
+<h3><span class="mw-headline" id="Rollback_operation">Rollback operation</span></h3>
+<p>The command for rollback is safe, until you execute the script it generates.
+</p>
+<p>This generates a rollback script: 
+</p>
+<p>Change the timestamp to one of your existing snapshots: 
+</p>
+<pre>$ yabsnap rollback-gen 20230525081049 | tee ~/rollback.sh
+</pre>
+<p>Executing the script will actually cause the rollback to happen. It is recommended that you review the generated lines before rolling back.
+</p>
+<p>Once you have reviewed the generated script for your rollback, you can then make it <a href="../en/Help:Reading.html#Make_executable" class="mw-redirect" title="Executable">executable</a> then run it: 
+</p>
+<pre># ~/rollback.sh
+</pre>
+<p>This will perform a rollback of all snapshots that were taken at the specified timestamp.
+</p>
+<h2><span class="mw-headline" id="Comparison_with_Snapper">Comparison with Snapper</span></h2>
+<p>It was created to overcome some of the shortcomings of <a href="../en/Snapper.html" title="Snapper">Snapper</a>, specifically it does the following which are difficult or impossible to do in Snapper (as of writing): 
+</p>
+<ul>
+<li>custom destinations for backup <a rel="nofollow" class="external text" href="https://github.com/openSUSE/snapper/issues/54">(related issue)</a>,</li>
+<li>rollback for all configs (not just the default subvolume),</li>
+<li>has integrated <a href="../en/Pacman.html#Hooks" class="mw-redirect" title="Pacman hook">pacman hook</a> support.</li>
+</ul>
+<h2><span class="mw-headline" id="See_also">See also</span></h2>
+<ul><li><a rel="nofollow" class="external text" href="https://github.com/hirak99/yabsnap">Yabsnap github page</a></li></ul>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="../en/Category:File_systems.html" title="Category:File systems">File systems</a></li></ul>
+</div></div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=Yabsnap&amp;oldid=780366">https://wiki.archlinux.org/index.php?title=Yabsnap&amp;oldid=780366</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 5 June 2023, at 11:22.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

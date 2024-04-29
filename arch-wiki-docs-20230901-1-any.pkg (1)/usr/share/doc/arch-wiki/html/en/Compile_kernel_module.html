@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>Compile kernel module - ArchWiki</title>
+<link rel="stylesheet" href="../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Compile_kernel_module rootpage-Compile_kernel_module skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Build_environment" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Build_environment">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Build environment</div>
+			</a>
+			
+				<button aria-controls="toc-Build_environment-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Build environment subsection
+				</button>
+			
+			<ul id="toc-Build_environment-sublist" class="sidebar-toc-list">
+				<li id="toc-Traditional_compilation" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Traditional_compilation">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.1</span>Traditional compilation</div>
+			</a>
+			
+			<ul id="toc-Traditional_compilation-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Arch_Build_System" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Arch_Build_System">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.2</span>Arch Build System</div>
+			</a>
+			
+			<ul id="toc-Arch_Build_System-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Source_configuration" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Source_configuration">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Source configuration</div>
+			</a>
+			
+			<ul id="toc-Source_configuration-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Module_compilation" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Module_compilation">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>Module compilation</div>
+			</a>
+			
+			<ul id="toc-Module_compilation-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-out-of-tree_module_compilation" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#out-of-tree_module_compilation">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4</span>out-of-tree module compilation</div>
+			</a>
+			
+			<ul id="toc-out-of-tree_module_compilation-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Module_installation" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Module_installation">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5</span>Module installation</div>
+			</a>
+			
+			<ul id="toc-Module_installation-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-possible_errors" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#possible_errors">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6</span>possible errors</div>
+			</a>
+			
+			<ul id="toc-possible_errors-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-See_also" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#See_also">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">7</span>See also</div>
+			</a>
+			
+			<ul id="toc-See_also-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../en/Compile_kernel_module.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="mw-list-item"><a href="../en/Talk:Compile_kernel_module.html" rel="discussion" title="Discussion about the content page [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">English</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../en/Compile_kernel_module.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=Compile_kernel_module&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=Compile_kernel_module&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../en/Compile_kernel_module.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Compile_kernel_module&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Compile_kernel_module&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output">
+<div class="archwiki-template-meta-related-articles-start">
+<p class="mw-no-invert">Related articles</p>
+<ul>
+<li><a href="../en/Kernel.html" title="Kernel">Kernel</a></li>
+<li><a href="../en/Kernel_module.html" class="mw-redirect" title="Kernel modules">Kernel modules</a></li>
+<li><a href="../en/Dynamic_Kernel_Module_Support.html" title="Dynamic Kernel Module Support">Dynamic Kernel Module Support</a></li>
+</ul>
+</div>
+<p>Sometimes you may wish to compile Linux's <a href="../en/Kernel_module.html" title="Kernel module">Kernel module</a> without recompiling the whole kernel.
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> You can only replace existing module if it is compiled as module (M) and not builtin (y) into kernel.</div>
+<mw:tocplace></mw:tocplace>
+<h2><span class="mw-headline" id="Build_environment">Build environment</span></h2>
+<p>Firstly you will need to install build dependencies such as a compiler (<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=base-devel">base-devel</a></span>) and <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=linux-headers">linux-headers</a></span>.
+</p>
+<p>Next you will need to get the source code for the kernel version the module is intended to run on. You may try using newer kernel sources but most likely the compiled module will not load.
+</p>
+<p>In case the intended kernel version is the installed kernel, find its version with
+</p>
+<pre>$ uname -r
+</pre>
+<p>There are two main options to acquire the required source. Each option has slightly different usage methods and directory structure.
+</p>
+<h3><span class="mw-headline" id="Traditional_compilation">Traditional compilation</span></h3>
+<p>See <a href="../en/Kernel/Traditional_compilation.html#Download_the_kernel_source" title="Kernel/Traditional compilation">Kernel/Traditional compilation#Download the kernel source</a>. If you fetch latest source using <a href="../en/Git.html" title="Git">Git</a> you will need to checkout needed version using tag (eg. v4.1).
+</p>
+<h3><span class="mw-headline" id="Arch_Build_System">Arch Build System</span></h3>
+<p>For a general overview on Arch Build System read <a href="../en/Arch_build_system.html" class="mw-redirect" title="ABS">ABS</a>. See <a href="../en/Kernel/Arch_build_system.html" title="Kernel/Arch build system">Kernel/Arch build system</a> for acquiring the kernel source, as well as the directory structure, and other details.
+</p>
+<h2><span class="mw-headline" id="Source_configuration">Source configuration</span></h2>
+<p>When you have the source code, enter its directory. For the <a href="#Arch_Build_System">#Arch Build System</a> case, that directory would be <code>src/archlinux-linux/</code> down from where the PKGBUILD is.
+</p>
+<p>The output from <code>make help</code> is beneficial here. Start by cleaning with 
+</p>
+<pre>$ make mrproper
+</pre>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> it will delete both <code>.config</code> and <code>.config.old</code>. You might want to save those files some where else before cleaning.</div>
+<p>An appropriate <code>.config</code> file is now required. If none is nearby, perhaps from a saved <code>.config</code>, and the intended kernel version is the running kernel, you can use its configuration file: 
+</p>
+<pre>$ zcat /proc/config.gz &gt; .config
+</pre>
+<p>Next ensure the <code>.config</code> file is adjusted for the kernel version. If you are using kernel sources for the exact current version then it should not ask anything. But for another version than the current kernel you might be asked about some options. In any case, for the <a href="#Arch_Build_System">#Arch Build System</a> option, you might want to examine the <code>PKGBUILD::prepare()</code> function. 
+</p>
+<p>If the module you want to compile have some compilation options such as debug build, or it was not compiled before, you can also, possibly must, adjust the kernel configuration. You can do this with one of the many configuration targets mentioned by make help.
+</p>
+<pre>$ make oldconfig
+</pre>
+<h2><span class="mw-headline" id="Module_compilation">Module compilation</span></h2>
+<p>In order to compile and load our module cleanly, we must find the value of the EXTRAVERSION component of the current kernel version number so we can match the version number exactly in our kernel source. EXTRAVERSION is a variable set in the kernel top-level Makefile, but the Makefile in a vanilla kernel source will have EXTRAVERSION empty; it is set only as part of the Arch kernel build process. If relevant, the value of the current kernel's EXTRAVERSION can be found by looking at the output of the <code>uname -r</code> command. In general, the kernel version is the concatenation of three components. Namely, the numeric version, the EXTRAVERSION, and the LOCALVERSION. The numeric version itself is a concatenation of three numbers. If built by a <a href="../en/PKGBUILD.html" title="PKGBUILD">PKGBUILD</a> file, the LOCALVERSION will be taken from the <code>pkgrel</code> variable, prefixed by a hyphen. And the EXTRAVERSION will be the suffix of the <code>pkgver</code> variable, where the period character to the right of the third numeric number of the numeric version is replaced by a hyphen. For example, with the linux package <code>linux 5.5.8.arch1-1</code>, the LOCALVERSION is <code>-1</code>. The EXTRAVERSION is <code>-arch1</code>. The output of <code>uname -r</code> will be <code>5.5.8-arch1-1</code> in that example.
+</p>
+<p>Once the EXTRAVERSION value is known, we prepare the source for module compilation:
+</p>
+<pre>$ make EXTRAVERSION=&lt;YOUR EXTRAVERSION HERE&gt; modules_prepare
+</pre>
+<p>Example:
+</p>
+<pre>$ make EXTRAVERSION=-arch1 modules_prepare
+</pre>
+<p>Alternatively, if you are happy to load modules with <i>modprobe</i> using the <code>--force-vermagic</code> option to ignore mismatches in the kernel version number, you can simply run:
+</p>
+<pre>$ make modules_prepare
+</pre>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> Using the EXTRAVERSION that is recorded in the top level Makefile to avoid manually specifying the EXTRAVERSION on the command line could cause a version mismatch. The kernel build process would recognize that, causing it to append a <code>+</code> character to the LOCALVERSION configuration setting. For example: <code>5.5.8-arch1-1+</code>.</div>
+<p>Finally, compile wanted module by specifying its directory name. You can find the module location, thus also its directory name, with <i>modinfo</i> or <i>find</i>.
+</p>
+<pre>$ make M=fs/btrfs
+</pre>
+<p>As a last resort, if nothing else has worked, you can
+</p>
+<pre>$ make modules
+</pre>
+<p>Which will build all the modules from the kernel configuration.
+</p>
+<h2><span class="mw-headline" id="out-of-tree_module_compilation">out-of-tree module compilation</span></h2>
+<p>get the official source code of the current running linux kernel as described in <a href="../en/Kernel/Arch_build_system.html" title="Kernel/Arch build system">Kernel/Arch build system</a>:
+</p>
+<pre>$ cd &amp;&amp; mkdir build
+$ pkgctl repo clone linux
+</pre>
+<p>then point to the checked out source when compiling the module:
+</p>
+<pre>$ cd build/mymod
+$ make -C ~/build/linux/src/archlinux-linux M=$PWD modules
+</pre>
+<h2><span class="mw-headline" id="Module_installation">Module installation</span></h2>
+<p>Now after successful compilation you just need to gzip and copy it over for your current kernel. 
+</p>
+<p>If you are replacing some existing module you will need to overwrite it (and remember that reinstalling <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=linux">linux</a></span> will replace it with default module)
+</p>
+<pre>$ zstd fs/btrfs/btrfs.ko
+# cp -f fs/btrfs/btrfs.ko.zst /usr/lib/modules/$(uname -r)/kernel/fs/btrfs/
+</pre>
+<p>Or alternatively, you can place the updated module in the updates folder (create it if it does not already exist). 
+</p>
+<pre>$ cp fs/btrfs/btrfs.ko.zst /usr/lib/modules/$(uname -r)/updates
+</pre>
+<p>However if you are adding a new module you can just copy it to extramodules (note, this is just example as btrfs will not get loaded from here)
+</p>
+<pre># cp fs/btrfs/btrfs.ko.zst /usr/lib/modules/$(uname -r)/extramodules/
+</pre>
+<p>You need to rebuild the module dependency tree with "depmod" to use installed modules.
+</p>
+<p>If you are compiling a module for early boot (e.g. updated module) which is copied to <a href="../en/Arch_boot_process.html#initramfs" class="mw-redirect" title="Initramfs">Initramfs</a> then you must remember to regenerate it with (otherwise your compiled module will not be loaded). 
+</p>
+<pre># mkinitcpio -p linux
+</pre>
+<h2><span class="mw-headline" id="possible_errors">possible errors</span></h2>
+<p>If EXTRAVERSION is not set correctly the following errors may occur
+</p>
+<pre># insmod mymod.ko
+insmod: ERROR: could not insert module mymod.ko: Invalid module format
+# modprobe mymod
+modprobe: ERROR: could not insert 'mymod': Exec format error
+</pre>
+<p>adding force-vermagic makes it ignore the version mismatch
+</p>
+<pre>modprobe mymod --force-vermagic
+</pre>
+<h2><span class="mw-headline" id="See_also">See also</span></h2>
+<ul>
+<li><a rel="nofollow" class="external text" href="https://kernelnewbies.org/">Linux Kernel Newbies</a></li>
+<li><a rel="nofollow" class="external text" href="https://www.tldp.org/LDP/lkmpg/2.6/html/">The Linux Kernel Module Programming Guide</a></li>
+</ul>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="../en/Category:Kernel.html" title="Category:Kernel">Kernel</a></li></ul>
+</div></div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=Compile_kernel_module&amp;oldid=784908">https://wiki.archlinux.org/index.php?title=Compile_kernel_module&amp;oldid=784908</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 10 August 2023, at 06:20.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

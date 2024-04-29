@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>Bcachefs - ArchWiki</title>
+<link rel="stylesheet" href="../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Bcachefs rootpage-Bcachefs skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Installation" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Installation">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Installation</div>
+			</a>
+			
+			<ul id="toc-Installation-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Setup" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Setup">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Setup</div>
+			</a>
+			
+				<button aria-controls="toc-Setup-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Setup subsection
+				</button>
+			
+			<ul id="toc-Setup-sublist" class="sidebar-toc-list">
+				<li id="toc-Single_drive" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Single_drive">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.1</span>Single drive</div>
+			</a>
+			
+			<ul id="toc-Single_drive-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Multiple_drives" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Multiple_drives">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.2</span>Multiple drives</div>
+			</a>
+			
+			<ul id="toc-Multiple_drives-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-SSD_caching" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#SSD_caching">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.3</span>SSD caching</div>
+			</a>
+			
+			<ul id="toc-SSD_caching-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Configuration" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Configuration">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>Configuration</div>
+			</a>
+			
+				<button aria-controls="toc-Configuration-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Configuration subsection
+				</button>
+			
+			<ul id="toc-Configuration-sublist" class="sidebar-toc-list">
+				<li id="toc-Changing_a_device's_group" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Changing_a_device's_group">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.1</span>Changing a device's group</div>
+			</a>
+			
+			<ul id="toc-Changing_a_device's_group-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Adding_a_device" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Adding_a_device">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.2</span>Adding a device</div>
+			</a>
+			
+			<ul id="toc-Adding_a_device-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Removing_a_device" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Removing_a_device">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.3</span>Removing a device</div>
+			</a>
+			
+			<ul id="toc-Removing_a_device-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Tips_and_tricks" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Tips_and_tricks">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4</span>Tips and tricks</div>
+			</a>
+			
+			<ul id="toc-Tips_and_tricks-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-See_also" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#See_also">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5</span>See also</div>
+			</a>
+			
+			<ul id="toc-See_also-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../en/Bcachefs.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="mw-list-item"><a href="../en/Talk:Bcachefs.html" rel="discussion" title="Discussion about the content page [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">English</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../en/Bcachefs.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=Bcachefs&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=Bcachefs&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../en/Bcachefs.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Bcachefs&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Bcachefs&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output">
+<p><a rel="nofollow" class="external text" href="https://bcachefs.org/">Bcachefs</a> is a next-generation CoW filesystem that aims to provide features from <a href="../en/Btrfs.html" title="Btrfs">Btrfs</a> and <a href="../en/ZFS.html" title="ZFS">ZFS</a> with a cleaner codebase, more stability, greater speed and a GPL-compatible license.
+</p>
+<p>It is built upon <a href="../en/Bcache.html" title="Bcache">Bcache</a> and is mainly developed by Kent Overstreet.
+</p>
+<mw:tocplace></mw:tocplace>
+<h2><span class="mw-headline" id="Installation">Installation</span></h2>
+<p>Bcachefs is not in the upstream <a href="../en/Kernel.html" title="Kernel">Kernel</a> yet but the <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/linux-bcachefs-git/">linux-bcachefs-git</a></span><sup><small>AUR</small></sup> kernel can be <a href="../en/Help:Reading.html#Installation_of_packages" class="mw-redirect" title="Install">installed</a>.
+</p>
+<p>The Bcachefs userspace tools are available from <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/bcachefs-tools-git/">bcachefs-tools-git</a></span><sup><small>AUR</small></sup>.
+</p>
+<h2><span class="mw-headline" id="Setup">Setup</span></h2>
+<h3><span class="mw-headline" id="Single_drive">Single drive</span></h3>
+<pre># bcachefs format /dev/sda
+# mount -t bcachefs /dev/sda /mnt
+</pre>
+<h3><span class="mw-headline" id="Multiple_drives">Multiple drives</span></h3>
+<p>Bcachefs stripes data by default, similar to RAID0. Redundancy is handled via the <b>replicas</b> option. 2 drives with <code>--replicas=2</code> is equivalent to RAID1, 4 drives with <code>--replicas=2</code> is equivalent to RAID10, etc.
+</p>
+<pre># bcachefs format /dev/sda /dev/sdb --replicas=<i>n</i>
+# mount -t bcachefs /dev/sda:/dev/sdb /mnt
+</pre>
+<p>Heterogeneous drives are supported. If they are different sizes, larger stripes will be used on some, so that they all fill up at the same rate. If they are different speeds, reads for replicated data will be sent to the ones with the lowest IO latency. If some are more reliable than others (a hardware raid device, for example) you can set <code>--durability=2 <i>device</i></code> to count each copy of data on that device as 2 replicas.
+</p>
+<h3><span class="mw-headline" id="SSD_caching">SSD caching</span></h3>
+<p>Bcachefs has 3 storage targets: background, foreground, and promote. Writes to the filesystem prioritize the foreground drives, which are then moved to the background over time. Reads are cached on the promote drives.
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> These are only priority guidelines for a single large pool. Writes will go directly to the background if the foreground is full, or to promote if they both are. Metadata will prefer the foreground, but can be written to any of them. Be careful when removing a cache drive, as it may still contain data. see <a href="#Removing_a_device">#Removing a device</a>
+</div>
+<p>A recommended configuration is to use an ssd group for the foreground and promote, and an hdd group for the background (a writeback cache).
+</p>
+<pre># bcachefs format \
+    --label=ssd.ssd1 /dev/sda \
+    --label=ssd.ssd2 /dev/sdb \
+    --label=hdd.hdd1 /dev/sdc \
+    --label=hdd.hdd2 /dev/sdd \
+    --label=hdd.hdd3 /dev/sde \
+    --label=hdd.hdd4 /dev/sdf \
+    --replicas=2 \
+    --foreground_target=ssd \
+    --promote_target=ssd \
+    --background_target=hdd
+# mount -t bcachefs /dev/sda:/dev/sdb:/dev/sdc:/dev/sdd:/dev/sde:/dev/sdf /mnt
+</pre>
+<p>For a writethrough cache, do the same as above, but set <code>--durability=0 <i>device</i></code> on each of the ssd devices.
+For a writearound cache, foreground target to the hdd group, and promote target to the ssd group.
+</p>
+<h2><span class="mw-headline" id="Configuration">Configuration</span></h2>
+<div class="noprint archwiki-template-message">
+<p><a href="../File:Tango-view-fullscreen.png" class="image"><img alt="Tango-view-fullscreen.png" src="../File:Tango-view-fullscreen.png" decoding="async" width="48" height="48"></a><b>This article or section needs expansion.</b><a href="../File:Tango-view-fullscreen.png" class="image"><img alt="Tango-view-fullscreen.png" src="../File:Tango-view-fullscreen.png" decoding="async" width="48" height="48"></a></p>
+<div>
+<b>Reason:</b> Missing details on which options should be used (Discuss in <a rel="nofollow" class="external text" href="https://wiki.archlinux.org/title/Talk:Bcachefs">Talk:Bcachefs</a>)</div>
+</div>
+<p>Most options can be set at either during <code>bcachefs format</code>, at mount time (<code>mount -o option=value</code>), or through sysfs (<code>echo X &gt; /sys/fs/bcachefs/<i>UUID</i>/options/<i>option</i></code>). Setting the option during format or changing it through sysfs saves it in the filesystem's superblock, making it the default for those drives. Mount options override those defaults.
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> The filesystem must be mounted for sysfs to be available. All operations except fsck are possible on a live filesystem.</div>
+<ul>
+<li>data_checksum, metadata_checksum (none, crc32c, crc64)</li>
+<li>(foreground) compression, background_compression (none, lz4, gzip, zstd)</li>
+<li>foreground_target, background_target, promote_target</li>
+</ul>
+<p>The following can also be set on a per directory or per file basis with <code>bcachefs setattr <i>file</i> --option=value</code>
+</p>
+<ul>
+<li>data_replicas</li>
+<li>data_checksum</li>
+<li>compression, background_compression</li>
+<li>foreground_target, background_target, promote_target</li>
+</ul>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> Disk usage reporting currently shows uncompressed size. Compression is otherwise complete.</div>
+<h3>
+<span id="Changing_a_device.27s_group"></span><span class="mw-headline" id="Changing_a_device's_group">Changing a device's group</span>
+</h3>
+<pre># echo <i>group.drive_name</i> &gt; /sys/fs/bcachefs/<i>filesystem_uuid</i>/dev-<i>X</i>/label
+</pre>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> This requires a remount to take effect.</div>
+<h3><span class="mw-headline" id="Adding_a_device">Adding a device</span></h3>
+<pre># bcachefs device add --label=<i>group.drive_name</i> /mnt /dev/<i>device</i>
+</pre>
+<p>If this is the first drive in a group, you will need to change the target settings to make use of it. This example is for adding a cache drive.
+</p>
+<pre># echo <i>new_group</i> &gt; /sys/fs/bcachefs/<i>filesystem_uuid</i>/options/promote_target
+# echo <i>new_group</i> &gt; /sys/fs/bcachefs/<i>filesystem_uuid</i>/options/foreground_target
+# echo <i>old_group</i> &gt; /sys/fs/bcachefs/<i>filesystem_uuid</i>/options/background_target
+</pre>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> Only new writes will be striped across added devices. Existing ones will be unchanged until disk usage reaches a certain threshold, when the disk rebalance is triggered. It is not currently possible to manually trigger a rebalance/restripe.</div>
+<h3><span class="mw-headline" id="Removing_a_device">Removing a device</span></h3>
+<p>First make sure there are at least 2 metadata replicas (Evacuate does not appear to work for metadata). If your data and metadata are already replicated, you may skip this step.
+</p>
+<pre># echo 2 &gt; /sys/fs/bcachefs/<i>UUID</i>/options/metadata_replicas
+# bcachefs data rereplicate /mnt
+# bcachefs device set-state <i>device</i> readonly
+# bcachefs device evacuate <i>device</i>
+</pre>
+<p>To remove the device:
+</p>
+<pre># bcachefs device remove <i>device</i>
+# bcachefs data rereplicate /mnt
+</pre>
+<h2><span class="mw-headline" id="Tips_and_tricks">Tips and tricks</span></h2>
+<div class="noprint archwiki-template-message">
+<p><a href="../File:Tango-view-fullscreen.png" class="image"><img alt="Tango-view-fullscreen.png" src="../File:Tango-view-fullscreen.png" decoding="async" width="48" height="48"></a><b>This article or section needs expansion.</b><a href="../File:Tango-view-fullscreen.png" class="image"><img alt="Tango-view-fullscreen.png" src="../File:Tango-view-fullscreen.png" decoding="async" width="48" height="48"></a></p>
+<div>
+<b>Reason:</b> Information on auto-mounting would be useful (Discuss in <a rel="nofollow" class="external text" href="https://wiki.archlinux.org/title/Talk:Bcachefs">Talk:Bcachefs</a>)</div>
+</div>
+<p>Check the <a href="../en/Systemd/Journal.html" class="mw-redirect" title="Journal">journal</a> for more useful error messages.
+</p>
+<h2><span class="mw-headline" id="See_also">See also</span></h2>
+<ul>
+<li><a rel="nofollow" class="external text" href="https://bcachefs.org/bcachefs-principles-of-operation.pdf">Official Manual</a></li>
+<li><a rel="nofollow" class="external text" href="https://www.patreon.com/bcachefs">Kent Overstreet's Patreon page</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Bcachefs" class="extiw" title="wikipedia:Bcachefs">Wikipedia:Bcachefs</a></li>
+</ul>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface">
+<div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="../en/Category:File_systems.html" title="Category:File systems">File systems</a></li></ul>
+</div>
+<div id="mw-hidden-catlinks" class="mw-hidden-catlinks mw-hidden-cats-hidden">Hidden category: <ul><li><a href="../en/Category:Pages_or_sections_flagged_with_Template:Expansion.html" title="Category:Pages or sections flagged with Template:Expansion">Pages or sections flagged with Template:Expansion</a></li></ul>
+</div>
+</div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=Bcachefs&amp;oldid=779025">https://wiki.archlinux.org/index.php?title=Bcachefs&amp;oldid=779025</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 20 May 2023, at 20:28.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

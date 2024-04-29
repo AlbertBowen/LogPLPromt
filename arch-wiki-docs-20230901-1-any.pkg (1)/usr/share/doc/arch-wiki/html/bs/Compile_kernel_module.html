@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>Compile kernel module (Bosanski) - ArchWiki</title>
+<link rel="stylesheet" href="../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Compile_kernel_module_Bosanski rootpage-Compile_kernel_module_Bosanski skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Build_okruženje" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Build_okru%C5%BEenje">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Build okruženje</div>
+			</a>
+			
+			<ul id="toc-Build_okruženje-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Source_konfiguracija" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Source_konfiguracija">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Source konfiguracija</div>
+			</a>
+			
+			<ul id="toc-Source_konfiguracija-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Kompajliranje_module" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Kompajliranje_module">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>Kompajliranje module</div>
+			</a>
+			
+			<ul id="toc-Kompajliranje_module-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-out-of-tree_kompajliranje_module" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#out-of-tree_kompajliranje_module">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4</span>out-of-tree kompajliranje module</div>
+			</a>
+			
+			<ul id="toc-out-of-tree_kompajliranje_module-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Instaliranje_module" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Instaliranje_module">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5</span>Instaliranje module</div>
+			</a>
+			
+			<ul id="toc-Instaliranje_module-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-mogući_errori" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#mogu%C4%87i_errori">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6</span>mogući errori</div>
+			</a>
+			
+			<ul id="toc-mogući_errori-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Vidi_i" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Vidi_i">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">7</span>Vidi i</div>
+			</a>
+			
+			<ul id="toc-Vidi_i-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../bs/Compile_kernel_module.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="new mw-list-item"><a href="/index.php?title=Talk:Compile_kernel_module_(Bosanski)&amp;action=edit&amp;redlink=1" rel="discussion" title="Discussion about the content page (page does not exist) [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">bosanski</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../bs/Compile_kernel_module.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=Compile_kernel_module_(Bosanski)&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=Compile_kernel_module_(Bosanski)&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../bs/Compile_kernel_module.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Compile_kernel_module_(Bosanski)&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Compile_kernel_module_(Bosanski)&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="bs" dir="ltr">
+<div class="mw-parser-output">
+<div class="archwiki-template-meta-related-articles-start">
+<p class="mw-no-invert">Related articles</p>
+<ul>
+<li><a href="../bs/Kernel.html" title="Kernel (Bosanski)">Kernel (Bosanski)</a></li>
+<li><a href="../en/Kernel_module.html" class="mw-redirect" title="Kernel modules">Kernel modules</a></li>
+</ul>
+</div>
+<p>Nekad možda poželiš kompajlirati Linux <a href="../en/Kernel_module.html" title="Kernel module">kernel modul</a> bez da rekompajliras cijeli kernel.
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> Možeš zamijeniti postojeći modul samo ukoliko je kompajliran kao modul(M) i nije builtin (y) u kernel.</div>
+<mw:tocplace></mw:tocplace>
+<h2>
+<span id="Build_okru.C5.BEenje"></span><span class="mw-headline" id="Build_okruženje">Build okruženje</span>
+</h2>
+<p>Prvo moraš instalirati potrebne build dependency-e poput kompajlera(<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=base-devel">base-devel</a></span>) i <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=linux-headers">linux-headers</a></span>.
+</p>
+<p>Sljedeće moraš preuzeti source code kernela kojeg koristiš. Možeš pokušati noviji kernel nego što koristiš ali su velike šanse da se module neće loadati.
+</p>
+<p>Pronađi kernel verziju sa
+</p>
+<pre>$ uname -r
+</pre>
+<p>Onda preuzmi potrebne source codove, vidi <a href="../en/Kernel/Traditional_compilation.html#Download_the_kernel_source" class="mw-redirect" title="Kernels/Traditional compilation">Kernels/Traditional compilation#Download the kernel source</a>. Ukoliko skineš zadnji source koristeći <a href="../en/Git.html" title="Git">Git</a>, potrebno je checkout potrebnu verziju koristeći tag (npr. v4.1).
+</p>
+<h2><span class="mw-headline" id="Source_konfiguracija">Source konfiguracija</span></h2>
+<p>Kada imaš source code, uđi u taj folder i clean ga sa (pobrisat će .config.old i promijeniti naziv .config u .config.old)
+</p>
+<pre>$ make mrproper
+</pre>
+<p>Zatim je potrebno kopirati .config trenutnog kernel u ovaj folder koristeći
+</p>
+<pre>$ cp /usr/lib/modules/$(uname -r)/build/.config ./
+$ cp /usr/lib/modules/$(uname -r)/build/Module.symvers ./
+</pre>
+<p>Zatim, pobrini se da je konfiguracija podešena za kernel source-ove (ako koristiš kernel source za tačnu verziju, onda ne bi trebalo ništa da pita, ali noviji source-ovi nego trenutni kernel mogu pitati za nove opcije)
+</p>
+<p>Također, ukoliko modul koji želiš da kompajliraš ima neke kompilacijske opcije poput debug build možeš ih podesiti sa bilo kojim alatom od make config/menuconfig/xconfig (vidi README)
+</p>
+<pre>$ make oldconfig
+</pre>
+<h2><span class="mw-headline" id="Kompajliranje_module">Kompajliranje module</span></h2>
+<p>Da bi se modul učitao propisno, morate naći tačnu verziju EXTRAVERSION komponente trenutne verzije kernela da biste mogli matchati tačne verzije u kernel source-u. EXTRAVERSION je variabla koja je smještena na vrhu Makefile, ali Makefile u vanilla kernelu će EXTRAVERSION biti prazna; podešena je u dijelu Arch kernel build procesa. Vrijednost EXTRAVERSION trenutnog kernela (obično <code>-1</code>) može se naći na jedan od dva načina:
+</p>
+<ol>
+<li>Na vrhu <code>/usr/lib/modules/$(uname -r)/build/Makefile</code> fajla</li>
+<li>Ukucaj <code>uname -r</code> i pogledaj između trećeg broja verzije i <code>-ARCH</code> (Arch specifično podešenje LOCALVERSION podešeno u .config fajlu). Npr, sa kernel verzijom <code>4.9.65-1-ARCH</code>, EXTRAVERSION je <code>-1</code>.</li>
+</ol>
+<p>Nakon što je EXTRAVERSION poznat, pripremimo source za kompajlirano modula:
+</p>
+<pre>$ make EXTRAVERSION=&lt;TVOJA EXTRAVERSION OVDJE&gt; modules_prepare
+</pre>
+<p>Primjer:
+</p>
+<pre>$ make EXTRAVERSION=-1 modules_prepare
+</pre>
+<p>Alternativno, ako sretni da učitate module sa modprobe koristeći <code>--force-vermagic</code> opciju da se ignoriše nepoklapanje u verziji kernela, možete jednostavno pokrenuti:
+</p>
+<pre>$make modules_prepare
+</pre>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> Iako Makefile na <code>/usr/lib/modules/$(uname -r)/build/Makefile</code> se može kopirati preko Makefile u kernel source da se izbjegne manuelna specifikacija EXTRAVERSION na cli, to može prouzrokovati da se dogodi nepoklapanje kernel verzije. Ako je kernel source dobijen koristeći version control alat, poput git-a, jednostavno kopiranje Makefile-a bi učinilo da working kopija bude dirty, koji će kernel build proces prepoznati, te će appendati <code>+</code> u LOCALVERSION konfiguracijsku varijablue. Npr. <code>4.9.65-1-ARCH+</code>.</div>
+<p>Na kraju, kompajlirajte željeni module time što navedete njegov folder. (Možete pronaći lokaciju modula koristeći modinfo ili find)
+</p>
+<pre>$ make M=fs/btrfs
+</pre>
+<h2><span class="mw-headline" id="out-of-tree_kompajliranje_module">out-of-tree kompajliranje module</span></h2>
+<p>preuzmi oficijalni source code trenutnog linux kernela kao što je opisano u <a href="../en/Kernel/Arch_build_system.html" title="Kernel/Arch build system">Kernel/Arch build system</a>:
+</p>
+<pre>$ cd &amp;&amp; mkdir build
+$ pkgctl repo clone linux
+</pre>
+<p>zatim usmjeri na checkirani source prilikom kompajliranja modula:
+</p>
+<pre>$ cd build/mymod
+$ make -C ~/build/linux/src/archlinux-linux M=$PWD modules
+</pre>
+<h2><span class="mw-headline" id="Instaliranje_module">Instaliranje module</span></h2>
+<p>Sada, nakon uspješnog kompajliranja module samo morate gzip i kopirati u svoj trenutni kernel.
+</p>
+<p>Ukoliko zamjenjujete neki već postojeći module, morate ga prepisati (zapamtite da reinstaliranje <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=linux">linux</a></span> će ga zamijeniti sa defaultnim modulom)
+</p>
+<pre>$ xz fs/btrfs/btrfs.ko
+# cp -f fs/btrfs/btrfs.ko.xz /usr/lib/modules/$(uname -r)/kernel/fs/btrfs/
+</pre>
+<p>Alternativno, možete staviti update-ovani module u updates folder (kreirajte ga ukoliko ne postoji).
+</p>
+<pre>$ cp fs/btrfs/btrfs.ko.xz /usr/lib/modules/$(uname -r)/updates
+</pre>
+<p>Ako dodajete novi modul, možete ga samo kopirati u extramodules (note, ovo je samo primjer jer se btrfs neće loadati odavde)
+</p>
+<pre># cp fs/btrfs/btrfs.ko.xz /usr/lib/modules/$(uname -r)/extramodules/
+</pre>
+<p>Ako kompajlirate module za rani boot (npr. updated modul) koji je kopirati u <a href="../en/Arch_boot_process.html#initramfs" class="mw-redirect" title="Initramfs">Initramfs</a> onda morate regenerisati sa njim (u suprotnom, module se neće loadati). Dalje, ukoliko koristite "updates" folder metodu, možda ćete morati rebuildati modul dependency tree sa "depmod" prije regenerisanja <a href="../en/Arch_boot_process.html#initramfs" class="mw-redirect" title="Initramfs">Initramfs</a>.
+</p>
+<pre># mkinitcpio -p linux
+</pre>
+<h2>
+<span id="mogu.C4.87i_errori"></span><span class="mw-headline" id="mogući_errori">mogući errori</span>
+</h2>
+<p>Ako EXTRAVERSION nije ispravno podešena, sljedeći error se mogu pojaviti
+</p>
+<pre># insmod mymod.ko
+insmod: ERROR: could not insert module mymod.ko: Invalid module format
+# modprobe mymod
+modprobe: ERROR: could not insert 'mymod': Exec format error
+</pre>
+<p>dodavanje force-vermagic ignoriše mismatch verzije
+</p>
+<pre>modprobe mymod --force-vermagic
+</pre>
+<h2><span class="mw-headline" id="Vidi_i">Vidi i</span></h2>
+<ul>
+<li><a rel="nofollow" class="external text" href="https://kernelnewbies.org/">Linux Kernel Newbies</a></li>
+<li><a rel="nofollow" class="external text" href="https://www.tldp.org/LDP/lkmpg/2.6/html/">The Linux Kernel Module Programming Guide</a></li>
+</ul>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="../bs/Category:Kernel.html" title="Category:Kernel (Bosanski)">Kernel (Bosanski)</a></li></ul>
+</div></div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=Compile_kernel_module_(Bosanski)&amp;oldid=784909">https://wiki.archlinux.org/index.php?title=Compile_kernel_module_(Bosanski)&amp;oldid=784909</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 10 August 2023, at 06:20.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

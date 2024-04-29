@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>Dynamic disks - ArchWiki</title>
+<link rel="stylesheet" href="../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Dynamic_disks rootpage-Dynamic_disks skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-General_consideration_for_Linux_usage" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#General_consideration_for_Linux_usage">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>General consideration for Linux usage</div>
+			</a>
+			
+				<button aria-controls="toc-General_consideration_for_Linux_usage-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle General consideration for Linux usage subsection
+				</button>
+			
+			<ul id="toc-General_consideration_for_Linux_usage-sublist" class="sidebar-toc-list">
+				<li id="toc-Usual_course" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Usual_course">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.1</span>Usual course</div>
+			</a>
+			
+			<ul id="toc-Usual_course-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Terminology" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Terminology">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Terminology</div>
+			</a>
+			
+			<ul id="toc-Terminology-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Installing_support_for_dynamic_disks" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Installing_support_for_dynamic_disks">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>Installing support for dynamic disks</div>
+			</a>
+			
+				<button aria-controls="toc-Installing_support_for_dynamic_disks-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Installing support for dynamic disks subsection
+				</button>
+			
+			<ul id="toc-Installing_support_for_dynamic_disks-sublist" class="sidebar-toc-list">
+				<li id="toc-Mandatory_preparation" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Mandatory_preparation">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.1</span>Mandatory preparation</div>
+			</a>
+			
+			<ul id="toc-Mandatory_preparation-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Other_commands" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Other_commands">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.2</span>Other commands</div>
+			</a>
+			
+			<ul id="toc-Other_commands-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Systemd" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Systemd">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4</span>Systemd</div>
+			</a>
+			
+			<ul id="toc-Systemd-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-See_also" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#See_also">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5</span>See also</div>
+			</a>
+			
+			<ul id="toc-See_also-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../en/Dynamic_disks.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="mw-list-item"><a href="../en/Talk:Dynamic_disks.html" rel="discussion" title="Discussion about the content page [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">English</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../en/Dynamic_disks.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=Dynamic_disks&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=Dynamic_disks&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../en/Dynamic_disks.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Dynamic_disks&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Dynamic_disks&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output">
+<p><a rel="nofollow" class="external text" href="https://msdn.microsoft.com/en-us/library/windows/desktop/aa363785(v=vs.85).aspx#DYNAMIC_DISKS">Dynamic disks</a>, enabled by the <a href="https://en.wikipedia.org/wiki/Logical_Disk_Manager" class="extiw" title="wikipedia:Logical Disk Manager">Logical Disk Manager</a> (LDM), is a technology for Microsoft Windows that is similar to <a href="../en/LVM.html" title="LVM">LVM</a> and <a href="../en/RAID.html" class="mw-redirect" title="Mdadm">mdadm</a>.
+</p>
+<mw:tocplace></mw:tocplace>
+<h2><span class="mw-headline" id="General_consideration_for_Linux_usage">General consideration for Linux usage</span></h2>
+<p>In general it is not recommended to convert the disk drive to host your Linux into a dynamic disk. This is because:
+</p>
+<ul>
+<li>In a dynamic disk, an entire disk is put in a one, big partition. (More precisely, a GPT dynamic disk will have one big partition for data and the other, one small metadata partition. An MBR dynamic disk has a sole partition. See <a rel="nofollow" class="external text" href="https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2003/cc758035(v=ws.10)">How Dynamic Disks and Volumes Work</a> in microsoft.com.)</li>
+<li>To turn a disk to a dynamic disk, all existing partitions have to be recognized by Windows - Linux partitions (ext4, btrfs, lvm, you name it)  are out!</li>
+</ul>
+<p>Probably the sole case you want to use dynamic disks is when you use RAID in Windows.
+</p>
+<p>Dynamic disks cannot be used on removable disks, either.
+</p>
+<h3><span class="mw-headline" id="Usual_course">Usual course</span></h3>
+<p><a href="../en/LVM.html" title="LVM">LVM</a> and <a href="../en/RAID.html" class="mw-redirect" title="Mdadm">mdadm</a> are the preferred tools under Arch Linux.  However, if the system is being dual-booted with Windows, Windows will not be able to read these setups.  The usual course then is to attempt to use <a href="../en/Install_Arch_Linux_with_Fake_RAID.html" class="mw-redirect" title="Fakeraid">fakeraid</a> using <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=dmraid">dmraid</a></span> or to use network storage.  However, network storage retrieval will be capped to 1Gb/s (119MiB/s) and getting RAID drivers loaded on an existing Windows installation can be daunting (if not impossible) if the Windows OS partition is installed on a drive that is on the very controller that you want to switch from AHCI to RAID.  Even if you have a spare AHCI controller card, your system may not have enough space to hold two Option ROMs.
+</p>
+<h2><span class="mw-headline" id="Terminology">Terminology</span></h2>
+<p>Read "spanned volume" of a dynamic disk as a "logical volume" in Linux LVM, and "striped volume" as RAID0.
+</p>
+<h2><span class="mw-headline" id="Installing_support_for_dynamic_disks">Installing support for dynamic disks</span></h2>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> This tool will only give you the ability to read and write dynamic disks in Arch Linux.  For all other tasks, you will have to use Windows' Logical Disk Manager.</div>
+<p>Install the <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=libldm">libldm</a></span>  package.  Once installed, <code>ldmtool</code> can be used to query and mount dynamic disks.
+</p>
+<h3><span class="mw-headline" id="Mandatory_preparation">Mandatory preparation</span></h3>
+<p>To create device mappers, simply do:
+</p>
+<pre># ldmtool create all
+</pre>
+<p>This populates <code>/dev/mapper</code> with volumes under LDM. Once this is done, they become accessible in a usual manner, say by:
+</p>
+<pre># mount -t ntfs /dev/mapper/<i>LDM volume</i> /mnt/<i>mountpoint</i>
+</pre>
+<h3><span class="mw-headline" id="Other_commands">Other commands</span></h3>
+<p>To find all disk groups:
+</p>
+<pre># ldmtool scan
+</pre>
+<p>To find what volumes a disk group contains:
+</p>
+<pre># ldmtool show diskgroup <i>diskgroup UUID</i>
+</pre>
+<p>To create individual device mappers:
+</p>
+<pre># ldmtool create volume <i>volume name</i>
+</pre>
+<p>To create device mappers for all volumes in a disk group:
+</p>
+<pre># ldmtool create volume <i>diskgroup UUID</i>
+</pre>
+<h2><span class="mw-headline" id="Systemd">Systemd</span></h2>
+<p>To get dynamic disks to behave like filesystems natively supported by the Linux kernel, <a href="../en/Help:Reading.html#Control_of_systemd_units" class="mw-redirect" title="Enable">enable</a> <code>ldmtool.service</code>.
+</p>
+<p>Once this setup is complete, you can add entries to <code>/etc/fstab</code> that reference dynamic disk volumes and have those mounted like any other volume.
+</p>
+<h2><span class="mw-headline" id="See_also">See also</span></h2>
+<ul>
+<li>
+<a rel="nofollow" class="external text" href="https://docs.microsoft.com/en-us/windows/win32/fileio/basic-and-dynamic-disks">Basic and Dynamic Disks</a> (Microsoft site)</li>
+<li>
+<a rel="nofollow" class="external text" href="https://docs.microsoft.com/en-us/previous-versions/tn-archive/dd163552(v=technet.10)">Working with Basic and Dynamic Disks</a> (Microsoft site)</li>
+<li><a href="https://en.wikipedia.org/wiki/Dynamic_disk" class="extiw" title="wikipedia:Dynamic disk">wikipedia:Dynamic disk</a></li>
+</ul>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="../en/Category:Storage_virtualization.html" title="Category:Storage virtualization">Storage virtualization</a></li></ul>
+</div></div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=Dynamic_disks&amp;oldid=711573">https://wiki.archlinux.org/index.php?title=Dynamic_disks&amp;oldid=711573</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 19 January 2022, at 18:15.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

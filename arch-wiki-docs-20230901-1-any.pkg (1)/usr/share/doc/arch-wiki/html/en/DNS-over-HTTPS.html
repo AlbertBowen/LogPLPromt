@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>DNS-over-HTTPS - ArchWiki</title>
+<link rel="stylesheet" href="../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-DNS-over-HTTPS rootpage-DNS-over-HTTPS skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Installation" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Installation">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Installation</div>
+			</a>
+			
+			<ul id="toc-Installation-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Client_startup" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Client_startup">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Client startup</div>
+			</a>
+			
+				<button aria-controls="toc-Client_startup-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Client startup subsection
+				</button>
+			
+			<ul id="toc-Client_startup-sublist" class="sidebar-toc-list">
+				<li id="toc-Disable_any_services_bound_to_port_53" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Disable_any_services_bound_to_port_53">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.1</span>Disable any services bound to port 53</div>
+			</a>
+			
+			<ul id="toc-Disable_any_services_bound_to_port_53-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Change_system_DNS_server" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Change_system_DNS_server">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.2</span>Change system DNS server</div>
+			</a>
+			
+			<ul id="toc-Change_system_DNS_server-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Startup" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Startup">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.3</span>Startup</div>
+			</a>
+			
+			<ul id="toc-Startup-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Test_configuration" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Test_configuration">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.4</span>Test configuration</div>
+			</a>
+			
+			<ul id="toc-Test_configuration-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Client_configuration" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Client_configuration">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>Client configuration</div>
+			</a>
+			
+				<button aria-controls="toc-Client_configuration-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Client configuration subsection
+				</button>
+			
+			<ul id="toc-Client_configuration-sublist" class="sidebar-toc-list">
+				<li id="toc-Select_preferred_upstream_DNS_server" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Select_preferred_upstream_DNS_server">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.1</span>Select preferred upstream DNS server</div>
+			</a>
+			
+			<ul id="toc-Select_preferred_upstream_DNS_server-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../en/DNS-over-HTTPS.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="new mw-list-item"><a href="/index.php?title=Talk:DNS-over-HTTPS&amp;action=edit&amp;redlink=1" rel="discussion" title="Discussion about the content page (page does not exist) [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">English</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../en/DNS-over-HTTPS.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=DNS-over-HTTPS&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=DNS-over-HTTPS&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../en/DNS-over-HTTPS.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=DNS-over-HTTPS&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=DNS-over-HTTPS&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output">
+<div class="archwiki-template-meta-related-articles-start">
+<p class="mw-no-invert">Related articles</p>
+<ul>
+<li><a href="../en/DNS_over_HTTPS_servers.html" title="DNS over HTTPS servers">DNS over HTTPS servers</a></li>
+</ul>
+</div>
+<p><a rel="nofollow" class="external text" href="https://github.com/m13253/dns-over-https">DNS-over-HTTPS</a> is an implementation of <a href="../en/Domain_name_resolution.html#Privacy_and_security" class="mw-redirect" title="DNS over HTTPS">DNS over HTTPS</a>. It can act as a stub resolver.
+</p>
+<mw:tocplace></mw:tocplace>
+<h2><span class="mw-headline" id="Installation">Installation</span></h2>
+<p><a href="../en/Help:Reading.html#Installation_of_packages" class="mw-redirect" title="Install">Install</a> the <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=dns-over-https">dns-over-https</a></span> package.
+</p>
+<h2><span class="mw-headline" id="Client_startup">Client startup</span></h2>
+<h3><span class="mw-headline" id="Disable_any_services_bound_to_port_53">Disable any services bound to port 53</span></h3>
+<p>To see if any programs are using port 53, run:
+</p>
+<pre>$ ss -lp 'sport = :domain'
+</pre>
+<p>If the output contains more than the first line of column names, you need to disable whatever service is using port 53. You are ready to proceed once the above command outputs nothing more than the following line:
+</p>
+<pre>Netid State   Recv-Q  Send-Q   Local Address:Port     Peer Address:Port Process
+</pre>
+<h3><span class="mw-headline" id="Change_system_DNS_server">Change system DNS server</span></h3>
+<p>Change your system's DNS server to an address in the <code>listen = </code> section of the configuration file. If you don't know what you're doing, <code>127.0.0.1</code> is recommended. 
+</p>
+<p>This can be accomplished either through your <a href="../en/Network_configuration.html#Network_managers" title="Network configuration">Network Manager</a> or through editing <a href="../en/Domain_name_resolution.html" class="mw-redirect" title="/etc/resolv.conf">/etc/resolv.conf</a>.
+</p>
+<h3><span class="mw-headline" id="Startup">Startup</span></h3>
+<p><a href="../en/Help:Reading.html#Control_of_systemd_units" class="mw-redirect" title="Start">Start</a> or <a href="../en/Help:Reading.html#Control_of_systemd_units" class="mw-redirect" title="Enable">enable</a> <code>doh-client.service</code>.
+</p>
+<h3><span class="mw-headline" id="Test_configuration">Test configuration</span></h3>
+<p>To test if your system's DNS works, type <code>nslookup www.google.com</code> into the command line. Note that this will work before DNS-over-HTTPS is configured, assuming you had a DNS configuration before installing this.
+</p>
+<h2><span class="mw-headline" id="Client_configuration">Client configuration</span></h2>
+<p>The client configuration file is <code>/etc/dns-over-https/doh-client.conf</code> by default
+</p>
+<h3><span class="mw-headline" id="Select_preferred_upstream_DNS_server">Select preferred upstream DNS server</span></h3>
+<p>To select a preferred <a href="../en/Category:Domain_Name_System.html" class="mw-redirect" title="DNS server">DNS server</a>, uncomment one of the profiles. 
+</p>
+<p>If your preferred server is not listed, you may use the following template in the <code>[upstream]</code> section.
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/dns-over-https/doh-client.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">[[upstream.upstream_ietf]]
+    url = "https://[IP or web address]/dns-query"
+    weight = 20</pre>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="../en/Category:Domain_Name_System.html" title="Category:Domain Name System">Domain Name System</a></li></ul>
+</div></div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=DNS-over-HTTPS&amp;oldid=775637">https://wiki.archlinux.org/index.php?title=DNS-over-HTTPS&amp;oldid=775637</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 15 April 2023, at 19:57.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

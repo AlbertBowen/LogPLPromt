@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>fwupd - ArchWiki</title>
+<link rel="stylesheet" href="../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Fwupd rootpage-Fwupd skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Installation" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Installation">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Installation</div>
+			</a>
+			
+				<button aria-controls="toc-Installation-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Installation subsection
+				</button>
+			
+			<ul id="toc-Installation-sublist" class="sidebar-toc-list">
+				<li id="toc-Graphical_front-ends" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Graphical_front-ends">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.1</span>Graphical front-ends</div>
+			</a>
+			
+			<ul id="toc-Graphical_front-ends-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Usage" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Usage">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Usage</div>
+			</a>
+			
+			<ul id="toc-Usage-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Setup_for_UEFI_upgrade" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Setup_for_UEFI_upgrade">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>Setup for UEFI upgrade</div>
+			</a>
+			
+				<button aria-controls="toc-Setup_for_UEFI_upgrade-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Setup for UEFI upgrade subsection
+				</button>
+			
+			<ul id="toc-Setup_for_UEFI_upgrade-sublist" class="sidebar-toc-list">
+				<li id="toc-Prepare_ESP" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Prepare_ESP">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.1</span>Prepare ESP</div>
+			</a>
+			
+			<ul id="toc-Prepare_ESP-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Secure_Boot" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Secure_Boot">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.2</span>Secure Boot</div>
+			</a>
+			
+			<ul id="toc-Secure_Boot-sublist" class="sidebar-toc-list">
+				<li id="toc-Using_your_own_keys" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Using_your_own_keys">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.2.1</span>Using your own keys</div>
+			</a>
+			
+			<ul id="toc-Using_your_own_keys-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Troubleshooting" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Troubleshooting">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4</span>Troubleshooting</div>
+			</a>
+			
+				<button aria-controls="toc-Troubleshooting-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Troubleshooting subsection
+				</button>
+			
+			<ul id="toc-Troubleshooting-sublist" class="sidebar-toc-list">
+				<li id="toc-Stuck_when_rebooting" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Stuck_when_rebooting">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.1</span>Stuck when rebooting</div>
+			</a>
+			
+			<ul id="toc-Stuck_when_rebooting-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-No_error_but_no_upgrade_on_reboot" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#No_error_but_no_upgrade_on_reboot">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.2</span>No error but no upgrade on reboot</div>
+			</a>
+			
+			<ul id="toc-No_error_but_no_upgrade_on_reboot-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-read-only_filesystem_error" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#read-only_filesystem_error">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.3</span>read-only filesystem error</div>
+			</a>
+			
+			<ul id="toc-read-only_filesystem_error-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-UEFI_ESP_partition_not_detected_or_configured" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#UEFI_ESP_partition_not_detected_or_configured">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.4</span>UEFI ESP partition not detected or configured</div>
+			</a>
+			
+			<ul id="toc-UEFI_ESP_partition_not_detected_or_configured-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-MSR_plugin_is_failing_to_load" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#MSR_plugin_is_failing_to_load">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.5</span>MSR plugin is failing to load</div>
+			</a>
+			
+			<ul id="toc-MSR_plugin_is_failing_to_load-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Failed_to_load_daemon:_failed_to_load_engine:_No_ESP_with_path" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Failed_to_load_daemon:_failed_to_load_engine:_No_ESP_with_path">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.6</span>Failed to load daemon: failed to load engine: No ESP with path</div>
+			</a>
+			
+			<ul id="toc-Failed_to_load_daemon:_failed_to_load_engine:_No_ESP_with_path-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../en/Fwupd.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="mw-list-item"><a href="../en/Talk:Fwupd.html" rel="discussion" title="Discussion about the content page [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">English</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../en/Fwupd.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=Fwupd&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=Fwupd&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../en/Fwupd.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Fwupd&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Fwupd&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output">
+<p><span>
+</span>
+</p>
+<div class="archwiki-template-meta-related-articles-start">
+<p class="mw-no-invert">Related articles</p>
+<ul>
+<li><a href="../en/Unified_Extensible_Firmware_Interface/Secure_Boot.html" class="mw-redirect" title="Secure Boot">Secure Boot</a></li>
+<li><a href="../en/Unified_Extensible_Firmware_Interface.html" title="Unified Extensible Firmware Interface">Unified Extensible Firmware Interface</a></li>
+</ul>
+</div>
+<p><a rel="nofollow" class="external text" href="https://fwupd.org/">fwupd</a> is a simple daemon to allow session software to update device firmware on your local machine. It's designed for desktops, but also usable on phones and headless servers.
+</p>
+<p>Supported devices are listed <a rel="nofollow" class="external text" href="https://fwupd.org/lvfs/devicelist">here</a> and <a rel="nofollow" class="external text" href="https://fwupd.org/vendorlist">more are to come</a>.
+</p>
+<mw:tocplace></mw:tocplace>
+<h2><span class="mw-headline" id="Installation">Installation</span></h2>
+<p><a href="../en/Help:Reading.html#Installation_of_packages" class="mw-redirect" title="Install">Install</a> the <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=fwupd">fwupd</a></span> package. 
+</p>
+<p>See <a href="#Setup_for_UEFI_upgrade">#Setup for UEFI upgrade</a> if you intend such use.
+</p>
+<h3><span class="mw-headline" id="Graphical_front-ends">Graphical front-ends</span></h3>
+<p>Certain <a href="../en/Desktop_environment.html" class="mw-redirect" title="Desktop environments">desktop environments</a> front-end solutions have built-in <i>fwupd</i> support:
+</p>
+<ul><li>
+<b>GNOME Software</b> — Will check for updates periodically and automatically download firmwares in the background on <a href="../en/GNOME.html" title="GNOME">GNOME</a>. After a firmware has been downloaded a popup will be displayed in Gnome Software to perform the update.</li></ul>
+<dl><dd>
+<a rel="nofollow" class="external free" href="https://wiki.gnome.org/Apps/Software">https://wiki.gnome.org/Apps/Software</a> || <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=gnome-software">gnome-software</a></span>
+</dd></dl>
+<ul><li>
+<b>KDE Discover</b> — Software center used with <a href="../en/KDE.html#Plasma" class="mw-redirect" title="Plasma">Plasma</a>. With the release of KDE Plasma 5.14, a new <i>fwupd</i> backend has been implemented in KDE Discover for firmware updates. These firmware updates are shown with other system updates.</li></ul>
+<dl><dd>
+<a rel="nofollow" class="external free" href="https://userbase.kde.org/Discover">https://userbase.kde.org/Discover</a> || <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=discover">discover</a></span>
+</dd></dl>
+<ul><li>
+<b>GNOME Firmware</b> — Application to upgrade, downgrade and reinstall firmware on devices supported by <i>fwupd</i>. It can unlock locked <i>fwupd</i> devices, verify firmware on supported devices and display all releases for a <i>fwupd</i> device.</li></ul>
+<dl><dd>
+<a rel="nofollow" class="external free" href="https://gitlab.gnome.org/hughsie/gnome-firmware-updater">https://gitlab.gnome.org/hughsie/gnome-firmware-updater</a> || <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=gnome-firmware">gnome-firmware</a></span>
+</dd></dl>
+<h2><span class="mw-headline" id="Usage">Usage</span></h2>
+<div class="noprint archwiki-template-message">
+<p><a href="../File:Tango-view-fullscreen.png" class="image"><img alt="Tango-view-fullscreen.png" src="../File:Tango-view-fullscreen.png" decoding="async" width="48" height="48"></a><b>This article or section needs expansion.</b><a href="../File:Tango-view-fullscreen.png" class="image"><img alt="Tango-view-fullscreen.png" src="../File:Tango-view-fullscreen.png" decoding="async" width="48" height="48"></a></p>
+<div>
+<b>Reason:</b> Need to explain the meaning and usage of the package's other executables and systemd units. (Discuss in <a rel="nofollow" class="external text" href="https://wiki.archlinux.org/title/Talk:Fwupd">Talk:Fwupd</a>)</div>
+</div>
+<p>The package provides a <code>fwupd.service</code> which will automatically start the <i>fwupd</i> daemon when the first query is received. <a rel="nofollow" class="external autonumber" href="https://fwupd.org/lvfs/docs/users">[1]</a>
+</p>
+<p>To display all devices detected by <i>fwupd</i>:
+</p>
+<pre>$ fwupdmgr get-devices
+</pre>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> Listed devices may not be updatable through <i>fwupd</i> (<i>e.g.</i> Intel integrated graphics). Alternative vendor solutions may be provided instead.</div>
+<p>To download the latest metadata from the <a rel="nofollow" class="external text" href="https://fwupd.org/">Linux Vendor firmware Service (LVFS)</a>:
+</p>
+<pre>$ fwupdmgr refresh
+</pre>
+<p>To list updates available for any devices on the system:
+</p>
+<pre>$ fwupdmgr get-updates
+</pre>
+<p>To install updates:
+</p>
+<pre>$ fwupdmgr update
+</pre>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> 
+<ul>
+<li>Updates that can be applied live will be done immediately.</li>
+<li>Updates that run at bootup will be staged for the next reboot.</li>
+<li>The <a href="../en/Users_and_groups.html#Overview" class="mw-redirect" title="Root user">root user</a> may be required to perform certain device updates.</li>
+</ul>
+</div>
+<h2><span class="mw-headline" id="Setup_for_UEFI_upgrade">Setup for UEFI upgrade</span></h2>
+<div class="archwiki-template-box archwiki-template-box-warning">
+<strong>Warning:</strong> An update to your UEFI firmware may discard the current <a href="../en/Arch_boot_process.html#Boot_loader" class="mw-redirect" title="Boot loader">boot loader</a> installation. It may be necessary to recreate the NVRAM entry (for example using <a href="../en/Unified_Extensible_Firmware_Interface.html#efibootmgr" class="mw-redirect" title="Efibootmgr">efibootmgr</a>) after the firmware update has been installed successfully.</div>
+<p>The following requirements should be met:
+</p>
+<ol>
+<li>Make sure you are booted in <a href="../en/Unified_Extensible_Firmware_Interface.html" class="mw-redirect" title="UEFI">UEFI</a> mode, because it will not work in legacy boot mode.</li>
+<li>Verify <a href="../en/Unified_Extensible_Firmware_Interface.html#Requirements_for_UEFI_variable_support" title="Unified Extensible Firmware Interface">your EFI variables are accessible</a>.</li>
+<li>Mount your <a href="../en/EFI_system_partition.html" title="EFI system partition">EFI system partition</a> (ESP) properly. <code><i>esp</i></code> is used to denote the mountpoint in this section.</li>
+<li>Make sure the optional dependency <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=udisks2">udisks2</a></span> is installed and the associated systemd unit is started before fwupd unit; it will provide UEFI firmware upgrade support.</li>
+</ol>
+<h3><span class="mw-headline" id="Prepare_ESP">Prepare ESP</span></h3>
+<p><i>fwupd</i> will copy all the necessary files over to the <code><i>esp</i></code>, but for this to work, a basic folder layout must be present on your <code><i>esp</i></code>;
+this constitutes the creation of an <code>EFI</code> directory on your <code><i>esp</i></code>:
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> Depending on your boot loader or the presence of other operating systems, this directory may already exist.</div>
+<pre># mkdir <i>esp</i>/EFI/
+</pre>
+<div class="archwiki-template-box archwiki-template-box-warning">
+<strong>Warning:</strong> The <code>EFI</code> directory <b>must</b> be in all upper-case; if you used lower-case, <i>fwupd</i> may detect the <code><i>esp</i></code> as <code><i>esp</i>/efi/</code> and look for <code><i>esp</i>/efi/EFI/</code> instead.</div>
+<p><a href="../en/Help:Reading.html#Control_of_systemd_units" class="mw-redirect" title="Restart">Restart</a> the <code>fwupd.service</code> unit afterwards. You can now <code>fwupdmgr refresh</code> and <code>fwupdmgr update</code>. You will be prompted to reboot (into the firmware updater).
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> On some devices, for example the <a href="../en/Lenovo_ThinkPad_P50.html" title="Lenovo ThinkPad P50">Lenovo ThinkPad P50</a> laptop, the firmware updater displays a <b>black screen without any messages</b>—do not panic, and <b>do not</b> interrupt or force-reset the device. After a few seconds, or minutes, depending on the update—the machine will be rebooted back into the operating system.</div>
+<h3><span class="mw-headline" id="Secure_Boot">Secure Boot</span></h3>
+<p>Currently, <i>fwupd</i> relies on <a href="../en/Unified_Extensible_Firmware_Interface/Secure_Boot.html#shim" class="mw-redirect" title="Secure Boot">shim</a> to chainload the <i>fwupd</i> EFI binary on systems with <a href="../en/Unified_Extensible_Firmware_Interface/Secure_Boot.html" class="mw-redirect" title="Secure Boot">Secure Boot</a> enabled; for this to work, <i>shim</i> has to be installed correctly.
+</p>
+<h4><span class="mw-headline" id="Using_your_own_keys">Using your own keys</span></h4>
+<p>Alternatively, you can manually sign the UEFI executable used to perform upgrades, which is located in <code>/usr/lib/fwupd/efi/fwupdx64.efi</code>. The signed UEFI executable is expected in <code>/usr/lib/fwupd/efi/fwupdx64.efi.signed</code>. Using <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=sbsigntools">sbsigntools</a></span>, this can be achieved by running:
+</p>
+<pre># sbsign --key <i>keyfile</i> --cert <i>certfile</i> /usr/lib/fwupd/efi/fwupdx64.efi
+</pre>
+<p>To automatically sign this file when installed or upgraded, a <a href="../en/Pacman.html#Hooks" class="mw-redirect" title="Pacman hook">Pacman hook</a> can be used:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/pacman.d/hooks/sign-fwupd-secureboot.hook</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">[Trigger]
+Operation = Install
+Operation = Upgrade
+Type = Path
+Target = usr/lib/fwupd/efi/fwupdx64.efi
+
+[Action]
+When = PostTransaction
+Exec = /usr/bin/sbsign --key <i>keyfile</i> --cert <i>certfile</i> /usr/lib/fwupd/efi/fwupdx64.efi
+Depends = sbsigntools</pre>
+<p>Make sure to replace <code><i>keyfile</i></code> and <code><i>certfile</i></code> with the corresponding paths of your keys.
+</p>
+<p>Instead of a pacman hook, you can also create a symlink from <code>/usr/lib/fwupd/efi/fwupdx64.efi</code> to <code>/usr/lib/fwupd/efi/fwupdx64.efi.signed</code>, and add the file to the <code>EXTRA_SIGN</code> list in <code>/etc/sbupdate.conf</code>.
+</p>
+<p>Finally, you have to set <code>DisableShimForSecureBoot</code> in <code>/etc/fwupd/fwupd.conf</code> and restart <code>fwupd.service</code>:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/fwupd/fwupd.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">...
+
+[uefi_capsule]
+DisableShimForSecureBoot=true</pre>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> If you set this up before <i>fwupd</i> 1.9, this option is located in <code>/etc/fwupd/uefi_capsule.conf</code>.</div>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> If you set this up before <i>fwupd</i> 1.4, be aware of the subtle change to the configuration option name.</div>
+<p>See <a rel="nofollow" class="external free" href="https://github.com/fwupd/fwupd/issues/669">https://github.com/fwupd/fwupd/issues/669</a> for more information.
+</p>
+<h2><span class="mw-headline" id="Troubleshooting">Troubleshooting</span></h2>
+<h3><span class="mw-headline" id="Stuck_when_rebooting">Stuck when rebooting</span></h3>
+<p><code>fwupdmgr update</code> reports no error, but the reboot it prompts stuck and holding the power button has no response. Try switching off the power, or press the reset button (on a laptop, it might be a hole on the back) to force-reboot.
+</p>
+<h3><span class="mw-headline" id="No_error_but_no_upgrade_on_reboot">No error but no upgrade on reboot</span></h3>
+<p><b>Symptom:</b> <code>fwupdmgr update</code> reports no error and prompts for reboot (e.g., on BIOS update). However, the system reboots normally (or stuck) and the firmware update does NOT happen.
+</p>
+<p><b>Possible cause:</b> In BIOS settings changing the boot order must be allowed.
+</p>
+<p><b>Possible other solution if there are multiple updates pending:</b> Try updating packages one at a time. Use the following to select packages:
+</p>
+<pre>$ fwupdmgr update <i>update_ID</i>
+</pre>
+<p>(Where <code><i>update_ID</i></code> is something like <code>f95c9218acd12697af946874bfe4239587209232</code>.)
+</p>
+<h3><span class="mw-headline" id="read-only_filesystem_error">read-only filesystem error</span></h3>
+<p>At least <code>fwupdmgr</code> 1.5.2 deduces the wrong mount point if <a href="../en/EFI_system_partition.html#Using_bind_mount" title="EFI system partition">bind is used to mount the EFI system partition to /boot</a>. Consequently it fails to write the UEFI update file to <code>/boot/EFI/arch/fw</code> (<code>fwupdmgr</code> while it should be written to <code><i>esp</i>/EFI/arch/fw</code>.) This results in a (misleading) <code>file system is read-only</code> error message. In case the update was performed by <code>Discover</code> (or any other fwupd-capable Update GUI), no error or misleading errors may be shown.
+</p>
+<p>As a workaround, run <code>umount /boot</code> first if it was bind-mounted to <code><i>esp</i>/EFI/arch</code> before, then run <code>fwupdmgr update</code> to write the UEFI update file to <code><i>esp</i>/EFI/arch/fw</code>, <code>mount /boot</code> and reboot the system to perform the UEFI update.
+</p>
+<h3><span class="mw-headline" id="UEFI_ESP_partition_not_detected_or_configured">UEFI ESP partition not detected or configured</span></h3>
+<p>If ESP partition still not detected after all requirement in <a href="#Setup_for_UEFI_upgrade">#Setup for UEFI upgrade</a> are met, the mount point can be specified manually:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/fwupd/uefi_capsule.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">[uefi_capsule]
+OverrideESPMountPoint=/efi   # Change according to your setup</pre>
+<p>Also see <a rel="nofollow" class="external text" href="https://github.com/fwupd/fwupd/wiki/PluginFlag:esp-not-found">the relevant article</a> in the <i>fwupd</i> wiki.
+</p>
+<h3><span class="mw-headline" id="MSR_plugin_is_failing_to_load">MSR plugin is failing to load</span></h3>
+<p>The MSR plugin allows querying the state of DCI, a debugging interface available for Intel CPUs that should be disabled on production machines according to <a rel="nofollow" class="external text" href="https://github.com/fwupd/fwupd/blob/master/plugins/msr/README.md">fwupd's documentation</a>.
+</p>
+<p>This plugin needs the <code>msr</code> kernel module loaded. <code>msr</code> is a built-in kernel module in all the official Arch Linux kernel packages, but unofficial kernel packages might have it as a loadable kernel module. In the latter case, we need to explicitly <a href="../en/Kernel_module.html#Automatic_module_loading" class="mw-redirect" title="Load the module at boot">load the module at boot</a>.
+</p>
+<h3><span class="mw-headline" id="Failed_to_load_daemon:_failed_to_load_engine:_No_ESP_with_path">Failed to load daemon: failed to load engine: No ESP with path</span></h3>
+<p>When starts fwupd, it checks the esp location as <code>EspLocation</code> from <code>/etc/fwupd/daemon.conf</code>. Modify it to your corresponding setup if encounter this error.
+</p>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface">
+<div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="../en/Category:Hardware.html" title="Category:Hardware">Hardware</a></li></ul>
+</div>
+<div id="mw-hidden-catlinks" class="mw-hidden-catlinks mw-hidden-cats-hidden">Hidden category: <ul><li><a href="../en/Category:Pages_or_sections_flagged_with_Template:Expansion.html" title="Category:Pages or sections flagged with Template:Expansion">Pages or sections flagged with Template:Expansion</a></li></ul>
+</div>
+</div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=Fwupd&amp;oldid=785767">https://wiki.archlinux.org/index.php?title=Fwupd&amp;oldid=785767</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 19 August 2023, at 14:32.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

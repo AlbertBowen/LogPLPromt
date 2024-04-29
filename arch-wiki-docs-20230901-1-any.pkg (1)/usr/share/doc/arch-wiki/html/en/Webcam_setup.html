@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>Webcam setup - ArchWiki</title>
+<link rel="stylesheet" href="../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Webcam_setup rootpage-Webcam_setup skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Loading" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#Loading">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Loading</div>
+			</a>
+			
+			<ul id="toc-Loading-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Configuration" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#Configuration">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Configuration</div>
+			</a>
+			
+				<button aria-controls="toc-Configuration-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Configuration subsection
+				</button>
+			
+			<ul id="toc-Configuration-sublist" class="sidebar-toc-list">
+				<li id="toc-Command_line" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Command_line">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.1</span>Command line</div>
+			</a>
+			
+			<ul id="toc-Command_line-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Graphical" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Graphical">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.2</span>Graphical</div>
+			</a>
+			
+			<ul id="toc-Graphical-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Persisting_configuration_changes" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Persisting_configuration_changes">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.3</span>Persisting configuration changes</div>
+			</a>
+			
+			<ul id="toc-Persisting_configuration_changes-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Disable_internal_laptop_webcam" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Disable_internal_laptop_webcam">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.4</span>Disable internal laptop webcam</div>
+			</a>
+			
+			<ul id="toc-Disable_internal_laptop_webcam-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Disable_webcam_completely" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Disable_webcam_completely">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.5</span>Disable webcam completely</div>
+			</a>
+			
+			<ul id="toc-Disable_webcam_completely-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Applications" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#Applications">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>Applications</div>
+			</a>
+			
+				<button aria-controls="toc-Applications-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Applications subsection
+				</button>
+			
+			<ul id="toc-Applications-sublist" class="sidebar-toc-list">
+				<li id="toc-xawtv" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#xawtv">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.1</span>xawtv</div>
+			</a>
+			
+			<ul id="toc-xawtv-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-VLC" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#VLC">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.2</span>VLC</div>
+			</a>
+			
+			<ul id="toc-VLC-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-MPlayer" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#MPlayer">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.3</span>MPlayer</div>
+			</a>
+			
+			<ul id="toc-MPlayer-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-mpv" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#mpv">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.4</span>mpv</div>
+			</a>
+			
+			<ul id="toc-mpv-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-FFmpeg" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#FFmpeg">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.5</span>FFmpeg</div>
+			</a>
+			
+			<ul id="toc-FFmpeg-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Troubleshooting" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#Troubleshooting">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4</span>Troubleshooting</div>
+			</a>
+			
+				<button aria-controls="toc-Troubleshooting-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Troubleshooting subsection
+				</button>
+			
+			<ul id="toc-Troubleshooting-sublist" class="sidebar-toc-list">
+				<li id="toc-V4L1_support" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#V4L1_support">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.1</span>V4L1 support</div>
+			</a>
+			
+			<ul id="toc-V4L1_support-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-xawtv_with_nvidia_card" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#xawtv_with_nvidia_card">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.2</span>xawtv with nvidia card</div>
+			</a>
+			
+			<ul id="toc-xawtv_with_nvidia_card-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Microsoft_Lifecam_Studio/Cinema" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Microsoft_Lifecam_Studio/Cinema">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.3</span>Microsoft Lifecam Studio/Cinema</div>
+			</a>
+			
+			<ul id="toc-Microsoft_Lifecam_Studio/Cinema-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Skype" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Skype">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.4</span>Skype</div>
+			</a>
+			
+			<ul id="toc-Skype-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Check_bandwidth_used_by_USB_webcams" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Check_bandwidth_used_by_USB_webcams">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.5</span>Check bandwidth used by USB webcams</div>
+			</a>
+			
+			<ul id="toc-Check_bandwidth_used_by_USB_webcams-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Invert_the_video_stream" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Invert_the_video_stream">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.6</span>Invert the video stream</div>
+			</a>
+			
+			<ul id="toc-Invert_the_video_stream-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Bad_image_quality" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Bad_image_quality">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.7</span>Bad image quality</div>
+			</a>
+			
+			<ul id="toc-Bad_image_quality-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Logitech_Quickcam_Pro_9000" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Logitech_Quickcam_Pro_9000">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.8</span>Logitech Quickcam Pro 9000</div>
+			</a>
+			
+			<ul id="toc-Logitech_Quickcam_Pro_9000-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../en/Webcam_setup.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="mw-list-item"><a href="../en/Talk:Webcam_setup.html" rel="discussion" title="Discussion about the content page [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">English</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../en/Webcam_setup.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=Webcam_setup&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=Webcam_setup&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../en/Webcam_setup.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Webcam_setup&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Webcam_setup&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output">
+<p>This is a guide to setting up your webcam.
+</p>
+<p>Most probably your webcam will work out of the box. Permissions to access video devices (e.g. <code>/dev/video0</code>) are handled by <a href="../en/Udev.html" title="Udev">udev</a>, there is no configuration necessary.
+</p>
+<mw:tocplace></mw:tocplace>
+<h2><span class="mw-headline" id="Loading">Loading</span></h2>
+<p>Most recent webcams are UVC (<i>USB Video Class</i>) compliant and are supported by the generic <i>uvcvideo</i> kernel driver module. To check that your webcam is recognized, see the <a href="../en/Systemd/Journal.html" class="mw-redirect" title="Journal">journal</a> just after you plug the webcam in. You should see something like this:
+</p>
+<pre>kernel: sn9c102: V4L2 driver for SN9C10x PC Camera Controllers v1:1.24a
+usb 1-1: SN9C10[12] PC Camera Controller detected (vid/pid 0x0C45/0x600D)
+usb 1-1: PAS106B image sensor detected
+usb 1-1: Initialization succeeded
+usb 1-1: V4L2 device registered as /dev/video0
+usb 1-1: Optional device control through 'sysfs' interface ready
+usbcore: registered new driver sn9c102
+</pre>
+<p>Some pre-UVC webcams are also supported via the <i>gspca</i> kernel driver module. See the <a rel="nofollow" class="external text" href="https://docs.kernel.org/admin-guide/media/gspca-cardlist.html">gspca cards list</a> for a non-exhaustive list of supported devices under this framework.
+</p>
+<p>Otherwise, if your webcam is not supported by the kernel's drivers, an external driver is necessary. The first step is to identify the name of the webcam, using for example <code>lsusb</code>. Then you can check <a rel="nofollow" class="external text" href="https://www.linuxtv.org/wiki/index.php/Webcam_devices">webcam devices</a> for information and resources about webcams. Once you find a driver compatible with the webcam, you can <a href="../en/Kernel_module.html#Automatic_module_loading" class="mw-redirect" title="Load the module at boot">load the module at boot</a>.
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> The Linux kernel to userspace API used to control webcams is named <i>Video4Linux2</i>, <b>v4l2</b> for short. All applications which support v4l2 will work with the kernel's drivers.</div>
+<h2><span class="mw-headline" id="Configuration">Configuration</span></h2>
+<p>If you want to configure brightness, color and other webcam parameters (e.g. in the case when out-of-the-box colors are too bluish/reddish/greenish) you may use a variety of applications. Some specific webcams such as the Logitech Brio or the Razer Kiyo Pro might require a specific application for some of their specific options such as HDR. Changing any settings in an application that configures V4L settings will generally change those settings for all applications using those cameras unless they override those settings themselves.
+</p>
+<h3><span class="mw-headline" id="Command_line">Command line</span></h3>
+<p><span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=v4l-utils">v4l-utils</a></span> installs a command line tool, <code>v4l2-ctl</code>. To list all video devices:
+</p>
+<pre>$ v4l2-ctl --list-devices
+</pre>
+<p>To list the configurable settings of a video device:
+</p>
+<pre>$ v4l2-ctl -d /dev/video0 --list-ctrls
+</pre>
+<p>Alternatively, you can use <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=cameractrls">cameractrls</a></span>:
+</p>
+<pre>$ cameractrls -c brightness=128
+</pre>
+<h3><span class="mw-headline" id="Graphical">Graphical</span></h3>
+<p>For generic graphical webcam configuration tools your can use either <code>qv4l2</code> from <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=v4l-utils">v4l-utils</a></span> or <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=guvcview">guvcview</a></span>. In addition to this, <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=cameractrls">cameractrls</a></span> contains <code>cameractrlsgtk</code> which allows you to configure some camera-specific features for the Logitech Brio as well as the Razer Kiyo Pro on top of supporting all the other v4l options.
+</p>
+<h3><span class="mw-headline" id="Persisting_configuration_changes">Persisting configuration changes</span></h3>
+<p>Configuration made via V4L2 does not persist after the webcam is disconnected and reconnected. It is possible to use <code>v4l2-ctl</code> with <a href="../en/Udev.html" title="Udev">Udev</a> rules in order to set some configuration each time a particular camera is connected.
+</p>
+<p>For example, to set a default zoom setting on a particular Logitech webcam each time it is connected, add a <a href="../en/Udev.html#udev_rule_example" title="Udev">udev rule</a> like this:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/udev/rules.d/99-logitech-default-zoom.rules</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">SUBSYSTEM=="video4linux", KERNEL=="video[0-9]*", ATTR{index}=="0", ATTRS{idVendor}=="046d", ATTRS{idProduct}=="0892", RUN+="/usr/bin/v4l2-ctl -d $devnode --set-ctrl=zoom_absolute=170"</pre>
+<p>The above rule is valid for the Logitech C920 HD Pro Webcam - hardware ID 046d:0892.
+</p>
+<p>The device's vendor id and product id can be found using <code>lsusb</code>. These are unique per product and do not change unless the product gets a new hardware revision.
+</p>
+<p>To find udev attributes like the product name and serial, see <a href="../en/Udev.html#List_the_attributes_of_a_device" title="Udev">Udev#List the attributes of a device</a>. It is also possible to <a href="../en/Udev.html#Setting_static_device_names" title="Udev">set a static name for a video device</a>).
+</p>
+<h3><span class="mw-headline" id="Disable_internal_laptop_webcam">Disable internal laptop webcam</span></h3>
+<p>Sometimes we might want to disable a laptop's internal webcam so that only the one attached
+via USB is showing. This can be done with a udev rule.
+First we will need the device's vendor id and the product id from <code>lsusb</code>
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">lsusb</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">Bus 001 Device 008: ID 1bcf:28c1 Sunplus Innovation Technology Inc. Integrated_Webcam_HD</pre>
+<p>Then we add new udev rule to remove the device as soon as it is detected:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/udev/rules.d/40-disable-internal-webcam.rules</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">ACTION=="add", ATTR{idVendor}=="1bcf", ATTR{idProduct}=="28c1", RUN="/bin/sh -c 'echo 1 &gt;/sys/\$devpath/remove'"</pre>
+<h3><span class="mw-headline" id="Disable_webcam_completely">Disable webcam completely</span></h3>
+<p>To disable webcam completely, you can <a href="../en/Kernel_module.html#Blacklisting" class="mw-redirect" title="Blacklist">blacklist</a> the <code>uvcvideo</code> kernel module. For example:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/modprobe.d/nowebcam.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">blacklist uvcvideo
+</pre>
+<h2><span class="mw-headline" id="Applications">Applications</span></h2>
+<p>See also <a href="../en/List_of_applications/Multimedia.html#Webcam" title="List of applications/Multimedia">List of applications/Multimedia#Webcam</a>.
+</p>
+<h3><span class="mw-headline" id="xawtv">xawtv</span></h3>
+<p>This is a basic <i>Video4Linux2</i> device viewer, and although it is intended for use with TV tuner cards, it works well with webcams. It will display what your webcam sees in a window.
+</p>
+<p><a href="../en/Help:Reading.html#Installation_of_packages" class="mw-redirect" title="Install">Install</a> <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/xawtv/">xawtv</a></span><sup><small>AUR</small></sup> and run it with:
+</p>
+<pre>$ xawtv -c /dev/video0
+</pre>
+<p>In case of error see <a href="#xawtv_with_nvidia_card">#xawtv with nvidia card</a>.
+</p>
+<h3><span class="mw-headline" id="VLC">VLC</span></h3>
+<p><a href="../en/VLC_media_player.html" class="mw-redirect" title="VLC">VLC</a> can also be used to view and record your webcam. In VLC's <i>Media</i> menu, open the <i>Capture Device...</i> dialog and enter the video and audio device files. Or from the command line, for example:
+</p>
+<pre>$ vlc v4l2://:input-slave=alsa://:v4l-vdev="/dev/video0"
+</pre>
+<p>This will make VLC mirror your webcam.
+</p>
+<ul>
+<li>To take stills, simply choose <i>Snapshot</i> in the <i>Video</i> menu.</li>
+<li>To record the stream, add a <code>--sout</code> argument to the command line, e.g.</li>
+</ul>
+<pre>$ vlc v4l://:v4l-vdev="/dev/video0":v4l-adev="/dev/audio2" --sout "#transcode{vcodec=mp1v,vb=1024,scale=1,acodec=mpga,ab=192,channels=2}:duplicate{dst=std{access=file,mux=mpeg1,dst=/tmp/test.mpg}}"
+</pre>
+<p>Note that by default this will not display the video. In order to see what you are recording, you need to add the display as a destination to the argument (which will slow down the operation):
+</p>
+<pre>... :duplicate{<b>dst=display</b>,dst=std{access= ....
+</pre>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> If VLC does not detect webcams, ensure that <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=zvbi">zvbi</a></span> package is installed.</div>
+<h3><span class="mw-headline" id="MPlayer">MPlayer</span></h3>
+<p>To use <a href="../en/MPlayer.html" title="MPlayer">MPlayer</a> to take snapshots from your webcam run this command from the terminal:
+</p>
+<pre>$ mplayer tv:// -tv driver=v4l2:width=640:height=480:device=/dev/video0 -fps 15 -vf screenshot
+</pre>
+<p>From here you have to press <code>s</code> to take the snapshot. The snapshot will be saved in the current folder as <code>shotXXXX.png</code>.
+If you want to record video continuous:
+</p>
+<pre>$ mencoder tv:// -tv driver=v4l2:width=640:height=480:device=/dev/video0:forceaudio:adevice=/dev/dsp -ovc lavc -oac mp3lame -lameopts cbr:br=64:mode=3 -o <i>filename</i>.avi
+</pre>
+<p>Press <code>Ctrl+c</code> to end the recording.
+</p>
+<p>To play video with <a href="../en/MPlayer.html" title="MPlayer">MPlayer</a> using MJPEG as the pixelformat instead of the default, which in most cases is YUYV, you can run the following:
+</p>
+<pre>$ mplayer tv:// -tv driver=v4l2:width=640:height=480:device=/dev/video0:outfmt=mjpeg -fps 15
+</pre>
+<h3><span class="mw-headline" id="mpv">mpv</span></h3>
+<p>To use <a href="../en/Mpv.html" title="Mpv">mpv</a> to take snapshots from your webcam, run this command from the terminal:
+</p>
+<pre>$ mpv av://v4l2:/dev/video0 --profile=low-latency --untimed
+</pre>
+<p>From here you have to press <code>s</code> to take the snapshot. The snapshot will be saved in your current folder as <code>mpv-shot<i>NNNN</i>.jpg</code>.
+</p>
+<p>To use MJPEG as the pixelformat instead of the default, which in most cases is YUYV, you can run the following instead:
+</p>
+<pre>$ mpv --demuxer-lavf-format=video4linux2 --demuxer-lavf-o-set=input_format=mjpeg av://v4l2:/dev/video0
+</pre>
+<p>In some cases this can lead to drastic improvements in quality and performance (5FPS -&gt; 30FPS for example).
+</p>
+<p>To adjust webcam settings, including the resolution, <a rel="nofollow" class="external text" href="https://github.com/mpv-player/mpv/wiki/Video4Linux2-Input">see the mpv documentation</a>.
+</p>
+<h3><span class="mw-headline" id="FFmpeg">FFmpeg</span></h3>
+<p>See <a href="../en/V4l2loopback.html#Use_cases" title="V4l2loopback">v4l2loopback#Use cases</a> for various examples, where FFmpeg is used to output video to a v4l2 device, which can be used as a webcam.
+</p>
+<p>For laptops without a webcam, an IP camera can be used as an alternative to droidcam which does not keep the extra webcam device hanging around. For android, something like <a rel="nofollow" class="external text" href="https://play.google.com/store/apps/details?id=com.pas.webcam">IP webcam</a> can be hosted on the phone, then use the IP camera as a video input for the laptop. First, install <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=linux-headers">linux-headers</a></span> and <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=v4l2loopback-dkms">v4l2loopback-dkms</a></span>, then connect to the video source as <code>/dev/video0</code> using <code>v4l2loopback</code> with <code>192.168.1.<i>xxx</i></code> being the IP address of the phone:
+</p>
+<pre># modprobe v4l2loopback exclusive_caps=1
+$ ffmpeg -i http://192.168.1.<i>xxx</i>:8080/video -vf format=yuv420p -f v4l2 /dev/video0
+</pre>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> <code>exclusive_caps=1</code> helps solve the issue of the video input not usable on some Chrome/WebRTC applications <a rel="nofollow" class="external autonumber" href="https://github.com/umlaeute/v4l2loopback#options">[1]</a>.</div>
+<h2><span class="mw-headline" id="Troubleshooting">Troubleshooting</span></h2>
+<h3><span class="mw-headline" id="V4L1_support">V4L1 support</span></h3>
+<p>Version 2.6.27 of the Linux kernel dropped support for the legacy Video4Linux (1) API.  Pixel format decoding has been pushed to user space, since Video4Linux version 2 does not support kernel space decoding.  The libv4l library provides userland applications with pixel decoding services and will be used by most programs.  Other compatibility layers are also available.
+</p>
+<p><b>If your device is created but your image looks strange (e.g. nearly completely green), you probably need this.</b>
+</p>
+<p>If the application has V4L2 support but no pixelformat support then use the following command:
+</p>
+<pre>LD_PRELOAD=/usr/lib/libv4l/v4l2convert.so application
+</pre>
+<p>If the application only supports the older version of V4L, use this command:
+</p>
+<pre>LD_PRELOAD=/usr/lib/libv4l/v4l1compat.so application
+</pre>
+<div class="archwiki-template-box archwiki-template-box-tip">
+<strong>Tip:</strong> You also might want to put a line like the following into <code>/etc/profile</code> or <a href="../en/Xprofile.html" title="Xprofile">xprofile</a> so you do not have to type that long command all the time:
+ <code>export LD_PRELOAD=/usr/lib/libv4l/v4l2convert.so</code> or <code>export LD_PRELOAD=/usr/lib/libv4l/v4l1compat.so</code>
+</div>
+<p>For 32-bit <a href="../en/Official_repositories.html#multilib" class="mw-redirect" title="Multilib">multilib</a> applications, install the <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=lib32-v4l-utils">lib32-v4l-utils</a></span> package and replace <code>/usr/lib/libv4l/</code> by <code>/usr/lib32/libv4l/</code> in the above commands.
+</p>
+<h3><span class="mw-headline" id="xawtv_with_nvidia_card">xawtv with nvidia card</span></h3>
+<p>If you are using an nvidia graphic card, and get an error like
+</p>
+<pre>X Error of failed request:  XF86DGANoDirectVideoMode
+ Major opcode of failed request:  139 (XFree86-DGA)
+ Minor opcode of failed request:  1 (XF86DGAGetVideoLL)
+ Serial number of failed request:  69
+ Current serial number in output stream:  69
+</pre>
+<p>you should instead run it as <code>$ xawtv -nodga</code>
+</p>
+<h3>
+<span id="Microsoft_Lifecam_Studio.2FCinema"></span><span class="mw-headline" id="Microsoft_Lifecam_Studio/Cinema">Microsoft Lifecam Studio/Cinema</span>
+</h3>
+<p>Under certain configurations, the Microsoft lifecam studio/cinema may request too much usb bandwidth and fail <a rel="nofollow" class="external text" href="https://www.ideasonboard.org/uvc/#footnote-13">see Uvcvideo FAQ</a>. In this case, change the buffering by loading the <code>uvcvideo</code> driver with <code>quirks=0x80</code>. Add it to <code>/etc/modprobe.d/uvcvideo.conf</code> :
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/modprobe.d/uvcvideo.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">## fix bandwidth issue for lifecam studio/cinema
+options uvcvideo quirks=0x80</pre>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> If delays are visible in the logs, or the camera works periodically, this workaround should apply generally. Bigger values such as <code>quirks=0x100</code> are possible.</div>
+<h3><span class="mw-headline" id="Skype">Skype</span></h3>
+<p>When testing the webcam, note the following:
+</p>
+<ul>
+<li>The echobot does not support videochat. Do not use it for testing your webcam.</li>
+<li>Skype might recognize different video/camera devices (/dev/video*). These will be listed as something like "integrated camera..." in a dropdown menu in the camera settings. Try each camera and wait a few seconds, because it takes time to switch to a different camera.</li>
+</ul>
+<h3><span class="mw-headline" id="Check_bandwidth_used_by_USB_webcams">Check bandwidth used by USB webcams</span></h3>
+<p>When running multiple webcams on a single USB bus, they may saturate the bandwidth of the USB bus and not work properly. You can diagnose this with the <i>usbtop</i> tool from the <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/usbtop/">usbtop</a></span><sup><small>AUR</small></sup> package.
+</p>
+<h3><span class="mw-headline" id="Invert_the_video_stream">Invert the video stream</span></h3>
+<p>If your video stream is inverted, you can make a new virtual video camera which inverts the inverted video. You need to <a href="../en/Help:Reading.html#Installation_of_packages" class="mw-redirect" title="Install">install</a> <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=v4l-utils">v4l-utils</a></span> and also <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=v4l2loopback-dkms">v4l2loopback-dkms</a></span>. Create the virtual video camera:
+</p>
+<pre># modprobe v4l2loopback
+</pre>
+<p>Check the name of the newly created camera:
+</p>
+<pre>$ v4l2-ctl --list-devices
+Dummy video device (0x0000) (platform:v4l2loopback-000):
+   	/dev/video1
+</pre>
+<p>Then you can run <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=ffmpeg">ffmpeg</a></span> to read from your actual webcam (here <code>/dev/video0</code>) and invert it and feed it to the virtual camera:
+</p>
+<pre>$ ffmpeg -f v4l2 -i /dev/video0 -vf "vflip" -f v4l2 /dev/video1
+</pre>
+<p>Here <code>vflip</code> inverts the video stream vertically. Use <code>hflip</code> to invert it horizontally.
+</p>
+<p>Note that the format argument <code>yuv420p</code> might be needed to avoid an error, otherwise there might not be any video stream and a black screen will be shown <a rel="nofollow" class="external autonumber" href="https://stackoverflow.com/questions/61485726/ffmpeg-flip-horizontally-webcam-to-virtual-video-camera/63943783#63943783">[2]</a>. In other words:
+</p>
+<pre>$ ffmpeg -f v4l2 -i /dev/video0 -vf "hflip,format=yuv420p" -f v4l2 /dev/video1
+</pre>
+<p>You can then use the "Dummy" camera in your applications instead of the "Integrated" camera.
+</p>
+<h3><span class="mw-headline" id="Bad_image_quality">Bad image quality</span></h3>
+<p>If you experience images being too bright, too dark, too exposed or any other, you can install <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/v4l2ucp/">v4l2ucp</a></span><sup><small>AUR</small></sup> to tweak your image output.
+</p>
+<h3><span class="mw-headline" id="Logitech_Quickcam_Pro_9000">Logitech Quickcam Pro 9000</span></h3>
+<p><a href="../en/Help:Reading.html#Installation_of_packages" class="mw-redirect" title="Install">Install</a> <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/libwebcam-git/">libwebcam-git</a></span><sup><small>AUR</small></sup> to enable autofocus control. After the installation, disconnect and reconnect your camera to trigger the newly added <a href="../en/Udev.html" class="mw-redirect" title="Udev rules">udev rules</a>.
+</p>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../Special:Categories.html" title="Special:Categories">Categories</a>: <ul>
+<li><a href="../en/Category:Digital_imaging.html" title="Category:Digital imaging">Digital imaging</a></li>
+<li><a href="../en/Category:Input_devices.html" title="Category:Input devices">Input devices</a></li>
+</ul>
+</div></div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=Webcam_setup&amp;oldid=785152">https://wiki.archlinux.org/index.php?title=Webcam_setup&amp;oldid=785152</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 11 August 2023, at 06:23.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

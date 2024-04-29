@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>Dynamic Kernel Module Support (Português) - ArchWiki</title>
+<link rel="stylesheet" href="../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Dynamic_Kernel_Module_Support_Português rootpage-Dynamic_Kernel_Module_Support_Português skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Instalação" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Instala%C3%A7%C3%A3o">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Instalação</div>
+			</a>
+			
+			<ul id="toc-Instalação-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Atualizações" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Atualiza%C3%A7%C3%B5es">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Atualizações</div>
+			</a>
+			
+			<ul id="toc-Atualizações-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Uso" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Uso">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>Uso</div>
+			</a>
+			
+				<button aria-controls="toc-Uso-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Uso subsection
+				</button>
+			
+			<ul id="toc-Uso-sublist" class="sidebar-toc-list">
+				<li id="toc-Listar_módulos" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Listar_m%C3%B3dulos">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.1</span>Listar módulos</div>
+			</a>
+			
+			<ul id="toc-Listar_módulos-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Recompilar_módulos" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Recompilar_m%C3%B3dulos">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.2</span>Recompilar módulos</div>
+			</a>
+			
+			<ul id="toc-Recompilar_módulos-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Remover_módulos" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Remover_m%C3%B3dulos">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.3</span>Remover módulos</div>
+			</a>
+			
+			<ul id="toc-Remover_módulos-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Criação_de_pacote_DKMS" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Cria%C3%A7%C3%A3o_de_pacote_DKMS">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4</span>Criação de pacote DKMS</div>
+			</a>
+			
+				<button aria-controls="toc-Criação_de_pacote_DKMS-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Criação de pacote DKMS subsection
+				</button>
+			
+			<ul id="toc-Criação_de_pacote_DKMS-sublist" class="sidebar-toc-list">
+				<li id="toc-Nome_do_pacote" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Nome_do_pacote">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.1</span>Nome do pacote</div>
+			</a>
+			
+			<ul id="toc-Nome_do_pacote-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Dependências" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Depend%C3%AAncias">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.2</span>Dependências</div>
+			</a>
+			
+			<ul id="toc-Dependências-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Local_da_fonte_de_compilação" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Local_da_fonte_de_compila%C3%A7%C3%A3o">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.3</span>Local da fonte de compilação</div>
+			</a>
+			
+			<ul id="toc-Local_da_fonte_de_compilação-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Aplicação_de_correções_(patching)" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Aplica%C3%A7%C3%A3o_de_corre%C3%A7%C3%B5es_(patching)">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.4</span>Aplicação de correções (patching)</div>
+			</a>
+			
+			<ul id="toc-Aplicação_de_correções_(patching)-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Carregamento_automático_do_módulo_em_.install" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Carregamento_autom%C3%A1tico_do_m%C3%B3dulo_em_.install">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.5</span>Carregamento automático do módulo em .install</div>
+			</a>
+			
+			<ul id="toc-Carregamento_automático_do_módulo_em_.install-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Exemplo" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Exemplo">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.6</span>Exemplo</div>
+			</a>
+			
+			<ul id="toc-Exemplo-sublist" class="sidebar-toc-list">
+				<li id="toc-PKGBUILD" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#PKGBUILD">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.6.1</span>PKGBUILD</div>
+			</a>
+			
+			<ul id="toc-PKGBUILD-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-dkms.conf" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#dkms.conf">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.6.2</span>dkms.conf</div>
+			</a>
+			
+			<ul id="toc-dkms.conf-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-.install" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#.install">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.6.3</span>.install</div>
+			</a>
+			
+			<ul id="toc-.install-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Veja_também" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Veja_tamb%C3%A9m">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5</span>Veja também</div>
+			</a>
+			
+			<ul id="toc-Veja_também-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../pt/Dynamic_Kernel_Module_Support.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="new mw-list-item"><a href="/index.php?title=Talk:Dynamic_Kernel_Module_Support_(Portugu%C3%AAs)&amp;action=edit&amp;redlink=1" rel="discussion" title="Discussion about the content page (page does not exist) [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">português</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../pt/Dynamic_Kernel_Module_Support.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=Dynamic_Kernel_Module_Support_(Portugu%C3%AAs)&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=Dynamic_Kernel_Module_Support_(Portugu%C3%AAs)&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../pt/Dynamic_Kernel_Module_Support.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Dynamic_Kernel_Module_Support_(Portugu%C3%AAs)&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Dynamic_Kernel_Module_Support_(Portugu%C3%AAs)&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="pt" dir="ltr">
+<div class="mw-parser-output">
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Status de tradução:</strong> Esse artigo é uma tradução de <a href="../en/Dynamic_Kernel_Module_Support.html" title="Dynamic Kernel Module Support">Dynamic Kernel Module Support</a>. Data da última tradução: 2020-03-20. Você pode ajudar a sincronizar a tradução, se houver <a rel="nofollow" class="external text" href="https://wiki.archlinux.org/index.php?title=Dynamic_Kernel_Module_Support&amp;diff=0&amp;oldid=602119">alterações</a> na versão em inglês.</div>
+<p>Da <a href="https://en.wikipedia.org/wiki/pt:Dynamic_Kernel_Module_Support" class="extiw" title="wikipedia:pt:Dynamic Kernel Module Support">Wikipédia</a>:
+</p>
+<dl><dd>Dynamic Kernel Module Support (DKMS) (em Português: Suporte Dinâmico de Módulo de Kernel) é um programa/framework que permite gerar módulos do kernel do Linux cujos fontes residam fora da árvore de fontes. O conceito é poder ter os módulos automaticamente reconstruídos quando uma nova versão do kernel é instalada.</dd></dl>
+<p>Isto significa que o usuário não precisa esperar que uma companhia, projeto ou mantenedor de pacotes lancem uma nova versão do módulo. Desde a introdução dos <a href="../pt/Pacman.html#Hooks" class="mw-redirect" title="Hooks do pacman">hooks do pacman</a>, a recompilação de módulos do kernel é automaticamente providenciada quando um kernel é atualizado.
+</p>
+<mw:tocplace></mw:tocplace>
+<h2>
+<span id="Instala.C3.A7.C3.A3o"></span><span class="mw-headline" id="Instalação">Instalação</span>
+</h2>
+<p><a href="../pt/Help:Reading.html#Instala%C3%A7%C3%A3o_de_pacotes" class="mw-redirect" title="Instale">Instale</a> o pacote <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=dkms">dkms</a></span> e o header para o kernel (ou kernels, se mais de um estiver instalado). Por exemplo, para o kernel padrão <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=linux">linux</a></span> este deverá ser <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=linux-headers">linux-headers</a></span>. Outros kernels têm seus respectivos headers.
+</p>
+<p>Um bom número de módulos que residem fora da árvore do kernel tem sua variante para DKMS; alguns deles estão em <a rel="nofollow" class="external text" href="https://archlinux.org/packages/?&amp;q=dkms">repositórios oficiais</a>, outros são encontrados no <a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/?SeB=n&amp;K=dkms">AUR</a>.
+</p>
+<h2>
+<span id="Atualiza.C3.A7.C3.B5es"></span><span class="mw-headline" id="Atualizações">Atualizações</span>
+</h2>
+<p>Apesar da recompilação de módulos DKMS ser comumente discreta durante uma atualização de kernel, pode ocorrer da recompilação falhar. Você deve prestar uma atenção extra nas saídas do <a href="../pt/Pacman.html" title="Pacman (Português)">pacman</a>. Isto se aplica em particular se o sistema depende do módulo DKMS para inicializar e/ou se você usar um kernel personalizado que não esteja nos <a href="../pt/Official_repositories.html" class="mw-redirect" title="Repositórios oficiais">repositórios oficiais</a>. 
+</p>
+<p>Para lidar com alterações no kernel, correções de bugs ou adicionar recursos necessários extra, considere atualizar o pacote DKMS antes de reinicializar o sistema.
+</p>
+<h2><span class="mw-headline" id="Uso">Uso</span></h2>
+<p>Utilização para invocar DKMS manualmente.
+</p>
+<p>É possível usar autocompletar fazendo:
+</p>
+<pre># source /usr/share/bash-completion/completions/dkms
+</pre>
+<h3>
+<span id="Listar_m.C3.B3dulos"></span><span class="mw-headline" id="Listar_módulos">Listar módulos</span>
+</h3>
+<p>Para listar a situação atual dos módulos, versões e kernels em árvore:
+</p>
+<pre># dkms status
+</pre>
+<h3>
+<span id="Recompilar_m.C3.B3dulos"></span><span class="mw-headline" id="Recompilar_módulos">Recompilar módulos</span>
+</h3>
+<p>Recompilar todos os módulos para o kernel atualmente em execução:
+</p>
+<pre># dkms autoinstall
+</pre>
+<p>ou para um kernel específico:
+</p>
+<pre># dkms autoinstall -k 3.16.4-1-ARCH
+</pre>
+<p>Para compilar um módulo <i>específico</i> para o kernel atualmente em execução:
+</p>
+<pre># dkms install -m nvidia -v 334.21
+</pre>
+<p>ou simplesmente:
+</p>
+<pre># dkms install nvidia/334.21
+</pre>
+<p>Para compilar um módulo para <i>todos</i> os kernels:
+</p>
+<pre># dkms install nvidia/334.21 --all
+</pre>
+<h3>
+<span id="Remover_m.C3.B3dulos"></span><span class="mw-headline" id="Remover_módulos">Remover módulos</span>
+</h3>
+<p>Para remover um módulo (antigos que não foram automaticamente removidos):
+</p>
+<pre># dkms remove -m nvidia -v 331.49 --all
+</pre>
+<p>ou simplesmente:
+</p>
+<pre># dkms remove nvidia/331.49 --all
+</pre>
+<p>Se o pacote <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=dkms">dkms</a></span> é removido, a informação pertinente a arquivos de compilação de módulos anteriores é perdida. Se é este o caso, navegue por <code>/usr/lib/modules/KERNELVERSION-ARCH</code> e remova todos os arquivos e diretórios que não estiverem mais em uso.
+</p>
+<h2>
+<span id="Cria.C3.A7.C3.A3o_de_pacote_DKMS"></span><span class="mw-headline" id="Criação_de_pacote_DKMS">Criação de pacote DKMS</span>
+</h2>
+<p>Aqui há alguns guias a serem seguidos durante a criação de um pacote DKMS.
+</p>
+<h3><span class="mw-headline" id="Nome_do_pacote">Nome do pacote</span></h3>
+<p>Pacotes DKMS são nomeados acrescentando "<i>-dkms</i>" ao nome do pacote original.
+</p>
+<p>A variável <code>$_pkgname</code> é comumente usada abaixo de <code>$pkgname</code> para descrever o nome do pacote menos o sufixo "<i>-dkms</i>" (por exemplo, <code>_pkgname=${pkgname%-*}</code>). Isto é útil para ajudar a manter as similaridades entre o pacote PKGBUILD original e sua variante DKMS.
+</p>
+<h3>
+<span id="Depend.C3.AAncias"></span><span class="mw-headline" id="Dependências">Dependências</span>
+</h3>
+<p>Dependências devem ser herdadas da versão original com <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=dkms">dkms</a></span> adicionado e <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=linux-headers">linux-headers</a></span> removido (listado pelo pacote DKMS como <i>opcional</i>).
+</p>
+<h3>
+<span id="Local_da_fonte_de_compila.C3.A7.C3.A3o"></span><span class="mw-headline" id="Local_da_fonte_de_compilação">Local da fonte de compilação</span>
+</h3>
+<p>Fontes de compilação devem ir para dentro de (este é o diretório padrão de compilação para DKMS):
+</p>
+<pre>/usr/src/<i>NOME_PACOTE</i>-<i>VERSÃO_PACOTE</i>
+</pre>
+<p>No diretório do pacote, uma configuração DKMS diz ao DKMS como compilar o módulo (<code>dkms.conf</code>), incluindo as variáveis <code>NOME_PACOTE</code> e <code>VERSÃO_PACOTE</code>.
+</p>
+<ul>
+<li>
+<code>NOME_PACOTE</code> - o nome do projeto atual (geralmente <code>$_pkgname</code> ou <code>$_pkgbase</code>).</li>
+<li>
+<code>VERSÃO_PACOTE</code> - por convenção, também este deve ser <code>$pkgver</code>.</li>
+</ul>
+<h3>
+<span id="Aplica.C3.A7.C3.A3o_de_corre.C3.A7.C3.B5es_.28patching.29"></span><span class="mw-headline" id="Aplicação_de_correções_(patching)">Aplicação de correções (patching)</span>
+</h3>
+<p>As fontes (sources) podem ser corrigidas tanto diretamente no PKGBUILD como através do <code>dkms.conf</code>.
+</p>
+<h3>
+<span id="Carregamento_autom.C3.A1tico_do_m.C3.B3dulo_em_.install"></span><span class="mw-headline" id="Carregamento_automático_do_módulo_em_.install">Carregamento automático do módulo em .install</span>
+</h3>
+<p>O carregamento e descarregamento dos módulos deve caber ao usuário. Considere a possibilidade de um módulo falhar ao ser carregado.
+</p>
+<p>Também perceba que você não deve chamar <code>depmod</code> explicitamente para atualizar as dependências de seu módulo do kernel. Pacman chama as funções do DKMS <code>dkms install</code> e <code>dkms remove</code> automaticamente como hooks. <code>dkms install</code> garante que <code>depmod</code> seja chamado ao final do processo. <code>dkms install</code> depende de <code>dkms build</code> (para compilar a fonte para o kernel atual), que por sua vez depende de <code>dkms add</code> (para adicionar um link simbólico  de <code>/var/lib/dkms/&lt;pacote&gt;/&lt;versão&gt;/source</code> para <code>/usr/src/&lt;pacote&gt;</code>).
+</p>
+<h3><span class="mw-headline" id="Exemplo">Exemplo</span></h3>
+<p>Aqui um exemplo de um pacote que edita <code>dkms.conf</code> de acordo com seu nome de pacote e versão.
+</p>
+<h4><span class="mw-headline" id="PKGBUILD">PKGBUILD</span></h4>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">PKGBUILD</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;"># Maintainer: foo &lt;foo(at)example(dot)org&gt;
+# Contributor: bar &lt;bar(at)example(dot)org&gt;
+
+_pkgbase=example
+pkgname=example-dkms
+pkgver=1
+pkgrel=1
+pkgdesc="The Example kernel modules (DKMS)"
+arch=('i686' 'x86_64')
+url="<a rel="nofollow" class="external free" href="https://www.example.org/">https://www.example.org/</a>"
+license=('GPL2')
+depends=('dkms')
+conflicts=("${_pkgbase}")
+install=${pkgname}.install
+source=("${url}/files/tarball.tar.gz"
+        'dkms.conf'
+        'linux-3.14.patch')
+md5sums=(<i>use 'updpkgsums'</i>)
+
+prepare() {
+  cd ${_pkgbase}-${pkgver}
+
+  # Patch
+  patch -p1 -i "${srcdir}"/linux-3.14.patch
+
+}
+
+package() {
+  # Install
+  make DESTDIR="${pkgdir}" install
+
+  # Copy dkms.conf
+  install -Dm644 dkms.conf "${pkgdir}"/usr/src/${_pkgbase}-${pkgver}/dkms.conf
+
+  # Set name and version
+  sed -e "s/@_PKGBASE@/${_pkgbase}/" \
+      -e "s/@PKGVER@/${pkgver}/" \
+      -i "${pkgdir}"/usr/src/${_pkgbase}-${pkgver}/dkms.conf
+
+  # Copy sources (including Makefile)
+  cp -r ${_pkgbase}/* "${pkgdir}"/usr/src/${_pkgbase}-${pkgver}/
+}</pre>
+<h4><span class="mw-headline" id="dkms.conf">dkms.conf</span></h4>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">dkms.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">PACKAGE_NAME="@_PKGBASE@"
+PACKAGE_VERSION="@PKGVER@"
+MAKE[0]="make --uname_r=$kernelver"
+CLEAN="make clean"
+BUILT_MODULE_NAME[0]="@_PKGBASE@"
+DEST_MODULE_LOCATION[0]="/kernel/drivers/misc"
+AUTOINSTALL="yes"</pre>
+<h4><span class="mw-headline" id=".install">.install</span></h4>
+<p>Uma vez que pacman possui hooks DKMS implementados, você não deve especificar uma configuração estrita para DKMS em seu arquivo .install. Chamadas a <code>dkms install</code> e <code>dkms remove</code> serão automáticas.
+</p>
+<h2>
+<span id="Veja_tamb.C3.A9m"></span><span class="mw-headline" id="Veja_também">Veja também</span>
+</h2>
+<ul><li><a rel="nofollow" class="external text" href="https://www.linuxjournal.com/article/6896">Linux Journal: Exploring Dynamic Kernel Module Support</a></li></ul>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="../pt/Category:Kernel.html" title="Category:Kernel (Português)">Kernel (Português)</a></li></ul>
+</div></div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=Dynamic_Kernel_Module_Support_(Portugu%C3%AAs)&amp;oldid=680178">https://wiki.archlinux.org/index.php?title=Dynamic_Kernel_Module_Support_(Português)&amp;oldid=680178</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 13 June 2021, at 06:15.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

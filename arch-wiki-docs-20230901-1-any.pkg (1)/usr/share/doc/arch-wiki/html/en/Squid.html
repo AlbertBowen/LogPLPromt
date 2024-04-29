@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>Squid - ArchWiki</title>
+<link rel="stylesheet" href="../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Squid rootpage-Squid skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Installation" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#Installation">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Installation</div>
+			</a>
+			
+			<ul id="toc-Installation-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Configuration" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#Configuration">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Configuration</div>
+			</a>
+			
+			<ul id="toc-Configuration-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Accessing_services_on_local_hostnames" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#Accessing_services_on_local_hostnames">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>Accessing services on local hostnames</div>
+			</a>
+			
+			<ul id="toc-Accessing_services_on_local_hostnames-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Starting" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#Starting">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4</span>Starting</div>
+			</a>
+			
+			<ul id="toc-Starting-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Content_Filtering" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#Content_Filtering">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5</span>Content Filtering</div>
+			</a>
+			
+			<ul id="toc-Content_Filtering-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Frontend" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#Frontend">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6</span>Frontend</div>
+			</a>
+			
+				<button aria-controls="toc-Frontend-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Frontend subsection
+				</button>
+			
+			<ul id="toc-Frontend-sublist" class="sidebar-toc-list">
+				<li id="toc-Squid_4.x_not_supported_in_Webmin" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Squid_4.x_not_supported_in_Webmin">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6.1</span>Squid 4.x not supported in Webmin</div>
+			</a>
+			
+			<ul id="toc-Squid_4.x_not_supported_in_Webmin-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Ad_blocking_with_adzapper" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#Ad_blocking_with_adzapper">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">7</span>Ad blocking with adzapper</div>
+			</a>
+			
+				<button aria-controls="toc-Ad_blocking_with_adzapper-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Ad blocking with adzapper subsection
+				</button>
+			
+			<ul id="toc-Ad_blocking_with_adzapper-sublist" class="sidebar-toc-list">
+				<li id="toc-Installation_2" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Installation_2">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">7.1</span>Installation</div>
+			</a>
+			
+			<ul id="toc-Installation_2-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Configuration_2" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Configuration_2">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">7.2</span>Configuration</div>
+			</a>
+			
+			<ul id="toc-Configuration_2-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Transparent_web_proxy" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#Transparent_web_proxy">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">8</span>Transparent web proxy</div>
+			</a>
+			
+				<button aria-controls="toc-Transparent_web_proxy-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Transparent web proxy subsection
+				</button>
+			
+			<ul id="toc-Transparent_web_proxy-sublist" class="sidebar-toc-list">
+				<li id="toc-iptables" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#iptables">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">8.1</span>iptables</div>
+			</a>
+			
+			<ul id="toc-iptables-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Shorewall" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Shorewall">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">8.2</span>Shorewall</div>
+			</a>
+			
+			<ul id="toc-Shorewall-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-HTTP_Authentication" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#HTTP_Authentication">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">9</span>HTTP Authentication</div>
+			</a>
+			
+				<button aria-controls="toc-HTTP_Authentication-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle HTTP Authentication subsection
+				</button>
+			
+			<ul id="toc-HTTP_Authentication-sublist" class="sidebar-toc-list">
+				<li id="toc-NTLM" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#NTLM">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">9.1</span>NTLM</div>
+			</a>
+			
+			<ul id="toc-NTLM-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Hide_Browser’s_Real_IP_Address" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#Hide_Browser%E2%80%99s_Real_IP_Address">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">10</span>Hide Browser’s Real IP Address</div>
+			</a>
+			
+			<ul id="toc-Hide_Browser’s_Real_IP_Address-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-SSL_Bumping" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#SSL_Bumping">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">11</span>SSL Bumping</div>
+			</a>
+			
+				<button aria-controls="toc-SSL_Bumping-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle SSL Bumping subsection
+				</button>
+			
+			<ul id="toc-SSL_Bumping-sublist" class="sidebar-toc-list">
+				<li id="toc-Create_Self-Signed_Root_CA_Certificate" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Create_Self-Signed_Root_CA_Certificate">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">11.1</span>Create Self-Signed Root CA Certificate</div>
+			</a>
+			
+			<ul id="toc-Create_Self-Signed_Root_CA_Certificate-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Create_a_DER-encoded_certificate_to_import_into_users'_browsers" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Create_a_DER-encoded_certificate_to_import_into_users'_browsers">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">11.2</span>Create a DER-encoded certificate to import into users' browsers</div>
+			</a>
+			
+			<ul id="toc-Create_a_DER-encoded_certificate_to_import_into_users'_browsers-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Modify_Squid_Configuration_File" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Modify_Squid_Configuration_File">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">11.3</span>Modify Squid Configuration File</div>
+			</a>
+			
+			<ul id="toc-Modify_Squid_Configuration_File-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Create_and_initialize_TLS_certificates_cache_directory" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Create_and_initialize_TLS_certificates_cache_directory">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">11.4</span>Create and initialize TLS certificates cache directory</div>
+			</a>
+			
+			<ul id="toc-Create_and_initialize_TLS_certificates_cache_directory-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Finally,_Restart_Squid_then_SSL_Bump_will_work" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Finally,_Restart_Squid_then_SSL_Bump_will_work">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">11.5</span>Finally, Restart Squid then SSL Bump will work</div>
+			</a>
+			
+			<ul id="toc-Finally,_Restart_Squid_then_SSL_Bump_will_work-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Troubleshooting" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#Troubleshooting">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">12</span>Troubleshooting</div>
+			</a>
+			
+				<button aria-controls="toc-Troubleshooting-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Troubleshooting subsection
+				</button>
+			
+			<ul id="toc-Troubleshooting-sublist" class="sidebar-toc-list">
+				<li id="toc-Squid_needs_to_be_restarted_after_boot" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Squid_needs_to_be_restarted_after_boot">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">12.1</span>Squid needs to be restarted after boot</div>
+			</a>
+			
+			<ul id="toc-Squid_needs_to_be_restarted_after_boot-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Additional_Resources" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#Additional_Resources">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">13</span>Additional Resources</div>
+			</a>
+			
+			<ul id="toc-Additional_Resources-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../en/Squid.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="mw-list-item"><a href="../en/Talk:Squid.html" rel="discussion" title="Discussion about the content page [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">English</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../en/Squid.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=Squid&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=Squid&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../en/Squid.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Squid&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Squid&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output">
+<div class="noprint archwiki-template-message">
+<p><a href="../File:Tango-edit-clear.png" class="image"><img alt="Tango-edit-clear.png" src="../File:Tango-edit-clear.png" decoding="async" width="48" height="48"></a><b>This article or section needs language, wiki syntax or style improvements. See <a href="../en/Help:Style.html" title="Help:Style">Help:Style</a> for reference.</b><a href="../File:Tango-edit-clear.png" class="image"><img alt="Tango-edit-clear.png" src="../File:Tango-edit-clear.png" decoding="async" width="48" height="48"></a></p>
+<div>
+<b>Reason:</b> bad style (Discuss in <a rel="nofollow" class="external text" href="https://wiki.archlinux.org/title/Talk:Squid">Talk:Squid</a>)</div>
+</div>
+<p><a rel="nofollow" class="external text" href="http://www.squid-cache.org">Squid</a> is a caching proxy for HTTP, HTTPS and FTP, providing extensive access controls.
+</p>
+<mw:tocplace></mw:tocplace>
+<h2><span class="mw-headline" id="Installation">Installation</span></h2>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> 
+<ul>
+<li>HTTPS is already being used for <a rel="nofollow" class="external text" href="https://w3techs.com/technologies/details/ce-httpsdefault">~80%</a> (and increasing) of the internet traffic for which Squid cannot cache unless <a href="#SSL_Bumping">#SSL Bumping</a> is enabled.</li>
+<li>"Your clients will be capable of identifying the proxy exists. If you are looking for a way to do it in complete secrecy, dont use Squid." - <a rel="nofollow" class="external text" href="https://wiki.squid-cache.org/ConfigExamples/Intercept/SslBumpExplicit">Squid official website</a>
+</li>
+</ul>
+</div>
+<p><a href="../en/Help:Reading.html#Installation_of_packages" class="mw-redirect" title="Install">Install</a> the <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=squid">squid</a></span> package.
+</p>
+<h2><span class="mw-headline" id="Configuration">Configuration</span></h2>
+<p>By default, the cache directories will be created in <code>/var/cache/squid</code>, and the appropriate permissions set up for those directories. However, for greater control, we need to delve into <code>/etc/squid/squid.conf</code>.
+</p>
+<p>The following options might be of some use to you. If you do not have the option present in your configuration file, add it!
+</p>
+<ul><li>
+<code>http_port</code> - Sets the port that Squid binds to on your local machine. You can have Squid bind to multiple ports by specifying multiple <code>http_port</code> lines. By default, Squid binds to port 3128.</li></ul>
+<pre>http_port 3128
+http_port 3129
+</pre>
+<ul><li>
+<code>http_access</code> - This is an access control list for who is allowed to use the proxy. By default only localhost is allowed to access the proxy. For testing purposes, you may want to change the option <code>http_access deny all</code> to <code>http_access allow all</code>, which will allow anyone to connect to your proxy. If you wanted to just allow access to your subnet, you can do:</li></ul>
+<pre>acl ip_acl src 192.168.1.0/24
+http_access allow ip_acl
+http_access deny all
+</pre>
+<ul><li>
+<code>cache_mgr</code> - This is the email address of the cache manager.</li></ul>
+<pre>cache_mgr squid.admin@example.com
+</pre>
+<ul><li>
+<code>shutdown_lifetime</code> - Specifies how long Squid should wait when its service is asked to stop. If you are running squid on your desktop PC, you may want to set this to something short.</li></ul>
+<pre>shutdown_lifetime 10 seconds
+</pre>
+<ul><li>
+<code>cache_mem</code> - This is how much memory you want Squid to use to keep objects in memory rather than writing them to disk. Squid's total memory usage will exceed this! By default this is 8MB, so you might want to increase it if you have lots of RAM available.</li></ul>
+<pre>cache_mem 64 MB
+</pre>
+<ul><li>
+<code>visible_hostname</code> - hostname that will be shown in status/error messages</li></ul>
+<pre>visible_hostname cerberus
+</pre>
+<ul>
+<li>
+<code>cache_peer</code> - If you want your Squid to go through another proxy server, rather than directly out to the Internet, you need to specify it here.</li>
+<li>
+<code>login</code> - Use this option if the parent proxy requires authentication.</li>
+<li>
+<code>never_direct</code> - Tells the cache to never go direct to the internet to retrieve a page. You will want this if you have set the option above.</li>
+</ul>
+<pre>cache_peer 10.1.1.100 parent 8080 0 no-query default login=user:password
+never_direct allow all
+</pre>
+<ul><li>
+<code>maximum_object_size</code> - The largest size of a cached object. By default this is 4 MB, so if you have a lot of disk space you will want to increase the size of it to something reasonable.</li></ul>
+<pre>maximum_object_size 10 MB
+</pre>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> After defining a new cache_dir it maybe necessary to initialize the caches directory structure with this command: <code>squid -zN</code> -z for Create missing swap directories and -N for No daemon mode. </div>
+<ul><li>
+<code>cache_dir</code> - This is your cache directory, where all the cached files are stored. There are many options here, but the format should generally go like:</li></ul>
+<pre>cache_dir &lt;storage type&gt; &lt;directory&gt; &lt;size in MB&gt; 16 256
+</pre>
+<p>So, in the case of a school's internet proxy:
+</p>
+<pre>cache_dir diskd /cache0 200000 16 256
+</pre>
+<p>If you change the cache directory from defaults, you must set the correct permissions on the cache directory before starting Squid, else it will not be able to create its cache directories and will fail to start.
+</p>
+<h2><span class="mw-headline" id="Accessing_services_on_local_hostnames">Accessing services on local hostnames</span></h2>
+<p>If you plan to access web servers on the LAN using hostnames that are not fully-defined (e.g. <a rel="nofollow" class="external free" href="http://mywebapp">http://mywebapp</a>), you may need to enable the <code>dns_defnames</code> option.  Without this option, Squid will make a DNS request for the hostname verbatim (<code>mywebapp</code>), which may fail, depending on your LAN's DNS setup.  With the option enabled, Squid will append any domain configured in <code>/etc/resolv.conf</code> when making the request (e.g. <code>mywebapp.company.local</code>).
+</p>
+<pre>dns_defnames on
+</pre>
+<h2><span class="mw-headline" id="Starting">Starting</span></h2>
+<p>Once you have finished your configuration, you should check that your configuration file is correct:
+</p>
+<pre># squid -k check
+</pre>
+<p>Then create your cache directories:
+</p>
+<pre># squid -z
+</pre>
+<p>Then you can <a href="../en/Help:Reading.html#Control_of_systemd_units" class="mw-redirect" title="Start/enable">start/enable</a> <code>squid.service</code>.
+</p>
+<h2><span class="mw-headline" id="Content_Filtering">Content Filtering</span></h2>
+<p>If you are looking for a content filtering solution to work with Squid, you should check out the very powerful <a href="../en/DansGuardian.html" title="DansGuardian">DansGuardian</a>.
+</p>
+<h2><span class="mw-headline" id="Frontend">Frontend</span></h2>
+<p>If you would like a web-based frontend for managing Squid, <a href="../en/Webmin.html" title="Webmin">Webmin</a> is your best bet.
+</p>
+<h3><span class="mw-headline" id="Squid_4.x_not_supported_in_Webmin">Squid 4.x not supported in Webmin</span></h3>
+<p>If you receive an error indicating your version of webmin is unsupported:
+</p>
+<pre>Your version of Squid is not supported by Webmin. Only versions from 1.1 to 3.4 are supported by this module.
+</pre>
+<p>you will need to modify the file <code>/opt/webmin/squid/index.cgi</code> (<a rel="nofollow" class="external text" href="https://github.com/webmin/webmin/issues/952">see issue #952</a>)
+</p>
+<h2><span class="mw-headline" id="Ad_blocking_with_adzapper">Ad blocking with adzapper</span></h2>
+<p>Adzapper is a plugin for Squid. It catches ads of all sorts (even Flash animations) and replaces them with an image of your choice, so the layout of the page is not altered very much.
+</p>
+<h3><span class="mw-headline" id="Installation_2">Installation</span></h3>
+<p>AdZapper is not presently in the official repositories or the AUR. The script itself, and detailed information on configuration and usage, can be found at <a rel="nofollow" class="external free" href="http://adzapper.sourceforge.net">http://adzapper.sourceforge.net</a>.
+</p>
+<h3><span class="mw-headline" id="Configuration_2">Configuration</span></h3>
+<pre>echo "redirect_program /usr/bin/adzapper.wrapper" &gt;&gt; /etc/squid/squid.conf
+</pre>
+<p>(squid 2.6.STABLE13-1)
+</p>
+<pre>echo "url_rewrite_program /usr/bin/adzapper.wrapper" &gt;&gt; /etc/squid/squid.conf
+echo "url_rewrite_children 10" &gt;&gt; /etc/squid/squid.conf
+</pre>
+<p>If you want, you can edit <code>/etc/adzapper/adzapper.conf</code> to configure adzapper to your liking. The configuration out of the box works wonderfully well though.
+</p>
+<h2><span class="mw-headline" id="Transparent_web_proxy">Transparent web proxy</span></h2>
+<p>Transparency happens by redirecting all www requests eth0 picks up, to Squid. You will need to add a port with an <code>intercept</code> (for squid 3.2) parameter.  Note that at least one port must be available without the intercept parameter:
+</p>
+<pre> http_port 3128
+ http_port 3129 <b>intercept</b>
+</pre>
+<p>And for TLS:
+</p>
+<pre> https_port 3130 intercept ssl-bump generate-host-certificates=on dynamic_cert_mem_cache_size=4MB cert=/etc/squid/squidCA.pem
+ acl step1 at_step SslBump1
+ ssl_bump peek step1
+ ssl_bump splice all
+ # workaround for some sites
+ client_persistent_connections off
+ server_persistent_connections off
+</pre>
+<h3><span class="mw-headline" id="iptables">iptables</span></h3>
+<p>From a terminal with root privileges, run: 
+</p>
+<pre># gid=`id -g proxy`
+# iptables -t nat -A OUTPUT -p tcp --dport 80 -m owner --gid-owner $gid -j ACCEPT
+# iptables -t nat -A OUTPUT -p tcp --dport 80 -j DNAT --to-destination SQUIDIP:3129
+# iptables -t nat -A OUTPUT -p tcp --dport 443 -j DNAT --to-destination SQUIDIP:3130
+# iptables-save &gt; /etc/iptables/iptables.rules
+</pre>
+<p>Then <a href="../en/Help:Reading.html#Control_of_systemd_units" class="mw-redirect" title="Start">start</a> the <code>iptables.service</code> systemd unit.
+</p>
+<p>Replace SQUIDIP with the public IP(s) which squid may use for its listening port and outbound connections.
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> If you are using a content filtering solution, you should put the port for it, not the Squid port, and you need to remove the <code>intercept</code> option in the http_port line.</div>
+<h3><span class="mw-headline" id="Shorewall">Shorewall</span></h3>
+<p><a href="../en/Systemd.html#Editing_provided_units" class="mw-redirect" title="Edit">Edit</a> <code>/etc/shorewall/rules</code> and add
+</p>
+<pre>REDIRECT	loc	3129	tcp	www # redirect to Squid on port 3128
+ACCEPT		$FW	net	tcp	www # allow Squid to fetch the www content
+</pre>
+<p>Restart the <code>shorewall</code> systemd unit.
+</p>
+<h2><span class="mw-headline" id="HTTP_Authentication">HTTP Authentication</span></h2>
+<p>Squid can be configured to require a user and password in order to use it. We will use <a href="https://en.wikipedia.org/wiki/Digest_access_authentication" class="extiw" title="wikipedia:Digest access authentication">digest http auth</a>
+</p>
+<p>First create a users file with <code>htdigest -c /etc/squid/users MyRealm username</code>. Enter a password when prompted.
+</p>
+<p>Then add these lines to your <code>squid.conf</code>:
+</p>
+<pre>   auth_param digest program /usr/lib/squid/digest_file_auth -c /etc/squid/users
+   auth_param digest children 5
+   auth_param digest realm MyRealm
+   
+   acl users proxy_auth REQUIRED
+   http_access allow users
+</pre>
+<p>And restart squid. Now you will be prompted to enter a username and password when accessing the proxy.
+</p>
+<p>You can add more users with <code>htdigest /etc/squid/users MyRealm newuser</code>. You probably would like to install Apache package, which contains <code>htdigest</code> tool.
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> Be aware that <code>http_access</code> rules cascade, so you need to set them in the desired order.</div>
+<h3><span class="mw-headline" id="NTLM">NTLM</span></h3>
+<div class="archwiki-template-box archwiki-template-box-warning">
+<strong>Warning:</strong> NTLM is deprecated and has security problems.</div>
+<p>Set up <a href="../en/Samba.html" title="Samba">samba</a> and winbindd and test it with
+</p>
+<pre> ntlm_auth --username=DOMAIN\\user
+</pre>
+<p>Grant r-x access to /var/cache/samba/winbindd_privileged/ directory for squid user/group
+</p>
+<p>Then add something like this to squid.conf:
+</p>
+<pre> auth_param ntlm program /usr/bin/ntlm_auth --helper-protocol=squid-2.5-ntlmssp
+ auth_param ntlm children 5
+ auth_param ntlm max_challenge_reuses 0
+ auth_param ntlm max_challenge_lifetime 2 minutes
+ auth_param ntlm keep_alive off
+</pre>
+<pre> acl ntlm_users proxy_auth REQUIRED
+ http_access allow ntlm_users
+ http_access deny all
+</pre>
+<h2>
+<span id="Hide_Browser.E2.80.99s_Real_IP_Address"></span><span class="mw-headline" id="Hide_Browser’s_Real_IP_Address">Hide Browser’s Real IP Address</span>
+</h2>
+<p>Reference: <a rel="nofollow" class="external text" href="https://www.cyberciti.biz/faq/squid-proxy-is-not-hiding-client-ip-address/">Squid Proxy Hide System’s Real IP Address</a>
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/squid/squid.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;"># Hide client ip
+forwarded_for delete
+ 
+# Turn off via header
+via off
+ 
+# Deny request for original source of a request
+follow_x_forwarded_for deny all
+request_header_access X-Forwarded-For deny all</pre>
+<h2><span class="mw-headline" id="SSL_Bumping">SSL Bumping</span></h2>
+<p>Reference: <a rel="nofollow" class="external text" href="https://wiki.squid-cache.org/ConfigExamples/Intercept/SslBumpExplicit">Intercept HTTPS CONNECT messages with SSL-Bump</a>
+</p>
+<h3><span class="mw-headline" id="Create_Self-Signed_Root_CA_Certificate">Create Self-Signed Root CA Certificate</span></h3>
+<p><code>cd /etc/squid</code>
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">openssl req -new -newkey rsa:2048 -sha256 -days 3650 -nodes -x509 -extensions v3_ca -keyout myCA.pem -out myCA.pem</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">Generating a 2048 bit RSA private key                                                                                                                                                               
+.....+++                                                                                                                                                                                            
+.............................................................................................................................................+++                                                    
+writing new private key to 'myCA.pem'                                                                                                                                                               
+<hr>                                                                                                                                                                                               
+You are about to be asked to enter information that will be incorporated                              
+into your certificate request.                                                                                                                                                                       
+What you are about to enter is what is called a Distinguished Name or a DN.                                                                                                                          
+There are quite a few fields but you can leave some blank                                                                                                                                            
+For some fields there will be a default value,                                                                                                                                                       
+If you enter '.', the field will be left blank.                                                                                                                                                      
+<hr>                                                                                                                                                                                        
+Country Name (2 letter code) [AU]:US
+State or Province Name (full name) [Some-State]:Illinois
+Locality Name (eg, city) []:Chicago
+Organization Name (eg, company) [Internet Widgits Pty Ltd]:Example Company LTD.
+Organizational Unit Name (eg, section) []:Information Technology
+Common Name (e.g. server FQDN or YOUR name) []:Example Company LTD.
+Email Address []:</pre>
+<h3>
+<span id="Create_a_DER-encoded_certificate_to_import_into_users.27_browsers"></span><span class="mw-headline" id="Create_a_DER-encoded_certificate_to_import_into_users'_browsers">Create a DER-encoded certificate to import into users' browsers</span>
+</h3>
+<p><code>openssl x509 -in myCA.pem -outform DER -out myCA.der</code>
+</p>
+<p>The result file (myCA.der) should be imported into the 'Authorities' section of users' browsers.
+For example, in FireFox:
+</p>
+<pre>   Open 'Preferences'
+   Go to the 'Privacy and Security' section
+   Press the 'View Certificates' button and go to the 'Authorities' tab
+   Press the 'Import' button, select the .der file that was created previously and pres 'OK'
+</pre>
+<h3><span class="mw-headline" id="Modify_Squid_Configuration_File">Modify Squid Configuration File</span></h3>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/squid/squid.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">http_port 3128 ssl-bump tls-cert=/etc/squid/myCA.pem generate-host-certificates=on dynamic_cert_mem_cache_size=4MB options=NO_SSLv3,NO_TLSv1,NO_TLSv1_1,SINGLE_DH_USE,SINGLE_ECDH_USE
+ssl_bump stare all
+ssl_bump bump all</pre>
+<h3><span class="mw-headline" id="Create_and_initialize_TLS_certificates_cache_directory">Create and initialize TLS certificates cache directory</span></h3>
+<p><code>/usr/lib/squid/security_file_certgen  -c -s /var/cache/squid/ssl_db -M 4MB</code>
+</p>
+<h3>
+<span id="Finally.2C_Restart_Squid_then_SSL_Bump_will_work"></span><span class="mw-headline" id="Finally,_Restart_Squid_then_SSL_Bump_will_work">Finally, Restart Squid then SSL Bump will work</span>
+</h3>
+<p><a href="../en/Help:Reading.html#Control_of_systemd_units" class="mw-redirect" title="Restart">Restart</a> <code>squid.service</code>.
+</p>
+<h2><span class="mw-headline" id="Troubleshooting">Troubleshooting</span></h2>
+<h3><span class="mw-headline" id="Squid_needs_to_be_restarted_after_boot">Squid needs to be restarted after boot</span></h3>
+<p>If you are using both squid and NetworkManager, the following error means that squid is launched before the wifi connection is enabled by NetworkManager (<code>/etc/resolv.conf</code> is empty).
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/var/log/squid/cache.log</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">Warning: Could not find any nameservers. Trying to use localhost 
+Please check your /etc/resolv.conf file
+or use the 'dns_nameservers' option in squid.conf.</pre>
+<p>You can:
+</p>
+<ul>
+<li>Enable <a href="../en/NetworkManager.html#NetworkManager-wait-online" title="NetworkManager">NetworkManager-wait-online.service</a> systemd unit.</li>
+<li>Using <a href="../en/NetworkManager.html#Network_services_with_NetworkManager_dispatcher" title="NetworkManager">NetworkManager dispatcher</a> instead of systemd to start squid</li>
+</ul>
+<p><a href="../en/Help:Reading.html#Control_of_systemd_units" class="mw-redirect" title="Disable">Disable</a> the <code>squid.service</code> systemd unit with the following script: 
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/NetworkManager/dispatcher.d/10_squid</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">if test "$1" = 'wlp2s0'
+then
+    if test "$2" = 'up'
+    then
+        systemctl start squid
+    else
+        systemctl stop squid
+    fi
+fi</pre>
+<p>Make sure it is <a href="../en/Help:Reading.html#Make_executable" class="mw-redirect" title="Executable">executable</a>
+</p>
+<h2><span class="mw-headline" id="Additional_Resources">Additional Resources</span></h2>
+<ul><li>
+<a rel="nofollow" class="external text" href="https://archive.is/oOdiT">Elite Proxy Config Example(cached)</a> (<a rel="nofollow" class="external text" href="https://web.archive.org/web/20130425134032/http://gotux.net/arch-linux/squid-proxy-server/">cache-two</a>)</li></ul>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface">
+<div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="../en/Category:Proxy_servers.html" title="Category:Proxy servers">Proxy servers</a></li></ul>
+</div>
+<div id="mw-hidden-catlinks" class="mw-hidden-catlinks mw-hidden-cats-hidden">Hidden category: <ul><li><a href="../en/Category:Pages_or_sections_flagged_with_Template:Style.html" title="Category:Pages or sections flagged with Template:Style">Pages or sections flagged with Template:Style</a></li></ul>
+</div>
+</div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=Squid&amp;oldid=765280">https://wiki.archlinux.org/index.php?title=Squid&amp;oldid=765280</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 27 January 2023, at 13:26.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

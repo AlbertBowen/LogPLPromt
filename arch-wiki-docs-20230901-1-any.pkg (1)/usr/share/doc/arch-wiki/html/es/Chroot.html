@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>chroot (Español) - ArchWiki</title>
+<link rel="stylesheet" href="../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Chroot_Español rootpage-Chroot_Español skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Razonamiento" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Razonamiento">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Razonamiento</div>
+			</a>
+			
+			<ul id="toc-Razonamiento-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Requisitos" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Requisitos">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Requisitos</div>
+			</a>
+			
+			<ul id="toc-Requisitos-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Utilización" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Utilizaci%C3%B3n">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>Utilización</div>
+			</a>
+			
+				<button aria-controls="toc-Utilización-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Utilización subsection
+				</button>
+			
+			<ul id="toc-Utilización-sublist" class="sidebar-toc-list">
+				<li id="toc-Usar_arch-chroot" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Usar_arch-chroot">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.1</span>Usar arch-chroot</div>
+			</a>
+			
+			<ul id="toc-Usar_arch-chroot-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Introducir_un_chroot" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Introducir_un_chroot">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.2</span>Introducir un chroot</div>
+			</a>
+			
+			<ul id="toc-Introducir_un_chroot-sublist" class="sidebar-toc-list">
+				<li id="toc-Hacer_chroot_en_una_instalación_existente" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Hacer_chroot_en_una_instalaci%C3%B3n_existente">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.2.1</span>Hacer chroot en una instalación existente</div>
+			</a>
+			
+			<ul id="toc-Hacer_chroot_en_una_instalación_existente-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Ejecutar_una_sola_orden_y_salir" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Ejecutar_una_sola_orden_y_salir">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.2.2</span>Ejecutar una sola orden y salir</div>
+			</a>
+			
+			<ul id="toc-Ejecutar_una_sola_orden_y_salir-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Usar_chroot" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Usar_chroot">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.3</span>Usar chroot</div>
+			</a>
+			
+			<ul id="toc-Usar_chroot-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Ejecutar_aplicaciones_gráficas_desde_chroot" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Ejecutar_aplicaciones_gr%C3%A1ficas_desde_chroot">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4</span>Ejecutar aplicaciones gráficas desde chroot</div>
+			</a>
+			
+			<ul id="toc-Ejecutar_aplicaciones_gráficas_desde_chroot-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Sin_privilegios_root" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Sin_privilegios_root">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5</span>Sin privilegios root</div>
+			</a>
+			
+				<button aria-controls="toc-Sin_privilegios_root-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Sin privilegios root subsection
+				</button>
+			
+			<ul id="toc-Sin_privilegios_root-sublist" class="sidebar-toc-list">
+				<li id="toc-PRoot" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#PRoot">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5.1</span>PRoot</div>
+			</a>
+			
+			<ul id="toc-PRoot-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Fakechroot" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Fakechroot">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5.2</span>Fakechroot</div>
+			</a>
+			
+			<ul id="toc-Fakechroot-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Unshare" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Unshare">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5.3</span>Unshare</div>
+			</a>
+			
+			<ul id="toc-Unshare-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Solución_de_problemas" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Soluci%C3%B3n_de_problemas">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6</span>Solución de problemas</div>
+			</a>
+			
+				<button aria-controls="toc-Solución_de_problemas-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Solución de problemas subsection
+				</button>
+			
+			<ul id="toc-Solución_de_problemas-sublist" class="sidebar-toc-list">
+				<li id="toc-arch-chroot:_/location/of/new/root_is_not_a_mountpoint._This_may_have_undesirable_side_effects." class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#arch-chroot:_/location/of/new/root_is_not_a_mountpoint._This_may_have_undesirable_side_effects.">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6.1</span>arch-chroot: /location/of/new/root is not a mountpoint. This may have undesirable side effects.</div>
+			</a>
+			
+			<ul id="toc-arch-chroot:_/location/of/new/root_is_not_a_mountpoint._This_may_have_undesirable_side_effects.-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Véase_también" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#V%C3%A9ase_tambi%C3%A9n">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">7</span>Véase también</div>
+			</a>
+			
+			<ul id="toc-Véase_también-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../es/Chroot.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="new mw-list-item"><a href="/index.php?title=Talk:Chroot_(Espa%C3%B1ol)&amp;action=edit&amp;redlink=1" rel="discussion" title="Discussion about the content page (page does not exist) [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">español</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../es/Chroot.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=Chroot_(Espa%C3%B1ol)&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=Chroot_(Espa%C3%B1ol)&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../es/Chroot.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Chroot_(Espa%C3%B1ol)&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Chroot_(Espa%C3%B1ol)&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="es" dir="ltr">
+<div class="mw-parser-output">
+<p><span>
+</span>
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">Esta traducción de <a href="../en/Chroot.html" title="Chroot">chroot</a> fue revisada el <b>2022-09-27</b>. Si existen <a rel="nofollow" class="external text" href="https://wiki.archlinux.org/index.php?title=Chroot&amp;diff=0&amp;oldid=741519">cambios</a> puede <a href="../es/ArchWiki:Translation_Team/Contributing.html" title="ArchWiki:Translation Team (Español)/Contributing (Español)">actualizarla</a> o avisar al <a href="../es/ArchWiki:Translation_Team.html" title="ArchWiki:Translation Team (Español)">equipo de traducción</a>.</div>
+<div class="archwiki-template-meta-related-articles-start">
+<p class="mw-no-invert">Artículos relacionados</p>
+<ul>
+<li><a href="../en/PRoot.html" title="PRoot">PRoot</a></li>
+<li><a href="../en/Linux_Containers.html" title="Linux Containers">Linux Containers</a></li>
+<li><a href="../es/Systemd-nspawn.html" title="Systemd-nspawn (Español)">systemd-nspawn</a></li>
+</ul>
+</div>
+<p>Un <a href="https://en.wikipedia.org/wiki/Chroot" class="extiw" title="wikipedia:Chroot">chroot</a> es una operación que cambia el directorio raíz aparente para el proceso en ejecución actual y sus subsidiarios. Un programa que se ejecuta en este entorno modificado no puede acceder a los archivos y comandos fuera de ese árbol de directorios del entorno. Este entorno modificado se denomina <i>jaula chroot</i>.
+</p>
+<mw:tocplace></mw:tocplace>
+<h2><span class="mw-headline" id="Razonamiento">Razonamiento</span></h2>
+<p>El cambio de root se realiza comúnmente para realizar el mantenimiento del sistema en sistemas en los que ya no es posible arrancar y/o iniciar sesión. Unos ejemplos típicos son:
+</p>
+<ul>
+<li>Reinstalar el <a href="../es/Arch_boot_process.html#Gestor_de_arranque" title="Arch boot process (Español)">gestor de arranque</a>.</li>
+<li>Reconstruir la <a href="../en/Mkinitcpio.html" class="mw-redirect" title="Mkinitcpio (Español)">imagen initramfs</a>.</li>
+<li>Actualizar o <a href="../es/Downgrading_packages.html" title="Downgrading packages (Español)">degradar paquetes</a>.</li>
+<li>Restablecer una <a href="../en/Reset_lost_root_password.html" class="mw-redirect" title="Password recovery">contraseña olvidada</a>.</li>
+<li>Compilar paquetes en un <a href="../DeveloperWiki:Building_in_a_clean_chroot.html" title="DeveloperWiki:Building in a clean chroot">chroot limpio</a>.</li>
+</ul>
+<p>Véase también <a href="https://en.wikipedia.org/wiki/Chroot#Limitations" class="extiw" title="wikipedia:Chroot">Wikipedia:Chroot#Limitations</a>.
+</p>
+<h2><span class="mw-headline" id="Requisitos">Requisitos</span></h2>
+<ul>
+<li>Privilegios de root.</li>
+<li>Otro entorno Linux, por ejemplo, un LiveCD o un USB, o de otra distribución Linux existente.</li>
+<li>Mismos entornos de arquitectura; es decir, el chroot desde y el chroot hasta. La arquitectura del entorno actual puede descubrirse con: <code>uname -m</code> (por ejemplo, i686 o x86_64).</li>
+<li>Módulos del kernel necesarios cargados en el entorno chroot.</li>
+<li>Swap activado en caso de ser necesario: <pre># swapon /dev/sd<i>xY</i></pre>
+</li>
+<li>Conexión a internet en caso de ser necesario.</li>
+</ul>
+<h2>
+<span id="Utilizaci.C3.B3n"></span><span class="mw-headline" id="Utilización">Utilización</span>
+</h2>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Nota:</strong> 
+<ul>
+<li>Algunas herramientas <a href="../es/Systemd.html" title="Systemd (Español)">systemd</a> como <i>hostnamectl</i>, <i>localectl</i> y <i>timedatectl</i> no pueden ser utilizadas dentro de un chroot, ya que requieren una conexión <a href="../en/D-Bus.html" class="mw-redirect" title="D-Bus (Español)">dbus</a> activa. <a rel="nofollow" class="external autonumber" href="https://github.com/systemd/systemd/issues/798#issuecomment-126568596">[1]</a>
+</li>
+<li>El sistema de archivos que servirá como la nueva raíz (<code>/</code>) de su chroot debe ser accesible (es decir, descifrado y <a href="../en/File_systems.html#Mount_a_file_system" class="mw-redirect" title="Mount">montado</a>).</li>
+</ul>
+</div>
+<p>Hay dos formas principales de usar chroot, las cuales se describen a continuación.
+</p>
+<h3><span class="mw-headline" id="Usar_arch-chroot">Usar arch-chroot</span></h3>
+<p>El script bash <code>arch-chroot</code> es parte del paquete <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=arch-install-scripts">arch-install-scripts</a></span>.  Antes de ejecutar <code>/usr/bin/chroot</code>, el script monta sistemas de archivos API como <code>/proc</code> y hace que <code>/etc/resolv.conf</code> esté disponible desde el chroot.
+</p>
+<h3><span class="mw-headline" id="Introducir_un_chroot">Introducir un chroot</span></h3>
+<p>Ejecute arch-chroot con el nuevo directorio raíz como primer argumento:
+</p>
+<pre># arch-chroot <i>ubicación/del/nuevo/root</i>
+</pre>
+<p>Por ejemplo, en la <a href="../es/Installation_guide.html" title="Installation guide (Español)">guía de instalación</a> este directorio sería <code>/mnt</code>:
+</p>
+<pre># arch-chroot /mnt
+</pre>
+<p>Para salir del chroot simplemente use
+</p>
+<pre># exit
+</pre>
+<h4>
+<span id="Hacer_chroot_en_una_instalaci.C3.B3n_existente"></span><span class="mw-headline" id="Hacer_chroot_en_una_instalación_existente">Hacer chroot en una instalación existente</span>
+</h4>
+<p>Ejecute <code>lsblk</code> y observe el diseño de partición de su instalación. Por lo general será algo como <code>/dev/sd<i>XY</i></code> o si tiene una unidad NVMe <code>/dev/nvme0n<i>X</i>p<i>Y</i></code>.
+</p>
+<p>Monte el sistema de archivos:
+</p>
+<pre># mount /dev/sd<i>XY</i> /mnt
+</pre>
+<p>Además, si tiene una <a href="../en/EFI_system_partition.html" title="EFI system partition">partición de sistema EFI</a> y necesita hacer cambios en ella (por ejemplo, actualizar las imágenes <a href="../en/Kernel.html" class="mw-redirect" title="Vmlinuz">vmlinuz</a> o <a href="../en/Arch_boot_process.html#initramfs" class="mw-redirect" title="Initramfs">initramfs</a>):
+</p>
+<pre># mount /dev/sd<i>XZ</i> /mnt/<i>esp</i>
+</pre>
+<p>Finalmente, ingrese en el chroot:
+</p>
+<pre># arch-chroot /mnt
+</pre>
+<p>Para salir del chroot utilice:
+</p>
+<pre># exit
+</pre>
+<p>Ahora puede realizar la mayoría de las operaciones disponibles desde su instalación existente. Algunas tareas que necesitan <a href="../en/D-Bus.html" title="D-Bus">D-Bus</a> no funcionarán como se indica en <a href="#Utilizaci%C3%B3n">#Utilización</a>.
+</p>
+<h4><span class="mw-headline" id="Ejecutar_una_sola_orden_y_salir">Ejecutar una sola orden y salir</span></h4>
+<p>Para ejecutar una orden desde el chroot y salir de nuevo, anexe la siguiente orden al final de la línea:
+</p>
+<pre># arch-chroot <i>ubicación/del/nuevo/root</i> <i>miorden</i>
+</pre>
+<p>Por ejemplo, para ejecutar <code>mkinitcpio -p linux</code> para un chroot ubicado en <code>/mnt/arch</code> haga:
+</p>
+<pre># arch-chroot /mnt/arch mkinitcpio -p linux
+</pre>
+<h3><span class="mw-headline" id="Usar_chroot">Usar chroot</span></h3>
+<div class="archwiki-template-box archwiki-template-box-warning">
+<strong>Advertencia:</strong> Cuando se utiliza <code>--rbind</code>, algunos subdirectorios de <code>dev/</code> y <code>sys/</code> no serán desmontables. Si se intenta desmontar con <code>umount -l</code> en esta situación romperá su sesión, requiriendo un reinicio. Si es posible, utilice <code>-o bind</code> en su lugar.</div>
+<p>En el siguiente ejemplo, la ruta <code><i>/ubicación/de/nueva/raíz</i></code> es el directorio donde reside la nueva raíz.
+</p>
+<p>En primer lugar, monte los sistemas de archivos temporales de la API:
+</p>
+<pre># cd <i>/ubicación/del/nuevo/root</i>
+# mount -t proc /proc proc/
+# mount -t sysfs /sys sys/
+# mount --rbind /dev dev/
+</pre>
+<p>Y opcionalmente
+</p>
+<pre># mount --rbind /run run/
+</pre>
+<p>Si está ejecutando un sistema UEFI también necesitará acceso a las variables EFI. De lo contrario, al instalar GRUB recibirá un mensaje similar a <code>UEFI variables not supported on this machine</code>:
+</p>
+<pre># mount --rbind /sys/firmware/efi/efivars sys/firmware/efi/efivars/
+</pre>
+<p>A continuación, para utilizar una conexión a Internet en el entorno chroot, copie los detalles del DNS:
+</p>
+<pre># cp /etc/resolv.conf etc/resolv.conf
+</pre>
+<p>Finalmente, para cambiar el root a <code><i>/ubiación/de/nuevo/root</i></code> usando el bash:
+</p>
+<pre># chroot <i>ubicación/del/nuevo/root</i> /bin/bash
+</pre>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Nota:</strong> Si le sale el error:
+<ul>
+<li>
+<code>chroot: no se puede ejecutar la orden '/usr/bin/bash': Exec format error</code>, es probable que las arquitecturas del entorno del host y del entorno chroot no coincidan.</li>
+<li>
+<code>chroot: '/usr/bin/bash': permiso denegado</code>, vuelva a montar con el permiso de ejecución: <code>mount -o remount,exec <i>/ubicación/de/nuevo/root</i></code>.
+<ul><li>si esto no lo arregla, entonces <a rel="nofollow" class="external text" href="https://www.tldp.org/LDP/LG/issue52/okopnik.html">asegúrese de que</a> los componentes base del nuevo entorno están intactos (si es un Arch root intente <code>paccheck --root=<i>/localización/del/nuevo/root</i> --files --file-properties --md5sum glibc filesystem</code>, con <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=pacutils">pacutils</a></span>)</li></ul>
+</li>
+</ul>
+</div>
+<p>Después del chroot puede ser necesario cargar la configuración local del bash:
+</p>
+<pre># source /etc/profile
+# source ~/.bashrc
+</pre>
+<div class="archwiki-template-box archwiki-template-box-tip">
+<strong>Sugerencia:</strong> Opcionalmente, cree un prompt único para poder diferenciar su entorno chroot:
+<pre># export PS1="(chroot) $PS1"</pre>
+</div>
+<p>Cuando haya terminado con el chroot, puedes salir de él mediante:
+</p>
+<pre># exit
+</pre>
+<p>A continuación, desmonte los sistemas de archivos temporales:
+</p>
+<pre># cd /
+# umount --recursive <i>/ubicación/del/nuevo/root</i>
+</pre>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Nota:</strong> Si hay un error que menciona algo así como <code>umount: /ruta: el dispositivo está ocupado</code> esto suele significar que: un programa (incluso un shell) se dejó ejecutando en el chroot o que todavía existe un sub-montaje.  Salga del programa, use <code>findmnt -R <i>/ubicación/del/nuevo/root</i></code> para encontrarlo y luego <code>umount</code> lo sub-monta. Puede ser complicado usar <code>umount</code> en algunas cosas y uno puede esperar que <code>umount --force</code> funcione, como último recurso use <code>umount --lazy</code> que simplemente las libera. En cualquier caso, para estar seguro, <code>reboot</code> lo antes posible si no se resuelven para evitar posibles conflictos futuros.</div>
+<h2>
+<span id="Ejecutar_aplicaciones_gr.C3.A1ficas_desde_chroot"></span><span class="mw-headline" id="Ejecutar_aplicaciones_gráficas_desde_chroot">Ejecutar aplicaciones gráficas desde chroot</span>
+</h2>
+<p>Si tiene un <a href="../en/Xorg.html" class="mw-redirect" title="Xorg (Español)">servidor X</a> funcionando en su sistema, puede iniciar aplicaciones gráficas desde el entorno chroot.
+</p>
+<p>Para permitir que el entorno chroot se conecte a un servidor X, abra una terminal virtual dentro del servidor X (es decir, dentro del escritorio del usuario que está conectado en ese momento), y luego ejecute la orden <a href="../en/Xhost.html" title="Xhost">xhost</a>, que da permiso a cualquiera para conectarse al servidor X del usuario (véase también <a href="../en/Xhost.html" title="Xhost">Xhost</a>):
+</p>
+<pre>$ xhost +local:
+</pre>
+<p>Luego, para dirigir las aplicaciones al servidor X desde el chroot, configure la variable de entorno DISPLAY dentro del chroot para que coincida con la variable DISPLAY del usuario propietario del servidor X. Así, por ejemplo, ejecute
+</p>
+<pre>$ echo $DISPLAY
+</pre>
+<p>como el usuario propietario del servidor X para ver el valor de DISPLAY. Si el valor es ":0" (por ejemplo), entonces en el entorno chroot ejecute:
+</p>
+<pre># export DISPLAY=:0
+</pre>
+<h2><span class="mw-headline" id="Sin_privilegios_root">Sin privilegios root</span></h2>
+<p>Chroot requiere de privilegios root, que pueden no ser deseables o posibles para el usuario en ciertas situaciones. Sin embargo, hay varias formas de simular un comportamiento similar al de chroot utilizando implementaciones alternativas.
+</p>
+<h3><span class="mw-headline" id="PRoot">PRoot</span></h3>
+<p><a href="../en/PRoot.html" title="PRoot">PRoot</a> puede ser usado para cambiar el directorio raíz aparente y usar <code>mount --bind</code> sin privilegios de root. Esto es útil para confinar aplicaciones a un solo directorio o ejecutar programas construidos para una arquitectura de CPU diferente, pero tiene limitaciones debido a que todos los archivos son propiedad del usuario en el sistema anfitrión. PRoot proporciona un argumento <code>--root-id</code> que puede ser utilizado como una solución para algunas de estas limitaciones de una manera similar (aunque más limitada) a <i>fakeroot</i>.
+</p>
+<h3><span class="mw-headline" id="Fakechroot">Fakechroot</span></h3>
+<p><span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=fakechroot">fakechroot</a></span> es un shim de biblioteca que intercepta la llamada a chroot y falsea los resultados. Se puede utilizar junto con <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=fakeroot">fakeroot</a></span> para simular un chroot como un usuario normal. 
+</p>
+<pre>$ fakechroot fakeroot chroot ~/mi-chroot bash
+</pre>
+<h3><span class="mw-headline" id="Unshare">Unshare</span></h3>
+<p>Unshare, parte de <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=util-linux">util-linux</a></span>, se puede utilizar para crear un nuevo espacio de nombres del kernel. Esto funciona con la orden chroot habitual. Por ejemplo:
+</p>
+<pre>$ unshare --map-root-user chroot ~/namespace /bin/sh
+</pre>
+<h2>
+<span id="Soluci.C3.B3n_de_problemas"></span><span class="mw-headline" id="Solución_de_problemas">Solución de problemas</span>
+</h2>
+<h3>
+<span id="arch-chroot:_.2Flocation.2Fof.2Fnew.2Froot_is_not_a_mountpoint._This_may_have_undesirable_side_effects."></span><span class="mw-headline" id="arch-chroot:_/location/of/new/root_is_not_a_mountpoint._This_may_have_undesirable_side_effects.">arch-chroot: /location/of/new/root is not a mountpoint. This may have undesirable side effects.</span>
+</h3>
+<p>Al ejecutar <code>arch-chroot <i>/ubicación/de/la/nueva/raíz</i></code>, se emite una advertencia:
+</p>
+<pre>==&gt; WARNING: <i>/ubicación/de/la/nueva/raíz</i> is not a mountpoint. This may have undesirable side effects.
+</pre>
+<p>Véase <span class="plainlinks archwiki-template-man" title="$ man 8 arch-chroot"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/arch-chroot.8">arch-chroot(8)</a></span> para obtener una explicación y un ejemplo del uso del montaje de enlace (bind mounting) para convertir el directorio chroot en un punto de montaje.
+</p>
+<h2>
+<span id="V.C3.A9ase_tambi.C3.A9n"></span><span class="mw-headline" id="Véase_también">Véase también</span>
+</h2>
+<ul><li><a rel="nofollow" class="external text" href="https://help.ubuntu.com/community/BasicChroot">Basic Chroot</a></li></ul>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../Special:Categories.html" title="Special:Categories">Categories</a>: <ul>
+<li><a href="../es/Category:System_recovery.html" title="Category:System recovery (Español)">System recovery (Español)</a></li>
+<li><a href="../es/Category:Sandboxing.html" title="Category:Sandboxing (Español)">Sandboxing (Español)</a></li>
+<li><a href="../es/Category:Commands.html" title="Category:Commands (Español)">Commands (Español)</a></li>
+</ul>
+</div></div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=Chroot_(Espa%C3%B1ol)&amp;oldid=754526">https://wiki.archlinux.org/index.php?title=Chroot_(Español)&amp;oldid=754526</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 22 October 2022, at 21:37.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

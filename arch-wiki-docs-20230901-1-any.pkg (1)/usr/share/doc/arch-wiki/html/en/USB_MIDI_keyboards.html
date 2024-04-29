@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>USB MIDI keyboards - ArchWiki</title>
+<link rel="stylesheet" href="../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-USB_MIDI_keyboards rootpage-USB_MIDI_keyboards skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Preliminary_Testing" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Preliminary_Testing">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Preliminary Testing</div>
+			</a>
+			
+				<button aria-controls="toc-Preliminary_Testing-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Preliminary Testing subsection
+				</button>
+			
+			<ul id="toc-Preliminary_Testing-sublist" class="sidebar-toc-list">
+				<li id="toc-ALSA" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#ALSA">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.1</span>ALSA</div>
+			</a>
+			
+			<ul id="toc-ALSA-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Plugging_the_keyboard" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Plugging_the_keyboard">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Plugging the keyboard</div>
+			</a>
+			
+			<ul id="toc-Plugging_the_keyboard-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Verifying_Events" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Verifying_Events">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>Verifying Events</div>
+			</a>
+			
+			<ul id="toc-Verifying_Events-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Recording" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Recording">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4</span>Recording</div>
+			</a>
+			
+			<ul id="toc-Recording-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Playing" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Playing">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5</span>Playing</div>
+			</a>
+			
+				<button aria-controls="toc-Playing-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Playing subsection
+				</button>
+			
+			<ul id="toc-Playing-sublist" class="sidebar-toc-list">
+				<li id="toc-Hardware_synthesizer" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Hardware_synthesizer">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5.1</span>Hardware synthesizer</div>
+			</a>
+			
+			<ul id="toc-Hardware_synthesizer-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Software_synthesizer" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Software_synthesizer">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5.2</span>Software synthesizer</div>
+			</a>
+			
+			<ul id="toc-Software_synthesizer-sublist" class="sidebar-toc-list">
+				<li id="toc-Qsynth" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Qsynth">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5.2.1</span>Qsynth</div>
+			</a>
+			
+			<ul id="toc-Qsynth-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Qsynth_using_JACK" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Qsynth_using_JACK">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5.2.2</span>Qsynth using JACK</div>
+			</a>
+			
+			<ul id="toc-Qsynth_using_JACK-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+	</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../en/USB_MIDI_keyboards.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="new mw-list-item"><a href="/index.php?title=Talk:USB_MIDI_keyboards&amp;action=edit&amp;redlink=1" rel="discussion" title="Discussion about the content page (page does not exist) [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">English</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../en/USB_MIDI_keyboards.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=USB_MIDI_keyboards&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=USB_MIDI_keyboards&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../en/USB_MIDI_keyboards.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=USB_MIDI_keyboards&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=USB_MIDI_keyboards&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output">
+<div class="noprint archwiki-template-message">
+<p><a href="../File:Tango-edit-clear.png" class="image"><img alt="Tango-edit-clear.png" src="../File:Tango-edit-clear.png" decoding="async" width="48" height="48"></a><b>This article or section needs language, wiki syntax or style improvements. See <a href="../en/Help:Style.html" title="Help:Style">Help:Style</a> for reference.</b><a href="../File:Tango-edit-clear.png" class="image"><img alt="Tango-edit-clear.png" src="../File:Tango-edit-clear.png" decoding="async" width="48" height="48"></a></p>
+<div>
+<b>Reason:</b> Needs some language improvements (Discuss in <a rel="nofollow" class="external text" href="https://wiki.archlinux.org/title/Talk:USB_MIDI_keyboards">Talk:USB MIDI keyboards</a>)</div>
+</div>
+<p>This how-to assumes that you are using <a href="../en/Advanced_Linux_Sound_Architecture.html" class="mw-redirect" title="ALSA">ALSA</a> and that your sound card is set up so you can listen to music. Known to work using this how-to is the Evolution MK-631 USB midi keyboard with SB Live! Value card. Execute these instructions as an unprivileged user unless otherwise noted.
+</p>
+<mw:tocplace></mw:tocplace>
+<h2><span class="mw-headline" id="Preliminary_Testing">Preliminary Testing</span></h2>
+<h3><span class="mw-headline" id="ALSA">ALSA</span></h3>
+<p><a href="../en/Help:Reading.html#Installation_of_packages" class="mw-redirect" title="Install">Install</a> the <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=alsa-utils">alsa-utils</a></span> package.
+</p>
+<p>Type <code>aseqdump</code>. It should output something like:
+</p>
+<pre>Waiting for data at port 128:0. Press Ctrl+C to end.
+Source_ Event_________________ Ch _Data__
+</pre>
+<p>Not much will show up there, so press Ctrl+C to quit the program.
+</p>
+<h2><span class="mw-headline" id="Plugging_the_keyboard">Plugging the keyboard</span></h2>
+<p>Now plug the keyboard in and turn it on. The keyboard should power up. Output of <code>lsusb</code> should contain:
+</p>
+<pre>Bus 002 Device 002: ID 0a4d:00a0 Evolution Electronics, Ltd
+</pre>
+<p>Output of <code>lsmod | grep usb</code> should contain the following modules:
+</p>
+<pre>usb_midi               25348  0
+snd_usb_audio          70592  0
+snd_usb_lib            16640  1 snd_usb_audio
+</pre>
+<p>Now type <code>aconnect -i</code> to list all MIDI input ports. The output should contain:
+</p>
+<pre>client 72: 'MK-361 USB MIDI keyboard' [type=kernel]
+    0 'MK-361 USB MIDI keyboard MIDI 1'</pre>
+<p>The client number is probably going to be different though. Take note of it.
+</p>
+<h2><span class="mw-headline" id="Verifying_Events">Verifying Events</span></h2>
+<p>Type <code>aseqdump -p ##</code> where you should replace <code>##</code> with the client number of your keyboard. You should see:
+</p>
+<pre> 72:0   Active Sensing
+</pre>
+<p>popping out all the time. Pressing a key should produce:
+</p>
+<pre> 72:0   Note on                 0  65  94
+ 72:0   Note on                 0  65   0
+</pre>
+<p>Various other events (turning control knobs, changing channels, etc.) should register in the list. This is a handy  way of ensuring that your keyboard is running properly.
+</p>
+<p>To send MIDI events back to the keyboard or another MIDI output device, you can use run <code>aplaymidi -p ## midifile.mid</code> and specify a MIDI file.
+</p>
+<h2><span class="mw-headline" id="Recording">Recording</span></h2>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> This section is for recording raw MIDI data to a file. For recording audio, you need a synthesizer. See <a href="#Playing">Playing</a>.</div>
+<p>First, use <code>arecordmidi -l</code> to list the available input devices, and determine the <code>port_number</code> for the desired device. 
+Then, execute the following to start recording:
+</p>
+<pre>arecordmidi -p &lt;port_number&gt; &lt;output_file&gt;
+</pre>
+<p>To stop recording, simply <code>kill</code> the process.
+</p>
+<p><code>man arecordmidi</code> provides details about additional options available with this tool.
+</p>
+<h2><span class="mw-headline" id="Playing">Playing</span></h2>
+<p>To hear a sound when you push a button on your keyboard, you need a synthesizer that converts the MIDI signal into audio.
+</p>
+<p>Some soundcards have a built-in hardware synthesizer, but these are not common in modern sound cards, especially not in onboard sound cards. An easier option is a software synthesizer, which is just a program which you can load with you own instrument samples.
+</p>
+<h3><span class="mw-headline" id="Hardware_synthesizer">Hardware synthesizer</span></h3>
+<p>Type <code>aconnect -o</code> to list all MIDI output ports. It depends a lot on your sound card. On SB Live! Value, you get the following output:
+</p>
+<pre>client 64: 'EMU10K1 MPU-401 (UART)' [type=kernel]
+    0 'EMU10K1 MPU-401 (UART)'
+client 65: 'Emu10k1 WaveTable' [type=kernel]
+    0 'Emu10k1 Port 0  '
+    1 'Emu10k1 Port 1  '
+    2 'Emu10k1 Port 2  '
+    3 'Emu10k1 Port 3  '</pre>
+<p>Here client 65 is the actual MIDI synthesizer. Assuming the soundcard is <a href="../en/SB_Live!_Midi.html" title="SB Live! Midi">set up</a> properly, you should be able to <b>route</b> the output of the keyboard to the MIDI synthesizer. Assuming <i>out</i> is the output client number (65 in our example) and <i>in</i> is the input client number (72 in our example), type <code>aconnect <i>in</i> <i>out</i></code>. Now you can play your keyboard via the MIDI output of your sound card.
+</p>
+<h3><span class="mw-headline" id="Software_synthesizer">Software synthesizer</span></h3>
+<h4><span class="mw-headline" id="Qsynth">Qsynth</span></h4>
+<ol>
+<li>Install <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=qsynth">qsynth</a></span>.</li>
+<li>Start QSynth and go to <b>Setup</b>, where you need to load soundfont in SF2 format. You can get free SoundFonts from <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/fluidplug-git/">fluidplug-git</a></span><sup><small>AUR</small></sup>, or from <a rel="nofollow" class="external free" href="http://soundfonts.narod.ru/">http://soundfonts.narod.ru/</a> (in Russian). When QSynth asks you to restart the engine after loading the SoundFont, do so.</li>
+<li>Type <code>aconnect -o</code> to list all MIDI output ports. Find the one that contains <code>FLUID Synth</code> and note the client number.</li>
+<li>Type <code>aconnect -i</code> to list all MIDI input ports. Note the Keyboard client number.</li>
+<li>Assuming <i>out</i> is the output client number and <i>in</i> is the input client number (72 in our example), type <code>aconnect <i>in</i> <i>out</i></code>. Now you can play your keyboard and QSynth should produce sounds.</li>
+</ol>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> You need to run <code>aconnect <i>in</i> <i>out</i></code> each time you restart Qsynth or change the instrument/SoundFont.</div>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong>  Qsynth default audio driver is set to jack. To use alsa run : qsynth -a alsa </div>
+<h4><span class="mw-headline" id="Qsynth_using_JACK">Qsynth using JACK</span></h4>
+<ol>
+<li>We need to install <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=qsynth">qsynth</a></span>, <a href="../en/JACK_Audio_Connection_Kit.html" class="mw-redirect" title="JACK">JACK</a>, <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=qjackctl">qjackctl</a></span>
+</li>
+<li>Launch qjackctl and check the settings: <pre>Server Path: jackd
+Driver: alsa
+Realtime=enable; Priority:0
+Frames/Period:512
+Soft Mode=enable; Periods/Buffer:2
+Rest of parameters=disable(by default)
+Dither: None
+Audio: Duplex
+</pre>
+</li>
+<li>Start jackd using qjackctl (the <i>Play</i> button)</li>
+<li>Connect your USB keyboard</li>
+<li>Start QSynth and go to <i>Setup</i>, where you need to load soundfont in SF2 format. You can get free SoundFonts from <a rel="nofollow" class="external free" href="http://soundfonts.narod.ru/">http://soundfonts.narod.ru/</a> (in Russian). When QSynth asks you to restart the engine after loading the SoundFont, do so.</li>
+<li>Go to qjackctl, click <i>Connect</i> and choose the ALSA tab. On the left side you will see connected MIDI keyboard, on the left side - QSynth. Choose MIDI keyboard and QSynth, and click <i>Connect</i>.</li>
+</ol>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface">
+<div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../Special:Categories.html" title="Special:Categories">Categories</a>: <ul>
+<li><a href="../en/Category:Input_devices.html" title="Category:Input devices">Input devices</a></li>
+<li><a href="../en/Category:Audio.html" title="Category:Audio">Audio</a></li>
+</ul>
+</div>
+<div id="mw-hidden-catlinks" class="mw-hidden-catlinks mw-hidden-cats-hidden">Hidden category: <ul><li><a href="../en/Category:Pages_or_sections_flagged_with_Template:Style.html" title="Category:Pages or sections flagged with Template:Style">Pages or sections flagged with Template:Style</a></li></ul>
+</div>
+</div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=USB_MIDI_keyboards&amp;oldid=693744">https://wiki.archlinux.org/index.php?title=USB_MIDI_keyboards&amp;oldid=693744</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 1 September 2021, at 07:23.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

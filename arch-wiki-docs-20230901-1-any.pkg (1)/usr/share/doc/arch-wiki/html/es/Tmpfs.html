@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>tmpfs (Español) - ArchWiki</title>
+<link rel="stylesheet" href="../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Tmpfs_Español rootpage-Tmpfs_Español skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Utilización" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Utilizaci%C3%B3n">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Utilización</div>
+			</a>
+			
+			<ul id="toc-Utilización-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Ejemplos" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Ejemplos">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Ejemplos</div>
+			</a>
+			
+			<ul id="toc-Ejemplos-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Desactivar_el_montaje_automático" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Desactivar_el_montaje_autom%C3%A1tico">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>Desactivar el montaje automático</div>
+			</a>
+			
+			<ul id="toc-Desactivar_el_montaje_automático-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Solución_de_problemas" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Soluci%C3%B3n_de_problemas">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4</span>Solución de problemas</div>
+			</a>
+			
+				<button aria-controls="toc-Solución_de_problemas-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Solución de problemas subsection
+				</button>
+			
+			<ul id="toc-Solución_de_problemas-sublist" class="sidebar-toc-list">
+				<li id="toc-Abrir_enlaces_simbólicos_en_tmpfs_cuando_falla_la_raíz" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Abrir_enlaces_simb%C3%B3licos_en_tmpfs_cuando_falla_la_ra%C3%ADz">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.1</span>Abrir enlaces simbólicos en tmpfs cuando falla la raíz</div>
+			</a>
+			
+			<ul id="toc-Abrir_enlaces_simbólicos_en_tmpfs_cuando_falla_la_raíz-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Véase_también" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#V%C3%A9ase_tambi%C3%A9n">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5</span>Véase también</div>
+			</a>
+			
+			<ul id="toc-Véase_también-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../es/Tmpfs.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="new mw-list-item"><a href="/index.php?title=Talk:Tmpfs_(Espa%C3%B1ol)&amp;action=edit&amp;redlink=1" rel="discussion" title="Discussion about the content page (page does not exist) [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">español</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../es/Tmpfs.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=Tmpfs_(Espa%C3%B1ol)&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=Tmpfs_(Espa%C3%B1ol)&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../es/Tmpfs.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Tmpfs_(Espa%C3%B1ol)&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Tmpfs_(Espa%C3%B1ol)&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="es" dir="ltr">
+<div class="mw-parser-output">
+<p><span>
+</span>
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">Esta traducción de <a href="../en/Tmpfs.html" title="Tmpfs">Tmpfs</a> fue revisada el <b>2022-10-22</b>. Si existen <a rel="nofollow" class="external text" href="https://wiki.archlinux.org/index.php?title=Tmpfs&amp;diff=0&amp;oldid=734108">cambios</a> puede <a href="../es/ArchWiki:Translation_Team/Contributing.html" title="ArchWiki:Translation Team (Español)/Contributing (Español)">actualizarla</a> o avisar al <a href="../es/ArchWiki:Translation_Team.html" title="ArchWiki:Translation Team (Español)">equipo de traducción</a>.</div>
+<p><a href="https://en.wikipedia.org/wiki/es:Tmpfs" class="extiw" title="wikipedia:es:Tmpfs">tmpfs</a> es un sistema de archivos temporal que reside en la memoria y/o partición(es) de intercambio. Montar directorios como tmpfs puede ser una forma eficaz de acelerar el acceso a sus archivos o de asegurarse de que su contenido se borre automáticamente al reiniciar.
+</p>
+<div class="archwiki-template-box archwiki-template-box-tip">
+<strong>Sugerencia:</strong> Los archivos temporales en los directorios tmpfs se pueden volver a crear en el arranque utilizando <a href="../es/Systemd.html#Archivos_temporales" class="mw-redirect" title="Systemd-tmpfiles (Español)">systemd-tmpfiles</a>.</div>
+<mw:tocplace></mw:tocplace>
+<h2>
+<span id="Utilizaci.C3.B3n"></span><span class="mw-headline" id="Utilización">Utilización</span>
+</h2>
+<p>Algunos directorios en los que se utilice comúnmente <span class="plainlinks archwiki-template-man" title="$ man 5 tmpfs"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/tmpfs.5">tmpfs(5)</a></span> son <a rel="nofollow" class="external text" href="https://refspecs.linuxfoundation.org/FHS_3.0/fhs/ch03s18.html">/tmp</a>, <a rel="nofollow" class="external text" href="https://refspecs.linuxfoundation.org/FHS_3.0/fhs/ch05s09.html">/var/lock</a> y <a rel="nofollow" class="external text" href="https://refspecs.linuxfoundation.org/FHS_3.0/fhs/ch05s13.html">/var/run</a>. No lo utilice en <a rel="nofollow" class="external text" href="https://refspecs.linuxfoundation.org/FHS_3.0/fhs/ch05s15.html">/var/tmp</a>, porque ese directorio está destinado a archivos temporales que se conservan durante los reinicios.
+</p>
+<p>Arch utiliza un directorio tmpfs <code>/run</code>, con <code>/var/run</code> y <code>/var/lock</code> simplemente existiendo como enlaces simbólicos por compatibilidad. También se utiliza para <code>/tmp</code> por la configuración predeterminada de systemd y no requiere una entrada en <a href="../es/Fstab.html" title="Fstab (Español)">fstab</a> a menos que se necesite una configuración específica.
+</p>
+<p><span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=glibc">glibc</a></span> 2.2 y posterior espera que tmpfs se monte en <code>/dev/shm</code> para <a href="https://en.wikipedia.org/wiki/Shared_memory#Support_on_Unix-like_systems" class="extiw" title="wikipedia:Shared memory">memoria compartida POSIX</a>. El montaje de tmpfs en <code>/dev/shm</code> es gestionado automáticamente por <a href="../es/Systemd.html" title="Systemd (Español)">systemd</a> y la configuración manual en <a href="../es/Fstab.html" title="Fstab (Español)">fstab</a> no es necesaria.
+</p>
+<p>Generalmente, las tareas y los programas que ejecutan operaciones frecuentes de lectura/escritura pueden beneficiarse del uso de un directorio tmpfs. Algunas aplicaciones pueden incluso recibir una ganancia sustancial al descargar algunos (o todos) sus datos en la memoria compartida. Por ejemplo, <a href="../en/Firefox/Profile_on_RAM.html" class="mw-redirect" title="Firefox on RAM">reubicar el perfil de Firefox en la RAM</a> muestra una mejora significativa en el rendimiento.
+</p>
+<h2><span class="mw-headline" id="Ejemplos">Ejemplos</span></h2>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Nota:</strong> El consumo real de memoria/intercambio depende de cuánto se utilice, ya que las particiones tmpfs no consumen memoria hasta que realmente se necesita.</div>
+<p>De forma predeterminada, una partición tmpfs tiene su tamaño máximo establecido en la mitad de la RAM disponible, sin embargo, es posible cambiar este valor.
+Para establecer explícitamente un tamaño máximo, en este ejemplo para cambiarlo en <code>/tmp</code>, utilice la opción de montaje <code>size</code>:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/fstab</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">tmpfs   /tmp         tmpfs   rw,nodev,nosuid,size=2G          0  0</pre>
+<p>Para especificar un montaje más seguro, especifique la siguiente opción de montaje:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/fstab</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">tmpfs   /www/cache    tmpfs  rw,size=1G,nr_inodes=5k,noexec,nodev,nosuid,uid=<i>usuario</i>,gid=<i>grupo</i>,mode=1700 0 0</pre>
+<p>Véase la página de manual <span class="plainlinks archwiki-template-man" title="$ man 5 tmpfs"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/tmpfs.5">tmpfs(5)</a></span> y <a href="../es/Security.html#Sistema_de_archivos" title="Security (Español)">Security (Español)#Sistema de archivos</a> para más información.
+</p>
+<p>Reinicie para que los cambios surtan efecto. Tenga en cuenta que aunque pueda ser tentador ejecutar <code>mount -a</code> para que los cambios sean efectivos inmediatamente, esto hará que los archivos que actualmente residen en estos directorios sean inaccesibles (esto es especialmente problemático para ejecutar programas con archivos de bloqueo, por ejemplo). Sin embargo, si todos están vacíos, debería ser seguro ejecutar <code>mount -a</code> en lugar de reiniciar (o montarlos individualmente).
+</p>
+<p>Después de aplicar los cambios, verifique que surtieron efecto mirando <code>/proc/mounts</code> y utilizando <code>findmnt</code>:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">$ findmnt /tmp</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">TARGET SOURCE FSTYPE OPTIONS
+/tmp   tmpfs  tmpfs  rw,nosuid,nodev,relatime</pre>
+<p>tmpfs también puede cambiar de tamaño temporalmente sin la necesidad de reiniciar, por ejemplo, cuando necesite ejecutarse rápidamente un trabajo de compilación grande. En este caso, ejecute:
+</p>
+<pre># mount -o remount,size=4G /tmp
+</pre>
+<h2>
+<span id="Desactivar_el_montaje_autom.C3.A1tico"></span><span class="mw-headline" id="Desactivar_el_montaje_automático">Desactivar el montaje automático</span>
+</h2>
+<p>En <a href="../es/Systemd.html" title="Systemd (Español)">systemd</a>, <code>/tmp</code> se monta automáticamente como un tmpfs, si no es ya un punto de montaje dedicado (ya sea tmpfs o en disco) en <code>/etc/fstab</code>. Para desactivar el montaje automático, <a href="../es/Systemd.html#Utilizar_las_unidades" class="mw-redirect" title="Mask (Español)">enmascare</a> la unidad systemd <code>tmp.mount</code>.
+</p>
+<p>Los archivos ya no se almacenarán en un tmpfs, sino en el dispositivo de bloque. El contenido de <code>/tmp</code> ahora se conservará entre reinicios, lo que podría no ser el comportamiento deseado. Para recuperar el comportamiento anterior y limpiar el directorio <code>/tmp</code> automáticamente al reiniciar, considere utilizar <span class="plainlinks archwiki-template-man" title="$ man 5 tmpfiles.d"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/tmpfiles.d.5">tmpfiles.d(5)</a></span>:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/tmpfiles.d/tmp.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;"># véase tmpfiles.d(5)
+# activar siempre la limpieza del directorio /tmp
+D! /tmp 1777 root root 0
+
+# eliminar los archivos en /var/tmp con más de 10 días
+D /var/tmp 1777 root root 10d
+
+# los puntos de montaje del espacio de nombres (PrivateTmp=yes) se excluyen de la eliminación
+x /tmp/systemd-private-*
+x /var/tmp/systemd-private-*
+X /tmp/systemd-private-*/tmp
+X /var/tmp/systemd-private-*/tmp</pre>
+<h2>
+<span id="Soluci.C3.B3n_de_problemas"></span><span class="mw-headline" id="Solución_de_problemas">Solución de problemas</span>
+</h2>
+<h3>
+<span id="Abrir_enlaces_simb.C3.B3licos_en_tmpfs_cuando_falla_la_ra.C3.ADz"></span><span class="mw-headline" id="Abrir_enlaces_simbólicos_en_tmpfs_cuando_falla_la_raíz">Abrir enlaces simbólicos en tmpfs cuando falla la raíz</span>
+</h3>
+<p>Considerando que <code>/tmp</code> está utilizando tmpfs, cambie el directorio actual a <code>/tmp</code>, luego cree un archivo y un enlace simbólico a ese archivo en el mismo directorio <code>/tmp</code>. Es de esperar que se produzcan errores de permiso denegado al intentar leer el enlace simbólico debido a que <code>/tmp</code> <a rel="nofollow" class="external text" href="https://wiki.ubuntu.com/Security/Features#Symlink_restrictions">tiene el "bit pegajoso" activado</a>.
+</p>
+<p>Este comportamiento se puede controlar mediante <code>/proc/sys/fs/protected_symlinks</code> o simplemente mediante sysctl: <code>sysctl -w fs.protected_symlinks=0</code>. Véase <a href="../en/Sysctl.html#Configuration" title="Sysctl">Sysctl#Configuration</a> para hacerlo permanente.
+</p>
+<div class="archwiki-template-box archwiki-template-box-warning">
+<strong>Advertencia:</strong> ¡Cambiar este comportamiento puede generar problemas de seguridad!</div>
+<h2>
+<span id="V.C3.A9ase_tambi.C3.A9n"></span><span class="mw-headline" id="Véase_también">Véase también</span>
+</h2>
+<ul><li><a rel="nofollow" class="external text" href="https://docs.kernel.org/filesystems/tmpfs.html">Documentación del kernel Linux</a></li></ul>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="../es/Category:File_systems.html" title="Category:File systems (Español)">File systems (Español)</a></li></ul>
+</div></div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=Tmpfs_(Espa%C3%B1ol)&amp;oldid=773006">https://wiki.archlinux.org/index.php?title=Tmpfs_(Español)&amp;oldid=773006</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 17 March 2023, at 08:30.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>phpMyAdmin (Français) - ArchWiki</title>
+<link rel="stylesheet" href="../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-PhpMyAdmin_Français rootpage-PhpMyAdmin_Français skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Installation" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Installation">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Installation</div>
+			</a>
+			
+			<ul id="toc-Installation-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Exécution" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Ex%C3%A9cution">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Exécution</div>
+			</a>
+			
+				<button aria-controls="toc-Exécution-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Exécution subsection
+				</button>
+			
+			<ul id="toc-Exécution-sublist" class="sidebar-toc-list">
+				<li id="toc-PHP" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#PHP">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.1</span>PHP</div>
+			</a>
+			
+			<ul id="toc-PHP-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Apache" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Apache">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.2</span>Apache</div>
+			</a>
+			
+			<ul id="toc-Apache-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Lighttpd" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Lighttpd">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.3</span>Lighttpd</div>
+			</a>
+			
+			<ul id="toc-Lighttpd-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Nginx" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Nginx">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.4</span>Nginx</div>
+			</a>
+			
+			<ul id="toc-Nginx-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Configuration" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Configuration">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>Configuration</div>
+			</a>
+			
+				<button aria-controls="toc-Configuration-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Configuration subsection
+				</button>
+			
+			<ul id="toc-Configuration-sublist" class="sidebar-toc-list">
+				<li id="toc-Définir_un_serveur_MySQL_distant" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#D%C3%A9finir_un_serveur_MySQL_distant">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.1</span>Définir un serveur MySQL distant</div>
+			</a>
+			
+			<ul id="toc-Définir_un_serveur_MySQL_distant-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Utiliser_le_script_d'installation" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Utiliser_le_script_d'installation">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.2</span>Utiliser le script d'installation</div>
+			</a>
+			
+			<ul id="toc-Utiliser_le_script_d'installation-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Ajouter_la_phrase_de_passe_blowfish_secret" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Ajouter_la_phrase_de_passe_blowfish_secret">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.3</span>Ajouter la phrase de passe blowfish_secret</div>
+			</a>
+			
+			<ul id="toc-Ajouter_la_phrase_de_passe_blowfish_secret-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Activer_le_stockage_de_la_configuration" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Activer_le_stockage_de_la_configuration">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.4</span>Activer le stockage de la configuration</div>
+			</a>
+			
+			<ul id="toc-Activer_le_stockage_de_la_configuration-sublist" class="sidebar-toc-list">
+				<li id="toc-Configurer_la_base_de_données" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Configurer_la_base_de_donn%C3%A9es">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.4.1</span>Configurer la base de données</div>
+			</a>
+			
+			<ul id="toc-Configurer_la_base_de_données-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Configurer_l'utilisateur_de_la_base_de_données" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Configurer_l'utilisateur_de_la_base_de_donn%C3%A9es">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.4.2</span>Configurer l'utilisateur de la base de données</div>
+			</a>
+			
+			<ul id="toc-Configurer_l'utilisateur_de_la_base_de_données-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Activer_la_mise_en_cache_des_modèles" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Activer_la_mise_en_cache_des_mod%C3%A8les">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.5</span>Activer la mise en cache des modèles</div>
+			</a>
+			
+			<ul id="toc-Activer_la_mise_en_cache_des_modèles-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Supprimer_le_répertoire_de_configuration" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Supprimer_le_r%C3%A9pertoire_de_configuration">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.6</span>Supprimer le répertoire de configuration</div>
+			</a>
+			
+			<ul id="toc-Supprimer_le_répertoire_de_configuration-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Installer_des_thèmes" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Installer_des_th%C3%A8mes">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.7</span>Installer des thèmes</div>
+			</a>
+			
+			<ul id="toc-Installer_des_thèmes-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Voir_aussi" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Voir_aussi">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4</span>Voir aussi</div>
+			</a>
+			
+			<ul id="toc-Voir_aussi-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../fr/PhpMyAdmin.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="new mw-list-item"><a href="/index.php?title=Talk:PhpMyAdmin_(Fran%C3%A7ais)&amp;action=edit&amp;redlink=1" rel="discussion" title="Discussion about the content page (page does not exist) [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">français</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../fr/PhpMyAdmin.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=PhpMyAdmin_(Fran%C3%A7ais)&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=PhpMyAdmin_(Fran%C3%A7ais)&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../fr/PhpMyAdmin.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=PhpMyAdmin_(Fran%C3%A7ais)&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=PhpMyAdmin_(Fran%C3%A7ais)&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="fr" dir="ltr">
+<div class="mw-parser-output">
+<p><span>
+</span>
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>État de la traduction:</strong> Cet article est la version francophone de <a href="../en/PhpMyAdmin.html" title="PhpMyAdmin">PhpMyAdmin</a>. Date de la dernière traduction: 2022-10-03. Vous pouvez aider à synchroniser la traduction s'il y a eu des <a rel="nofollow" class="external text" href="https://wiki.archlinux.org/index.php?title=PhpMyAdmin&amp;diff=0&amp;oldid=718794">changements</a> dans la version anglaise.</div>
+<p><a href="https://en.wikipedia.org/wiki/fr:phpMyAdmin" class="extiw" title="wikipedia:fr:phpMyAdmin">phpMyAdmin</a> est une application Web de gestion pour les systèmes de gestion de base de données MySQL et MariaDB, réalisée principalement en PHP et distribuée sous licence GNU GPL. 
+</p>
+<mw:tocplace></mw:tocplace>
+<h2><span class="mw-headline" id="Installation">Installation</span></h2>
+<p><a href="../fr/Help:Reading.html#Installation_de_paquets" class="mw-redirect" title="Installez">Installez</a> le paquet <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=phpmyadmin">phpmyadmin</a></span>.
+</p>
+<h2>
+<span id="Ex.C3.A9cution"></span><span class="mw-headline" id="Exécution">Exécution</span>
+</h2>
+<h3><span class="mw-headline" id="PHP">PHP</span></h3>
+<p>Assurez-vous que les extensions PHP <a href="../en/PHP.html#MySQL/MariaDB" title="PHP">mariadb</a> et <code>iconv</code> ont été activées.
+</p>
+<p>En option, vous pouvez activer <code>extension=bz2</code> et <code>extension=zip</code> pour la prise en charge de la compression.
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> Si <code>open_basedir</code> a été défini, assurez-vous d'inclure <code>/usr/share/webapps</code> et <code>/etc/webapps</code> à <code>open_basedir</code> dans <code>/etc/php/php.ini</code>. Consultez <a href="../en/PHP.html#Configuration" title="PHP">PHP#Configuration</a>.</div>
+<h3><span class="mw-headline" id="Apache">Apache</span></h3>
+<p>Configurez Apache pour utiliser PHP comme indiqué dans l'article <a href="../en/Apache_HTTP_Server.html#PHP" class="mw-redirect" title="Apache HTTP Server (Français)">Apache HTTP Server (Français)#PHP</a>.
+</p>
+<p>Créez le fichier de configuration d'Apache :
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/httpd/conf/extra/phpmyadmin.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">Alias /phpmyadmin "/usr/share/webapps/phpMyAdmin"
+&lt;Directory "/usr/share/webapps/phpMyAdmin"&gt;
+    DirectoryIndex index.php
+    AllowOverride All
+    Options FollowSymlinks
+    Require all granted
+&lt;/Directory&gt;</pre>
+<p>Et l'inclure dans <code>/etc/httpd/conf/httpd.conf</code> :
+</p>
+<pre># Configuration de phpMyAdmin
+Include conf/extra/phpmyadmin.conf
+</pre>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> Par défaut, toute personne pouvant accéder au serveur Web Apache peut consulter la page de connexion de phpMyAdmin sous cette URL. Pour changer cela, modifiez <code>/etc/httpd/conf/extra/phpmyadmin.conf</code> à votre convenance. Par exemple, si vous ne voulez pouvoir y accéder que depuis la même machine, remplacez <code>Require all granted</code> par <code>Require local</code>. Attention, cela empêchera la connexion à PhpMyAdmin sur un serveur distant. Si vous souhaitez toujours accéder à PhpMyAdmin sur un serveur distant de manière sécurisée, vous pouvez envisager de mettre en place un <a href="../fr/OpenSSH.html#Tunnel_SOCKS_chiffr%C3%A9" title="OpenSSH (Français)">OpenSSH (Français)#Tunnel SOCKS chiffré</a>.</div>
+<p>Après avoir apporté des modifications au fichier de configuration d'Apache, <a href="../fr/Systemd.html#Utilisation_des_unit%C3%A9s" class="mw-redirect" title="Redémarrez">redémarrez</a> <code>httpd.service</code>.
+</p>
+<h3><span class="mw-headline" id="Lighttpd">Lighttpd</span></h3>
+<p>Pour configurer <a href="../en/Lighttpd.html" title="Lighttpd">Lighttpd</a>, assurez-vous qu'il est capable de servir des fichiers PHP et que <code>mod_alias</code> a été activé.
+</p>
+<p>Ajoutez l'alias suivant pour PhpMyAdmin à la configuration :
+</p>
+<pre> alias.url = ("/phpmyadmin" =&gt; "/usr/share/webapps/phpMyAdmin/")
+</pre>
+<h3><span class="mw-headline" id="Nginx">Nginx</span></h3>
+<p>Assurez-vous de configurer <a href="../en/Nginx.html#FastCGI" title="Nginx">nginx#FastCGI</a> et d'utiliser <a href="../en/Nginx.html#Server_blocks" title="Nginx">nginx#Server blocks</a> pour faciliter la gestion.
+</p>
+<p>De préférence, accédez à phpMyAdmin par sous-domaine, par exemple <code>https://<i>pma.domain.tld</i></code>:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/nginx/sites-available/<i>pma.domain.tld</i></pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">server {
+    server_name <i>pma.domain.tld</i>;
+    ; listen 80; # also listen on http
+    ; listen [::]:80;
+    listen 443 ssl http2;
+    listen [::]:443 ssl http2;
+    index index.php;
+    access_log /var/log/nginx/pma.access.log;
+    error_log /var/log/nginx/pma.error.log;
+
+    # Allows limiting access to certain client addresses.
+    ; allow 192.168.1.0/24;
+    ; allow <i>my-ip</i>;
+    ; deny all;
+
+    root /usr/share/webapps/phpMyAdmin;
+    location / {
+        try_files $uri $uri/ =404;
+    }
+
+    error_page 404 /index.php;
+
+    location ~ \.php$ {
+        try_files $uri $document_root$fastcgi_script_name =404;
+
+        fastcgi_split_path_info ^(.+\.php)(/.*)$;
+        fastcgi_pass unix:/run/php-fpm/php-fpm.sock;
+        fastcgi_index index.php;
+        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+        include fastcgi_params;
+
+        fastcgi_param HTTP_PROXY "";
+        fastcgi_param HTTPS on;
+        fastcgi_request_buffering off;
+   }
+}</pre>
+<p>Ou par sous-répertoire, par exemple <code>https://<i>domain.tld</i>/phpMyAdmin</code> :
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/nginx/sites-available/<i>domain.tld</i></pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">server {
+    server_name <i>domain.tld</i>;
+    listen 443 ssl http2;
+    listen [::]:443 ssl http2;
+    index index.php;
+    access_log /var/log/nginx/domain.tld.access.log;
+    error_log /var/log/nginx/domain.tld.error.log;
+
+    root /srv/http/domain.tld;
+    location / {
+        try_files $uri $uri/ =404;
+    }
+
+    location /phpMyAdmin {
+        root /usr/share/webapps/phpMyAdmin;
+    }
+
+    # Deny static files
+    location ~ ^/phpMyAdmin/(README|LICENSE|ChangeLog|DCO)$ {
+       deny all;
+    }
+
+    # Deny .md files
+    location ~ ^/phpMyAdmin/(.+\.md)$ {
+      deny all;
+   }
+
+   # Deny setup directories
+   location ~ ^/phpMyAdmin/(doc|sql|setup)/ {
+      deny all;
+   }
+
+   #FastCGI config for phpMyAdmin
+   location ~ /phpMyAdmin/(.+\.php)$ {
+      try_files $uri $document_root$fastcgi_script_name =404;
+
+      fastcgi_split_path_info ^(.+\.php)(/.*)$;
+      fastcgi_pass unix:/run/php-fpm/php-fpm.sock;
+      fastcgi_index index.php;
+      fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+      include fastcgi_params;
+
+      fastcgi_param HTTP_PROXY "";
+      fastcgi_param HTTPS on;
+      fastcgi_request_buffering off;
+   }
+}
+</pre>
+<h2><span class="mw-headline" id="Configuration">Configuration</span></h2>
+<p>Le fichier de configuration principal se trouve à <code>/usr/share/webapps/phpMyAdmin/config.inc.php</code>.
+</p>
+<h3>
+<span id="D.C3.A9finir_un_serveur_MySQL_distant"></span><span class="mw-headline" id="Définir_un_serveur_MySQL_distant">Définir un serveur MySQL distant</span>
+</h3>
+<p>Si le serveur <a href="../fr/MySQL.html" title="MySQL (Français)">MySQL</a> est un hôte distant, ajoutez la ligne suivante au fichier de configuration :
+</p>
+<pre>$cfg['Servers'][$i]['host'] = 'example.com' ;
+</pre>
+<h3>
+<span id="Utiliser_le_script_d.27installation"></span><span class="mw-headline" id="Utiliser_le_script_d'installation">Utiliser le script d'installation</span>
+</h3>
+<p>Pour permettre l'utilisation du script d'installation de phpMyAdmin (par exemple, <a rel="nofollow" class="external free" href="http://localhost/phpmyadmin/setup">http://localhost/phpmyadmin/setup</a>), assurez-vous que <code>/usr/share/webapps/phpMyAdmin</code> est accessible en écriture pour l'<a href="../fr/Users_and_groups.html" title="Users and groups (Français)">utilisateur</a> <code>http</code> :
+</p>
+<pre># mkdir /usr/share/webapps/phpMyAdmin/config
+# chown http:http /usr/share/webapps/phpMyAdmin/config
+# chmod 750 /usr/share/webapps/phpMyAdmin/config
+</pre>
+<h3><span class="mw-headline" id="Ajouter_la_phrase_de_passe_blowfish_secret">Ajouter la phrase de passe blowfish_secret</span></h3>
+<p>Il est nécessaire de saisir une chaîne unique de 32 caractères pour utiliser pleinement l'algorithme blowfish utilisé par phpMyAdmin, ce qui permet d'éviter le message <i> ERROR : The configuration file now needs a secret passphrase (blowfish_secret)</i> :
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/usr/share/webapps/phpMyAdmin/config.inc.php</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">$cfg['blowfish_secret'] = '...' ;</pre>
+<h3><span class="mw-headline" id="Activer_le_stockage_de_la_configuration">Activer le stockage de la configuration</span></h3>
+<p>Les options supplémentaires telles que les liens vers les tables, le suivi des modifications, la création de PDF et les requêtes de mise en signet sont désactivées par défaut, affichant <i>Le stockage de la configuration de phpMyAdmin n'est pas complètement configuré, certaines fonctionnalités étendues ont été désactivées.</i> sur la page d'accueil.
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> Cet exemple suppose que vous souhaitez utiliser le nom d'utilisateur par défaut <b>pma</b> comme <code>controluser</code>, et <b>pmapass</b> comme <code>controlpass</code>.</div>
+<p>Dans <code>/usr/share/webapps/phpMyAdmin/config.inc.php</code>, décomposez (enlevez les "//"s" au début), et modifiez-les en fonction de vos informations d'identification si nécessaire :
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/usr/share/webapps/phpMyAdmin/config.inc.php</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">/* User used to manipulate with storage */
+// $cfg['Servers'][$i]['controlhost'] = 'my-host';
+// $cfg['Servers'][$i]['controlport'] = '3306';
+$cfg['Servers'][$i]['controluser'] = 'pma';
+$cfg['Servers'][$i]['controlpass'] = 'pmapass';
+
+/* Storage database and tables */
+$cfg['Servers'][$i]['pmadb'] = 'phpmyadmin';
+$cfg['Servers'][$i]['bookmarktable'] = 'pma__bookmark';
+$cfg['Servers'][$i]['relation'] = 'pma__relation';
+$cfg['Servers'][$i]['table_info'] = 'pma__table_info';
+$cfg['Servers'][$i]['table_coords'] = 'pma__table_coords';
+$cfg['Servers'][$i]['pdf_pages'] = 'pma__pdf_pages';
+$cfg['Servers'][$i]['column_info'] = 'pma__column_info';
+$cfg['Servers'][$i]['history'] = 'pma__history';
+$cfg['Servers'][$i]['table_uiprefs'] = 'pma__table_uiprefs';
+$cfg['Servers'][$i]['tracking'] = 'pma__tracking';
+$cfg['Servers'][$i]['userconfig'] = 'pma__userconfig';
+$cfg['Servers'][$i]['recent'] = 'pma__recent';
+$cfg['Servers'][$i]['favorite'] = 'pma__favorite';
+$cfg['Servers'][$i]['users'] = 'pma__users';
+$cfg['Servers'][$i]['usergroups'] = 'pma__usergroups';
+$cfg['Servers'][$i]['navigationhiding'] = 'pma__navigationhiding';
+$cfg['Servers'][$i]['savedsearches'] = 'pma__savedsearches';
+$cfg['Servers'][$i]['central_columns'] = 'pma__central_columns';
+$cfg['Servers'][$i]['designer_settings'] = 'pma__designer_settings';
+$cfg['Servers'][$i]['export_templates'] = 'pma__export_templates';</pre>
+<h4>
+<span id="Configurer_la_base_de_donn.C3.A9es"></span><span class="mw-headline" id="Configurer_la_base_de_données">Configurer la base de données</span>
+</h4>
+<p>Deux options sont disponibles pour créer les tables requises :
+</p>
+<ul>
+<li>Importer <code>/usr/share/webapps/phpMyAdmin/sql/create_tables.sql</code> en utilisant PhpMyAdmin.</li>
+<li>Exécuter <code>mysql -u root -p &lt; /usr/share/webapps/phpMyAdmin/sql/create_tables.sql</code> dans la ligne de commande.</li>
+</ul>
+<h4>
+<span id="Configurer_l.27utilisateur_de_la_base_de_donn.C3.A9es"></span><span class="mw-headline" id="Configurer_l'utilisateur_de_la_base_de_données">Configurer l'utilisateur de la base de données</span>
+</h4>
+<p>Pour appliquer les permissions requises pour <code>controluser</code>, exécutez la requête suivante :
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> Veillez à remplacer toutes les instances de <code>pma</code> et <code>pmapass</code> par les valeurs définies dans <code>config.inc.php</code>. Si vous configurez ce système pour une base de données distante, vous devez également remplacer <code>localhost</code> par l'hôte approprié</div>
+<pre>GRANT USAGE ON mysql.* TO 'pma'@'localhost' IDENTIFIED BY 'pmapass';
+GRANT SELECT (
+    Host, User, Select_priv, Insert_priv, Update_priv, Delete_priv,
+    Create_priv, Drop_priv, Reload_priv, Shutdown_priv, Process_priv,
+    File_priv, Grant_priv, References_priv, Index_priv, Alter_priv,
+    Show_db_priv, Super_priv, Create_tmp_table_priv, Lock_tables_priv,
+    Execute_priv, Repl_slave_priv, Repl_client_priv
+    ) ON mysql.user TO 'pma'@'localhost';
+GRANT SELECT ON mysql.db TO 'pma'@'localhost';
+GRANT SELECT ON mysql.host TO 'pma'@'localhost';
+GRANT SELECT (Host, Db, User, Table_name, Table_priv, Column_priv)
+    ON mysql.tables_priv TO 'pma'@'localhost';
+</pre>
+<p>Afin d'utiliser les fonctionnalités de signet et de relation, définissez les permissions suivantes :
+</p>
+<pre>GRANT SELECT, INSERT, UPDATE, DELETE ON phpmyadmin.* TO 'pma'@'localhost' ;
+</pre>
+<p>Connectez-vous à nouveau pour vous assurer que les nouvelles fonctionnalités sont activées.
+</p>
+<h3>
+<span id="Activer_la_mise_en_cache_des_mod.C3.A8les"></span><span class="mw-headline" id="Activer_la_mise_en_cache_des_modèles">Activer la mise en cache des modèles</span>
+</h3>
+<p>Modifiez <code>/usr/share/webapps/phpMyAdmin/config.inc.php</code> pour ajouter la ligne :
+</p>
+<pre>$cfg['TempDir'] = '/tmp/phpmyadmin' ;
+</pre>
+<h3>
+<span id="Supprimer_le_r.C3.A9pertoire_de_configuration"></span><span class="mw-headline" id="Supprimer_le_répertoire_de_configuration">Supprimer le répertoire de configuration</span>
+</h3>
+<p>Supprimez le répertoire de configuration temporaire une fois la configuration terminée. Cela supprimera également l'alerte de l'interface web :
+</p>
+<pre># rm -r /usr/share/webapps/phpMyAdmin/config
+</pre>
+<h3>
+<span id="Installer_des_th.C3.A8mes"></span><span class="mw-headline" id="Installer_des_thèmes">Installer des thèmes</span>
+</h3>
+<p>Les thèmes se trouvent dans <code>/usr/share/webapps/phpMyAdmin/themes</code>. Vous pouvez trouver de nouveaux thèmes sur <a rel="nofollow" class="external free" href="https://www.phpmyadmin.net/themes/">https://www.phpmyadmin.net/themes/</a>.
+</p>
+<p>Vous pouvez simplement télécharger et extraire le nouveau thème et il fonctionnera après le rafraîchissement de phpmyadmin. Cependant, vous devez télécharger le thème pour la bonne version de phpmyadmin, les thèmes pour les anciennes versions ne fonctionneront pas.
+</p>
+<h2><span class="mw-headline" id="Voir_aussi">Voir aussi</span></h2>
+<ul>
+<li><a rel="nofollow" class="external text" href="https://www.phpmyadmin.net/localized_docs/fr/Documentation.html">Documentation officielle</a></li>
+<li><a rel="nofollow" class="external text" href="https://wiki.phpmyadmin.net/pma/Welcome_to_phpMyAdmin_Wiki">Wiki phpMyAdmin</a></li>
+</ul>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="../fr/Category:Web_admin_interfaces.html" title="Category:Web admin interfaces (Français)">Web admin interfaces (Français)</a></li></ul>
+</div></div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=PhpMyAdmin_(Fran%C3%A7ais)&amp;oldid=750968">https://wiki.archlinux.org/index.php?title=PhpMyAdmin_(Français)&amp;oldid=750968</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 3 October 2022, at 13:13.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

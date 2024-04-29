@@ -1,0 +1,1318 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>VMware - ArchWiki</title>
+<link rel="stylesheet" href="../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-VMware rootpage-VMware skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Prerequisites" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#Prerequisites">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Prerequisites</div>
+			</a>
+			
+			<ul id="toc-Prerequisites-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Installation" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#Installation">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Installation</div>
+			</a>
+			
+				<button aria-controls="toc-Installation-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Installation subsection
+				</button>
+			
+			<ul id="toc-Installation-sublist" class="sidebar-toc-list">
+				<li id="toc-VMware_bundle" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#VMware_bundle">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.1</span>VMware bundle</div>
+			</a>
+			
+			<ul id="toc-VMware_bundle-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Package_build_for_x86_64" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Package_build_for_x86_64">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.2</span>Package build for x86_64</div>
+			</a>
+			
+			<ul id="toc-Package_build_for_x86_64-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Configuration" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#Configuration">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>Configuration</div>
+			</a>
+			
+				<button aria-controls="toc-Configuration-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Configuration subsection
+				</button>
+			
+			<ul id="toc-Configuration-sublist" class="sidebar-toc-list">
+				<li id="toc-Kernel_modules" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Kernel_modules">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.1</span>Kernel modules</div>
+			</a>
+			
+			<ul id="toc-Kernel_modules-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-systemd_services" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#systemd_services">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.2</span>systemd services</div>
+			</a>
+			
+			<ul id="toc-systemd_services-sublist" class="sidebar-toc-list">
+				<li id="toc-Workstation_Server_service" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Workstation_Server_service">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.2.1</span>Workstation Server service</div>
+			</a>
+			
+			<ul id="toc-Workstation_Server_service-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Launching_the_application" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#Launching_the_application">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4</span>Launching the application</div>
+			</a>
+			
+			<ul id="toc-Launching_the_application-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Tips_and_tricks" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#Tips_and_tricks">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5</span>Tips and tricks</div>
+			</a>
+			
+				<button aria-controls="toc-Tips_and_tricks-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Tips and tricks subsection
+				</button>
+			
+			<ul id="toc-Tips_and_tricks-sublist" class="sidebar-toc-list">
+				<li id="toc-Entering_the_Workstation_Pro_license_key" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Entering_the_Workstation_Pro_license_key">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5.1</span>Entering the Workstation Pro license key</div>
+			</a>
+			
+			<ul id="toc-Entering_the_Workstation_Pro_license_key-sublist" class="sidebar-toc-list">
+				<li id="toc-From_terminal" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#From_terminal">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5.1.1</span>From terminal</div>
+			</a>
+			
+			<ul id="toc-From_terminal-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-From_GUI" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#From_GUI">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5.1.2</span>From GUI</div>
+			</a>
+			
+			<ul id="toc-From_GUI-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Extracting_the_VMware_BIOS" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Extracting_the_VMware_BIOS">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5.2</span>Extracting the VMware BIOS</div>
+			</a>
+			
+			<ul id="toc-Extracting_the_VMware_BIOS-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Extracting_the_installer" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Extracting_the_installer">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5.3</span>Extracting the installer</div>
+			</a>
+			
+			<ul id="toc-Extracting_the_installer-sublist" class="sidebar-toc-list">
+				<li id="toc-Using_the_modified_BIOS" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Using_the_modified_BIOS">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5.3.1</span>Using the modified BIOS</div>
+			</a>
+			
+			<ul id="toc-Using_the_modified_BIOS-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Enable_3D_graphics_on_Intel,_Optimus_and_AMD" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Enable_3D_graphics_on_Intel,_Optimus_and_AMD">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5.4</span>Enable 3D graphics on Intel, Optimus and AMD</div>
+			</a>
+			
+			<ul id="toc-Enable_3D_graphics_on_Intel,_Optimus_and_AMD-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Suspend_virtual_machines_before_host_suspend/hibernate" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Suspend_virtual_machines_before_host_suspend/hibernate">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5.5</span>Suspend virtual machines before host suspend/hibernate</div>
+			</a>
+			
+			<ul id="toc-Suspend_virtual_machines_before_host_suspend/hibernate-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-System_speedup_tricks" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#System_speedup_tricks">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5.6</span>System speedup tricks</div>
+			</a>
+			
+			<ul id="toc-System_speedup_tricks-sublist" class="sidebar-toc-list">
+				<li id="toc-Disable_transparent_hugepages" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Disable_transparent_hugepages">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5.6.1</span>Disable transparent hugepages</div>
+			</a>
+			
+			<ul id="toc-Disable_transparent_hugepages-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Ensure_direct_RAM_access" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Ensure_direct_RAM_access">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5.6.2</span>Ensure direct RAM access</div>
+			</a>
+			
+			<ul id="toc-Ensure_direct_RAM_access-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Performance_tips" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Performance_tips">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5.7</span>Performance tips</div>
+			</a>
+			
+			<ul id="toc-Performance_tips-sublist" class="sidebar-toc-list">
+				<li id="toc-Paravirtual_SCSI_adapter" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Paravirtual_SCSI_adapter">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5.7.1</span>Paravirtual SCSI adapter</div>
+			</a>
+			
+			<ul id="toc-Paravirtual_SCSI_adapter-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Paravirtual_network_adapter" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Paravirtual_network_adapter">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5.7.2</span>Paravirtual network adapter</div>
+			</a>
+			
+			<ul id="toc-Paravirtual_network_adapter-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Virtual_machine_settings" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Virtual_machine_settings">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5.7.3</span>Virtual machine settings</div>
+			</a>
+			
+			<ul id="toc-Virtual_machine_settings-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Troubleshooting" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#Troubleshooting">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6</span>Troubleshooting</div>
+			</a>
+			
+				<button aria-controls="toc-Troubleshooting-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Troubleshooting subsection
+				</button>
+			
+			<ul id="toc-Troubleshooting-sublist" class="sidebar-toc-list">
+				<li id="toc-Kernel_headers_for_version_x.y-zzzz_were_not_found._If_you_installed_them[...]" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Kernel_headers_for_version_x.y-zzzz_were_not_found._If_you_installed_them[...]">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6.1</span>Kernel headers for version x.y-zzzz were not found. If you installed them[...]</div>
+			</a>
+			
+			<ul id="toc-Kernel_headers_for_version_x.y-zzzz_were_not_found._If_you_installed_them[...]-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Cannot_load_module_vmmon" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Cannot_load_module_vmmon">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6.2</span>Cannot load module vmmon</div>
+			</a>
+			
+			<ul id="toc-Cannot_load_module_vmmon-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-USB_devices_not_recognized" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#USB_devices_not_recognized">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6.3</span>USB devices not recognized</div>
+			</a>
+			
+			<ul id="toc-USB_devices_not_recognized-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Incorrect_login/password_when_trying_to_access_VMware_remotely" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Incorrect_login/password_when_trying_to_access_VMware_remotely">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6.4</span>Incorrect login/password when trying to access VMware remotely</div>
+			</a>
+			
+			<ul id="toc-Incorrect_login/password_when_trying_to_access_VMware_remotely-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Issues_with_ALSA_output" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Issues_with_ALSA_output">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6.5</span>Issues with ALSA output</div>
+			</a>
+			
+			<ul id="toc-Issues_with_ALSA_output-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Kernel-based_Virtual_Machine_(KVM)_is_running" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Kernel-based_Virtual_Machine_(KVM)_is_running">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6.6</span>Kernel-based Virtual Machine (KVM) is running</div>
+			</a>
+			
+			<ul id="toc-Kernel-based_Virtual_Machine_(KVM)_is_running-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Icons_and_padding_in_VMware_application_UI_are_not_scaled_properly_on_HiDPI_display" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Icons_and_padding_in_VMware_application_UI_are_not_scaled_properly_on_HiDPI_display">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6.7</span>Icons and padding in VMware application UI are not scaled properly on HiDPI display</div>
+			</a>
+			
+			<ul id="toc-Icons_and_padding_in_VMware_application_UI_are_not_scaled_properly_on_HiDPI_display-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Module_issues" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Module_issues">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6.8</span>Module issues</div>
+			</a>
+			
+			<ul id="toc-Module_issues-sublist" class="sidebar-toc-list">
+				<li id="toc-/dev/vmmon_not_found" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#/dev/vmmon_not_found">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6.8.1</span>/dev/vmmon not found</div>
+			</a>
+			
+			<ul id="toc-/dev/vmmon_not_found-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-/dev/vmci_not_found" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#/dev/vmci_not_found">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6.8.2</span>/dev/vmci not found</div>
+			</a>
+			
+			<ul id="toc-/dev/vmci_not_found-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Installer_fails_to_start" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Installer_fails_to_start">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6.9</span>Installer fails to start</div>
+			</a>
+			
+			<ul id="toc-Installer_fails_to_start-sublist" class="sidebar-toc-list">
+				<li id="toc-User_interface_initialization_failed" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#User_interface_initialization_failed">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6.9.1</span>User interface initialization failed</div>
+			</a>
+			
+			<ul id="toc-User_interface_initialization_failed-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-VMware_fails_to_start" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#VMware_fails_to_start">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6.10</span>VMware fails to start</div>
+			</a>
+			
+			<ul id="toc-VMware_fails_to_start-sublist" class="sidebar-toc-list">
+				<li id="toc-Module_CPUIDEarly_power_on_failed" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Module_CPUIDEarly_power_on_failed">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6.10.1</span>Module CPUIDEarly power on failed</div>
+			</a>
+			
+			<ul id="toc-Module_CPUIDEarly_power_on_failed-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Segmentation_fault_at_startup_due_to_old_Intel_microcode" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Segmentation_fault_at_startup_due_to_old_Intel_microcode">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6.10.2</span>Segmentation fault at startup due to old Intel microcode</div>
+			</a>
+			
+			<ul id="toc-Segmentation_fault_at_startup_due_to_old_Intel_microcode-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-vmplayer/vmware_version_14_fails_to_start" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#vmplayer/vmware_version_14_fails_to_start">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6.10.3</span>vmplayer/vmware version 14 fails to start</div>
+			</a>
+			
+			<ul id="toc-vmplayer/vmware_version_14_fails_to_start-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-vmplayer/vmware_fails_to_start_from_version_12.5.4" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#vmplayer/vmware_fails_to_start_from_version_12.5.4">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6.10.4</span>vmplayer/vmware fails to start from version 12.5.4</div>
+			</a>
+			
+			<ul id="toc-vmplayer/vmware_fails_to_start_from_version_12.5.4-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-vmplayer/vmware_fails_to_start_from_version_12.5.3_to_version_12.5.5" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#vmplayer/vmware_fails_to_start_from_version_12.5.3_to_version_12.5.5">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6.10.5</span>vmplayer/vmware fails to start from version 12.5.3 to version 12.5.5</div>
+			</a>
+			
+			<ul id="toc-vmplayer/vmware_fails_to_start_from_version_12.5.3_to_version_12.5.5-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-vmware_12_process_terminates_immediately_after_start,_no_GUI_is_launched" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#vmware_12_process_terminates_immediately_after_start,_no_GUI_is_launched">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6.10.6</span>vmware 12 process terminates immediately after start, no GUI is launched</div>
+			</a>
+			
+			<ul id="toc-vmware_12_process_terminates_immediately_after_start,_no_GUI_is_launched-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Guest_issues" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Guest_issues">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6.11</span>Guest issues</div>
+			</a>
+			
+			<ul id="toc-Guest_issues-sublist" class="sidebar-toc-list">
+				<li id="toc-Unable_to_download_VMware_Tools_for_guests" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Unable_to_download_VMware_Tools_for_guests">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6.11.1</span>Unable to download VMware Tools for guests</div>
+			</a>
+			
+			<ul id="toc-Unable_to_download_VMware_Tools_for_guests-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id='toc-Guests_have_incorrect_system_clocks_or_are_unable_to_boot:_"[...]timeTracker_user.c:234_bugNr=148722"' class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href='#Guests_have_incorrect_system_clocks_or_are_unable_to_boot:_"[...]timeTracker_user.c:234_bugNr=148722"'>
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6.11.2</span>Guests have incorrect system clocks or are unable to boot: "[...]timeTracker_user.c:234 bugNr=148722"</div>
+			</a>
+			
+			<ul id='toc-Guests_have_incorrect_system_clocks_or_are_unable_to_boot:_"[...]timeTracker_user.c:234_bugNr=148722"-sublist' class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Networking_on_Guests_not_available_after_system_restart" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Networking_on_Guests_not_available_after_system_restart">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6.11.3</span>Networking on Guests not available after system restart</div>
+			</a>
+			
+			<ul id="toc-Networking_on_Guests_not_available_after_system_restart-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Mouse_issues" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Mouse_issues">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6.11.4</span>Mouse issues</div>
+			</a>
+			
+			<ul id="toc-Mouse_issues-sublist" class="sidebar-toc-list">
+				<li id="toc-Mouse_buttons_above_5_do_not_work" class="sidebar-toc-list-item sidebar-toc-level-4">
+			<a class="sidebar-toc-link" href="#Mouse_buttons_above_5_do_not_work">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6.11.4.1</span>Mouse buttons above 5 do not work</div>
+			</a>
+			
+			<ul id="toc-Mouse_buttons_above_5_do_not_work-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Strange_mouse_wheel_behavior_on_Guest" class="sidebar-toc-list-item sidebar-toc-level-4">
+			<a class="sidebar-toc-link" href="#Strange_mouse_wheel_behavior_on_Guest">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6.11.4.2</span>Strange mouse wheel behavior on Guest</div>
+			</a>
+			
+			<ul id="toc-Strange_mouse_wheel_behavior_on_Guest-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-No_IP_address_and_network_access_for_nested_VMs" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#No_IP_address_and_network_access_for_nested_VMs">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6.11.5</span>No IP address and network access for nested VMs</div>
+			</a>
+			
+			<ul id="toc-No_IP_address_and_network_access_for_nested_VMs-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Removal" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#Removal">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">7</span>Removal</div>
+			</a>
+			
+			<ul id="toc-Removal-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../en/VMware.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="mw-list-item"><a href="../en/Talk:VMware.html" rel="discussion" title="Discussion about the content page [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">English</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../en/VMware.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=VMware&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=VMware&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../en/VMware.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=VMware&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=VMware&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output">
+<div class="archwiki-template-meta-related-articles-start">
+<p class="mw-no-invert">Related articles</p>
+<ul>
+<li><a href="../en/Category:Hypervisors.html" title="Category:Hypervisors">Category:Hypervisors</a></li>
+<li><a href="../en/VMware/Install_Arch_Linux_as_a_guest.html" title="VMware/Install Arch Linux as a guest">/Install Arch Linux as a guest</a></li>
+<li><a href="../en/Moving_an_existing_install_into_(or_out_of)_a_virtual_machine.html" title="Moving an existing install into (or out of) a virtual machine">Moving an existing install into (or out of) a virtual machine</a></li>
+</ul>
+</div>
+<p>This article is about the latest major <a href="https://en.wikipedia.org/wiki/VMware" class="extiw" title="wikipedia:VMware">VMware</a> versions, meaning <a href="https://en.wikipedia.org/wiki/VMware_Workstation" class="extiw" title="wikipedia:VMware Workstation">VMware Workstation</a> Pro and Player 16, 15, 14 and 12.5. 
+</p>
+<p>You may also be interested in <a href="../en/VMware/Install_Arch_Linux_as_a_guest.html" title="VMware/Install Arch Linux as a guest">/Install Arch Linux as a guest</a>.
+</p>
+<mw:tocplace></mw:tocplace>
+<h2><span class="mw-headline" id="Prerequisites">Prerequisites</span></h2>
+<p>1. Enable Virtualization through your machine's BIOS/UEFI
+</p>
+<h2><span class="mw-headline" id="Installation">Installation</span></h2>
+<p>You can either install using VMware bundle or package <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/vmware-workstation/">vmware-workstation</a></span><sup><small>AUR</small></sup>. The latter is preferred if using <i>VMware Workstation</i> on x86_64.
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> VMware has dropped support for a number of CPUs including early Intel Core i7 CPUs since version 14. Check the <a rel="nofollow" class="external text" href="https://docs.vmware.com/en/VMware-Workstation-Pro/14.0/com.vmware.ws.using.doc/GUID-BBD199AA-C346-4334-9F56-5A42F7328594.html">Processor Requirements for Host Systems</a>. If your CPU is not supported in the newer releases then you can use <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/vmware-workstation12/">vmware-workstation12</a></span><sup><small>AUR</small></sup>.</div>
+<h3><span class="mw-headline" id="VMware_bundle">VMware bundle</span></h3>
+<p><a href="../en/Help:Reading.html#Installation_of_packages" class="mw-redirect" title="Install">Install</a> the correct dependencies:
+</p>
+<ul>
+<li>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=fuse2">fuse2</a></span> - for <i>vmware-vmblock-fuse</i>
+</li>
+<li>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=gtkmm">gtkmm</a></span> - for the GUI</li>
+<li>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=linux-headers">linux-headers</a></span> - for module compilation</li>
+<li>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=ncurses">ncurses</a></span> (<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/ncurses5-compat-libs/">ncurses5-compat-libs</a></span><sup><small>AUR</small></sup> for older versions of vmware) - needed by the <code>--console</code> installer</li>
+<li>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=libcanberra">libcanberra</a></span> - for event sounds</li>
+<li><span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=pcsclite">pcsclite</a></span></li>
+</ul>
+<p>Download the latest <a rel="nofollow" class="external text" href="https://www.vmware.com/go/tryworkstation">VMware Workstation Pro</a> or <a rel="nofollow" class="external text" href="https://www.vmware.com/go/downloadplayer">Player</a> (or a <a rel="nofollow" class="external text" href="https://communities.vmware.com/community/vmtn/beta">beta</a> version, if available).
+</p>
+<p>Start the installation:
+</p>
+<pre># sh VMware-<i>edition</i>-<i>version</i>.<i>release</i>.<i>architecture</i>.bundle
+</pre>
+<div class="archwiki-template-box archwiki-template-box-tip">
+<strong>Tip:</strong> Some useful flags:
+<ul>
+<li>
+<code>--eulas-agreed</code> - Skip the EULAs</li>
+<li>
+<code>--console</code> - Use the console UI.</li>
+<li>
+<code>--custom</code> - Allows changing the install directory to e.g. <code>/usr/local</code> (make sure to update the <code>vmware-usbarbitrator.service</code> paths in <a href="#systemd_services">#systemd services</a>).</li>
+<li>
+<code>-I</code>, <code>--ignore-errors</code> - Ignore fatal errors.</li>
+<li>
+<code>--set-setting=vmware-workstation serialNumber XXXXX-XXXXX-XXXXX-XXXXX-XXXXX</code> - Set the serial number during install (good for scripted installs).</li>
+<li>
+<code>--required</code> - Only ask mandatory questions (results in silent install when combined with <code>--eulas-agreed</code> and <code>--console</code>).</li>
+</ul>
+</div>
+<p>For the <code>System service scripts directory</code>, use <code>/etc/init.d</code> (the default).
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> During the installation you will get an error about <code>"No rc*.d style init script directories"</code> being given. This can be safely ignored, since Arch uses <a href="../en/Systemd.html" title="Systemd">systemd</a>.</div>
+<div class="archwiki-template-box archwiki-template-box-tip">
+<strong>Tip:</strong> To (re)build the modules from terminal later on, use:
+<pre># vmware-modconfig --console --install-all
+</pre>
+</div>
+<p>If it shows <code>Unable to install all modules</code>, please try <a href="#Cannot_load_module_vmmon">#Cannot load module vmmon</a>.
+</p>
+<h3><span class="mw-headline" id="Package_build_for_x86_64">Package build for x86_64</span></h3>
+<p>Install <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/vmware-workstation/">vmware-workstation</a></span><sup><small>AUR</small></sup>, <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/vmware-workstation16/">vmware-workstation16</a></span><sup><small>AUR</small></sup>, <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/vmware-workstation15/">vmware-workstation15</a></span><sup><small>AUR</small></sup>, <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/vmware-workstation14/">vmware-workstation14</a></span><sup><small>AUR</small></sup>, <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/vmware-workstation12/">vmware-workstation12</a></span><sup><small>AUR</small></sup> or <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/vmware-workstation11/">vmware-workstation11</a></span><sup><small>AUR</small></sup> for respectively versions 17, 16, 15, 14, 12 and 11 of <i>VMware Workstation</i>. It is also necessary to install the appropriate headers package(s) for your installed kernel(s): for example <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=linux-headers">linux-headers</a></span> or <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=linux-lts-headers">linux-lts-headers</a></span>.
+</p>
+<p>For <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/vmware-workstation/">vmware-workstation</a></span><sup><small>AUR</small></sup>, <a href="../en/Help:Reading.html#Control_of_systemd_units" class="mw-redirect" title="Start">start</a> <code>vmware-networks-configuration.service</code> first to generate <code>/etc/vmware/networking</code>.
+</p>
+<p>Then, as desired, enable some of the following services:
+</p>
+<ul>
+<li>
+<code>vmware-networks.service</code> for guest network access (otherwise you will get an error <code>could no connect 'ethernet 0' to virtual network</code> and you will not be able to use <i>vmware-netcfg</i>)</li>
+<li>
+<code>vmware-usbarbitrator.service</code> for connecting USB devices to guest</li>
+<li>
+<code>vmware-hostd.service</code> for sharing virtual machines (not available since version 16)</li>
+</ul>
+<p>Lastly, load the VMware modules:
+</p>
+<pre># modprobe -a vmw_vmci vmmon
+</pre>
+<p>If it loads for too long without response, please try <a href="#Cannot_load_module_vmmon">#Cannot load module vmmon</a>.
+</p>
+<h2><span class="mw-headline" id="Configuration">Configuration</span></h2>
+<h3><span class="mw-headline" id="Kernel_modules">Kernel modules</span></h3>
+<p>VMware Workstation 16.0 supports kernel 5.8 out of the box. The older versions presented in this article and their natively supported kernels are as follows: 15.5 (kernels up to 5.4), 14.1.7 (4.18) and 12.5.9 (4.12).
+</p>
+<p>For VMware bundle versions, a collection of patches needed for the VMware host modules to build against recent kernels can be found from the <a rel="nofollow" class="external text" href="https://github.com/mkubecek/vmware-host-modules/">vmware-host-modules</a> GitHub repository. See the INSTALL document found on the repository for the most up-to-date module installation instructions for VMware Workstation versions from 12.5.5 and up.
+</p>
+<h3><span class="mw-headline" id="systemd_services">systemd services</span></h3>
+<p><i>(Optional)</i> Instead of using <code>/etc/init.d/vmware</code> (<code>start|stop|status|restart</code>) and <code>/usr/bin/vmware-usbarbitrator</code> directly to manage the services, you may also use <code>.service</code> files (<i>vmware-usbarbitrator</i> and <i>vmware-networks</i> are also included <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/vmware-workstation/">vmware-workstation</a></span><sup><small>AUR</small></sup> with a few differences):
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/systemd/system/vmware.service</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">[Unit]
+Description=VMware daemon
+Requires=vmware-usbarbitrator.service
+Before=vmware-usbarbitrator.service
+After=network.target
+
+[Service]
+ExecStart=/etc/init.d/vmware start
+ExecStop=/etc/init.d/vmware stop
+PIDFile=/var/lock/subsys/vmware
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target</pre>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/systemd/system/vmware-usbarbitrator.service</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">[Unit]
+Description=VMware USB Arbitrator
+Requires=vmware.service
+After=vmware.service
+
+[Service]
+ExecStart=/usr/bin/vmware-usbarbitrator
+ExecStop=/usr/bin/vmware-usbarbitrator --kill
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target</pre>
+<p>Add this service to enable networking:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/systemd/system/vmware-networks-server.service</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">[Unit]
+Description=VMware Networks
+Wants=vmware-networks-configuration.service
+After=vmware-networks-configuration.service
+
+[Service]
+Type=forking
+ExecStartPre=-/sbin/modprobe vmnet
+ExecStart=/usr/bin/vmware-networks --start
+ExecStop=/usr/bin/vmware-networks --stop
+
+[Install]
+WantedBy=multi-user.target</pre>
+<p>Add this service as well, if you want to connect to your VMware Workstation installation from another Workstation Server Console:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/systemd/system/vmware-workstation-server.service</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">[Unit]
+Description=VMware Workstation Server
+Requires=vmware.service
+After=vmware.service
+
+[Service]
+ExecStart=/etc/init.d/vmware-workstation-server start
+ExecStop=/etc/init.d/vmware-workstation-server stop
+PIDFile=/var/lock/subsys/vmware-workstation-server
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target</pre>
+<p>After which you can <a href="../en/Help:Reading.html#Control_of_systemd_units" class="mw-redirect" title="Enable">enable</a> them on boot.
+</p>
+<h4><span class="mw-headline" id="Workstation_Server_service">Workstation Server service</span></h4>
+<p>The <code>vmware-workstation-server.service</code> calls <code>wssc-adminTool</code> in its command chain, despite having been renamed to <code>vmware-wssc-adminTool</code>.
+</p>
+<p>To prevent the service startup, this can be fixed with a symlink:
+</p>
+<pre># ln -s wssc-adminTool /usr/lib/vmware/bin/vmware-wssc-adminTool
+</pre>
+<h2><span class="mw-headline" id="Launching_the_application">Launching the application</span></h2>
+<p>To open VMware Workstation Pro:
+</p>
+<pre>$ vmware
+</pre>
+<p>or Player:
+</p>
+<pre>$ vmplayer
+</pre>
+<h2><span class="mw-headline" id="Tips_and_tricks">Tips and tricks</span></h2>
+<h3><span class="mw-headline" id="Entering_the_Workstation_Pro_license_key">Entering the Workstation Pro license key</span></h3>
+<h4><span class="mw-headline" id="From_terminal">From terminal</span></h4>
+<pre># /usr/lib/vmware/bin/vmware-vmx-debug --new-sn XXXXX-XXXXX-XXXXX-XXXXX-XXXXX
+</pre>
+<p>Where <code>XXXXX-XXXXX-XXXXX-XXXXX-XXXXX</code> is your license key.
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> The <code>-debug</code> binary informs the user of an incorrect license.</div>
+<h4><span class="mw-headline" id="From_GUI">From GUI</span></h4>
+<p>If the above does not work, you can try:
+</p>
+<pre># /usr/lib/vmware/bin/vmware-enter-serial
+</pre>
+<h3><span class="mw-headline" id="Extracting_the_VMware_BIOS">Extracting the VMware BIOS</span></h3>
+<pre>$ objcopy /usr/lib/vmware/bin/vmware-vmx -O binary -j bios440 --set-section-flags bios440=a bios440.rom.Z
+$ perl -e 'use Compress::Zlib; my $v; read STDIN, $v, '$(stat -c%s "./bios440.rom.Z")'; $v = uncompress($v); print $v;' &lt; bios440.rom.Z &gt; bios440.rom
+</pre>
+<h3><span class="mw-headline" id="Extracting_the_installer">Extracting the installer</span></h3>
+<p>To view the contents of the installer <code>.bundle</code>:
+</p>
+<pre>$ sh VMware-<i>edition</i>-<i>version</i>.<i>release</i>.<i>architecture</i>.bundle --extract <i>/tmp/vmware-bundle/</i>
+</pre>
+<h4><span class="mw-headline" id="Using_the_modified_BIOS">Using the modified BIOS</span></h4>
+<p>If and when you decide to modify the extracted BIOS you can make your virtual machine use it by moving it to <code>~/vmware/<i>Virtual_machine_name</i></code>:
+</p>
+<pre>$ mv bios440.rom ~/vmware/<i>Virtual_machine_name</i>/
+</pre>
+<p>then adding the name to the <code><i>Virtual_machine_name</i>.vmx</code> file:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">~/vmware/<i>Virtual_machine_name</i>/<i>Virtual_machine_name</i>.vmx</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">bios440.filename = "bios440.rom"</pre>
+<h3>
+<span id="Enable_3D_graphics_on_Intel.2C_Optimus_and_AMD"></span><span class="mw-headline" id="Enable_3D_graphics_on_Intel,_Optimus_and_AMD">Enable 3D graphics on Intel, Optimus and AMD</span>
+</h3>
+<p>Some graphics drivers are blacklisted by default, due to poor and/or unstable 3D acceleration. After enabling <i>Accelerate 3D graphics</i>, the log may show something like:
+</p>
+<pre>Disabling 3D on this host due to presence of Mesa DRI driver.  Set mks.gl.allowBlacklistedDrivers = TRUE to override.
+</pre>
+<p>The configuration file where you can set this setting is <code>~/.vmware/preferences</code>.
+</p>
+<p>VMware Workstation 16.2 switched from OpenGL to Vulkan, so the setting is a bit different. If your driver is unsupported, you might see a message like this in the log:
+</p>
+<pre>mks Vulkan Renderer: Only the AMDVLK driver is supported at this time.
+mks Vulkan Renderer: No supported Vulkan device/driver found (See mks.vk.allowUnsupportedDevices or mks.vk.forceDevice configuration options).
+</pre>
+<p>If your Vulkan driver is blacklisted, you might have to add <code>mks.vk.allowUnsupportedDevices = "TRUE"</code> to <code>~/.vmware/preferences</code> or switch to a supported driver - check <code>vmware.log</code> in the VM's directory if unsure.
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> You might need to add the <code>mks.gl.allowBlacklistedDrivers = "TRUE"</code> inside the <code>.vmx</code> file for the specific virtual machine as well, for 3D acceleration with <code>intel</code> drivers to be enabled.</div>
+<h3>
+<span id="Suspend_virtual_machines_before_host_suspend.2Fhibernate"></span><span class="mw-headline" id="Suspend_virtual_machines_before_host_suspend/hibernate">Suspend virtual machines before host suspend/hibernate</span>
+</h3>
+<p>Create an executable file <code>/usr/lib/systemd/system-sleep/vmware_suspend_all.sh</code>:
+</p>
+<pre>#! /bin/bash
+
+set -eu
+
+if [[ $# -ne 2 ]]; then
+    echo "Usage: $0 &lt;period&gt; &lt;action&gt;"
+    exit 1
+fi
+
+period=$1
+action=$2
+
+echo "vmware system-sleep hook argv: ${period} ${action}"
+
+if ! command -v vmrun &amp;&gt;/dev/null; then
+    echo "command not found: vmrun"
+fi
+
+if [[ "${period}" = "pre" ]]; then
+    readarray -t vms &lt; &lt;(vmrun list | tail -n +2)
+
+    echo "Number of running VMs: ${#vms[@]}"
+
+    if [[ ${#vms[@]} -eq 0 ]]; then
+        exit
+    fi
+
+    for vm in "${vms[@]}"; do
+        echo -n "Suspending ${vm}... "
+        vmrun suspend "${vm}"
+        echo "done"
+    done
+
+    sleep 1
+else
+    echo "Nothing to do"
+fi
+</pre>
+<p>See also <a href="../en/Power_management.html#Hooks_in_/usr/lib/systemd/system-sleep" title="Power management">Power management#Hooks in /usr/lib/systemd/system-sleep</a>, <a rel="nofollow" class="external text" href="https://superuser.com/questions/119313/vmware-workstation-suspend-all-virtual-machines-with-vmrun">suspend all virtual machines with vmrun</a> and <a rel="nofollow" class="external text" href="https://communities.vmware.com/thread/439380">Support for hibernation</a>.
+</p>
+<h3><span class="mw-headline" id="System_speedup_tricks">System speedup tricks</span></h3>
+<p>See also <a href="../en/Improving_performance.html" title="Improving performance">Improving performance</a>.
+</p>
+<h4><span class="mw-headline" id="Disable_transparent_hugepages">Disable transparent hugepages</span></h4>
+<div class="noprint archwiki-template-message">
+<p><a href="../File:Merge-arrows-2.png" class="image"><img alt="Merge-arrows-2.png" src="../File:Merge-arrows-2.png" decoding="async" width="48" height="48"></a><b>This article or section is a candidate for merging with <a href="../en/Improving_performance.html" title="Improving performance">Improving performance</a>.</b><a href="../File:Merge-arrows-2.png" class="image"><img alt="Merge-arrows-2.png" src="../File:Merge-arrows-2.png" decoding="async" width="48" height="48"></a></p>
+<div>
+<b>Notes:</b> Not specific to VMware. (Discuss in <a rel="nofollow" class="external text" href="https://wiki.archlinux.org/title/Talk:VMware">Talk:VMware</a>)</div>
+</div>
+<p>If you notice the guest and/or the host frequently freezing when running a VM, you may want to disable transparent hugepages. To disable them for the current session, run (on the host):
+</p>
+<pre># echo never &gt; /sys/kernel/mm/transparent_hugepage/enabled
+</pre>
+<p>To make the change persistent across boots, add the <a href="../en/Kernel_parameters.html" class="mw-redirect" title="Kernel parameter">kernel parameter</a> <code>transparent_hugepage=never</code>.
+</p>
+<p>You can also use <code>madvise</code> instead of <code>never</code> to still allow applications that are optimized for transparent hugepages to obtain the performance benefits<a rel="nofollow" class="external autonumber" href="https://blog.nelhage.com/post/transparent-hugepages/">[1]</a>. This does the same for vmware as above.
+</p>
+<h4><span class="mw-headline" id="Ensure_direct_RAM_access">Ensure direct RAM access</span></h4>
+<p>By default, VMware writes a running guest system's RAM to a file on disk. If you are certain you have enough spare memory, you can ensure the guest OS writes its memory directly to the host's RAM by adding the following to the VM's <code>.vmx</code>:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;"><i>Virtual_machine_name</i>.vmx</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">MemTrimRate = "0"
+sched.mem.pshare.enable = "FALSE"
+prefvmx.useRecommendedLockedMemSize = "TRUE"
+mainmem.backing = "swap"</pre>
+<h3><span class="mw-headline" id="Performance_tips">Performance tips</span></h3>
+<p>To improve the performance of your virtual machine, try the following tips:
+</p>
+<h4><span class="mw-headline" id="Paravirtual_SCSI_adapter">Paravirtual SCSI adapter</span></h4>
+<p><a rel="nofollow" class="external text" href="https://kb.vmware.com/kb/1010398">VMware Paravirtual SCSI (PVSCSI) adapters</a> are high-performance storage adapters for VMware ESXi that can result in greater throughput and lower CPU utilization. PVSCSI adapters are best suited for environments, where hardware or applications drive a very high amount of I/O throughput.
+</p>
+<p>The SCSI adapter type <code>VMware Paravirtual</code> is available in the Virtual Machine settings.
+</p>
+<p>If these settings are not in the virtual machine's configuration, the paravirtual SCSI adapter can still be enabled. Ensure that the paravirtual SCSI adapter is included in the kernel image by modifying the <code>mkinitcpio.conf</code>:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/mkinitcpio.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">...
+MODULES=(... vmw_pvscsi)
+...</pre>
+<p><a href="../en/Mkinitcpio.html#Image_creation_and_activation" class="mw-redirect" title="Regenerate the initramfs">Regenerate the initramfs</a>.
+</p>
+<p>Shut down the virtual machine and change the SCSI adapter: set the <code>.vmx</code> to the following:
+</p>
+<pre>scsi0.virtualDev = "pvscsi"
+</pre>
+<h4><span class="mw-headline" id="Paravirtual_network_adapter">Paravirtual network adapter</span></h4>
+<p>VMware offers <a rel="nofollow" class="external text" href="https://kb.vmware.com/kb/1001805">multiple network adapters</a> for the guest OS.  The default adapter used is usually the <code>e1000</code> adapter, which emulates an Intel 82545EM Gigabit Ethernet NIC.  This Intel adapter is generally compatible with the built-in drivers across most operating systems, including Arch.
+</p>
+<p>For <a rel="nofollow" class="external text" href="https://rickardnobel.se/vmxnet3-vs-e1000e-and-e1000-part-1/">more performance and additional features</a> (such as multiqueue support), the VMware native <code>vmxnet3</code> network adapter can be used.
+</p>
+<p>Arch has the <code>vmxnet3</code> kernel module available with a default install.  Once enabled in <a href="../en/Mkinitcpio.html" title="Mkinitcpio">mkinitcpio</a> (or if it is auto-detected; check by running <code>lsmod | grep vmxnet3</code> to see if it is loaded), shut down and change the network adapter type in the <i>.vmx</i> file to the following:
+</p>
+<pre>ethernet0.virtualDev = "vmxnet3"
+</pre>
+<p>After changing network adapters, the network and <a href="../en/Dhcpcd.html" title="Dhcpcd">dhcpcd</a> settings will need to be updated to use the new adapter name and MAC address.
+</p>
+<pre># dhcpcd <i>new_interface_name</i>
+# systemctl enable dhcpcd@<i>new_interface_name</i>.service
+</pre>
+<p>The new interface name can be obtained by running <code>ip link</code>.
+</p>
+<h4><span class="mw-headline" id="Virtual_machine_settings">Virtual machine settings</span></h4>
+<p>These settings could help improve the responsiveness of the virtual machine by reducing disk I/O, at the expense of using more host memory.  <a rel="nofollow" class="external text" href="https://kb.vmware.com/selfservice/microsites/search.do?language=en_US&amp;cmd=displayKC&amp;externalId=1008885">Vmware's KB1008885</a> provides the following optimizations:
+</p>
+<pre>mainMem.useNamedFile = "FALSE"
+MemTrimRate = "0"
+prefvmx.useRecommendedLockedMemSize = "TRUE"
+MemAllowAutoScaleDown = "FALSE"
+sched.mem.pshare.enable = "FALSE"
+</pre>
+<ul>
+<li>
+<b>mainMem.useNamedFile</b>: This will only work for Windows hosts and this parameter can be used if high disk activity is experienced upon shutting down the virtual machine. This will prevent VMware from creating a <i>.vmem</i> file. Use <i>mainmem.backing = "swap"</i> on Linux hosts instead.</li>
+<li>
+<b>MemTrimRate</b>: This setting prevents that memory which was released by the guest is released on the host also.</li>
+<li>
+<b>prefvmx.useRecommendedLockedMemSize</b>: Unfortunately there does not seem to exist a proper explanation for this setting; it seems to prevent the host system from swapping parts of the guest memory.</li>
+<li>
+<b>MemAllowAutoScaleDown</b>: Prevents VMware from adjusting the memory size of the virtual machine if it cannot allocate enough memory.</li>
+<li>
+<b>sched.mem.pshare.enable</b>: If several virtual machines are running simultaneously, VMware will try to locate identical pages and share these between the virtual machines. This can be very I/O intensive.</li>
+</ul>
+<p>The following settings can also be set in the configuration dialog of VMware Workstation(<i>Edit -&gt; Preferences... -&gt; Memory/Priority</i>).
+</p>
+<pre>prefvmx.minVmMemPct = "100"
+mainMem.partialLazySave = "FALSE"
+mainMem.partialLazyRestore = "FALSE"
+</pre>
+<ul>
+<li>
+<b>prefvmx.minVmMemPct</b>: Sets amount of RAM in percent which should be reserved by the virtual machine on the host system. If this is set to a lower value it is possible to assign the virtual machine more memory than is available in the host system. Be careful though, as in this case it will most likely lead to excessive hard drive usage. If enough RAM is on the host system, this value should be left at 100.</li>
+<li>
+<b>mainMem.partialLazySave</b> and <b>mainMem.partialLazyRestore</b>: These two parameters will prevent the virtual machine from creating partial snapshots for suspends. When these parameters are used, virtual machine suspension will take slightly longer, but there should be less hard disk activity from VMware trying to store this information.</li>
+</ul>
+<h2><span class="mw-headline" id="Troubleshooting">Troubleshooting</span></h2>
+<h3>
+<span id="Kernel_headers_for_version_x.y-zzzz_were_not_found._If_you_installed_them.5B....5D"></span><span class="mw-headline" id="Kernel_headers_for_version_x.y-zzzz_were_not_found._If_you_installed_them[...]">Kernel headers for version x.y-zzzz were not found. If you installed them[...]</span>
+</h3>
+<p>Install the headers (<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=linux-headers">linux-headers</a></span>).
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> Upgrading the kernel and the headers will require you to boot to the new kernel to match the version of the headers. This is a relatively common error.</div>
+<h3><span class="mw-headline" id="Cannot_load_module_vmmon">Cannot load module vmmon</span></h3>
+<p>As <a rel="nofollow" class="external text" href="https://communities.vmware.com/t5/VMware-Workstation-Pro/Kernel-module-vmmon-not-loading-on-Fedora-21-w-Workstation-11/m-p/2242975#M133526">VMware Comunity</a> explained, please disable <a href="../en/Unified_Extensible_Firmware_Interface/Secure_Boot.html" class="mw-redirect" title="Secure Boot">Secure Boot</a> to use <code>vmmon</code> to load the VMware module.
+</p>
+<h3><span class="mw-headline" id="USB_devices_not_recognized">USB devices not recognized</span></h3>
+<p>If not using the <a href="#systemd_services">systemd service</a> to automatically handle the services, you need to manually start the <code>vmware-usbarbitrator</code> binary as root each time.
+</p>
+<p>To start:
+</p>
+<pre># vmware-usbarbitrator
+</pre>
+<p>To stop:
+</p>
+<pre># vmware-usbarbitrator --kill
+</pre>
+<h3>
+<span id="Incorrect_login.2Fpassword_when_trying_to_access_VMware_remotely"></span><span class="mw-headline" id="Incorrect_login/password_when_trying_to_access_VMware_remotely">Incorrect login/password when trying to access VMware remotely</span>
+</h3>
+<p>VMware Workstation provides the possibility to remotely manage Shared VMs through the <code>vmware-workstation-server</code> service. However, this will fail with the error <code>"incorrect username/password"</code> due to incorrect <a href="../en/PAM.html" title="PAM">PAM</a> configuration of the <code>vmware-authd</code> service. To fix it, edit <code>/etc/pam.d/vmware-authd</code> like this:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/pam.d/vmware-authd</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">#%PAM-1.0
+auth     <i>required       pam_unix.so</i>
+account  <i>required       pam_unix.so</i>
+password <i>required       pam_permit.so</i>
+session  <i>required       pam_unix.so</i>
+</pre>
+<p>and restart the <code>vmware</code> <a href="../en/Systemd.html" title="Systemd">systemd</a> service.
+</p>
+<p>Now you can connect to the server with the credentials provided during the installation.
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=libxslt">libxslt</a></span> may be required for starting virtual machines.</div>
+<h3><span class="mw-headline" id="Issues_with_ALSA_output">Issues with ALSA output</span></h3>
+<p><a rel="nofollow" class="external text" href="https://bankimbhavsar.blogspot.co.nz/2011/09/hd-audio-in-vmware-fusion-4-and-vmware.html">To fix</a> sound quality issues or enabling proper HD audio output, first run:
+</p>
+<pre>$ aplay -L
+</pre>
+<p>If interested in playing 5.1 <i>surround sound</i> from the guest, look for <code>surround51:CARD=<i>vendor_name</i>,DEV=<i>num</i></code>, if experiencing quality issues, look for <code>front:CARD=<i>vendor_name</i>,DEV=<i>num</i></code>. Finally put the name in the <code>.vmx</code>:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">~/vmware/<i>Virtual_machine_name</i>/<i>Virtual_machine_name</i>.vmx</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">sound.fileName=<i>"surround51:CARD=Live,DEV=0"</i>
+sound.autodetect=<i>"FALSE"</i></pre>
+<p><a href="../en/Advanced_Linux_Sound_Architecture.html#OSS_compatibility" title="Advanced Linux Sound Architecture">OSS emulation</a> should also be disabled.
+</p>
+<h3>
+<span id="Kernel-based_Virtual_Machine_.28KVM.29_is_running"></span><span class="mw-headline" id="Kernel-based_Virtual_Machine_(KVM)_is_running">Kernel-based Virtual Machine (KVM) is running</span>
+</h3>
+<p>To disable <code>KVM</code> on boot, you can use something like:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/modprobe.d/vmware.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">blacklist kvm
+blacklist kvm-amd   # For AMD CPUs
+blacklist kvm-intel # For Intel CPUs
+</pre>
+<div class="archwiki-template-box archwiki-template-box-tip">
+<strong>Tip:</strong> If <code>kvm</code> modules continue to load, despite being blacklisted, and you are running a system with integrated Intel graphics (i915,i965), it may be necessary to blacklist the <code>kvmgt</code> kernel module directly from the kernel command line options. See <a href="../en/Kernel_module.html#Using_kernel_command_line_2" title="Kernel module">Kernel module#Using kernel command line_2</a> for more details.</div>
+<h3><span class="mw-headline" id="Icons_and_padding_in_VMware_application_UI_are_not_scaled_properly_on_HiDPI_display">Icons and padding in VMware application UI are not scaled properly on HiDPI display</span></h3>
+<p>See <a href="../en/HiDPI.html#VMware" title="HiDPI">HiDPI#VMware</a>.
+</p>
+<h3><span class="mw-headline" id="Module_issues">Module issues</span></h3>
+<h4>
+<span id=".2Fdev.2Fvmmon_not_found"></span><span class="mw-headline" id="/dev/vmmon_not_found">/dev/vmmon not found</span>
+</h4>
+<p>The full error is:
+</p>
+<pre>Could not open /dev/vmmon: No such file or directory.
+Please make sure that the kernel module 'vmmon' is loaded.
+</pre>
+<p>This means that at least the <code>vmmon</code> module is not loaded. See the <a href="#systemd_services">#systemd services</a> section for automatic loading.
+</p>
+<p>Another possible reason is Indirect Branch Tracking on 11th Gen and later Intel processors and starting from kernel 5.18.
+</p>
+<p>Add <code>ibt=off</code> to your <a href="../en/Kernel_parameters.html" class="mw-redirect" title="Kernel command line">kernel command line</a>. See <a rel="nofollow" class="external autonumber" href="https://communities.vmware.com/t5/VMware-Workstation-Player/kernel-6-3-4-may-break-vmware-player/td-p/2971432">[2]</a> for more details.
+</p>
+<h4>
+<span id=".2Fdev.2Fvmci_not_found"></span><span class="mw-headline" id="/dev/vmci_not_found">/dev/vmci not found</span>
+</h4>
+<p>The full error is:
+</p>
+<pre>Failed to open device "/dev/vmci": No such file or directory
+Please make sure that the kernel module 'vmci' is loaded.
+</pre>
+<p>First, try to manually load the modules
+</p>
+<pre># sudo modprobe -a vmw_vmci
+</pre>
+<p>Try to recompile VMware kernel modules with:
+</p>
+<pre># vmware-modconfig --console --install-all
+</pre>
+<h3><span class="mw-headline" id="Installer_fails_to_start">Installer fails to start</span></h3>
+<p>If you just get back to the prompt when opening the <code>.bundle</code>, then you probably have a deprecated or broken version of the VMware installer and it should removed (you may also refer to the <a href="#Removal">#Removal</a> section of this article):
+</p>
+<pre># rm -r /etc/vmware-installer/
+</pre>
+<h4><span class="mw-headline" id="User_interface_initialization_failed">User interface initialization failed</span></h4>
+<p>You may also see an error like this:
+</p>
+<pre> Extracting VMware Installer...done.
+ No protocol specified
+ No protocol specified
+ User interface initialization failed.  Exiting.  Check the log for details.
+</pre>
+<p>This can be fixed by either installing the <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/ncurses5-compat-libs/">ncurses5-compat-libs</a></span><sup><small>AUR</small></sup> dependency or temporarily allowing root access to X:
+</p>
+<pre> $ xhost +
+ $ sudo ./&lt;vmware filename&gt;.bundle
+ $ xhost -
+</pre>
+<h3><span class="mw-headline" id="VMware_fails_to_start">VMware fails to start</span></h3>
+<h4><span class="mw-headline" id="Module_CPUIDEarly_power_on_failed">Module CPUIDEarly power on failed</span></h4>
+<p>Version 14 has stricter CPU requirements than version 12. If you try to start a virtual machine with an affected CPU, the following message will appear:
+</p>
+<pre> This host does not support virtualizing real mode.
+ The Intel "VMX Unrestricted Guest" feature is necessary to run this virtual machine on an Intel processor.
+</pre>
+<p>The solution is to uninstall version 14 and install version 12 (<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/vmware-workstation12/">vmware-workstation12</a></span><sup><small>AUR</small></sup>).
+</p>
+<p>When VMware was usable and this error suddenly appears it could be due to a warm/soft boot or after suspending the system. Please try a cold boot (shutting the system down and starting it again).
+</p>
+<h4><span class="mw-headline" id="Segmentation_fault_at_startup_due_to_old_Intel_microcode">Segmentation fault at startup due to old Intel microcode</span></h4>
+<p>Old Intel microcode may result in the following kind of segmentation fault at startup:
+</p>
+<pre>/usr/bin/vmware: line 31: 4941 Segmentation fault "$BINDIR"/vmware-modconfig --appname="VMware Workstation" --icon="vmware-workstation"
+</pre>
+<p>See <a href="../en/Microcode.html" title="Microcode">Microcode</a> for how to update the microcode.
+</p>
+<h4>
+<span id="vmplayer.2Fvmware_version_14_fails_to_start"></span><span class="mw-headline" id="vmplayer/vmware_version_14_fails_to_start">vmplayer/vmware version 14 fails to start</span>
+</h4>
+<p>On systems with <code>librsvg</code> version 2:2.44.0 and above, the log files (located in <code>/tmp/vmware-&lt;id&gt;</code>) show several instances of the following error:
+</p>
+<pre>appLoader| I125+ undefined symbol
+</pre>
+<p>A workaround is to downgrade <code>librsvg</code> to earlier version, or more preferably, force VMware to use its own shipped version of <code>librsvg</code>:
+</p>
+<pre># export LD_LIBRARY_PATH=/lib/vmware/lib/librsvg-2.so.2:$LD_LIBRARY_PATH
+</pre>
+<p>VMware also has a <code>VMWARE_USE_SHIPPED_LIBS</code> variable:
+</p>
+<pre>$ env VMWARE_USE_SHIPPED_LIBS=1 vmware
+</pre>
+<h4>
+<span id="vmplayer.2Fvmware_fails_to_start_from_version_12.5.4"></span><span class="mw-headline" id="vmplayer/vmware_fails_to_start_from_version_12.5.4">vmplayer/vmware fails to start from version 12.5.4</span>
+</h4>
+<p>As per <a rel="nofollow" class="external autonumber" href="https://bbs.archlinux.org/viewtopic.php?id=224667">[3]</a> the temporary workaround is to downgrade the package <code>libpng</code> to version 1.6.28-1 and keep it in the <code>IgnorePkg</code> parameter in <a href="../en/Pacman.html#Skip_package_from_being_upgraded" title="Pacman">/etc/pacman.conf</a>.
+</p>
+<p>An easier workaround is to make VMWare use the system's version of zlib instead of its own one:
+</p>
+<pre># cd /usr/lib/vmware/lib/libz.so.1
+# mv libz.so.1 libz.so.1.old
+# ln -s /usr/lib/libz.so.1 .
+</pre>
+<h4>
+<span id="vmplayer.2Fvmware_fails_to_start_from_version_12.5.3_to_version_12.5.5"></span><span class="mw-headline" id="vmplayer/vmware_fails_to_start_from_version_12.5.3_to_version_12.5.5">vmplayer/vmware fails to start from version 12.5.3 to version 12.5.5</span>
+</h4>
+<p>It seems to be a problem with the file <code>/usr/lib/vmware/lib/libstdc++.so.6/libstdc++.so.6</code>, missing <code>CXXABI_1.3.8</code>.
+</p>
+<p>If the system have installed <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=gcc-libs">gcc-libs</a></span>, that library is already installed. Therefore, it is possible to remove that file and vmplayer will use the one provided by gcc-libs instead. As root do:
+</p>
+<pre># mv /usr/lib/vmware/lib/libstdc++.so.6/libstdc++.so.6 /usr/lib/vmware/lib/libstdc++.so.6/libstdc++.so.6.bak
+</pre>
+<p>Also there is a workaround: 
+</p>
+<pre># export VMWARE_USE_SHIPPED_LIBS='yes'
+</pre>
+<h4>
+<span id="vmware_12_process_terminates_immediately_after_start.2C_no_GUI_is_launched"></span><span class="mw-headline" id="vmware_12_process_terminates_immediately_after_start,_no_GUI_is_launched">vmware 12 process terminates immediately after start, no GUI is launched</span>
+</h4>
+<p>Registered bug at <a rel="nofollow" class="external text" href="https://bugs.mageia.org/show_bug.cgi?id=9739">Mageia</a>, but it seems that there are no error messages shown in terminal with arch. When inspecting the logs, which are in <code>/tmp/vmware-&lt;id&gt;</code>, there are <code>VMWARE_SHIPPED_LIBS_LIST is not set</code>, <code>VMWARE_SYSTEM_LIBS_LIST is not set</code>, <code>VMWARE_USE_SHIPPED_LIBS is not set</code>, <code>VMWARE_USE_SYSTEM_LIBS is not set</code> issues. Process simply terminates with <code>Unable to execute /usr/lib/vmware/bin/vmware-modconfig.</code> after vmware or vmplayer is executed. Solution is the same, as root do:
+</p>
+<pre># mv /etc/vmware/icu/icudt44l.dat /etc/vmware/icu/icudt44l.dat.bak
+</pre>
+<p>Also there is a workaround: 
+</p>
+<pre># export VMWARE_USE_SHIPPED_LIBS='yes'
+</pre>
+<p>Despite setting the VMWARE_USE_SHIPPED_LIBS variable, VMWare may still fail to find certain libraries. An example is the libfontconfig.so.1 library. Check vmware logs in the tmp directory to see which libraries are still not found. Copy them to the appropriate path with libraries existing on the system:
+</p>
+<pre># cp /usr/lib/libfontconfig.so.1 /usr/lib/vmware/lib/libfontconfig.so.1/
+</pre>
+<p>Instead of copying all these files manually, you may want to try exporting an additional setting:
+</p>
+<pre># export VMWARE_USE_SYSTEM_LIBS='yes'
+</pre>
+<p>On systems with fontconfig version <b>2.13.0</b> and above, it may be needed to force VMware to use the shipped libfontconfig file instead of the newer system file. In such case, it is also necessary to provide a shared object library file <code>libexpat.so.0</code> for the shipped fontconfig. This applies for at least VMware version <b>12.5.9</b>. As root do:
+</p>
+<pre># ln -s /usr/lib/libexpat.so /usr/lib/vmware/lib/libfontconfig.so.1/libexpat.so.0
+# export LD_LIBRARY_PATH=/usr/lib/vmware/lib/libfontconfig.so.1:$LD_LIBRARY_PATH
+</pre>
+<h3><span class="mw-headline" id="Guest_issues">Guest issues</span></h3>
+<h4><span class="mw-headline" id="Unable_to_download_VMware_Tools_for_guests">Unable to download VMware Tools for guests</span></h4>
+<p>To download the tools manually, visit the <a rel="nofollow" class="external text" href="https://softwareupdate.vmware.com/cds/vmw-desktop/">VMware repository</a>.
+</p>
+<p>Navigate to: "<i>application name</i> / <i>version</i> / <i>build ID</i> / linux / packages/" and download the appropriate Tools.
+</p>
+<p>Extract with:
+</p>
+<pre>$ tar -xvf vmware-tools-<i>name</i>-<i>version</i>-<i>buildID</i>.x86_64.component.tar
+</pre>
+<p>And install using the VMware installer:
+</p>
+<pre># vmware-installer --install-component=<i>/path/</i>vmware-tools-<i>name</i>-<i>version</i>-<i>buildID</i>.x86_64.component
+</pre>
+<p>If the above does not work, try installing <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/ncurses5-compat-libs/">ncurses5-compat-libs</a></span><sup><small>AUR</small></sup>.
+</p>
+<h4>
+<span id="Guests_have_incorrect_system_clocks_or_are_unable_to_boot:_.22.5B....5DtimeTracker_user.c:234_bugNr.3D148722.22"></span><span class="mw-headline" id='Guests_have_incorrect_system_clocks_or_are_unable_to_boot:_"[...]timeTracker_user.c:234_bugNr=148722"'>Guests have incorrect system clocks or are unable to boot: "[...]timeTracker_user.c:234 bugNr=148722"</span>
+</h4>
+<div class="noprint archwiki-template-message">
+<p><a href="../File:Tango-view-refresh-red.png" class="image"><img alt="Tango-view-refresh-red.png" src="../File:Tango-view-refresh-red.png" decoding="async" width="48" height="48"></a><b>This article or section is out of date.</b><a href="../File:Tango-view-refresh-red.png" class="image"><img alt="Tango-view-refresh-red.png" src="../File:Tango-view-refresh-red.png" decoding="async" width="48" height="48"></a></p>
+<div>
+<b>Reason:</b> <code>ondemand</code> is <a rel="nofollow" class="external text" href="https://gitlab.archlinux.org/archlinux/packaging/packages/linux/-/commit/83345a2f829af62ce6fd4b4fa3a875b8f6560f43">no longer</a> the default governor, does this still apply to the <code>schedutil</code> governor? (Discuss in <a rel="nofollow" class="external text" href="https://wiki.archlinux.org/title/Talk:VMware">Talk:VMware</a>)</div>
+</div>
+<p>This is due to <a rel="nofollow" class="external text" href="https://kb.vmware.com/selfservice/microsites/search.do?cmd=displayKC&amp;externalId=1591">incomplete</a> support of power management features (<a href="https://en.wikipedia.org/wiki/Intel_speedstep" class="extiw" title="wikipedia:Intel speedstep">Intel SpeedStep</a> and <a href="https://en.wikipedia.org/wiki/AMD_powernow" class="extiw" title="wikipedia:AMD powernow">AMD PowerNow!</a>/<a href="https://en.wikipedia.org/wiki/Cool%27n%27Quiet" class="extiw" title="wikipedia:Cool'n'Quiet">Cool'n'Quiet</a>) in VMware Linux that vary the CPU frequency. In March 2012, with the release of <a rel="nofollow" class="external text" href="https://github.com/archlinux/svntogit-packages/commit/9abe018d91a5d8c3af7523d30b8aa73f86b680be/trunk/config.x86_64">linux 3.3-1</a> the maximum frequency <a href="../en/CPU_frequency_scaling.html#Scaling_governors" class="mw-redirect" title="CPU frequency governors">Performance</a> governor was replaced with the dynamic <i>Ondemand</i>. When the host CPU frequency changes, the Guest system clock runs too quickly or too slowly, but may also render the whole Guest unbootable.
+</p>
+<p>To prevent this, the maximum host CPU frequency can be specified, and <a href="https://en.wikipedia.org/wiki/Time_Stamp_Counter" class="extiw" title="wikipedia:Time Stamp Counter">Time Stamp Counter</a> (TSC) disabled, in the global configuration:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/vmware/config</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">host.cpukHz = "X"  # The maximum speed in KHz, e.g. 3GHz is "3000000".
+host.noTSC = "TRUE" # Keep the Guest system clock accurate even when
+ptsc.noTSC = "TRUE" # the time stamp counter (TSC) is slow.</pre>
+<div class="archwiki-template-box archwiki-template-box-tip">
+<strong>Tip:</strong> To periodically correct the time (once per minute), in the <i>Options</i> tab of VMware Tools, enable: <i>"Time synchronization between the virtual machine and the host operating system"</i>.</div>
+<h4><span class="mw-headline" id="Networking_on_Guests_not_available_after_system_restart">Networking on Guests not available after system restart</span></h4>
+<p>This is likely due to the <code>vmnet</code> module not being loaded <a rel="nofollow" class="external autonumber" href="https://www.linuxquestions.org/questions/slackware-14/could-not-connect-ethernet0-to-virtual-network-dev-vmnet8-796095/">[4]</a>. See also the <a href="#systemd_services">#systemd services</a> section for automatic loading.
+</p>
+<h4><span class="mw-headline" id="Mouse_issues">Mouse issues</span></h4>
+<h5><span class="mw-headline" id="Mouse_buttons_above_5_do_not_work">Mouse buttons above 5 do not work</span></h5>
+<p>If your mouse's thumb buttons or other additional buttons do not work,  <a href="../en/Mouse_buttons.html#If_Arch_is_a_guest_virtual_machine" title="Mouse buttons">set guest to use advanced mouse</a>.
+</p>
+<h5><span class="mw-headline" id="Strange_mouse_wheel_behavior_on_Guest">Strange mouse wheel behavior on Guest</span></h5>
+<p>This is related to the current Xorg keyboard layout on Host system. Keep primary layout (e.g., English) selected on Host while working on Guest.
+</p>
+<h4><span class="mw-headline" id="No_IP_address_and_network_access_for_nested_VMs">No IP address and network access for nested VMs</span></h4>
+<p>This issue is related to promiscuous mode which, following standard Linux practice, can only be enabled by the root user. To work around these limitations, the permissions for the networking device in question have to be changed.
+</p>
+<p>Give permissions to one group:
+</p>
+<pre># chgrp <i>group</i> /dev/vmnetX
+
+# chmod g+rw /dev/vmnetX
+</pre>
+<p>Give permissions to all users:
+</p>
+<pre># chmod a+rw /dev/vmnetX
+</pre>
+<h2><span class="mw-headline" id="Removal">Removal</span></h2>
+<p>To uninstall VMware you need the product name (either <code>vmware-workstation</code> or <code>vmware-player</code>). To list all the installed products:
+</p>
+<pre>$ vmware-installer -l
+</pre>
+<p>and uninstall with (<code>--required</code> skips the confirmation):
+</p>
+<pre># vmware-installer -u <i>product</i> --required
+</pre>
+<div class="archwiki-template-box archwiki-template-box-tip">
+<strong>Tip:</strong> Use <code>--console</code> for the console UI.</div>
+<p>Remember to also <a href="../en/Help:Reading.html#Control_of_systemd_units" class="mw-redirect" title="Disable">disable</a> and remove the services:
+</p>
+<pre># rm /etc/systemd/system/vmware.service
+# rm /etc/systemd/system/vmware-usbarbitrator.service
+</pre>
+<p>You may also want to have a look at the module directories in <code>/usr/lib/modules/<i>kernel_name</i>/misc/</code> for any leftovers, and remove <code>/etc/init.d/</code> if now empty.
+</p>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface">
+<div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="../en/Category:Hypervisors.html" title="Category:Hypervisors">Hypervisors</a></li></ul>
+</div>
+<div id="mw-hidden-catlinks" class="mw-hidden-catlinks mw-hidden-cats-hidden">Hidden categories: <ul>
+<li><a href="../en/Category:Pages_or_sections_flagged_with_Template:Merge.html" title="Category:Pages or sections flagged with Template:Merge">Pages or sections flagged with Template:Merge</a></li>
+<li><a href="../en/Category:Pages_or_sections_flagged_with_Template:Out_of_date.html" title="Category:Pages or sections flagged with Template:Out of date">Pages or sections flagged with Template:Out of date</a></li>
+</ul>
+</div>
+</div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=VMware&amp;oldid=783511">https://wiki.archlinux.org/index.php?title=VMware&amp;oldid=783511</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 21 July 2023, at 10:21.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

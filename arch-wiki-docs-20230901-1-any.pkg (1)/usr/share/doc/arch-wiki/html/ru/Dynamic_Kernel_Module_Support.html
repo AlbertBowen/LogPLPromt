@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>Dynamic Kernel Module Support (Русский) - ArchWiki</title>
+<link rel="stylesheet" href="../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Dynamic_Kernel_Module_Support_Русский rootpage-Dynamic_Kernel_Module_Support_Русский skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Установка" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Установка</div>
+			</a>
+			
+			<ul id="toc-Установка-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Обновления" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#%D0%9E%D0%B1%D0%BD%D0%BE%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Обновления</div>
+			</a>
+			
+			<ul id="toc-Обновления-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Использование" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#%D0%98%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>Использование</div>
+			</a>
+			
+				<button aria-controls="toc-Использование-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Использование subsection
+				</button>
+			
+			<ul id="toc-Использование-sublist" class="sidebar-toc-list">
+				<li id="toc-Список_модулей" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#%D0%A1%D0%BF%D0%B8%D1%81%D0%BE%D0%BA_%D0%BC%D0%BE%D0%B4%D1%83%D0%BB%D0%B5%D0%B9">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.1</span>Список модулей</div>
+			</a>
+			
+			<ul id="toc-Список_модулей-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Пересборка_модулей" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#%D0%9F%D0%B5%D1%80%D0%B5%D1%81%D0%B1%D0%BE%D1%80%D0%BA%D0%B0_%D0%BC%D0%BE%D0%B4%D1%83%D0%BB%D0%B5%D0%B9">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.2</span>Пересборка модулей</div>
+			</a>
+			
+			<ul id="toc-Пересборка_модулей-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Удаление_модулей" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#%D0%A3%D0%B4%D0%B0%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5_%D0%BC%D0%BE%D0%B4%D1%83%D0%BB%D0%B5%D0%B9">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.3</span>Удаление модулей</div>
+			</a>
+			
+			<ul id="toc-Удаление_модулей-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Создание_DKMS_пакета" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#%D0%A1%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5_DKMS_%D0%BF%D0%B0%D0%BA%D0%B5%D1%82%D0%B0">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4</span>Создание DKMS пакета</div>
+			</a>
+			
+			<ul id="toc-Создание_DKMS_пакета-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Initial_ramdisk" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Initial_ramdisk">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5</span>Initial ramdisk</div>
+			</a>
+			
+			<ul id="toc-Initial_ramdisk-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Смотрите_также" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#%D0%A1%D0%BC%D0%BE%D1%82%D1%80%D0%B8%D1%82%D0%B5_%D1%82%D0%B0%D0%BA%D0%B6%D0%B5">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6</span>Смотрите также</div>
+			</a>
+			
+			<ul id="toc-Смотрите_также-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../ru/Dynamic_Kernel_Module_Support.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="new mw-list-item"><a href="/index.php?title=Talk:Dynamic_Kernel_Module_Support_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)&amp;action=edit&amp;redlink=1" rel="discussion" title="Discussion about the content page (page does not exist) [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">русский</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../ru/Dynamic_Kernel_Module_Support.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=Dynamic_Kernel_Module_Support_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=Dynamic_Kernel_Module_Support_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../ru/Dynamic_Kernel_Module_Support.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Dynamic_Kernel_Module_Support_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Dynamic_Kernel_Module_Support_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="ru" dir="ltr">
+<div class="mw-parser-output">
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Состояние перевода:</strong> На этой странице представлен перевод статьи <a href="../en/Dynamic_Kernel_Module_Support.html" title="Dynamic Kernel Module Support">Dynamic Kernel Module Support</a>. Дата последней синхронизации: 2022-02-27. Вы можете <a href="../ru/ArchWiki:Translation_Team.html" title="ArchWiki:Translation Team (Русский)">помочь</a> синхронизировать перевод, если в английской версии произошли <a rel="nofollow" class="external text" href="https://wiki.archlinux.org/index.php?title=Dynamic_Kernel_Module_Support&amp;diff=0&amp;oldid=719721">изменения</a>.</div>
+<p>Из <a href="https://en.wikipedia.org/wiki/ru:Dynamic_Kernel_Module_Support" class="extiw" title="wikipedia:ru:Dynamic Kernel Module Support">Википедии</a>:
+</p>
+<dl><dd>Dynamic Kernel Module Support (DKMS) — это фреймворк, который используется для генерации тех модулей ядра Linux, которые в общем случае не включены в дерево исходного кода. DKMS позволяет драйверам устройств автоматически пересобираться, когда ядро уже установлено.</dd></dl>
+<p>Это означает, что пользователь может не ждать, пока какая-то компания, проект или сопроводитель пакета выпустит новую версию модуля. После введения <a href="../ru/Pacman.html#%D0%A5%D1%83%D0%BA%D0%B8" title="Pacman (Русский)">хуков pacman</a> пересборка модулей осуществляется автоматически во время обновления ядра.
+</p>
+<mw:tocplace></mw:tocplace>
+<h2>
+<span id=".D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0"></span><span class="mw-headline" id="Установка">Установка</span>
+</h2>
+<p><a href="../ru/Help:Reading.html#%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0_%D0%BF%D0%B0%D0%BA%D0%B5%D1%82%D0%BE%D0%B2" class="mw-redirect" title="Установите">Установите</a> пакет <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=dkms">dkms</a></span> <b>и</b> заголовочные файлы требуемого ядра/ядер. Например,  для ядра по умолчанию <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=linux">linux</a></span> соответствует <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=linux-headers">linux-headers</a></span>. Другие ядра имеют собственные пакеты с заголовочными файлами.
+</p>
+<p>Значительное число модулей, не включенных в ядро, имеют DKMS вариант; некоторые из них размещаются в <a rel="nofollow" class="external text" href="https://archlinux.org/packages/?&amp;q=dkms">официальных репозиториях</a>, но большинство из них можно найти только в <a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/?SeB=n&amp;K=dkms">AUR</a>.
+</p>
+<h2>
+<span id=".D0.9E.D0.B1.D0.BD.D0.BE.D0.B2.D0.BB.D0.B5.D0.BD.D0.B8.D1.8F"></span><span class="mw-headline" id="Обновления">Обновления</span>
+</h2>
+<p>Обычно пересборка модулей DKMS во время обновления ядра выполняется бесшовно, но что-то может пойти не так. Следует обратить особое внимание на вывод <a href="../ru/Pacman.html" title="Pacman (Русский)">pacman</a>! Это, в частности, относится к тем системам, которым требуется модуль DKMS для успешной загрузки и/или если вы используете DKMS с ядром не из <a href="../ru/Official_repositories.html" title="Official repositories (Русский)">официальных репозиториев</a>.
+</p>
+<p>Для того, чтобы следовать изменениям в ядре, исправить ошибки или добавить необходимый функционал, подумайте об обновлении соответствующего пакета DKMS перед перезагрузкой.
+</p>
+<h2>
+<span id=".D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5"></span><span class="mw-headline" id="Использование">Использование</span>
+</h2>
+<p>Использование DKMS вручную.
+</p>
+<p>Автозавершение по <code>Tab</code> будет доступно после выполнения команды:
+</p>
+<pre># source /usr/share/bash-completion/completions/dkms
+</pre>
+<h3>
+<span id=".D0.A1.D0.BF.D0.B8.D1.81.D0.BE.D0.BA_.D0.BC.D0.BE.D0.B4.D1.83.D0.BB.D0.B5.D0.B9"></span><span class="mw-headline" id="Список_модулей">Список модулей</span>
+</h3>
+<p>Чтобы увидеть текущее состояние модулей, версий и ядер внутри дерева, выполните:
+</p>
+<pre># dkms status
+</pre>
+<h3>
+<span id=".D0.9F.D0.B5.D1.80.D0.B5.D1.81.D0.B1.D0.BE.D1.80.D0.BA.D0.B0_.D0.BC.D0.BE.D0.B4.D1.83.D0.BB.D0.B5.D0.B9"></span><span class="mw-headline" id="Пересборка_модулей">Пересборка модулей</span>
+</h3>
+<p>Пересборка всех модулей для текущего ядра:
+</p>
+<pre># dkms autoinstall
+</pre>
+<p>или для конкретного ядра:
+</p>
+<pre># dkms autoinstall -k 3.16.4-1-ARCH
+</pre>
+<p>Сборка <i>конкретного</i> модуля для текущего ядра:
+</p>
+<pre># dkms install -m nvidia -v 334.21
+</pre>
+<p>или просто:
+</p>
+<pre># dkms install nvidia/334.21
+</pre>
+<p>Сборка модуля для <i>всех</i> ядер:
+</p>
+<pre># dkms install nvidia/334.21 --all
+</pre>
+<h3>
+<span id=".D0.A3.D0.B4.D0.B0.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BC.D0.BE.D0.B4.D1.83.D0.BB.D0.B5.D0.B9"></span><span class="mw-headline" id="Удаление_модулей">Удаление модулей</span>
+</h3>
+<p>Удаление модуля (старые автоматически не удаляются):
+</p>
+<pre># dkms remove -m nvidia -v 331.49 --all
+</pre>
+<p>или просто:
+</p>
+<pre># dkms remove nvidia/331.49 --all
+</pre>
+<p>Если пакет <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=dkms">dkms</a></span> удален, то теряется информация о предыдущих файлах сборки модуля. В этом случае, перейдите в директорию <code>/usr/lib/modules/<i>kernel_release</i></code> и <code>/var/lib/dkms/<i>package_name</i></code> и удалите все файлы и каталоги, которые больше не используются.
+</p>
+<h2>
+<span id=".D0.A1.D0.BE.D0.B7.D0.B4.D0.B0.D0.BD.D0.B8.D0.B5_DKMS_.D0.BF.D0.B0.D0.BA.D0.B5.D1.82.D0.B0"></span><span class="mw-headline" id="Создание_DKMS_пакета">Создание DKMS пакета</span>
+</h2>
+<p>Смотрите <a href="../en/DKMS_package_guidelines.html" title="DKMS package guidelines">руководство</a>.
+</p>
+<h2><span class="mw-headline" id="Initial_ramdisk">Initial ramdisk</span></h2>
+<p>В случаях для любых модулей, которые были установлены через DKMS и используются в <a href="https://en.wikipedia.org/wiki/ru:Initrd" class="extiw" title="wikipedia:ru:Initrd">Initrd</a>, например <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/zfs-dkms/">zfs-dkms</a></span><sup><small>AUR</small></sup>, может быть полезно написать хук <a href="../en/Pacman.html" title="Pacman">pacman</a> для автоматической пересборки образа(ов) initramfs.
+</p>
+<p>Например, когда используется <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=linux">linux</a></span> и <a href="../ru/Mkinitcpio.html" title="Mkinitcpio (Русский)">mkinitcpio</a>, то для обновления модуля <a href="../en/ZFS.html" title="ZFS">ZFS</a> после каждого <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/zfs-dkms/">zfs-dkms</a></span><sup><small>AUR</small></sup> апгрейда,
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/pacman.d/hooks/90-mkinitcpio-dkms-linux.hook</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">[Trigger]
+Operation=Install
+Operation=Upgrade
+Operation=Remove
+Type=Package
+Target=zfs-dkms
+Target=linux
+
+[Action]
+Description=Update dkms modules in Linux initcpio
+Depends=mkinitcpio
+When=PostTransaction
+NeedsTargets
+Exec=/bin/sh -c 'while read -r trg; do case $trg in linux) exit 0; esac; done; /usr/bin/mkinitcpio -p linux'</pre>
+<p>Вы можете добавить больше таргетов в хук и сделать дополнительные копии хука, если в вашей система установлены другие ядра. Префикс <code>90-</code> необходим для гарантированного запуска после хуков DPKMS.
+</p>
+<h2>
+<span id=".D0.A1.D0.BC.D0.BE.D1.82.D1.80.D0.B8.D1.82.D0.B5_.D1.82.D0.B0.D0.BA.D0.B6.D0.B5"></span><span class="mw-headline" id="Смотрите_также">Смотрите также</span>
+</h2>
+<ul><li><a rel="nofollow" class="external text" href="https://www.linuxjournal.com/article/6896">Linux Journal: Exploring Dynamic Kernel Module Support</a></li></ul>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="../ru/Category:Kernel.html" title="Category:Kernel (Русский)">Kernel (Русский)</a></li></ul>
+</div></div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=Dynamic_Kernel_Module_Support_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)&amp;oldid=720446">https://wiki.archlinux.org/index.php?title=Dynamic_Kernel_Module_Support_(Русский)&amp;oldid=720446</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 27 February 2022, at 08:34.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

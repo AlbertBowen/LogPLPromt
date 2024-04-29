@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>Debugging/Getting traces - ArchWiki</title>
+<link rel="stylesheet" href="../../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Debugging_Getting_traces rootpage-Debugging skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Introduction" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Introduction">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Introduction</div>
+			</a>
+			
+			<ul id="toc-Introduction-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Debuginfod" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Debuginfod">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Debuginfod</div>
+			</a>
+			
+				<button aria-controls="toc-Debuginfod-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Debuginfod subsection
+				</button>
+			
+			<ul id="toc-Debuginfod-sublist" class="sidebar-toc-list">
+				<li id="toc-Manual_download" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Manual_download">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.1</span>Manual download</div>
+			</a>
+			
+			<ul id="toc-Manual_download-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Manually_getting_debug_info" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Manually_getting_debug_info">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>Manually getting debug info</div>
+			</a>
+			
+				<button aria-controls="toc-Manually_getting_debug_info-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Manually getting debug info subsection
+				</button>
+			
+			<ul id="toc-Manually_getting_debug_info-sublist" class="sidebar-toc-list">
+				<li id="toc-Installing_debug_packages" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Installing_debug_packages">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.1</span>Installing debug packages</div>
+			</a>
+			
+			<ul id="toc-Installing_debug_packages-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Rebuilding_packages" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Rebuilding_packages">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.2</span>Rebuilding packages</div>
+			</a>
+			
+			<ul id="toc-Rebuilding_packages-sublist" class="sidebar-toc-list">
+				<li id="toc-Compilation_options" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Compilation_options">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.2.1</span>Compilation options</div>
+			</a>
+			
+			<ul id="toc-Compilation_options-sublist" class="sidebar-toc-list">
+				<li id="toc-glibc" class="sidebar-toc-list-item sidebar-toc-level-4">
+			<a class="sidebar-toc-link" href="#glibc">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.2.1.1</span>glibc</div>
+			</a>
+			
+			<ul id="toc-glibc-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Clang" class="sidebar-toc-list-item sidebar-toc-level-4">
+			<a class="sidebar-toc-link" href="#Clang">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.2.1.2</span>Clang</div>
+			</a>
+			
+			<ul id="toc-Clang-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-LTO" class="sidebar-toc-list-item sidebar-toc-level-4">
+			<a class="sidebar-toc-link" href="#LTO">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.2.1.3</span>LTO</div>
+			</a>
+			
+			<ul id="toc-LTO-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Building_and_installing_the_package" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Building_and_installing_the_package">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.2.2</span>Building and installing the package</div>
+			</a>
+			
+			<ul id="toc-Building_and_installing_the_package-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Getting_the_trace" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Getting_the_trace">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4</span>Getting the trace</div>
+			</a>
+			
+			<ul id="toc-Getting_the_trace-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-See_also" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#See_also">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5</span>See also</div>
+			</a>
+			
+			<ul id="toc-See_also-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../../en/Debugging/Getting_traces.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="mw-list-item"><a href="../../en/Talk:Debugging/Getting_traces.html" rel="discussion" title="Discussion about the content page [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">English</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../../en/Debugging/Getting_traces.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=Debugging/Getting_traces&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=Debugging/Getting_traces&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../../en/Debugging/Getting_traces.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Debugging/Getting_traces&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Debugging/Getting_traces&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					<div id="contentSub"><span class="subpages">&lt; <a href="../../en/Debugging.html" title="Debugging">Debugging</a></span></div>
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output">
+<div class="archwiki-template-meta-related-articles-start">
+<p class="mw-no-invert">Related articles</p>
+<ul>
+<li><a href="../../en/General_troubleshooting.html" title="General troubleshooting">General troubleshooting</a></li>
+<li><a href="../../en/Bug_reporting_guidelines.html" class="mw-redirect" title="Reporting bug guidelines">Reporting bug guidelines</a></li>
+<li><a href="../../en/Debuginfod.html" title="Debuginfod">Debuginfod</a></li>
+<li><a href="../../en/Core_dump.html" title="Core dump">Core dump</a></li>
+</ul>
+</div>
+<p>This article aims to help debugging software by providing traces and debug information. This information can then be used for the bug report to the (upstream) software developers or package maintainers.
+</p>
+<mw:tocplace></mw:tocplace>
+<h2><span class="mw-headline" id="Introduction">Introduction</span></h2>
+<p>Usually, executable files are stripped of human readable context to make them smaller. Not only that, but enhanced debugging information is usually not added to the executable in the first place, which drastically reduces the usefulness of the trace. So, before being able to obtain traces with debug information, one has to rebuild the package with debugging symbols enabled.
+</p>
+<p>Use the complete stack trace to inform developers of a bug you have discovered before. This will be highly appreciated by them and will help to improve your favorite program.
+</p>
+<div class="noprint archwiki-template-message">
+<p><a href="../../File:Tango-view-fullscreen.png" class="image"><img alt="Tango-view-fullscreen.png" src="../../File:Tango-view-fullscreen.png" decoding="async" width="48" height="48"></a><b>This article or section needs expansion.</b><a href="../../File:Tango-view-fullscreen.png" class="image"><img alt="Tango-view-fullscreen.png" src="../../File:Tango-view-fullscreen.png" decoding="async" width="48" height="48"></a></p>
+<div>
+<b>Reason:</b> coredumpctl can be especially useful here, compare <a href="../../en/Core_dump.html#Cleanup_of_core_dump_files" title="Core dump">Core dump#Cleanup of core dump files</a> (Discuss in <a rel="nofollow" class="external text" href="https://wiki.archlinux.org/title/Talk:Debugging/Getting_traces">Talk:Debugging/Getting traces</a>)</div>
+</div>
+<p>When looking at debug messages, such as by using <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=gdb">gdb</a></span> on a <a href="../../en/Core_dump.html" title="Core dump">core dump</a> (See <a href="#Getting_the_trace">#Getting the trace</a>):
+</p>
+<pre>[...]
+Backtrace was generated from '/usr/bin/epiphany'
+
+<b>(no debugging symbols found)</b>
+Using host libthread_db library "<b>/lib/libthread_db.so.1</b>".
+<b>(no debugging symbols found)</b>
+[Thread debugging using libthread_db enabled]
+[New Thread -1241265952 (LWP 12630)]
+(no debugging symbols found)
+0xb7f25410 in __kernel_vsyscall ()
+#0  0xb7f25410 in __kernel_vsyscall ()
+#1  0xb741b45b in <b>??</b> () from /lib/libpthread.so.0
+[...]
+</pre>
+<p><code>??</code> shows where debugging info is missing, as well as the name of library or executable which called the function. Similarly, when <code>(no debugging symbols found)</code> appears, you should look for the stated file names. 
+</p>
+<p>To retrieve debug information, proceed with one of sections <a href="#Debuginfod">#Debuginfod</a>, <a href="#Installing_debug_packages">#Installing debug packages</a> or <a href="#Rebuilding_packages">#Rebuilding packages</a>.
+</p>
+<h2><span class="mw-headline" id="Debuginfod">Debuginfod</span></h2>
+<p>For packages in the <a href="../../en/Official_repositories.html" title="Official repositories">official repositories</a> that support it (see <a rel="nofollow" class="external free" href="https://debuginfod.archlinux.org/packages">https://debuginfod.archlinux.org/packages</a>), debug information and symbols can be retrieved directly over HTTP with <a href="../../en/Debuginfod.html" title="Debuginfod">debuginfod</a>.
+</p>
+<p><i>gdb</i> offers to download them automatically when the <code>DEBUGINFOD_URLS</code> <a href="../../en/Environment_variables.html" class="mw-redirect" title="Environment variable">environment variable</a> is set.
+This variable is set by default in <code>/etc/profile.d/</code>.
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">$ gdb <i>application</i></pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">This GDB supports auto-downloading debuginfo from the following URLs:
+  &lt;<a rel="nofollow" class="external free" href="https://debuginfod.archlinux.org">https://debuginfod.archlinux.org</a>&gt;
+Enable debuginfod for this session? (y or [n]) y
+Debuginfod has been enabled.
+To make this setting permanent, add 'set debuginfod enabled on' to .gdbinit.
+Downloading separate debug info for /usr/bin/<i>application</i>
+Reading symbols from /home/user/.cache/debuginfod_client/fbaee841e2ed2c11ecbbda26f39eeec1da23d6c3/debuginfo...</pre>
+<p>Once you enabled debuginfo support you can continue with <a href="#Getting_the_trace">#Getting the trace</a>
+</p>
+<h3><span class="mw-headline" id="Manual_download">Manual download</span></h3>
+<p>If one wants to manually retrieve the debug symbols for <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=zstd">zstd</a></span>, along with some source files, one can utilize <i>debuginfod-find</i>:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">$ debuginfod-find debuginfo /usr/bin/zstd</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">/home/user/.cache/debuginfod_client/70e1b456c5813658df6436a3deb71812e75a0267/debuginfo
+</pre>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">$ debuginfod-find source /usr/bin/zstd /usr/src/debug/zstd-1.5.2/programs/fileio.c</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">/home/user/.cache/debuginfod_client/70e1b456c5813658df6436a3deb71812e75a0267/source##usr##src##debug##zstd-1.5.2##programs##fileio.c</pre>
+<h2><span class="mw-headline" id="Manually_getting_debug_info">Manually getting debug info</span></h2>
+<p>The first thing to do is to obtain the names of the packages which <a href="#Rebuilding_packages">require rebuilding</a> or the <a href="#Installing_debug_packages">install of a debug package</a>.
+</p>
+<pre>[...]
+Backtrace was generated from '/usr/bin/epiphany'
+
+<b>(no debugging symbols found)</b>
+Using host libthread_db library "<b>/lib/libthread_db.so.1</b>".
+<b>(no debugging symbols found)</b>
+[...]
+</pre>
+<p>For example for the above extract from a trace, the package name for the associated package can be obtained with <a href="../../en/Pacman.html" title="Pacman">pacman</a>:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">$ pacman -Qo /lib/libthread_db.so.1</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">/lib/libthread_db.so.1 is owned by <i>glibc</i> 2.5-8
+</pre>
+<p>The package is called <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=glibc">glibc</a></span> in version 2.5-8. Repeat this step for every package that needs debugging information.
+</p>
+<h3><span class="mw-headline" id="Installing_debug_packages">Installing debug packages</span></h3>
+<div class="noprint archwiki-template-message">
+<p><a href="../../File:Tango-view-fullscreen.png" class="image"><img alt="Tango-view-fullscreen.png" src="../../File:Tango-view-fullscreen.png" decoding="async" width="48" height="48"></a><b>This article or section needs expansion.</b><a href="../../File:Tango-view-fullscreen.png" class="image"><img alt="Tango-view-fullscreen.png" src="../../File:Tango-view-fullscreen.png" decoding="async" width="48" height="48"></a></p>
+<div>
+<b>Reason:</b> Explain the different scenarios properly. Either you install a debug package or you let <a href="../../en/Debuginfod.html" title="Debuginfod">debuginfod</a> fetch the things it needs? (Discuss in <a rel="nofollow" class="external text" href="https://wiki.archlinux.org/title/Talk:Debugging/Getting_traces">Talk:Debugging/Getting traces</a>)</div>
+</div>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> Debug packages are not archived by Arch Linux on <a href="../../en/Arch_Linux_Archive.html" title="Arch Linux Archive">Arch Linux Archive</a>.</div>
+<p>A few mirrors currently distribute debug packages in accessible repositories. These are sponsored mirrors controlled by Arch Linux and are given access to the debug repositories.
+</p>
+<ul><li>
+<a rel="nofollow" class="external free" href="https://geo.mirror.pkgbuild.com">https://geo.mirror.pkgbuild.com</a> (GeoDNS mirror)</li></ul>
+<p>To install a package you can install it directly from the repository. For example:
+</p>
+<pre># pacman -U https://geo.mirror.pkgbuild.com/core-debug/os/x86_64/<i>zstd-debug-1.5.2-2</i>-x86_64.pkg.tar.zst
+</pre>
+<div class="archwiki-template-box archwiki-template-box-warning">
+<strong>Warning:</strong> Debug packages from one <a href="../../en/Mirrors.html" class="mw-redirect" title="Mirror">mirror</a> are not compatible with regular packages from another mirror, if both mirrors are not in sync, and thus have mismatching builds. In this case, avoid mixing packages from different mirrors (this would result in a <a href="../../en/System_maintenance.html#Partial_upgrades_are_unsupported" class="mw-redirect" title="Partial upgrade">partial upgrade</a>), but point all repositories to the <code>debug</code> mirror.</div>
+<div class="noprint archwiki-template-message">
+<p><a href="../../File:Merge-arrows-2.png" class="image"><img alt="Merge-arrows-2.png" src="../../File:Merge-arrows-2.png" decoding="async" width="48" height="48"></a><b>This article or section is a candidate for merging with <a href="../../en/Official_repositories.html" title="Official repositories">Official repositories</a>.</b><a href="../../File:Merge-arrows-2.png" class="image"><img alt="Merge-arrows-2.png" src="../../File:Merge-arrows-2.png" decoding="async" width="48" height="48"></a></p>
+<div>
+<b>Notes:</b> Official repositories have a dedicated page (Discuss in <a href="../../en/Talk:Debugging/Getting_traces.html#mirrors_distributing_debug_packages." title="Talk:Debugging/Getting traces">Talk:Debugging/Getting traces#mirrors distributing debug packages.</a>)</div>
+</div>
+<p>Another option is to add the repositories to your pacman configuration.
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/pacman.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;"># Testing Repositories
+
+[core-testing-debug]
+Include = /etc/pacman.d/mirrorlist
+
+[extra-testing-debug]
+Include = /etc/pacman.d/mirrorlist
+
+[multilib-testing-debug]
+Include = /etc/pacman.d/mirrorlist
+
+# Stable repositories
+
+[core-debug]
+Include = /etc/pacman.d/mirrorlist
+
+[extra-debug]
+Include = /etc/pacman.d/mirrorlist
+
+[multilib-debug]
+Include = /etc/pacman.d/mirrorlist</pre>
+<p>Place a mirror with debug packages as the first one in the mirrorlist file:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/pacman.d/mirrorlist</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">Server = https://geo.mirror.pkgbuild.com/$repo/os/$arch
+...</pre>
+<h3><span class="mw-headline" id="Rebuilding_packages">Rebuilding packages</span></h3>
+<p>If debug information is not exposed through <i>debuginfod</i> (for example, when the package originates from the <a href="../../en/Arch_User_Repository.html" class="mw-redirect" title="AUR">AUR</a>), then it can be rebuilt from source. See <a href="../../en/Arch_build_system.html" class="mw-redirect" title="ABS">ABS</a> for packages in the <a href="../../en/Official_repositories.html" title="Official repositories">official repositories</a>, or <a href="../../en/Arch_User_Repository.html#Acquire_build_files" class="mw-redirect" title="AUR">AUR#Acquire build files</a> for packages in the <a href="../../en/Arch_User_Repository.html" class="mw-redirect" title="AUR">AUR</a>.
+</p>
+<p>To set the required <a href="#Compilation_options">#Compilation options</a>, you can modify the <a href="../../en/Makepkg.html#Configuration" title="Makepkg">makepkg configuration</a> if you will only use <i>makepkg</i> for debug purposes. In other cases, you should modify package's <code>PKGBUILD</code> file only for each package you would like to rebuild.
+</p>
+<h4><span class="mw-headline" id="Compilation_options">Compilation options</span></h4>
+<p>As of pacman 4.1, <span class="plainlinks archwiki-template-man" title="$ man 5 makepkg.conf"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/makepkg.conf.5">makepkg.conf(5)</a></span> has debug compilation flags in <code>DEBUG_CFLAGS</code> and <code>DEBUG_CXXFLAGS</code>. To use them, enable the <code>debug</code> <i>makepkg</i> option, and disable <code>strip</code>.
+</p>
+<p>These settings will force compilation with debug symbols and will disable their stripping from executables. 
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/makepkg.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">OPTIONS+=(debug !strip)</pre>
+<p>To apply this setting to a single package, modify the <code>PKGBUILD</code>:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">PKGBUILD</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">options=(debug !strip)</pre>
+<p>Alternatively you can put the debug information in a separate package by enabling both <code>debug</code> and <code>strip</code>, debug symbols will then be stripped from the main package and placed, together with source files to aid in stepping through the debugger, in a separate <code><i>pkgbase</i>-debug</code> package. This is advantageous if the package contains very large binaries (e.g. over a GB with debug symbols included) as it might cause freezing and other strange, unwanted behavior occurring.
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> It is insufficient to simply install the newly compiled debug package, because the debugger will check that the file containing the debug symbols is from the same build as the associated library and executable. You must install both of the recompiled packages. In Arch, the debug symbol files are installed under <code>/usr/lib/debug/</code>, and source files are installed under <code>/usr/src/debug</code>. See the <a rel="nofollow" class="external text" href="https://sourceware.org/gdb/onlinedocs/gdb/Separate-Debug-Files.html">GDB documentation</a> for more information about debug packages.</div>
+<h5><span class="mw-headline" id="glibc">glibc</span></h5>
+<p>Certain packages such as <i>glibc</i> are stripped regardless. Check the <code>PKGBUILD</code> for sections such as:
+</p>
+<pre>strip $STRIP_BINARIES usr/bin/{gencat,getconf,getent,iconv,iconvconfig} \
+                      usr/bin/{ldconfig,locale,localedef,nscd,makedb} \
+                      usr/bin/{pcprofiledump,pldd,rpcgen,sln,sprof} \
+                      usr/lib/getconf/*
+
+strip $STRIP_STATIC usr/lib/*.a
+
+strip $STRIP_SHARED usr/lib/{libanl,libBrokenLocale,libcidn,libcrypt}-*.so \
+                    usr/lib/libnss_{compat,db,dns,files,hesiod,nis,nisplus}-*.so \
+                    usr/lib/{libdl,libm,libnsl,libresolv,librt,libutil}-*.so \
+                    usr/lib/{libmemusage,libpcprofile,libSegFault}.so \
+                    usr/lib/{audit,gconv}/*.so
+</pre>
+<p>And remove them where appropriate.
+</p>
+<h5><span class="mw-headline" id="Clang">Clang</span></h5>
+<div class="noprint archwiki-template-message">
+<p><a href="../../File:Tango-view-refresh-red.png" class="image"><img alt="Tango-view-refresh-red.png" src="../../File:Tango-view-refresh-red.png" decoding="async" width="48" height="48"></a><b>This article or section is out of date.</b><a href="../../File:Tango-view-refresh-red.png" class="image"><img alt="Tango-view-refresh-red.png" src="../../File:Tango-view-refresh-red.png" decoding="async" width="48" height="48"></a></p>
+<div>
+<b>Reason:</b> The package that served as a reference is no longer in the repositories, do we have a more recent example? (Discuss in <a rel="nofollow" class="external text" href="https://wiki.archlinux.org/title/Talk:Debugging/Getting_traces">Talk:Debugging/Getting traces</a>)</div>
+</div>
+<p>Packages using <a href="../../en/Clang.html" title="Clang">Clang</a> as the compiler will not build with the <code>debug</code> option due to the debug flag <code>-fvar-tracking-assignments'</code> not being handled (e.g. the previous <a rel="nofollow" class="external text" href="https://gitlab.archlinux.org/archlinux/packaging/packages/js78/-/blob/main/PKGBUILD">js78 PKGBUILD</a>).
+</p>
+<p>Add the following at the top of the <code>build()</code> function to only remove the flag for the affected package: 
+</p>
+<pre>build() {
+  CFLAGS=${CFLAGS/-fvar-tracking-assignments}
+  CXXFLAGS=${CXXFLAGS/-fvar-tracking-assignments}
+[...]</pre>
+<h5><span class="mw-headline" id="LTO">LTO</span></h5>
+<p>Using <a href="https://en.wikipedia.org/wiki/Interprocedural_optimization#WPO_and_LTO" class="extiw" title="w:Interprocedural optimization">Link-time optimization (LTO)</a> will, both during compiling and in a debugger, use more memory<a rel="nofollow" class="external autonumber" href="https://pp.ipd.kit.edu/uploads/publikationen/weinreuter16bachelorarbeit.pdf#section.4.3">[1]</a><a rel="nofollow" class="external autonumber" href="https://sourceware.org/bugzilla/show_bug.cgi?id=23710">[2]</a>. Depending on the application, especially if it is a large one like Firefox or Qt, it might exceed the available memory. Build the application without LTO if this happens.
+</p>
+<p>All packages in the official repositories are generally built with LTO.
+</p>
+<h4><span class="mw-headline" id="Building_and_installing_the_package">Building and installing the package</span></h4>
+<p>Build the package from source using <code>makepkg</code> while in the <code>PKGBUILD</code>'s directory. This could take some time:
+</p>
+<pre>$ makepkg
+</pre>
+<p>Then install the built package:
+</p>
+<pre># pacman -U glibc-2.26-1-x86_64.pkg.tar.gz
+</pre>
+<h2><span class="mw-headline" id="Getting_the_trace">Getting the trace</span></h2>
+<div class="noprint archwiki-template-message">
+<p><a href="../../File:Tango-view-fullscreen.png" class="image"><img alt="Tango-view-fullscreen.png" src="../../File:Tango-view-fullscreen.png" decoding="async" width="48" height="48"></a><b>This article or section needs expansion.</b><a href="../../File:Tango-view-fullscreen.png" class="image"><img alt="Tango-view-fullscreen.png" src="../../File:Tango-view-fullscreen.png" decoding="async" width="48" height="48"></a></p>
+<div>
+<b>Reason:</b> Core dumps stored by systemd can be examined with <code>coredumpctl gdb</code> (Discuss in <a rel="nofollow" class="external text" href="https://wiki.archlinux.org/title/Talk:Debugging/Getting_traces">Talk:Debugging/Getting traces</a>)</div>
+</div>
+<p>The actual backtrace (or stack trace) can now be obtained via <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=gdb">gdb</a></span>, the GNU Debugger. Run it via:
+</p>
+<pre># gdb <i>/path/to/executable</i>
+</pre>
+<div class="archwiki-template-box archwiki-template-box-tip">
+<strong>Tip:</strong> gdb will respect <code>$PATH</code>, so an absolute path to the executable is not always needed.</div>
+<p>Then, within <code>gdb</code>, type <code>run</code> followed by any arguments you wish the program to start with:
+</p>
+<pre>(gdb) run <i>arguments</i>
+</pre>
+<p>Now do whatever is necessary to evoke the bug. gdb will automatically halt the application when it crashes and prompt for commands.
+In case of freezes or similar issues, press <code>Ctrl+c</code> and you will be returned to the command prompt, too.
+</p>
+<pre>(gdb) set logging enabled on
+</pre>
+<div class="archwiki-template-box archwiki-template-box-tip">
+<strong>Tip:</strong> The default file name is <code>gdb.txt</code>. An alternate file name can be specified with:
+<pre>(gdb) set logging file <i>trace.log</i>
+</pre>
+</div>
+<p>And finally have the backtrace written to <i>trace.log</i> in the current working directory.
+</p>
+<pre>(gdb) thread apply all backtrace full
+</pre>
+<div class="archwiki-template-box archwiki-template-box-tip">
+<strong>Tip:</strong> To debug an application written in Python:
+<pre># gdb /usr/bin/python
+(gdb) run &lt;python application&gt;
+</pre>
+</div>
+<p>You can also debug an already running application:
+</p>
+<pre># gdb --pid=$(pidof firefox)
+(gdb) continue
+</pre>
+<p>To debug an application that has already crashed, you will want to invoke <code>gdb</code> on its <a href="../../en/Core_dump.html#Examining_a_core_dump" title="Core dump">core dump</a>.
+</p>
+<h2><span class="mw-headline" id="See_also">See also</span></h2>
+<ul>
+<li><a href="https://wiki.debian.org/HowToGetABacktrace" class="extiw" title="debian:HowToGetABacktrace">Debian:HowToGetABacktrace</a></li>
+<li><a href="https://wiki.gentoo.org/wiki/Project:Quality_Assurance/Backtraces" class="extiw" title="gentoo:Project:Quality Assurance/Backtraces">Gentoo:Project:Quality Assurance/Backtraces</a></li>
+<li><a href="https://fedoraproject.org/wiki/StackTraces" class="extiw" title="fedora:StackTraces">Fedora:StackTraces</a></li>
+<li><a rel="nofollow" class="external text" href="https://wiki.gnome.org/GettingInTouch/Bugzilla/GettingTraces/Details#Obtaining_a_stack_trace_.28the_easy_way.29">GNOME - Getting Stack Traces</a></li>
+<li><a rel="nofollow" class="external text" href="https://linux.bytesex.org/gdb.html">gdb mini intro</a></li>
+</ul>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface">
+<div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../../Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="../../en/Category:Package_development.html" title="Category:Package development">Package development</a></li></ul>
+</div>
+<div id="mw-hidden-catlinks" class="mw-hidden-catlinks mw-hidden-cats-hidden">Hidden categories: <ul>
+<li><a href="../../en/Category:Pages_or_sections_flagged_with_Template:Expansion.html" title="Category:Pages or sections flagged with Template:Expansion">Pages or sections flagged with Template:Expansion</a></li>
+<li><a href="../../en/Category:Pages_or_sections_flagged_with_Template:Merge.html" title="Category:Pages or sections flagged with Template:Merge">Pages or sections flagged with Template:Merge</a></li>
+<li><a href="../../en/Category:Pages_or_sections_flagged_with_Template:Out_of_date.html" title="Category:Pages or sections flagged with Template:Out of date">Pages or sections flagged with Template:Out of date</a></li>
+</ul>
+</div>
+</div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=Debugging/Getting_traces&amp;oldid=785763">https://wiki.archlinux.org/index.php?title=Debugging/Getting_traces&amp;oldid=785763</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 19 August 2023, at 13:01.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

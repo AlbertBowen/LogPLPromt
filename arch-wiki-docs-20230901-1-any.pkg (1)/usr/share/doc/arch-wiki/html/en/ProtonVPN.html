@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>ProtonVPN - ArchWiki</title>
+<link rel="stylesheet" href="../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-ProtonVPN rootpage-ProtonVPN skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-OpenVPN_command-line_interface" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#OpenVPN_command-line_interface">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>OpenVPN command-line interface</div>
+			</a>
+			
+				<button aria-controls="toc-OpenVPN_command-line_interface-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle OpenVPN command-line interface subsection
+				</button>
+			
+			<ul id="toc-OpenVPN_command-line_interface-sublist" class="sidebar-toc-list">
+				<li id="toc-Setup" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Setup">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.1</span>Setup</div>
+			</a>
+			
+			<ul id="toc-Setup-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Usage" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Usage">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.2</span>Usage</div>
+			</a>
+			
+			<ul id="toc-Usage-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Tips_and_tricks" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Tips_and_tricks">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.3</span>Tips and tricks</div>
+			</a>
+			
+			<ul id="toc-Tips_and_tricks-sublist" class="sidebar-toc-list">
+				<li id="toc-Enable_VPN_on_boot" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Enable_VPN_on_boot">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.3.1</span>Enable VPN on boot</div>
+			</a>
+			
+			<ul id="toc-Enable_VPN_on_boot-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Only_run_certain_applications_through_VPN_with_network_namespaces" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Only_run_certain_applications_through_VPN_with_network_namespaces">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.3.2</span>Only run certain applications through VPN with network namespaces</div>
+			</a>
+			
+			<ul id="toc-Only_run_certain_applications_through_VPN_with_network_namespaces-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Save_login_information" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Save_login_information">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.3.3</span>Save login information</div>
+			</a>
+			
+			<ul id="toc-Save_login_information-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Official_ProtonVPN_Client" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Official_ProtonVPN_Client">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Official ProtonVPN Client</div>
+			</a>
+			
+				<button aria-controls="toc-Official_ProtonVPN_Client-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Official ProtonVPN Client subsection
+				</button>
+			
+			<ul id="toc-Official_ProtonVPN_Client-sublist" class="sidebar-toc-list">
+				<li id="toc-Setup_2" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Setup_2">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.1</span>Setup</div>
+			</a>
+			
+			<ul id="toc-Setup_2-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Usage_2" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Usage_2">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.2</span>Usage</div>
+			</a>
+			
+			<ul id="toc-Usage_2-sublist" class="sidebar-toc-list">
+				<li id="toc-CLI_(Command_Line_Interface)" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#CLI_(Command_Line_Interface)">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.2.1</span>CLI (Command Line Interface)</div>
+			</a>
+			
+			<ul id="toc-CLI_(Command_Line_Interface)-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-GUI_(Graphical_User_Interface)" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#GUI_(Graphical_User_Interface)">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.2.2</span>GUI (Graphical User Interface)</div>
+			</a>
+			
+			<ul id="toc-GUI_(Graphical_User_Interface)-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-SysTray/Indicator" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#SysTray/Indicator">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.2.3</span>SysTray/Indicator</div>
+			</a>
+			
+			<ul id="toc-SysTray/Indicator-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Graphical_interface" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Graphical_interface">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>Graphical interface</div>
+			</a>
+			
+			<ul id="toc-Graphical_interface-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../en/ProtonVPN.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="mw-list-item"><a href="../en/Talk:ProtonVPN.html" rel="discussion" title="Discussion about the content page [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">English</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../en/ProtonVPN.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=ProtonVPN&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=ProtonVPN&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../en/ProtonVPN.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=ProtonVPN&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=ProtonVPN&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output">
+<div class="archwiki-template-meta-related-articles-start">
+<p class="mw-no-invert">Related articles</p>
+<ul>
+<li><a href="../en/OpenVPN.html" title="OpenVPN">OpenVPN</a></li>
+<li><a href="../en/List_of_applications/Internet.html#VPN_clients" class="mw-redirect" title="Vopono">vopono</a></li>
+</ul>
+</div>
+<p><a rel="nofollow" class="external text" href="https://www.protonvpn.com">ProtonVPN</a> is a VPN provider that utilizes the OpenVPN protocol.
+</p>
+<p>A ProtonVPN account and the installed <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=openvpn">openvpn</a></span> package is mandatory for any of the steps below.
+</p>
+<mw:tocplace></mw:tocplace>
+<h2><span class="mw-headline" id="OpenVPN_command-line_interface">OpenVPN command-line interface</span></h2>
+<p>VPN connection can be run manually with interface provided by the <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=openvpn">openvpn</a></span> package.
+</p>
+<h3><span class="mw-headline" id="Setup">Setup</span></h3>
+<p>Download one or more OpenVPN configuration files from <a rel="nofollow" class="external text" href="https://account.protonvpn.com/downloads">ProtonVPN Downloads page</a>.
+</p>
+<p>Copy the <code>*.ovpn</code> client configuration files into <code>/etc/openvpn/client/</code> and make backup of original.
+</p>
+<p>Follow <a href="../en/OpenVPN.html#The_update-systemd-resolved_custom_script" title="OpenVPN">these steps</a> to make sure that all your network traffic uses VPN. If you use systemd older than 229, follow <a href="../en/OpenVPN.html#The_update-resolv-conf_custom_script" title="OpenVPN">these steps</a>.
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> If you install <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/openvpn-update-systemd-resolved/">openvpn-update-systemd-resolved</a></span><sup><small>AUR</small></sup> in the step above, remember to delete the lines in the <code>*.ovpn</code> referring to <code>/etc/openvpn/update-resolv-conf</code>, as the script is placed in <code>/usr/bin/update-systemd-resolved</code> instead</div>
+<h3><span class="mw-headline" id="Usage">Usage</span></h3>
+<p>Connect to the VPN:
+</p>
+<pre># openvpn /etc/openvpn/client/client_config_file.ovpn
+</pre>
+<p>Provide <b>OpenVPN / IKEv2 Username</b> from the <a rel="nofollow" class="external text" href="https://account.protonvpn.com/account">ProtonVPN Account page</a>.
+</p>
+<p>Press <code>Ctrl+c</code> to close the VPN connection.
+</p>
+<h3><span class="mw-headline" id="Tips_and_tricks">Tips and tricks</span></h3>
+<h4><span class="mw-headline" id="Enable_VPN_on_boot">Enable VPN on boot</span></h4>
+<p>For systemd service configuration, see <a href="../en/OpenVPN.html#systemd_service_configuration" title="OpenVPN">OpenVPN#systemd service configuration</a>.
+</p>
+<h4><span class="mw-headline" id="Only_run_certain_applications_through_VPN_with_network_namespaces">Only run certain applications through VPN with network namespaces</span></h4>
+<p><a href="../en/List_of_applications/Internet.html#VPN_clients" class="mw-redirect" title="Vopono">vopono</a> supports automatic configuration file generation for ProtonVPN, and allows you to run applications inside temporary network namespaces so only those run through the VPN.
+</p>
+<h4><span class="mw-headline" id="Save_login_information">Save login information</span></h4>
+<p>To retain VPN credentials for subsequent connections, create the following file with your own login information on two lines and place it in the directory where you will run the startup script listed above.
+</p>
+<pre>username
+password</pre>
+<p>Then add the line <code> auth-user-pass login.conf</code> to any relevant <code>*.ovpn</code> files.
+</p>
+<h2><span class="mw-headline" id="Official_ProtonVPN_Client">Official ProtonVPN Client</span></h2>
+<p>The official ProtonVPN packages can be found on <a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/?K=protontechag&amp;SeB=m">AUR</a>. More details can be found on the <a rel="nofollow" class="external text" href="https://protonvpn.com/support/official-linux-client/">official website</a>.
+The packages are also available on Github:
+</p>
+<ul>
+<li><a rel="nofollow" class="external text" href="https://github.com/ProtonMail/proton-python-client">python-proton-client</a></li>
+<li><a rel="nofollow" class="external text" href="https://github.com/ProtonVPN/protonvpn-nm-lib">python-protonvpn-nm-lib</a></li>
+<li><a rel="nofollow" class="external text" href="https://github.com/ProtonVPN/linux-cli">protonvpn-cli</a></li>
+<li><a rel="nofollow" class="external text" href="https://github.com/ProtonVPN/linux-app">protonvpn-gui</a></li>
+</ul>
+<h3><span class="mw-headline" id="Setup_2">Setup</span></h3>
+<p>Install the metapackage <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/protonvpn/">protonvpn</a></span><sup><small>AUR</small></sup>
+</p>
+<h3><span class="mw-headline" id="Usage_2">Usage</span></h3>
+<h4>
+<span id="CLI_.28Command_Line_Interface.29"></span><span class="mw-headline" id="CLI_(Command_Line_Interface)">CLI (Command Line Interface)</span>
+</h4>
+<p>Login:
+</p>
+<pre># protonvpn-cli login &lt;your_protonmail&gt;
+</pre>
+<p>Connect to the VPN:
+</p>
+<pre># protonvpn-cli connect
+</pre>
+<p>or
+</p>
+<pre># protonvpn-cli c
+</pre>
+<p>You should see a detailed country list with all available servers. Select preferred server and click OK.  
+</p>
+<p>Then select UDP or TCP protocol and click OK again.
+</p>
+<p>If connection was successful, you will see following output:
+</p>
+<pre>Setting up ProtonVPN.
+Connecting to ProtonVPN on &lt;SERVERNAME&gt; with &lt;PROTOCOL&gt;.
+
+Successfully connected to ProtonVPN.
+</pre>
+<p>Where &lt;SERVERNAME&gt; is the servername that you have selected to connect to and &lt;PROTOCOL&gt; is the protocol used to connect to the server.
+</p>
+<p>To automatically connect to the fastest server, use:
+</p>
+<pre># protonvpn-cli c -f
+</pre>
+<p>A list of all options is available on the <a rel="nofollow" class="external text" href="https://github.com/ProtonVPN/linux-cli">github repo</a>
+</p>
+<h4>
+<span id="GUI_.28Graphical_User_Interface.29"></span><span class="mw-headline" id="GUI_(Graphical_User_Interface)">GUI (Graphical User Interface)</span>
+</h4>
+<p>You can start the GUI by either:
+</p>
+<ul>
+<li>Searching for the ProtonVPN launcher</li>
+<li>Typing <code>protonvpn</code> in terminal</li>
+</ul>
+<h4>
+<span id="SysTray.2FIndicator"></span><span class="mw-headline" id="SysTray/Indicator">SysTray/Indicator</span>
+</h4>
+<p>For the system/tray indicator to work, some additional packages might be needed:
+</p>
+<ul>
+<li><code>libappindicator-gtk3</code></li>
+<li><code>gnome-shell-extension-appindicator</code></li>
+</ul>
+<h2><span class="mw-headline" id="Graphical_interface">Graphical interface</span></h2>
+<div class="noprint archwiki-template-message">
+<p><a href="../File:Tango-view-fullscreen.png" class="image"><img alt="Tango-view-fullscreen.png" src="../File:Tango-view-fullscreen.png" decoding="async" width="48" height="48"></a><b>This article or section needs expansion.</b><a href="../File:Tango-view-fullscreen.png" class="image"><img alt="Tango-view-fullscreen.png" src="../File:Tango-view-fullscreen.png" decoding="async" width="48" height="48"></a></p>
+<div>
+<b>Reason:</b> This section needs more content (Discuss in <a rel="nofollow" class="external text" href="https://wiki.archlinux.org/title/Talk:ProtonVPN">Talk:ProtonVPN</a>)</div>
+</div>
+<p>Graphical interface for setting up OpenVPN connection may be provided by your <a href="../en/Desktop_environment.html" title="Desktop environment">desktop environment</a>. Search in connection settings. Otherwise, <a href="../en/NetworkManager.html#Installation" title="NetworkManager">NetworkManager#Installation</a>, <a href="../en/NetworkManager.html#VPN_support" title="NetworkManager">NetworkManager#VPN support</a> and <a href="../en/NetworkManager.html#Front-ends" title="NetworkManager">NetworkManager#Front-ends</a> provide useful information.
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> You still need to follow <a href="#Setup">#Setup</a>.</div>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface">
+<div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="../en/Category:VPN_providers.html" title="Category:VPN providers">VPN providers</a></li></ul>
+</div>
+<div id="mw-hidden-catlinks" class="mw-hidden-catlinks mw-hidden-cats-hidden">Hidden category: <ul><li><a href="../en/Category:Pages_or_sections_flagged_with_Template:Expansion.html" title="Category:Pages or sections flagged with Template:Expansion">Pages or sections flagged with Template:Expansion</a></li></ul>
+</div>
+</div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=ProtonVPN&amp;oldid=734612">https://wiki.archlinux.org/index.php?title=ProtonVPN&amp;oldid=734612</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 25 June 2022, at 17:57.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

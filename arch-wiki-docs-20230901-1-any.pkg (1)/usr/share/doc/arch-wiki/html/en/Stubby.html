@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>Stubby - ArchWiki</title>
+<link rel="stylesheet" href="../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Stubby rootpage-Stubby skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Installation" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Installation">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Installation</div>
+			</a>
+			
+			<ul id="toc-Installation-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Configuration" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Configuration">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Configuration</div>
+			</a>
+			
+				<button aria-controls="toc-Configuration-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Configuration subsection
+				</button>
+			
+			<ul id="toc-Configuration-sublist" class="sidebar-toc-list">
+				<li id="toc-Select_resolver" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Select_resolver">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.1</span>Select resolver</div>
+			</a>
+			
+			<ul id="toc-Select_resolver-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Modify_resolv.conf" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Modify_resolv.conf">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.2</span>Modify resolv.conf</div>
+			</a>
+			
+			<ul id="toc-Modify_resolv.conf-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Start_systemd_service" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Start_systemd_service">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.3</span>Start systemd service</div>
+			</a>
+			
+			<ul id="toc-Start_systemd_service-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Tips_and_tricks" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Tips_and_tricks">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>Tips and tricks</div>
+			</a>
+			
+				<button aria-controls="toc-Tips_and_tricks-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Tips and tricks subsection
+				</button>
+			
+			<ul id="toc-Tips_and_tricks-sublist" class="sidebar-toc-list">
+				<li id="toc-Local_DNS_cache_configuration" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Local_DNS_cache_configuration">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.1</span>Local DNS cache configuration</div>
+			</a>
+			
+			<ul id="toc-Local_DNS_cache_configuration-sublist" class="sidebar-toc-list">
+				<li id="toc-Change_port" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Change_port">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.1.1</span>Change port</div>
+			</a>
+			
+			<ul id="toc-Change_port-sublist" class="sidebar-toc-list">
+				<li id="toc-dnsmasq" class="sidebar-toc-list-item sidebar-toc-level-4">
+			<a class="sidebar-toc-link" href="#dnsmasq">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.1.1.1</span>dnsmasq</div>
+			</a>
+			
+			<ul id="toc-dnsmasq-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Other_DNS_cachers" class="sidebar-toc-list-item sidebar-toc-level-4">
+			<a class="sidebar-toc-link" href="#Other_DNS_cachers">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.1.1.2</span>Other DNS cachers</div>
+			</a>
+			
+			<ul id="toc-Other_DNS_cachers-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+	</ul>
+		</li>
+	</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../en/Stubby.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="new mw-list-item"><a href="/index.php?title=Talk:Stubby&amp;action=edit&amp;redlink=1" rel="discussion" title="Discussion about the content page (page does not exist) [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">English</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../en/Stubby.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=Stubby&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=Stubby&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../en/Stubby.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Stubby&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Stubby&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output">
+<div class="archwiki-template-meta-related-articles-start">
+<p class="mw-no-invert">Related articles</p>
+<ul>
+<li><a href="../en/Domain_name_resolution.html" title="Domain name resolution">Domain name resolution</a></li>
+</ul>
+</div>
+<p><a rel="nofollow" class="external text" href="https://dnsprivacy.org/wiki/display/DP/DNS+Privacy+Daemon+-+Stubby">Stubby</a> is an application that acts as a local DNS Privacy stub resolver (using DNS-over-TLS). Stubby encrypts DNS queries sent from a client machine (desktop or laptop) to a DNS Privacy resolver, increasing end user privacy.
+</p>
+<mw:tocplace></mw:tocplace>
+<h2><span class="mw-headline" id="Installation">Installation</span></h2>
+<p><a href="../en/Help:Reading.html#Installation_of_packages" class="mw-redirect" title="Install">Install</a> the <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=stubby">stubby</a></span> package.
+</p>
+<h2><span class="mw-headline" id="Configuration">Configuration</span></h2>
+<p>To configure <i>stubby</i>, perform the following steps:
+</p>
+<h3><span class="mw-headline" id="Select_resolver">Select resolver</span></h3>
+<p>Upon installation, Stubby has some default resolvers. They can be found and edited in <code>/etc/stubby/stubby.yml</code>. You can use the defaults, uncomment one of prewritten resolvers or find another resolver from <a rel="nofollow" class="external text" href="https://dnsprivacy.org/wiki/display/DP/DNS+Privacy+Test+Servers">this list</a>.
+</p>
+<p>Example of a valid resolver configuration:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/stubby/stubby.yml</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">upstream_recursive_servers:
+
+# The Cloudflare server
+- address_data: 1.1.1.1
+    tls_port: 853
+    tls_auth_name: "cloudflare-dns.com"
+
+# The Surfnet/Sinodun servers
+ - address_data: 145.100.185.15
+    tls_auth_name: "dnsovertls.sinodun.com"
+    tls_pubkey_pinset:
+      - digest: "sha256"
+        value: 62lKu9HsDVbyiPenApnc4sfmSYTHOVfFgL3pyB+cBL4=</pre>
+<p>When you get warn log complaining wrong tls_pubkey_pinset, the tls_pubkey_pinset value may be wrong and the <code>value</code> of the <code>tls_pubkey_pinset</code> can be generated with:
+</p>
+<pre>$ echo | openssl s_client -connect <i>address_data:tls_port</i> 2&gt;/dev/null | openssl x509 -pubkey -noout | openssl pkey -pubin -outform der | openssl dgst -sha256 -binary | openssl enc -base64
+</pre>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> For further information on configuring Stubby see <a rel="nofollow" class="external text" href="https://dnsprivacy.org/wiki/display/DP/Configuring+Stubby">Configuring Stubby</a>.</div>
+<h3><span class="mw-headline" id="Modify_resolv.conf">Modify resolv.conf</span></h3>
+<p>After selecting a resolver, modify the <a href="../en/Domain_name_resolution.html" class="mw-redirect" title="Resolv.conf">resolv.conf</a> file and replace the current set of resolver addresses with address for <i>localhost</i>:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/resolv.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">nameserver ::1
+nameserver 127.0.0.1
+options trust-ad</pre>
+<p>Other programs may overwrite this setting; see <a href="../en/Domain_name_resolution.html#Overwriting_of_/etc/resolv.conf" class="mw-redirect" title="Resolv.conf">resolv.conf#Overwriting of /etc/resolv.conf</a> for details.
+</p>
+<h3><span class="mw-headline" id="Start_systemd_service">Start systemd service</span></h3>
+<p>Finally, <a href="../en/Help:Reading.html#Control_of_systemd_units" class="mw-redirect" title="Start/enable">start/enable</a> the <code>stubby.service</code>.
+</p>
+<h2><span class="mw-headline" id="Tips_and_tricks">Tips and tricks</span></h2>
+<h3><span class="mw-headline" id="Local_DNS_cache_configuration">Local DNS cache configuration</span></h3>
+<p>Stubby does not have a built-in DNS cache, therefore every single query is transmitted and resolved, which can slow down connections. Setting up a DNS cache requires installing and configuring a separate DNS cacher.
+</p>
+<h4><span class="mw-headline" id="Change_port">Change port</span></h4>
+<p>In order to forward to a local DNS cache, Stubby should listen on a port different from the default <code>53</code>, since the DNS cache itself needs to listen on <code>53</code> and query Stubby on a different port. Port number <code>53000</code> is used as an example in this section.  In this example, the port number is larger than 1024 so <i>stubby</i> is not required to be run by root.
+</p>
+<p>Edit the value of <code>listen_addresses</code> as follows:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/stubby/stubby.yml</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">listen_addresses:
+  - 127.0.0.1@53000
+  -  0::1@53000
+</pre>
+<h5><span class="mw-headline" id="dnsmasq">dnsmasq</span></h5>
+<p>Configure dnsmasq as a <a href="../en/Dnsmasq.html#DNS_server" title="Dnsmasq">local DNS cache</a>. The basic configuration to work with Stubby is the following:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/dnsmasq.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">no-resolv
+proxy-dnssec
+server=::1#53000
+server=127.0.0.1#53000
+listen-address=::1,127.0.0.1</pre>
+<p><a href="../en/Help:Reading.html#Control_of_systemd_units" class="mw-redirect" title="Restart">Restart</a> <code>dnsmasq.service</code> to apply the changes.
+</p>
+<h5><span class="mw-headline" id="Other_DNS_cachers">Other DNS cachers</span></h5>
+<p>For more DNS cachers, see <a href="../en/Dnscrypt-proxy.html#Local_DNS_cache_configuration" class="mw-redirect" title="DNSCrypt">DNSCrypt#Local DNS cache configuration</a>. The configurations should be similar if not identical.
+</p>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="../en/Category:Domain_Name_System.html" title="Category:Domain Name System">Domain Name System</a></li></ul>
+</div></div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=Stubby&amp;oldid=785687">https://wiki.archlinux.org/index.php?title=Stubby&amp;oldid=785687</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 18 August 2023, at 15:19.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

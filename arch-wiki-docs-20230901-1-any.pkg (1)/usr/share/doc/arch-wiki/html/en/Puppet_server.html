@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>Puppet server - ArchWiki</title>
+<link rel="stylesheet" href="../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Puppet_server rootpage-Puppet_server skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Installation" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Installation">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Installation</div>
+			</a>
+			
+			<ul id="toc-Installation-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Configuration" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Configuration">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Configuration</div>
+			</a>
+			
+				<button aria-controls="toc-Configuration-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Configuration subsection
+				</button>
+			
+			<ul id="toc-Configuration-sublist" class="sidebar-toc-list">
+				<li id="toc-Tuning_the_server_for_lower_memory_usage" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Tuning_the_server_for_lower_memory_usage">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.1</span>Tuning the server for lower memory usage</div>
+			</a>
+			
+			<ul id="toc-Tuning_the_server_for_lower_memory_usage-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Installing_support_for_hiera_eyaml" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Installing_support_for_hiera_eyaml">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.2</span>Installing support for hiera eyaml</div>
+			</a>
+			
+			<ul id="toc-Installing_support_for_hiera_eyaml-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Accessing_the_puppet_server_web_interface" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Accessing_the_puppet_server_web_interface">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>Accessing the puppet server web interface</div>
+			</a>
+			
+			<ul id="toc-Accessing_the_puppet_server_web_interface-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../en/Puppet_server.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="new mw-list-item"><a href="/index.php?title=Talk:Puppet_server&amp;action=edit&amp;redlink=1" rel="discussion" title="Discussion about the content page (page does not exist) [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">English</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../en/Puppet_server.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=Puppet_server&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=Puppet_server&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../en/Puppet_server.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Puppet_server&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Puppet_server&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output">
+<div class="archwiki-template-meta-related-articles-start">
+<p class="mw-no-invert">Related articles</p>
+<ul>
+<li><a href="../en/Puppet.html" title="Puppet">Puppet</a></li>
+</ul>
+</div>
+<mw:tocplace></mw:tocplace>
+<h2><span class="mw-headline" id="Installation">Installation</span></h2>
+<p>To install puppet server first add the upstream GPG key:
+</p>
+<pre>$ gpg --fetch-keys <a rel="nofollow" class="external free" href="https://yum.puppetlabs.com/RPM-GPG-KEY-puppet-20250406">https://yum.puppetlabs.com/RPM-GPG-KEY-puppet-20250406</a>
+</pre>
+<p>Then install the <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/puppetserver/">puppetserver</a></span><sup><small>AUR</small></sup> package. Afterwards, <a href="../en/Help:Reading.html#Control_of_systemd_units" class="mw-redirect" title="Enable">enable</a> and <a href="../en/Help:Reading.html#Control_of_systemd_units" class="mw-redirect" title="Start">start</a> the <code>puppetserver</code> service.
+</p>
+<h2><span class="mw-headline" id="Configuration">Configuration</span></h2>
+<p>The Puppet Server's configuration files are stored in <code>/etc/puppetlabs/puppetserver/</code>:
+</p>
+<pre>.
+|-- conf.d
+|   |-- auth.conf
+|   |-- global.conf
+|   |-- puppetserver.conf
+|   |-- web-routes.conf
+|   `-- webserver.conf
+|-- logback.xml
+|-- request-logging.xml
+`-- services.d
+    `-- ca.cfg
+</pre>
+<p>in conf.d there are:
+</p>
+<ul>
+<li>auth.conf which allows you to configure what puppet nodes (clients) are allowed to request from the server.</li>
+<li>global.conf by default just contains the path to the logging configuration file.</li>
+<li>puppetserver.conf is the main configuration file for the server, it allows you to set the JRuby load path, JRuby gem home path, the puppet master-conf-dir, master-code-dir, master-var-dir, master-run-dir, master-log-dir and most importantly the max-active-instances. It also has a section for adjusting the http-client allowed protocols which enable you to enable or disable the various SSL cipher suites and protocols.</li>
+<li>web-routes.conf allows you to configure the puppet server's web-routes.</li>
+<li>webserver.conf allows you to set the listen address, port, authentication type and log file path for the puppet server web interface.</li>
+</ul>
+<p>Additionally, there is the <code>/etc/default/puppetserver</code> configuration file that allows you to tweak the Java Virtual Machine's startup settings, set the user and group the server runs as, the path to the puppet server's files and the configuration path.
+</p>
+<h3><span class="mw-headline" id="Tuning_the_server_for_lower_memory_usage">Tuning the server for lower memory usage</span></h3>
+<p>By default the puppet server allocates 2 gigabytes of RAM for itself, this can be adjusted in <code>/etc/default/puppetserver</code> by editing the JAVA_ARGS.
+</p>
+<p>By default it is:
+</p>
+<pre>-Xms2g -Xmx2g -XX:MaxPermSize=256m
+</pre>
+<p>But if you are using a server that does not have sufficient RAM spare you can set it to as little as 512 megabytes. Keep in mind though that this will only cater for a small amount of managed servers and you will also need to change the maximum active instances of puppet to 1 in <code>/etc/puppetlabs/puppetserver/puppetserver.conf</code> which limits the number of server's that the server is able to communicate with at once.
+</p>
+<h3><span class="mw-headline" id="Installing_support_for_hiera_eyaml">Installing support for hiera eyaml</span></h3>
+<p>If you wish to use Hiera eyaml on the puppet server you should install the gems for it on the puppet server using the following command:
+</p>
+<pre>puppetserver gem install hiera-eyaml
+</pre>
+<p>and then restart puppet server.
+</p>
+<h2><span class="mw-headline" id="Accessing_the_puppet_server_web_interface">Accessing the puppet server web interface</span></h2>
+<p>The web interface by default listens on https port 8140 on all interfaces. This can be changed by editing the ssl-host and ssl-port configuration options in <code>/etc/puppetlabs/puppetserver/conf.d/webserver.conf</code>.
+</p>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../Special:Categories.html" title="Special:Categories">Categories</a>: <ul>
+<li><a href="../en/Category:Configuration_management.html" title="Category:Configuration management">Configuration management</a></li>
+<li><a href="../en/Category:Servers.html" title="Category:Servers">Servers</a></li>
+</ul>
+</div></div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=Puppet_server&amp;oldid=729960">https://wiki.archlinux.org/index.php?title=Puppet_server&amp;oldid=729960</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 17 May 2022, at 10:26.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

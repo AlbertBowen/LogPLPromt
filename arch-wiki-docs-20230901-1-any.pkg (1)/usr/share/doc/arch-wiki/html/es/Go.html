@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>Go (Español) - ArchWiki</title>
+<link rel="stylesheet" href="../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Go_Español rootpage-Go_Español skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Instalación" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Instalaci%C3%B3n">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Instalación</div>
+			</a>
+			
+				<button aria-controls="toc-Instalación-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Instalación subsection
+				</button>
+			
+			<ul id="toc-Instalación-sublist" class="sidebar-toc-list">
+				<li id="toc-Probar_la_instalación" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Probar_la_instalaci%C3%B3n">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.1</span>Probar la instalación</div>
+			</a>
+			
+			<ul id="toc-Probar_la_instalación-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-$GOPATH" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#$GOPATH">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.2</span>$GOPATH</div>
+			</a>
+			
+			<ul id="toc-$GOPATH-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Compilación_cruzada_a_otras_plataformas" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Compilaci%C3%B3n_cruzada_a_otras_plataformas">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.3</span>Compilación cruzada a otras plataformas</div>
+			</a>
+			
+			<ul id="toc-Compilación_cruzada_a_otras_plataformas-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Solución_de_problemas" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Soluci%C3%B3n_de_problemas">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Solución de problemas</div>
+			</a>
+			
+				<button aria-controls="toc-Solución_de_problemas-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Solución de problemas subsection
+				</button>
+			
+			<ul id="toc-Solución_de_problemas-sublist" class="sidebar-toc-list">
+				<li id="toc-Plugin_Go_Jetbrains" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Plugin_Go_Jetbrains">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.1</span>Plugin Go Jetbrains</div>
+			</a>
+			
+			<ul id="toc-Plugin_Go_Jetbrains-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Véase_también" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#V%C3%A9ase_tambi%C3%A9n">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>Véase también</div>
+			</a>
+			
+			<ul id="toc-Véase_también-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../es/Go.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="new mw-list-item"><a href="/index.php?title=Talk:Go_(Espa%C3%B1ol)&amp;action=edit&amp;redlink=1" rel="discussion" title="Discussion about the content page (page does not exist) [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">español</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../es/Go.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=Go_(Espa%C3%B1ol)&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=Go_(Espa%C3%B1ol)&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../es/Go.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Go_(Espa%C3%B1ol)&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Go_(Espa%C3%B1ol)&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="es" dir="ltr">
+<div class="mw-parser-output">
+<div class="archwiki-template-box archwiki-template-box-note">Esta traducción de <a href="../en/Go.html" title="Go">Go</a> fue revisada el <b>2021-02-09</b>. Si existen <a rel="nofollow" class="external text" href="https://wiki.archlinux.org/index.php?title=Go&amp;diff=0&amp;oldid=636628">cambios</a> puede <a href="../es/ArchWiki:Translation_Team/Contributing.html" title="ArchWiki:Translation Team (Español)/Contributing (Español)">actualizarla</a> o avisar al <a href="../es/ArchWiki:Translation_Team.html" title="ArchWiki:Translation Team (Español)">equipo de traducción</a>.</div>
+<div class="archwiki-template-meta-related-articles-start">
+<p class="mw-no-invert">Artículos relacionados</p>
+<ul>
+<li><a href="../en/Go_package_guidelines.html" title="Go package guidelines">Go package guidelines</a></li>
+</ul>
+</div>
+<p><a rel="nofollow" class="external text" href="https://golang.org/">Go</a> es un lenguaje de tipado estático con una sintaxis ligeramente derivada de la de <a href="../es/C.html" title="C (Español)">C</a>, añadiendo gestión de memoria con recolector de basura, seguridad de tipado, algunas capacidades de tipado dinámico, tipados adicionales incorporados como arrays de longitud variable y mapas clave-valor, y una gran librería estándar.
+</p>
+<mw:tocplace></mw:tocplace>
+<h2>
+<span id="Instalaci.C3.B3n"></span><span class="mw-headline" id="Instalación">Instalación</span>
+</h2>
+<p>El compilador estándar de Go es <code>go</code>, el cual se puede instalar desde el paquete <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=go">go</a></span>. La orden <code>go</code> también incluye varias herramientas como <code>go get</code>, <code>go doc</code>, etc.
+Una alternativa es <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=gcc-go">gcc-go</a></span>, que se trata de un frontend de Go para la <a href="../es/GNU_Compiler_Collection.html" title="GNU Compiler Collection (Español)">colección de compiladores GNU</a> (GCC). En algunos casos <code>gccgo</code> puede realizar mejores optimizaciones. En caso de duda, utilice <code>go</code>.
+</p>
+<p>Un paquete adicional que la mayoría de los desarrolladores de Go querrán instalar es <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=go-tools">go-tools</a></span>. Esto proporciona varias herramientas de uso común que facilitarán el trabajo con Go, como <code>goimports</code>, <code>guru</code>, <code>gorename</code>, etc.
+</p>
+<h3>
+<span id="Probar_la_instalaci.C3.B3n"></span><span class="mw-headline" id="Probar_la_instalación">Probar la instalación</span>
+</h3>
+<p>Puede comprobar que Go se ha instalado correctamente compilando un programa relativamente sencillo, como el que se muestra a continuación:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">hello.go</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">package main
+
+import "fmt"
+
+func main() {
+    fmt.Println("Hola, Arch!")
+}
+</pre>
+<p>Posteriormente, ejecútelo con la herramiento go: 
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">$ go run hello.go</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">Hola, Arch!
+</pre>
+<p>Compilación con el compilador estándar <i>gc</i> (lo mismo que <code>go build -compiler=gc hello.go</code>):
+</p>
+<pre>$ go build hello.go
+</pre>
+<p>Compilación con <i>gccgo</i> (lo mismo que <code>go build -compiler=gccgo hello.go</code>):
+</p>
+<pre>$ gccgo hello.go -o hello
+</pre>
+<h3>
+<span id=".24GOPATH"></span><span class="mw-headline" id="$GOPATH">$GOPATH</span>
+</h3>
+<p>Go espera que el código fuente se halle dentro de <code>$GOPATH</code>, el cual se establece por defecto en <code>~/go</code>.
+</p>
+<div class="archwiki-template-box archwiki-template-box-tip">
+<strong>Sugerencia:</strong> Puede conocer todas las variables de Go ejecutando <code>go env</code>
+</div>
+<p>Cree el espacio de trabajo:
+</p>
+<pre>$ mkdir -p ~/go/src
+</pre>
+<p>El directorio <code>~/go/src</code> se utiliza para almacenar las fuentes de los paquetes. Al compilar, Go también creará <code>bin</code> para los ejecutables y <code>pkg</code> para almacenar los paquetes individuales. Probablemente quiera añadir <code>~/go/bin</code> a la <a href="../es/Environment_variables.html" title="Environment variables (Español)">variable de entorno</a> <code>$PATH</code> para ejecutar Go:
+</p>
+<pre>export PATH="$PATH:$HOME/go/bin"
+</pre>
+<p>Ejecute la orden <code>go help gopath</code> para obtener más información.
+</p>
+<div class="archwiki-template-box archwiki-template-box-tip">
+<strong>Sugerencia:</strong> <code>$GOPATH</code> funciona como <code>$PATH</code> y puede contener múltiples entradas, esto puede ser útil para dividir los paquetes descargados con <code>go get</code> y su propio código fuente; por ejemplo, <code>GOPATH=$HOME/go:$HOME/mygo</code>
+</div>
+<h3>
+<span id="Compilaci.C3.B3n_cruzada_a_otras_plataformas"></span><span class="mw-headline" id="Compilación_cruzada_a_otras_plataformas">Compilación cruzada a otras plataformas</span>
+</h3>
+<p>La orden <code>go</code> puede compilar de forma nativa a <a rel="nofollow" class="external text" href="https://golang.org/doc/install/source#introduction">un número de plataformas</a>.
+</p>
+<p>Si <a rel="nofollow" class="external text" href="https://golang.org/cmd/cgo/">cgo</a> no es necesario para la compilación, entonces simplemente especifique el sistema operativo de destino y la arquitectura como variables de entorno a <code>go build</code>:
+</p>
+<pre>$ GOOS=linux GOARCH=arm64 go build .
+</pre>
+<p>Véase <a rel="nofollow" class="external text" href="https://golang.org/doc/install/source#environment">la documentación oficial</a> para las posibles combinaciones de <code>$GOOS</code> y <code>$GOARCH</code>.
+</p>
+<p>Por otro lado, si se requiere de <a rel="nofollow" class="external text" href="https://golang.org/cmd/cgo/">cgo</a> para la compilación, se tiene que proporcionar la ruta a sus compiladores cruzados <code>C/C++</code>, a través de las variables de entorno <code>$CC/$CXX</code>.
+</p>
+<p>Supongamos que desea compilar para <code>$GOOS=linux</code> y <code>$GOARCH=arm64</code>.
+</p>
+<p>Primero necesita instalar el compilador cruzado <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=aarch64-linux-gnu-gcc">aarch64-linux-gnu-gcc</a></span>.
+</p>
+<p>He aquí hay un programa de ejemplo que requiere <code>cgo</code>, para que podamos probar el proceso de compilación cruzada:
+</p>
+<pre>$ cat &gt; hello.go &lt;&lt;EOF
+package main
+
+// #include &lt;stdio.h&gt;
+// void hello() {  puts("Hola, Arch!"); }
+import "C"
+
+func main() { C.hello() }
+EOF
+</pre>
+<p>Después, puede realizar compilación cruzada así:
+</p>
+<pre>$ GOOS=linux GOARCH=arm64 CGO_ENABLED=1 CC=/usr/bin/aarch64-linux-gnu-gcc go build hello.go
+</pre>
+<p>Puede comprobar que la arquitectura del binario generado es realmente <code>aarch64</code>:
+</p>
+<pre>$ file hello
+hello: ELF 64-bit LSB executable, ARM aarch64, version 1 (SYSV), dynamically linked, interpreter /lib/ld-linux-aarch64.so.1, BuildID[sha1]=b1d92ae8840a019f36cc2aee4606b6ae4a581bf1, for GNU/Linux 3.7.0, not stripped
+</pre>
+<p>Si copia <code>hello</code> a un host adecuado, puede probar a ejecutarlo:
+</p>
+<pre>[alarm@rpi3 ~]$ uname -a
+Linux alarm 5.3.8-1-ARCH #1 SMP Tue Oct 29 19:31:23 MDT 2019 aarch64 GNU/Linux
+[alarm@arpi3 ~]$ ./hello
+Hola, Arch!
+</pre>
+<h2>
+<span id="Soluci.C3.B3n_de_problemas"></span><span class="mw-headline" id="Solución_de_problemas">Solución de problemas</span>
+</h2>
+<h3><span class="mw-headline" id="Plugin_Go_Jetbrains">Plugin Go Jetbrains</span></h3>
+<p>Si está usando un IDE Jetbrains y el plugin Go no puede encontrar su ruta de Go SDK, puede que esté usando un paquete incompatible. Elimine el paquete <code>gcc-go</code> y reemplácelo por <code>go</code>. Si su <code>$GOPATH</code> está configurado, el IDE debería entonces ser capaz de encontrar su Go SDK en <code>/usr/lib/go</code>.
+</p>
+<h2>
+<span id="V.C3.A9ase_tambi.C3.A9n"></span><span class="mw-headline" id="Véase_también">Véase también</span>
+</h2>
+<ul>
+<li><a rel="nofollow" class="external text" href="https://golang.org/">Página web oficial</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Go_(programming_language)" class="extiw" title="wikipedia:Go (programming language)">Artículo de Wikipedia</a></li>
+<li><a rel="nofollow" class="external text" href="https://gobyexample.com/">Ejemplos con pequeñas descripciones</a></li>
+<li><a rel="nofollow" class="external text" href="https://tour.golang.org">Tour interactivo de formación en Go</a></li>
+<li><a rel="nofollow" class="external text" href="https://rakyll.org/cross-compilation/">Compilación cruzada de Go</a></li>
+<li><a rel="nofollow" class="external text" href="https://github.com/golang/go/wiki/IDEsAndTextEditorPlugins">IDEs y Plugins para Go</a></li>
+</ul>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="../es/Category:Programming_languages.html" title="Category:Programming languages (Español)">Programming languages (Español)</a></li></ul>
+</div></div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=Go_(Espa%C3%B1ol)&amp;oldid=752722">https://wiki.archlinux.org/index.php?title=Go_(Español)&amp;oldid=752722</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 13 October 2022, at 09:42.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

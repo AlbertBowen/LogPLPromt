@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>Bidirectional text - ArchWiki</title>
+<link rel="stylesheet" href="../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Bidirectional_text rootpage-Bidirectional_text skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Concepts" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Concepts">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Concepts</div>
+			</a>
+			
+			<ul id="toc-Concepts-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Support" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Support">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Support</div>
+			</a>
+			
+				<button aria-controls="toc-Support-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Support subsection
+				</button>
+			
+			<ul id="toc-Support-sublist" class="sidebar-toc-list">
+				<li id="toc-Browsers" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Browsers">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.1</span>Browsers</div>
+			</a>
+			
+			<ul id="toc-Browsers-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Editors" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Editors">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.2</span>Editors</div>
+			</a>
+			
+			<ul id="toc-Editors-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Terminal" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Terminal">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.3</span>Terminal</div>
+			</a>
+			
+			<ul id="toc-Terminal-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Other" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Other">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.4</span>Other</div>
+			</a>
+			
+			<ul id="toc-Other-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Troubleshooting" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Troubleshooting">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>Troubleshooting</div>
+			</a>
+			
+				<button aria-controls="toc-Troubleshooting-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Troubleshooting subsection
+				</button>
+			
+			<ul id="toc-Troubleshooting-sublist" class="sidebar-toc-list">
+				<li id="toc-Temporary_workarounds" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Temporary_workarounds">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.1</span>Temporary workarounds</div>
+			</a>
+			
+			<ul id="toc-Temporary_workarounds-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-See_also" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#See_also">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4</span>See also</div>
+			</a>
+			
+				<button aria-controls="toc-See_also-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle See also subsection
+				</button>
+			
+			<ul id="toc-See_also-sublist" class="sidebar-toc-list">
+				<li id="toc-Internal_links" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Internal_links">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.1</span>Internal links</div>
+			</a>
+			
+			<ul id="toc-Internal_links-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-External_links" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#External_links">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.2</span>External links</div>
+			</a>
+			
+			<ul id="toc-External_links-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../en/Bidirectional_text.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="mw-list-item"><a href="../en/Talk:Bidirectional_text.html" rel="discussion" title="Discussion about the content page [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">English</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../en/Bidirectional_text.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=Bidirectional_text&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=Bidirectional_text&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../en/Bidirectional_text.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Bidirectional_text&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Bidirectional_text&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output">
+<p>From <a href="https://en.wikipedia.org/wiki/Bidirectional_text" class="extiw" title="wikipedia:Bidirectional text">Wikipedia:Bidirectional text</a>, is text that contains two text directionalities, right-to-left (RTL) and left-to-right (LTR).
+</p>
+<mw:tocplace></mw:tocplace>
+<h2><span class="mw-headline" id="Concepts">Concepts</span></h2>
+<dl>
+<dt>Text direction</dt>
+<dd>in text editing, setting text direction changes how the program interacts with typed text including changes in text navigation, text selection, and text insertion.</dd>
+<dt>Text alignment</dt>
+<dd>text alignment only changes how text is displayed and styled.</dd>
+<dt>Fake Bidi</dt>
+<dd>a fake locale displaying completely reversed English sentences to mimic a RTL context. This helps developers who do not speak a RTL language to deal with RTL issues. For example: <pre>This English sentence contains SDROW CIBARA EMOS and ends with English words.</pre>
+</dd>
+<dt>Poor man's bidi mode</dt>
+<dd>automatic visual text order right-to-left input in normal terminal.</dd>
+<dt>Logical navigation</dt>
+<dd>words are traversed as they are read.</dd>
+<dt>Visual navigation</dt>
+<dd>words are traversed as they are displayed. <a rel="nofollow" class="external text" href="https://imgur.com/a/lfQV88E">This GIF</a> demonstrates the difference between the two.</dd>
+</dl>
+<p>Logical navigation is the correct way of navigation that programs should implement to fully support Bidi. Despite that, it would be preferable to have a switch between the two.
+</p>
+<dl>
+<dt><a href="https://en.wikipedia.org/wiki/Bidirectional_text#Unicode_bidi_support" class="extiw" title="wikipedia:Bidirectional text">Unicode support</a></dt>
+<dd>In Unicode-supported text editors, text direction can be controlled by inserting special formatting characters in front of it: <a href="https://en.wikipedia.org/wiki/RLM" class="extiw" title="wikipedia:RLM">Wikipedia:RLM</a> (U+200F), <a href="https://en.wikipedia.org/wiki/LRM" class="extiw" title="wikipedia:LRM">Wikipedia:LRM</a> (U+200E), which is a workaround for text editors not supporting switching text direction.</dd>
+</dl>
+<dl>
+<dt><a rel="nofollow" class="external text" href="https://www.unicode.org/reports/tr9/">Bidirectional Algorithm</a></dt>
+<dd>is the set of rules applied to display text in the correct order.</dd>
+</dl>
+<p>Some implementations:
+</p>
+<ul>
+<li>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/fribidi-git/">fribidi-git</a></span><sup><small>AUR</small></sup> is an open source implementations of Bidi Algorithm.</li>
+<li>
+<a rel="nofollow" class="external text" href="https://github.com/Tehreer/SheenBidi">SheenBidi</a>: Improved Unicode Implementation in C.</li>
+<li>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/python-bidi/">python-bidi</a></span><sup><small>AUR</small></sup> is a python library for related functions.</li>
+</ul>
+<h2><span class="mw-headline" id="Support">Support</span></h2>
+<p>In order for a program to fully support Bidi text, it must have:
+</p>
+<dl>
+<dt>Letter rendering (RTL)</dt>
+<dd>correctly apply letter shaping and ligatures. See <a href="https://en.wikipedia.org/wiki/harfbuzz" class="extiw" title="w:harfbuzz">W:harfbuzz</a> and <a href="https://en.wikipedia.org/wiki/Complex_text_layout" class="extiw" title="w:Complex text layout">Complete Text Layout</a>.</dd>
+<dt>Force switch text alignment (Bidi)</dt>
+<dd>E.g: Firefox <code>Ctrl+Shift+X</code> shortcut.</dd>
+<dt>Logical navigation</dt>
+<dd>in a RTL text, with RTL text alignment, arrow keys should not cause reversed navigation.</dd>
+</dl>
+<h3><span class="mw-headline" id="Browsers">Browsers</span></h3>
+<table class="wikitable sortable">
+<tbody>
+<tr>
+<th>App
+</th>
+<th>Date
+</th>
+<th>RTL
+</th>
+<th>Bidi
+</th>
+<th>Nav
+</th>
+<th>Notes
+</th>
+</tr>
+<tr>
+<td>
+<a href="../en/Chromium.html" title="Chromium">chromium</a>
+</td>
+<td>2022-08-28
+</td>
+<td data-sort-value="5" style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Yes
+</td>
+<td data-sort-value="1" style="background: #faa; color: inherit; vertical-align: middle; text-align: center;">
+<a rel="nofollow" class="external text" href="https://bugs.chromium.org/p/chromium/issues/detail?id=1357401">No</a>
+</td>
+<td data-sort-value="5" style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Yes
+</td>
+<td>Chromium is the engine of ElectronJS. Fixing this should resolve Electron Apps too.
+</td>
+</tr>
+<tr>
+<td>
+<a href="../en/Firefox.html" title="Firefox">firefox</a>
+</td>
+<td>2022-09-01
+</td>
+<td data-sort-value="5" style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Yes
+</td>
+<td data-sort-value="1" style="background: #faa; color: inherit; vertical-align: middle; text-align: center;">
+<a rel="nofollow" class="external text" href="https://bugzilla.mozilla.org/show_bug.cgi?id=1787660">No</a>
+</td>
+<td data-sort-value="1" style="background: #faa; color: inherit; vertical-align: middle; text-align: center;">
+<a rel="nofollow" class="external text" href="https://bugzilla.mozilla.org/show_bug.cgi?id=1788929">No</a>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<a rel="nofollow" class="external text" href="https://doc.qt.io/QtWebBrowser/">qtwebbrowser</a>
+</td>
+<td>2022-11-01
+</td>
+<td data-sort-value="5" style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Yes
+</td>
+<td data-sort-value="1" style="background: #faa; color: inherit; vertical-align: middle; text-align: center;">
+<a rel="nofollow" class="external text" href="https://bugreports.qt.io/browse/QTWB-67">No</a>
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<a rel="nofollow" class="external text" href="https://webkit.org/">webkit</a>
+</td>
+<td>2022-11-01
+</td>
+<td data-sort-value="5" style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Yes
+</td>
+<td data-sort-value="1" style="background: #faa; color: inherit; vertical-align: middle; text-align: center;">
+<a rel="nofollow" class="external text" href="https://bugs.webkit.org/show_bug.cgi?id=247334">No</a>
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=epiphany">epiphany</a></span>
+</td>
+<td>2023-08-27
+</td>
+<td data-sort-value="5" style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Yes
+</td>
+<td data-sort-value="1" style="background: #faa; color: inherit; vertical-align: middle; text-align: center;">
+<a rel="nofollow" class="external text" href="https://gitlab.gnome.org/GNOME/epiphany/-/issues/2164">No</a>
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+</tbody>
+</table>
+<h3><span class="mw-headline" id="Editors">Editors</span></h3>
+<table class="wikitable sortable">
+<tbody>
+<tr>
+<th>App
+</th>
+<th>Date
+</th>
+<th>RTL
+</th>
+<th>Bidi
+</th>
+<th>Nav
+</th>
+<th>Notes
+</th>
+</tr>
+<tr>
+<td>
+<a href="../en/AbiWord.html" title="AbiWord">AbiWord</a>
+</td>
+<td>2007-12-06
+</td>
+<td data-sort-value="5" style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">
+<a rel="nofollow" class="external text" href="https://bugzilla.abisource.com/show_bug.cgi?id=11307">Yes</a>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<a href="../en/Emacs.html" title="Emacs">emacs</a>
+</td>
+<td>2019-06-31
+</td>
+<td data-sort-value="5" style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Yes
+</td>
+<td data-sort-value="1" style="background: #faa; color: inherit; vertical-align: middle; text-align: center;">
+<a rel="nofollow" class="external text" href="https://www.mail-archive.com/emacs-bidi@gnu.org/msg00582.html">No</a>
+</td>
+<td>
+</td>
+<td>With <a rel="nofollow" class="external text" href="https://github.com/emacsmirror/bidi">extension</a>. See also: <a rel="nofollow" class="external text" href="https://www.gnu.org/software/emacs/manual/html_node/emacs/Bidirectional-Editing.html">emacs bidi editing</a>.
+</td>
+</tr>
+<tr>
+<td>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=ghostwriter">ghostwriter</a></span>
+</td>
+<td>2023-08-27
+</td>
+<td data-sort-value="5" style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Yes
+</td>
+<td data-sort-value="1" style="background: #faa; color: inherit; vertical-align: middle; text-align: center;">
+<a rel="nofollow" class="external text" href="https://bugs.kde.org/show_bug.cgi?id=473812">No</a>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=kate">kate</a></span>
+</td>
+<td>2016-06-20
+</td>
+<td data-sort-value="5" style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Yes
+</td>
+<td data-sort-value="1" style="background: #faa; color: inherit; vertical-align: middle; text-align: center;">
+<a rel="nofollow" class="external text" href="https://bugs.kde.org/show_bug.cgi?id=280645">No</a>
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<a href="../en/LibreOffice.html" title="LibreOffice">LibreOffice</a>
+</td>
+<td>
+</td>
+<td data-sort-value="5" style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Yes
+</td>
+<td data-sort-value="5" style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Yes
+</td>
+<td data-sort-value="5" style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Yes
+</td>
+<td>Enabled from <a href="../en/LibreOffice.html#Bidirectional_support" title="LibreOffice">Complex Text Layout in settings</a>.
+</td>
+</tr>
+<tr>
+<td>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/marktext/">marktext</a></span><sup><small>AUR</small></sup>
+</td>
+<td>2020-02-20
+</td>
+<td>
+</td>
+<td data-sort-value="1" style="background: #faa; color: inherit; vertical-align: middle; text-align: center;">
+<a rel="nofollow" class="external text" href="https://github.com/marktext/marktext/issues/1919">No</a>
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<a href="../en/Neovim.html" title="Neovim">neovim</a>
+</td>
+<td>2014-04-17
+</td>
+<td data-sort-value="1" style="background: #faa; color: inherit; vertical-align: middle; text-align: center;">No
+</td>
+<td data-sort-value="1" style="background: #faa; color: inherit; vertical-align: middle; text-align: center;">
+<a rel="nofollow" class="external text" href="https://github.com/neovim/neovim/issues/553">No</a>
+</td>
+<td>
+</td>
+<td>see <a rel="nofollow" class="external text" href="https://neovim.io/doc/user/arabic.html">:set arabic</a>
+</td>
+</tr>
+<tr>
+<td>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=texworks">texworks</a></span>
+</td>
+<td>2009-03-01
+</td>
+<td data-sort-value="5" style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Yes
+</td>
+<td data-sort-value="1" style="background: #faa; color: inherit; vertical-align: middle; text-align: center;">
+<a rel="nofollow" class="external text" href="https://tug.org/pipermail/texworks/2009q1/000547.html">No</a>
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<a href="../en/Vim.html" title="Vim">vim</a>
+</td>
+<td>2015-08-19
+</td>
+<td data-sort-value="1" style="background: #faa; color: inherit; vertical-align: middle; text-align: center;">No
+</td>
+<td data-sort-value="1" style="background: #faa; color: inherit; vertical-align: middle; text-align: center;">
+<a rel="nofollow" class="external text" href="https://github.com/vim/vim/issues/204">No</a>
+</td>
+<td>
+</td>
+<td>see <a rel="nofollow" class="external text" href="https://vim-jp.org/vimdoc-en/arabic.html">:set arabic</a>
+</td>
+</tr>
+</tbody>
+</table>
+<h3><span class="mw-headline" id="Terminal">Terminal</span></h3>
+<table class="wikitable sortable">
+<tbody>
+<tr>
+<th>App
+</th>
+<th>Date
+</th>
+<th>RTL
+</th>
+<th>Bidi
+</th>
+<th>Nav
+</th>
+<th>Notes
+</th>
+</tr>
+<tr>
+<td>
+<a href="../en/Alacritty.html" title="Alacritty">alacritty</a>
+</td>
+<td>2017-07-15
+</td>
+<td>
+</td>
+<td data-sort-value="1" style="background: #faa; color: inherit; vertical-align: middle; text-align: center;">
+<a rel="nofollow" class="external text" href="https://github.com/alacritty/alacritty/issues/663">No</a>
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=dvtm">dvtm</a></span>
+</td>
+<td>2019-10-12
+</td>
+<td>
+</td>
+<td data-sort-value="1" style="background: #faa; color: inherit; vertical-align: middle; text-align: center;">
+<a rel="nofollow" class="external text" href="https://github.com/martanne/dvtm/issues/99">No</a>
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<a href="../en/GNOME/Gedit.html" class="mw-redirect" title="Gedit">gedit</a>
+</td>
+<td>
+</td>
+<td data-sort-value="5" style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Yes
+</td>
+<td data-sort-value="1" style="background: #faa; color: inherit; vertical-align: middle; text-align: center;">
+<a rel="nofollow" class="external text" href="https://gitlab.gnome.org/GNOME/gedit/-/issues/468">No</a>
+</td>
+<td>
+</td>
+<td>For Gedit &lt;= 2.1, workaround by <a rel="nofollow" class="external text" href="https://github.com/behnam/gedit-bidiassist">extension</a>.
+</td>
+</tr>
+<tr>
+<td>
+<a href="../en/Irssi.html" title="Irssi">irssi</a>
+</td>
+<td>2019-10-12
+</td>
+<td>
+</td>
+<td data-sort-value="1" style="background: #faa; color: inherit; vertical-align: middle; text-align: center;">
+<a rel="nofollow" class="external text" href="https://github.com/irssi/irssi/issues/1133">No</a>
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<a href="../en/Kitty.html" title="Kitty">kitty</a>
+</td>
+<td>2019-11-01
+</td>
+<td>
+</td>
+<td data-sort-value="1" style="background: #faa; color: inherit; vertical-align: middle; text-align: center;">
+<a rel="nofollow" class="external text" href="https://github.com/kovidgoyal/kitty/issues/2109">No</a>
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<a href="../en/Konsole.html" title="Konsole">konsole</a>
+</td>
+<td>
+</td>
+<td data-sort-value="5" style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Yes
+</td>
+<td data-sort-value="1" style="background: #faa; color: inherit; vertical-align: middle; text-align: center;">
+<a rel="nofollow" class="external text" href="https://bugs.kde.org/show_bug.cgi?id=461303">No</a>
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>libvte
+</td>
+<td>
+</td>
+<td data-sort-value="5" style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">
+<a rel="nofollow" class="external text" href="https://gitlab.gnome.org/GNOME/vte/-/issues/53">Yes</a>
+</td>
+<td data-sort-value="1" style="background: #faa; color: inherit; vertical-align: middle; text-align: center;">No
+</td>
+<td>
+</td>
+<td>including libvte-based like Gnome, sakura, xfce4...
+</td>
+</tr>
+<tr>
+<td>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/mlterm/">mlterm</a></span><sup><small>AUR</small></sup>
+</td>
+<td>
+</td>
+<td data-sort-value="5" style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Yes
+</td>
+<td data-sort-value="1" style="background: #faa; color: inherit; vertical-align: middle; text-align: center;">
+<a rel="nofollow" class="external text" href="https://github.com/arakiken/mlterm/issues/54">No</a>
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/neatvi-git/">neatvi-git</a></span><sup><small>AUR</small></sup>
+</td>
+<td>2019-07-04
+</td>
+<td>
+</td>
+<td data-sort-value="1" style="background: #faa; color: inherit; vertical-align: middle; text-align: center;">
+<a rel="nofollow" class="external text" href="https://github.com/aligrudi/neatvi/issues/8">No</a>
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>pymux
+</td>
+<td>2019-10-12
+</td>
+<td>
+</td>
+<td data-sort-value="1" style="background: #faa; color: inherit; vertical-align: middle; text-align: center;">
+<a rel="nofollow" class="external text" href="https://github.com/prompt-toolkit/pymux/issues/77">No</a>
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=qterminal">qterminal</a></span>
+</td>
+<td>
+</td>
+<td data-sort-value="5" style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Yes
+</td>
+<td data-sort-value="1" style="background: #faa; color: inherit; vertical-align: middle; text-align: center;">
+<a rel="nofollow" class="external text" href="https://github.com/lxqt/qterminal/issues/1006">No</a>
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=radare2">radare2</a></span>
+</td>
+<td>2015-02-03
+</td>
+<td>
+</td>
+<td data-sort-value="1" style="background: #faa; color: inherit; vertical-align: middle; text-align: center;">
+<a rel="nofollow" class="external text" href="https://github.com/radareorg/ideas/issues/19">No</a>
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<a href="../en/Tmux.html" title="Tmux">tmux</a>
+</td>
+<td>2019-10-12
+</td>
+<td>
+</td>
+<td data-sort-value="1" style="background: #faa; color: inherit; vertical-align: middle; text-align: center;">
+<a rel="nofollow" class="external text" href="https://github.com/tmux/tmux/issues/1936">No</a>
+</td>
+<td>
+</td>
+<td>won't fix
+</td>
+</tr>
+<tr>
+<td>
+<a href="../en/List_of_applications/Utilities.html#Terminal_multiplexers" class="mw-redirect" title="Wezterm">wezterm</a>
+</td>
+<td>2021-05-11
+</td>
+<td>
+</td>
+<td data-sort-value="1" style="background: #faa; color: inherit; vertical-align: middle; text-align: center;">
+<a rel="nofollow" class="external text" href="https://github.com/wez/wezterm/issues/784#issuecomment-1025346930">No</a>
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/xst/">xst</a></span><sup><small>AUR</small></sup>
+</td>
+<td>2018-10-26
+</td>
+<td>
+</td>
+<td data-sort-value="1" style="background: #faa; color: inherit; vertical-align: middle; text-align: center;">
+<a rel="nofollow" class="external text" href="https://github.com/gnotclub/xst/issues/55">No</a>
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+</tbody>
+</table>
+<h3><span class="mw-headline" id="Other">Other</span></h3>
+<table class="wikitable sortable">
+<tbody>
+<tr>
+<th>App
+</th>
+<th>Date
+</th>
+<th>RTL
+</th>
+<th>Bidi
+</th>
+<th>Nav
+</th>
+<th>Notes
+</th>
+</tr>
+<tr>
+<td>
+<a href="../en/Groff.html" title="Groff">groff</a>
+</td>
+<td>2005-12-02
+</td>
+<td data-sort-value="1" style="background: #faa; color: inherit; vertical-align: middle; text-align: center;">No
+</td>
+<td data-sort-value="1" style="background: #faa; color: inherit; vertical-align: middle; text-align: center;">
+<a rel="nofollow" class="external text" href="https://web.archive.org/web/20220831201034/https://lists.arabeyes.org/archives/doc/2005/December/msg00004.html">No</a>
+</td>
+<td data-sort-value="5" style="background: inherit; color: inherit; vertical-align: middle; text-align: center;">–
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<a href="https://en.wikipedia.org/wiki/HTML" class="extiw" title="wikipedia:HTML">Wikipedia:HTML</a>
+</td>
+<td>
+</td>
+<td data-sort-value="5" style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Yes
+</td>
+<td data-sort-value="5" style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Yes
+</td>
+<td data-sort-value="5" style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Yes
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<a href="../en/TeX_Live.html" class="mw-redirect" title="Latex">latex</a>
+</td>
+<td>
+</td>
+<td data-sort-value="5" style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Yes
+</td>
+<td data-sort-value="5" style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Yes
+</td>
+<td data-sort-value="5" style="background: inherit; color: inherit; vertical-align: middle; text-align: center;">–
+</td>
+<td>Using LuaTeX or XeLaTeX with polyglossia
+</td>
+</tr>
+<tr>
+<td>
+<a href="../en/Wine.html" title="Wine">wine</a>
+</td>
+<td>2002-04-21
+</td>
+<td data-sort-value="5" style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Yes
+</td>
+<td data-sort-value="1" style="background: #faa; color: inherit; vertical-align: middle; text-align: center;">
+<a rel="nofollow" class="external text" href="https://bugs.winehq.org/show_bug.cgi?id=609">No</a>
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>electronjs
+</td>
+<td>2023-08-26
+</td>
+<td>
+</td>
+<td data-sort-value="1" style="background: #faa; color: inherit; vertical-align: middle; text-align: center;">
+<a rel="nofollow" class="external text" href="https://github.com/electron/electron/issues/39662">No</a>
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+</tbody>
+</table>
+<h2><span class="mw-headline" id="Troubleshooting">Troubleshooting</span></h2>
+<p>Verify <a href="../en/Locale.html#Troubleshooting" title="Locale">UTF-8 Encoding</a> is properly configured first. Make sure you install the <a href="../en/Fonts.html" title="Fonts">fonts</a> corresponding to your language: <a href="../en/Localization/Arabic.html#Fonts" title="Localization/Arabic">Arabic</a>, <a href="../en/Fonts.html#Persian" title="Fonts">Persian</a>, <a href="../en/Fonts.html#Hebrew" title="Fonts">Hebrew</a>. For some terminals, (<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/bicon-git/">bicon-git</a></span><sup><small>AUR</small></sup>) is required to properly display Arabic and Hebrew text.
+</p>
+<h3><span class="mw-headline" id="Temporary_workarounds">Temporary workarounds</span></h3>
+<ul><li>
+<a rel="nofollow" class="external text" href="https://github.com/imdark/Sublime-Text-2-BIDI">Sublime text</a>.</li></ul>
+<h2><span class="mw-headline" id="See_also">See also</span></h2>
+<h3><span class="mw-headline" id="Internal_links">Internal links</span></h3>
+<ul>
+<li><a href="../en/Locale.html" title="Locale">Locale</a></li>
+<li><a href="../en/Localization.html" title="Localization">Localization</a></li>
+</ul>
+<h3><span class="mw-headline" id="External_links">External links</span></h3>
+<ul>
+<li>
+<a rel="nofollow" class="external text" href="https://www.freedesktop.org/wiki/Specifications/bidi-spec/">freedesktop specification for Bidi support</a>:  <a rel="nofollow" class="external text" href="https://terminal-wg.pages.freedesktop.org/bidi/">terminal</a>.</li>
+<li><a rel="nofollow" class="external text" href="https://rtlstyling.com/posts/rtl-styling">Comprehensive guide of RTL styling in HTML</a></li>
+</ul>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="../en/Category:Input_methods.html" title="Category:Input methods">Input methods</a></li></ul>
+</div></div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=Bidirectional_text&amp;oldid=786317">https://wiki.archlinux.org/index.php?title=Bidirectional_text&amp;oldid=786317</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 27 August 2023, at 14:54.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

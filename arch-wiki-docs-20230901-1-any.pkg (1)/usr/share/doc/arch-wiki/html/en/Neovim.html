@@ -1,0 +1,1210 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>Neovim - ArchWiki</title>
+<link rel="stylesheet" href="../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Neovim rootpage-Neovim skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Installation" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Installation">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Installation</div>
+			</a>
+			
+			<ul id="toc-Installation-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Configuration" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Configuration">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Configuration</div>
+			</a>
+			
+				<button aria-controls="toc-Configuration-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Configuration subsection
+				</button>
+			
+			<ul id="toc-Configuration-sublist" class="sidebar-toc-list">
+				<li id="toc-Migrating_from_Vim" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Migrating_from_Vim">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.1</span>Migrating from Vim</div>
+			</a>
+			
+			<ul id="toc-Migrating_from_Vim-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Shared_configuration_between_Vim_and_Nvim" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Shared_configuration_between_Vim_and_Nvim">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.2</span>Shared configuration between Vim and Nvim</div>
+			</a>
+			
+			<ul id="toc-Shared_configuration_between_Vim_and_Nvim-sublist" class="sidebar-toc-list">
+				<li id="toc-Loading_plugins" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Loading_plugins">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.2.1</span>Loading plugins</div>
+			</a>
+			
+			<ul id="toc-Loading_plugins-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Tips_and_tricks" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Tips_and_tricks">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>Tips and tricks</div>
+			</a>
+			
+				<button aria-controls="toc-Tips_and_tricks-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Tips and tricks subsection
+				</button>
+			
+			<ul id="toc-Tips_and_tricks-sublist" class="sidebar-toc-list">
+				<li id="toc-Replacing_vi_and_vim_with_neovim" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Replacing_vi_and_vim_with_neovim">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.1</span>Replacing vi and vim with neovim</div>
+			</a>
+			
+			<ul id="toc-Replacing_vi_and_vim_with_neovim-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Symlinking_init.vim_to_.vimrc" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Symlinking_init.vim_to_.vimrc">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.2</span>Symlinking init.vim to .vimrc</div>
+			</a>
+			
+			<ul id="toc-Symlinking_init.vim_to_.vimrc-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-True_color_support" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#True_color_support">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.3</span>True color support</div>
+			</a>
+			
+			<ul id="toc-True_color_support-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Lastplace_cursor_support" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Lastplace_cursor_support">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.4</span>Lastplace cursor support</div>
+			</a>
+			
+			<ul id="toc-Lastplace_cursor_support-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Language_Server_Protocol" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Language_Server_Protocol">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.5</span>Language Server Protocol</div>
+			</a>
+			
+			<ul id="toc-Language_Server_Protocol-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Use_as_a_pager" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Use_as_a_pager">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.6</span>Use as a pager</div>
+			</a>
+			
+			<ul id="toc-Use_as_a_pager-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Troubleshooting" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Troubleshooting">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4</span>Troubleshooting</div>
+			</a>
+			
+				<button aria-controls="toc-Troubleshooting-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Troubleshooting subsection
+				</button>
+			
+			<ul id="toc-Troubleshooting-sublist" class="sidebar-toc-list">
+				<li id="toc-Cursor_is_not_restored_to_previous_state_after_exit" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Cursor_is_not_restored_to_previous_state_after_exit">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.1</span>Cursor is not restored to previous state after exit</div>
+			</a>
+			
+			<ul id="toc-Cursor_is_not_restored_to_previous_state_after_exit-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-See_also" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#See_also">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5</span>See also</div>
+			</a>
+			
+			<ul id="toc-See_also-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../en/Neovim.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="mw-list-item"><a href="../en/Talk:Neovim.html" rel="discussion" title="Discussion about the content page [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">English</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../en/Neovim.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=Neovim&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=Neovim&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../en/Neovim.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Neovim&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Neovim&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output">
+<p><a rel="nofollow" class="external text" href="https://neovim.io/">Neovim</a> is a fork of <a href="../en/Vim.html" title="Vim">Vim</a> aiming to improve the codebase, allowing for easier implementation of APIs, improved user experience and plugin implementation. Neovim inspired editors like <a href="../en/Helix.html" title="Helix">Helix</a>.
+</p>
+<mw:tocplace></mw:tocplace>
+<h2><span class="mw-headline" id="Installation">Installation</span></h2>
+<p><a href="../en/Help:Reading.html#Installation_of_packages" class="mw-redirect" title="Install">Install</a> the <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=neovim">neovim</a></span> package, or <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/neovim-git/">neovim-git</a></span><sup><small>AUR</small></sup> for the latest development version, which strongly encourages the use of <a href="../en/Lua.html" title="Lua">Lua</a> as its main configuration language. To make the system clipboard work with Neovim, you may need to install <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=xclip">xclip</a></span> (X11) or <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=wl-clipboard">wl-clipboard</a></span> (Wayland).
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> With neovim, some of its features are delegated to external "providers". For Python providers, use <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=python-pynvim">python-pynvim</a></span>. For clipboard providers, see <a rel="nofollow" class="external text" href="https://neovim.io/doc/user/provider.html#provider-clipboard">provider-clipboard</a> or the <code>:help provider-clipboard</code> neovim command.</div>
+<p>It is also possible to install one of <a rel="nofollow" class="external text" href="https://github.com/neovim/neovim/wiki/Related-projects">many GUIs and other related projects</a>:
+</p>
+<ul><li>
+<b><span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=neovim-qt">neovim-qt</a></span></b> — Fast, lightweight, and customizable Qt GUI. Provides a modern interface, including support for multiple tabs, split windows, and customizable themes.</li></ul>
+<dl><dd>
+<a rel="nofollow" class="external free" href="https://github.com/equalsraf/neovim-qt">https://github.com/equalsraf/neovim-qt</a> || <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=neovim-qt">neovim-qt</a></span>
+</dd></dl>
+<ul><li>
+<b><span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/neovim-gtk/">neovim-gtk</a></span><sup><small>AUR</small></sup></b> — GTK GUI. Provides a modern, customizable interface, including support for split windows, multiple tabs, and customizable themes.</li></ul>
+<dl><dd>
+<a rel="nofollow" class="external free" href="https://github.com/Lyude/neovim-gtk">https://github.com/Lyude/neovim-gtk</a> || <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/neovim-gtk/">neovim-gtk</a></span><sup><small>AUR</small></sup>
+</dd></dl>
+<ul><li>
+<b><span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/uivonim-git/">uivonim-git</a></span><sup><small>AUR</small></sup></b> — (<a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/uivonim-git#comment-888471">Inactive</a>) Simple and lightweight GTK GUI. Provides a minimalistic interface, including support for split windows and customizable themes.</li></ul>
+<dl><dd>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/uivonim-git/">uivonim-git</a></span><sup><small>AUR</small></sup> || <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/uivonim-git/">uivonim-git</a></span><sup><small>AUR</small></sup>
+</dd></dl>
+<ul><li>
+<b><span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=neovide">neovide</a></span></b> — Rust GUI.</li></ul>
+<dl><dd>
+<a rel="nofollow" class="external free" href="https://github.com/neovide/neovide">https://github.com/neovide/neovide</a> || <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=neovide">neovide</a></span>
+</dd></dl>
+<ul><li>
+<b><span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/neoray-git/">neoray-git</a></span><sup><small>AUR</small></sup></b> — Go GUI.</li></ul>
+<dl><dd>
+<a rel="nofollow" class="external free" href="https://github.com/hismailbulut/neoray">https://github.com/hismailbulut/neoray</a> || <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/neoray-git/">neoray-git</a></span><sup><small>AUR</small></sup>
+</dd></dl>
+<ul><li>
+<b><span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/gnvim/">gnvim</a></span><sup><small>AUR</small></sup></b> — GTK GUI.</li></ul>
+<dl><dd>
+<a rel="nofollow" class="external free" href="https://github.com/vhakulinen/gnvim">https://github.com/vhakulinen/gnvim</a> || <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/gnvim/">gnvim</a></span><sup><small>AUR</small></sup>
+</dd></dl>
+<ul><li>
+<b><span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/fvim/">fvim</a></span><sup><small>AUR</small></sup></b> — F# GUI.</li></ul>
+<dl><dd>
+<a rel="nofollow" class="external free" href="https://github.com/yatli/fvim">https://github.com/yatli/fvim</a> || <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/fvim/">fvim</a></span><sup><small>AUR</small></sup>
+</dd></dl>
+<h2><span class="mw-headline" id="Configuration">Configuration</span></h2>
+<p>Nvim's user-specific configuration file is located at <code>$XDG_CONFIG_HOME/nvim/init.vim</code>, by default <code>~/.config/nvim/init.vim</code>. The system-wide configuration file is located at <code>$XDG_CONFIG_DIRS/nvim/sysinit.vim</code>, by default <code>/etc/xdg/nvim/sysinit.vim</code>. When the system-wide configuration file does not exist, Nvim checks for <code>/usr/share/nvim/sysinit.vim</code>, which is not intended to be edited by users.<a rel="nofollow" class="external autonumber" href="https://github.com/neovim/neovim/blob/master/runtime/doc/starting.txt#L439">[1]</a> By default, the former global configuration file does not exist. If you create the former file, you may wish to have it source the latter if you still want the functionality it provides, which is allowing pacman-installed vim packages to work with Nvim.
+</p>
+<p>Nvim is compatible with most of Vim's options; however, there are options specific to Nvim. For a complete list of Nvim options, see Neovim's <a rel="nofollow" class="external text" href="https://neovim.io/doc/user/options.html">help file</a>.
+</p>
+<p>Nvim's data directory is located in <code>~/.local/share/nvim/</code> and contains swap for open files, the <a rel="nofollow" class="external text" href="https://neovim.io/doc/user/starting.html#shada">ShaDa</a> (Shared Data) file, and the site directory for plugins.
+</p>
+<p>Starting from Nvim's version 0.5, it is possible to setup Nvim via Lua, by default <code>~/.config/nvim/init.lua</code>, the API is still young, but common configurations work out-of-the-box without much more steps. See <a rel="nofollow" class="external autonumber" href="https://github.com/nanotee/nvim-lua-guide">[2]</a> for suggestions on how to convert your current configuration. At the moment, there is not much of an advantage when using <code>init.lua</code> vs the common <code>init.vim</code>, but when correctly done, Lua provides a small improvement in startup times, and it becomes specially useful when using several plugins written in Lua, due to ease of configuration.
+</p>
+<h3><span class="mw-headline" id="Migrating_from_Vim">Migrating from Vim</span></h3>
+<p>If you wish to migrate your existing Vim configuration to Nvim, simply copy your <code>~/.vimrc</code> to <code>~/.config/nvim/init.vim</code>. If applicable, copy the contents of <code>~/.vim/autoload/</code> to <code>~/.local/share/nvim/site/autoload/</code>.
+</p>
+<h3><span class="mw-headline" id="Shared_configuration_between_Vim_and_Nvim">Shared configuration between Vim and Nvim</span></h3>
+<p>Neovim uses <code>$XDG_CONFIG_HOME/nvim</code> instead of <code>~/.vim</code> as its main configuration directory and <code>$XDG_CONFIG_HOME/nvim/init.vim</code> instead of <code>~/.vimrc</code> as its main configuration file.
+</p>
+<p>If you wish to continue using Vim and wish to source your existing Vim configuration in Nvim, see <a rel="nofollow" class="external text" href="https://neovim.io/doc/user/nvim.html#nvim-from-vim">nvim-from-vim</a> or the <code>:help nvim-from-vim</code> neovim command.
+</p>
+<h4><span class="mw-headline" id="Loading_plugins">Loading plugins</span></h4>
+<p>Vim/Nvim plugins installed from <a href="../en/Official_repositories.html" title="Official repositories">official repositories</a> or <a href="../en/Arch_User_Repository.html" class="mw-redirect" title="AUR">AUR</a> get automatically sourced by <code>/etc/xdg/nvim/sysinit.vim</code>, so there is no need to take any extra steps. A vast amount of plugins can be found on both places, but the most recommended way to add plugins is by using a plugin manager, most commonly used are <a rel="nofollow" class="external text" href="https://github.com/junegunn/vim-plug">vim-plug</a> which works for both Vim and Nvim, and <a rel="nofollow" class="external text" href="https://github.com/wbthomason/packer.nvim">packer</a> which only works on Nvim 0.5 or newer and is written in Lua. Both of them allow for expressive configurations, ranging from github branch to runtime commands.
+</p>
+<p>Most plugins written for vim work without much effort on Nvim, but not every plugin written for Nvim works for Vim, so if your intention is to ensure a compatible configuration, stick to a traditional <code>init.vim</code> or <code>.vimrc</code>
+</p>
+<h2><span class="mw-headline" id="Tips_and_tricks">Tips and tricks</span></h2>
+<h3><span class="mw-headline" id="Replacing_vi_and_vim_with_neovim">Replacing vi and vim with neovim</span></h3>
+<p>Setting <code>$VISUAL</code> and <code>$EDITOR</code> <a href="../en/Environment_variables.html" title="Environment variables">environment variables</a> should be sufficient in most cases.
+</p>
+<p>Some applications may hardcode vi or vim as default editor; to use <i>neovim</i> in their place, install <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/neovim-symlinks/">neovim-symlinks</a></span><sup><small>AUR</small></sup> or <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/neovim-drop-in/">neovim-drop-in</a></span><sup><small>AUR</small></sup>.
+</p>
+<h3><span class="mw-headline" id="Symlinking_init.vim_to_.vimrc">Symlinking init.vim to .vimrc</span></h3>
+<p>As neovim is <i>mostly</i> compatible with standard vim, you can symlink <code>nvim/init.vim</code> to your old <code>.vimrc</code> to keep old configuration options:
+</p>
+<pre>$ ln -s ~/.vimrc ~/.config/nvim/init.vim
+</pre>
+<p>If you want some lines to be specific to each version, you can use an <code>if</code> block:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">.vimrc</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">if has('nvim')
+    " Neovim specific commands
+else
+    " Standard vim specific commands
+endif
+</pre>
+<h3><span class="mw-headline" id="True_color_support">True color support</span></h3>
+<p>The <code>READMEs</code> of <a rel="nofollow" class="external text" href="https://github.com/CarloWood/neovim-true-color-scheme-editor">this project</a> explain how to add 24-bits "True Color" support to your syntax highlighting and how to use a color picker to see how it looks in real-time. Comes with the syntax highlighting of the author (if installed) for C++.
+</p>
+<h3><span class="mw-headline" id="Lastplace_cursor_support">Lastplace cursor support</span></h3>
+<p>If you like to keep your last position of cursor to be saved, <a rel="nofollow" class="external text" href="https://github.com/neovim/neovim/issues/16339#issuecomment-1348133829">lastplace.lua</a> is quite useful. It just needs to be placed in <code>~/.config/nvim/plugin/</code> or in the system-wide directory <code>/usr/share/nvim/runtime/plugin/</code>.
+</p>
+<h3><span class="mw-headline" id="Language_Server_Protocol">Language Server Protocol</span></h3>
+<p>Neovim contains a built-in <a rel="nofollow" class="external text" href="https://microsoft.github.io/language-server-protocol">Language Server Protocol</a> client and the <a rel="nofollow" class="external text" href="https://github.com/neovim/nvim-lspconfig">nvim-lspconfig</a> plugin provides common configurations for it.
+</p>
+<div class="noprint archwiki-template-message">
+<p><a href="../File:Tango-go-next.png" class="image"><img alt="Tango-go-next.png" src="../File:Tango-go-next.png" decoding="async" width="48" height="48"></a><b>This article or section is a candidate for moving to <a href="/index.php?title=Language_Server_Protocol&amp;action=edit&amp;redlink=1" class="new" title="Language Server Protocol (page does not exist)">Language Server Protocol</a>.</b><a href="../File:Tango-go-next.png" class="image"><img alt="Tango-go-next.png" src="../File:Tango-go-next.png" decoding="async" width="48" height="48"></a></p>
+<div>
+<b>Notes:</b> The following is not specific to neovim and should be moved to a separate page. (Discuss in <a rel="nofollow" class="external text" href="https://wiki.archlinux.org/title/Talk:Neovim">Talk:Neovim</a>)</div>
+</div>
+<p>Language servers can be installed natively using the following packages:
+</p>
+<table class="wikitable">
+<tbody>
+<tr>
+<th>LSP config
+</th>
+<th>Language
+</th>
+<th>LSP server package
+</th>
+</tr>
+<tr>
+<td>
+<a rel="nofollow" class="external text" href="https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#als">als</a>
+</td>
+<td>Ada/SPARK
+</td>
+<td>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/ada_language_server/">ada_language_server</a></span><sup><small>AUR</small></sup>
+</td>
+</tr>
+<tr>
+<td>
+<a rel="nofollow" class="external text" href="https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#angularls">angularls</a>
+</td>
+<td>Angular
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<a rel="nofollow" class="external text" href="https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#bashls">bashls</a>
+</td>
+<td>BASH
+</td>
+<td>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=bash-language-server">bash-language-server</a></span>
+</td>
+</tr>
+<tr>
+<td>
+<a rel="nofollow" class="external text" href="https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#ccls">ccls</a>
+</td>
+<td>C, C++, Objective-C
+</td>
+<td>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=ccls">ccls</a></span> <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/ccls-git/">ccls-git</a></span><sup><small>AUR</small></sup>
+</td>
+</tr>
+<tr>
+<td>
+<a rel="nofollow" class="external text" href="https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#clangd">clangd</a>
+</td>
+<td>C++
+</td>
+<td>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=clang">clang</a></span>
+</td>
+</tr>
+<tr>
+<td>
+<a rel="nofollow" class="external text" href="https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#clojure_lsp">clojure_lsp</a>
+</td>
+<td>Clojure
+</td>
+<td>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/clojure-lsp-bin/">clojure-lsp-bin</a></span><sup><small>AUR</small></sup>
+</td>
+</tr>
+<tr>
+<td>
+<a rel="nofollow" class="external text" href="https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#cmake">cmake</a>
+</td>
+<td>CMake
+</td>
+<td>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/cmake-language-server/">cmake-language-server</a></span><sup><small>AUR</small></sup>
+</td>
+</tr>
+<tr>
+<td>
+<a rel="nofollow" class="external text" href="https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#codeqlls">codeqlls</a>
+</td>
+<td>CodeQL
+</td>
+<td>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/codeql/">codeql</a></span><sup><small>AUR</small></sup>
+</td>
+</tr>
+<tr>
+<td>
+<a rel="nofollow" class="external text" href="https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#cssls">cssls</a>
+</td>
+<td>CSS, LESS, SASS
+</td>
+<td>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=vscode-css-languageserver">vscode-css-languageserver</a></span>
+</td>
+</tr>
+<tr>
+<td>
+<a rel="nofollow" class="external text" href="https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#dartls">dartls</a>
+</td>
+<td>Dart
+</td>
+<td>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=dart">dart</a></span>
+</td>
+</tr>
+<tr>
+<td>
+<a rel="nofollow" class="external text" href="https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#denols">denols</a>
+</td>
+<td>JavaScript, TypeScript
+</td>
+<td>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=deno">deno</a></span>
+</td>
+</tr>
+<tr>
+<td>
+<a rel="nofollow" class="external text" href="https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#dhall_lsp_server">dhall_lsp_server</a>
+</td>
+<td>Dhall
+</td>
+<td>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=dhall-lsp-server">dhall-lsp-server</a></span>
+</td>
+</tr>
+<tr>
+<td>
+<a rel="nofollow" class="external text" href="https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#diagnosticls">diagnosticls</a>
+</td>
+<td>General purpose
+</td>
+<td>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/diagnostic-languageserver/">diagnostic-languageserver</a></span><sup><small>AUR</small></sup>
+</td>
+</tr>
+<tr>
+<td>
+<a rel="nofollow" class="external text" href="https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#dockerls">dockerls</a>
+</td>
+<td>Dockerfile
+</td>
+<td>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/dockerfile-language-server/">dockerfile-language-server</a></span><sup><small>AUR</small></sup>
+</td>
+</tr>
+<tr>
+<td>
+<a rel="nofollow" class="external text" href="https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#efm">efm</a>
+</td>
+<td>General purpose
+</td>
+<td>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/efm-langserver/">efm-langserver</a></span><sup><small>AUR</small></sup>
+</td>
+</tr>
+<tr>
+<td>
+<a rel="nofollow" class="external text" href="https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#elixirls">elixirls</a>
+</td>
+<td>Elixir
+</td>
+<td>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/elixir-ls/">elixir-ls</a></span><sup><small>AUR</small></sup>
+</td>
+</tr>
+<tr>
+<td>
+<a rel="nofollow" class="external text" href="https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#elmls">elmls</a>
+</td>
+<td>Elm
+</td>
+<td>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/elm-language-server/">elm-language-server</a></span><sup><small>AUR</small></sup>
+</td>
+</tr>
+<tr>
+<td>
+<a rel="nofollow" class="external text" href="https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#erlangls">erlangls</a>
+</td>
+<td>Erlang
+</td>
+<td>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/erlang_ls-git/">erlang_ls-git</a></span><sup><small>AUR</small></sup>
+</td>
+</tr>
+<tr>
+<td>
+<a rel="nofollow" class="external text" href="https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#flow">flow</a>
+</td>
+<td>Flow
+</td>
+<td>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/flow/">flow</a></span><sup><small>AUR</small></sup>
+</td>
+</tr>
+<tr>
+<td>
+<a rel="nofollow" class="external text" href="https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#fortls">fortls</a>
+</td>
+<td>Fortran
+</td>
+<td>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/fortran-language-server/">fortran-language-server</a></span><sup><small>AUR</small></sup>
+</td>
+</tr>
+<tr>
+<td>
+<a rel="nofollow" class="external text" href="https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#fsautocomplete">fsautocomplete</a>
+</td>
+<td>F#
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<a rel="nofollow" class="external text" href="https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#gdscript">gdscript</a>
+</td>
+<td>GDScript
+</td>
+<td>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=godot">godot</a></span>
+</td>
+</tr>
+<tr>
+<td>
+<a rel="nofollow" class="external text" href="https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#ghcide">ghcide</a>
+</td>
+<td>Haskell
+</td>
+<td>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/ghcide/">ghcide</a></span><sup><small>AUR</small></sup>
+</td>
+</tr>
+<tr>
+<td>
+<a rel="nofollow" class="external text" href="https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#gopls">gopls</a>
+</td>
+<td>GOlang
+</td>
+<td>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=gopls">gopls</a></span>
+</td>
+</tr>
+<tr>
+<td>
+<a rel="nofollow" class="external text" href="https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#graphql">graphql</a>
+</td>
+<td>GraphQL
+</td>
+<td>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/graphql-lsp/">graphql-lsp</a></span><sup><small>AUR</small></sup>
+</td>
+</tr>
+<tr>
+<td>
+<a rel="nofollow" class="external text" href="https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#groovyls">groovyls</a>
+</td>
+<td>Groovy
+</td>
+<td>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/groovy-language-server-git/">groovy-language-server-git</a></span><sup><small>AUR</small></sup>
+</td>
+</tr>
+<tr>
+<td>
+<a rel="nofollow" class="external text" href="https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#haxe_language_server">haxe_language_server</a>
+</td>
+<td>Haxe
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<a rel="nofollow" class="external text" href="https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#hie">hie</a>
+</td>
+<td>Haskell
+</td>
+<td>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/haskell-ide-engine/">haskell-ide-engine</a></span><sup><small>AUR</small></sup>
+</td>
+</tr>
+<tr>
+<td>
+<a rel="nofollow" class="external text" href="https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#hls">hls</a>
+</td>
+<td>Haskell
+</td>
+<td>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=haskell-language-server">haskell-language-server</a></span>
+</td>
+</tr>
+<tr>
+<td>
+<a rel="nofollow" class="external text" href="https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#html">html</a>
+</td>
+<td>HTML
+</td>
+<td>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=vscode-html-languageserver">vscode-html-languageserver</a></span>
+</td>
+</tr>
+<tr>
+<td>
+<a rel="nofollow" class="external text" href="https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#intelephense">intelephense</a>
+</td>
+<td>PHP
+</td>
+<td>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/nodejs-intelephense/">nodejs-intelephense</a></span><sup><small>AUR</small></sup>
+</td>
+</tr>
+<tr>
+<td>
+<a rel="nofollow" class="external text" href="https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#java_language_server">java_language_server</a>
+</td>
+<td>Java
+</td>
+<td>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/java-language-server/">java-language-server</a></span><sup><small>AUR</small></sup>
+</td>
+</tr>
+<tr>
+<td>
+<a rel="nofollow" class="external text" href="https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#jdtls">jdtls</a>
+</td>
+<td>Java
+</td>
+<td>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/jdtls/">jdtls</a></span><sup><small>AUR</small></sup>
+</td>
+</tr>
+<tr>
+<td>
+<a rel="nofollow" class="external text" href="https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#jedi_language_server">jedi_language_server</a>
+</td>
+<td>Python
+</td>
+<td>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=jedi-language-server">jedi-language-server</a></span>
+</td>
+</tr>
+<tr>
+<td>
+<a rel="nofollow" class="external text" href="https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#jsonls">jsonls</a>
+</td>
+<td>JSON
+</td>
+<td>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=vscode-json-languageserver">vscode-json-languageserver</a></span>
+</td>
+</tr>
+<tr>
+<td>
+<a rel="nofollow" class="external text" href="https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#julials">julials</a>
+</td>
+<td>Julia
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<a rel="nofollow" class="external text" href="https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#kotlin_language_server">kotlin_language_server</a>
+</td>
+<td>Kotlin
+</td>
+<td>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/kotlin-language-server/">kotlin-language-server</a></span><sup><small>AUR</small></sup>
+</td>
+</tr>
+<tr>
+<td>
+<a rel="nofollow" class="external text" href="https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#leanls">leanls</a>
+</td>
+<td>Lean
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<a rel="nofollow" class="external text" href="https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#marksman">marksman</a>
+</td>
+<td>Markdown
+</td>
+<td>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/marksman-bin/">marksman-bin</a></span><sup><small>AUR</small></sup>
+</td>
+</tr>
+<tr>
+<td>
+<a rel="nofollow" class="external text" href="https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#metals">metals</a>
+</td>
+<td>Scala
+</td>
+<td>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/metals/">metals</a></span><sup><small>AUR</small></sup>
+</td>
+</tr>
+<tr>
+<td>
+<a rel="nofollow" class="external text" href="https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#nimls">nimls</a>
+</td>
+<td>Nim
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<a rel="nofollow" class="external text" href="https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#ocamlls">ocamlls</a>
+</td>
+<td>OCaml, Reason
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<a rel="nofollow" class="external text" href="https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#ocamllsp">ocamllsp</a>
+</td>
+<td>OCaml, Reason
+</td>
+<td>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/ocaml-lsp-git/">ocaml-lsp-git</a></span><sup><small>AUR</small></sup>
+</td>
+</tr>
+<tr>
+<td>
+<a rel="nofollow" class="external text" href="https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#omnisharp">omnisharp</a>
+</td>
+<td>OmniSharp
+</td>
+<td>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/omnisharp-roslyn/">omnisharp-roslyn</a></span><sup><small>AUR</small></sup>
+</td>
+</tr>
+<tr>
+<td>
+<a rel="nofollow" class="external text" href="https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#perlls">perlls</a>
+</td>
+<td>Perl
+</td>
+<td>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/perl-perl-languageserver/">perl-perl-languageserver</a></span><sup><small>AUR</small></sup>
+</td>
+</tr>
+<tr>
+<td>
+<a rel="nofollow" class="external text" href="https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#phpactor">phpactor</a>
+</td>
+<td>PHP
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<a rel="nofollow" class="external text" href="https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#powershell_es">powershell_es</a>
+</td>
+<td>PowerShell
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<a rel="nofollow" class="external text" href="https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#purescriptls">purescriptls</a>
+</td>
+<td>PureScript
+</td>
+<td>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/purescript-language-server/">purescript-language-server</a></span><sup><small>AUR</small></sup>
+</td>
+</tr>
+<tr>
+<td>
+<a rel="nofollow" class="external text" href="https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#pylsp">pylsp</a>
+</td>
+<td>Python
+</td>
+<td>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=python-lsp-server">python-lsp-server</a></span>
+</td>
+</tr>
+<tr>
+<td>
+<a rel="nofollow" class="external text" href="https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#pyright">pyright</a>
+</td>
+<td>Python
+</td>
+<td>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=pyright">pyright</a></span>
+</td>
+</tr>
+<tr>
+<td>
+<a rel="nofollow" class="external text" href="https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#r_language_server">r_language_server</a>
+</td>
+<td>R
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<a rel="nofollow" class="external text" href="https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#racket_langserver">racket_langserver</a>
+</td>
+<td>Racket
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<a rel="nofollow" class="external text" href="https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#rescriptls">rescriptls</a>
+</td>
+<td>ReScript
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<a rel="nofollow" class="external text" href="https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#rls">rls</a>
+</td>
+<td>Rust
+</td>
+<td>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/rls-git/">rls-git</a></span><sup><small>AUR</small></sup>
+</td>
+</tr>
+<tr>
+<td>
+<a rel="nofollow" class="external text" href="https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#rnix">rnix</a>
+</td>
+<td>nix
+</td>
+<td>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/rnix-lsp-git/">rnix-lsp-git</a></span><sup><small>AUR</small></sup>
+</td>
+</tr>
+<tr>
+<td>
+<a rel="nofollow" class="external text" href="https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#rome">rome</a>
+</td>
+<td>Rome
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<a rel="nofollow" class="external text" href="https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#rust_analyzer">rust_analyzer</a>
+</td>
+<td>Rust
+</td>
+<td>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=rust-analyzer">rust-analyzer</a></span>
+</td>
+</tr>
+<tr>
+<td>
+<a rel="nofollow" class="external text" href="https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#scry">scry</a>
+</td>
+<td>Crystal
+</td>
+<td>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/scry-git/">scry-git</a></span><sup><small>AUR</small></sup>
+</td>
+</tr>
+<tr>
+<td>
+<a rel="nofollow" class="external text" href="https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#solargraph">solargraph</a>
+</td>
+<td>Ruby
+</td>
+<td>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/ruby-solargraph/">ruby-solargraph</a></span><sup><small>AUR</small></sup>
+</td>
+</tr>
+<tr>
+<td>
+<a rel="nofollow" class="external text" href="https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#sorbet">sorbet</a>
+</td>
+<td>Ruby
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<a rel="nofollow" class="external text" href="https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#sourcekit">sourcekit</a>
+</td>
+<td>C, C++, Objective-C
+</td>
+<td>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/swift-language/">swift-language</a></span><sup><small>AUR</small></sup>
+</td>
+</tr>
+<tr>
+<td>
+<a rel="nofollow" class="external text" href="https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#sqlls">sqlls</a>
+</td>
+<td>SQL
+</td>
+<td>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/sql-language-server/">sql-language-server</a></span><sup><small>AUR</small></sup>
+</td>
+</tr>
+<tr>
+<td>
+<a rel="nofollow" class="external text" href="https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#sqls">sqls</a>
+</td>
+<td>SQL
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<a rel="nofollow" class="external text" href="https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#stylelint_lsp">stylelint_lsp</a>
+</td>
+<td>stylelint
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<a rel="nofollow" class="external text" href="https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#sumneko_lua">sumneko_lua</a>
+</td>
+<td>Lua
+</td>
+<td>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=lua-language-server">lua-language-server</a></span>
+</td>
+</tr>
+<tr>
+<td>
+<a rel="nofollow" class="external text" href="https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#svelte">svelte</a>
+</td>
+<td>Svelte
+</td>
+<td>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=svelte-language-server">svelte-language-server</a></span>
+</td>
+</tr>
+<tr>
+<td>
+<a rel="nofollow" class="external text" href="https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#svls">svls</a>
+</td>
+<td>SystemVerilog
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<a rel="nofollow" class="external text" href="https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#terraformls">terraformls</a>
+</td>
+<td>Terraform
+</td>
+<td>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/terraform-ls/">terraform-ls</a></span><sup><small>AUR</small></sup>
+</td>
+</tr>
+<tr>
+<td>
+<a rel="nofollow" class="external text" href="https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#texlab">texlab</a>
+</td>
+<td>(La)TeX
+</td>
+<td>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=texlab">texlab</a></span>
+</td>
+</tr>
+<tr>
+<td>
+<a rel="nofollow" class="external text" href="https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#tflint">tflint</a>
+</td>
+<td>Terraform
+</td>
+<td>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/tflint/">tflint</a></span><sup><small>AUR</small></sup>
+</td>
+</tr>
+<tr>
+<td>
+<a rel="nofollow" class="external text" href="https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#tsserver">tsserver</a>
+</td>
+<td>TypeScript
+</td>
+<td>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=typescript-language-server">typescript-language-server</a></span>
+</td>
+</tr>
+<tr>
+<td>
+<a rel="nofollow" class="external text" href="https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#vala_ls">vala_ls</a>
+</td>
+<td>Vala
+</td>
+<td>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/vala-language-server/">vala-language-server</a></span><sup><small>AUR</small></sup>
+</td>
+</tr>
+<tr>
+<td>
+<a rel="nofollow" class="external text" href="https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#vimls">vimls</a>
+</td>
+<td>Vim
+</td>
+<td>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/vim-language-server/">vim-language-server</a></span><sup><small>AUR</small></sup>
+</td>
+</tr>
+<tr>
+<td>
+<a rel="nofollow" class="external text" href="https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#vls">vls</a>
+</td>
+<td>V
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<a rel="nofollow" class="external text" href="https://github.com/johnsoncodehk/volar/tree/master/packages/vue-language-server">volar</a>
+</td>
+<td>Vue 3
+</td>
+<td>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=vue-language-server">vue-language-server</a></span>
+</td>
+</tr>
+<tr>
+<td>
+<a rel="nofollow" class="external text" href="https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#vuels">vuels</a>
+</td>
+<td>Vue 2
+</td>
+<td>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/nodejs-vls/">nodejs-vls</a></span><sup><small>AUR</small></sup>
+</td>
+</tr>
+<tr>
+<td>
+<a rel="nofollow" class="external text" href="https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#yamlls">yamlls</a>
+</td>
+<td>YAML
+</td>
+<td>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=yaml-language-server">yaml-language-server</a></span>
+</td>
+</tr>
+<tr>
+<td>
+<a rel="nofollow" class="external text" href="https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#zls">zls</a>
+</td>
+<td>Zig
+</td>
+<td>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=zls">zls</a></span>
+</td>
+</tr>
+</tbody>
+</table>
+<h3><span class="mw-headline" id="Use_as_a_pager">Use as a pager</span></h3>
+<p>You can use Neovim as a pager. Install either the <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/nvimpager/">nvimpager</a></span><sup><small>AUR</small></sup> or the <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/nvimpager-git/">nvimpager-git</a></span><sup><small>AUR</small></sup> package and set the <code>PAGER</code> <a href="../en/Environment_variables.html" class="mw-redirect" title="Environment variable">environment variable</a> to <code>nvimpager</code>.
+</p>
+<h2><span class="mw-headline" id="Troubleshooting">Troubleshooting</span></h2>
+<h3><span class="mw-headline" id="Cursor_is_not_restored_to_previous_state_after_exit">Cursor is not restored to previous state after exit</span></h3>
+<p>If the cursor keeps blinking after exiting neovim, see the solution in the <a rel="nofollow" class="external text" href="https://github.com/neovim/neovim/wiki/FAQ#cursor-style-isnt-restored-after-exiting-or-suspending-and-resuming-nvim">neovim FAQ</a>.
+</p>
+<h2><span class="mw-headline" id="See_also">See also</span></h2>
+<ul>
+<li><a rel="nofollow" class="external text" href="https://github.com/neovim/neovim">Github repository</a></li>
+<li><a rel="nofollow" class="external text" href="https://github.com/neovim/neovim/wiki">Github wiki</a></li>
+</ul>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface">
+<div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../Special:Categories.html" title="Special:Categories">Categories</a>: <ul>
+<li><a href="../en/Category:Text_editors.html" title="Category:Text editors">Text editors</a></li>
+<li><a href="../en/Category:Console_applications.html" title="Category:Console applications">Console applications</a></li>
+</ul>
+</div>
+<div id="mw-hidden-catlinks" class="mw-hidden-catlinks mw-hidden-cats-hidden">Hidden category: <ul><li><a href="../en/Category:Pages_or_sections_flagged_with_Template:Move.html" title="Category:Pages or sections flagged with Template:Move">Pages or sections flagged with Template:Move</a></li></ul>
+</div>
+</div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=Neovim&amp;oldid=784682">https://wiki.archlinux.org/index.php?title=Neovim&amp;oldid=784682</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 7 August 2023, at 12:16.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

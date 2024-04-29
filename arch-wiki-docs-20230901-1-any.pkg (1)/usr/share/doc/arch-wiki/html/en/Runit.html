@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>Runit - ArchWiki</title>
+<link rel="stylesheet" href="../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Runit rootpage-Runit skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Installation" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Installation">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Installation</div>
+			</a>
+			
+				<button aria-controls="toc-Installation-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Installation subsection
+				</button>
+			
+			<ul id="toc-Installation-sublist" class="sidebar-toc-list">
+				<li id="toc-Using_runit_alongside_systemd" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Using_runit_alongside_systemd">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.1</span>Using runit alongside systemd</div>
+			</a>
+			
+			<ul id="toc-Using_runit_alongside_systemd-sublist" class="sidebar-toc-list">
+				<li id="toc-Using_BusyBox's_implementation" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Using_BusyBox's_implementation">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.1.1</span>Using BusyBox's implementation</div>
+			</a>
+			
+			<ul id="toc-Using_BusyBox's_implementation-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Using_standard_runit" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Using_standard_runit">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.1.2</span>Using standard runit</div>
+			</a>
+			
+			<ul id="toc-Using_standard_runit-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Usage" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Usage">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Usage</div>
+			</a>
+			
+				<button aria-controls="toc-Usage-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Usage subsection
+				</button>
+			
+			<ul id="toc-Usage-sublist" class="sidebar-toc-list">
+				<li id="toc-The_tools" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#The_tools">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.1</span>The tools</div>
+			</a>
+			
+			<ul id="toc-The_tools-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Run_levels_and_service_directories" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Run_levels_and_service_directories">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.2</span>Run levels and service directories</div>
+			</a>
+			
+			<ul id="toc-Run_levels_and_service_directories-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-General_use" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#General_use">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.3</span>General use</div>
+			</a>
+			
+			<ul id="toc-General_use-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-User_Services" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#User_Services">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>User Services</div>
+			</a>
+			
+				<button aria-controls="toc-User_Services-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle User Services subsection
+				</button>
+			
+			<ul id="toc-User_Services-sublist" class="sidebar-toc-list">
+				<li id="toc-Example_Service" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Example_Service">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.1</span>Example Service</div>
+			</a>
+			
+			<ul id="toc-Example_Service-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-See_also" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#See_also">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4</span>See also</div>
+			</a>
+			
+			<ul id="toc-See_also-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../en/Runit.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="mw-list-item"><a href="../en/Talk:Runit.html" rel="discussion" title="Discussion about the content page [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">English</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../en/Runit.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=Runit&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=Runit&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../en/Runit.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Runit&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Runit&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output">
+<div class="archwiki-template-meta-related-articles-start">
+<p class="mw-no-invert">Related articles</p>
+<ul>
+<li><a href="../en/Init.html" title="Init">init</a></li>
+</ul>
+</div>
+<div class="archwiki-template-box archwiki-template-box-warning">
+<strong>Warning:</strong> Arch Linux only has official support for <a href="../en/Systemd.html" title="Systemd">systemd</a>. When using runit as your init system, please mention so in support requests.</div>
+<p>Runit is a process supervisor.  It includes <code>runit-init</code>, which can replace sysv's init as pid1, or can be run from inittab or your init system of choice.  
+Runit's simple collection of tools can be used to build flexible dependency structures and distributed systems, or blazing fast parallel runlevel changes (including the initial boot). Runit can be used as a simple process supervisor, see the <a href="#User_Services">#User Services</a> for an example.
+</p>
+<mw:tocplace></mw:tocplace>
+<h2><span class="mw-headline" id="Installation">Installation</span></h2>
+<h3><span class="mw-headline" id="Using_runit_alongside_systemd">Using runit alongside systemd</span></h3>
+<h4>
+<span id="Using_BusyBox.27s_implementation"></span><span class="mw-headline" id="Using_BusyBox's_implementation">Using BusyBox's implementation</span>
+</h4>
+<p><a href="../en/BusyBox.html" title="BusyBox">BusyBox</a> provides a minimal implementation of runit that can be used for simple processing supervision needs. First, create symbolic links to the BusyBox binary for the necessary tools that are going to be needed:
+</p>
+<pre># busybox --list | awk '/^runsv|^chpst$|^sv/' | xargs -I{} ln -sv /usr/bin/busybox /usr/local/bin/{}
+</pre>
+<p>Afterwards, a <a href="../en/Systemd.html" title="Systemd">systemd</a> unit file can be created in order to run BusyBox's runit when needed:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/systemd/system/busybox-runit.service</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">[Unit]
+Description=Runit service supervision - BusyBox implementation
+Documentation=man:busybox(1) <a rel="nofollow" class="external free" href="http://smarden.org/runit/">http://smarden.org/runit/</a>
+
+[Service]
+Environment="PATH=/usr/local/sbin:/usr/local/bin:/usr/bin"
+ExecStart=/usr/local/bin/runsvdir -P /var/service
+KillSignal=SIGHUP
+KillMode=process
+Restart=always
+SuccessExitStatus=111
+
+[Install]
+WantedBy=multi-user.target</pre>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">${XDG_CONFIG_HOME:-$HOME/.config}/systemd/user/busybox-runit.service</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">[Unit]
+Description=Runit service supervision - BusyBox implementation
+Documentation=man:busybox(1) <a rel="nofollow" class="external free" href="http://smarden.org/runit/">http://smarden.org/runit/</a>
+
+[Service]
+Environment="HOME=%h" "PATH=/usr/local/sbin:/usr/local/bin:/usr/bin"
+ExecStart=/usr/local/bin/runsvdir -P %h/service
+KillSignal=SIGHUP
+KillMode=process
+Restart=always
+SuccessExitStatus=111
+
+[Install]
+WantedBy=default.target</pre>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> 
+<ul>
+<li>This example unit file presupposes that the directory which is going to contain the enabled services is <code>/var/service</code> for the system instance or <code>$HOME/service</code> for user instance. This path can be changed according to each specific use case.</li>
+<li>The <code>SIGHUP</code> kill signal is used instead of the default <code>SIGTERM</code>, and only on the main <i>runsvdir</i> process (thanks to <code>KillMode=process</code>) so that processes being controlled by BusyBox's runit implementation are controllably stopped by <i>runsvdir</i> before terminating the supervisor. When <i>runsvdir</i> ends the processes that are being supervised after receiving a <code>SIGHUP</code> signal, it exits with an status code of 111, which needs to be interpreted as a success.</li>
+</ul>
+</div>
+<p>Be sure to create the directory which is going to be supervised by <i>runsvdir</i> according to the systemd unit file created. It is also recommended to create a directory in which runit services can be stored (usually <code>/etc/sv</code>), and only enabled when needed by creating a symbolic link directed to them from the directory being supervised. See <a href="#General_use">#General use</a> for more details.
+</p>
+<p>When everything is correctly configured, <code>busybox-runit.service</code> can be <a href="../en/Systemd.html#Using_units" title="Systemd">enabled and started</a>.
+</p>
+<h4><span class="mw-headline" id="Using_standard_runit">Using standard runit</span></h4>
+<p>It is possible to use runit as a simple process supervisor alongside the default Arch Linux's init system (<a href="../en/Systemd.html" title="Systemd">systemd</a>). For this purpose, install <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/runit-systemd/">runit-systemd</a></span><sup><small>AUR</small></sup>, which provides a barebones runit installation without any stage scripts (<code>/etc/runit/{1..3}</code>) or runlevels (<code>/etc/runit/runsvdir/*</code>), which are generally only useful when using runit as the init system. The package provides a directory (<code>/var/service</code>) in which the desired runit services can be put and a systemd unit which starts runit monitoring that directory. Only the services configured in <code>/var/service</code> will be supervised by runit. Just <a href="../en/Systemd.html#Using_units" title="Systemd">enable and start</a> <code>runit.service</code>.
+</p>
+<h2><span class="mw-headline" id="Usage">Usage</span></h2>
+<h3><span class="mw-headline" id="The_tools">The tools</span></h3>
+<ul>
+<li>
+<code>sv</code> - used for controlling services, getting status of services, and dependency checking.</li>
+<li>
+<code>chpst</code> - control of a process environment, including memory caps, limits on cores, data segments, environments, user/group privileges, and more.</li>
+<li>
+<code>runsv</code> - supervises a process, and optionally a log service for that process.</li>
+<li>
+<code>svlogd</code> - a simple but powerful logger, includes auto-rotation based on different methods (time, size, etc), post-processing, pattern matching, and socket (remote logging) options. Say goodbye to logrotate and the need to stop your services to rotate logs.</li>
+<li>
+<code>runsvchdir</code> - changes service levels (runlevels, see below).</li>
+<li>
+<code>runsvdir</code> - starts a supervision tree</li>
+</ul>
+<p>See the manpages for usage details not covered below.
+</p>
+<h3><span class="mw-headline" id="Run_levels_and_service_directories">Run levels and service directories</span></h3>
+<p>Runit uses directories of symlinks to specify runlevels, other than the 3 main ones, which are defined in /etc/runit/1, 2, and 3.  
+</p>
+<p>1 bootstraps the system, 2 starts runsvdir on /service, and 3 stops the system.
+</p>
+<p>While in run level 2, you are not constrained to any amount of service levels (equivalent to runlevels in sysvinit).  You can runschdir to any directory (full of service directory symlinks) you have made in /etc/runit/runsvdir/.  
+This becomes very handy in cases where you have an HA (Failover) setup, and you have one machine that can take over services for many other machines, simply by runsvchdir &lt;theservicedir&gt;.
+</p>
+<p>You can also run trees of dependent service levels by having user-level supervision directories.  See User Level Services below.  
+</p>
+<p>By default, the runit-run package uses a very minimal service set, defined in /etc/runit/runsvdir/archlinux-default and symlinked to /etc/runit/runsvdir/default.  
+</p>
+<p>It only gives gettys on tty2 and tty3, so you will boot to just console scroll and a tidy 'runsvchdir: default: current'.  This means when you start X it will be on tty4.  
+</p>
+<p>To go back to the standard arch consoles, remove the link /service/ngetty and link as many /etc/sv/*getty* services you like in /service, or edit the /etc/sv/ngetty/run file to get more getties.  Better yet, create your own directory in /etc/runit/runsvdir and add the symlinks you want for just the services you desire.  Remember to take any services you start with runit out of DAEMONS in /etc/rc.conf or systemctl disable them, they do not need to be started there, and runit will allow parallel startup without backgrounding them.
+</p>
+<h3><span class="mw-headline" id="General_use">General use</span></h3>
+<p>In this explanation, <code>/var/service</code> is the chosen service directory being supervised by <i>runsvdir</i> and <code>/etc/sv</code> is the chosen directory for containing the services that can be enabled.
+</p>
+<div class="archwiki-template-box archwiki-template-box-tip">
+<strong>Tip:</strong> Specifying the whole path to the service directory can be avoided by setting the <a href="../en/Environment_variables.html" class="mw-redirect" title="Environment variable">environment variable</a> <code>SVDIR</code> to indicate the path of the service directory. For example, with <code>SVDIR=/var/service</code>, <code>sv status /var/service/<i>servicename</i></code> becomes <code>sv status <i>servicename</i></code>.</div>
+<ul><li>Listing running services:</li></ul>
+<pre># sv status /var/service/*
+run: /var/service/agetty-2: (pid 4120) 7998s
+run: /var/service/agetty-3: (pid 4119) 7998s
+run: /var/service/bougyman: (pid 4465) 7972s
+run: /var/service/bougyx: (pid 4135) 7998s; run: log: (pid 4127) 7998s
+run: /var/service/cron: (pid 4137) 7998s; run: log: (pid 4122) 7998s
+run: /var/service/dialer: (pid 4121) 7998s
+run: /var/service/qmail: (pid 4138) 7998s; run: log: (pid 4126) 7998s
+run: /var/service/smtpd: (pid 4136) 7998s; run: log: (pid 4125) 7998s
+run: /var/service/socklog-klog: (pid 4139) 7998s; run: log: (pid 4132) 7998s
+run: /var/service/socklog-unix: (pid 4133) 7998s; run: log: (pid 4124) 7998s
+run: /var/service/ssh: (pid 4134) 7998s; run: log: (pid 4123) 7998s
+</pre>
+<ul><li>Create and start a service:</li></ul>
+<pre># ln -s /etc/sv/ssh /var/service/ssh
+</pre>
+<ul><li>Stops a service immediately (would still start on next boot):</li></ul>
+<pre># sv down /var/service/ssh
+</pre>
+<ul><li>Starts a service which has been previously stopped, or which is configured to not start automatically:</li></ul>
+<pre># sv up /var/service/ssh
+</pre>
+<ul><li>Restarts a service:</li></ul>
+<pre># sv restart /var/service/ssh
+</pre>
+<ul><li>Reloads a service:</li></ul>
+<pre># sv reload /var/service/ssh
+</pre>
+<ul><li>Shows status of a service and its log service:</li></ul>
+<pre># sv status /var/service/ssh
+</pre>
+<ul><li>Stops a service, and disables it (will not start next boot):</li></ul>
+<pre># rm /var/service/ssh
+</pre>
+<h2><span class="mw-headline" id="User_Services">User Services</span></h2>
+<p>There are two ways of creating a user supervision tree: using a <a href="../en/Systemd/User.html" title="Systemd/User">Systemd/User</a> service or with runit itself. See <a href="#Using_BusyBox's_implementation">#Using BusyBox's implementation</a> for an example
+systemd user service. To use runit itself refer to the section in the <a rel="nofollow" class="external text" href="https://docs.voidlinux.org/config/services/user-services.html">Voidlinux Handbook</a>.
+</p>
+<h3><span class="mw-headline" id="Example_Service">Example Service</span></h3>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> This example assumes your services are stored in <code>~/.config/sv</code> and your runsvdir is <code>~/service</code>. You should change them to your configuration.</div>
+<p>Create a directory where you will keep your services.
+</p>
+<pre>$ mkdir -p ~/.config/sv
+</pre>
+<p>Create a directory for your service.
+</p>
+<pre>$ mkdir ~/.config/sv/mpd
+</pre>
+<p><a href="../en/Help:Reading.html#Append,_add,_create,_edit" class="mw-redirect" title="Create">Create</a> a <code>run</code> file in the service directory. You can find example run files in <a rel="nofollow" class="external text" href="http://smarden.org/runit/runscripts.html">runit's site</a>
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">$HOME/.config/sv/mpd/run</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">#!/bin/sh
+MPDCONF=${XDG_CONFIG_HOME:-$HOME/.config}/mpd/mpd.conf
+exec mpd --no-daemon $MPDCONF</pre>
+<p>Make it <a href="../en/Help:Reading.html#Make_executable" class="mw-redirect" title="Executable">executable</a>. 
+</p>
+<p>To enable the service make a symlink to your service directory. This will make the service start automatically when the runit starts. The service should start immediately.
+</p>
+<pre>$ ln -s ~/.config/sv/mpd ~/service/mpd
+</pre>
+<p>To stop the service:
+</p>
+<pre>$ SVDIR=~/service sv down mpd   # or
+$ sv down ~/service/mpd
+</pre>
+<p>To start the service again:
+</p>
+<pre>$ SVDIR=~/service sv up mpd   # or
+$ sv up ~/service/mpd
+</pre>
+<h2><span class="mw-headline" id="See_also">See also</span></h2>
+<ul><li>
+<a rel="nofollow" class="external text" href="http://smarden.org/runit/">Runit's Homepage</a>. G Pape's runit homepage.</li></ul>
+<ul>
+<li>
+<a rel="nofollow" class="external text" href="https://evasive.ru/50a3904206c52447aa1fa5d90a8382a3.html">Running runit on Amazon Linux AMI</a><sup title="Last check status: SSL error">[<a href="https://en.wikipedia.org/wiki/Wikipedia:Link_rot" class="extiw" title="wikipedia:Wikipedia:Link rot">dead link</a> 2022-09-23 ⓘ]</sup>. Contains instructions related to setting up BusyBox's implementation of runit.</li>
+<li>
+<a rel="nofollow" class="external text" href="https://docs.voidlinux.org/config/services/index.html">Voidlinux Handbook - Services and Daemons - runit</a>. The section in the Voidlinux Handbook about runit.</li>
+</ul>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface">
+<div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="../en/Category:Init.html" title="Category:Init">Init</a></li></ul>
+</div>
+<div id="mw-hidden-catlinks" class="mw-hidden-catlinks mw-hidden-cats-hidden">Hidden category: <ul><li><a href="../en/Category:Pages_with_dead_links.html" title="Category:Pages with dead links">Pages with dead links</a></li></ul>
+</div>
+</div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=Runit&amp;oldid=747959">https://wiki.archlinux.org/index.php?title=Runit&amp;oldid=747959</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 23 September 2022, at 14:37.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

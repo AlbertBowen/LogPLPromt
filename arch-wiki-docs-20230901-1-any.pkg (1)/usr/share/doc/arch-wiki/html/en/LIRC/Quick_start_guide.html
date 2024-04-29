@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>LIRC/Quick start guide - ArchWiki</title>
+<link rel="stylesheet" href="../../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-LIRC_Quick_start_guide rootpage-LIRC skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Prerequisites" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Prerequisites">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Prerequisites</div>
+			</a>
+			
+			<ul id="toc-Prerequisites-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Setup" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Setup">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Setup</div>
+			</a>
+			
+			<ul id="toc-Setup-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Troubleshooting" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Troubleshooting">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>Troubleshooting</div>
+			</a>
+			
+				<button aria-controls="toc-Troubleshooting-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Troubleshooting subsection
+				</button>
+			
+			<ul id="toc-Troubleshooting-sublist" class="sidebar-toc-list">
+				<li id="toc-Keypresses_are_not_detected" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Keypresses_are_not_detected">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.1</span>Keypresses are not detected</div>
+			</a>
+			
+			<ul id="toc-Keypresses_are_not_detected-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Repeated_keypress_events" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Repeated_keypress_events">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.2</span>Repeated keypress events</div>
+			</a>
+			
+			<ul id="toc-Repeated_keypress_events-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Final_configuration" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Final_configuration">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4</span>Final configuration</div>
+			</a>
+			
+			<ul id="toc-Final_configuration-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Final_testing" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Final_testing">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5</span>Final testing</div>
+			</a>
+			
+			<ul id="toc-Final_testing-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../../en/LIRC/Quick_start_guide.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="mw-list-item"><a href="../../en/Talk:LIRC/Quick_start_guide.html" rel="discussion" title="Discussion about the content page [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">English</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../../en/LIRC/Quick_start_guide.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=LIRC/Quick_start_guide&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=LIRC/Quick_start_guide&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../../en/LIRC/Quick_start_guide.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=LIRC/Quick_start_guide&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=LIRC/Quick_start_guide&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					<div id="contentSub"><span class="subpages">&lt; <a href="../../en/LIRC.html" title="LIRC">LIRC</a></span></div>
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output">
+<div class="noprint archwiki-template-message">
+<p><a href="../../File:Merge-arrows-2.png" class="image"><img alt="Merge-arrows-2.png" src="../../File:Merge-arrows-2.png" decoding="async" width="48" height="48"></a><b>This article or section is a candidate for merging with <a href="../../en/LIRC.html" title="LIRC">LIRC</a>.</b><a href="../../File:Merge-arrows-2.png" class="image"><img alt="Merge-arrows-2.png" src="../../File:Merge-arrows-2.png" decoding="async" width="48" height="48"></a></p>
+<div>
+<b>Notes:</b> There is no reason this content should be in a subpage. (Discuss in <a href="../../en/Talk:LIRC/Quick_start_guide.html#Merge_tag" title="Talk:LIRC/Quick start guide">Talk:LIRC/Quick start guide#Merge tag</a>)</div>
+</div>
+<div class="archwiki-template-meta-related-articles-start">
+<p class="mw-no-invert">Related articles</p>
+<ul>
+<li><a href="../../en/LIRC.html" title="LIRC">LIRC</a></li>
+</ul>
+</div>
+<p>Step-by-step <a href="../../en/LIRC.html" title="LIRC">LIRC</a> setup guide for USB (MCE [Media Center Edition]) IR receiver with universal remote control.
+</p>
+<p><b>This is a quick-start guide only.</b> Please refer to man pages of the commands and files used and online documentation for in-depth help.
+</p>
+<mw:tocplace></mw:tocplace>
+<h2><span class="mw-headline" id="Prerequisites">Prerequisites</span></h2>
+<ul>
+<li>Get a USB IR receiver, preferably an MCE model which is almost always supported out-of-the-box.</li>
+<li>Re-purpose an old universal remote control you have lying around the house.</li>
+</ul>
+<h2><span class="mw-headline" id="Setup">Setup</span></h2>
+<div class="noprint archwiki-template-message">
+<p><a href="../../File:Tango-view-fullscreen.png" class="image"><img alt="Tango-view-fullscreen.png" src="../../File:Tango-view-fullscreen.png" decoding="async" width="48" height="48"></a><b>This article or section needs expansion.</b><a href="../../File:Tango-view-fullscreen.png" class="image"><img alt="Tango-view-fullscreen.png" src="../../File:Tango-view-fullscreen.png" decoding="async" width="48" height="48"></a></p>
+<div>
+<b>Reason:</b> Step 5 is unclear. What are universal remote control device modes? How do you change them? (Discuss in <a rel="nofollow" class="external text" href="https://wiki.archlinux.org/title/Talk:LIRC/Quick_start_guide">Talk:LIRC/Quick start guide</a>)</div>
+</div>
+<ol>
+<li>Connect the USB IR receiver.</li>
+<li>Ensure there are fully charged batteries in your remote control.</li>
+<li>Get some kind of output/response from the remote using <code>mode2</code>: <pre># mode2</pre> Point the remote control at the IR receiver and press some buttons. This will attempt to autodetect the correct input device using the default "devinput" driver. However, this might not work without manual configuration of protocols.</li>
+<li>If no button presses are detected for most keys, change IR protocols. If you get no response to the remote control buttons you want to use, you likely need to enable different protocols:<pre># ir-keytable -p &lt;protocol&gt; -p &lt;protocol&gt; ...</pre> Look at the output of <code>ir-keytable</code> (as well as <code>cat /sys/class/rc/rc0/protocols</code>). When you have problems, run <code>ir-keytable -p all</code> as <a href="../../en/Users_and_groups.html#Overview" class="mw-redirect" title="Root user">root</a>.</li>
+<li>If no button presses are detected for most keys, try different universal remote control device modes. You may also need to try different universal remote control device modes (TV, DVD, Audio, etc., buttons) in order to detect button presses when you are getting started. (You could possibly reprogram the universal remote's modes, but that would likely be a long trial-and-error process to find a setting that works.)</li>
+<li>After reconfiguring IR protocols and remote control device mode, retest: <pre># mode2</pre> Point the remote control at the IR receiver and press some buttons. If button presses for most keys are not detected repeat the prior two steps until they are (or just run <code>ir-keytable -p all</code> as <a href="../../en/Users_and_groups.html#Overview" class="mw-redirect" title="Root user">root</a>).</li>
+<li>If you have narrowed down what protocols you need to support for your remote control, set them: <pre># ir-keytable -p sony -p rc-5</pre> Otherwise, you can just use all protocols: <pre># ir-keytable -p all</pre>
+</li>
+<li>Determine the correct device for your IR receiver. Use either the default "devinput" driver or the older "default" driver: <pre>$ mode2 --driver devinput --list-devices
+$ mode2 --driver default --list-devices
+$ ir-keytable
+</pre>
+</li>
+<li>Use the device found for your USB IR receiver, e.g., <code>/dev/input/event11</code>: <pre># mode2 --driver devinput --device /dev/input/event11</pre> or just try: <pre># mode2 --driver devinput --device auto</pre> See if button presses are detected.</li>
+<li>If required, edit <code>/etc/lirc/lirc_options.conf</code>, e.g., if you are using the driver "default" instead of "devinput".</li>
+<li>Test your remote to see if scancodes are printed: <pre># ir-keytable -t</pre> See if button presses are detected.</li>
+<li>Use a <a href="../../en/Systemd.html#Drop-in_files" class="mw-redirect" title="Drop-in file">drop-in file</a>: <code>/etc/systemd/system/lircd.service.d/override.conf</code>. At the <code>[Service]</code> section add the following line: <pre>ExecStartPost=/usr/bin/ir-keytable -p <i>protocol</i> -p <i>protocol</i></pre> where each <i>protocol</i> string is replaced by the protocol(s) you need (or just use <code>/usr/bin/ir-keytable -p all</code>).</li>
+<li>
+<a href="../../en/Help:Reading.html#Control_of_systemd_units" class="mw-redirect" title="Start">Start</a> the lirc daemon, <code>lircd.service</code>, so you can record keypresses in order to write an lircd configuration file for your remote control.</li>
+<li>Use irrecord to record keypress scancodes. Run: <pre># irrecord</pre> to save/record the keystrokes to be used for your application. Follow <code>irrecord</code>'s instructions.</li>
+<li>Install the recorded lircd configuration file: <pre># mv <i>device_name</i>.lircd.conf /etc/lirc/lircd.conf.d/<br># chown root:root /etc/lirc/lircd.conf.d/<i>device_name</i>.lircd.conf</pre>
+</li>
+<li>Move <code>devinput.lircd.conf</code> to <code>devinput.lircd.dist</code> to disable it, because you are not using an IR keyboard and/or mouse, just the IR receiver: <pre># mv /etc/lirc/lircd.conf.d/devinput.lircd.conf /etc/lirc/lircd.conf.d/devinput.lircd.dist</pre>
+</li>
+<li>
+<a href="../../en/Help:Reading.html#Control_of_systemd_units" class="mw-redirect" title="Restart">Restart</a> <code>lircd.service</code> so you use the newly created lircd configuration file.</li>
+<li>Test to make sure the keys you recorded are correctly detected, that is, the correct key symbol is output for each button you press: <pre>$ irw</pre> See if the correct key symbols are reported, and if repeated signals are properly rejected.</li>
+</ol>
+<h2><span class="mw-headline" id="Troubleshooting">Troubleshooting</span></h2>
+<h3><span class="mw-headline" id="Keypresses_are_not_detected">Keypresses are not detected</span></h3>
+<p>Follow <a href="#Setup">#Setup</a>.
+</p>
+<h3><span class="mw-headline" id="Repeated_keypress_events">Repeated keypress events</span></h3>
+<p>If you are having keypress repeating problems (each button press is echoed multiple times), examine the output of <code>irw</code>. The second column value is the repeat count. This will increment when repeated signals are detected. Each decoded button press with its count reset to "00" is reported as a separate button press event by lircd.
+</p>
+<p>To fix this problem, generally the "gap" parameter sampled by <code>irrecord</code> in the <code><i>device_name</i>.lircd.conf</code> file should be adjusted, often to a much larger value (e.g., from 44968 up to 113975).
+</p>
+<p>After editing/adjusting any lircd configuration file, be sure to restart lircd (as shown above).
+</p>
+<h2><span class="mw-headline" id="Final_configuration">Final configuration</span></h2>
+<p>Write an lircrc file for your end user application. This file is used by all client programs built with lirc support that attach to lircd to read IR control events. Edit <code>~/.lircrc</code> to issue commands to the program to be controlled. Test this configuration by running:
+</p>
+<pre>$ ircat <i>prog</i>
+</pre>
+<p>to see if the correct "config" strings for program <code><i>prog</i></code> are being output when you press all the buttons you wish to use. Note:  If <code>~/.lircrc</code> is not read by your application or just does not work, an alternate default location is <code>~/.config/lircrc</code>.
+</p>
+<h2><span class="mw-headline" id="Final_testing">Final testing</span></h2>
+<p>Finally, run your end user application and test remote control button presses to control it. If it works, you are done! If not, review and repeat the above sections as necessary to get each configuration step working before proceeding to the next step or section.
+</p>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface">
+<div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../../Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="../../en/Category:Input_devices.html" title="Category:Input devices">Input devices</a></li></ul>
+</div>
+<div id="mw-hidden-catlinks" class="mw-hidden-catlinks mw-hidden-cats-hidden">Hidden categories: <ul>
+<li><a href="../../en/Category:Pages_or_sections_flagged_with_Template:Merge.html" title="Category:Pages or sections flagged with Template:Merge">Pages or sections flagged with Template:Merge</a></li>
+<li><a href="../../en/Category:Pages_or_sections_flagged_with_Template:Expansion.html" title="Category:Pages or sections flagged with Template:Expansion">Pages or sections flagged with Template:Expansion</a></li>
+</ul>
+</div>
+</div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=LIRC/Quick_start_guide&amp;oldid=717772">https://wiki.archlinux.org/index.php?title=LIRC/Quick_start_guide&amp;oldid=717772</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 11 February 2022, at 15:42.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

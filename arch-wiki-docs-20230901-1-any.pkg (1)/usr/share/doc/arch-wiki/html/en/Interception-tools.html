@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>interception-tools - ArchWiki</title>
+<link rel="stylesheet" href="../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Interception-tools rootpage-Interception-tools skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Installation" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Installation">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Installation</div>
+			</a>
+			
+			<ul id="toc-Installation-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Configuration" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Configuration">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Configuration</div>
+			</a>
+			
+				<button aria-controls="toc-Configuration-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Configuration subsection
+				</button>
+			
+			<ul id="toc-Configuration-sublist" class="sidebar-toc-list">
+				<li id="toc-How_it_works" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#How_it_works">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.1</span>How it works</div>
+			</a>
+			
+			<ul id="toc-How_it_works-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Practical_examples" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Practical_examples">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.2</span>Practical examples</div>
+			</a>
+			
+			<ul id="toc-Practical_examples-sublist" class="sidebar-toc-list">
+				<li id="toc-Increase_niceness" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Increase_niceness">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.2.1</span>Increase niceness</div>
+			</a>
+			
+			<ul id="toc-Increase_niceness-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Simple_redirection" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Simple_redirection">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.2.2</span>Simple redirection</div>
+			</a>
+			
+			<ul id="toc-Simple_redirection-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Embed_commands" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Embed_commands">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.2.3</span>Embed commands</div>
+			</a>
+			
+			<ul id="toc-Embed_commands-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Feed_as_YAML" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Feed_as_YAML">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.2.4</span>Feed as YAML</div>
+			</a>
+			
+			<ul id="toc-Feed_as_YAML-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Combine_devices" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Combine_devices">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.2.5</span>Combine devices</div>
+			</a>
+			
+			<ul id="toc-Combine_devices-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Handle_multiple_jobs" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Handle_multiple_jobs">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.2.6</span>Handle multiple jobs</div>
+			</a>
+			
+			<ul id="toc-Handle_multiple_jobs-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-See_also" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#See_also">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>See also</div>
+			</a>
+			
+			<ul id="toc-See_also-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../en/Interception-tools.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="new mw-list-item"><a href="/index.php?title=Talk:Interception-tools&amp;action=edit&amp;redlink=1" rel="discussion" title="Discussion about the content page (page does not exist) [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">English</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../en/Interception-tools.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=Interception-tools&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=Interception-tools&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../en/Interception-tools.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Interception-tools&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Interception-tools&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output">
+<p><span>
+</span>
+</p>
+<div class="archwiki-template-meta-related-articles-start">
+<p class="mw-no-invert">Related articles</p>
+<ul>
+<li><a href="../en/Linux_console/Keyboard_configuration.html" title="Linux console/Keyboard configuration">Linux console/Keyboard configuration</a></li>
+<li><a href="../en/Xbindkeys.html" title="Xbindkeys">Xbindkeys</a></li>
+<li><a href="../en/Xmodmap.html" title="Xmodmap">Xmodmap</a></li>
+</ul>
+</div>
+<p><a rel="nofollow" class="external text" href="https://gitlab.com/interception/linux/tools">interception-tools</a> is a set of utilities to control and customize the behavior of keyboard input mappings.
+</p>
+<p>Interception-tools operates at a lower level compared to other similar tools (<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=xcape">xcape</a></span>,
+<a href="../en/Xmodmap.html" title="Xmodmap">xmodmap</a>) by using <a rel="nofollow" class="external text" href="https://www.freedesktop.org/software/libevdev/doc/latest/index.html">libevdev</a> and 
+<span class="plainlinks archwiki-template-man" title="$ man 3 libudev"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/libudev.3">libudev(3)</a></span>. This makes it one of the only options available for customizing the keyboard behavior across <a href="../en/Xorg.html" class="mw-redirect" title="X11">X11</a>, <a href="../en/Wayland.html" title="Wayland">Wayland</a>, and the <a href="../en/Linux_console.html" title="Linux console">Linux console</a>.
+</p>
+<mw:tocplace></mw:tocplace>
+<h2><span class="mw-headline" id="Installation">Installation</span></h2>
+<p><a href="../en/Help:Reading.html#Installation_of_packages" class="mw-redirect" title="Install">Install</a> <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=interception-tools">interception-tools</a></span>. 
+</p>
+<p>Many plugins are available: 
+</p>
+<ul>
+<li>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=interception-caps2esc">interception-caps2esc</a></span> to switch <code>CapsLock</code> with <code>Ctrl</code>/<code>Esc</code>
+</li>
+<li>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/interception-caps2esc-delay-git/">interception-caps2esc-delay-git</a></span><sup><small>AUR</small></sup>
+</li>
+<li>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/interception-caps2esc-nocaps-git/">interception-caps2esc-nocaps-git</a></span><sup><small>AUR</small></sup>
+</li>
+<li>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=interception-dual-function-keys">interception-dual-function-keys</a></span> to modify the behavior of a key when held.</li>
+<li>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/interception-hideaway/">interception-hideaway</a></span><sup><small>AUR</small></sup>
+</li>
+<li>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/interception-k2k-git/">interception-k2k-git</a></span><sup><small>AUR</small></sup>
+</li>
+<li>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/interception-ralt2hyper/">interception-ralt2hyper</a></span><sup><small>AUR</small></sup>
+</li>
+<li>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/interception-space2meta/">interception-space2meta</a></span><sup><small>AUR</small></sup>
+</li>
+<li>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/interception-uswitch/">interception-uswitch</a></span><sup><small>AUR</small></sup>
+</li>
+<li>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/interception-vimproved-git/">interception-vimproved-git</a></span><sup><small>AUR</small></sup>
+</li>
+<li>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/interception-xswitch/">interception-xswitch</a></span><sup><small>AUR</small></sup>
+</li>
+</ul>
+<h2><span class="mw-headline" id="Configuration">Configuration</span></h2>
+<p>The tools comprise commandline tools and a <a href="../en/Systemd.html" title="Systemd">systemd</a> service.
+</p>
+<p>A configuration in <code>/etc/interception/udevmon.yaml</code> needs to be added before <a href="../en/Help:Reading.html#Control_of_systemd_units" class="mw-redirect" title="Start">starting</a> the packaged <code>udevmon.service</code>.
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> Configuration files found on <code>/etc/interception/udevmon.d/</code> are read first, and fallbacks to <code>/etc/interception/udevmon.yaml</code>.</div>
+<h3><span class="mw-headline" id="How_it_works">How it works</span></h3>
+<p>Interception-tool makes use of <i>libevdev</i>, which according to its wiki is essentially a <span class="plainlinks archwiki-template-man" title="$ man 2 read"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/read.2">read(2)</a></span> on steroids for <code>/dev/input/eventX</code> devices.
+It sits in between the kernel and the process handling an event. 
+In the simplest scenario would look like this:
+</p>
+<pre>kernel | libevdev | evtest
+</pre>
+<p>For X.Org input modules, the stack would look like this:
+</p>
+<pre>kernel | libevdev | xf86-input-evdev | X server | X client
+</pre>
+<p>For Wayland, the stack would look like this:
+</p>
+<pre>kernel | libevdev | Compositor | Wayland client
+</pre>
+<p>In other words, <code>libevdev</code> is so low level that it does not have knowledge of X/Wayland clients.
+</p>
+<h3><span class="mw-headline" id="Practical_examples">Practical examples</span></h3>
+<p>Interception-tools makes 4 utilities available: 
+</p>
+<ul>
+<li>
+<code>intercept</code>: redirect device input events to stdout,</li>
+<li>
+<code>mux</code>: combine streams of input events,</li>
+<li>
+<code>udevmon</code>: monitor input devices for launching tasks,</li>
+<li>
+<code>uinput</code>: redirect device input events from stdin to virtual device.</li>
+</ul>
+<h4><span class="mw-headline" id="Increase_niceness">Increase niceness</span></h4>
+<p>Since the tool is going to be sitting down at the lowest level of the device inputs,
+make sure it will behave consistently by increasing <code>udevmon</code> priority:
+</p>
+<pre># nice -n -20 udevmon -c udevmon.yaml &gt; udevmon.log 2&gt; udevmon.err &amp;
+</pre>
+<div class="archwiki-template-box archwiki-template-box-tip">
+<strong>Tip:</strong> The <code>udevmon</code> systemd service runs with <code>Nice=-20</code>.</div>
+<h4><span class="mw-headline" id="Simple_redirection">Simple redirection</span></h4>
+<p>The simplest way or redirecting the event to the stdin (without doing nothing) is:
+</p>
+<pre>$ intercept -g <i>DEVNODE</i> | uinput -d <i>DEVNODE</i>
+</pre>
+<p>where <code><i>DEVNODE</i></code> is the path to the actual device: e.g. <code>/dev/input/by-path/platform-i8042-serio-0-event-kbd</code>.
+</p>
+<h4><span class="mw-headline" id="Embed_commands">Embed commands</span></h4>
+<p>To actually perform an operation in between the key event and the input, simply pipe it in between <code>intercept</code> and <code>uinput</code>.
+</p>
+<p>E.g. with the <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=interception-caps2esc">interception-caps2esc</a></span> plugin installed:
+</p>
+<pre>$ intercept -g <i>DEVNODE</i> | caps2esc | uinput -d <i>DEVNODE</i>
+</pre>
+<p>If we omitted the <code>-g</code> flag, then device event would have been just <i>observed</i>, not grabbed.
+</p>
+<h4><span class="mw-headline" id="Feed_as_YAML">Feed as YAML</span></h4>
+<p>This way of intercepting the input can quickly become sub-optimal, this is where <code>udevmon</code> comes in handy.
+udevmon accepts a YAML configuration with a list of jobs (sh commands by default) to be executed. 
+</p>
+<p>In case the device matches a given description:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">$ udevmon -c caps2esc.conf.yml</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">- JOB: intercept -g <i>DEVNODE</i> | caps2esc | uinput -d <i>DEVNODE</i>
+  DEVICE:
+    LINK: /dev/input/by-path/platform-i8042-serio-0-event-kbd
+</pre>
+<p>The <code>LINK</code> configuration will match a device with a specific name, but it will accept also a regex option.
+This can be combined with multiple job specifications to create a default behavior, in each case only the first matching job is going to be executed:
+</p>
+<pre>- JOB: intercept -g <i>DEVNODE</i> | caps2esc -m 2 | uinput -d <i>DEVNODE</i>
+  DEVICE:
+    LINK: /dev/input/by-id/usb-SEMITEK_USB-HID_Gaming_Keyboard_SN0000000001-event-kbd
+- JOB: intercept -g <i>DEVNODE</i> | caps2esc | uinput -d <i>DEVNODE</i>
+  DEVICE:
+    EVENTS:
+      EV_KEY: [[KEY_CAPSLOCK, KEY_ESC]]
+    LINK: .*-event-kbd
+</pre>
+<h4><span class="mw-headline" id="Combine_devices">Combine devices</span></h4>
+<p>Beside input emulation, the <code>uinput</code> tool also serves purpose to print a device's description in YAML format: 
+</p>
+<pre>$ uinput -p -d /dev/input/by-id/my-kbd
+</pre>
+<p>which itself can be fed back to <code>uinput</code> as:
+</p>
+<pre>$ uinput -c my-kbd.yaml
+</pre>
+<p>It can also merge device and YAML characteristics, which can be used for instance to combine events coming from keyboard and mouse:
+</p>
+<p>e.g. instance <code>CapsLock+Click</code> as <code>Ctrl+Click</code>
+</p>
+<pre>$ uinput -p -d /dev/input/by-id/my-kbd -d /dev/input/by-id/my-mouse -c my-extra.yaml
+</pre>
+<h4><span class="mw-headline" id="Handle_multiple_jobs">Handle multiple jobs</span></h4>
+<p>The <code>mux</code> is used to combine multiple pipelines into a single one.
+A <i>muxer</i> needs to be created first,
+and it can later be used as the input or the output of a given pipeline.
+In a YAML specification file, the muxer is created using the <code>CMD</code> key:
+</p>
+<pre>- CMD: mux -c caps2esc
+- JOB: mux -i caps2esc | caps2esc | uinput -c /etc/interception/gaming-keyboard.yaml
+- JOB: intercept -g <i>DEVNODE</i> | mux -o caps2esc
+  DEVICE:
+    LINK: /dev/input/by-id/my-kbd
+- JOB: intercept <i>DEVNODE</i> | mux -o caps2esc
+  DEVICE:
+    LINK: /dev/input/by-id/my-mouse
+</pre>
+<p>In the example above, when the keyboard is connected, it's grabbed and its input events are sent to the <code>caps2esc</code> muxer that was initially created. Observed input (not grabbed) from mouse is also sent to the same muxer. The buttons of the mouse generate <code>EV_KEY</code> events, so <code>caps2esc</code> will accept them.
+</p>
+<h2><span class="mw-headline" id="See_also">See also</span></h2>
+<ul>
+<li>
+<a href="../en/Input_remap_utilities.html" title="Input remap utilities">Input remap utilities</a> - Lists similar software.</li>
+<li><a rel="nofollow" class="external text" href="https://gitlab.com/interception/linux/tools">Official website</a></li>
+<li>
+<a rel="nofollow" class="external text" href="https://github.com/kmonad/kmonad">kmonad</a> - advanced keyboard remapping tool daemon</li>
+</ul>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../Special:Categories.html" title="Special:Categories">Categories</a>: <ul>
+<li><a href="../en/Category:Input_devices.html" title="Category:Input devices">Input devices</a></li>
+<li><a href="../en/Category:Keyboard_configuration.html" title="Category:Keyboard configuration">Keyboard configuration</a></li>
+</ul>
+</div></div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=Interception-tools&amp;oldid=785050">https://wiki.archlinux.org/index.php?title=Interception-tools&amp;oldid=785050</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 11 August 2023, at 00:20.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

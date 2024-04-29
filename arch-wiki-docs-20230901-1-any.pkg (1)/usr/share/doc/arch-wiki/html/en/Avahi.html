@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>Avahi - ArchWiki</title>
+<link rel="stylesheet" href="../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Avahi rootpage-Avahi skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Installation" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Installation">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Installation</div>
+			</a>
+			
+			<ul id="toc-Installation-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Using_Avahi" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Using_Avahi">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Using Avahi</div>
+			</a>
+			
+				<button aria-controls="toc-Using_Avahi-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Using Avahi subsection
+				</button>
+			
+			<ul id="toc-Using_Avahi-sublist" class="sidebar-toc-list">
+				<li id="toc-Hostname_resolution" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Hostname_resolution">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.1</span>Hostname resolution</div>
+			</a>
+			
+			<ul id="toc-Hostname_resolution-sublist" class="sidebar-toc-list">
+				<li id="toc-Configuring_mDNS_for_custom_TLD" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Configuring_mDNS_for_custom_TLD">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.1.1</span>Configuring mDNS for custom TLD</div>
+			</a>
+			
+			<ul id="toc-Configuring_mDNS_for_custom_TLD-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Tools" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Tools">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.1.2</span>Tools</div>
+			</a>
+			
+			<ul id="toc-Tools-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Firewall" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Firewall">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.2</span>Firewall</div>
+			</a>
+			
+			<ul id="toc-Firewall-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Link-Local_(Bonjour/Zeroconf)_chat" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Link-Local_(Bonjour/Zeroconf)_chat">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.3</span>Link-Local (Bonjour/Zeroconf) chat</div>
+			</a>
+			
+			<ul id="toc-Link-Local_(Bonjour/Zeroconf)_chat-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Obtaining_IPv4LL_IP_address" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Obtaining_IPv4LL_IP_address">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.4</span>Obtaining IPv4LL IP address</div>
+			</a>
+			
+			<ul id="toc-Obtaining_IPv4LL_IP_address-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Adding_services" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Adding_services">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>Adding services</div>
+			</a>
+			
+				<button aria-controls="toc-Adding_services-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Adding services subsection
+				</button>
+			
+			<ul id="toc-Adding_services-sublist" class="sidebar-toc-list">
+				<li id="toc-SSH" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#SSH">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.1</span>SSH</div>
+			</a>
+			
+			<ul id="toc-SSH-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-File_sharing" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#File_sharing">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.2</span>File sharing</div>
+			</a>
+			
+			<ul id="toc-File_sharing-sublist" class="sidebar-toc-list">
+				<li id="toc-NFS" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#NFS">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.2.1</span>NFS</div>
+			</a>
+			
+			<ul id="toc-NFS-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Samba" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Samba">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.2.2</span>Samba</div>
+			</a>
+			
+			<ul id="toc-Samba-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Vsftpd" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Vsftpd">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.2.3</span>Vsftpd</div>
+			</a>
+			
+			<ul id="toc-Vsftpd-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Troubleshooting" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Troubleshooting">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4</span>Troubleshooting</div>
+			</a>
+			
+				<button aria-controls="toc-Troubleshooting-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Troubleshooting subsection
+				</button>
+			
+			<ul id="toc-Troubleshooting-sublist" class="sidebar-toc-list">
+				<li id="toc-Hostname_changes_with_appending_incrementing_numbers" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Hostname_changes_with_appending_incrementing_numbers">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.1</span>Hostname changes with appending incrementing numbers</div>
+			</a>
+			
+			<ul id="toc-Hostname_changes_with_appending_incrementing_numbers-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-systemd-resolved_prevents_nss-mdns_from_working" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#systemd-resolved_prevents_nss-mdns_from_working">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.2</span>systemd-resolved prevents nss-mdns from working</div>
+			</a>
+			
+			<ul id="toc-systemd-resolved_prevents_nss-mdns_from_working-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-ECONNREFUSED_(Connection_refused)_on_avahi_socket" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#ECONNREFUSED_(Connection_refused)_on_avahi_socket">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.3</span>ECONNREFUSED (Connection refused) on avahi socket</div>
+			</a>
+			
+			<ul id="toc-ECONNREFUSED_(Connection_refused)_on_avahi_socket-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-See_also" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#See_also">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5</span>See also</div>
+			</a>
+			
+			<ul id="toc-See_also-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../en/Avahi.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="mw-list-item"><a href="../en/Talk:Avahi.html" rel="discussion" title="Discussion about the content page [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">English</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../en/Avahi.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=Avahi&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=Avahi&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../en/Avahi.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Avahi&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Avahi&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output">
+<p>From <a href="https://en.wikipedia.org/wiki/Avahi_(software)" class="extiw" title="wikipedia:Avahi (software)">Wikipedia:Avahi (software)</a>:
+</p>
+<dl><dd>
+<a rel="nofollow" class="external text" href="https://avahi.org/">Avahi</a> is a free <a href="https://en.wikipedia.org/wiki/Zero-configuration_networking" class="extiw" title="wikipedia:Zero-configuration networking">Zero-configuration networking</a> (zeroconf) implementation, including a system for multicast DNS/DNS-SD service discovery. It allows programs to publish and discover services and hosts running on a local network with no specific configuration. For example you can plug into a network and instantly find printers to print to, files to look at and people to talk to. It is licensed under the GNU Lesser General Public License (LGPL).</dd></dl>
+<mw:tocplace></mw:tocplace>
+<h2><span class="mw-headline" id="Installation">Installation</span></h2>
+<p><a href="../en/Help:Reading.html#Installation_of_packages" class="mw-redirect" title="Install">Install</a> the <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=avahi">avahi</a></span> package.
+</p>
+<p>You can manage the Avahi daemon with <code>avahi-daemon.service</code> <a href="../en/Systemd.html#Using_units" title="Systemd">using systemd</a>.
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> <a href="../en/Systemd-resolved.html#mDNS" title="Systemd-resolved">systemd-resolved</a> has a built-in mDNS service, make sure to disable systemd-resolved's multicast DNS resolver/responder (refer to <span class="plainlinks archwiki-template-man" title="$ man 5 resolved.conf"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/resolved.conf.5">resolved.conf(5)</a></span>) or <a href="../en/Help:Reading.html#Control_of_systemd_units" class="mw-redirect" title="Disable">disable</a> <code>systemd-resolved.service</code> entirely before using Avahi.</div>
+<h2><span class="mw-headline" id="Using_Avahi">Using Avahi</span></h2>
+<h3><span class="mw-headline" id="Hostname_resolution">Hostname resolution</span></h3>
+<p>Avahi provides local hostname resolution using a "<i>hostname</i>.local" naming scheme. To enable it, install the <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=nss-mdns">nss-mdns</a></span> package and <a href="../en/Help:Reading.html#Control_of_systemd_units" class="mw-redirect" title="Start/enable">start/enable</a> <code>avahi-daemon.service</code>.
+</p>
+<p>Then, edit the file <code>/etc/nsswitch.conf</code> and change the <code>hosts</code> line to include <code>mdns_minimal [NOTFOUND=return]</code> before <code>resolve</code> and <code>dns</code>:
+</p>
+<pre>hosts: mymachines <b>mdns_minimal [NOTFOUND=return]</b> resolve [!UNAVAIL=return] files myhostname dns
+</pre>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> 
+<ul>
+<li>If you experience slowdowns in resolving <code>.local</code> hosts (or you do not want to use IPv6) try to use <code>mdns4_minimal</code> and <code>mdns4</code> instead of <code>mdns_minimal</code> and <code>mdns</code> respectively.</li>
+<li>The line above makes <code>nss-mdns</code> authoritative for the <code>.local</code> domain, unless your unicast DNS server responds to <code>SOA</code> queries for the top level <code>local</code> name, or if the request has more than two labels. See <code>nss-mdns</code> <a rel="nofollow" class="external text" href="https://github.com/lathiat/nss-mdns/blob/master/README.md#activation">activation notes</a>.
+<ul>
+<li>
+<a href="../en/Systemd-resolved.html" title="Systemd-resolved">systemd-resolved</a> responds to these queries even if its mDNS support is disabled. See <a href="#systemd-resolved_prevents_nss-mdns_from_working">#systemd-resolved prevents nss-mdns from working</a>.</li>
+<li>More info about nss configuration can be found on <span class="plainlinks archwiki-template-man" title="$ man 8 nss-mymachines"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/nss-mymachines.8">nss-mymachines(8)</a></span> and in <a rel="nofollow" class="external text" href="https://github.com/lathiat/nss-mdns/blob/master/README.md#activation">Avahi docs</a>.</li>
+</ul>
+</li>
+</ul>
+</div>
+<h4><span class="mw-headline" id="Configuring_mDNS_for_custom_TLD">Configuring mDNS for custom TLD</span></h4>
+<p>The <code>mdns_minimal</code> module handles queries for the <code>.local</code> TLD only. Note the <code>[NOTFOUND=return]</code>, which specifies that if <code>mdns_minimal</code> cannot find <code>*.local</code>, it will not continue to search for it in <code>dns</code>, <code>myhostname</code>, etc.
+</p>
+<p>In case you want Avahi to support other TLDs, you should:
+</p>
+<ul>
+<li>replace <code>mdns_minimal [NOTFOUND=return]</code> with the full <code>mdns</code> module. There also are IPv4-only and IPv6-only modules <code>mdns[46](_minimal)</code>
+</li>
+<li>customize <code>/etc/avahi/avahi-daemon.conf</code> with the <code>domain-name</code> of your choice</li>
+<li>whitelist Avahi custom TLDs in <code>/etc/mdns.allow</code>
+</li>
+</ul>
+<h4><span class="mw-headline" id="Tools">Tools</span></h4>
+<p>Avahi includes several utilities which help you discover the services running on a network. For example, run
+</p>
+<pre>$ avahi-browse --all --ignore-local --resolve --terminate
+</pre>
+<p>to discover services in your network.
+</p>
+<p>The Avahi Zeroconf Browser (<code>avahi-discover</code> – note that it needs Avahi's optional dependencies <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=gtk3">gtk3</a></span>, <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=dbus-python">dbus-python</a></span> and <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=python-gobject">python-gobject</a></span>) shows the various services on your network. You can also browse SSH and VNC Servers using <code>bssh</code> and <code>bvnc</code> respectively.
+</p>
+<h3><span class="mw-headline" id="Firewall">Firewall</span></h3>
+<p>Be sure to open UDP port <code>5353</code> if you are using a <a href="../en/Category:Firewalls.html" class="mw-redirect" title="Firewall">firewall</a>.
+</p>
+<h3>
+<span id="Link-Local_.28Bonjour.2FZeroconf.29_chat"></span><span class="mw-headline" id="Link-Local_(Bonjour/Zeroconf)_chat">Link-Local (Bonjour/Zeroconf) chat</span>
+</h3>
+<p>Avahi can be used for Bonjour protocol support under Linux. Check <a href="https://en.wikipedia.org/wiki/Comparison_of_instant_messaging_clients" class="extiw" title="wikipedia:Comparison of instant messaging clients">Wikipedia:Comparison of instant messaging clients</a> or <a href="../en/List_of_applications.html#Instant_messaging_clients" title="List of applications">List of applications#Instant messaging clients</a> for a list of clients supporting the Bonjour protocol.
+</p>
+<h3><span class="mw-headline" id="Obtaining_IPv4LL_IP_address">Obtaining IPv4LL IP address</span></h3>
+<div class="noprint archwiki-template-message">
+<p><a href="../File:Merge-arrows-2.png" class="image"><img alt="Merge-arrows-2.png" src="../File:Merge-arrows-2.png" decoding="async" width="48" height="48"></a><b>This article or section is a candidate for merging with <a href="../en/Dhcpcd.html" title="Dhcpcd">dhcpcd</a>.</b><a href="../File:Merge-arrows-2.png" class="image"><img alt="Merge-arrows-2.png" src="../File:Merge-arrows-2.png" decoding="async" width="48" height="48"></a></p>
+<div>
+<b>Notes:</b> should be merged into the main page (Discuss in <a rel="nofollow" class="external text" href="https://wiki.archlinux.org/title/Talk:Avahi">Talk:Avahi</a>)</div>
+</div>
+<p>The <a href="../en/Dhcpcd.html" title="Dhcpcd">dhcpcd</a> client can attempt to obtain an IPv4LL address if it failed to get one via DHCP. By default this option is disabled. To enable it, comment noipv4ll string:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/dhcpcd.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">...
+#noipv4ll
+...</pre>
+<p>Alternatively, run <code>avahi-autoipd</code>:
+</p>
+<pre># avahi-autoipd -D
+</pre>
+<h2><span class="mw-headline" id="Adding_services">Adding services</span></h2>
+<p>Avahi advertises the services whose <code>*.service</code> files are found in <code>/etc/avahi/services</code>. Files in this directory must be readable by the <code>avahi</code> user/group.
+</p>
+<p>If you want to advertise a service for which there is no <code>*.service</code> file, it is very easy to create your own.
+As an example, let us say you wanted to advertise a quote of the day (QOTD) service operating per <a href="https://tools.ietf.org/html/rfc865" class="extiw" title="rfc:865">RFC:865</a> on TCP port <code>17</code> which you are running on your machine
+</p>
+<p>The first thing to do is to determine the <code>&lt;type&gt;</code>. <span class="plainlinks archwiki-template-man" title="$ man 5 avahi.service"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/avahi.service.5">avahi.service(5)</a></span> indicates that the type should be "the DNS-SD service type for this service. e.g. '_http._tcp'". Since the <a rel="nofollow" class="external text" href="http://www.dns-sd.org/ServiceTypes.html">DNS-SD register was merged into the IANA register in 2010</a>, we look for the service name on the <a rel="nofollow" class="external text" href="https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml">IANA register</a> or in <code>/etc/services</code> file. The service name shown there is <code>qotd</code>. Since we are running QOTD on tcp, we now know the service is <code>_qotd._tcp</code> and the port (per IANA and RFC 865) is <code>17</code>.
+</p>
+<p>Our service file is thus:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">qotd.service</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">&lt;?xml version="1.0" standalone='no'?&gt;&lt;!--*-nxml-*--&gt;
+&lt;!DOCTYPE service-group SYSTEM "avahi-service.dtd"&gt;
+
+&lt;service-group&gt;
+
+  &lt;name replace-wildcards="yes"&gt;%h&lt;/name&gt;
+
+  &lt;service&gt;
+    &lt;type&gt;_qotd._tcp&lt;/type&gt;
+    &lt;port&gt;17&lt;/port&gt;
+  &lt;/service&gt;
+
+&lt;/service-group&gt;
+</pre>
+<p>For more complicated scenarios, such as advertising services running on a different server, DNS sub-types and so on, consult <span class="plainlinks archwiki-template-man" title="$ man 5 avahi.service"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/avahi.service.5">avahi.service(5)</a></span>. 
+</p>
+<p>Keep in mind that Avahi does not support arbitrary strings in the &lt;type&gt; field, you can only set values known in <a rel="nofollow" class="external text" href="https://github.com/lathiat/avahi/blob/master/service-type-database/service-types">service database of Avahi</a>. If you want to register something custom you will likely have to edit the database definition, build an updated version and distribute it to your hosts.
+</p>
+<h3><span class="mw-headline" id="SSH">SSH</span></h3>
+<p>Avahi comes with an example service file to advertise an SSH server. To enable it:
+</p>
+<pre># cp /usr/share/doc/avahi/ssh.service /etc/avahi/services/
+</pre>
+<h3><span class="mw-headline" id="File_sharing">File sharing</span></h3>
+<h4><span class="mw-headline" id="NFS">NFS</span></h4>
+<p>If you have an <a href="../en/NFS.html" title="NFS">NFS</a> share set up, you can use Avahi to be able to automount them in Zeroconf-enabled browsers (such as Konqueror on KDE and Finder on macOS) or file managers such as <a href="../en/GNOME/Files.html" title="GNOME/Files">GNOME/Files</a>.
+</p>
+<p>Create a <code>.service</code> file in <code>/etc/avahi/services</code> with the following contents:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/avahi/services/nfs_Zephyrus_Music.service</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">&lt;?xml version="1.0" standalone='no'?&gt;
+&lt;!DOCTYPE service-group SYSTEM "avahi-service.dtd"&gt;
+&lt;service-group&gt;
+  &lt;name replace-wildcards="yes"&gt;NFS Music Share on %h&lt;/name&gt;
+  &lt;service&gt;
+    &lt;type&gt;_nfs._tcp&lt;/type&gt;
+    &lt;port&gt;2049&lt;/port&gt;
+    &lt;txt-record&gt;path=/data/shared/Music&lt;/txt-record&gt;
+  &lt;/service&gt;
+&lt;/service-group&gt;
+</pre>
+<p>The port is correct if you have <i>insecure</i> as an option in your <code>/etc/exports</code>; otherwise, it needs to be changed (note that <i>insecure</i> is needed for macOS clients). The path is the path to your export, or a subdirectory of it. For some reason the automount functionality has been removed from Leopard, however <a rel="nofollow" class="external text" href="http://www.macosxhints.com/article.php?story=20071116042238744">a script is available</a>. This was based upon <a rel="nofollow" class="external text" href="https://ubuntuforums.org/showthread.php?p=4387032#post4387032">this post</a>.
+</p>
+<h4><span class="mw-headline" id="Samba">Samba</span></h4>
+<p>With the Avahi daemon running on both the server and client, the file manager on the client should automatically find the server.
+</p>
+<h4><span class="mw-headline" id="Vsftpd">Vsftpd</span></h4>
+<p>You can also auto-discover regular FTP servers, such as <a href="../en/Very_Secure_FTP_Daemon.html" class="mw-redirect" title="Vsftpd">vsftpd</a>. Install the <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=vsftpd">vsftpd</a></span> package and change the settings of vsftpd according to your own personal preferences (see <a rel="nofollow" class="external text" href="https://ubuntuforums.org/showthread.php?t=218630">this thread on ubuntuforums.org</a> or <span class="plainlinks archwiki-template-man" title="$ man 5 vsftpd.conf"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/vsftpd.conf.5">vsftpd.conf(5)</a></span>).
+</p>
+<p>Create a <code>.service</code> file in <code>/etc/avahi/services</code> with the following contents:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/avahi/services/ftp.service</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">&lt;?xml version="1.0" standalone='no'?&gt;
+&lt;!DOCTYPE service-group SYSTEM "avahi-service.dtd"&gt;
+&lt;service-group&gt;
+  &lt;name&gt;FTP file sharing&lt;/name&gt;
+  &lt;service&gt;
+    &lt;type&gt;_ftp._tcp&lt;/type&gt;
+    &lt;port&gt;21&lt;/port&gt;
+  &lt;/service&gt;
+&lt;/service-group&gt;
+</pre>
+<p>The FTP server should now be advertised by Avahi. You should now be able to find the FTP server from a file manager on another computer in your network. You might need to enable <a href="#Hostname_resolution">#Hostname resolution</a> on the client.
+</p>
+<h2><span class="mw-headline" id="Troubleshooting">Troubleshooting</span></h2>
+<h3><span class="mw-headline" id="Hostname_changes_with_appending_incrementing_numbers">Hostname changes with appending incrementing numbers</span></h3>
+<p>This is a <a rel="nofollow" class="external text" href="https://github.com/lathiat/avahi/issues/117">known bug</a> that is caused by a hostname race condition. One possible workaround is <a rel="nofollow" class="external text" href="https://github.com/lathiat/avahi/issues/117#issuecomment-302849130">disabling IPv6</a> to attempt to prevent the race condition. If multiple interfaces are present <a rel="nofollow" class="external text" href="https://github.com/lathiat/avahi/issues/117#issuecomment-401225716">use allow-interfaces</a> to limit Avahi to a single interface. Another possible workaround is to <a rel="nofollow" class="external text" href="https://github.com/lathiat/avahi/issues/117#issuecomment-442201162">disable the cache</a> to prevent Avahi from checking for host name conflicts altogether, but this prevents Avahi from performing lookups.
+</p>
+<h3><span class="mw-headline" id="systemd-resolved_prevents_nss-mdns_from_working">systemd-resolved prevents nss-mdns from working</span></h3>
+<p><i>nss-mdns</i> only works if the DNS server listed in <code>/etc/resolv.conf</code> returns <code>NXDOMAIN</code> to SOA queries for the "local" domain.<a rel="nofollow" class="external autonumber" href="https://github.com/lathiat/nss-mdns/blob/master/README.md#activation">[1]</a> 
+</p>
+<p>Check if your configured DNS server answers the SOA query for the "local" domain with <code>NXDOMAIN</code> first. For example:
+</p>
+<pre>$ host -t SOA local
+</pre>
+<p>If the DNS server responds with <code>NXDOMAIN</code>, you do not need to follow the steps below.
+Avahi should be able to find resources in the network normally, even if using <a href="../en/Systemd-resolved.html" title="Systemd-resolved">systemd-resolved</a>.
+</p>
+<p>In older versions of <a href="../en/Systemd-resolved.html" title="Systemd-resolved">systemd-resolved</a> the global setting for <code>MulticastDNS=no</code> in <span class="plainlinks archwiki-template-man" title="$ man 5 resolved.conf"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/resolved.conf.5">resolved.conf(5)</a></span> lead to Avahi-incompatible response codes for the "local" domain. This resulted in Avahi not finding resources (printers) correctly. See <a rel="nofollow" class="external text" href="https://github.com/systemd/systemd/issues/21659">systemd issue 21659</a> for reference.
+</p>
+<p>However, if the DNS query above fails to return <code>NXDOMAIN</code> for the "local" domain, you can use the full <code>mdns</code> NSS module instead of <code>mdns_minimal</code> and create <code>/etc/mdns.allow</code> to allow only the "local" domain. For example:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/nsswitch.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">hosts: mymachines <b>mdns [NOTFOUND=return]</b> resolve [!UNAVAIL=return] files myhostname dns</pre>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/mdns.allow</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">.local.
+.local
+</pre>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> The above solution will break reverse lookups in networking utilities such as <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=mtr">mtr</a></span> and <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=traceroute">traceroute</a></span>. These applications will attempt to do a reverse lookup via Avahi and time out instead of falling back to other DNS services. This seems similar to <a rel="nofollow" class="external text" href="https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=433943">Debian issue 433943</a> where the recommendation is, unfortunately, to use <code>mdns_minimal</code> instead of <code>mdns</code>.</div>
+<h3>
+<span id="ECONNREFUSED_.28Connection_refused.29_on_avahi_socket"></span><span class="mw-headline" id="ECONNREFUSED_(Connection_refused)_on_avahi_socket">ECONNREFUSED (Connection refused) on avahi socket</span>
+</h3>
+<p>If your Avahi instance starts and operates correctly, but nss does not seem to forward requests to mdns,  this may be caused by stuck socket <code>/run/avahi-daemon/socket</code>. This can be verified e.g. with strace. In this case you may have to <a href="../en/Help:Reading.html#Control_of_systemd_units" class="mw-redirect" title="Restart">restart</a> both <code>avahi-daemon.service</code> and <code>avahi-daemon.socket</code> to make it work correctly. 
+</p>
+<h2><span class="mw-headline" id="See_also">See also</span></h2>
+<ul>
+<li>
+<a rel="nofollow" class="external text" href="https://avahi.org/">Avahi</a> - Official project website</li>
+<li><a href="https://en.wikipedia.org/wiki/Avahi_(software)" class="extiw" title="wikipedia:Avahi (software)">Wikipedia:Avahi (software)</a></li>
+<li>
+<a rel="nofollow" class="external text" href="https://www.apple.com/itunes/download/">iTunes (includes Bonjour)</a> - Enable Zeroconf on Windows</li>
+<li><a rel="nofollow" class="external free" href="http://www.zeroconf.org/">http://www.zeroconf.org/</a></li>
+</ul>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface">
+<div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="../en/Category:Multicast_DNS.html" title="Category:Multicast DNS">Multicast DNS</a></li></ul>
+</div>
+<div id="mw-hidden-catlinks" class="mw-hidden-catlinks mw-hidden-cats-hidden">Hidden category: <ul><li><a href="../en/Category:Pages_or_sections_flagged_with_Template:Merge.html" title="Category:Pages or sections flagged with Template:Merge">Pages or sections flagged with Template:Merge</a></li></ul>
+</div>
+</div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=Avahi&amp;oldid=784993">https://wiki.archlinux.org/index.php?title=Avahi&amp;oldid=784993</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 10 August 2023, at 10:03.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

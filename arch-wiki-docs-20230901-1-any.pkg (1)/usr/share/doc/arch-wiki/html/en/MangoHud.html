@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>MangoHud - ArchWiki</title>
+<link rel="stylesheet" href="../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-MangoHud rootpage-MangoHud skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Installation" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Installation">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Installation</div>
+			</a>
+			
+			<ul id="toc-Installation-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Configuration" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Configuration">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Configuration</div>
+			</a>
+			
+				<button aria-controls="toc-Configuration-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Configuration subsection
+				</button>
+			
+			<ul id="toc-Configuration-sublist" class="sidebar-toc-list">
+				<li id="toc-GUI_for_configuration" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#GUI_for_configuration">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.1</span>GUI for configuration</div>
+			</a>
+			
+			<ul id="toc-GUI_for_configuration-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Usage" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Usage">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>Usage</div>
+			</a>
+			
+				<button aria-controls="toc-Usage-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Usage subsection
+				</button>
+			
+			<ul id="toc-Usage-sublist" class="sidebar-toc-list">
+				<li id="toc-Test_configuration" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Test_configuration">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.1</span>Test configuration</div>
+			</a>
+			
+			<ul id="toc-Test_configuration-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Run_a_single_game" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Run_a_single_game">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.2</span>Run a single game</div>
+			</a>
+			
+			<ul id="toc-Run_a_single_game-sublist" class="sidebar-toc-list">
+				<li id="toc-Dynamic_hooking" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Dynamic_hooking">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.2.1</span>Dynamic hooking</div>
+			</a>
+			
+			<ul id="toc-Dynamic_hooking-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Use_with_Gamemode" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Use_with_Gamemode">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.2.2</span>Use with Gamemode</div>
+			</a>
+			
+			<ul id="toc-Use_with_Gamemode-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Run_a_single_steam_game" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Run_a_single_steam_game">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.3</span>Run a single steam game</div>
+			</a>
+			
+			<ul id="toc-Run_a_single_steam_game-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Run_Steam_with_MangoHud" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Run_Steam_with_MangoHud">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.4</span>Run Steam with MangoHud</div>
+			</a>
+			
+			<ul id="toc-Run_Steam_with_MangoHud-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Enable_for_all_Vulkan_games" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Enable_for_all_Vulkan_games">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.5</span>Enable for all Vulkan games</div>
+			</a>
+			
+			<ul id="toc-Enable_for_all_Vulkan_games-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../en/MangoHud.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="new mw-list-item"><a href="/index.php?title=Talk:MangoHud&amp;action=edit&amp;redlink=1" rel="discussion" title="Discussion about the content page (page does not exist) [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">English</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../en/MangoHud.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=MangoHud&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=MangoHud&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../en/MangoHud.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=MangoHud&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=MangoHud&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output">
+<div class="archwiki-template-meta-related-articles-start">
+<p class="mw-no-invert">Related articles</p>
+<ul>
+<li><a href="../en/Gamemode.html" title="Gamemode">Gamemode</a></li>
+</ul>
+</div>
+<p><a rel="nofollow" class="external text" href="https://github.com/flightlessmango/MangoHud">MangoHud</a> is a <a href="../en/Vulkan.html" title="Vulkan">Vulkan</a> and <a href="../en/OpenGL.html" title="OpenGL">OpenGL</a> overlay for monitoring system performance while inside applications and to record metrics for <a href="../en/Benchmarking.html" title="Benchmarking">benchmarking</a>.
+</p>
+<mw:tocplace></mw:tocplace>
+<h2><span class="mw-headline" id="Installation">Installation</span></h2>
+<p><a href="../en/Help:Reading.html#Installation_of_packages" class="mw-redirect" title="Install">Install</a> one of the following:
+</p>
+<ul>
+<li>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=mangohud">mangohud</a></span> - Latest release from upstream.</li>
+<li>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/mangohud-git/">mangohud-git</a></span><sup><small>AUR</small></sup> - Latest commit to master.</li>
+</ul>
+<h2><span class="mw-headline" id="Configuration">Configuration</span></h2>
+<p>MangoHud is configured via the following files, which are read in the following order:
+</p>
+<ol>
+<li><code>$XDG_CONFIG_HOME/MangoHud/MangoHud.conf</code></li>
+<li>
+<code>$XDG_CONFIG_HOME/MangoHud/APPLICATION-NAME.conf</code> (case-sensitive)</li>
+<li>
+<code>$XDG_CONFIG_HOME/MangoHud/wine-APPLICATION-NAME.conf</code> (for <a href="../en/Wine.html" title="Wine">Wine</a> applications, case-sensitive, without the <code>.exe</code> extension)</li>
+<li><code>./MangoHud.conf</code></li>
+<li>
+<code>$MANGOHUD_CONFIGFILE</code> (via <a href="../en/Environment_variables.html" title="Environment variables">environment variables</a>)</li>
+</ol>
+<div class="archwiki-template-box archwiki-template-box-tip">
+<strong>Tip:</strong> An example configuration file with comments can be found <a rel="nofollow" class="external text" href="https://raw.githubusercontent.com/flightlessmango/MangoHud/master/data/MangoHud.conf">in the project's repository</a>.</div>
+<h3><span class="mw-headline" id="GUI_for_configuration">GUI for configuration</span></h3>
+<p>A GUI for configuring MangoHud can be installed from <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/goverlay/">goverlay</a></span><sup><small>AUR</small></sup>.
+</p>
+<h2><span class="mw-headline" id="Usage">Usage</span></h2>
+<h3><span class="mw-headline" id="Test_configuration">Test configuration</span></h3>
+<p>Verify if the program has been setup correctly:
+</p>
+<pre>$ mangohud glxgears
+$ mangohud vkcube
+</pre>
+<h3><span class="mw-headline" id="Run_a_single_game">Run a single game</span></h3>
+<p>To run a game with MangoHud start it like this:
+</p>
+<pre>$ mangohud <i>game</i>
+</pre>
+<h4><span class="mw-headline" id="Dynamic_hooking">Dynamic hooking</span></h4>
+<p>Certain applications may require a special type of hooking, which can be specified via the <code>--dlsym</code> parameter or the <code>MANGOHUD_DLSYM</code> <a href="../en/Environment_variables.html" class="mw-redirect" title="Environment variable">environment variable</a>:
+</p>
+<pre>$ mangohud --dlsym <i>game</i>
+</pre>
+<h4><span class="mw-headline" id="Use_with_Gamemode">Use with Gamemode</span></h4>
+<p>To launch a game with both MangoHud and <a href="../en/Gamemode.html" title="Gamemode">gamemode</a>, chain the two commands into a single one, like this:
+</p>
+<pre>$ mangohud gamemoderun <i>game</i>
+</pre>
+<h3><span class="mw-headline" id="Run_a_single_steam_game">Run a single steam game</span></h3>
+<p>To make <a href="../en/Steam.html" title="Steam">Steam</a> start a game with MangoHud, right click the game in the <i>Library</i>, select <i>Properties...</i>, then in the <i>Launch Options</i> text box enter:
+</p>
+<pre>mangohud %command%
+</pre>
+<h3><span class="mw-headline" id="Run_Steam_with_MangoHud">Run Steam with MangoHud</span></h3>
+<p>To avoid having to change launch options for all games, you may launch <a href="../en/Steam.html" title="Steam">Steam</a> directly with MangoHud:
+</p>
+<pre>$ mangohud steam-runtime
+</pre>
+<p>MangoHud will detect Steam and will avoid loading itself until a game is launched.
+</p>
+<h3><span class="mw-headline" id="Enable_for_all_Vulkan_games">Enable for all Vulkan games</span></h3>
+<p>To make MangoHud automatically launch with all <a href="../en/Vulkan.html" title="Vulkan">Vulkan</a> games, it is possible to set the following <a href="../en/Environment_variables.html" class="mw-redirect" title="Environment variable">environment variable</a>:
+</p>
+<pre>MANGOHUD=1
+</pre>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="../en/Category:Gaming.html" title="Category:Gaming">Gaming</a></li></ul>
+</div></div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=MangoHud&amp;oldid=779711">https://wiki.archlinux.org/index.php?title=MangoHud&amp;oldid=779711</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 27 May 2023, at 20:01.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

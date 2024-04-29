@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>Linux console - ArchWiki</title>
+<link rel="stylesheet" href="../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Linux_console rootpage-Linux_console skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Implementation" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Implementation">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Implementation</div>
+			</a>
+			
+				<button aria-controls="toc-Implementation-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Implementation subsection
+				</button>
+			
+			<ul id="toc-Implementation-sublist" class="sidebar-toc-list">
+				<li id="toc-Virtual_consoles" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Virtual_consoles">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.1</span>Virtual consoles</div>
+			</a>
+			
+			<ul id="toc-Virtual_consoles-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Text_mode" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Text_mode">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.2</span>Text mode</div>
+			</a>
+			
+			<ul id="toc-Text_mode-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Framebuffer_console" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Framebuffer_console">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.3</span>Framebuffer console</div>
+			</a>
+			
+			<ul id="toc-Framebuffer_console-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Keyboard_shortcuts" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Keyboard_shortcuts">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Keyboard shortcuts</div>
+			</a>
+			
+			<ul id="toc-Keyboard_shortcuts-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Fonts" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Fonts">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>Fonts</div>
+			</a>
+			
+				<button aria-controls="toc-Fonts-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Fonts subsection
+				</button>
+			
+			<ul id="toc-Fonts-sublist" class="sidebar-toc-list">
+				<li id="toc-Preview_and_temporary_changes" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Preview_and_temporary_changes">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.1</span>Preview and temporary changes</div>
+			</a>
+			
+			<ul id="toc-Preview_and_temporary_changes-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Persistent_configuration" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Persistent_configuration">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.2</span>Persistent configuration</div>
+			</a>
+			
+			<ul id="toc-Persistent_configuration-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-HiDPI" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#HiDPI">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4</span>HiDPI</div>
+			</a>
+			
+			<ul id="toc-HiDPI-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Audible_tones" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Audible_tones">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5</span>Audible tones</div>
+			</a>
+			
+			<ul id="toc-Audible_tones-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-See_also" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#See_also">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6</span>See also</div>
+			</a>
+			
+			<ul id="toc-See_also-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../en/Linux_console.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="mw-list-item"><a href="../en/Talk:Linux_console.html" rel="discussion" title="Discussion about the content page [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">English</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../en/Linux_console.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=Linux_console&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=Linux_console&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../en/Linux_console.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Linux_console&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Linux_console&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output">
+<div class="archwiki-template-meta-related-articles-start">
+<p class="mw-no-invert">Related articles</p>
+<ul>
+<li><a href="../en/Linux_console/Keyboard_configuration.html" title="Linux console/Keyboard configuration">/Keyboard configuration</a></li>
+<li><a href="../en/Screen_capture.html#Virtual_console" title="Screen capture">Screen capture#Virtual console</a></li>
+<li><a href="../en/Color_output_in_console.html" title="Color output in console">Color output in console</a></li>
+<li><a href="../en/Getty.html" title="Getty">getty</a></li>
+</ul>
+</div>
+<p>According to <a href="https://en.wikipedia.org/wiki/Linux_console" class="extiw" title="wikipedia:Linux console">Wikipedia</a>:
+</p>
+<dl><dd>The <b>Linux console</b> is a system console internal to the <a href="../en/Kernel.html" class="mw-redirect" title="Linux kernel">Linux kernel</a>. The Linux console provides a way for the kernel and other processes to send text output to the user, and to receive text input from the user. The user typically enters text with a computer keyboard and reads the output text on a computer monitor. The Linux kernel supports virtual consoles — consoles that are logically separate, but which access the same physical keyboard and display.</dd></dl>
+<p>This article describes the basics of the Linux console and how to configure the font display. Keyboard configuration is described in the <a href="../en/Linux_console/Keyboard_configuration.html" title="Linux console/Keyboard configuration">/Keyboard configuration</a> subpage.
+</p>
+<mw:tocplace></mw:tocplace>
+<h2><span class="mw-headline" id="Implementation">Implementation</span></h2>
+<p>The console, unlike most services that interact directly with users, is implemented in the kernel. This contrasts with terminal emulation software, such as <a href="../en/Xterm.html" title="Xterm">Xterm</a>, which is implemented in user space as a normal application. The console has always been part of released Linux kernels, but has undergone changes in its history, most notably the transition to using the <a href="https://en.wikipedia.org/wiki/Linux_framebuffer" class="extiw" title="wikipedia:Linux framebuffer">framebuffer</a> and support for <a href="https://en.wikipedia.org/wiki/Unicode" class="extiw" title="wikipedia:Unicode">Unicode</a>.
+</p>
+<p>Despite many improvements in the console, its full backward compatibility with legacy hardware means it is limited compared to a graphical terminal emulator.  The main difference between the Linux console and graphical terminal emulators is the shells in the Linux console are attached directly to <a href="../en/Getty.html" class="mw-redirect" title="Tty">TTY</a> devices (<code>/dev/tty*</code>), whereas the shells in a graphical terminal emulator are attached to pseudo-TTYs (<code>/dev/pty*</code>).  
+</p>
+<p>Also, graphical terminal emulators can have many more features than the Linux console, including a richer set of available fonts, multiple tabs/windows, split views, scrollback buffers/sliders, background colors/images (optionally with transparency), etc.  Some of these features can be used in the Linux console with terminal multiplexers, such as <a href="../en/Tmux.html" title="Tmux">Tmux</a> or <a href="../en/GNU_Screen.html" title="GNU Screen">GNU Screen</a>, or in certain text user interface programs (TUI) typically relying on libraries such as ncurses and the like, e.g. <a href="../en/Vim.html" title="Vim">Vim</a>, <a href="../en/Nano.html" title="Nano">nano</a>, or <a href="../en/Emacs.html" title="Emacs">Emacs</a>.  These can also be used in graphical terminal emulators, if desired.
+</p>
+<h3><span class="mw-headline" id="Virtual_consoles">Virtual consoles</span></h3>
+<p>The console is presented to the user as a series of <a href="https://en.wikipedia.org/wiki/Virtual_console" class="extiw" title="wikipedia:Virtual console">virtual consoles</a>. These give the impression that several independent terminals are running concurrently; each virtual console can be logged in with different users, run its own shell and have its own font settings. The virtual consoles each use a device <code>/dev/ttyX</code>, and you can switch between them by pressing <code>Alt+F<i>x</i></code> (where <code><i>x</i></code> is equal to the virtual console number, beginning with 1). The device <code>/dev/console</code> is automatically mapped to the active virtual console.
+</p>
+<p>See also <span class="plainlinks archwiki-template-man" title="$ man 1 chvt"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/chvt.1">chvt(1)</a></span>, <span class="plainlinks archwiki-template-man" title="$ man 1 openvt"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/openvt.1">openvt(1)</a></span> and <span class="plainlinks archwiki-template-man" title="$ man 1 deallocvt"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/deallocvt.1">deallocvt(1)</a></span>.
+</p>
+<h3><span class="mw-headline" id="Text_mode">Text mode</span></h3>
+<p>Since Linux originally began as a kernel for PC hardware, the console was developed using standard IBM <a href="https://en.wikipedia.org/wiki/VGA" class="extiw" title="wikipedia:VGA">CGA/EGA/VGA</a> graphics, which all PCs supported at the time. The graphics operated in VGA text mode, which provides a simple 80x25 character display with 16 colours. This legacy mode is similar to the capabilities of dedicated text terminals, such as the <a href="https://en.wikipedia.org/wiki/VT100" class="extiw" title="wikipedia:VT100">DEC VT100</a> series. It is still possible to boot in text mode (with <code>vga=0 nomodeset</code>) if the system hardware supports it, but almost all modern distributions (including Arch Linux) use the framebuffer console instead.
+</p>
+<h3><span class="mw-headline" id="Framebuffer_console">Framebuffer console</span></h3>
+<p>As Linux was ported to other non-PC architectures, a better solution was required, since other architectures do not use VGA-compatible graphics adapters, and may not support text modes at all. The framebuffer console was implemented to provide a standard console across all platforms, and so presents the same VGA-style interface regardless of the underlying graphics hardware. As such, the Linux console is not a terminal emulator, but a terminal in its own right. It uses the terminal type <code>linux</code>, and is largely compatible with VT100.
+</p>
+<h2><span class="mw-headline" id="Keyboard_shortcuts">Keyboard shortcuts</span></h2>
+<table class="wikitable">
+<tbody>
+<tr>
+<th>Keyboard Shortcut
+</th>
+<th>Description
+</th>
+</tr>
+<tr>
+<td>
+<code>Ctrl+Alt+Del</code>
+</td>
+<td>Reboots the system (specified by the symlink <code>/usr/lib/systemd/system/ctrl-alt-del.target</code>)
+</td>
+</tr>
+<tr>
+<td>
+<code>Alt+F1</code>, <code>F2</code>, <code>F3</code>, ...
+</td>
+<td>Switch to <i>n</i>-th virtual console
+</td>
+</tr>
+<tr>
+<td>
+<code>Alt+Left</code>
+</td>
+<td>Switch to previous virtual console
+</td>
+</tr>
+<tr>
+<td>
+<code>Alt+Right</code>
+</td>
+<td>Switch to next virtual console
+</td>
+</tr>
+<tr>
+<td>
+<code>Scroll Lock</code>
+</td>
+<td>When Scroll Lock is activated, input/output is locked
+</td>
+</tr>
+<tr>
+<td>
+<code>Ctrl+c</code>
+</td>
+<td>Kills current task
+</td>
+</tr>
+<tr>
+<td>
+<code>Ctrl+d</code>
+</td>
+<td>Inserts an EOF
+</td>
+</tr>
+<tr>
+<td>
+<code>Ctrl+z</code>
+</td>
+<td>Pauses current Task
+</td>
+</tr>
+</tbody>
+</table>
+<p>See also <span class="plainlinks archwiki-template-man" title="$ man 4 console_codes"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/console_codes.4">console_codes(4)</a></span>.
+</p>
+<h2><span class="mw-headline" id="Fonts">Fonts</span></h2>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> This section is about the <a href="https://en.wikipedia.org/wiki/Linux_console" class="extiw" title="wikipedia:Linux console">Linux console</a>. For alternative console solutions offering more features (full Unicode fonts, modern graphics adapters etc.), see <a href="../en/KMSCON.html" title="KMSCON">KMSCON</a> or similar projects.</div>
+<p>The <a href="https://en.wikipedia.org/wiki/Linux_console" class="extiw" title="wikipedia:Linux console">Linux console</a> uses UTF-8 encoding by default, but because the standard VGA-compatible framebuffer is used, a console font is limited to either a standard 256, or 512 glyphs. If the font has more than 256 glyphs, the number of colours is reduced from 16 to 8. In order to assign correct symbol to be displayed to the given Unicode value, a special translation map, often called <i>unimap</i>, is needed. Nowadays, most of the console fonts have the <i>unimap</i> built-in; historically, it had to be loaded separately.
+</p>
+<p>By default, the <a href="https://en.wikipedia.org/wiki/Virtual_console" class="extiw" title="wikipedia:Virtual console">virtual console</a> uses the kernel built-in font with a <a href="https://en.wikipedia.org/wiki/CP437" class="extiw" title="wikipedia:CP437">CP437</a> character set<a rel="nofollow" class="external autonumber" href="https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/tty/vt/Makefile#n5">[1]</a>, but this can be easily changed. The kernel offers about 15 built in fonts to choose from, from which the <a href="../en/Kernel.html#Officially_supported_kernels" title="Kernel">officially supported kernels</a> provide two: VGA 8x16 font (<code>CONFIG_FONT_8x16</code>) and Terminus 16x32 font (<code>CONFIG_FONT_TER16x32</code>). The kernel chooses the one to use based on its evaluation of the screen resolution. Another builtin font can be forced upon by <a href="../en/Kernel_parameters.html" title="Kernel parameters">kernel parameters</a> boot parameter setting such as <code>fbcon=font:TER16x32</code>.
+</p>
+<p>The <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=kbd">kbd</a></span> package provides tools to override the kernel decision for virtual console font and font mapping. Available fonts are provided in the <code>/usr/share/kbd/consolefonts/</code> directory; those ending with <i>.psfu</i> or <i>.psfu.gz</i> have a Unicode translation map built-in.
+</p>
+<p>Keymaps, the connection between the key pressed and the character used by the computer, are found in the subdirectories of <code>/usr/share/kbd/keymaps/</code>; see <a href="../en/Linux_console/Keyboard_configuration.html" title="Linux console/Keyboard configuration">/Keyboard configuration</a> for details.
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> Replacing the font can cause issues with programs that expect a standard VGA-style font, such as those using line drawing graphics.</div>
+<div class="archwiki-template-box archwiki-template-box-tip">
+<strong>Tip:</strong> For European based languages written in Latin/Greek letters, you can use the <code>eurlatgr</code> font. It includes a broad range of Latin/Greek letter variations as well as
+special characters <a rel="nofollow" class="external autonumber" href="https://lists.altlinux.org/pipermail/kbd/2014-February/000439.html">[2]</a>.</div>
+<h3><span class="mw-headline" id="Preview_and_temporary_changes">Preview and temporary changes</span></h3>
+<div class="archwiki-template-box archwiki-template-box-tip">
+<strong>Tip:</strong> An organized library of images for previewing is available: <a rel="nofollow" class="external text" href="https://adeverteuil.github.io/linux-console-fonts-screenshots/">Linux console fonts screenshots</a>.</div>
+<pre>$ showconsolefont
+</pre>
+<p>shows a table of glyphs or letters of a font.
+</p>
+<p><code>setfont</code> temporarily change the font if passed a font name (in <code>/usr/share/kbd/consolefonts/</code>) such as
+</p>
+<pre>$ setfont lat2-16 -m 8859-2
+</pre>
+<p>Font names are case-sensitive. With no parameter, <code>setfont</code> returns the console to the default font.
+</p>
+<p>So to have a <b>small 8x8</b> font, with that font installed like seen below, use e.g.:
+</p>
+<pre>$ setfont -h8 /usr/share/kbd/consolefonts/drdos8x8.psfu.gz
+</pre>
+<p>To have a <b>bigger</b> font, the Terminus font (<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=terminus-font">terminus-font</a></span>) is available in many sizes, such as <code>ter-132b</code> which is large.
+</p>
+<div class="archwiki-template-box archwiki-template-box-tip">
+<strong>Tip:</strong> All font changing commands can be typed in "blind".</div>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> <i>setfont</i> only works on the console currently being used. Any other consoles, active or inactive, remain unaffected.</div>
+<h3><span class="mw-headline" id="Persistent_configuration">Persistent configuration</span></h3>
+<p>The <code>FONT</code> variable in <code>/etc/vconsole.conf</code> is used to set the font at boot, persistently for all consoles. See <span class="plainlinks archwiki-template-man" title="$ man 5 vconsole.conf"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/vconsole.conf.5">vconsole.conf(5)</a></span> for details.
+</p>
+<p>For displaying characters such as <i>Č, ž, đ, š</i> or <i>Ł, ę, ą, ś</i> using the font <code>lat2-16.psfu.gz</code>:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/vconsole.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">...
+FONT=lat2-16
+FONT_MAP=8859-2</pre>
+<p>It means that second part of ISO/IEC 8859 characters are used with size 16. You can change font size using other values (e.g. <code>lat2-08</code>). For the regions determined by 8859 specification, look at the <a href="https://en.wikipedia.org/wiki/ISO/IEC_8859#The_parts_of_ISO.2FIEC_8859" class="extiw" title="wikipedia:ISO/IEC 8859">Wikipedia:ISO/IEC 8859#The parts of ISO/IEC 8859</a>.
+</p>
+<p>Since <a rel="nofollow" class="external text" href="https://gitlab.archlinux.org/archlinux/mkinitcpio/mkinitcpio/-/blob/v33/mkinitcpio.conf#L52">mkinitcpio v33</a>, the font specified in <code>/etc/vconsole.conf</code> gets automatically loaded during early userspace by default via the <code>consolefont</code> hook, which adds the font to the initramfs. See <a href="../en/Mkinitcpio.html#HOOKS" title="Mkinitcpio">Mkinitcpio#HOOKS</a> for more information.
+</p>
+<p>You may also need to <a href="../en/Help:Reading.html#Control_of_systemd_units" class="mw-redirect" title="Restart">restart</a> <code>systemd-vconsole-setup.service</code> after changing <code>/etc/vconsole.conf</code>.
+</p>
+<p>If the fonts appear to not change on boot, or change only temporarily, it is most likely that they got reset when graphics driver was initialized and console was switched to framebuffer. By default, all in-tree kernel drivers are loaded early, NVIDIA users should see <a href="../en/NVIDIA.html#Early_loading" title="NVIDIA">NVIDIA#Early loading</a> to load their graphics driver before <code>/etc/vconsole.conf</code> is applied.
+</p>
+<h2><span class="mw-headline" id="HiDPI">HiDPI</span></h2>
+<p>See <a href="../en/HiDPI.html#Linux_console_(tty)" title="HiDPI">HiDPI#Linux console (tty)</a>.
+</p>
+<h2><span class="mw-headline" id="Audible_tones">Audible tones</span></h2>
+<p>See <a href="../en/PC_speaker.html#Beep" title="PC speaker">PC speaker#Beep</a>.
+</p>
+<h2><span class="mw-headline" id="See_also">See also</span></h2>
+<ul><li><a rel="nofollow" class="external text" href="https://www.linusakesson.net/programming/tty/">The TTY demystified – Linus Åkesson</a></li></ul>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="../en/Category:Linux_console.html" title="Category:Linux console">Linux console</a></li></ul>
+</div></div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=Linux_console&amp;oldid=785051">https://wiki.archlinux.org/index.php?title=Linux_console&amp;oldid=785051</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 11 August 2023, at 03:17.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

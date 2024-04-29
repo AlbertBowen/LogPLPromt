@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>Firewalld - ArchWiki</title>
+<link rel="stylesheet" href="../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Firewalld rootpage-Firewalld skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Installation" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#Installation">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Installation</div>
+			</a>
+			
+			<ul id="toc-Installation-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Usage" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#Usage">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Usage</div>
+			</a>
+			
+			<ul id="toc-Usage-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Configuration" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#Configuration">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>Configuration</div>
+			</a>
+			
+				<button aria-controls="toc-Configuration-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Configuration subsection
+				</button>
+			
+			<ul id="toc-Configuration-sublist" class="sidebar-toc-list">
+				<li id="toc-Zones" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Zones">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.1</span>Zones</div>
+			</a>
+			
+			<ul id="toc-Zones-sublist" class="sidebar-toc-list">
+				<li id="toc-Zone_information" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Zone_information">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.1.1</span>Zone information</div>
+			</a>
+			
+			<ul id="toc-Zone_information-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Changing_zone_of_an_interface" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Changing_zone_of_an_interface">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.1.2</span>Changing zone of an interface</div>
+			</a>
+			
+			<ul id="toc-Changing_zone_of_an_interface-sublist" class="sidebar-toc-list">
+				<li id="toc-Using_NetworkManager_to_manage_zones" class="sidebar-toc-list-item sidebar-toc-level-4">
+			<a class="sidebar-toc-link" href="#Using_NetworkManager_to_manage_zones">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.1.2.1</span>Using NetworkManager to manage zones</div>
+			</a>
+			
+			<ul id="toc-Using_NetworkManager_to_manage_zones-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Default_zones" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Default_zones">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.1.3</span>Default zones</div>
+			</a>
+			
+			<ul id="toc-Default_zones-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Services" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Services">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.2</span>Services</div>
+			</a>
+			
+			<ul id="toc-Services-sublist" class="sidebar-toc-list">
+				<li id="toc-Adding_or_removing_services_from_a_zone" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Adding_or_removing_services_from_a_zone">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.2.1</span>Adding or removing services from a zone</div>
+			</a>
+			
+			<ul id="toc-Adding_or_removing_services_from_a_zone-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Ports" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Ports">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.3</span>Ports</div>
+			</a>
+			
+			<ul id="toc-Ports-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-NAT_masquerade" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#NAT_masquerade">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.4</span>NAT masquerade</div>
+			</a>
+			
+			<ul id="toc-NAT_masquerade-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Port_forwarding" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Port_forwarding">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.5</span>Port forwarding</div>
+			</a>
+			
+			<ul id="toc-Port_forwarding-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Rich_rules" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Rich_rules">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.6</span>Rich rules</div>
+			</a>
+			
+			<ul id="toc-Rich_rules-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Tips_and_tricks" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#Tips_and_tricks">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4</span>Tips and tricks</div>
+			</a>
+			
+				<button aria-controls="toc-Tips_and_tricks-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Tips and tricks subsection
+				</button>
+			
+			<ul id="toc-Tips_and_tricks-sublist" class="sidebar-toc-list">
+				<li id="toc-Port_or_service_timeout" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Port_or_service_timeout">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.1</span>Port or service timeout</div>
+			</a>
+			
+			<ul id="toc-Port_or_service_timeout-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Converting_runtime_configuration_to_permanent" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Converting_runtime_configuration_to_permanent">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.2</span>Converting runtime configuration to permanent</div>
+			</a>
+			
+			<ul id="toc-Converting_runtime_configuration_to_permanent-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Check_services_details" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Check_services_details">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.3</span>Check services details</div>
+			</a>
+			
+			<ul id="toc-Check_services_details-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Removing_the_applet/tray_icon" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Removing_the_applet/tray_icon">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.4</span>Removing the applet/tray icon</div>
+			</a>
+			
+			<ul id="toc-Removing_the_applet/tray_icon-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-See_also" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#See_also">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5</span>See also</div>
+			</a>
+			
+			<ul id="toc-See_also-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../en/Firewalld.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="new mw-list-item"><a href="/index.php?title=Talk:Firewalld&amp;action=edit&amp;redlink=1" rel="discussion" title="Discussion about the content page (page does not exist) [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">English</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../en/Firewalld.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=Firewalld&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=Firewalld&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../en/Firewalld.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Firewalld&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Firewalld&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output">
+<div class="archwiki-template-meta-related-articles-start">
+<p class="mw-no-invert">Related articles</p>
+<ul>
+<li><a href="../en/Nftables.html" title="Nftables">nftables</a></li>
+</ul>
+</div>
+<p><a rel="nofollow" class="external text" href="https://firewalld.org/">firewalld</a> is a firewall daemon developed by Red Hat. It uses <a href="../en/Nftables.html" title="Nftables">nftables</a> by default. From project home page:
+</p>
+<dl><dd>Firewalld provides a dynamically managed firewall with support for network/firewall zones that define the trust level of network connections or interfaces. It has support for IPv4, IPv6 firewall settings, ethernet bridges and IP sets. There is a separation of runtime and permanent configuration options. It also provides an interface for services or applications to add firewall rules directly.</dd></dl>
+<mw:tocplace></mw:tocplace>
+<h2><span class="mw-headline" id="Installation">Installation</span></h2>
+<p><a href="../en/Help:Reading.html#Installation_of_packages" class="mw-redirect" title="Install">Install</a> the <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=firewalld">firewalld</a></span> package.
+</p>
+<h2><span class="mw-headline" id="Usage">Usage</span></h2>
+<p><a href="../en/Help:Reading.html#Control_of_systemd_units" class="mw-redirect" title="Enable">Enable</a> and <a href="../en/Help:Reading.html#Control_of_systemd_units" class="mw-redirect" title="Start">start</a> <code>firewalld.service</code>.
+</p>
+<p>You can control the firewall rules with the <code>firewall-cmd</code> console utility. 
+</p>
+<p><code>firewall-offline-cmd</code> utility can be used to configure when firewalld is not running. It features similar syntax to <code>firewall-cmd</code>.
+</p>
+<p>GUI is available as <code>firewall-config</code> which comes with <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=firewalld">firewalld</a></span> package.
+</p>
+<h2><span class="mw-headline" id="Configuration">Configuration</span></h2>
+<p>Configuration at run time can be changed using <code>firewall-cmd</code>. 
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> Most commands will only change runtime configuration and will not persist through restart. To make changes permanent there are two options:
+<ul>
+<li>Use <code>--permanent</code> option. This will <b>not</b> change runtime configuration until the firewall service is restarted or rules are reloaded with <code>--reload</code> command.</li>
+<li>Change the runtime configuration and make it permanent as described in <a href="#Converting_runtime_configuration_to_permanent">#Converting runtime configuration to permanent</a>
+</li>
+</ul>
+</div>
+<h3><span class="mw-headline" id="Zones">Zones</span></h3>
+<p>Zone is a collection of rules that can be applied to a specific interface.
+</p>
+<p>To have an overview of the current zones and interfaces they are applied to:
+</p>
+<pre># firewall-cmd --get-active-zones
+</pre>
+<p>Some commands (such as adding/removing ports/services) require a zone to specified. 
+</p>
+<p>Zone can be specified by name by passing <code>--zone=<i>zone_name</i></code> parameter.
+</p>
+<p>If no zone is specified default zone is assumed.
+</p>
+<h4><span class="mw-headline" id="Zone_information">Zone information</span></h4>
+<p>You can list all the zones with entirety their configuration:
+</p>
+<pre># firewall-cmd --list-all-zones
+</pre>
+<p>or just a specific zone
+</p>
+<pre># firewall-cmd --info-zone=<i>zone_name</i>
+</pre>
+<h4><span class="mw-headline" id="Changing_zone_of_an_interface">Changing zone of an interface</span></h4>
+<pre># firewall-cmd --zone=<i>zone</i> --change-interface=<i>interface_name</i>
+</pre>
+<p>There <code><i>zone</i></code> is a new zone that you want to assign interface to.
+</p>
+<h5><span class="mw-headline" id="Using_NetworkManager_to_manage_zones">Using NetworkManager to manage zones</span></h5>
+<p><a href="../en/NetworkManager.html" title="NetworkManager">NetworkManager</a> can assign different connection profiles to different zones. This allows for example, adding a home WiFi connection to the "home" zone, a work WiFi connection to the "work" zone, and all other WiFi connections to the default "public" zone.
+</p>
+<p>List connection profiles:
+</p>
+<pre>$ nmcli connection show
+</pre>
+<p>Assign the "myssid" profile to the "home" zone:
+</p>
+<pre>$ nmcli connection modify <i>myssid</i> connection.zone <i>home</i>
+</pre>
+<h4><span class="mw-headline" id="Default_zones">Default zones</span></h4>
+<p>When a new interface is connected the default zone will be applied. You can query the name of the default zone using:
+</p>
+<pre># firewall-cmd --get-default-zone
+</pre>
+<p>The default zone can be changed using following command. 
+</p>
+<pre># firewall-cmd --set-default-zone=<i>zone</i>
+</pre>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> This change is always permanent.</div>
+<h3><span class="mw-headline" id="Services">Services</span></h3>
+<p>Services are pre-made rules corresponding to a specific daemon. For example, the <code>ssh</code> service corresponds to <a href="../en/Secure_Shell.html" class="mw-redirect" title="SSH">SSH</a> and opens ports 22 when assigned to a zone.
+</p>
+<p>To get a list of available services, enter the following command:
+</p>
+<pre># firewall-cmd --get-services
+</pre>
+<p>You can query information about a particular service:
+</p>
+<pre># firewall-cmd --info-service <i>service_name</i>
+</pre>
+<h4><span class="mw-headline" id="Adding_or_removing_services_from_a_zone">Adding or removing services from a zone</span></h4>
+<p>To add a service to a zone:
+</p>
+<pre># firewall-cmd --zone=<i>zone_name</i> --add-service <i>service_name</i>
+</pre>
+<p>Removing a service:
+</p>
+<pre># firewall-cmd --zone=<i>zone_name</i> --remove-service <i>service_name</i>
+</pre>
+<h3><span class="mw-headline" id="Ports">Ports</span></h3>
+<p>Ports can be directly opened on a specific zone.
+</p>
+<pre># firewall-cmd --zone=<i>zone_name</i> --add-port <i>port_num</i>/<i>protocol</i>
+</pre>
+<p>There <code><i>protocol</i></code> is either <code>tcp</code> or <code>udp</code>.
+</p>
+<p>To close the port use <code>--remove-port</code> option with same port number and protocol.
+</p>
+<h3><span class="mw-headline" id="NAT_masquerade">NAT masquerade</span></h3>
+<p>This command has the same effect as <code>iptables -t nat -A POSTROUTING -j MASQUERADE</code>:
+</p>
+<pre># firewall-cmd --zone=public --add-masquerade
+</pre>
+<p>Since version 1.0.0, to make NAT masquerade working between different firewall zones, you have to create a new policy object which is used to filter traffic between them:
+</p>
+<pre># firewall-cmd --new-policy NAT_int_to_ext --permanent
+# firewall-cmd --permanent --policy NAT_int_to_ext --add-ingress-zone internal
+# firewall-cmd --permanent --policy NAT_int_to_ext --add-egress-zone public
+# firewall-cmd --permanent --policy NAT_int_to_ext --set-target ACCEPT
+</pre>
+<h3><span class="mw-headline" id="Port_forwarding">Port forwarding</span></h3>
+<p>If you have firewalld configured on a router, and you have enabled NAT masquerading as above, it is simple to set up port forwarding through firewalld:
+</p>
+<pre># firewall-cmd --zone=public --add-forward-port=port=12345:proto=tcp:toport=22:toaddr=10.20.30.40
+</pre>
+<p>This will forward port <code>12345/tcp</code> on the firewall's public interface to port <code>22</code> (standard SSH) on the internal system at IP address <code>10.20.30.40</code>. To remove this forwarded port:
+</p>
+<pre># firewall-cmd --zone=public --remove-forward-port=port=12345:proto=tcp:toport=22:toaddr=10.20.30.40
+</pre>
+<p>Unfortunately you have to type the entire forward declaration in order to remove it, specifying only the port and the protocol is not enough.
+</p>
+<h3><span class="mw-headline" id="Rich_rules">Rich rules</span></h3>
+<p>With rich rules/rich language syntax more complex firewall rules can be created in an easy to understand way.
+</p>
+<p>To add a rich rule:
+</p>
+<pre># firewall-cmd [--zone=<i>zone_name</i>] [--permanent] --add-rich-rule='<i>rich_rule</i>'
+</pre>
+<p>where <code><i>rich_rule</i></code> is a rich language rule.
+</p>
+<p>For example, to allow all connection from network <code>192.168.1.0/24</code> to the <a href="../en/NFS.html" title="NFS">NFS</a> <a href="#Services">service</a>:
+</p>
+<pre># firewall-cmd --add-rich-rule='rule family="ipv4" source address="192.168.1.0/24" service name="nfs" accept'
+</pre>
+<p>To allow connection from <code>192.168.2.3</code> to port <code>1234/tcp</code>:
+</p>
+<pre># firewall-cmd --add-rich-rule='rule family="ipv4" source address="192.168.2.3" port port="1234" protocol="tcp" accept'
+</pre>
+<p>For more rich language syntax, see <span class="plainlinks archwiki-template-man" title="$ man 5 firewalld.richlanguage"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/firewalld.richlanguage.5">firewalld.richlanguage(5)</a></span>.
+</p>
+<p>To remove a rich rule:
+</p>
+<pre># firewall-cmd  [--zone=<i>zone_name</i>] [--permanent] --remove-rich-rule='<i>rich_rule</i>'
+</pre>
+<h2><span class="mw-headline" id="Tips_and_tricks">Tips and tricks</span></h2>
+<h3><span class="mw-headline" id="Port_or_service_timeout">Port or service timeout</span></h3>
+<p>Service or port can be added for a limited amount of time using <code>--timeout=<i>value</i></code> option passed during addition command. Value is either number of seconds, minutes if postfixed with <code>m</code> or hours <code>h</code>. 
+For example, adding <a href="../en/Secure_Shell.html" class="mw-redirect" title="SSH">SSH</a> service for 3 hours:
+</p>
+<pre># firewall-cmd --add-service ssh --timeout=3h
+</pre>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> Timeouts are mutually exclusive with --permanent changes to the firewall configuration.  I.e., timeouts can only be applied to the runtime configuration, and are never permanent.</div>
+<h3><span class="mw-headline" id="Converting_runtime_configuration_to_permanent">Converting runtime configuration to permanent</span></h3>
+<p>You can make the runtime (current temporary) configuration permanent (meaning it persists through restarts)
+</p>
+<pre># firewall-cmd --runtime-to-permanent
+</pre>
+<h3><span class="mw-headline" id="Check_services_details">Check services details</span></h3>
+<p>The configuration files for the default supported services are located at <code>/usr/lib/firewalld/services/</code> and user-created service files would be in <code>/etc/firewalld/services/</code>.
+</p>
+<h3>
+<span id="Removing_the_applet.2Ftray_icon"></span><span class="mw-headline" id="Removing_the_applet/tray_icon">Removing the applet/tray icon</span>
+</h3>
+<p>The applet is not packaged separately from <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=firewalld">firewalld</a></span>. The auto start script located at <code>/etc/xdg/autostart/firewall-applet.desktop</code> can be hidden, however: see <a href="../en/XDG_Autostart.html#Directories" title="XDG Autostart">XDG Autostart#Directories</a>. Alternatively, exclude the file from being installed by adding it to <a href="../en/Pacman.html#Skip_files_from_being_installed_to_system" title="Pacman">NoExtract</a> in <code>/etc/pacman.conf</code>.
+</p>
+<h2><span class="mw-headline" id="See_also">See also</span></h2>
+<ul>
+<li><span class="plainlinks archwiki-template-man" title="$ man 1 firewall-cmd"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/firewall-cmd.1">firewall-cmd(1)</a></span></li>
+<li><a rel="nofollow" class="external text" href="https://firewalld.org/documentation">Official documentation</a></li>
+<li><a href="https://fedoraproject.org/wiki/Firewalld" class="extiw" title="fedora:Firewalld">Fedora:Firewalld</a></li>
+<li><a href="https://fedoraproject.org/wiki/Features/FirewalldRichLanguage" class="extiw" title="fedora:Features/FirewalldRichLanguage">Fedora:Features/FirewalldRichLanguage</a></li>
+</ul>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="../en/Category:Firewalls.html" title="Category:Firewalls">Firewalls</a></li></ul>
+</div></div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=Firewalld&amp;oldid=784096">https://wiki.archlinux.org/index.php?title=Firewalld&amp;oldid=784096</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 30 July 2023, at 12:18.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

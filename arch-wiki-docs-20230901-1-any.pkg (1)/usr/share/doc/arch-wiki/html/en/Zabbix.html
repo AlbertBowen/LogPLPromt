@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>Zabbix - ArchWiki</title>
+<link rel="stylesheet" href="../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Zabbix rootpage-Zabbix skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Server_setup" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#Server_setup">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Server setup</div>
+			</a>
+			
+				<button aria-controls="toc-Server_setup-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Server setup subsection
+				</button>
+			
+			<ul id="toc-Server_setup-sublist" class="sidebar-toc-list">
+				<li id="toc-Installation" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Installation">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.1</span>Installation</div>
+			</a>
+			
+			<ul id="toc-Installation-sublist" class="sidebar-toc-list">
+				<li id="toc-Zabbix-server_installation" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Zabbix-server_installation">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.1.1</span>Zabbix-server installation</div>
+			</a>
+			
+			<ul id="toc-Zabbix-server_installation-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Zabbix-frontend_installation" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Zabbix-frontend_installation">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.1.2</span>Zabbix-frontend installation</div>
+			</a>
+			
+			<ul id="toc-Zabbix-frontend_installation-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Configuration" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Configuration">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.2</span>Configuration</div>
+			</a>
+			
+			<ul id="toc-Configuration-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Database_Initialization" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Database_Initialization">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.3</span>Database Initialization</div>
+			</a>
+			
+			<ul id="toc-Database_Initialization-sublist" class="sidebar-toc-list">
+				<li id="toc-MySQL" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#MySQL">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.3.1</span>MySQL</div>
+			</a>
+			
+			<ul id="toc-MySQL-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-PostgreSQL" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#PostgreSQL">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.3.2</span>PostgreSQL</div>
+			</a>
+			
+			<ul id="toc-PostgreSQL-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Database_Configuration" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Database_Configuration">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.4</span>Database Configuration</div>
+			</a>
+			
+			<ul id="toc-Database_Configuration-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-ICMP/ping_discovery" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#ICMP/ping_discovery">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.5</span>ICMP/ping discovery</div>
+			</a>
+			
+			<ul id="toc-ICMP/ping_discovery-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Starting" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Starting">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.6</span>Starting</div>
+			</a>
+			
+			<ul id="toc-Starting-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Agent_setup" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#Agent_setup">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Agent setup</div>
+			</a>
+			
+				<button aria-controls="toc-Agent_setup-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Agent setup subsection
+				</button>
+			
+			<ul id="toc-Agent_setup-sublist" class="sidebar-toc-list">
+				<li id="toc-Installation_2" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Installation_2">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.1</span>Installation</div>
+			</a>
+			
+			<ul id="toc-Installation_2-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Configuration_2" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Configuration_2">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.2</span>Configuration</div>
+			</a>
+			
+			<ul id="toc-Configuration_2-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Starting_2" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Starting_2">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.3</span>Starting</div>
+			</a>
+			
+			<ul id="toc-Starting_2-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Tips_and_tricks" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#Tips_and_tricks">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>Tips and tricks</div>
+			</a>
+			
+				<button aria-controls="toc-Tips_and_tricks-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Tips and tricks subsection
+				</button>
+			
+			<ul id="toc-Tips_and_tricks-sublist" class="sidebar-toc-list">
+				<li id="toc-Debugging_a_Zabbix_agent" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Debugging_a_Zabbix_agent">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.1</span>Debugging a Zabbix agent</div>
+			</a>
+			
+			<ul id="toc-Debugging_a_Zabbix_agent-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Monitor_Arch_Linux_system_updates" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Monitor_Arch_Linux_system_updates">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.2</span>Monitor Arch Linux system updates</div>
+			</a>
+			
+			<ul id="toc-Monitor_Arch_Linux_system_updates-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Troubleshooting" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#Troubleshooting">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4</span>Troubleshooting</div>
+			</a>
+			
+				<button aria-controls="toc-Troubleshooting-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Troubleshooting subsection
+				</button>
+			
+			<ul id="toc-Troubleshooting-sublist" class="sidebar-toc-list">
+				<li id='toc-Error_"Specified_key_was_too_long;_max_key_length_is_767_bytes"' class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href='#Error_"Specified_key_was_too_long;_max_key_length_is_767_bytes"'>
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.1</span>Error "Specified key was too long; max key length is 767 bytes"</div>
+			</a>
+			
+			<ul id='toc-Error_"Specified_key_was_too_long;_max_key_length_is_767_bytes"-sublist' class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-See_also" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#See_also">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5</span>See also</div>
+			</a>
+			
+			<ul id="toc-See_also-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../en/Zabbix.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="mw-list-item"><a href="../en/Talk:Zabbix.html" rel="discussion" title="Discussion about the content page [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">English</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../en/Zabbix.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=Zabbix&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=Zabbix&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../en/Zabbix.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Zabbix&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Zabbix&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output">
+<p><a rel="nofollow" class="external text" href="https://zabbix.com">Zabbix</a> is a full-featured monitoring solution for larger networks. It can discover all kind of networking devices using different methods, check machine states and applications, sending pre-defined alarm messages and visualize complex data correlations.
+</p>
+<mw:tocplace></mw:tocplace>
+<h2><span class="mw-headline" id="Server_setup">Server setup</span></h2>
+<h3><span class="mw-headline" id="Installation">Installation</span></h3>
+<h4><span class="mw-headline" id="Zabbix-server_installation">Zabbix-server installation</span></h4>
+<p>Install the <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=zabbix-server">zabbix-server</a></span> package. This includes the necessary scripts for use with MariaDB or PostgreSQL. The rest of this guide will assume that you will be using MariaDB.
+</p>
+<h4><span class="mw-headline" id="Zabbix-frontend_installation">Zabbix-frontend installation</span></h4>
+<p>Install the <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=zabbix-frontend-php">zabbix-frontend-php</a></span> package. You also have to choose a web server with PHP support, e.g.:
+</p>
+<ul>
+<li><a href="../en/Apache_HTTP_Server.html" title="Apache HTTP Server">Apache HTTP Server</a></li>
+<li><a href="../en/Lighttpd.html" title="Lighttpd">Lighttpd</a></li>
+<li><a href="../en/Nginx.html" title="Nginx">nginx</a></li>
+</ul>
+<p>Or one of the other servers found in <a href="../en/Category:Web_server.html" title="Category:Web server">Category:Web server</a>.
+</p>
+<h3><span class="mw-headline" id="Configuration">Configuration</span></h3>
+<p>Symlink the Zabbix web application directory to your http document root, e.g.:
+</p>
+<pre>$ ln -s /usr/share/webapps/zabbix /srv/http/zabbix
+</pre>
+<p>To get working apache out of the box you need to enable php integration:
+</p>
+<ul><li>see <a href="../en/Apache_HTTP_Server.html#Using_php-fpm_and_mod_proxy_fcgi" title="Apache HTTP Server">Apache HTTP Server#Using php-fpm and mod_proxy_fcgi</a>
+</li></ul>
+<p>Make sure to adjust following variables to these minimal values in your <code>/etc/php/php.ini</code>:
+</p>
+<pre>extension=bcmath
+extension=gd
+extension=sockets
+extension=mysqli
+extension=gettext
+post_max_size = 16M
+max_execution_time = 300
+max_input_time = 300
+date.timezone = "UTC"
+</pre>
+<h3><span class="mw-headline" id="Database_Initialization">Database Initialization</span></h3>
+<h4><span class="mw-headline" id="MySQL">MySQL</span></h4>
+<p>In this example, we create on localhost a MariaDB database called <code>zabbix</code> for the user <code>zabbix</code> identified by the password <code>test</code> and then import the database templates. This connection will be later used by the Zabbix server and web application:
+</p>
+<pre>$ mariadb -u root -p -e "create database zabbix character set utf8 collate utf8_bin"
+$ mariadb -u root -p -e "grant all on zabbix.* to zabbix@localhost identified by 'test'"
+$ mariadb -u zabbix -p -D zabbix &lt; /usr/share/zabbix-server/mysql/schema.sql
+$ mariadb -u zabbix -p -D zabbix &lt; /usr/share/zabbix-server/mysql/images.sql
+$ mariadb -u zabbix -p -D zabbix &lt; /usr/share/zabbix-server/mysql/data.sql
+</pre>
+<h4><span class="mw-headline" id="PostgreSQL">PostgreSQL</span></h4>
+<p>For PostgreSQL, these commands will create a database <code>zabbix</code> for user <code>zabbix</code>, which are the default settings in <code>zabbix_server.conf</code>, then import the schema and initial data:
+</p>
+<pre>$ createuser zabbix
+$ createdb zabbix -O zabbix
+$ cat /usr/share/zabbix-server/postgresql/{schema,images,data}.sql | psql -U zabbix -d zabbix
+</pre>
+<h3><span class="mw-headline" id="Database_Configuration">Database Configuration</span></h3>
+<p>Now edit <code>/etc/zabbix/zabbix_server.conf</code> with the database settings:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/zabbix/zabbix_server.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">DBName=zabbix
+DBUser=zabbix
+DBPassword=test
+LogType=system</pre>
+<h3>
+<span id="ICMP.2Fping_discovery"></span><span class="mw-headline" id="ICMP/ping_discovery">ICMP/ping discovery</span>
+</h3>
+<p>To use ICMP discovery (e.g. ping) in Zabbix, <a href="../en/Help:Reading.html#Installation_of_packages" class="mw-redirect" title="Install">install</a> the <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=fping">fping</a></span> package.
+</p>
+<h3><span class="mw-headline" id="Starting">Starting</span></h3>
+<p><a href="../en/Help:Reading.html#Control_of_systemd_units" class="mw-redirect" title="Enable">Enable</a> and <a href="../en/Help:Reading.html#Control_of_systemd_units" class="mw-redirect" title="Start">start</a> the <code>zabbix-server-mysql.service</code> unit, if you are using MariaDB, or <code>zabbix-server-pgsql.service</code> if using PostgreSQL.
+</p>
+<p>Finally you can access Zabbix via your local web server, e.g.: <a rel="nofollow" class="external free" href="http://localhost/zabbix/">http://localhost/zabbix/</a>, finish the installation wizard and access the frontend the first time. The default username is <code>Admin</code> and password <code>zabbix</code>.
+</p>
+<p>See appendix for a link to the official documentation, which explains all further steps in using it.
+</p>
+<h2><span class="mw-headline" id="Agent_setup">Agent setup</span></h2>
+<h3><span class="mw-headline" id="Installation_2">Installation</span></h3>
+<p>Install <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=zabbix-agent">zabbix-agent</a></span> for each monitoring target, including your monitoring server where <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=zabbix-server">zabbix-server</a></span> is installed. <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=zabbix-server">zabbix-server</a></span> no longer includes <code>zabbix-agent</code>.
+</p>
+<h3><span class="mw-headline" id="Configuration_2">Configuration</span></h3>
+<p>Simply edit the <code>zabbix_agentd.conf</code> and replace the server variable with the IP of your monitoring server. Only servers from this/these IP will be allowed to access the agent.
+</p>
+<pre>Server=&lt;IP of Zabbix server&gt;
+ServerActive=&lt;IP of Zabbix server&gt;
+</pre>
+<p>Further make sure the port <code>10050</code> on your device being monitored is not blocked and is properly forwarded.
+</p>
+<h3><span class="mw-headline" id="Starting_2">Starting</span></h3>
+<p><a href="../en/Help:Reading.html#Control_of_systemd_units" class="mw-redirect" title="Enable">Enable</a> and <a href="../en/Help:Reading.html#Control_of_systemd_units" class="mw-redirect" title="Start">start</a> the <code>zabbix-agent</code> service.
+</p>
+<h2><span class="mw-headline" id="Tips_and_tricks">Tips and tricks</span></h2>
+<h3><span class="mw-headline" id="Debugging_a_Zabbix_agent">Debugging a Zabbix agent</span></h3>
+<p>On the client site, you can check the state of an item like this:
+</p>
+<pre>$ zabbix_agentd -t hdd.smart[sda,Temperature_Celsius]
+</pre>
+<p>On the server/monitoring site, try this:
+</p>
+<pre>$ zabbix_get -s <i>host</i> -k hdd.smart[sda,Temperature_Celsius]
+</pre>
+<h3><span class="mw-headline" id="Monitor_Arch_Linux_system_updates">Monitor Arch Linux system updates</span></h3>
+<p>Here is an approach on how to monitor your Arch Linux clients for available system update using a custom <code>UserParameter</code>:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/zabbix/zabbix_agentd.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">Include=/etc/zabbix/zabbix_agentd.conf.d/*.conf</pre>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/zabbix/zabbix_agentd.conf.d/archlinuxupdates.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">UserParameter=archlinuxupdates,checkupdates | wc -l</pre>
+<p>You have to restart <code>zabbix-agentd</code> to apply the new configuration. The keyword for the item you later use in the web frontend is <code>archlinuxupdates</code>. It returns an integer representing the count of available updates.
+</p>
+<h2><span class="mw-headline" id="Troubleshooting">Troubleshooting</span></h2>
+<h3>
+<span id="Error_.22Specified_key_was_too_long.3B_max_key_length_is_767_bytes.22"></span><span class="mw-headline" id='Error_"Specified_key_was_too_long;_max_key_length_is_767_bytes"'>Error "Specified key was too long; max key length is 767 bytes"</span>
+</h3>
+<p>While importing the databases, you might get this error message. In order to solve this, you will have to change the code page configuration for your MariaDB database: <a href="../en/MariaDB.html#Using_UTF8MB4" title="MariaDB">MariaDB#Using UTF8MB4</a>.
+</p>
+<h2><span class="mw-headline" id="See_also">See also</span></h2>
+<ul>
+<li><a rel="nofollow" class="external text" href="https://www.zabbix.com/documentation/">Official manual</a></li>
+<li>
+<a rel="nofollow" class="external text" href="https://share.zabbix.com/">Zabbix Share</a> – Zabbix templates, modules &amp; more</li>
+</ul>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="../en/Category:Network_monitoring.html" title="Category:Network monitoring">Network monitoring</a></li></ul>
+</div></div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=Zabbix&amp;oldid=784583">https://wiki.archlinux.org/index.php?title=Zabbix&amp;oldid=784583</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 6 August 2023, at 02:10.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

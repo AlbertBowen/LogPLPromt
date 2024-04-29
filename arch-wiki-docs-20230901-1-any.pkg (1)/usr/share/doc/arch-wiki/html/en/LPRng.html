@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>LPRng - ArchWiki</title>
+<link rel="stylesheet" href="../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-LPRng rootpage-LPRng skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Installation" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#Installation">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Installation</div>
+			</a>
+			
+			<ul id="toc-Installation-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Configuration" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#Configuration">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Configuration</div>
+			</a>
+			
+				<button aria-controls="toc-Configuration-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Configuration subsection
+				</button>
+			
+			<ul id="toc-Configuration-sublist" class="sidebar-toc-list">
+				<li id="toc-Control_files" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Control_files">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.1</span>Control files</div>
+			</a>
+			
+			<ul id="toc-Control_files-sublist" class="sidebar-toc-list">
+				<li id="toc-Local_configuration" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Local_configuration">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.1.1</span>Local configuration</div>
+			</a>
+			
+			<ul id="toc-Local_configuration-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Remote_configuration" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Remote_configuration">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.1.2</span>Remote configuration</div>
+			</a>
+			
+			<ul id="toc-Remote_configuration-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Server_configuration" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Server_configuration">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.1.3</span>Server configuration</div>
+			</a>
+			
+			<ul id="toc-Server_configuration-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Configure_printer_settings_(filters)" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Configure_printer_settings_(filters)">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.2</span>Configure printer settings (filters)</div>
+			</a>
+			
+			<ul id="toc-Configure_printer_settings_(filters)-sublist" class="sidebar-toc-list">
+				<li id="toc-Postscript_printers" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Postscript_printers">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.2.1</span>Postscript printers</div>
+			</a>
+			
+			<ul id="toc-Postscript_printers-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Foomatic_system" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Foomatic_system">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.2.2</span>Foomatic system</div>
+			</a>
+			
+			<ul id="toc-Foomatic_system-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Ghostscript_drivers" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Ghostscript_drivers">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.2.3</span>Ghostscript drivers</div>
+			</a>
+			
+			<ul id="toc-Ghostscript_drivers-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Printcap_file" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Printcap_file">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.3</span>Printcap file</div>
+			</a>
+			
+			<ul id="toc-Printcap_file-sublist" class="sidebar-toc-list">
+				<li id="toc-Examples" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Examples">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.3.1</span>Examples</div>
+			</a>
+			
+			<ul id="toc-Examples-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Network_printing_advice" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Network_printing_advice">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.3.2</span>Network printing advice</div>
+			</a>
+			
+			<ul id="toc-Network_printing_advice-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Start_the_lpd_daemon" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Start_the_lpd_daemon">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.4</span>Start the lpd daemon</div>
+			</a>
+			
+			<ul id="toc-Start_the_lpd_daemon-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Usage" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#Usage">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>Usage</div>
+			</a>
+			
+			<ul id="toc-Usage-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-CUPS_and_LPRng" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#CUPS_and_LPRng">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4</span>CUPS and LPRng</div>
+			</a>
+			
+			<ul id="toc-CUPS_and_LPRng-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Troubleshooting" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#Troubleshooting">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5</span>Troubleshooting</div>
+			</a>
+			
+				<button aria-controls="toc-Troubleshooting-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Troubleshooting subsection
+				</button>
+			
+			<ul id="toc-Troubleshooting-sublist" class="sidebar-toc-list">
+				<li id="toc-Printer_specific_instrcutions" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Printer_specific_instrcutions">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5.1</span>Printer specific instrcutions</div>
+			</a>
+			
+			<ul id="toc-Printer_specific_instrcutions-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-GTK2" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#GTK2">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5.2</span>GTK2</div>
+			</a>
+			
+			<ul id="toc-GTK2-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-LXDE" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#LXDE">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5.3</span>LXDE</div>
+			</a>
+			
+			<ul id="toc-LXDE-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Postscript_printing" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Postscript_printing">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5.4</span>Postscript printing</div>
+			</a>
+			
+			<ul id="toc-Postscript_printing-sublist" class="sidebar-toc-list">
+				<li id="toc-Double-Sided_PS" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Double-Sided_PS">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5.4.1</span>Double-Sided PS</div>
+			</a>
+			
+			<ul id="toc-Double-Sided_PS-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+	</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../en/LPRng.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="mw-list-item"><a href="../en/Talk:LPRng.html" rel="discussion" title="Discussion about the content page [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">English</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../en/LPRng.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=LPRng&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=LPRng&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../en/LPRng.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=LPRng&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=LPRng&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output">
+<p><i>The LPRng software is an enhanced, extended, and portable implementation of the Berkeley LPR print spooler functionality. While providing the same interface and meeting RFC1179 requirements, the implementation is completely new and provides support for the following features: lightweight (no databases needed) lpr, lpc, and lprm programs; dynamic redirection of print queues; automatic job holding; highly verbose diagnostics; multiple printers serving a single queue; client programs do not need to run SUID root; greatly enhanced security checks; and a greatly improved permission and authorization mechanism.</i>
+</p>
+<p>LPRng is mature and stable and incorporates a flexible print filtering mechanism.  It excels as a print server but can be used as a print client.  It can also print from <a href="../en/CUPS.html" title="CUPS">CUPS</a> clients installed on other machines with minor hand configuration on the CUPS side. 
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> A disadvantage of LPRng is that Gnome3/GTK3 (including chrome and chromium) and KDE do not support lpr printing from their GUI. However, printing to a file and then using lpr works, though it is inconvenient.</div>
+<p>Wikipedia <a href="https://en.wikipedia.org/wiki/LPRng" class="extiw" title="wikipedia:LPRng">LPRng</a> article, and the history paragraph of one of two sites for <a rel="nofollow" class="external text" href="http://lprng.sourceforge.net/">LPRng</a> explain why there is another site for <a rel="nofollow" class="external text" href="http://www.lprng.com/">LPRng</a>.
+</p>
+<mw:tocplace></mw:tocplace>
+<h2><span class="mw-headline" id="Installation">Installation</span></h2>
+<p><a href="../en/Help:Reading.html#Installation_of_packages" class="mw-redirect" title="Install">Install</a> the <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/lprng/">lprng</a></span><sup><small>AUR</small></sup> package.
+</p>
+<p>Install optional filter packages:
+</p>
+<ul>
+<li><span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=poppler">poppler</a></span></li>
+<li>Any one out of <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=a2ps">a2ps</a></span>, <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=enscript">enscript</a></span>, <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/mpage/">mpage</a></span><sup><small>AUR</small></sup>
+</li>
+<li><span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=ghostscript">ghostscript</a></span></li>
+<li><span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=hplip">hplip</a></span></li>
+<li>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/foomatic-filters-lprng/">foomatic-filters-lprng</a></span><sup><small>AUR</small></sup>
+</li>
+</ul>
+<h2><span class="mw-headline" id="Configuration">Configuration</span></h2>
+<p>Configuration consists of the following steps:
+</p>
+<ul>
+<li>Set up control files</li>
+<li>Configure filters</li>
+<li>Create a printcap file and spool directories</li>
+<li>Enable and start the lpd daemon</li>
+</ul>
+<h3><span class="mw-headline" id="Control_files">Control files</span></h3>
+<h4><span class="mw-headline" id="Local_configuration">Local configuration</span></h4>
+<p>Two control files must be configured:
+</p>
+<pre>/etc/lprng/lpd/lpd.conf
+/etc/lprng/lpd/lpd.perms
+</pre>
+<h4><span class="mw-headline" id="Remote_configuration">Remote configuration</span></h4>
+<p>The default configurations in <code>/usr/share/doc/lprng</code> are adequate for a client computer printing to a remote printer.  Copy these to <code>/etc/lprng/lpd/</code>
+</p>
+<pre>cp /usr/share/doc/lprng /etc/lprng/lpd
+</pre>
+<p>and edit it.
+</p>
+<h4><span class="mw-headline" id="Server_configuration">Server configuration</span></h4>
+<p>For a server receiving requests across the Internet, uncomment the last line in <code>/etc/lprng/lpd/lpd.conf</code> and configure permissions as documented in the comments of <code>/etc/lprng/lpd/lpd.perms</code>. 
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> The files <code>lpd.conf.sample</code> and <code>lpd.perms.sample</code>, located in <code>/usr/share/doc/lprng</code>, document more complex situations.</div>
+<h3>
+<span id="Configure_printer_settings_.28filters.29"></span><span class="mw-headline" id="Configure_printer_settings_(filters)">Configure printer settings (filters)</span>
+</h3>
+<p>It is fine if you just pick one of the following filter (settings)  instructions. Just decide which way you want to go.
+</p>
+<h4><span class="mw-headline" id="Postscript_printers">Postscript printers</span></h4>
+<p>If you have a network Postscript printer you are in luck.  The sample postscript filter <code>/usr/share/doc/lprng/psfilter</code> converts PDF and text files to Postscript.  Other file types are rejected. 
+</p>
+<p>Copy this file to <code>/usr/lib/lprng/lpd</code> and rename it as desired.  Then edit it to set your paper type and your choice of single-sided/double-sided printing.  
+</p>
+<p>If you wish to have separate single-sided and double-sided print queues, make two copies with different names and edit appropriately.
+</p>
+<h4><span class="mw-headline" id="Foomatic_system">Foomatic system</span></h4>
+<p>Another mechanism for print filtering is via the Foomatic system. This system used by <a href="../en/CUPS.html" title="CUPS">CUPS</a>. Install <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/foomatic-filters-lprng/">foomatic-filters-lprng</a></span><sup><small>AUR</small></sup> as the <code>foomatic-rip</code> program in the CUPS installation has been modified to remove LPRng support).  
+</p>
+<p>Use <code>foofilter</code> as described above, editing for your desired <code>.ppd file</code>.  Install the <code>.ppd</code> file in conformance with the path specified in <code>foofilter</code>. (<code>/etc/lprng/lpd</code> is a good location.)
+</p>
+<p>To use Hewlett Packard printers, install <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=hplip">hplip</a></span> from the main distribution.  This package has <code>.ppd</code> files for virtually all Hewlett Packard printers.
+</p>
+<h4><span class="mw-headline" id="Ghostscript_drivers">Ghostscript drivers</span></h4>
+<p>If you have a printer that has a Ghostscript driver, copy and edit <code>gsfilter</code> as above to set the appropriate driver and the paper type.  You can discover the drivers available in your version of Ghostscript by typing the command
+</p>
+<pre>$ gs -h</pre>
+<p>Note that support for various printer features is typically limited and out of date with this option.
+</p>
+<h3><span class="mw-headline" id="Printcap_file">Printcap file</span></h3>
+<p>The <code>/etc/lprng/printcap</code> file tells LPRng about the printers you have and the print filters that need to be used.
+</p>
+<h4><span class="mw-headline" id="Examples">Examples</span></h4>
+<p>The <code>printcap.sample</code> file (in <code>/usr/share/doc/lprng</code>) provides a short tutorial as to how to set up a printcap file. The printcap fragments <code>printcap_server</code> and <code>printcap_client</code> in this directory provide additional information.
+</p>
+<p>An example file may look like this for two local printers:
+</p>
+<pre>DCPJ4120DW:\
+     :mx=0:\
+     :sd=/var/spool/lpd/DCPJ4120DW:\
+     :sh:\
+     :lp=/dev/usb/lp1:\
+     :if=/opt/brother/Printers/dcpj4120dw/lpd/filterdcpj4120dw:
+HL2035:\
+     :mx=0:\
+     :sd=/var/spool/lpd/HL2035:\
+     :sh:\
+     :lp=/dev/usb/lp0:\
+     :if=/opt/brother/Printers/brhl2035/lpd/filterHL2030:
+</pre>
+<h4><span class="mw-headline" id="Network_printing_advice">Network printing advice</span></h4>
+<p>Generally, one computer should be designated as the server for one or more printers.  Other client computers should send their print jobs to the server rather than the printer directly.  
+</p>
+<p>The rather non-obvious server setup in <code>printcap_server</code> is needed to make print filtering work on network printers, as opposed to printers attached directly to the server computer via, say, a USB port.  (See  the reference manual<a rel="nofollow" class="external autonumber" href="http://www.lprng.org/LPRng-Reference/LPRng-Reference.html">[1]</a>.)
+</p>
+<p>After creating the printcap file, run the command as root
+</p>
+<pre>$ /usr/bin/checkpc -f</pre>
+<p>This will check your configuration and create spool directories in <code>/var/spool/lpd</code>.  If <code>checkpc</code> complains about something, address the issue and rerun.
+</p>
+<h3><span class="mw-headline" id="Start_the_lpd_daemon">Start the lpd daemon</span></h3>
+<p>LPRng runs a daemon in background called <code>lpd</code> to manage print requests. <a href="../en/Help:Reading.html#Control_of_systemd_units" class="mw-redirect" title="Start/enable">Start/enable</a> <code>lpd.service</code>. 
+</p>
+<p>If any configuration files are changed, one must <a href="../en/Help:Reading.html#Control_of_systemd_units" class="mw-redirect" title="Restart">restart</a> <code>lpd</code>.
+</p>
+<h2><span class="mw-headline" id="Usage">Usage</span></h2>
+<p>The <code>lpr</code> command is the printing tool in LPRng. The general form of use is
+</p>
+<pre>$ lpr [options] <i>file_to_be_printed</i></pre>
+<p>If no file is specified, input is accepted on the standard input. The most useful options are <code>-P <i>printer</i></code> and <code>-K <i>number_of_copies</i></code>. In the absence of the printer option, setting the environment variable <code>PRINTER</code> to the name of the printer will tell LPRng which printer to use.
+</p>
+<p>Other useful commands are <code>lpq</code> (examine the print queue) and <code>lprm</code> (remove a print job from the queue). See <span class="plainlinks archwiki-template-man" title="$ man 1 lpr"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/lpr.1">lpr(1)</a></span>, <span class="plainlinks archwiki-template-man" title="$ man 1 lpq"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/lpq.1">lpq(1)</a></span>, and <span class="plainlinks archwiki-template-man" title="$ man 1 lprm"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/lprm.1">lprm(1)</a></span>.
+</p>
+<h2><span class="mw-headline" id="CUPS_and_LPRng">CUPS and LPRng</span></h2>
+<p><a href="../en/CUPS.html" title="CUPS">CUPS</a> may be used to access a printer on a server from a client machine on which LPRng is not installed.  The trick is to configure CUPS to access the printer via the <code>lpd</code> protocol.  This is easy to do using the web interface to CUPS.  Also, since the server as set up here does all necessary print filtering, tell CUPS to use the <code>raw</code> filter.  Alternative divisions between filtering responsibilities can be devised, depending on your needs.
+</p>
+<h2><span class="mw-headline" id="Troubleshooting">Troubleshooting</span></h2>
+<h3><span class="mw-headline" id="Printer_specific_instrcutions">Printer specific instrcutions</span></h3>
+<p>Despite its title, some of the information at <a href="../en/CUPS/Printer-specific_problems.html" title="CUPS/Printer-specific problems">CUPS/Printer-specific problems</a> is not Cups specific.
+</p>
+<h3><span class="mw-headline" id="GTK2">GTK2</span></h3>
+<p>GTK2 applications still support <code>lpr</code> printing. To make this work, create the file <code>~/.gtkrc-2.0</code> in your home directory containing a single line
+</p>
+<pre>gtk-print-backends = "file,lpr"
+</pre>
+<h3><span class="mw-headline" id="LXDE">LXDE</span></h3>
+<p>LXDE may create its own <code>~/.gtkrc-2.0</code> file if the look and feel of the desktop are altered — look in this file for instructions as to how to proceed.
+</p>
+<h3><span class="mw-headline" id="Postscript_printing">Postscript printing</span></h3>
+<p>The filter <code>pdftops</code> from the <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=poppler">poppler</a></span> package is used to create Postscript from PDF files in the print filters. 
+</p>
+<p>Occasionally, <code>pdftops</code> produces bad or no output. 
+An alternative filter, <code>pdf2ps</code> from the <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=ghostscript">ghostscript</a></span> package, can be substituted, but this filter has its own problems.  
+</p>
+<p>For a one-shot case, just use <code>pdf2ps</code> or some other converter to produce Postscript and send that to the printer.
+</p>
+<h4><span class="mw-headline" id="Double-Sided_PS">Double-Sided PS</span></h4>
+<p>Double-sided printing of Postscript files is effected in the example filters by inserting a line of Postscript code right after the first line.  For some Postscript files, this does not work. 
+</p>
+<p>In this case, send the Postscript file to a single-side print queue.  The print filter <code>psfilter</code> set up for single-sided printing does no filtering of Postscript files.
+</p>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="../en/Category:Printers.html" title="Category:Printers">Printers</a></li></ul>
+</div></div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=LPRng&amp;oldid=749658">https://wiki.archlinux.org/index.php?title=LPRng&amp;oldid=749658</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 29 September 2022, at 20:18.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

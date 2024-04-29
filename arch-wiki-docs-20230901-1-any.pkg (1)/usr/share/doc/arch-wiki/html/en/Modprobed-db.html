@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>Modprobed-db - ArchWiki</title>
+<link rel="stylesheet" href="../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Modprobed-db rootpage-Modprobed-db skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Installation" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Installation">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Installation</div>
+			</a>
+			
+			<ul id="toc-Installation-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Usage" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Usage">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Usage</div>
+			</a>
+			
+				<button aria-controls="toc-Usage-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Usage subsection
+				</button>
+			
+			<ul id="toc-Usage-sublist" class="sidebar-toc-list">
+				<li id="toc-Populating_the_database" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Populating_the_database">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.1</span>Populating the database</div>
+			</a>
+			
+			<ul id="toc-Populating_the_database-sublist" class="sidebar-toc-list">
+				<li id="toc-Recommendations" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Recommendations">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.1.1</span>Recommendations</div>
+			</a>
+			
+			<ul id="toc-Recommendations-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Automatic_periodic_database_updates" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Automatic_periodic_database_updates">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.1.2</span>Automatic periodic database updates</div>
+			</a>
+			
+			<ul id="toc-Automatic_periodic_database_updates-sublist" class="sidebar-toc-list">
+				<li id="toc-Cron" class="sidebar-toc-list-item sidebar-toc-level-4">
+			<a class="sidebar-toc-link" href="#Cron">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.1.2.1</span>Cron</div>
+			</a>
+			
+			<ul id="toc-Cron-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-systemd" class="sidebar-toc-list-item sidebar-toc-level-4">
+			<a class="sidebar-toc-link" href="#systemd">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.1.2.2</span>systemd</div>
+			</a>
+			
+			<ul id="toc-systemd-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Manually_editing_the_database" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Manually_editing_the_database">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.1.3</span>Manually editing the database</div>
+			</a>
+			
+			<ul id="toc-Manually_editing_the_database-sublist" class="sidebar-toc-list">
+				<li id="toc-Recommended_modules" class="sidebar-toc-list-item sidebar-toc-level-4">
+			<a class="sidebar-toc-link" href="#Recommended_modules">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.1.3.1</span>Recommended modules</div>
+			</a>
+			
+			<ul id="toc-Recommended_modules-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Building_a_kernel_with_modprobed-db" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Building_a_kernel_with_modprobed-db">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.2</span>Building a kernel with modprobed-db</div>
+			</a>
+			
+			<ul id="toc-Building_a_kernel_with_modprobed-db-sublist" class="sidebar-toc-list">
+				<li id="toc-Traditional_compilation" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Traditional_compilation">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.2.1</span>Traditional compilation</div>
+			</a>
+			
+			<ul id="toc-Traditional_compilation-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Using_the_official_Arch_kernel_PKGBUILD" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Using_the_official_Arch_kernel_PKGBUILD">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.2.2</span>Using the official Arch kernel PKGBUILD</div>
+			</a>
+			
+			<ul id="toc-Using_the_official_Arch_kernel_PKGBUILD-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Using_linux-tkg" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Using_linux-tkg">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.2.3</span>Using linux-tkg</div>
+			</a>
+			
+			<ul id="toc-Using_linux-tkg-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+	</ul>
+		</li>
+		<li id='toc-Benefits_of_modprobed-db_with_"make_localmodconfig"_in_custom_kernels' class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href='#Benefits_of_modprobed-db_with_"make_localmodconfig"_in_custom_kernels'>
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>Benefits of modprobed-db with "make localmodconfig" in custom kernels</div>
+			</a>
+			
+			<ul id='toc-Benefits_of_modprobed-db_with_"make_localmodconfig"_in_custom_kernels-sublist' class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-See_also" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#See_also">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4</span>See also</div>
+			</a>
+			
+			<ul id="toc-See_also-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../en/Modprobed-db.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="mw-list-item"><a href="../en/Talk:Modprobed-db.html" rel="discussion" title="Discussion about the content page [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">English</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../en/Modprobed-db.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=Modprobed-db&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=Modprobed-db&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../en/Modprobed-db.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Modprobed-db&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Modprobed-db&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output">
+<div class="archwiki-template-meta-related-articles-start">
+<p class="mw-no-invert">Related articles</p>
+<ul>
+<li><a href="../en/Kernel.html" class="mw-redirect" title="Kernels">Kernels</a></li>
+<li><a href="../en/Unofficial_user_repositories/Repo-ck.html" class="mw-redirect" title="Linux-ck">Linux-ck</a></li>
+</ul>
+</div>
+<p><a rel="nofollow" class="external text" href="https://github.com/graysky2/modprobed-db">modprobed-db</a> is a utility that populates a list of all the <a href="../en/Kernel_module.html" title="Kernel module">kernel modules</a> that have been loaded on a system while running. This list can then be used to disable all the unused modules when <a href="../en/Kernel.html#Compilation" title="Kernel">building your own kernel</a> and significantly reduce the compilation time.
+</p>
+<mw:tocplace></mw:tocplace>
+<h2><span class="mw-headline" id="Installation">Installation</span></h2>
+<p>Install the <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/modprobed-db/">modprobed-db</a></span><sup><small>AUR</small></sup> package.
+</p>
+<ol>
+<li>Run <code>modprobed-db</code> to create <code>$XDG_CONFIG_HOME/modprobed-db.conf</code> if it does not already exist.</li>
+<li>Run <code>modprobed-db store</code> to create the <code>$XDG_CONFIG_HOME/modprobed.db</code> database file and populate it with the currently loaded modules.</li>
+</ol>
+<p><b>Optionally:</b> add modules in the ignore array that you do NOT want counted, for example modules that get built or that are provided by another package.
+Some common ones are included by default:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">$ cat ~/.config/modprobed-db.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">IGNORE=(nvidia vboxdrv vboxnetflt vboxnetadp vboxpci lirc_dev lirc_i2c
+osscore oss_hdaudio oss_usb tp_smapi thinkpad_ec
+zavl znvpair zunicode zcommon zpios zfs spl splat)</pre>
+<h2><span class="mw-headline" id="Usage">Usage</span></h2>
+<h3><span class="mw-headline" id="Populating_the_database">Populating the database</span></h3>
+<p>Once the initial database has been created, use <code>modprobed-db list</code> to show the current database modules and <code>modprobed-db store</code> to update the database with the currently loaded kernel modules.
+</p>
+<h4><span class="mw-headline" id="Recommendations">Recommendations</span></h4>
+<p>It is recommended to "use" the official Arch kernel, with <code>modprobed-db</code> installed, for a good amount of time to allow the database to grow based on usage and capture everything the system needs before <a href="#Building_a_kernel_with_modprobed-db">building a kernel without the unneeded modules</a>). Here are some suggested actions to allow appropriate modules to load and get cataloged: 
+</p>
+<ul>
+<li>Mount every kind of <a href="../en/File_systems.html" class="mw-redirect" title="Filesystem">filesystem</a> that will be used.</li>
+<li>Insert every kind of removable media that will be used (USB, DVD, CD, etc.).
+<ul><li>This includes the mounting of ISO image files if applicable, which uses the <b>loop</b> and <b>isofs</b> modules.</li></ul>
+</li>
+<li>Use every device on the machine (network interfaces, input devices, webcams, mobile devices, etc.).</li>
+<li>Use every desired application, as some depend on kernel modules. For example:
+<ul>
+<li>IP blocking/filtering software such as <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/pgl-cli/">pgl-cli</a></span><sup><small>AUR</small></sup> require the <a href="../en/Iptables.html" title="Iptables">iptables</a> kernel module.</li>
+<li>Encryption software such as <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/truecrypt/">truecrypt</a></span><sup><small>AUR</small></sup> requires cryptography kernel modules. Be sure to mount some encrypted containers so they will actually be loaded.</li>
+<li>Certain <a href="../en/QEMU.html" title="QEMU">QEMU</a> configurations require kernel modules.</li>
+<li>
+<a href="../en/Lm_sensors.html" class="mw-redirect" title="Lm-sensors">lm-sensors</a> requires kernel modules for reading hardware sensors.</li>
+</ul>
+</li>
+<li>Try re-running modprobed-db while running different Linux-kernels; they may include modules not enabled in the other kernels.</li>
+</ul>
+<p>These suggested actions are to be made in parallel with periodically updating the database with <code>modprobed-db store</code> to capture any newly loaded kernel module.
+</p>
+<h4><span class="mw-headline" id="Automatic_periodic_database_updates">Automatic periodic database updates</span></h4>
+<p>Calls to <code>modprobed-db store</code> can be automated with one of the following methods:
+</p>
+<h5><span class="mw-headline" id="Cron">Cron</span></h5>
+<p>The most convenient method to use modprobed-db is to simply add a crontab entry invoking <code>/usr/bin/modprobed-db store</code> at some regular interval.
+</p>
+<p>Example running the script once every hour:
+</p>
+<pre>$ crontab -e
+0 */1 * * *   /usr/bin/modprobed-db store &amp;&gt; /dev/null
+</pre>
+<h5><span class="mw-headline" id="systemd">systemd</span></h5>
+<p>Instead of cron, <a href="../en/Help:Reading.html#Control_of_systemd_units" class="mw-redirect" title="Enable/start">enable/start</a> the <code>modprobed-db.service</code> <a href="../en/Systemd/User.html" class="mw-redirect" title="User unit">user unit</a>. It will run modprobed-db in store mode once per 6 hours, and at boot and on shutdown.
+</p>
+<p>Like any service and timer, the <a href="../en/Help:Reading.html#Control_of_systemd_units" class="mw-redirect" title="Unit status">status</a> of the the <code>modprobed-db.service</code> <a href="../en/Systemd/User.html" class="mw-redirect" title="User unit">user unit</a> can be queried.
+</p>
+<h4><span class="mw-headline" id="Manually_editing_the_database">Manually editing the database</span></h4>
+<p>Using the <a href="#Automatic_periodic_database_updates">#Automatic periodic database updates</a> or manually running <code>modprobed-db store</code> is not entirely foolproof:
+</p>
+<ul>
+<li>Some modules get loaded then unloaded between two periodic database updates and may not be captured.</li>
+<li>Some modules are used during boot and are not captured by <code>modprobed-db</code> (e.g. <code>efivarfs</code>), they need to be manually added to the <code>modprobed.db</code> file.</li>
+</ul>
+<p>Thankfully, the <code>modprobed.db</code> database file is a simple text file that contains one kernel module name per line: it can be manually edited to add/remove a module. It is then recommended to run <code>modprobed-db store</code> after a manual edit so the modules get automatically reordered.
+</p>
+<h5><span class="mw-headline" id="Recommended_modules">Recommended modules</span></h5>
+<p>These modules are recommended to be added to the <code>$XDG_CONFIG_HOME/modprobed.db</code> database file as they are broadly used:
+</p>
+<ul>
+<li>
+<code>ext4</code>, <code>fat</code>, <code>vfat</code>: to support common <a href="../en/File_systems.html" title="File systems">file systems</a> and the <a href="../en/EFI_system_partition.html" title="EFI system partition">EFI system partition</a>
+</li>
+<li>
+<code>loop</code>: to mount a file as a file system</li>
+<li>
+<code>isofs</code>: to mount ISO files</li>
+<li>
+<code>cifs</code>: for network filesystems like <a href="../en/Samba.html" title="Samba">Samba</a>
+</li>
+<li>
+<code>efivarfs</code>: for mounting the <a href="../en/Unified_Extensible_Firmware_Interface.html#UEFI_variables" class="mw-redirect" title="UEFI">UEFI#UEFI variables</a> file system</li>
+<li>
+<code>usb_storage</code>: to support <a href="../en/USB_storage_devices.html" title="USB storage devices">USB storage devices</a>
+</li>
+<li>
+<code>usbhid</code>: to support USB input devices</li>
+</ul>
+<h3><span class="mw-headline" id="Building_a_kernel_with_modprobed-db">Building a kernel with modprobed-db</span></h3>
+<p>After the database has been adequately populated, it can be read directly by <a rel="nofollow" class="external text" href="https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/tree/README?id=refs/tags/v4.3.3#n205">make localmodconfig</a>.
+</p>
+<h4><span class="mw-headline" id="Traditional_compilation">Traditional compilation</span></h4>
+<p><code>modprobed-db</code> naturally intervenes in a <a href="../en/Kernel/Traditional_compilation.html" title="Kernel/Traditional compilation">traditional compilation workflow</a> during the configuration step with the <a href="../en/Kernel/Traditional_compilation.html#Default_Arch_configuration" title="Kernel/Traditional compilation">default Arch .config file</a>.
+</p>
+<h4><span class="mw-headline" id="Using_the_official_Arch_kernel_PKGBUILD">Using the official Arch kernel PKGBUILD</span></h4>
+<p>The official Arch kernel <code>PKGBUILD</code> can be modified as shown to do this automatically:
+</p>
+<pre>...
+    msg2 "Applying patch $src..."
+    patch -Np1 &lt; "../$src"
+  done
+
+  msg2 "Setting config..."
+  cp ../config .config
+  make olddefconfig
+
+  <b>make LSMOD=$HOME/.config/modprobed.db localmodconfig</b>
+
+  make -s kernelrelease &gt; ../version
+...</pre>
+<h4><span class="mw-headline" id="Using_linux-tkg">Using linux-tkg</span></h4>
+<p><a rel="nofollow" class="external text" href="https://github.com/Frogging-Family/linux-tkg">linux-tkg</a> offers a user-friendly kernel build script that also includes extra patches oriented towards improving desktop/gaming performance. The use of <code>modprobed-db</code>'s database to strip unneeded modules can be toggled in its configuration file.
+</p>
+<h2>
+<span id="Benefits_of_modprobed-db_with_.22make_localmodconfig.22_in_custom_kernels"></span><span class="mw-headline" id='Benefits_of_modprobed-db_with_"make_localmodconfig"_in_custom_kernels'>Benefits of modprobed-db with "make localmodconfig" in custom kernels</span>
+</h2>
+<ol>
+<li>Significantly reduced compilation time</li>
+<li>Unneeded modules are not built, the saved disk space is irrelevant for desktop computers as it is a relatively small gain (few hundred megabytes).</li>
+</ol>
+<p>Comparisons using kernel version 5.13.1, where a <a href="../en/Kernel/Traditional_compilation.html" title="Kernel/Traditional compilation">Kernel/Traditional compilation</a> is made with the default Arch configuration.
+</p>
+<table class="wikitable">
+<tbody>
+<tr>
+<th>Machine CPU</th>
+<th># of threads</th>
+<th>Compiler</th>
+<th>make localmodconfig</th>
+<th># of Modules</th>
+<th>Total Compilation Time</th>
+<th>Kernel Compilation Time</th>
+<th>Modules Compilation Time
+</th>
+</tr>
+<tr>
+<td>Ryzen 5950X @ 4.55 GHz</td>
+<td>32</td>
+<td>GCC 11.1.0</td>
+<td>No</td>
+<td>5442</td>
+<td>5m 12s</td>
+<td>58s</td>
+<td>4m 14s
+</td>
+</tr>
+<tr>
+<td>Ryzen 5950X @ 4.55 GHz</td>
+<td>32</td>
+<td>GCC 11.1.0</td>
+<td>Yes</td>
+<td>227</td>
+<td>1m 32s</td>
+<td>57s</td>
+<td>35s
+</td>
+</tr>
+<tr>
+<td>Ryzen 5950X @ 4.55 GHz</td>
+<td>32</td>
+<td>Clang 12.0.1</td>
+<td>No</td>
+<td>5442</td>
+<td>9m 5s</td>
+<td>1m 13s</td>
+<td>7m 52s
+</td>
+</tr>
+<tr>
+<td>Ryzen 5950X @ 4.55 GHz</td>
+<td>32</td>
+<td>Clang 12.0.1</td>
+<td>Yes</td>
+<td>227</td>
+<td>2m 13s</td>
+<td>1m 13s</td>
+<td>1m
+</td>
+</tr>
+</tbody>
+</table>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> These results do not prove that GCC is faster than Clang at building the kernel. The GCC version used in these benchmarks is self built and optimized.</div>
+<p>The main results of the benchmark is that 80% of the build time of a "full" kernel is spent on modules. Given that only a fraction of those modules are needed by any given machine, the build time can be reduced by ~70%. The results will vary from one machine to another but should be similar.
+</p>
+<p>The number of modules can be determined by the following:
+</p>
+<pre>$ cd /lib/modules/15.13.1-your-custom-kernel
+$ find * | grep ko.zst | wc -l
+</pre>
+<p>The kernel build time is obtained with:
+</p>
+<pre>$ time make -jx bzImage # Replace "x" with the wanted number of threads
+</pre>
+<p>then the modules build time is obtained with:
+</p>
+<pre>$ time make -jx modules # Replace "x" with the wanted number of threads
+</pre>
+<h2><span class="mw-headline" id="See_also">See also</span></h2>
+<ul>
+<li>
+<a rel="nofollow" class="external free" href="https://docs.kernel.org/admin-guide/README.html#configuring-the-kernel">https://docs.kernel.org/admin-guide/README.html#configuring-the-kernel</a> for documentation for <code>make localmodconfig</code>
+</li>
+<li>
+<a rel="nofollow" class="external free" href="https://docs.kernel.org/kbuild/kconfig.html">https://docs.kernel.org/kbuild/kconfig.html</a> and the parent directory</li>
+</ul>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="../en/Category:Kernel.html" title="Category:Kernel">Kernel</a></li></ul>
+</div></div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=Modprobed-db&amp;oldid=786128">https://wiki.archlinux.org/index.php?title=Modprobed-db&amp;oldid=786128</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 24 August 2023, at 23:41.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

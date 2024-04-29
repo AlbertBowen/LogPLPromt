@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>Touchatag RFID Reader - ArchWiki</title>
+<link rel="stylesheet" href="../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Touchatag_RFID_Reader rootpage-Touchatag_RFID_Reader skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Installation" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Installation">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Installation</div>
+			</a>
+			
+				<button aria-controls="toc-Installation-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Installation subsection
+				</button>
+			
+			<ul id="toc-Installation-sublist" class="sidebar-toc-list">
+				<li id="toc-USB" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#USB">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.1</span>USB</div>
+			</a>
+			
+			<ul id="toc-USB-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-PC/SC" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#PC/SC">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.2</span>PC/SC</div>
+			</a>
+			
+			<ul id="toc-PC/SC-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Usage" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Usage">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Usage</div>
+			</a>
+			
+				<button aria-controls="toc-Usage-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Usage subsection
+				</button>
+			
+			<ul id="toc-Usage-sublist" class="sidebar-toc-list">
+				<li id="toc-USB_2" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#USB_2">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.1</span>USB</div>
+			</a>
+			
+			<ul id="toc-USB_2-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-PC/SC_2" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#PC/SC_2">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.2</span>PC/SC</div>
+			</a>
+			
+			<ul id="toc-PC/SC_2-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Tips_and_tricks" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Tips_and_tricks">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>Tips and tricks</div>
+			</a>
+			
+				<button aria-controls="toc-Tips_and_tricks-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Tips and tricks subsection
+				</button>
+			
+			<ul id="toc-Tips_and_tricks-sublist" class="sidebar-toc-list">
+				<li id="toc-tagEventor" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#tagEventor">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.1</span>tagEventor</div>
+			</a>
+			
+			<ul id="toc-tagEventor-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Troubleshooting" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Troubleshooting">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4</span>Troubleshooting</div>
+			</a>
+			
+				<button aria-controls="toc-Troubleshooting-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Troubleshooting subsection
+				</button>
+			
+			<ul id="toc-Troubleshooting-sublist" class="sidebar-toc-list">
+				<li id="toc-Firmware_[…]_is_bogus!_Upgrade_the_reader_firmware" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Firmware_[%E2%80%A6]_is_bogus!_Upgrade_the_reader_firmware">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.1</span>Firmware […] is bogus! Upgrade the reader firmware</div>
+			</a>
+			
+			<ul id="toc-Firmware_[…]_is_bogus!_Upgrade_the_reader_firmware-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../en/Touchatag_RFID_Reader.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="new mw-list-item"><a href="/index.php?title=Talk:Touchatag_RFID_Reader&amp;action=edit&amp;redlink=1" rel="discussion" title="Discussion about the content page (page does not exist) [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">English</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../en/Touchatag_RFID_Reader.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=Touchatag_RFID_Reader&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=Touchatag_RFID_Reader&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../en/Touchatag_RFID_Reader.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Touchatag_RFID_Reader&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Touchatag_RFID_Reader&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output">
+<p>Touchatag is a RFID tag reader from <a rel="nofollow" class="external text" href="https://web.archive.org/web/20120930194912/http://www.touchatag.com/">Touchatag</a>. It is a cheap set consisting of an ACR122U USB tag reader and MiFare Ultralight RFID tags (USB ID <code>072f:2200</code>, use <code>lsusb -v</code> to check the firmware version − 2.14 as of 2020-05-10 − under the <code>bcdDevice</code> descriptor).
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> Always put a tag on the reader, otherwise you might encounter problems.</div>
+<mw:tocplace></mw:tocplace>
+<h2><span class="mw-headline" id="Installation">Installation</span></h2>
+<p>Stop the conflicting drivers (<code>nfc</code>, <code>pn533</code> and <code>pn533_usb</code>) from loading.
+</p>
+<p>See the note about <a href="../en/Kernel_module.html#Using_files_in_/etc/modprobe.d/_2" title="Kernel module">blacklisting</a> drivers: the can still be loaded manually, so you should <a href="../en/Help:Reading.html#Append,_add,_create,_edit" class="mw-redirect" title="Create">create</a> the following file:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/modprobe.d/blacklist.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">install nfc /bin/false
+install pn533 /bin/false
+install pn533_usb /bin/false
+</pre>
+<p><a href="../en/Udev.html#Loading_new_rules" title="Udev">Reload udev rules</a>, unload the conflicting modules if they were loaded already: 
+</p>
+<pre># rmmod pn533_usb pn533 nfc
+</pre>
+<p>or simply reboot.
+</p>
+<p>There are two options for connecting the tag reader to libnfc. Difference between them is detailed on <a rel="nofollow" class="external text" href="https://stackoverflow.com/questions/45508174/force-pc-sc-driver-on-acr122u-nfc-reader">stackoverflow</a>.
+</p>
+<h3><span class="mw-headline" id="USB">USB</span></h3>
+<p>This is the modern and recommended way to use this device. 
+</p>
+<p>To use <code>acr122_usb</code>, you do <b>not</b> need to run the pcsc daemon (<a rel="nofollow" class="external text" href="https://github.com/nfc-tools/libnfc/blob/master/README.md">libnfc README</a> currently tells you to run it, but this is for the PC/SC way). 
+</p>
+<p><a href="../en/Help:Reading.html#Installation_of_packages" class="mw-redirect" title="Install">Install</a> <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=libnfc">libnfc</a></span>.
+</p>
+<h3>
+<span id="PC.2FSC"></span><span class="mw-headline" id="PC/SC">PC/SC</span>
+</h3>
+<p>This is the legacy and deprecated way to use this device.
+</p>
+<p><a href="../en/Help:Reading.html#Installation_of_packages" class="mw-redirect" title="Install">Install</a> <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=ccid">ccid</a></span> and <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=pcsc-tools">pcsc-tools</a></span>.
+</p>
+<h2><span class="mw-headline" id="Usage">Usage</span></h2>
+<h3><span class="mw-headline" id="USB_2">USB</span></h3>
+<p>Check if the device is detected:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;"># nfc-list</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">nfc-list uses libnfc 1.7.1
+NFC device: ACS / ACR122U PICC Interface opened
+</pre>
+<p>Reading NFC cards works as well:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;"># nfc-poll</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">nfc-poll uses libnfc 1.7.1
+NFC reader: ACS / ACR122U PICC Interface opened
+NFC device will poll during 30000 ms (20 pollings of 300 ms for 5 modulations)
+ISO/IEC 14443A (106 kbps) target:
+    ATQA (SENS_RES): 00  04  
+       UID (NFCID1): 42  14  3e  2e  
+      SAK (SEL_RES): 08  
+Waiting for card removing...nfc_initiator_target_is_present: Target Released
+done.
+</pre>
+<h3>
+<span id="PC.2FSC_2"></span><span class="mw-headline" id="PC/SC_2">PC/SC</span>
+</h3>
+<p>To test the device run:
+</p>
+<pre># pcscd -f
+</pre>
+<p><a href="../en/Help:Reading.html#Control_of_systemd_units" class="mw-redirect" title="Start">Start</a> <code>pcscd.service</code>, then put a tag on the reader, the result should look like the following:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;"># pcsc_scan</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">PC/SC device scanner
+V 1.4.17 (c) 2001-2009, Ludovic Rousseau &lt;ludovic.rousseau@free.fr&gt;
+Compiled with PC/SC lite version: 1.6.6
+Scanning present readers...
+0: ACS ACR122U 00 00
+
+Mon Mar 21 18:16:07 2011
+ Reader 0: ACS ACR122U 00 00
+  Card state: Card inserted, Shared Mode, 
+  ATR: 3B BE 95 00 00 41 03 00 00 00 00 00 00 00 00 00 02 90 00 
+
+ATR: 3B BE 95 00 00 41 03 00 00 00 00 00 00 00 00 00 02 90 00
++ TS = 3B --&gt; Direct Convention
++ T0 = BE, Y(1): 1011, K: 14 (historical bytes)
+  TA(1) = 95 --&gt; Fi=512, Di=16, 32 cycles/ETU
+    125000 bits/s at 4 MHz, fMax for Fi = 5 MHz =&gt; 156250 bits/s                                                               
+  TB(1) = 00 --&gt; VPP is not electrically connected
+  TD(1) = 00 --&gt; Y(i+1) = 0000, Protocol T = 0 
+-----
++ Historical bytes: 41 03 00 00 00 00 00 00 00 00 00 02 90 00
+  Category indicator byte: 41 (proprietary format) 
+
+Possibly identified card (using /usr/share/pcsc/smartcard_list.txt):
+3B BE 95 00 00 41 03 00 00 00 00 00 00 00 00 00 02 90 00
+        touchatag SAM card
+</pre>
+<h2><span class="mw-headline" id="Tips_and_tricks">Tips and tricks</span></h2>
+<h3><span class="mw-headline" id="tagEventor">tagEventor</span></h3>
+<p><a rel="nofollow" class="external text" href="https://code.google.com/p/tageventor/">tagEventor</a> runs in the background and executes scripts when a tag enters or leaves your tag reader.
+</p>
+<p>Download a <a rel="nofollow" class="external text" href="https://code.google.com/p/tageventor/downloads/list">binary version</a> or <a rel="nofollow" class="external text" href="https://code.google.com/p/tageventor/source/checkout">compile</a> your own.
+</p>
+<p>Run tagEventor to test your installation:
+</p>
+<pre># tagEventor -v 1
+</pre>
+<p>The scripts are located in <code>/etc/gtagEventor</code>. Read the <a rel="nofollow" class="external text" href="https://code.google.com/p/tageventor/">tagEventor documentation</a> on how to use them.
+</p>
+<h2><span class="mw-headline" id="Troubleshooting">Troubleshooting</span></h2>
+<h3>
+<span id="Firmware_.5B.E2.80.A6.5D_is_bogus.21_Upgrade_the_reader_firmware"></span><span class="mw-headline" id="Firmware_[…]_is_bogus!_Upgrade_the_reader_firmware">Firmware […] is bogus! Upgrade the reader firmware</span>
+</h3>
+<p>If you encounter a problem like this:
+</p>
+<pre>ccid_usb.c:859:ccid_check_firmware() Firmware (1.00) is bogus! Upgrade the reader firmware or get a new reader.
+ifdhandler.c:104:IFDHCreateChannelByName() failed
+readerfactory.c:1050:RFInitializeReader() Open Port 200000 Failed (usb:072f/2200:libusb:006)
+readerfactory.c:233:RFAddReader() ACS ACR122U PICC Interface init failed.
+</pre>
+<p>The <a rel="nofollow" class="external text" href="https://github.com/nfc-tools/libnfc/blob/master/README.md">libnfc README</a> suggests to do the following:
+</p>
+<p>Removing the bogus firmware detection of libccid: <a href="../en/Systemd.html#Editing_provided_units" class="mw-redirect" title="Edit">edit</a> <code>libccid_Info.plist</code> configuration file (usually <code>/etc/libccid_Info.plist</code>) and locate <code>&lt;key&gt;ifdDriverOptions&lt;/key&gt;</code>, turn <code>&lt;string&gt;0x0000&lt;/string&gt;</code> into <code>0x0004</code> to allow bogus devices and <a href="../en/Help:Reading.html#Control_of_systemd_units" class="mw-redirect" title="Restart">restart</a> <code>pcscd.service</code>.
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> If you use ACS CCID drivers (acsccid), configuration file is located in something like: <code>/usr/lib/pcsc/drivers/ifd-acsccid.bundle/Contents/Info.plist</code> or <code>/usr/lib/pcsc/drivers/ifd-ccid.bundle/Contents/Info.plist</code>.</div>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="../en/Category:Hardware.html" title="Category:Hardware">Hardware</a></li></ul>
+</div></div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=Touchatag_RFID_Reader&amp;oldid=736026">https://wiki.archlinux.org/index.php?title=Touchatag_RFID_Reader&amp;oldid=736026</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 2 July 2022, at 11:29.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

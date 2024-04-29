@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>Backup Gmail with getmail - ArchWiki</title>
+<link rel="stylesheet" href="../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Backup_Gmail_with_getmail rootpage-Backup_Gmail_with_getmail skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Installing_getmail" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Installing_getmail">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Installing getmail</div>
+			</a>
+			
+			<ul id="toc-Installing_getmail-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Creating_required_files_and_folders" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Creating_required_files_and_folders">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Creating required files and folders</div>
+			</a>
+			
+			<ul id="toc-Creating_required_files_and_folders-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Configuring_getmail" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Configuring_getmail">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>Configuring getmail</div>
+			</a>
+			
+			<ul id="toc-Configuring_getmail-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Running_getmail_and_adding_a_cron_job" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Running_getmail_and_adding_a_cron_job">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4</span>Running getmail and adding a cron job</div>
+			</a>
+			
+			<ul id="toc-Running_getmail_and_adding_a_cron_job-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Migrating_emails,_importing_old_emails" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Migrating_emails,_importing_old_emails">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5</span>Migrating emails, importing old emails</div>
+			</a>
+			
+			<ul id="toc-Migrating_emails,_importing_old_emails-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Troubleshooting" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Troubleshooting">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6</span>Troubleshooting</div>
+			</a>
+			
+			<ul id="toc-Troubleshooting-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../en/Backup_Gmail_with_getmail.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="mw-list-item"><a href="../en/Talk:Backup_Gmail_with_getmail.html" rel="discussion" title="Discussion about the content page [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">English</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../en/Backup_Gmail_with_getmail.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=Backup_Gmail_with_getmail&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=Backup_Gmail_with_getmail&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../en/Backup_Gmail_with_getmail.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Backup_Gmail_with_getmail&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Backup_Gmail_with_getmail&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output">
+<div class="noprint archwiki-template-message">
+<p><a href="../File:Merge-arrows-2.png" class="image"><img alt="Merge-arrows-2.png" src="../File:Merge-arrows-2.png" decoding="async" width="48" height="48"></a><b>This article or section is a candidate for merging with <a href="../en/Getmail.html" title="Getmail">getmail</a>.</b><a href="../File:Merge-arrows-2.png" class="image"><img alt="Merge-arrows-2.png" src="../File:Merge-arrows-2.png" decoding="async" width="48" height="48"></a></p>
+<div>
+<b>Notes:</b> Only <a href="#Troubleshooting">#Troubleshooting</a> is specific to Gmail. (Discuss in <a rel="nofollow" class="external text" href="https://wiki.archlinux.org/title/Talk:Backup_Gmail_with_getmail">Talk:Backup Gmail with getmail</a>)</div>
+</div>
+<p>We can use getmail to fully backup email messages from a Gmail account.
+</p>
+<p>Emails will be backed-up in Maildir format, meaning that each email will be a separate text file, readable with any email client, or even with a text editor.
+</p>
+<mw:tocplace></mw:tocplace>
+<h2><span class="mw-headline" id="Installing_getmail">Installing getmail</span></h2>
+<p><a href="../en/Help:Reading.html#Installation_of_packages" class="mw-redirect" title="Install">Install</a> <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/getmail/">getmail</a></span><sup><small>AUR</small></sup> package.
+</p>
+<h2><span class="mw-headline" id="Creating_required_files_and_folders">Creating required files and folders</span></h2>
+<p>Getmail reads its configuration from ~/.getmail/getmailrc by default. Unfortunately this directory and file do not exist by default, so we need to create them.
+</p>
+<pre>$ mkdir ~/.getmail
+$ touch ~/.getmail/getmailrc
+$ chmod 700 ~/.getmail
+</pre>
+<p>We also need to create the folder where the emails will be backed-up:
+</p>
+<pre>$ mkdir -p ~/bak/mail
+$ cd ~/bak/mail
+$ mkdir cur new tmp
+</pre>
+<p>For this example ~/bak/mail was chosen , but it could just as well be ~/mail. The cur, new and tmp folders are required by the Maildir format and by getmail.
+</p>
+<h2><span class="mw-headline" id="Configuring_getmail">Configuring getmail</span></h2>
+<p>Edit the configuration file and add the entries below.
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">~/.getmail/getmailrc</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;"># More configuration options here:
+# <a rel="nofollow" class="external free" href="http://pyropus.ca/software/getmail/configuration.html">http://pyropus.ca/software/getmail/configuration.html</a>
+[retriever]
+type = SimpleIMAPSSLRetriever
+server = imap.gmail.com
+mailboxes = ("Inbox", "[Gmail]/Sent Mail") # optional - leave this line out to just grab the inbox
+username = USER
+password = PASS</pre>
+<div class="archwiki-template-box archwiki-template-box-tip">
+<strong>Tip:</strong> If the mailbox <code>[Gmail]/Sent Mail</code> does not exist, try setting your Gmail's language setting to English. This setting can be different from the language setting of the Google account.</div>
+<p>The retriever section tells getmail where to connect. It uses IMAP to connect to the server. For POP3 we can use the type  SimplePOP3SSLRetriever, but we will also have to modify the server field. The mailbox which we backup will be All Mail.
+</p>
+<p>Note that Gmail was called Google Mail in some countries like Germany. Even if all GMail accounts are migrated to the new name, the IMAP-Server still assumes Google Mail as the mail box directory. The mailboxes variable must be set to [Google Mail] in those cases. Also, you might need to replace box labels by whatever GMail calls that directory in the language of your Google account. 
+</p>
+<p>The username and password fields need to be changed to your own.
+</p>
+<pre>[destination]
+type = Maildir
+path = ~/bak/mail/
+</pre>
+<p>The path field is the destination folder (which we created earlier) where the emails will be backed-up. All emails will be placed in 'new', and the cur and tmp folders will be left empty. This is normal, do not delete cur and tmp.
+</p>
+<p>The options section is a bit longer:
+</p>
+<pre>[options]
+verbose = 2
+message_log = ~/.getmail/log
+</pre>
+<p>This tells getmail to be very verbose and tell us the status of each message (whether it was backed-up successfully, total number of messages, etc). Also, everything will be logged to ~/.getmail/log.
+</p>
+<pre># retrieve only new messages
+# if set to true it will re-download ALL messages every time!
+read_all = false
+</pre>
+<pre># do not alter messages
+delivered_to = false
+received = false
+</pre>
+<p>Setting delivered_to and received fields to false will prevent emails from being altered by getmail.
+</p>
+<h2><span class="mw-headline" id="Running_getmail_and_adding_a_cron_job">Running getmail and adding a cron job</span></h2>
+<p>Now if we run getmail it will backup all Gmail emails to ~/bak/mail, outputting its status along the way.
+</p>
+<p>We want to periodically run getmail to backup our Gmail account, so we will add a cron job:
+</p>
+<pre>* * * * *   ID=getmail FREQ=1d getmail -q
+</pre>
+<p>The -q parameter will run getmail in quiet mode and only report errors.
+</p>
+<h2>
+<span id="Migrating_emails.2C_importing_old_emails"></span><span class="mw-headline" id="Migrating_emails,_importing_old_emails">Migrating emails, importing old emails</span>
+</h2>
+<div class="noprint archwiki-template-message">
+<p><a href="../File:Tango-view-refresh-red.png" class="image"><img alt="Tango-view-refresh-red.png" src="../File:Tango-view-refresh-red.png" decoding="async" width="48" height="48"></a><b>This article or section is out of date.</b><a href="../File:Tango-view-refresh-red.png" class="image"><img alt="Tango-view-refresh-red.png" src="../File:Tango-view-refresh-red.png" decoding="async" width="48" height="48"></a></p>
+<div>
+<b>Reason:</b> The appendmail repo is gone. (Discuss in <a rel="nofollow" class="external text" href="https://wiki.archlinux.org/title/Talk:Backup_Gmail_with_getmail">Talk:Backup Gmail with getmail</a>)</div>
+</div>
+<p>Backing-up emails will suffice for most people, but if we want to migrate our emails to another account it gets a bit tricky. The appendmail script from <a rel="nofollow" class="external free" href="http://bitbucket.org/wooptoo/appendmail">http://bitbucket.org/wooptoo/appendmail</a><sup title="Last check status: 404">[<a href="https://en.wikipedia.org/wiki/Wikipedia:Link_rot" class="extiw" title="wikipedia:Wikipedia:Link rot">dead link</a> 2020-12-20 ⓘ]</sup> can help us import emails to another account, be it Gmail or not. It can also be used to import old emails in our existing Gmail account.
+</p>
+<p>Basically it reads every email file from its 'import' folder and puts it on Gmail or another account.
+</p>
+<p>A direct link to download is <a rel="nofollow" class="external free" href="http://bitbucket.org/wooptoo/appendmail/get/tip.zip">http://bitbucket.org/wooptoo/appendmail/get/tip.zip</a><sup title="Last check status: 404">[<a href="https://en.wikipedia.org/wiki/Wikipedia:Link_rot" class="extiw" title="wikipedia:Wikipedia:Link rot">dead link</a> 2020-12-20 ⓘ]</sup> It needs PHP to run, and you need to modify the username and password to yours.
+</p>
+<h2><span class="mw-headline" id="Troubleshooting">Troubleshooting</span></h2>
+<p>Depending on your Gmail security, you may be left with this error when running getmail:
+</p>
+<pre>getmailrc: credential/login error ([ALERT] Please log in via your web browser: <a rel="nofollow" class="external free" href="https://support.google.com/mail/accounts/bin/answer.py?answer=78754">https://support.google.com/mail/accounts/bin/answer.py?answer=78754</a> (Failure))
+  0 messages (0 bytes) retrieved, 0 skipped</pre>
+<p>Since Gmail does not allow "lesssecureapps" anymore <a rel="nofollow" class="external text" href="https://www.google.com/settings/security/lesssecureapps">enable access for less secure apps</a> you may want to turn on <a rel="nofollow" class="external text" href="https://myaccount.google.com/signinoptions/two-step-verification">two-step-verification</a> and then create a <a rel="nofollow" class="external text" href="https://myaccount.google.com/apppasswords">App password</a> and put it as password into getmailrc (for POP3):
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">~/.getmail/getmailrc</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">type = SimplePOP3SSLRetriever
+server = pop.gmail.com
+username = USER@gmail.com
+password = APPPASSWORD
+port = 995</pre>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface">
+<div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="../en/Category:Mail_retrieval_agents.html" title="Category:Mail retrieval agents">Mail retrieval agents</a></li></ul>
+</div>
+<div id="mw-hidden-catlinks" class="mw-hidden-catlinks mw-hidden-cats-hidden">Hidden categories: <ul>
+<li><a href="../en/Category:Pages_or_sections_flagged_with_Template:Merge.html" title="Category:Pages or sections flagged with Template:Merge">Pages or sections flagged with Template:Merge</a></li>
+<li><a href="../en/Category:Pages_or_sections_flagged_with_Template:Out_of_date.html" title="Category:Pages or sections flagged with Template:Out of date">Pages or sections flagged with Template:Out of date</a></li>
+<li><a href="../en/Category:Pages_with_dead_links.html" title="Category:Pages with dead links">Pages with dead links</a></li>
+</ul>
+</div>
+</div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=Backup_Gmail_with_getmail&amp;oldid=777403">https://wiki.archlinux.org/index.php?title=Backup_Gmail_with_getmail&amp;oldid=777403</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 7 May 2023, at 11:23.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

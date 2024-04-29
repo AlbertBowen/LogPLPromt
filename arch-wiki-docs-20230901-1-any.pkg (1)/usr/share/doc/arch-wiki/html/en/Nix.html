@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>Nix - ArchWiki</title>
+<link rel="stylesheet" href="../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Nix rootpage-Nix skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Installation" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#Installation">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Installation</div>
+			</a>
+			
+				<button aria-controls="toc-Installation-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Installation subsection
+				</button>
+			
+			<ul id="toc-Installation-sublist" class="sidebar-toc-list">
+				<li id="toc-Native" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Native">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.1</span>Native</div>
+			</a>
+			
+			<ul id="toc-Native-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Upstream_installation_script" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Upstream_installation_script">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.2</span>Upstream installation script</div>
+			</a>
+			
+			<ul id="toc-Upstream_installation_script-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Zero_to_Nix_installation_script" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Zero_to_Nix_installation_script">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.3</span>Zero to Nix installation script</div>
+			</a>
+			
+			<ul id="toc-Zero_to_Nix_installation_script-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Configuration" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#Configuration">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Configuration</div>
+			</a>
+			
+			<ul id="toc-Configuration-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Usage" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#Usage">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>Usage</div>
+			</a>
+			
+			<ul id="toc-Usage-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Tips_and_tricks" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#Tips_and_tricks">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4</span>Tips and tricks</div>
+			</a>
+			
+				<button aria-controls="toc-Tips_and_tricks-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Tips and tricks subsection
+				</button>
+			
+			<ul id="toc-Tips_and_tricks-sublist" class="sidebar-toc-list">
+				<li id="toc-Max_jobs" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Max_jobs">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.1</span>Max jobs</div>
+			</a>
+			
+			<ul id="toc-Max_jobs-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Graphical_acceleration" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Graphical_acceleration">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.2</span>Graphical acceleration</div>
+			</a>
+			
+			<ul id="toc-Graphical_acceleration-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Desktop_integration" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Desktop_integration">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.3</span>Desktop integration</div>
+			</a>
+			
+			<ul id="toc-Desktop_integration-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Zsh_integration_for_nix-shell" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Zsh_integration_for_nix-shell">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.4</span>Zsh integration for nix-shell</div>
+			</a>
+			
+			<ul id="toc-Zsh_integration_for_nix-shell-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Command_completion" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#Command_completion">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5</span>Command completion</div>
+			</a>
+			
+				<button aria-controls="toc-Command_completion-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Command completion subsection
+				</button>
+			
+			<ul id="toc-Command_completion-sublist" class="sidebar-toc-list">
+				<li id="toc-Zsh" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Zsh">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5.1</span>Zsh</div>
+			</a>
+			
+			<ul id="toc-Zsh-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Troubleshooting" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#Troubleshooting">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6</span>Troubleshooting</div>
+			</a>
+			
+				<button aria-controls="toc-Troubleshooting-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Troubleshooting subsection
+				</button>
+			
+			<ul id="toc-Troubleshooting-sublist" class="sidebar-toc-list">
+				<li id="toc-Permission_denied" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Permission_denied">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6.1</span>Permission denied</div>
+			</a>
+			
+			<ul id="toc-Permission_denied-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Too_many_open_files" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Too_many_open_files">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6.2</span>Too many open files</div>
+			</a>
+			
+			<ul id="toc-Too_many_open_files-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Warning_message_about_root_user_channels" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Warning_message_about_root_user_channels">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6.3</span>Warning message about root user channels</div>
+			</a>
+			
+			<ul id="toc-Warning_message_about_root_user_channels-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-User-related_Nix_search_path_entry_does_not_exist,_ignoring" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#User-related_Nix_search_path_entry_does_not_exist,_ignoring">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6.4</span>User-related Nix search path entry does not exist, ignoring</div>
+			</a>
+			
+			<ul id="toc-User-related_Nix_search_path_entry_does_not_exist,_ignoring-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-error:_file_'nixpkgs'_was_not_found_in_the_Nix_search_path_(add_it_using_$NIX_PATH_or_-I)" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#error:_file_'nixpkgs'_was_not_found_in_the_Nix_search_path_(add_it_using_$NIX_PATH_or_-I)">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6.5</span>error: file 'nixpkgs' was not found in the Nix search path (add it using $NIX_PATH or -I)</div>
+			</a>
+			
+			<ul id="toc-error:_file_'nixpkgs'_was_not_found_in_the_Nix_search_path_(add_it_using_$NIX_PATH_or_-I)-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Sandbox_build_issues" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Sandbox_build_issues">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6.6</span>Sandbox build issues</div>
+			</a>
+			
+			<ul id="toc-Sandbox_build_issues-sublist" class="sidebar-toc-list">
+				<li id="toc-Other_sandbox_issues" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Other_sandbox_issues">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6.6.1</span>Other sandbox issues</div>
+			</a>
+			
+			<ul id="toc-Other_sandbox_issues-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Locale_warnings" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Locale_warnings">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6.7</span>Locale warnings</div>
+			</a>
+			
+			<ul id="toc-Locale_warnings-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-See_also" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#See_also">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">7</span>See also</div>
+			</a>
+			
+			<ul id="toc-See_also-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../en/Nix.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="mw-list-item"><a href="../en/Talk:Nix.html" rel="discussion" title="Discussion about the content page [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">English</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../en/Nix.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=Nix&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=Nix&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../en/Nix.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Nix&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Nix&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output">
+<p><a rel="nofollow" class="external text" href="https://nixos.org/nix/">Nix</a> is a purely functional package manager that aims to make package management reliable and reproducible.
+</p>
+<mw:tocplace></mw:tocplace>
+<h2><span class="mw-headline" id="Installation">Installation</span></h2>
+<p>There are three choices for a Nix installation, one is supported by Arch Linux, the other is officially supported by Nix and the other one is Supported by Determinate Systems, a third party support for Nix.
+</p>
+<h3><span class="mw-headline" id="Native">Native</span></h3>
+<p><a href="../en/Help:Reading.html#Installation_of_packages" class="mw-redirect" title="Install">Install</a> the <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=nix">nix</a></span> package.
+</p>
+<h3><span class="mw-headline" id="Upstream_installation_script">Upstream installation script</span></h3>
+<p>Download the file with <code>curl --proto '=https' --tlsv1.2 -sSfL https://nixos.org/nix/install -o nix-install.sh</code>, view it: <code>less ./nix-install.sh</code>, and run the script <code>./nix-install.sh --daemon</code> to start Nix installation.
+</p>
+<div class="archwiki-template-box archwiki-template-box-warning">
+<strong>Warning:</strong> Running <code>curl <i>some-url</i> | sh</code>, as the Nix documentation suggests, is considered as a security risk, because it executes unknown code. Therefore it is recommended to manually download the script and check it, before executing it.</div>
+<h3><span class="mw-headline" id="Zero_to_Nix_installation_script">Zero to Nix installation script</span></h3>
+<p>For an easier and less complicated Nix setup you can use the setup from Determinate Systems. Download the file with <code>curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix -o nix-install.sh</code>, view it: <code>less ./nix-install.sh</code>, and run the script <code>sh ./nix-install.sh install</code> to start the installation.
+</p>
+<div class="archwiki-template-box archwiki-template-box-warning">
+<strong>Warning:</strong> Running <code>curl <i>some-url</i> | sh</code>, as Determinate Systems suggests, is considered as a security risk, because it executes unknown code. Therefore it is recommended to manually download the script and check it, before executing it.</div>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> The installer <a rel="nofollow" class="external text" href="https://github.com/DeterminateSystems/nix-installer#diagnostics">sends telemetry to Determinate Systems by default</a>. To disable it manually, use <code>sh ./nix-install.sh install --diagnostic-endpoint=""</code>.</div>
+<p>For more information see the manual from <a rel="nofollow" class="external text" href="https://zero-to-nix.com/start">Determinate Systems</a>.
+</p>
+<h2><span class="mw-headline" id="Configuration">Configuration</span></h2>
+<p>To have the Nix daemon launched at boot time, <a href="../en/Help:Reading.html#Control_of_systemd_units" class="mw-redirect" title="Enable">enable</a> <code>nix-daemon.service</code>.
+</p>
+<p>Add required users to the <code>nix-users</code> <a href="../en/Users_and_groups.html#Group_management" class="mw-redirect" title="User group">group</a> in order to access the daemon socket.
+</p>
+<p>Add a <a rel="nofollow" class="external text" href="https://nixos.wiki/wiki/Nix_channels">channel</a> and update it.
+</p>
+<pre>$ nix-channel --add https://nixos.org/channels/nixpkgs-unstable
+$ nix-channel --update
+</pre>
+<h2><span class="mw-headline" id="Usage">Usage</span></h2>
+<p>With the shell configured, the following should install <i>hello</i> into your updated PATH: <code>/nix/store/[hash]-hello-[version]/bin/hello</code>.
+</p>
+<p>If you installed Nix from the official repositories, you must add the <code>~/.nix-profile/bin</code> directory to your PATH manually.
+</p>
+<pre>$ nix-env -iA nixpkgs.hello
+</pre>
+<p>Run <code>hello</code> and make sure it is in the right PATH. If it works, you can remove it simply by
+</p>
+<pre>$ nix-env --uninstall hello
+</pre>
+<p>Or you can check the list of installed program by (q stands for query)
+</p>
+<pre>$ nix-env -q
+</pre>
+<p>You can also check generations by
+</p>
+<pre>$ nix-env --list-generations
+</pre>
+<p>Check more details in the <span class="plainlinks archwiki-template-man" title="$ man 1 nix-env"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/nix-env.1">nix-env(1)</a></span> manual.
+</p>
+<h2><span class="mw-headline" id="Tips_and_tricks">Tips and tricks</span></h2>
+<h3><span class="mw-headline" id="Max_jobs">Max jobs</span></h3>
+<p>By default, nix only uses one builder. The following will allow nix to use as many jobs as the number of CPUs:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/nix/nix.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">max-jobs = auto</pre>
+<h3><span class="mw-headline" id="Graphical_acceleration">Graphical acceleration</span></h3>
+<p>To run OpenGL and Vulkan applications, use <a rel="nofollow" class="external text" href="https://github.com/guibou/nixGL">NixGL</a>.
+</p>
+<h3><span class="mw-headline" id="Desktop_integration">Desktop integration</span></h3>
+<p>For integrating Nix applications with your desktop environment, add the <code>~/.nix-profile/share</code> directory to your <code>$XDG_DATA_DIRS</code>, for instance using <code>export XDG_DATA_DIRS=$HOME/.nix-profile/share:$XDG_DATA_DIRS</code>.
+</p>
+<h3><span class="mw-headline" id="Zsh_integration_for_nix-shell">Zsh integration for nix-shell</span></h3>
+<p><code>nix-shell</code> starts Bash by default. <a rel="nofollow" class="external text" href="https://github.com/chisui/zsh-nix-shell">zsh-nix-shell</a> lets you use zsh as the default shell in a <code>nix-shell</code> environment. Some prompt plugins such as <a rel="nofollow" class="external text" href="https://github.com/romkatv/powerlevel10k">powerlevel10k</a>  and <a rel="nofollow" class="external text" href="https://github.com/sindresorhus/pure">pure</a> provide a <code>nix-shell</code> indicator.
+</p>
+<h2><span class="mw-headline" id="Command_completion">Command completion</span></h2>
+<h3><span class="mw-headline" id="Zsh">Zsh</span></h3>
+<p><a rel="nofollow" class="external text" href="https://github.com/spwhitt/nix-zsh-completions">nix-zsh-completions</a> provides Zsh completions for nix commands such as <code>nix-env</code> and <code>nix-shell</code>.
+</p>
+<h2><span class="mw-headline" id="Troubleshooting">Troubleshooting</span></h2>
+<h3><span class="mw-headline" id="Permission_denied">Permission denied</span></h3>
+<p>Running <code>nix repl</code> or <code>nix-env -u</code> as user produces
+</p>
+<pre>cannot connect to daemon at '/nix/var/nix/daemon-socket/socket: permission denied
+</pre>
+<p>If you just installed <i>nix</i>, you need to reboot.
+</p>
+<h3><span class="mw-headline" id="Too_many_open_files">Too many open files</span></h3>
+<p>Some builds may run into an error such as
+</p>
+<pre>error: opening directory '/nix/store/...': Too many open files
+</pre>
+<p><a href="../en/Systemd.html#Editing_provided_units" class="mw-redirect" title="Edit">Edit</a> <code>nix-daemon.service</code> and increase the file limit
+</p>
+<pre>[Service]
+LimitNOFILE=65536
+</pre>
+<h3><span class="mw-headline" id="Warning_message_about_root_user_channels">Warning message about root user channels</span></h3>
+<pre>warning: Nix search path entry '/nix/var/nix/profiles/per-user/root/channels' does not exist, ignoring
+</pre>
+<p>If the above message shows up when using Nix, the root user will need to update their channels.
+</p>
+<pre># nix-channel --update
+
+</pre>
+<h3>
+<span id="User-related_Nix_search_path_entry_does_not_exist.2C_ignoring"></span><span class="mw-headline" id="User-related_Nix_search_path_entry_does_not_exist,_ignoring">User-related Nix search path entry does not exist, ignoring</span>
+</h3>
+<pre>warning: Nix search path entry '/nix/var/nix/profiles/per-user/&lt;USER&gt;/channels' does not exist, ignoring
+</pre>
+<p>See <a rel="nofollow" class="external text" href="https://bugs.archlinux.org/task/78828">FS#78828</a>. Alternatively, you can use the <a href="#Upstream_installation_script">#Upstream installation script</a>, which does not exhibit the issue.
+</p>
+<h3>
+<span id="error:_file_.27nixpkgs.27_was_not_found_in_the_Nix_search_path_.28add_it_using_.24NIX_PATH_or_-I.29"></span><span class="mw-headline" id="error:_file_'nixpkgs'_was_not_found_in_the_Nix_search_path_(add_it_using_$NIX_PATH_or_-I)">error: file 'nixpkgs' was not found in the Nix search path (add it using $NIX_PATH or -I)</span>
+</h3>
+<p>See <a rel="nofollow" class="external text" href="https://bugs.archlinux.org/task/78828">FS#78828</a>. Alternatively, you can use the <a href="#Upstream_installation_script">#Upstream installation script</a>, which does not exhibit the issue.
+</p>
+<h3><span class="mw-headline" id="Sandbox_build_issues">Sandbox build issues</span></h3>
+<h4><span class="mw-headline" id="Other_sandbox_issues">Other sandbox issues</span></h4>
+<pre>error: while setting up the build environment: mounting /proc: Operation not permitted
+error: program '/usr/bin/nix-env' failed with exit code 1
+</pre>
+<pre>1: package 'utils' in options("defaultPackages") was not found
+2: package 'stats' in options("defaultPackages") was not found
+Error: .onLoad failed in loadNamespace() for 'utils', details:
+ call: system(paste(which, shQuote(names[i])), intern = TRUE, ignore.stderr = TRUE)
+ error: cannot popen '/nix/store/fnkvlbls29d01jcx3wsdnhykyrl7087r-which-2.21/bin/which 'uname' 2&gt;/dev/null', probable reason 'Cannot allocate memory'
+</pre>
+<p>The issue is known upstream: <a rel="nofollow" class="external text" href="https://github.com/NixOS/nix/issues/2311">#2311</a>, <a rel="nofollow" class="external text" href="https://github.com/NixOS/nix/issues/3000">#3000</a>, and <a rel="nofollow" class="external text" href="https://github.com/NixOS/nix/issues/4636">#4636</a>.
+</p>
+<div class="archwiki-template-box archwiki-template-box-warning">
+<strong>Warning:</strong> It is generally not recommended to disable sandboxing as it pollutes the build environment and could possibly cause more build errors. Anything from <code>nixpkgs</code> expects to be built with the sandbox on.</div>
+<p>The most common fix is to disable sandboxing in the configuration file, then <a href="../en/Help:Reading.html#Control_of_systemd_units" class="mw-redirect" title="Restart">Restart</a> the <code>nix-daemon</code> service.
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/nix/nix.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;"># disable sandboxing
+sandbox = false</pre>
+<h3><span class="mw-headline" id="Locale_warnings">Locale warnings</span></h3>
+<p>The <a rel="nofollow" class="external text" href="https://nixos.wiki/wiki/Locales">Nix wiki</a> recommends running <code>export LOCALE_ARCHIVE=/usr/lib/locale/locale-archive</code>. Alternatively, export the environment variable <code>LC_ALL=C</code>.
+</p>
+<h2><span class="mw-headline" id="See_also">See also</span></h2>
+<ul>
+<li><a rel="nofollow" class="external text" href="https://nixos.org/nix/">Homepage</a></li>
+<li><a rel="nofollow" class="external text" href="https://nixos.wiki/wiki/Nix">Upstream wiki</a></li>
+<li><a rel="nofollow" class="external text" href="https://nixos.org/nix/manual/">Nix Package Manager Guide</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Nix_package_manager" class="extiw" title="wikipedia:Nix package manager">Wikipedia:Nix package manager</a></li>
+<li><a rel="nofollow" class="external text" href="https://zero-to-nix.com/">Zero to Nix</a></li>
+</ul>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="../en/Category:Package_manager.html" title="Category:Package manager">Package manager</a></li></ul>
+</div></div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=Nix&amp;oldid=786487">https://wiki.archlinux.org/index.php?title=Nix&amp;oldid=786487</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 30 August 2023, at 16:42.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

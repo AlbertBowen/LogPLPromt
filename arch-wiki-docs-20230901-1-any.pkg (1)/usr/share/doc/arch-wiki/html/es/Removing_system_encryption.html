@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>Removing system encryption (Español) - ArchWiki</title>
+<link rel="stylesheet" href="../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Removing_system_encryption_Español rootpage-Removing_system_encryption_Español skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Requisitos_previos" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Requisitos_previos">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Requisitos previos</div>
+			</a>
+			
+			<ul id="toc-Requisitos_previos-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Arrancar_en_un_entorno_Live" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Arrancar_en_un_entorno_Live">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Arrancar en un entorno Live</div>
+			</a>
+			
+			<ul id="toc-Arrancar_en_un_entorno_Live-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Activar_las_particiones" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Activar_las_particiones">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>Activar las particiones</div>
+			</a>
+			
+				<button aria-controls="toc-Activar_las_particiones-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Activar las particiones subsection
+				</button>
+			
+			<ul id="toc-Activar_las_particiones-sublist" class="sidebar-toc-list">
+				<li id="toc-Nota_sobre_diferentes_configuraciones" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Nota_sobre_diferentes_configuraciones">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.1</span>Nota sobre diferentes configuraciones</div>
+			</a>
+			
+			<ul id="toc-Nota_sobre_diferentes_configuraciones-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Una_vez_localizadas_las_particiones" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Una_vez_localizadas_las_particiones">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.2</span>Una vez localizadas las particiones</div>
+			</a>
+			
+			<ul id="toc-Una_vez_localizadas_las_particiones-sublist" class="sidebar-toc-list">
+				<li id="toc-Montar_el_espacio_de_respaldo" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Montar_el_espacio_de_respaldo">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.2.1</span>Montar el espacio de respaldo</div>
+			</a>
+			
+			<ul id="toc-Montar_el_espacio_de_respaldo-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Realizar_una_copia_de_respaldo_de_los_datos" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Realizar_una_copia_de_respaldo_de_los_datos">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4</span>Realizar una copia de respaldo de los datos</div>
+			</a>
+			
+			<ul id="toc-Realizar_una_copia_de_respaldo_de_los_datos-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Revertir_el_cifrado" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Revertir_el_cifrado">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5</span>Revertir el cifrado</div>
+			</a>
+			
+			<ul id="toc-Revertir_el_cifrado-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Restaurar_los_datos" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Restaurar_los_datos">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6</span>Restaurar los datos</div>
+			</a>
+			
+			<ul id="toc-Restaurar_los_datos-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Reconfigurar_el_sistema_operativo" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Reconfigurar_el_sistema_operativo">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">7</span>Reconfigurar el sistema operativo</div>
+			</a>
+			
+			<ul id="toc-Reconfigurar_el_sistema_operativo-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../es/Removing_system_encryption.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="new mw-list-item"><a href="/index.php?title=Talk:Removing_system_encryption_(Espa%C3%B1ol)&amp;action=edit&amp;redlink=1" rel="discussion" title="Discussion about the content page (page does not exist) [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">español</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../es/Removing_system_encryption.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=Removing_system_encryption_(Espa%C3%B1ol)&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=Removing_system_encryption_(Espa%C3%B1ol)&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../es/Removing_system_encryption.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Removing_system_encryption_(Espa%C3%B1ol)&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Removing_system_encryption_(Espa%C3%B1ol)&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="es" dir="ltr">
+<div class="mw-parser-output">
+<div class="archwiki-template-box archwiki-template-box-note">Esta traducción de <a href="../en/Removing_system_encryption.html" title="Removing system encryption">Removing system encryption</a> fue revisada el <b>2019-09-18</b>. Si existen <a rel="nofollow" class="external text" href="https://wiki.archlinux.org/index.php?title=Removing_system_encryption&amp;diff=0&amp;oldid=560740">cambios</a> puede <a href="../es/ArchWiki:Translation_Team/Contributing.html" title="ArchWiki:Translation Team (Español)/Contributing (Español)">actualizarla</a> o avisar al <a href="../es/ArchWiki:Translation_Team.html" title="ArchWiki:Translation Team (Español)">equipo de traducción</a>.</div>
+<p>Eliminar el cifrado de un sistema encriptado con <a href="../es/Dm-crypt.html" title="Dm-crypt (Español)">dm-crypt y LUKS</a>.
+</p>
+<mw:tocplace></mw:tocplace>
+<h2><span class="mw-headline" id="Requisitos_previos">Requisitos previos</span></h2>
+<ul>
+<li>Un sistema de archivos raíz encriptado u otro sistema de archivos que no se monte mientras se inicia en el sistema operativo.</li>
+<li>Suficiente espacio de disco para almacenar una copia de seguridad.</li>
+<li>Un soporte (CD/USB) live de Arch Linux (u otro).</li>
+<li>Unas pocas horas.</li>
+</ul>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Nota:</strong> A finales de 2012, se han agregado nuevas herramientas a <code> cryptsetup</code> para añadir o eliminar el cifrado a/desde un sistema de archivos existente. Si bien aún se consideran experimentales, pueden ayudar considerablemente a tal propósito. Dispone de más información en <span class="plainlinks archwiki-template-man" title="$ man 8 cryptsetup-reencrypt"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/cryptsetup-reencrypt.8">cryptsetup-reencrypt(8)</a></span>.</div>
+<h2><span class="mw-headline" id="Arrancar_en_un_entorno_Live">Arrancar en un entorno Live</span></h2>
+<p>Descargue y grabe la última imagen de Arch, reinicie el sistema y arraánquela desde el soporte.
+</p>
+<h2><span class="mw-headline" id="Activar_las_particiones">Activar las particiones</span></h2>
+<h3><span class="mw-headline" id="Nota_sobre_diferentes_configuraciones">Nota sobre diferentes configuraciones</span></h3>
+<p>He aquí una configuración de muestra:
+</p>
+<table class="wikitable" style="text-align: center;">
+<tbody>
+<tr>
+<td colspan="4">disco
+</td>
+</tr>
+<tr>
+<td style="background-color: #888888;">ntfs</td>
+<td colspan="2">grupo de volúmenes (lvm)</td>
+<td style="background-color: yellow;">ntfs
+</td>
+</tr>
+<tr>
+<td rowspan="3" style="background-color: #888888;">otro so
+</td>
+<td>cryptswap (volumen lógico)</td>
+<td style="background-color: green;">cryptroot (volumen lógico)
+</td>
+<td rowspan="3" style="background-color: yellow;">Compartido
+</td>
+</tr>
+<tr>
+<td>luks</td>
+<td style="background-color: green;">luks
+</td>
+</tr>
+<tr>
+<td>swap</td>
+<td style="background-color: green;">root (xfs)
+</td>
+</tr>
+</tbody>
+</table>
+<p>Las secciones grises solo agregan un marco de referencia y se pueden ignorar.
+Las particiones verdes serán modificadas. El texto verde debe coincidir con la configuración de su sistema.
+La partición amarilla se utilizará como espacio de almacenamiento y se puede cambiar a voluntad.
+En el sistema de ejemplo:
+<span style="color: green;">myvg</span> contiene volúmenes lógicos llamados <span style="color: green;">cryptroot</span> y <span style="color: green;">cryptswap</span>. Están ubicados en <span style="color: green;">/dev/myvg/cryptroot</span> y <span style="color: green;">/dev/myvg/cryptswap</span>. En el arranque, luks se usa junto con algunas entradas de crypttab para crear <span style="color: green;">/dev/mapper/root</span> y <span style="color: green;">/dev/mapper/swap</span>. El espacio intercambio no se desencriptará como parte de esta guía, ya que deshacer el cifrado de intercambio no requiere una copia de seguridad o restauración complejas.
+</p>
+<p>El sistema de ejemplo no es indicativo de todos los sistemas. Diferentes sistemas de archivos requieren diferentes herramientas para realizar copias de seguridad y restaurar sus datos de manera efectiva. LVM puede ignorarse si no se usa.
+XFS requiere xfs_copy para garantizar una copia de seguridad y una restauración eficaces, DD no es suficiente. DD se puede usar con ext2,3 y 4 (por favor, que alguien comente sobre jfs, reiserfs y reiser4fs).
+</p>
+<h3><span class="mw-headline" id="Una_vez_localizadas_las_particiones">Una vez localizadas las particiones</span></h3>
+<p>Cargar los módulos necesarios:
+</p>
+<pre>modprobe dm-mod #device mapper/lvm
+modprobe dm-crypt #luks
+</pre>
+<p>Activar el grupo de volúmenes lvm:
+</p>
+<pre>pvscan #eescaneo de volúmenes físicos
+vgscan #escaneo de grupo de volúmenes
+lvscan #escaneo de volúmenes lógicos
+lvchange -ay <span style="color: green;">myvg/cryptroot</span>
+</pre>
+<p>Abra el sistema de archivos encriptado con luks para que pueda leerse:
+</p>
+<pre>cryptSetup luksOpen <span style="color: green;">/dev/myvg/cryptroot</span> root
+</pre>
+<p>Introduzca la contraseña.
+Nota: la única partición en la que se operará que debe montarse en este punto es la partición de respaldo. Si ya está montada una partición distinta de la partición de respaldo, ahora se puede desmontar de manera segura.
+</p>
+<h4><span class="mw-headline" id="Montar_el_espacio_de_respaldo">Montar el espacio de respaldo</span></h4>
+<p>Solo si se utiliza NTFS para almacenar la copia de seguridad, <a href="../es/Help:Reading.html#Instalaci%C3%B3n_de_paquetes" class="mw-redirect" title="Install (Español)">instale</a> <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=ntfs-3g">ntfs-3g</a></span>. 
+</p>
+<p>El siguiente paso es importante para el almacenamiento de respaldo.
+</p>
+<pre># mount -t ntfs-3g -o rw <u>/dev/sda5 /media/Shared</u>
+</pre>
+<p>o utilice netcat para almacenar la copia de seguridad en un sistema remoto
+</p>
+<p>TODO: añadir instrucciones netcat.
+</p>
+<h2><span class="mw-headline" id="Realizar_una_copia_de_respaldo_de_los_datos">Realizar una copia de respaldo de los datos</span></h2>
+<p>Utilizar xfs_copy:
+</p>
+<pre>xfs_copy -db <span style="color: green;">/dev/mapper/root</span> <u>/media/Shared/backup_root.img</u>
+</pre>
+<p>Nota: el indicador -d conserva los uuids y -b garantiza que no se intente realizar E/S directa en ninguno de los archivos de destino.
+</p>
+<p>Utilizar dd:
+</p>
+<pre>dd if=<span style="color: green;">/dev/mapper/root</span> of=<u>/media/Shared/backup_root.img</u>
+</pre>
+<h2><span class="mw-headline" id="Revertir_el_cifrado">Revertir el cifrado</span></h2>
+<p>Ahora llega el momento crucial, el punto de no retorno por decirlo así. Asegúrese de que está listo para realizar esta operación. Si planea deshacerlo más adelante, tendrá que comenzar casi desde cero. Y no se imagina lo divertido que puede ser eso.
+</p>
+<pre>cryptsetup luksClose root
+lvm lvremove <span style="color: green;">myvg/cryptroot</span>
+</pre>
+<h2><span class="mw-headline" id="Restaurar_los_datos">Restaurar los datos</span></h2>
+<p>Tenemos que crear un nuevo volumen lógico para alojar nuestro sistema de archivos raíz, luego lo restauraremos.
+</p>
+<pre>lvm lvcreate <span style="color: green;">-l 100%FREE -n root myvg</span>
+xfs_copy -db <u>/media/Shared/backup_root.img</u> <span style="color: green;">/dev/myvg/root</span> #advierta que el segundo nombre de unidad se cambia ahora.
+</pre>
+<h2><span class="mw-headline" id="Reconfigurar_el_sistema_operativo">Reconfigurar el sistema operativo</span></h2>
+<p>Debe iniciar su sistema operativo y modificar /etc/crypttab, /etc/mkinitcpio.conf, /etc/fstab, y posiblemente /boot/grub/menu.lst.
+</p>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="../es/Category:Data-at-rest_encryption.html" title="Category:Data-at-rest encryption (Español)">Data-at-rest encryption (Español)</a></li></ul>
+</div></div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=Removing_system_encryption_(Espa%C3%B1ol)&amp;oldid=752368">https://wiki.archlinux.org/index.php?title=Removing_system_encryption_(Español)&amp;oldid=752368</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 11 October 2022, at 21:22.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

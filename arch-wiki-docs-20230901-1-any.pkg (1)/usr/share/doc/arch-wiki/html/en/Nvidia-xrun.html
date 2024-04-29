@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>nvidia-xrun - ArchWiki</title>
+<link rel="stylesheet" href="../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Nvidia-xrun rootpage-Nvidia-xrun skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Installation" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Installation">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Installation</div>
+			</a>
+			
+			<ul id="toc-Installation-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Configuration" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Configuration">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Configuration</div>
+			</a>
+			
+				<button aria-controls="toc-Configuration-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Configuration subsection
+				</button>
+			
+			<ul id="toc-Configuration-sublist" class="sidebar-toc-list">
+				<li id="toc-Setting_the_right_bus_id" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Setting_the_right_bus_id">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.1</span>Setting the right bus id</div>
+			</a>
+			
+			<ul id="toc-Setting_the_right_bus_id-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-External_GPU_setup" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#External_GPU_setup">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.2</span>External GPU setup</div>
+			</a>
+			
+			<ul id="toc-External_GPU_setup-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Automatically_run_window_manager" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Automatically_run_window_manager">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.3</span>Automatically run window manager</div>
+			</a>
+			
+			<ul id="toc-Automatically_run_window_manager-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Use_bbswitch_to_manage_the_NVIDIA_card" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Use_bbswitch_to_manage_the_NVIDIA_card">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.4</span>Use bbswitch to manage the NVIDIA card</div>
+			</a>
+			
+			<ul id="toc-Use_bbswitch_to_manage_the_NVIDIA_card-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Usage" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Usage">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>Usage</div>
+			</a>
+			
+				<button aria-controls="toc-Usage-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Usage subsection
+				</button>
+			
+			<ul id="toc-Usage-sublist" class="sidebar-toc-list">
+				<li id="toc-Start_at_boot" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Start_at_boot">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.1</span>Start  at boot</div>
+			</a>
+			
+			<ul id="toc-Start_at_boot-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Troubleshooting" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Troubleshooting">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4</span>Troubleshooting</div>
+			</a>
+			
+				<button aria-controls="toc-Troubleshooting-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Troubleshooting subsection
+				</button>
+			
+			<ul id="toc-Troubleshooting-sublist" class="sidebar-toc-list">
+				<li id="toc-NVIDIA_GPU_fails_to_switch_off_or_is_set_to_be_default" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#NVIDIA_GPU_fails_to_switch_off_or_is_set_to_be_default">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.1</span>NVIDIA GPU fails to switch off or is set to be default</div>
+			</a>
+			
+			<ul id="toc-NVIDIA_GPU_fails_to_switch_off_or_is_set_to_be_default-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../en/Nvidia-xrun.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="mw-list-item"><a href="../en/Talk:Nvidia-xrun.html" rel="discussion" title="Discussion about the content page [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">English</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../en/Nvidia-xrun.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=Nvidia-xrun&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=Nvidia-xrun&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../en/Nvidia-xrun.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Nvidia-xrun&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Nvidia-xrun&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output">
+<p><span>
+</span>
+<a rel="nofollow" class="external text" href="https://github.com/Witko/nvidia-xrun">nvidia-xrun</a> is a utility that allows NVIDIA Optimus-enabled laptops to run <a href="../en/Xorg.html" class="mw-redirect" title="X server">X server</a> with discrete NVIDIA graphics on demand. This solution offers full GPU utilization, compatibility and better performance than <a href="../en/Bumblebee.html" title="Bumblebee">Bumblebee</a>.
+</p>
+<p>X server can only be used with integrated graphics or discrete NVIDIA graphics, but not both, so the user might want to switch to a separate <a href="../en/Linux_console.html" title="Linux console">virtual console</a> and start another X server using different graphics from what was used for the first X server.
+</p>
+<mw:tocplace></mw:tocplace>
+<h2><span class="mw-headline" id="Installation">Installation</span></h2>
+<p><a href="../en/Help:Reading.html#Installation_of_packages" class="mw-redirect" title="Install">Install</a>:
+</p>
+<ul>
+<li>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=nvidia">nvidia</a></span> - if using older drivers you have to edit nvidia-xrun's PKGBUILD and remove the NVIDIA depend</li>
+<li>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/nvidia-xrun-git/">nvidia-xrun-git</a></span><sup><small>AUR</small></sup>(recommended) or <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/nvidia-xrun/">nvidia-xrun</a></span><sup><small>AUR</small></sup> (old method, uses bumblebee to switch off the dedicated card)</li>
+<li>Any <a href="../en/Window_manager.html" title="Window manager">window manager</a>, since running application directly like with <code>nvidia-xrun <i>application</i></code> is not recommended.</li>
+</ul>
+<h2><span class="mw-headline" id="Configuration">Configuration</span></h2>
+<h3><span class="mw-headline" id="Setting_the_right_bus_id">Setting the right bus id</span></h3>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> If you installed package from <a href="../en/Arch_User_Repository.html" class="mw-redirect" title="AUR">AUR</a>, the bus id has been automatically set in <code>/etc/X11/nvidia-xorg.conf</code>. Make sure the bus ID has been correctly set, otherwise change it (you can find correct bus ID using <code>lspci</code> command). In some cases you need to convert the hex output from <code>lspci</code> to decimal for <code>nvidia-xorg.conf</code>, e.g. <code>3b:00.0</code> becomes <code>"PCI:59:0:0"</code>.</div>
+<p>Find your display device bus id:
+</p>
+<pre>$ lspci | grep -i nvidia | awk '{print $1}'
+</pre>
+<p>It might return something similar to <code>01:00.0</code>. Then create a file (for example <code>/etc/X11/nvidia-xorg.conf.d/30-nvidia.conf</code>) to set the proper bus id:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/X11/nvidia-xorg.conf.d/30-nvidia.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">Section "Device"
+    Identifier "nvidia"
+    Driver "nvidia"
+    BusID "PCI:<b>1:0:0</b>"
+    #  Option "DPI" "<b>96 x 96</b>"
+EndSection</pre>
+<p>Also this way you can adjust some NVIDIA settings if you encounter issues:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/X11/nvidia-xorg.conf.d/30-nvidia.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">Section "Screen"
+    Identifier "nvidia"
+    Device "nvidia"
+    #  Option "AllowEmptyInitialConfiguration" "Yes"
+    #  Option "UseDisplayDevice" "none"
+EndSection</pre>
+<h3><span class="mw-headline" id="External_GPU_setup">External GPU setup</span></h3>
+<p>You can also use this in an external GPU setup. Make sure to load the <i>nvidia-modeset</i> and <i>nvidia-drm</i> modules and add the option <code>Option "AllowExternalGpus" "true"</code> to the <i>"Device"</i> section.
+</p>
+<p>Change the auto-generated configuration to use the <b>internal display</b> on devices with multiple NVIDIA cards:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/X11/nvidia-xorg.conf.d/30-nvidia.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">Section "ServerLayout"
+  Identifier "layout"
+  Screen 0 "nvidia" 0 0
+  Inactive "intel"
+  Option  "AutoAddGPU" "false"
+EndSection
+
+Section "Device"
+  Identifier "nvidia"
+  Driver "nvidia"
+  BusID "PCI:9:0:0"
+  Option "AllowExternalGpus" "true"
+  Option "ProbeAllGpus" "false"
+  Option "HardDPMS" "false"
+  Option "NoLogo" "true"
+  Option "UseEDID" "false"
+#    Option "UseDisplayDevice" "none"
+EndSection
+
+Section "Screen"
+  Identifier "nvidia"
+  Device "nvidia"
+  Option "AllowEmptyInitialConfiguration" "Yes"
+#  Option "UseDisplayDevice" "None"
+EndSection</pre>
+<p>Remember to set the bus id to the correct graphics card.
+</p>
+<h3><span class="mw-headline" id="Automatically_run_window_manager">Automatically run window manager</span></h3>
+<p>For convenience you can create an <code>$XDG_CONFIG_HOME/X11/nvidia-xinitrc</code> file with your favorite window manager. (if using <i>nvidia-xrun</i> &lt; v.0.3.79 create <code>$HOME/.nvidia-xinitrc</code>)  
+</p>
+<pre>if [ $# -gt 0 ]; then
+  $*
+else
+  <i>your-window-manager</i>
+fi
+</pre>
+<p>With it you do not need to specify the app and can simply execute:
+</p>
+<pre>$ nvidia-xrun
+</pre>
+<p>Since this method starts an isolated X server, it is also a good idea to get a copy of all the other configurations files that you have located at <code>/etc/X11/xorg.conf.d/</code>, except for your prior standard integrated GPU configurations.
+</p>
+<h3><span class="mw-headline" id="Use_bbswitch_to_manage_the_NVIDIA_card">Use bbswitch to manage the NVIDIA card</span></h3>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> nvidia-xrun &gt; 0.3.78 should disable the card automatically so this method is unneccessary</div>
+<p>When the NVIDIA card is not needed, <i>bbswitch</i> can be used to turn it off. The <i>nvidia-xrun</i> script will automatically take care of running a window manager and waking up the NVIDIA card. To achieve that, you need to:
+</p>
+<p>Load the <code>bbswitch</code> module on boot: 
+</p>
+<pre># echo 'bbswitch' &gt; /etc/modules-load.d/bbswitch.conf
+</pre>
+<p>Disable the <code>nvidia</code> module on boot:
+</p>
+<pre># echo 'options bbswitch load_state=0 unload_state=1' &gt; /etc/modprobe.d/bbswitch.conf 
+</pre>
+<p>After a reboot, the NVIDIA card will be off. This can be seen by querying <code>bbswitch</code>'s status:
+</p>
+<pre>$ cat /proc/acpi/bbswitch  
+</pre>
+<p>To force the card to turn on/off respectively run:
+</p>
+<pre># echo OFF &gt; /proc/acpi/bbswitch
+# echo ON &gt; /proc/acpi/bbswitch
+</pre>
+<p>For more about bbswitch see <a rel="nofollow" class="external text" href="https://github.com/Bumblebee-Project/bbswitch">Bumblebee-Project/bbswitch</a>.
+</p>
+<h2><span class="mw-headline" id="Usage">Usage</span></h2>
+<h3><span class="mw-headline" id="Start_at_boot">Start  at boot</span></h3>
+<p><a href="../en/Help:Reading.html#Control_of_systemd_units" class="mw-redirect" title="Enable">Enable</a> <code>nvidia-xrun-pm.service</code> - this shuts down the NVIDIA card during boot.
+</p>
+<p>Once the system boots, from the virtual console, login to your user, and run <code>nvidia-xrun <i>application</i></code>.
+</p>
+<p>If above does not work, <a href="../en/Keyboard_shortcuts.html#Xorg_and_Wayland" title="Keyboard shortcuts">switch</a> to unused virtual console and try again.
+</p>
+<p>As mentioned before, running applications directly with <code>nvidia-xrun <i>application</i></code> <b>does not work well</b>, so it is best to create an <code>nvidia-xinitrc</code> file as outlined earlier, and use <code>nvidia-xrun</code> to launch your window manager.
+</p>
+<h2><span class="mw-headline" id="Troubleshooting">Troubleshooting</span></h2>
+<h3><span class="mw-headline" id="NVIDIA_GPU_fails_to_switch_off_or_is_set_to_be_default">NVIDIA GPU fails to switch off or is set to be default</span></h3>
+<p>See <a href="#Use_bbswitch_to_manage_the_NVIDIA_card">#Use bbswitch to manage the NVIDIA card</a>.
+</p>
+<p>If NVIDIA GPU still fails to switch off, or is somehow set to be default whenever you use or not <code>nvidia-xrun</code>, then you might likely need to blacklist specific modules (which were previously blacklisted by <a href="../en/Bumblebee.html" title="Bumblebee">Bumblebee</a>). Create this file and restart your system:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/usr/lib/modprobe.d/nvidia-xrun.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">blacklist nvidia
+blacklist nvidia-drm
+blacklist nvidia-modeset
+blacklist nvidia-uvm
+blacklist nouveau
+</pre>
+<p>There seems to be a race condition between <code>nvidia-xrun-pm.service</code> and <code>systemd-modules-load.service</code> which loads the <code>nvidia</code> modules. If the latter runs first, <code>nvidia-xrun-pm</code> will hang (actually the <code>tee</code> command) during device removal. If on the other hand <code>nvidia-xrun-pm</code> runs first then it will succeed, and later the modules will fail to load with an error (which is harmless but ugly). For this reason it might be better to always blacklist the above modules.
+</p>
+<p>DRM kernel mode setting should be enabled for PRIME synchronization to work (for example on muxless devices where only the Intel GPU is connected to outputs). However, consider disabling it in case there is an issue. See <a href="../en/NVIDIA.html#DRM_kernel_mode_setting" title="NVIDIA">NVIDIA#DRM kernel mode setting</a>
+</p>
+<p>On certain hardware, the NVIDIA GPU exposes two devices on the PCI bus: a 3D controller and an audio device. In this case, both devices need to be removed from the bus in order for the GPU  to fully power down. This can be done by simply adding a line for the audio device bus id in <code>/etc/default/nvidia-xrun</code>, and the corresponding line in the function <code>turn_off_gpu</code>  in <code>/usr/bin/nvidia-xrun</code> to remove the second device.
+</p>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="../en/Category:Graphics.html" title="Category:Graphics">Graphics</a></li></ul>
+</div></div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=Nvidia-xrun&amp;oldid=757863">https://wiki.archlinux.org/index.php?title=Nvidia-xrun&amp;oldid=757863</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 23 November 2022, at 20:12.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

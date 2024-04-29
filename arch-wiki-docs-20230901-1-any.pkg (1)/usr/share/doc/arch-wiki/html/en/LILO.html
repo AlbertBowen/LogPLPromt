@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>LILO - ArchWiki</title>
+<link rel="stylesheet" href="../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-LILO rootpage-LILO skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Installation" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Installation">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Installation</div>
+			</a>
+			
+				<button aria-controls="toc-Installation-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Installation subsection
+				</button>
+			
+			<ul id="toc-Installation-sublist" class="sidebar-toc-list">
+				<li id="toc-Install_to_partition_or_partitionless_disk" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Install_to_partition_or_partitionless_disk">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.1</span>Install to partition or partitionless disk</div>
+			</a>
+			
+			<ul id="toc-Install_to_partition_or_partitionless_disk-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Configuration" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Configuration">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Configuration</div>
+			</a>
+			
+				<button aria-controls="toc-Configuration-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Configuration subsection
+				</button>
+			
+			<ul id="toc-Configuration-sublist" class="sidebar-toc-list">
+				<li id="toc-Sample_setup" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Sample_setup">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.1</span>Sample setup</div>
+			</a>
+			
+			<ul id="toc-Sample_setup-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Using_an_image_as_background" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Using_an_image_as_background">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.2</span>Using an image as background</div>
+			</a>
+			
+			<ul id="toc-Using_an_image_as_background-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Pacman_hook" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Pacman_hook">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>Pacman hook</div>
+			</a>
+			
+			<ul id="toc-Pacman_hook-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Troubleshooting" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Troubleshooting">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4</span>Troubleshooting</div>
+			</a>
+			
+				<button aria-controls="toc-Troubleshooting-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Troubleshooting subsection
+				</button>
+			
+			<ul id="toc-Troubleshooting-sublist" class="sidebar-toc-list">
+				<li id="toc-Read_write_error_message_whilst_booting" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Read_write_error_message_whilst_booting">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.1</span>Read write error message whilst booting</div>
+			</a>
+			
+			<ul id="toc-Read_write_error_message_whilst_booting-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Devmapper_not_found_error_message_after_kernel_upgrade" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Devmapper_not_found_error_message_after_kernel_upgrade">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.2</span>Devmapper not found error message after kernel upgrade</div>
+			</a>
+			
+			<ul id="toc-Devmapper_not_found_error_message_after_kernel_upgrade-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-See_also" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#See_also">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5</span>See also</div>
+			</a>
+			
+			<ul id="toc-See_also-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../en/LILO.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="new mw-list-item"><a href="/index.php?title=Talk:LILO&amp;action=edit&amp;redlink=1" rel="discussion" title="Discussion about the content page (page does not exist) [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">English</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../en/LILO.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=LILO&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=LILO&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../en/LILO.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=LILO&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=LILO&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output">
+<div class="archwiki-template-meta-related-articles-start">
+<p class="mw-no-invert">Related articles</p>
+<ul>
+<li><a href="../en/Arch_boot_process.html" title="Arch boot process">Arch boot process</a></li>
+</ul>
+</div>
+<p>The <i>LI</i>nux <i>LO</i>ader, or <b>LILO</b> for short, is a legacy multi-boot loader for Linux systems. In spite of being the standard choice over the course of several years, it has been slowly phased out. As of January 2016, <a rel="nofollow" class="external text" href="https://web.archive.org/web/20160917103744/https://lists.alioth.debian.org/pipermail/lilo-devel/2015-December/000083.html">LILO is no longer actively developed</a>.
+</p>
+<mw:tocplace></mw:tocplace>
+<h2><span class="mw-headline" id="Installation">Installation</span></h2>
+<p>LILO is available as <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/lilo/">lilo</a></span><sup><small>AUR</small></sup> and <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/lilo-git/">lilo-git</a></span><sup><small>AUR</small></sup> (the development version). LILO only works on BIOS systems.
+</p>
+<p>Running the command <code>lilo</code> (as root) will install LILO to the MBR. Before running the lilo command you should edit <code>/etc/lilo.conf</code> to ensure that the root entry points towards the root partition. If your root partition is on <code>/dev/sda1</code> then the root entry should look like this: <code>root=/dev/sda1</code>. Remember to change the root line for both the 'arch' and the 'arch-fallback' entries.
+</p>
+<h3><span class="mw-headline" id="Install_to_partition_or_partitionless_disk">Install to partition or partitionless disk</span></h3>
+<p>Use the <code>-b</code> flag to specify a partition or the whole disk (instead of the implied <code>-M</code>) to install LILO to the <a href="https://en.wikipedia.org/wiki/Volume_boot_record" class="extiw" title="wikipedia:Volume boot record">volume boot record (VBR)</a> instead of the <a href="../en/Partitioning.html#Master_Boot_Record" class="mw-redirect" title="MBR">MBR</a>. See <span class="plainlinks archwiki-template-man" title="$ man 8 lilo"><a rel="nofollow" class="external text" href="https://linux.die.net/man/8/lilo">lilo(8)</a></span> and the <a rel="nofollow" class="external text" href="https://forums.gentoo.org/viewtopic-p-7071146.html?sid=1511812358edbf8caa9f387374f112d2#7071146">answers by Hypnos on the Gentoo forum</a>.
+</p>
+<h2><span class="mw-headline" id="Configuration">Configuration</span></h2>
+<p>LILO is configured by editing the <code>/etc/lilo.conf</code> file and running <code>lilo</code> afterwards to apply the new configuration.
+</p>
+<p>As a reminder, consider that LILO <i>needs</i> to be run after every kernel upgrade, otherwise the system is likely to be left in an unbootable state.
+</p>
+<p>More help on setting up LILO can be found in the <a rel="nofollow" class="external text" href="https://www.tldp.org/HOWTO/LILO.html">LILO-mini-HOWTO</a>.
+</p>
+<h3><span class="mw-headline" id="Sample_setup">Sample setup</span></h3>
+<p>A typical LILO setup:
+</p>
+<div class="archwiki-template-box archwiki-template-box-tip">
+<strong>Tip:</strong> If LILO is really slow while loading the bzImage, try adding <code>compact</code> to <code>/etc/lilo.conf</code>'s global section, as shown below.</div>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/lilo.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">#
+# /etc/lilo.conf
+#
+
+boot=/dev/sda
+# This line often fixes L40 errors on bootup
+# disk=/dev/sda bios=0x80
+
+default=Arch
+timeout=100
+lba32
+prompt
+<b>compact</b>
+
+image=/boot/vmlinuz-linux
+        label=Arch
+	append="devfs=nomount"
+	vga=788
+        root=/dev/sda2
+        read-only
+
+image=/boot/vmlinuz-linux
+        label=ArchRescue
+        root=/dev/sda8
+        read-only
+
+other=/dev/sda1
+        label=Windows
+
+# End of file</pre>
+<p>You can use <code>hwinfo --framebuffer</code> to determine what vga modes you can use.
+</p>
+<h3><span class="mw-headline" id="Using_an_image_as_background">Using an image as background</span></h3>
+<p>First prepare the background image:
+</p>
+<ul>
+<li>Open it in GIMP.</li>
+<li>Scale it to 640x480.</li>
+<li>Change it to indexed mode (<i>Image &gt; Mode &gt; Indexed</i>).</li>
+<li>Select <i>Create optimal palette</i> and set it to 16 colours. Choose whatever dithering method suits you.</li>
+<li>Open the "Indexed Palette" dialog. Make note of which colours you want to use for menu text entries, the clock, etc. In your <code>lilo.conf</code>, you refer to the colours by index.</li>
+<li>Export the image as a bmp in your <code>/boot</code> directory. In Export dialog check option <i>Do not write color space information</i>
+</li>
+</ul>
+<p>Now edit <code>lilo.conf</code>. There are a few options that can be set for your graphical menu. See <code>man lilo.conf</code> for more information.
+</p>
+<ul>
+<li>bitmap=&lt;bitmap-file&gt; Set this to the file that you saved above.</li>
+<li>bmp-colors=&lt;fg&gt;,&lt;bg&gt;,&lt;sh&gt;,&lt;hfg&gt;,&lt;hbg&gt;,&lt;hsh&gt;</li>
+</ul>
+<dl><dd>These are the colours of the entries in the menu. They refer to the foreground, background, and shadow colours respectively, followed by the same for highlighted text. Do not use spaces. The values used are indices into the colour palette that you discovered in the previous step. If you choose, you can leave a value blank (but do not forget the comma). The default background is transparent, the default shadow is to have none.</dd></dl>
+<ul>
+<li>bmp-table=&lt;x&gt;,&lt;y&gt;,&lt;ncol&gt;,&lt;nrow&gt;,&lt;xsep&gt;,&lt;spill&gt; This option specifies where the menu is placed. x and y are the character coordinates. You can also suffix them with a p to specify pixel coordinates.</li>
+<li>bmp-timer=&lt;x&gt;,&lt;y&gt;,&lt;fg&gt;,&lt;bg&gt;,&lt;sh&gt; This option specifies the coordinates and colour of the timer that counts down the timeout before booting a default entry. It uses colour indices for the colours, and character (or pixel) coordinates.</li>
+</ul>
+<p>For example:
+</p>
+<pre>bitmap=/boot/arch-lilo.bmp
+bmp-colors=1,0,8,3,8,1
+bmp-table=250p,150p,1,18
+bmp-timer=250p,350p,3,8,1
+</pre>
+<p>Save <code>lilo.conf</code>, run <code>lilo</code> as root, and reboot and see how it looks!
+</p>
+<h2><span class="mw-headline" id="Pacman_hook">Pacman hook</span></h2>
+<p>lilo needs to be run after every kernel update. You can use a pacman hook to automate it. See <a href="../en/Pacman.html#Hooks" title="Pacman">Pacman#Hooks</a> or <span class="plainlinks archwiki-template-man" title="$ man 5 alpm-hooks"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/alpm-hooks.5">alpm-hooks(5)</a></span>.
+</p>
+<p>Make the directory <code>/etc/pacman.d/hooks</code> if it does not already exist.
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/pacman.d/hooks/lilo.hook</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">[Trigger]
+Operation = Install
+Operation = Upgrade
+Operation = Remove
+Type = Package
+Target = linux
+Target = linux-lts
+
+[Action]
+Description= Run lilo after kernel update
+When = PostTransaction
+Depends = lilo
+Exec = /usr/bin/lilo</pre>
+<h2><span class="mw-headline" id="Troubleshooting">Troubleshooting</span></h2>
+<h3><span class="mw-headline" id="Read_write_error_message_whilst_booting">Read write error message whilst booting</span></h3>
+<p>This error message is caused by a <a rel="nofollow" class="external text" href="https://gitlab.archlinux.org/archlinux/mkinitcpio/mkinitcpio/commit/449b3e543c">change</a> in mkinitcpio which was in response to this <a href="../en/Systemd.html" title="Systemd">Systemd</a> <a rel="nofollow" class="external text" href="https://github.com/systemd/systemd/commit/956eaf2b8d6c9999024705ddadc7393bc707de02">commit</a>. The change causes partitions to be fsck'ed twice when mounted read only. To fix this error edit <code>/etc/lilo.conf</code> and change the 'read only' line to 'read write' for both arch entries.
+</p>
+<p>See <a rel="nofollow" class="external text" href="https://bbs.archlinux.org/viewtopic.php?pid=1303683#p1303683">this forum thread</a> for more information.
+</p>
+<h3><span class="mw-headline" id="Devmapper_not_found_error_message_after_kernel_upgrade">Devmapper not found error message after kernel upgrade</span></h3>
+<p>It is possible that running the <code>lilo</code> command after a kernel upgrade results in a devmapper not found error. If this is the case run <code>modprobe dm-mod</code> before running <code>lilo</code> after a kernel upgrade.
+</p>
+<h2><span class="mw-headline" id="See_also">See also</span></h2>
+<ul>
+<li><a rel="nofollow" class="external text" href="https://www.mjmwired.net/kernel/Documentation/kernel-parameters.txt">List of kernel parameters that can be used at boot time </a></li>
+<li><a rel="nofollow" class="external text" href="https://web.archive.org/web/20110904200907/http://www.kernel.org/pub/linux/kernel/people/gregkh/lkn/lkn_pdf/ch09.pdf">List of kernel paramaters with further explanation and grouped by like options ('Kernel Boot Command-Line Parameter Reference', <i>Linux Kernel In A Nutshell</i>)</a></li>
+</ul>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="../en/Category:Boot_loaders.html" title="Category:Boot loaders">Boot loaders</a></li></ul>
+</div></div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=LILO&amp;oldid=756673">https://wiki.archlinux.org/index.php?title=LILO&amp;oldid=756673</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 11 November 2022, at 19:03.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

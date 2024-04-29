@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>fprint - ArchWiki</title>
+<link rel="stylesheet" href="../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Fprint rootpage-Fprint skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Prerequisites" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Prerequisites">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Prerequisites</div>
+			</a>
+			
+			<ul id="toc-Prerequisites-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Installation" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Installation">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Installation</div>
+			</a>
+			
+			<ul id="toc-Installation-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Configuration" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Configuration">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>Configuration</div>
+			</a>
+			
+				<button aria-controls="toc-Configuration-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Configuration subsection
+				</button>
+			
+			<ul id="toc-Configuration-sublist" class="sidebar-toc-list">
+				<li id="toc-Login_configuration" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Login_configuration">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.1</span>Login configuration</div>
+			</a>
+			
+			<ul id="toc-Login_configuration-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Create_fingerprint_signature" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Create_fingerprint_signature">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.2</span>Create fingerprint signature</div>
+			</a>
+			
+			<ul id="toc-Create_fingerprint_signature-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Restrict_enrolling" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Restrict_enrolling">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.3</span>Restrict enrolling</div>
+			</a>
+			
+			<ul id="toc-Restrict_enrolling-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Troubleshooting" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Troubleshooting">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4</span>Troubleshooting</div>
+			</a>
+			
+				<button aria-controls="toc-Troubleshooting-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Troubleshooting subsection
+				</button>
+			
+			<ul id="toc-Troubleshooting-sublist" class="sidebar-toc-list">
+				<li id="toc-No_devices_available" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#No_devices_available">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.1</span>No devices available</div>
+			</a>
+			
+			<ul id="toc-No_devices_available-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-gdm_hangs_when_revealing_login_prompt_after_suspend" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#gdm_hangs_when_revealing_login_prompt_after_suspend">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.2</span>gdm hangs when revealing login prompt after suspend</div>
+			</a>
+			
+			<ul id="toc-gdm_hangs_when_revealing_login_prompt_after_suspend-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Unexpected_error_while_suspending_device" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Unexpected_error_while_suspending_device">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.3</span>Unexpected error while suspending device</div>
+			</a>
+			
+			<ul id="toc-Unexpected_error_while_suspending_device-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../en/Fprint.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="mw-list-item"><a href="../en/Talk:Fprint.html" rel="discussion" title="Discussion about the content page [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">English</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../en/Fprint.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=Fprint&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=Fprint&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../en/Fprint.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Fprint&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Fprint&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output">
+<p><span>
+</span>
+</p>
+<div class="archwiki-template-meta-related-articles-start">
+<p class="mw-no-invert">Related articles</p>
+<ul>
+<li><a href="../en/Fingerprint_GUI.html" title="Fingerprint GUI">Fingerprint GUI</a></li>
+<li><a href="../en/ThinkFinger.html" title="ThinkFinger">ThinkFinger</a></li>
+</ul>
+</div>
+<p>From <a rel="nofollow" class="external text" href="https://www.freedesktop.org/wiki/Software/fprint/">the fprint homepage</a>:
+</p>
+<dl><dd>The fprint project aims to plug a gap in the Linux desktop: support for consumer fingerprint reader devices.</dd></dl>
+<p>The idea is to use the built-in fingerprint reader in some notebooks for login using <a href="../en/PAM.html" title="PAM">PAM</a>. This article will also explain how to use regular password for backup login method (solely fingerprint scanner is not recommended due to numerous reasons).
+</p>
+<mw:tocplace></mw:tocplace>
+<h2><span class="mw-headline" id="Prerequisites">Prerequisites</span></h2>
+<p>Make sure you have one of the supported finger scanners. You can check if your device is supported by checking the <a rel="nofollow" class="external text" href="https://fprint.freedesktop.org/supported-devices.html">list of supported devices</a> or the <a rel="nofollow" class="external text" href="https://gitlab.freedesktop.org/libfprint/wiki/-/wikis/Unsupported-Devices">list of unsupported devices</a>. To check which one you have, type:
+</p>
+<pre>$ lsusb
+</pre>
+<p>The <i>lsusb</i> tool is available inside the <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=usbutils">usbutils</a></span> package.
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> The above list of supported devices is not updated regularly and is not complete. It is worth testing your device using the instructions on this page even if it does not appear on that list, prior to resorting to <a href="../en/Arch_User_Repository.html" class="mw-redirect" title="AUR">AUR</a> packages.</div>
+<h2><span class="mw-headline" id="Installation">Installation</span></h2>
+<p><a href="../en/Help:Reading.html#Installation_of_packages" class="mw-redirect" title="Install">Install</a> the <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=fprintd">fprintd</a></span> package. <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=imagemagick">imagemagick</a></span> might also be needed.
+</p>
+<p>Some devices require a different fork of <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=libfprint">libfprint</a></span>, not (yet?) merged with the main <i>libfprint</i>: 
+</p>
+<ul><li>
+<b>libfprint-tod</b> — For touch-based sensors.</li></ul>
+<dl><dd>
+<a rel="nofollow" class="external free" href="https://gitlab.freedesktop.org/3v1n0/libfprint/-/tree/tod">https://gitlab.freedesktop.org/3v1n0/libfprint/-/tree/tod</a> || <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/libfprint-tod-git/">libfprint-tod-git</a></span><sup><small>AUR</small></sup>
+</dd></dl>
+<ul><li>
+<b>libfprint-elanmoc2</b> — For ELAN <code>04f3:0c4c</code> waiting <a rel="nofollow" class="external text" href="https://gitlab.freedesktop.org/libfprint/libfprint/-/merge_requests/330">merge</a>.</li></ul>
+<dl><dd>
+<a rel="nofollow" class="external free" href="https://gitlab.freedesktop.org/Depau/libfprint/-/tree/elanmoc2">https://gitlab.freedesktop.org/Depau/libfprint/-/tree/elanmoc2</a> || <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/libfprint-elanmoc2-git/">libfprint-elanmoc2-git</a></span><sup><small>AUR</small></sup>
+</dd></dl>
+<ul><li>
+<b>libfprint-elanmoc2-newdrvs</b> — <b>Experimental</b> for <code>04f3:0c4c</code> or a <code>04f3:0c00</code>, waiting <a rel="nofollow" class="external text" href="https://gitlab.freedesktop.org/Depau/libfprint/-/merge_requests/1">merge</a>.</li></ul>
+<dl><dd>
+<a rel="nofollow" class="external free" href="https://gitlab.freedesktop.org/geodic/libfprint/-/tree/elanmoc2">https://gitlab.freedesktop.org/geodic/libfprint/-/tree/elanmoc2</a> || <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/libfprint-elanmoc2-newdrvs-git/">libfprint-elanmoc2-newdrvs-git</a></span><sup><small>AUR</small></sup>
+</dd></dl>
+<h2><span class="mw-headline" id="Configuration">Configuration</span></h2>
+<h3><span class="mw-headline" id="Login_configuration">Login configuration</span></h3>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> 
+<ul>
+<li>If you use <a href="../en/GDM.html" title="GDM">GDM</a>, the fingerprint-option is already available in the login menu (if not add yourself to the <code>input</code> <a href="../en/Users_and_groups.html#Group_management" class="mw-redirect" title="User group">user group</a>). You can skip this section!</li>
+<li>If you use <a href="../en/SDDM.html" title="SDDM">SDDM</a>, see <a href="../en/SDDM.html#Using_a_fingerprint_reader" title="SDDM">SDDM#Using a fingerprint reader</a>.</li>
+</ul>
+</div>
+<p>Add <code>pam_fprintd.so</code> as <i>sufficient</i> to the top of the auth section of <code>/etc/pam.d/system-local-login</code>:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/pam.d/system-local-login</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;"><b>auth      sufficient pam_fprintd.so</b>
+auth      include   system-login
+...
+</pre>
+<p>This tries to use fingerprint login first, and if it fails or if it finds no fingerprint signatures in the given user's home directory, it proceeds to password login.
+</p>
+<p>You can also modify other files in <code>/etc/pam.d/{login,su,sudo,gdm,lightdm}</code> in the same way. For example <code>/etc/pam.d/polkit-1</code> for <a href="../en/Polkit.html" title="Polkit">polkit</a> based authentication (GNOME &amp; many other desktop environments) or <code>/etc/pam.d/kde</code> for unlocking KDE's lockscreen.
+</p>
+<p>Adding <code>pam_fprintd.so</code> as <i>sufficient</i> to any configuration file in <code>/etc/pam.d/</code> when a fingerprint signature is present will only prompt for fingerprint authentication. This prevents the use of a password if you cannot <code>Ctrl+c</code> fingerprint authentication (due to the lack of a shell). In order to use either a password or a fingerprint in a graphical interface, add the following line to the top of any files required:
+</p>
+<pre><b>auth		sufficient  	pam_unix.so try_first_pass likeauth nullok</b>
+auth		sufficient  	pam_fprintd.so
+...
+</pre>
+<p>This will prompt for a password; pressing <code>Enter</code> on a blank field will proceed to fingerprint authentication. 
+</p>
+<p>If you want to prompt for fingerprint and password input at the same time, you can use <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/pam-fprint-grosshack/">pam-fprint-grosshack</a></span><sup><small>AUR</small></sup>. This may be needed for some graphical programs which do not allow blank password input, such as Gnome's built-in polkit agent. To use this package, add the following lines to the top of any files required:
+</p>
+<pre><b>auth		sufficient  	pam_fprintd_grosshack.so</b>
+<b>auth		sufficient  	pam_unix.so try_first_pass nullok</b>
+...
+</pre>
+<h3><span class="mw-headline" id="Create_fingerprint_signature">Create fingerprint signature</span></h3>
+<p>You will need to have an <a href="../en/Polkit.html#Authentication_agents" title="Polkit">authentication agent</a> running before being able to enroll.
+</p>
+<p>To add a signature for a finger, run:
+</p>
+<pre>$ fprintd-enroll
+</pre>
+<p>or create a new signature for all fingers:
+</p>
+<pre>$ fprintd-delete "$USER"
+$ for finger in {left,right}-{thumb,{index,middle,ring,little}-finger}; do fprintd-enroll -f "$finger" "$USER"; done
+</pre>
+<p>You will be asked to scan the given finger. Swipe your right index finger <b>five times</b>. After that, the signature is created in <code>/var/lib/fprint/</code>.
+</p>
+<p>You can also enroll without an authentication agent:
+</p>
+<pre># fprintd-enroll <i>user</i>
+</pre>
+<p>To verify the newly created fingerprint, use: 
+</p>
+<pre>$ fprintd-verify
+</pre>
+<p>For more information, see <span class="plainlinks archwiki-template-man" title="$ man 1 fprintd"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/fprintd.1">fprintd(1)</a></span>.
+</p>
+<h3><span class="mw-headline" id="Restrict_enrolling">Restrict enrolling</span></h3>
+<div class="noprint archwiki-template-message">
+<p><a href="../File:Merge-arrows-2.png" class="image"><img alt="Merge-arrows-2.png" src="../File:Merge-arrows-2.png" decoding="async" width="48" height="48"></a><b>This article or section is a candidate for merging with <a href="../en/Polkit.html" title="Polkit">polkit</a>.</b><a href="../File:Merge-arrows-2.png" class="image"><img alt="Merge-arrows-2.png" src="../File:Merge-arrows-2.png" decoding="async" width="48" height="48"></a></p>
+<div>
+<b>Notes:</b> Partially duplicates article (Discuss in <a rel="nofollow" class="external text" href="https://wiki.archlinux.org/title/Talk:Fprint">Talk:Fprint</a>)</div>
+</div>
+<p>By default every user is allowed to enroll new fingerprints without prompting for the password or the fingerprint. You can change this behavior using <a href="../en/Polkit.html" title="Polkit">polkit</a> rules.
+</p>
+<p>There are two locations that contains the polkit configuration files:
+</p>
+<ul>
+<li><code>/etc/polkit-1/rules.d/</code></li>
+<li><code>/usr/share/polkit-1/rules.d/</code></li>
+</ul>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> You should <b>not</b> modify the files under <code>/usr/share/polkit-1/rules.d/</code> because they will be overwritten on update. Copy them to <code>/etc/polkit-1/rules.d/</code> first.</div>
+<p>In the following example only root can enroll fingerprints:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/polkit-1/rules.d/50-net.reactivated.fprint.device.enroll.rules</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">polkit.addRule(function (action, subject) {
+  if (action.id == "net.reactivated.fprint.device.enroll") {
+    return subject.user == "root" ? polkit.Result.YES : polkit.Result.NO
+  }
+})</pre>
+<h2><span class="mw-headline" id="Troubleshooting">Troubleshooting</span></h2>
+<h3><span class="mw-headline" id="No_devices_available">No devices available</span></h3>
+<p>If your <a rel="nofollow" class="external text" href="https://fprint.freedesktop.org/supported-devices.html">supported device</a> cannot be found or is claimed to be already open (in use), check the <code>fprintd.service</code> logs in the <a href="../en/Systemd/Journal.html" class="mw-redirect" title="Journal">journal</a>.
+</p>
+<p>You may find log entries like:
+</p>
+<pre>fprintd[2936592]: Corrupted message received
+fprintd[2936592]: Ignoring device due to initialization error: unsupported firmware version
+</pre>
+<p>Ensure your device's firmware is up to date with <a href="../en/Fwupd.html" title="Fwupd">Fwupd</a>.
+</p>
+<h3><span class="mw-headline" id="gdm_hangs_when_revealing_login_prompt_after_suspend">gdm hangs when revealing login prompt after suspend</span></h3>
+<p>This issue is described <a rel="nofollow" class="external text" href="https://gitlab.freedesktop.org/libfprint/libfprint/-/issues/426">in libfprint repository</a>. The developers answer is:
+</p>
+<dl><dd>My guess right now is that we are disconnecting the BT USB dongle while it is being initialised. Then everything gets stuck while btusb is trying to load the firmware (this has a 10s timeout, explaining the just under 10s hang that we are seeing). Disconnecting the bluetooth dongle like this is expected to happen when the rfkill switch is toggled, so that is normal. It just seems that the case where the device suddenly disconnects is not handled properly and times out.</dd></dl>
+<p>The proposed fix is to <a href="../en/Help:Reading.html#Append,_add,_create,_edit" class="mw-redirect" title="Create">create</a>:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/modprobe.d/bluetooth-blacklist.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">blacklist btusb</pre>
+<p>Or execute straight away: 
+</p>
+<pre># rmmod btusb
+</pre>
+<p>Then it should not try to initialize the device.
+</p>
+<h3><span class="mw-headline" id="Unexpected_error_while_suspending_device">Unexpected error while suspending device</span></h3>
+<p>This issue is described <a rel="nofollow" class="external text" href="https://gitlab.freedesktop.org/libfprint/libfprint/-/issues/538">in libfprint repository</a>:
+</p>
+<dl><dd>You need to set your laptop to not suspend to RAM but to do s2idle. You might need to switch the BIOS into "Windows mode".</dd></dl>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface">
+<div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="../en/Category:Input_devices.html" title="Category:Input devices">Input devices</a></li></ul>
+</div>
+<div id="mw-hidden-catlinks" class="mw-hidden-catlinks mw-hidden-cats-hidden">Hidden category: <ul><li><a href="../en/Category:Pages_or_sections_flagged_with_Template:Merge.html" title="Category:Pages or sections flagged with Template:Merge">Pages or sections flagged with Template:Merge</a></li></ul>
+</div>
+</div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=Fprint&amp;oldid=785698">https://wiki.archlinux.org/index.php?title=Fprint&amp;oldid=785698</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 18 August 2023, at 17:49.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>PPTP server - ArchWiki</title>
+<link rel="stylesheet" href="../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-PPTP_server rootpage-PPTP_server skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Installation" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Installation">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Installation</div>
+			</a>
+			
+			<ul id="toc-Installation-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Configuration" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Configuration">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Configuration</div>
+			</a>
+			
+				<button aria-controls="toc-Configuration-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Configuration subsection
+				</button>
+			
+			<ul id="toc-Configuration-sublist" class="sidebar-toc-list">
+				<li id="toc-iptables_firewall_configuration" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#iptables_firewall_configuration">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.1</span>iptables firewall configuration</div>
+			</a>
+			
+			<ul id="toc-iptables_firewall_configuration-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-UFW_firewall_configuration" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#UFW_firewall_configuration">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.2</span>UFW firewall configuration</div>
+			</a>
+			
+			<ul id="toc-UFW_firewall_configuration-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Start_the_server" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Start_the_server">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>Start the server</div>
+			</a>
+			
+			<ul id="toc-Start_the_server-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Troubleshooting" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Troubleshooting">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4</span>Troubleshooting</div>
+			</a>
+			
+				<button aria-controls="toc-Troubleshooting-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Troubleshooting subsection
+				</button>
+			
+			<ul id="toc-Troubleshooting-sublist" class="sidebar-toc-list">
+				<li id="toc-Error_619_on_the_client_side" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Error_619_on_the_client_side">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.1</span>Error 619 on the client side</div>
+			</a>
+			
+			<ul id="toc-Error_619_on_the_client_side-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-pptpd[xxxxx]:_Long_config_file_line_ignored" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#pptpd[xxxxx]:_Long_config_file_line_ignored">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.2</span>pptpd[xxxxx]: Long config file line ignored</div>
+			</a>
+			
+			<ul id="toc-pptpd[xxxxx]:_Long_config_file_line_ignored-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-ppp0:_ppp:_compressor_dropped_pkt" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#ppp0:_ppp:_compressor_dropped_pkt">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.3</span>ppp0: ppp: compressor dropped pkt</div>
+			</a>
+			
+			<ul id="toc-ppp0:_ppp:_compressor_dropped_pkt-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../en/PPTP_server.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="mw-list-item"><a href="../en/Talk:PPTP_server.html" rel="discussion" title="Discussion about the content page [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">English</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../en/PPTP_server.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=PPTP_server&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=PPTP_server&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../en/PPTP_server.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=PPTP_server&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=PPTP_server&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output">
+<div class="archwiki-template-meta-related-articles-start">
+<p class="mw-no-invert">Related articles</p>
+<ul>
+<li><a href="../en/PPTP_Client.html" title="PPTP Client">PPTP Client</a></li>
+</ul>
+</div>
+<p><a href="https://en.wikipedia.org/wiki/PPTP" class="extiw" title="wikipedia:PPTP">Point-to-Point Tunneling Protocol</a> (PPTP) is a method for implementing virtual private networks. PPTP uses a control channel over TCP and a GRE tunnel operating to encapsulate PPP packets.
+</p>
+<p>This entry will show you on how to create a PPTP server in Arch.
+</p>
+<div class="archwiki-template-box archwiki-template-box-warning">
+<strong>Warning:</strong> The PPTP protocol is inherently insecure. See <a rel="nofollow" class="external free" href="http://poptop.sourceforge.net/dox/protocol-security.phtml">http://poptop.sourceforge.net/dox/protocol-security.phtml</a> for details.</div>
+<mw:tocplace></mw:tocplace>
+<h2><span class="mw-headline" id="Installation">Installation</span></h2>
+<p><a href="../en/Help:Reading.html#Installation_of_packages" class="mw-redirect" title="Install">Install</a> the <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=pptpd">pptpd</a></span> package.
+</p>
+<h2><span class="mw-headline" id="Configuration">Configuration</span></h2>
+<div class="archwiki-template-box archwiki-template-box-tip">
+<strong>Tip:</strong> Configuration examples can be found in the <code>/usr/share/doc/pptpd</code> directory.</div>
+<p>A typical configuration may look like:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/pptpd.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;"># Read man pptpd.conf, see samples in /usr/share/doc/pptpd
+# and write your pptpd configuration here
+
+# pppd options file. By default, /etc/ppp/options is used
+option /etc/ppp/options.pptpd
+
+# Server IP in local network
+localip 192.168.1.2
+
+# IP address ranges used to assign IPs to new connecting clients
+# Here we define two ranges for our 192.168.1.* subnet: 234-238 and 245
+remoteip 192.168.1.234-238,192.168.1.245
+</pre>
+<p>Now create the pppd options file, in our example this is <code>/etc/ppp/options.pptpd</code>:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/ppp/options.pptpd</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;"># Read man pppd to see the full list of available options
+
+# The name of the local system for authentication purposes
+name pptpd
+
+# Refuse PAP, CHAP or MS-CHAP connections but accept connections with
+# MS-CHAPv2 or MPPE with 128-bit encryption
+refuse-pap
+refuse-chap
+refuse-mschap
+require-mschap-v2
+require-mppe-128
+
+# Add entry to the ARP system table
+proxyarp
+
+# For the serial device to ensure exclusive access to the device
+lock
+
+# Disable BSD-Compress and Van Jacobson TCP/IP header compression
+nobsdcomp
+novj
+novjccomp
+
+# Disable file logging
+nolog
+
+# DNS servers for Microsoft Windows clients. Using Google's public servers here
+ms-dns 8.8.8.8
+ms-dns 8.8.4.4
+</pre>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> Ensure the file ends with a newline to prevent possible parsing issues.</div>
+<p>Now create credentials file for authenticating users:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/ppp/chap-secrets</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;"># Secrets for authentication using CHAP
+# client	server	secret			IP addresses
+  user2         pptpd   123                     *
+</pre>
+<p>Now you can be authenticated with <i>user2</i> as username and <i>123</i> for password.
+</p>
+<p>Create a sysctl configuration file <code>/etc/sysctl.d/30-ipforward.conf</code> and enable kernel packet forwarding that allow connecting clients to have access to your subnet (see also <a href="../en/Internet_sharing.html#Enable_packet_forwarding" class="mw-redirect" title="Internet Share">Internet Share#Enable packet forwarding</a>):
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/sysctl.d/30-ipforward.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">net.ipv4.ip_forward=1</pre>
+<p>Now apply changes to let the sysctl configuration take effect:
+</p>
+<pre># sysctl --system
+</pre>
+<h3><span class="mw-headline" id="iptables_firewall_configuration">iptables firewall configuration</span></h3>
+<p>Configure your iptables settings to enable access for PPTP Clients
+</p>
+<pre># Accept all packets via ppp* interfaces (for example, ppp0)
+iptables -A INPUT -i ppp+ -j ACCEPT
+iptables -A OUTPUT -o ppp+ -j ACCEPT
+
+# Accept incoming connections to port 1723 (PPTP)
+iptables -A INPUT -p tcp --dport 1723 -j ACCEPT
+
+# Accept GRE packets
+iptables -A INPUT -p 47 -j ACCEPT
+iptables -A OUTPUT -p 47 -j ACCEPT
+
+# Enable IP forwarding
+iptables -F FORWARD
+iptables -A FORWARD -j ACCEPT
+
+# Enable NAT for eth0 on ppp* interfaces
+iptables -A POSTROUTING -t nat -o eth0 -j MASQUERADE
+iptables -A POSTROUTING -t nat -o ppp+ -j MASQUERADE
+</pre>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> Ensure that "eth0" is replaced with the actual ethernet interface connected to the server.</div>
+<p>Now save the new iptables rules with:
+</p>
+<pre># iptables-save &gt; /etc/iptables/iptables.rules
+</pre>
+<p>To load /etc/iptables/iptables.rules automatically after boot, <a href="../en/Help:Reading.html#Control_of_systemd_units" class="mw-redirect" title="Enable">enable</a> the <code>iptables.service</code> unit.
+</p>
+<p>Read <a href="../en/Iptables.html" title="Iptables">Iptables</a> for more information.
+</p>
+<h3><span class="mw-headline" id="UFW_firewall_configuration">UFW firewall configuration</span></h3>
+<p>Configure your ufw settings to enable access for PPTP Clients.
+</p>
+<p>You must change default forward policy in <code>/etc/default/ufw</code>
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/default/ufw</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">DEFAULT_FORWARD_POLICY="ACCEPT"</pre>
+<p>Now change <code>/etc/ufw/before.rules</code>, add following code after header and before *filter line
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/ufw/before.rules</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;"># nat Table rules
+*nat
+:POSTROUTING ACCEPT [0:0]
+
+# Allow traffic from clients to eth0
+-A POSTROUTING -s 192.168.1.0/24 -o eth0 -j MASQUERADE
+
+# commit to apply changes
+COMMIT
+</pre>
+<p>Allow GRE packets (protocol 47) in <code>/etc/ufw/before.rules</code>, find the line with: <code># drop INVALID packets</code> and add rule:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/ufw/before.rules</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;"># drop INVALID packets (logs these in loglevel medium and higher)
+<b>-A ufw-before-input -p 47 -i $iface -j ACCEPT</b>
+-A ufw-before-input -m conntrack --ctstate INVALID -j ufw-logging-deny
+-A ufw-before-input -m conntrack --ctstate INVALID -j DROP
+</pre>
+<p>Open pptp port 1723
+</p>
+<pre>ufw allow 1723
+</pre>
+<p>Restart ufw for good measure
+</p>
+<pre>ufw disable
+ufw enable
+</pre>
+<h2><span class="mw-headline" id="Start_the_server">Start the server</span></h2>
+<p>Now you can <a href="../en/Systemd.html#Using_units" title="Systemd">start and enable</a> your PPTP Server using <code>pptpd.service</code>.
+</p>
+<h2><span class="mw-headline" id="Troubleshooting">Troubleshooting</span></h2>
+<p>As with any service, see <a href="../en/Systemd.html#Troubleshooting" title="Systemd">Systemd#Troubleshooting</a> to investigate errors.
+</p>
+<h3><span class="mw-headline" id="Error_619_on_the_client_side">Error 619 on the client side</span></h3>
+<p>Search for the <code>logwtmp</code> option in <code>/etc/pptpd.conf</code> and comment it out. When this is enabled, <i>wtmp</i> will be used to record client connections and disconnections.
+</p>
+<pre>#logwtmp
+</pre>
+<h3>
+<span id="pptpd.5Bxxxxx.5D:_Long_config_file_line_ignored"></span><span class="mw-headline" id="pptpd[xxxxx]:_Long_config_file_line_ignored">pptpd[xxxxx]: Long config file line ignored</span>
+</h3>
+<p>Add a blank line at the end of <code>/etc/pptpd.conf</code>. <a rel="nofollow" class="external autonumber" href="https://sourceforge.net/p/poptop/bugs/35/">[1]</a>
+</p>
+<h3><span class="mw-headline" id="ppp0:_ppp:_compressor_dropped_pkt">ppp0: ppp: compressor dropped pkt</span></h3>
+<p>If you have this error while a client is connected to the server, add the following script to <code>/etc/ppp/ip-up.d/mppefixmtu.sh</code>:
+</p>
+<pre>#!/bin/sh
+CURRENT_MTU="`ip link show $1 | grep -Po '(?&lt;=mtu )([0-9]+)'`"
+FIXED_MTU="`expr $CURRENT_MTU + 4`"
+ip link set $1 mtu $FIXED_MTU
+</pre>
+<p>Make the script <a href="../en/Help:Reading.html#Make_executable" class="mw-redirect" title="Executable">executable</a>. 
+</p>
+<p>See also: <a rel="nofollow" class="external autonumber" href="https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=330973">[2]</a>
+</p>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="../en/Category:Virtual_Private_Network.html" title="Category:Virtual Private Network">Virtual Private Network</a></li></ul>
+</div></div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=PPTP_server&amp;oldid=718936">https://wiki.archlinux.org/index.php?title=PPTP_server&amp;oldid=718936</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 18 February 2022, at 08:04.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

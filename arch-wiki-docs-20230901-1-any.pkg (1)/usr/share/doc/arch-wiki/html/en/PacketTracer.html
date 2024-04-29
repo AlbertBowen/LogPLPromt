@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>PacketTracer - ArchWiki</title>
+<link rel="stylesheet" href="../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-PacketTracer rootpage-PacketTracer skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Disclaimer" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Disclaimer">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Disclaimer</div>
+			</a>
+			
+			<ul id="toc-Disclaimer-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Installation" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Installation">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Installation</div>
+			</a>
+			
+				<button aria-controls="toc-Installation-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Installation subsection
+				</button>
+			
+			<ul id="toc-Installation-sublist" class="sidebar-toc-list">
+				<li id="toc-Download_source_package_tarball" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Download_source_package_tarball">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.1</span>Download source package tarball</div>
+			</a>
+			
+			<ul id="toc-Download_source_package_tarball-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Download_Packet_Tracer_deb_package" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Download_Packet_Tracer_deb_package">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.2</span>Download Packet Tracer deb package</div>
+			</a>
+			
+			<ul id="toc-Download_Packet_Tracer_deb_package-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Build_and_install" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Build_and_install">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.3</span>Build and install</div>
+			</a>
+			
+			<ul id="toc-Build_and_install-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-End-user_License_Agreement" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#End-user_License_Agreement">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.4</span>End-user License Agreement</div>
+			</a>
+			
+			<ul id="toc-End-user_License_Agreement-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Assessment_environment_check" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Assessment_environment_check">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.5</span>Assessment environment check</div>
+			</a>
+			
+			<ul id="toc-Assessment_environment_check-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Troubleshooting" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Troubleshooting">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>Troubleshooting</div>
+			</a>
+			
+				<button aria-controls="toc-Troubleshooting-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Troubleshooting subsection
+				</button>
+			
+			<ul id="toc-Troubleshooting-sublist" class="sidebar-toc-list">
+				<li id="toc-Crashes_under_Wayland" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Crashes_under_Wayland">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.1</span>Crashes under Wayland</div>
+			</a>
+			
+			<ul id="toc-Crashes_under_Wayland-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Wrong_UI_Size" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Wrong_UI_Size">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.2</span>Wrong UI Size</div>
+			</a>
+			
+			<ul id="toc-Wrong_UI_Size-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-See_also" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#See_also">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4</span>See also</div>
+			</a>
+			
+			<ul id="toc-See_also-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../en/PacketTracer.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="mw-list-item"><a href="../en/Talk:PacketTracer.html" rel="discussion" title="Discussion about the content page [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">English</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../en/PacketTracer.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=PacketTracer&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=PacketTracer&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../en/PacketTracer.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=PacketTracer&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=PacketTracer&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output">
+<p><a rel="nofollow" class="external text" href="https://www.netacad.com/courses/packet-tracer-download/">Cisco Packet Tracer</a> is a powerful network simulation program that allows students to experiment with network behavior and ask “what if” questions. As an integral part of the Networking Academy comprehensive learning experience, Packet Tracer provides simulation, visualization, authoring, assessment, and collaboration capabilities and facilitates the teaching and learning of complex technology concepts. <a rel="nofollow" class="external text" href="https://www.netacad.com/web/about-us/cisco-packet-tracer">Source</a>
+</p>
+<mw:tocplace></mw:tocplace>
+<h2><span class="mw-headline" id="Disclaimer">Disclaimer</span></h2>
+<p>Understand if you have permission from Cisco Systems to use this software. If you do not meet eligibility, discontinue your progress and consider alternatives such as <a href="../en/GNS3.html" title="GNS3">GNS3</a>.
+</p>
+<h2><span class="mw-headline" id="Installation">Installation</span></h2>
+<h3><span class="mw-headline" id="Download_source_package_tarball">Download source package tarball</span></h3>
+<p><span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/packettracer/">packettracer</a></span><sup><small>AUR</small></sup> can <b>not</b> be installed using automated methods (e.g. <a href="../en/AUR_helpers.html" class="mw-redirect" title="AUR helper">AUR helper</a>) because the software's tarball must be downloaded first before building the package.
+</p>
+<p>So, first <a href="../en/Arch_User_Repository.html#Acquire_build_files" title="Arch User Repository">acquire the build files</a> for <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/packettracer/">packettracer</a></span><sup><small>AUR</small></sup> package.
+</p>
+<h3><span class="mw-headline" id="Download_Packet_Tracer_deb_package">Download Packet Tracer deb package</span></h3>
+<p>It is time to download the Packet Tracer deb package distributed in Cisco's website so it can be used to build <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/packettracer/">packettracer</a></span><sup><small>AUR</small></sup> for Arch Linux.
+</p>
+<ol>
+<li>Log into <a rel="nofollow" class="external text" href="https://www.netacad.com">Cisco Networking Academy</a> (netacad) using your Cisco Account. Register an account if you do not have it.</li>
+<li>Once in the Networking Academy portal, download the Packet Tracer from <i>Resources</i> menu &gt; <i>Download Packet Tracer</i> (you should land in <a rel="nofollow" class="external text" href="https://www.netacad.com/portal/resources/packet-tracer">here</a>). The downloaded filename should be something like <code>PacketTracer_800_amd64_build212_final.deb</code>.</li>
+<li>Place the .deb file inside the folder where <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/packettracer/">packettracer</a></span><sup><small>AUR</small></sup>'s build files are located—that is the same folder where the <a href="../en/PKGBUILD.html" title="PKGBUILD">PKGBUILD</a> file is found.</li>
+</ol>
+<h3><span class="mw-headline" id="Build_and_install">Build and install</span></h3>
+<p>With all the build files and the deb file ready, time to build and install:
+</p>
+<ol>
+<li>Change the directory to where build files (e.g. <code>PKGBUILD</code>) are (if you are not in there already)</li>
+<li>
+<a href="../en/Arch_User_Repository.html#Build_the_package" title="Arch User Repository">Build the package</a>; alternatively, <a href="../DeveloperWiki:Building_in_a_clean_chroot.html" title="DeveloperWiki:Building in a clean chroot">build in a clean chroot</a>
+</li>
+<li>
+<a href="../en/Arch_User_Repository.html#Install_the_package" title="Arch User Repository">Install the package</a>.</li>
+</ol>
+<h3><span class="mw-headline" id="End-user_License_Agreement">End-user License Agreement</span></h3>
+<p>Finally, please read the copyright file at <code>/usr/share/licenses/packettracer/COPYRIGHT</code> for the <a rel="nofollow" class="external text" href="https://www.cisco.com/c/en/us/about/legal/cloud-and-software/end_user_license_agreement.html">End-user License Agreement (EULA)</a> and the <a rel="nofollow" class="external text" href="https://www.cisco.com/c/dam/en_us/about/doing_business/legal/seula/cisco-packet-tracer-software.pdf">Supplemental End-user License Agreement (SEULA)</a>, and uninstall if you do not agree with them. If you agree, the program can be found under most menu systems in the Internet category, or you run the <i>packettracer</i> binary.
+</p>
+<h3><span class="mw-headline" id="Assessment_environment_check">Assessment environment check</span></h3>
+<div class="noprint archwiki-template-message">
+<p><a href="../File:Tango-view-refresh-red.png" class="image"><img alt="Tango-view-refresh-red.png" src="../File:Tango-view-refresh-red.png" decoding="async" width="48" height="48"></a><b>This article or section is out of date.</b><a href="../File:Tango-view-refresh-red.png" class="image"><img alt="Tango-view-refresh-red.png" src="../File:Tango-view-refresh-red.png" decoding="async" width="48" height="48"></a></p>
+<div>
+<b>Reason:</b> The command below does not work, and the package does not have this file. (Discuss in <a rel="nofollow" class="external text" href="https://wiki.archlinux.org/title/Talk:PacketTracer">Talk:PacketTracer</a>)</div>
+</div>
+<p>The Cisco Packet Tracer-based Assessment Environment Check is used to confirm that students can start packet tracer activities for assessments such as practice and final exams. It is critical that you have a working version of <a href="../en/Java.html" title="Java">Java</a> installed. Perform the check at <a rel="nofollow" class="external free" href="https://assessment.netacad.net/check/check.html">https://assessment.netacad.net/check/check.html</a> to confirm whether or not this ability is functional.
+</p>
+<pre>javaws PT-Assessment-Client.jnlp
+</pre>
+<h2><span class="mw-headline" id="Troubleshooting">Troubleshooting</span></h2>
+<h3><span class="mw-headline" id="Crashes_under_Wayland">Crashes under Wayland</span></h3>
+<p>If Packet Tracer crashes when started in a Wayland session, try running it with the <code>QT_QPA_PLATFORM</code> environment variable set to <code>xcb</code>. See <a href="../en/Wayland.html#Qt" title="Wayland">Wayland#Qt</a> for more details.
+</p>
+<h3><span class="mw-headline" id="Wrong_UI_Size">Wrong UI Size</span></h3>
+<p>If Packet Tracer renders the incorrect size, try modifying the <code>QT_DEVICE_PIXEL_RATIO</code> <a href="../en/Environment_variables.html" class="mw-redirect" title="Environment variable">environment variable</a>, and then either reboot or logout.
+</p>
+<h2><span class="mw-headline" id="See_also">See also</span></h2>
+<ul>
+<li><a href="../en/GNS3.html" title="GNS3">GNS3</a></li>
+<li><a rel="nofollow" class="external text" href="https://www.netacad.com/web/about-us/cisco-packet-tracer">Cisco Packet Tracer - Networking Academy</a></li>
+<li><a rel="nofollow" class="external text" href="https://assessment.netacad.net/check/check.html">Cisco Packet Tracer-based Assessment Environment Check</a></li>
+<li><a rel="nofollow" class="external text" href="https://youtu.be/NPJpQrZ1C_s">PacketTracer -- video visualizing the installation process</a></li>
+</ul>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface">
+<div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../Special:Categories.html" title="Special:Categories">Categories</a>: <ul>
+<li><a href="../en/Category:Networking.html" title="Category:Networking">Networking</a></li>
+<li><a href="../en/Category:Simulation.html" title="Category:Simulation">Simulation</a></li>
+</ul>
+</div>
+<div id="mw-hidden-catlinks" class="mw-hidden-catlinks mw-hidden-cats-hidden">Hidden category: <ul><li><a href="../en/Category:Pages_or_sections_flagged_with_Template:Out_of_date.html" title="Category:Pages or sections flagged with Template:Out of date">Pages or sections flagged with Template:Out of date</a></li></ul>
+</div>
+</div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=PacketTracer&amp;oldid=783724">https://wiki.archlinux.org/index.php?title=PacketTracer&amp;oldid=783724</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 26 July 2023, at 16:29.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

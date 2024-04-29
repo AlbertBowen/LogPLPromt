@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>Hddtemp - ArchWiki</title>
+<link rel="stylesheet" href="../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Hddtemp rootpage-Hddtemp skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Installation" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Installation">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Installation</div>
+			</a>
+			
+			<ul id="toc-Installation-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Usage" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Usage">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Usage</div>
+			</a>
+			
+			<ul id="toc-Usage-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Daemon" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Daemon">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>Daemon</div>
+			</a>
+			
+				<button aria-controls="toc-Daemon-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Daemon subsection
+				</button>
+			
+			<ul id="toc-Daemon-sublist" class="sidebar-toc-list">
+				<li id="toc-Override_default_disk" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Override_default_disk">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.1</span>Override default disk</div>
+			</a>
+			
+			<ul id="toc-Override_default_disk-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Monitors" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Monitors">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4</span>Monitors</div>
+			</a>
+			
+			<ul id="toc-Monitors-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Solid_State_Drives" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Solid_State_Drives">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5</span>Solid State Drives</div>
+			</a>
+			
+			<ul id="toc-Solid_State_Drives-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../en/Hddtemp.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="mw-list-item"><a href="../en/Talk:Hddtemp.html" rel="discussion" title="Discussion about the content page [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">English</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../en/Hddtemp.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=Hddtemp&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=Hddtemp&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../en/Hddtemp.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Hddtemp&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Hddtemp&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output">
+<div class="archwiki-template-meta-related-articles-start">
+<p class="mw-no-invert">Related articles</p>
+<ul>
+<li><a href="../en/Lm_sensors.html" title="Lm sensors">lm_sensors</a></li>
+<li><a href="../en/Conky.html" title="Conky">Conky</a></li>
+</ul>
+</div>
+<p><a rel="nofollow" class="external text" href="https://savannah.nongnu.org/projects/hddtemp/">Hddtemp</a> is a small utility (with daemon) that gives the hard-drive temperature via <a href="../en/S.M.A.R.T..html" title="S.M.A.R.T.">S.M.A.R.T.</a> (for drives supporting this feature).
+</p>
+<div class="archwiki-template-box archwiki-template-box-tip">
+<strong>Tip:</strong> A more versatile option to access drives temperatures is <a href="../en/Lm_sensors.html" title="Lm sensors">lm_sensors</a>, as it also handles other data.</div>
+<mw:tocplace></mw:tocplace>
+<h2><span class="mw-headline" id="Installation">Installation</span></h2>
+<p><a href="../en/Help:Reading.html#Installation_of_packages" class="mw-redirect" title="Install">Install</a> the <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=hddtemp">hddtemp</a></span> package.
+</p>
+<h2><span class="mw-headline" id="Usage">Usage</span></h2>
+<p>Hddtemp requires <a href="../en/Users_and_groups.html#Overview" class="mw-redirect" title="Root user">Root user</a> privileges. The command <code>hddtemp</code> must be followed by at least one drive's location. You can list several drives separated by spaces:
+</p>
+<pre># hddtemp /dev/disk/by-id/wwn-0x60015ee0000b237f /dev/sd<i>X2</i> ... /dev/sd<i>Xn</i>
+</pre>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> Block device naming under <code>/dev/</code>, like <code>/dev/sdX</code>, is inconsistent. See <a href="../en/Persistent_block_device_naming.html" title="Persistent block device naming">Persistent block device naming</a> for more information.
+</div>
+<p>Further usage information is available in <span class="plainlinks archwiki-template-man" title="$ man 8 hddtemp"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/hddtemp.8">hddtemp(8)</a></span>.
+</p>
+<h2><span class="mw-headline" id="Daemon">Daemon</span></h2>
+<p>Running the daemon allows access to the temperature information via TCP/IP as a regular user. This is useful for scripts and system monitors. 
+</p>
+<p>The daemon is <a href="../en/Systemd.html#Using_units" title="Systemd">controlled</a> by <code>hddtemp.service</code>.
+</p>
+<p>To get the temperature, connect to the daemon which listens on port 7634.
+</p>
+<p>With <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=inetutils">inetutils</a></span>:
+</p>
+<pre>$ telnet localhost 7634
+</pre>
+<p>With <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=gnu-netcat">gnu-netcat</a></span>:
+</p>
+<pre>$ nc localhost 7634
+</pre>
+<p>Both outputs are similar to: 
+</p>
+<pre>|/dev/sda|ST3500413AS|32|C||/dev/sdb|ST2000DM001-1CH164|36|C|
+</pre>
+<p>For a better looking statistic: 
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">$ nc localhost 7634 |sed 's/|//m' | sed 's/||/ \n/g' | awk -F'|' '{print $1 " " $3 " " $4}'</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">/dev/sda 32 C 
+/dev/sdb 36 C</pre>
+<h3><span class="mw-headline" id="Override_default_disk">Override default disk</span></h3>
+<p>The default Hddtemp daemon only monitors <code>/dev/sda</code>. If you have multiple disks, you need to <a href="../en/Systemd.html#Editing_provided_units" title="Systemd">override</a> the default configuration to monitor them.
+</p>
+<p>If you will need to know which hard drives support monitoring, you can check with <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=smartmontools">smartmontools</a></span>. <a href="../en/Systemd.html#Editing_provided_units" class="mw-redirect" title="Edit">Edit</a> <code>hddtemp.service</code>:
+</p>
+<pre>[Service]
+ExecStart=
+ExecStart=/usr/bin/hddtemp --daemon --foreground /dev/disk/by-id/wwn-0x60015ee0000b237f /dev/sdb --listen=127.0.0.1
+</pre>
+<p>Change the device names to the ones you want to monitor.
+</p>
+<p>After editing, save the file and exit from editor. <a href="../en/Systemd.html" title="Systemd">Systemd</a> will apply changes and reload <code>hddtemp</code> service automatically.
+</p>
+<p>You can also use the <a rel="nofollow" class="external text" href="https://github.com/AndyCrowd/auto-generate-configuration-files/blob/master/gen-customexec.conf-hddtemp.sh">auto-generate</a> script will detect supported hard drives using <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=smartmontools">smartmontools</a></span> and print to the stdout.
+</p>
+<h2><span class="mw-headline" id="Monitors">Monitors</span></h2>
+<p>Hddtemp can be integrated with <a href="../en/List_of_applications.html#System_monitors" title="List of applications">system monitors</a>. <a href="../en/Conky.html" title="Conky">Conky</a> has built in support for Hddtemp in daemon mode. Just <a href="../en/Help:Reading.html#Control_of_systemd_units" class="mw-redirect" title="Enable">enable</a> <code>hddtemp.service</code> and add <code>$hddtemp °C</code> to your Conky configuration file.
+</p>
+<h2><span class="mw-headline" id="Solid_State_Drives">Solid State Drives</span></h2>
+<p>Hddtemp usually reads field <code>194</code> from the smart data of the drive. In SSDs temperature information is usually stored in field <code>190</code>. To obtain these information, one can run:
+</p>
+<pre># smartctl --all /dev/sd<i>x</i>
+</pre>
+<p>or
+</p>
+<pre># hddtemp --debug /dev/sd<i>x</i>
+</pre>
+<p>where <code>/dev/sd<i>x</i></code> is the drive (use <a href="../en/Device_file.html#lsblk" class="mw-redirect" title="Lsblk">lsblk</a> to check this).
+</p>
+<p>Alternatively, add a new entry in <code>/etc/hddtemp.db</code>. For example:
+</p>
+<pre># echo '"Samsung SSD 840 EVO 250GB" 190 C "Samsung SSD 840 EVO 250GB"' &gt;&gt; /etc/hddtemp.db
+</pre>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="../en/Category:System_monitors.html" title="Category:System monitors">System monitors</a></li></ul>
+</div></div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=Hddtemp&amp;oldid=757494">https://wiki.archlinux.org/index.php?title=Hddtemp&amp;oldid=757494</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 19 November 2022, at 10:03.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

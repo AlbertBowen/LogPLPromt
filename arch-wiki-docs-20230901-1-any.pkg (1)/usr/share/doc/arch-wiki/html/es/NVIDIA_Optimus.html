@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>NVIDIA Optimus (Español) - ArchWiki</title>
+<link rel="stylesheet" href="../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-NVIDIA_Optimus_Español rootpage-NVIDIA_Optimus_Español skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Métodos_disponibles" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#M%C3%A9todos_disponibles">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Métodos disponibles</div>
+			</a>
+			
+			<ul id="toc-Métodos_disponibles-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Use_integrated_graphics_only" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#Use_integrated_graphics_only">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Use integrated graphics only</div>
+			</a>
+			
+				<button aria-controls="toc-Use_integrated_graphics_only-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Use integrated graphics only subsection
+				</button>
+			
+			<ul id="toc-Use_integrated_graphics_only-sublist" class="sidebar-toc-list">
+				<li id="toc-Use_CUDA_without_switching_the_rendering_provider" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Use_CUDA_without_switching_the_rendering_provider">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.1</span>Use CUDA without switching the rendering provider</div>
+			</a>
+			
+			<ul id="toc-Use_CUDA_without_switching_the_rendering_provider-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Use_NVIDIA_graphics_only" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#Use_NVIDIA_graphics_only">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>Use NVIDIA graphics only</div>
+			</a>
+			
+				<button aria-controls="toc-Use_NVIDIA_graphics_only-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Use NVIDIA graphics only subsection
+				</button>
+			
+			<ul id="toc-Use_NVIDIA_graphics_only-sublist" class="sidebar-toc-list">
+				<li id="toc-Display_managers" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Display_managers">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.1</span>Display managers</div>
+			</a>
+			
+			<ul id="toc-Display_managers-sublist" class="sidebar-toc-list">
+				<li id="toc-LightDM" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#LightDM">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.1.1</span>LightDM</div>
+			</a>
+			
+			<ul id="toc-LightDM-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-SDDM" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#SDDM">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.1.2</span>SDDM</div>
+			</a>
+			
+			<ul id="toc-SDDM-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-GDM" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#GDM">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.1.3</span>GDM</div>
+			</a>
+			
+			<ul id="toc-GDM-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Checking_3D" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Checking_3D">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.2</span>Checking 3D</div>
+			</a>
+			
+			<ul id="toc-Checking_3D-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Further_Information" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Further_Information">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.3</span>Further Information</div>
+			</a>
+			
+			<ul id="toc-Further_Information-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Use_switchable_graphics" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#Use_switchable_graphics">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4</span>Use switchable graphics</div>
+			</a>
+			
+				<button aria-controls="toc-Use_switchable_graphics-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Use switchable graphics subsection
+				</button>
+			
+			<ul id="toc-Use_switchable_graphics-sublist" class="sidebar-toc-list">
+				<li id="toc-Using_PRIME_render_offload" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Using_PRIME_render_offload">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.1</span>Using PRIME render offload</div>
+			</a>
+			
+			<ul id="toc-Using_PRIME_render_offload-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Using_nouveau" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Using_nouveau">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.2</span>Using nouveau</div>
+			</a>
+			
+			<ul id="toc-Using_nouveau-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Using_Bumblebee" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Using_Bumblebee">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.3</span>Using Bumblebee</div>
+			</a>
+			
+			<ul id="toc-Using_Bumblebee-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Using_switcheroo-control" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Using_switcheroo-control">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.4</span>Using switcheroo-control</div>
+			</a>
+			
+			<ul id="toc-Using_switcheroo-control-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Using_nvidia-xrun" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Using_nvidia-xrun">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.5</span>Using nvidia-xrun</div>
+			</a>
+			
+			<ul id="toc-Using_nvidia-xrun-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Using_optimus-manager" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Using_optimus-manager">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.6</span>Using optimus-manager</div>
+			</a>
+			
+			<ul id="toc-Using_optimus-manager-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Using_EnvyControl" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Using_EnvyControl">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.7</span>Using EnvyControl</div>
+			</a>
+			
+			<ul id="toc-Using_EnvyControl-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Using_NVidia-eXec" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Using_NVidia-eXec">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.8</span>Using NVidia-eXec</div>
+			</a>
+			
+			<ul id="toc-Using_NVidia-eXec-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Using_nvidia-switch" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Using_nvidia-switch">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.9</span>Using nvidia-switch</div>
+			</a>
+			
+			<ul id="toc-Using_nvidia-switch-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Troubleshooting" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#Troubleshooting">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5</span>Troubleshooting</div>
+			</a>
+			
+				<button aria-controls="toc-Troubleshooting-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Troubleshooting subsection
+				</button>
+			
+			<ul id="toc-Troubleshooting-sublist" class="sidebar-toc-list">
+				<li id="toc-Tearing/Broken_VSync" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Tearing/Broken_VSync">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5.1</span>Tearing/Broken VSync</div>
+			</a>
+			
+			<ul id="toc-Tearing/Broken_VSync-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Failed_to_initialize_the_NVIDIA_GPU_at_PCI:1:0:0_(GPU_fallen_off_the_bus_/_RmInitAdapter_failed!)" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Failed_to_initialize_the_NVIDIA_GPU_at_PCI:1:0:0_(GPU_fallen_off_the_bus_/_RmInitAdapter_failed!)">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5.2</span>Failed to initialize the NVIDIA GPU at PCI:1:0:0 (GPU fallen off the bus / RmInitAdapter failed!)</div>
+			</a>
+			
+			<ul id="toc-Failed_to_initialize_the_NVIDIA_GPU_at_PCI:1:0:0_(GPU_fallen_off_the_bus_/_RmInitAdapter_failed!)-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Resolution,_screen_scan_wrong._EDID_errors_in_Xorg.log" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Resolution,_screen_scan_wrong._EDID_errors_in_Xorg.log">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5.3</span>Resolution, screen scan wrong. EDID errors in Xorg.log</div>
+			</a>
+			
+			<ul id="toc-Resolution,_screen_scan_wrong._EDID_errors_in_Xorg.log-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Wrong_resolution_without_EDID_errors" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Wrong_resolution_without_EDID_errors">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5.4</span>Wrong resolution without EDID errors</div>
+			</a>
+			
+			<ul id="toc-Wrong_resolution_without_EDID_errors-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Lockup_issue_(lspci_hangs)" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Lockup_issue_(lspci_hangs)">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5.5</span>Lockup issue (lspci hangs)</div>
+			</a>
+			
+			<ul id="toc-Lockup_issue_(lspci_hangs)-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-No_screens_found_on_a_laptop/NVIDIA_Optimus" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#No_screens_found_on_a_laptop/NVIDIA_Optimus">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5.6</span>No screens found on a laptop/NVIDIA Optimus</div>
+			</a>
+			
+			<ul id="toc-No_screens_found_on_a_laptop/NVIDIA_Optimus-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id='toc-Random_freezes_"(EE)_NVIDIA(GPU-0):_WAIT"' class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href='#Random_freezes_"(EE)_NVIDIA(GPU-0):_WAIT"'>
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5.7</span>Random freezes "(EE) NVIDIA(GPU-0): WAIT"</div>
+			</a>
+			
+			<ul id='toc-Random_freezes_"(EE)_NVIDIA(GPU-0):_WAIT"-sublist' class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id='toc-"No_Devices_detected"_with_optimus-manager' class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href='#"No_Devices_detected"_with_optimus-manager'>
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5.8</span>"No Devices detected" with optimus-manager</div>
+			</a>
+			
+			<ul id='toc-"No_Devices_detected"_with_optimus-manager-sublist' class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../es/NVIDIA_Optimus.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="new mw-list-item"><a href="/index.php?title=Talk:NVIDIA_Optimus_(Espa%C3%B1ol)&amp;action=edit&amp;redlink=1" rel="discussion" title="Discussion about the content page (page does not exist) [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">español</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../es/NVIDIA_Optimus.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=NVIDIA_Optimus_(Espa%C3%B1ol)&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=NVIDIA_Optimus_(Espa%C3%B1ol)&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../es/NVIDIA_Optimus.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=NVIDIA_Optimus_(Espa%C3%B1ol)&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=NVIDIA_Optimus_(Espa%C3%B1ol)&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="es" dir="ltr">
+<div class="mw-parser-output">
+<div class="noprint archwiki-template-message">
+<p><a href="../File:Tango-preferences-desktop-locale.png" class="image"><img alt="Tango-preferences-desktop-locale.png" src="../File:Tango-preferences-desktop-locale.png" decoding="async" width="48" height="48"></a><b>Este artículo o sección necesita ser <a href="../es/ArchWiki:Contributing.html#Traducir_contenido" title="ArchWiki:Contributing (Español)">traducido</a>.</b><a href="../File:Tango-preferences-desktop-locale.png" class="image"><img alt="Tango-preferences-desktop-locale.png" src="../File:Tango-preferences-desktop-locale.png" decoding="async" width="48" height="48"></a></p>
+<div>
+<b>Notas:</b> Partial translation. (Discusión en <a rel="nofollow" class="external text" href="https://wiki.archlinux.org/title/Talk:NVIDIA_Optimus_(Espa%C3%B1ol)">Talk:NVIDIA Optimus (Español)#</a>)</div>
+</div>
+<div class="archwiki-template-meta-related-articles-start">
+<p class="mw-no-invert">Related articles</p>
+<ul>
+<li><a href="../en/PRIME.html" title="PRIME">PRIME</a></li>
+<li><a href="../en/Bumblebee.html" title="Bumblebee">Bumblebee</a></li>
+<li><a href="../en/Nouveau.html" title="Nouveau">Nouveau</a></li>
+<li><a href="../en/NVIDIA.html" title="NVIDIA">NVIDIA</a></li>
+<li><a href="../en/Nvidia-xrun.html" title="Nvidia-xrun">nvidia-xrun</a></li>
+<li><a href="../en/External_GPU.html" title="External GPU">External GPU</a></li>
+</ul>
+</div>
+<p><a href="https://en.wikipedia.org/wiki/NVIDIA_Optimus" class="extiw" title="wikipedia:NVIDIA Optimus">NVIDIA Optimus</a> es una tecnología que permite que una GPU integrada y una GPU NVIDIA dedicada trabajen en conjunto en un portátil.
+</p>
+<mw:tocplace></mw:tocplace>
+<h2>
+<span id="M.C3.A9todos_disponibles"></span><span class="mw-headline" id="Métodos_disponibles">Métodos disponibles</span>
+</h2>
+<p>Hay diferentes métodos disponibles:
+</p>
+<ul>
+<li>
+<a href="#Usar_solo_la_grafica_integrada">#Usar solo la grafica integrada</a><sup>[<a href="../en/Help:Procedures.html#Fix_broken_section_links" title="Help:Procedures">enlace roto</a>: sección no válida]</sup> - ahorra energía, porque la grafica NVIDIA estará completamente apagada.</li>
+<li>
+<a href="#Usar_solo_la_grafica_NVIDIA">#Usar solo la grafica NVIDIA</a><sup>[<a href="../en/Help:Procedures.html#Fix_broken_section_links" title="Help:Procedures">enlace roto</a>: sección no válida]</sup> - ofrece mas rendimiento que la grafica integrada pero consume mas batería (que no es conveniente para dispositivos móviles). Esto utiliza el mismo metodo de <a href="#Using_optimus-manager">optimus-manager</a> y <a href="#Using_nvidia-xrun">nvidia-xrun</a> , deberia ser utilizado para para resolución de problemas y verificación de la funcionalidad general, antes de optar por uno de los enfoques más automatizados.</li>
+<li>Using both (use NVIDIA GPU when needed and keep it powered off to save power):
+<ul>
+<li>
+<a href="#Using_PRIME_render_offload">#Using PRIME render offload</a> - official method supported by NVIDIA.</li>
+<li>
+<a href="#Using_optimus-manager">#Using optimus-manager</a> - switches graphics with a single command (logout and login required to take effect). It achieves maximum performance out of NVIDIA GPU and switches it off if not in use. Since the 1.4 release AMD+NVIDIA combination is also supported.</li>
+<li>
+<a href="#Using_nvidia-xrun">#Using nvidia-xrun</a> - run separate X session on different TTY with NVIDIA graphics. It achieves maximum performance out of NVIDIA GPU and switches it off if not in use.</li>
+<li>
+<a href="#Using_Bumblebee">#Using Bumblebee</a> - provides Windows-like functionality by allowing to run selected applications with NVIDIA graphics while using Intel graphics for everything else. Has significant performance issues.</li>
+<li>
+<a href="#Using_switcheroo-control">#Using switcheroo-control</a> - Similar to Bumblebee, but specifically for <a href="../en/GNOME.html" title="GNOME">GNOME</a> users. Allows applications to specify if they prefer the dedicated GPU in their <a href="../en/Desktop_entries.html" class="mw-redirect" title="Desktop entry">desktop entry</a> file, and lets you manually run any application on the NVIDIA GPU from the right-click menu.</li>
+<li>
+<a href="#Using_nouveau">#Using nouveau</a> - offers poorer performance (compared to the proprietary NVIDIA driver) and may cause issues with sleep and hibernate. Does not work with latest NVIDIA GPUs.</li>
+<li>
+<a href="#Using_EnvyControl">#Using EnvyControl</a> - Similar to optimus-manager but does not require extensive configuration or having a daemon running in the background as well as having to install a patched version of GDM if you are a GNOME user.</li>
+<li>
+<a href="#Using_NVidia-eXec">#Using NVidia-eXec</a> - Similar to Bumblebee, but without the performance impact. It works on both Xorg and Wayland. This package is experimental, and is currently being tested only under GNOME/GDM.</li>
+<li>
+<a href="#Using_nvidia-switch">#Using nvidia-switch</a> - Similar to nvidia-xrun, but not needing to change TTY, the switches will be done by login and logouts in your display manager. This package is being tested on Debian based system, but, like nvidia-xrun, it must work in all Linux systems.</li>
+</ul>
+</li>
+</ul>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> All of these options are mutually exclusive, if you test one approach and decide for another, you must ensure to revert any configuration changes done by following one approach before attempting another method, otherwise file conflicts and undefined behaviours may arise.</div>
+<h2><span class="mw-headline" id="Use_integrated_graphics_only">Use integrated graphics only</span></h2>
+<p>If you only care to use a certain GPU without switching, check the options in your system's BIOS. There should be an option to disable one of the cards. Some laptops only allow disabling of the discrete card, or vice-versa, but it is worth checking if you only plan to use just one of the cards.
+</p>
+<p>If your BIOS does not allow to disable Nvidia graphics, you can disable it from the Linux kernel itself. See <a href="../en/Hybrid_graphics.html#Fully_power_down_discrete_GPU" title="Hybrid graphics">Hybrid graphics#Fully power down discrete GPU</a>.
+</p>
+<h3><span class="mw-headline" id="Use_CUDA_without_switching_the_rendering_provider">Use CUDA without switching the rendering provider</span></h3>
+<p>You can use CUDA without switching rendering to the Nvidia graphics. All you need to do is ensure that the Nvidia card is powered on before starting a CUDA application, see <a href="../en/Hybrid_graphics.html#Fully_power_down_discrete_GPU" title="Hybrid graphics">Hybrid graphics#Fully power down discrete GPU</a> for details.
+</p>
+<p>Now when you start a CUDA application, it will automatically load all necessary kernel modules. Before turning off the Nvidia card after using CUDA, the <code>nvidia</code> kernel modules have to be unloaded first:
+</p>
+<pre># rmmod nvidia_uvm
+# rmmod nvidia
+</pre>
+<h2><span class="mw-headline" id="Use_NVIDIA_graphics_only">Use NVIDIA graphics only</span></h2>
+<p>The proprietary NVIDIA driver can be configured to be the primary rendering provider. It also has notable screen-tearing issues unless you enable prime sync by enabling <a href="../en/NVIDIA.html#DRM_kernel_mode_setting" title="NVIDIA">NVIDIA#DRM kernel mode setting</a>, see <a rel="nofollow" class="external autonumber" href="https://devtalk.nvidia.com/default/topic/957814/linux/prime-and-prime-synchronization/">[1]</a> for further information. It does allow use of the discrete GPU and has (as of <a rel="nofollow" class="external text" href="https://www.phoronix.com/scan.php?page=article&amp;item=nouveau-410-blob&amp;num=1">January 2017</a>) a marked edge in performance over the nouveau driver.
+</p>
+<p>First, <a href="../en/Help:Reading.html#Installation_of_packages" class="mw-redirect" title="Install">install</a> the <a href="../en/NVIDIA.html" title="NVIDIA">NVIDIA</a> driver and <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=xorg-xrandr">xorg-xrandr</a></span>. Then, configure <code>/etc/X11/xorg.conf.d/10-nvidia-drm-outputclass.conf</code> the options of which will be combined with the package provided <code>/usr/share/X11/xorg.conf.d/10-nvidia-drm-outputclass.conf</code> to provide compatibility with this setup. 
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> On some setups this setup breaks automatic detection of the values of the display by the nvidia driver through the EDID file. As a work-around see <a href="#Resolution,_screen_scan_wrong._EDID_errors_in_Xorg.log">#Resolution, screen scan wrong. EDID errors in Xorg.log</a>. </div>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/X11/xorg.conf.d/10-nvidia-drm-outputclass.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">Section "OutputClass"
+    Identifier "intel"
+    MatchDriver "i915"
+    Driver "modesetting"
+EndSection
+
+Section "OutputClass"
+    Identifier "nvidia"
+    MatchDriver "nvidia-drm"
+    Driver "nvidia"
+    Option "AllowEmptyInitialConfiguration"
+    Option "PrimaryGPU" "yes"
+    ModulePath "/usr/lib/nvidia/xorg"
+    ModulePath "/usr/lib/xorg/modules"
+EndSection
+</pre>
+<p>Next, add the following two lines to the beginning of your <code>~/.xinitrc</code>:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">~/.xinitrc</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">xrandr --setprovideroutputsource modesetting NVIDIA-0
+xrandr --auto
+</pre>
+<p>Now reboot to load the drivers, and X should start.
+</p>
+<p>If your display dpi is not correct add the following line:
+</p>
+<pre>xrandr --dpi 96
+</pre>
+<p>If you get a black screen when starting X, make sure that there are no ampersands after the two <code>xrandr</code> commands in <code>~/.xinitrc</code>. If there are ampersands, it seems that the window manager can run before the <code>xrandr</code> commands finish executing, leading to a black screen.
+</p>
+<h3><span class="mw-headline" id="Display_managers">Display managers</span></h3>
+<p>If you are using a <a href="../en/Display_manager.html" title="Display manager">display manager</a> then you will need to create or edit a display setup script for your display manager instead of using <code>~/.xinitrc</code>.
+</p>
+<h4><span class="mw-headline" id="LightDM">LightDM</span></h4>
+<p>For the <a href="../en/LightDM.html" title="LightDM">LightDM</a> display manager:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/lightdm/display_setup.sh</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">#!/bin/sh
+xrandr --setprovideroutputsource modesetting NVIDIA-0
+xrandr --auto
+</pre>
+<p>Make the script <a href="../en/Help:Reading.html#Make_executable" class="mw-redirect" title="Executable">executable</a>. 
+</p>
+<p>Now configure lightdm to run the script by editing the <code>[Seat:*]</code> section in <code>/etc/lightdm/lightdm.conf</code>:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/lightdm/lightdm.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">[Seat:*]
+display-setup-script=/etc/lightdm/display_setup.sh</pre>
+<p>Now reboot and your display manager should start.
+</p>
+<h4><span class="mw-headline" id="SDDM">SDDM</span></h4>
+<p>For the <a href="../en/SDDM.html" title="SDDM">SDDM</a> display manager (SDDM is the default DM for <a href="../en/KDE.html" title="KDE">KDE</a>):
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/usr/share/sddm/scripts/Xsetup</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">xrandr --setprovideroutputsource modesetting NVIDIA-0
+xrandr --auto
+</pre>
+<h4><span class="mw-headline" id="GDM">GDM</span></h4>
+<p>For the <a href="../en/GDM.html" title="GDM">GDM</a> display manager create two new .desktop files:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/usr/share/gdm/greeter/autostart/optimus.desktop
+/etc/xdg/autostart/optimus.desktop</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">[Desktop Entry]
+Type=Application
+Name=Optimus
+Exec=sh -c "xrandr --setprovideroutputsource modesetting NVIDIA-0; xrandr --auto"
+NoDisplay=true
+X-GNOME-Autostart-Phase=DisplayServer
+</pre>
+<p>Make sure that GDM use <a href="../en/GDM.html#Use_Xorg_backend" title="GDM">X as default backend</a>.
+</p>
+<h3><span class="mw-headline" id="Checking_3D">Checking 3D</span></h3>
+<p>You can check if the NVIDIA graphics are being used by installing <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=mesa-utils">mesa-utils</a></span> and running
+</p>
+<pre>$ glxinfo | grep NVIDIA
+</pre>
+<h3><span class="mw-headline" id="Further_Information">Further Information</span></h3>
+<p>For more information, look at NVIDIA's official page on the topic <a rel="nofollow" class="external autonumber" href="http://us.download.nvidia.com/XFree86/Linux-x86/370.28/README/randr14.html">[2]</a>.
+</p>
+<h2><span class="mw-headline" id="Use_switchable_graphics">Use switchable graphics</span></h2>
+<h3><span class="mw-headline" id="Using_PRIME_render_offload">Using PRIME render offload</span></h3>
+<p>This is the official NVIDIA method to support switchable graphics.
+</p>
+<p>See <a href="../en/PRIME.html#PRIME_render_offload" title="PRIME">PRIME#PRIME render offload</a> for details.
+</p>
+<h3><span class="mw-headline" id="Using_nouveau">Using nouveau</span></h3>
+<p>See <a href="../en/PRIME.html" title="PRIME">PRIME</a> for graphics switching and <a href="../en/Nouveau.html" title="Nouveau">nouveau</a> for open-source NVIDIA driver.
+</p>
+<h3><span class="mw-headline" id="Using_Bumblebee">Using Bumblebee</span></h3>
+<p>See <a href="../en/Bumblebee.html" title="Bumblebee">Bumblebee</a>.
+</p>
+<h3><span class="mw-headline" id="Using_switcheroo-control">Using switcheroo-control</span></h3>
+<p>See <a href="../en/PRIME.html#Gnome_integration" title="PRIME">PRIME#Gnome integration</a>.
+</p>
+<h3><span class="mw-headline" id="Using_nvidia-xrun">Using nvidia-xrun</span></h3>
+<p>See <a href="../en/Nvidia-xrun.html" title="Nvidia-xrun">nvidia-xrun</a>.
+</p>
+<h3><span class="mw-headline" id="Using_optimus-manager">Using optimus-manager</span></h3>
+<p>See <a rel="nofollow" class="external text" href="https://github.com/Askannz/optimus-manager">Optimus-manager</a> upstream documentation. It covers both installation and configuration in Arch Linux systems.
+</p>
+<h3><span class="mw-headline" id="Using_EnvyControl">Using EnvyControl</span></h3>
+<p>See <a rel="nofollow" class="external text" href="https://github.com/geminis3/envycontrol">EnvyControl</a> upstream documentation. It covers both installation and usage instructions. 
+</p>
+<h3><span class="mw-headline" id="Using_NVidia-eXec">Using NVidia-eXec</span></h3>
+<p>See <a rel="nofollow" class="external text" href="https://github.com/pedro00dk/nvidia-exec">NVidia-eXec</a> upstream documentation. It covers both installation and usage instructions.
+</p>
+<h3><span class="mw-headline" id="Using_nvidia-switch">Using nvidia-switch</span></h3>
+<p>See <a rel="nofollow" class="external text" href="https://github.com/nvidiaswitch/nvidia-switch">nvidia-switch</a> upstream documentation. It covers both installation and usage instructions.
+</p>
+<h2><span class="mw-headline" id="Troubleshooting">Troubleshooting</span></h2>
+<h3>
+<span id="Tearing.2FBroken_VSync"></span><span class="mw-headline" id="Tearing/Broken_VSync">Tearing/Broken VSync</span>
+</h3>
+<p>Enable <a href="../en/NVIDIA.html#DRM_kernel_mode_setting" title="NVIDIA">DRM kernel mode setting</a>, which will in turn enable the PRIME synchronization and fix the tearing.
+</p>
+<p>You can read the official <a rel="nofollow" class="external text" href="https://devtalk.nvidia.com/default/topic/957814/linux/prime-and-prime-synchronization/">forum thread</a> for details.
+</p>
+<h3>
+<span id="Failed_to_initialize_the_NVIDIA_GPU_at_PCI:1:0:0_.28GPU_fallen_off_the_bus_.2F_RmInitAdapter_failed.21.29"></span><span class="mw-headline" id="Failed_to_initialize_the_NVIDIA_GPU_at_PCI:1:0:0_(GPU_fallen_off_the_bus_/_RmInitAdapter_failed!)">Failed to initialize the NVIDIA GPU at PCI:1:0:0 (GPU fallen off the bus / RmInitAdapter failed!)</span>
+</h3>
+<p>Add <code>rcutree.rcu_idle_gp_delay=1</code> to the kernel parameters. Original topic can be found in <a rel="nofollow" class="external autonumber" href="https://github.com/Bumblebee-Project/Bumblebee/issues/455#issuecomment-22497464">[3]</a> and <a rel="nofollow" class="external autonumber" href="https://bbs.archlinux.org/viewtopic.php?id=169742">[4]</a>.
+</p>
+<h3>
+<span id="Resolution.2C_screen_scan_wrong._EDID_errors_in_Xorg.log"></span><span class="mw-headline" id="Resolution,_screen_scan_wrong._EDID_errors_in_Xorg.log">Resolution, screen scan wrong. EDID errors in Xorg.log</span>
+</h3>
+<p>This is due to the NVIDIA driver not detecting the EDID for the display. You need to manually specify the path to an EDID file or provide the same information in a similar way.
+</p>
+<p>To provide the path to the EDID file edit the Device Section for the NVIDIA card in Xorg.conf, adding these lines and changing parts to reflect your own system:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/X11/xorg.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">Section "Device"
+       	Option		"ConnectedMonitor" "CRT-0"
+       	Option		"CustomEDID" "CRT-0:/sys/class/drm/card0-LVDS-1/edid"
+	Option		"IgnoreEDID" "false"
+	Option		"UseEDID" "true"
+EndSection
+</pre>
+<p>If Xorg will not start try swapping out all references of CRT to DFB.
+<code>card0</code> is the identifier for the Intel card to which the display is connected via LVDS. The edid binary is in this directory. If the hardware arrangement is different, the value for CustomEDID might vary but yet this has to be confirmed. The path will start in any case with <code>/sys/class/drm</code>.
+</p>
+<p>Alternatively you can generate your edid with tools like <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=read-edid">read-edid</a></span> and point the driver to this file. Even modelines can be used, but then be sure to change <code>UseEDID</code> and <code>IgnoreEDID</code>.
+</p>
+<h3><span class="mw-headline" id="Wrong_resolution_without_EDID_errors">Wrong resolution without EDID errors</span></h3>
+<p>Using <i>nvidia-xconfig</i>, incorrect information might be generated in <code>xorg.conf</code> and in particular wrong monitor refresh rates that restrict the possible resolutions. Try commenting out the <code>HorizSync</code>/<code>VertRefresh</code> lines. If this helps, you can probably also remove everything else not mentioned in this article.
+</p>
+<h3>
+<span id="Lockup_issue_.28lspci_hangs.29"></span><span class="mw-headline" id="Lockup_issue_(lspci_hangs)">Lockup issue (lspci hangs)</span>
+</h3>
+<p>Symptoms: lspci hangs, system suspend fails, shutdown hangs, optirun hangs.
+</p>
+<p>Applies to: newer laptops with GTX 965M or alike when bbswitch (e.g. via Bumblebee) or nouveau is in use.
+</p>
+<p>When the dGPU power resource is turned on, it may fail to do so and hang in ACPI code (<a rel="nofollow" class="external text" href="https://bugzilla.kernel.org/show_bug.cgi?id=156341">kernel bug 156341</a>).
+</p>
+<p>When using nouveau, disabling runtime power-management stops it from changing the power state, thus avoiding this issue.
+To disable runtime power-management, add <code>nouveau.runpm=0</code> to the kernel parameters.
+</p>
+<p>For known model-specific workarounds, see <a rel="nofollow" class="external text" href="https://github.com/Bumblebee-Project/Bumblebee/issues/764#issuecomment-234494238">this issue</a>.
+In other cases you can try to boot with <code>acpi_osi="!Windows 2015"</code> or <code>acpi_osi=! acpi_osi="Windows 2009"</code> added to your <a href="../en/Kernel_parameters.html" title="Kernel parameters">Kernel parameters</a>. (Consider reporting your laptop to that issue.)
+</p>
+<h3>
+<span id="No_screens_found_on_a_laptop.2FNVIDIA_Optimus"></span><span class="mw-headline" id="No_screens_found_on_a_laptop/NVIDIA_Optimus">No screens found on a laptop/NVIDIA Optimus</span>
+</h3>
+<p>Check if the output is something similar to:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">$ lspci | grep VGA</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">00:02.0 VGA compatible controller: Intel Corporation Core Processor Integrated Graphics Controller (rev 02)
+01:00.0 VGA compatible controller: nVidia Corporation Device 0df4 (rev a1)
+</pre>
+<p>NVIDIA drivers now offer Optimus support since 319.12 Beta <a rel="nofollow" class="external autonumber" href="https://www.nvidia.com/object/linux-display-amd64-319.12-driver.html">[5]</a> with kernels above and including 3.9.
+</p>
+<p>Another solution is to install the <a href="../en/Intel_graphics.html" class="mw-redirect" title="Intel">Intel</a> driver to handle the screens, then if you want 3D software you should run them through <a href="../en/Bumblebee.html" title="Bumblebee">Bumblebee</a> to tell them to use the NVIDIA card.
+</p>
+<h3>
+<span id="Random_freezes_.22.28EE.29_NVIDIA.28GPU-0.29:_WAIT.22"></span><span class="mw-headline" id='Random_freezes_"(EE)_NVIDIA(GPU-0):_WAIT"'>Random freezes "(EE) NVIDIA(GPU-0): WAIT"</span>
+</h3>
+<p>Using the proprietary drivers on a setup with an integrated AMD card and with the dedicated NVIDIA card set as the only one in use, users report freezes for up to 10 seconds, with the following errors in the Xorg logs: 
+</p>
+<pre>[   219.796] (EE) NVIDIA(GPU-0): WAIT (2, 8, 0x8000, 0x0002e1c4, 0x0002e1cc)
+[   226.796] (EE) NVIDIA(GPU-0): WAIT (1, 8, 0x8000, 0x0002e1c4, 0x0002e1cc)
+</pre>
+<p>While this is not root-caused yet, it seems linked to a conflict in how the integrated and dedicated cards interact with Xorg. 
+</p>
+<p>The workaround is to use switchable graphics, see <a href="../en/PRIME.html#PRIME_render_offload" title="PRIME">PRIME#PRIME render offload</a> for details.
+</p>
+<h3>
+<span id=".22No_Devices_detected.22_with_optimus-manager"></span><span class="mw-headline" id='"No_Devices_detected"_with_optimus-manager'>"No Devices detected" with optimus-manager</span>
+</h3>
+<p>There are cases where <code>lspci</code> will show the pci Domain as first output column, making <code>optimus-manager</code> generated files break while trying to map <code>BusID</code> on multiple laptop models. 
+</p>
+<p>If you face a black screen that never ends to load your GUI, GUI partially loading with console artifacts or Xorg crashing with <code>(EE) - No Devices detected</code>, the workaround and bug reports are available at the upstream <a rel="nofollow" class="external text" href="https://github.com/Askannz/optimus-manager/issues/471#issuecomment-1315628537">github</a>.
+</p>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface">
+<div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="../es/Category:Graphics.html" title="Category:Graphics (Español)">Graphics (Español)</a></li></ul>
+</div>
+<div id="mw-hidden-catlinks" class="mw-hidden-catlinks mw-hidden-cats-hidden">Hidden categories: <ul>
+<li><a href="../es/Category:Pages_or_sections_flagged_with_Template:Translateme.html" title="Category:Pages or sections flagged with Template:Translateme (Español)">Pages or sections flagged with Template:Translateme (Español)</a></li>
+<li><a href="../en/Category:Pages_with_broken_section_links.html" title="Category:Pages with broken section links">Pages with broken section links</a></li>
+</ul>
+</div>
+</div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=NVIDIA_Optimus_(Espa%C3%B1ol)&amp;oldid=776089">https://wiki.archlinux.org/index.php?title=NVIDIA_Optimus_(Español)&amp;oldid=776089</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 22 April 2023, at 19:26.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

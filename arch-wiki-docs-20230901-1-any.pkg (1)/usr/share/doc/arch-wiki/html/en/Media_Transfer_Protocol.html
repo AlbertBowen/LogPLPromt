@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>Media Transfer Protocol - ArchWiki</title>
+<link rel="stylesheet" href="../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Media_Transfer_Protocol rootpage-Media_Transfer_Protocol skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Connecting" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Connecting">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Connecting</div>
+			</a>
+			
+			<ul id="toc-Connecting-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-FUSE_filesystems" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#FUSE_filesystems">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>FUSE filesystems</div>
+			</a>
+			
+				<button aria-controls="toc-FUSE_filesystems-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle FUSE filesystems subsection
+				</button>
+			
+			<ul id="toc-FUSE_filesystems-sublist" class="sidebar-toc-list">
+				<li id="toc-Android_File_Transfer" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Android_File_Transfer">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.1</span>Android File Transfer</div>
+			</a>
+			
+			<ul id="toc-Android_File_Transfer-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-MTPfs" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#MTPfs">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.2</span>MTPfs</div>
+			</a>
+			
+			<ul id="toc-MTPfs-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-jmtpfs" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#jmtpfs">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.3</span>jmtpfs</div>
+			</a>
+			
+			<ul id="toc-jmtpfs-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-SIMPLE-MTPFS" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#SIMPLE-MTPFS">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.4</span>SIMPLE-MTPFS</div>
+			</a>
+			
+			<ul id="toc-SIMPLE-MTPFS-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-go-mtpfs" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#go-mtpfs">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.5</span>go-mtpfs</div>
+			</a>
+			
+			<ul id="toc-go-mtpfs-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-libmtp" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#libmtp">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>libmtp</div>
+			</a>
+			
+				<button aria-controls="toc-libmtp-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle libmtp subsection
+				</button>
+			
+			<ul id="toc-libmtp-sublist" class="sidebar-toc-list">
+				<li id="toc-Frontends" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Frontends">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.1</span>Frontends</div>
+			</a>
+			
+			<ul id="toc-Frontends-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Media_players" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Media_players">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4</span>Media players</div>
+			</a>
+			
+			<ul id="toc-Media_players-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-File_manager_integration" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#File_manager_integration">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5</span>File manager integration</div>
+			</a>
+			
+				<button aria-controls="toc-File_manager_integration-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle File manager integration subsection
+				</button>
+			
+			<ul id="toc-File_manager_integration-sublist" class="sidebar-toc-list">
+				<li id="toc-gvfs-mtp" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#gvfs-mtp">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5.1</span>gvfs-mtp</div>
+			</a>
+			
+			<ul id="toc-gvfs-mtp-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Troubleshooting" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Troubleshooting">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6</span>Troubleshooting</div>
+			</a>
+			
+				<button aria-controls="toc-Troubleshooting-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Troubleshooting subsection
+				</button>
+			
+			<ul id="toc-Troubleshooting-sublist" class="sidebar-toc-list">
+				<li id="toc-libmtp_(gvfs-mtp):_filemanager_(nautilus,_pcmanfm,_vifm_and_etc)_hangs_on_accessing_DCIM/Camera_of_Android_device" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#libmtp_(gvfs-mtp):_filemanager_(nautilus,_pcmanfm,_vifm_and_etc)_hangs_on_accessing_DCIM/Camera_of_Android_device">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6.1</span>libmtp (gvfs-mtp): filemanager (nautilus, pcmanfm, vifm and etc) hangs on accessing DCIM/Camera of Android device</div>
+			</a>
+			
+			<ul id="toc-libmtp_(gvfs-mtp):_filemanager_(nautilus,_pcmanfm,_vifm_and_etc)_hangs_on_accessing_DCIM/Camera_of_Android_device-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-jmtpfs:_Input/output_error_upon_first_access" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#jmtpfs:_Input/output_error_upon_first_access">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6.2</span>jmtpfs: Input/output error upon first access</div>
+			</a>
+			
+			<ul id="toc-jmtpfs:_Input/output_error_upon_first_access-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id='toc-kio-mtp:_cannot_use_"Open_with_File_Manager"_action' class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href='#kio-mtp:_cannot_use_"Open_with_File_Manager"_action'>
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6.3</span>kio-mtp: cannot use "Open with File Manager" action</div>
+			</a>
+			
+			<ul id='toc-kio-mtp:_cannot_use_"Open_with_File_Manager"_action-sublist' class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-kio-mtp_being_called_simultaneously_by_different_services" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#kio-mtp_being_called_simultaneously_by_different_services">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6.4</span>kio-mtp being called simultaneously by different services</div>
+			</a>
+			
+			<ul id="toc-kio-mtp_being_called_simultaneously_by_different_services-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Android_File_Transfer:_connect_failed:_no_MTP_device_found" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Android_File_Transfer:_connect_failed:_no_MTP_device_found">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6.5</span>Android File Transfer: connect failed: no MTP device found</div>
+			</a>
+			
+			<ul id="toc-Android_File_Transfer:_connect_failed:_no_MTP_device_found-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../en/Media_Transfer_Protocol.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="mw-list-item"><a href="../en/Talk:Media_Transfer_Protocol.html" rel="discussion" title="Discussion about the content page [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">English</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../en/Media_Transfer_Protocol.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=Media_Transfer_Protocol&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=Media_Transfer_Protocol&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../en/Media_Transfer_Protocol.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Media_Transfer_Protocol&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Media_Transfer_Protocol&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output">
+<div class="archwiki-template-meta-related-articles-start">
+<p class="mw-no-invert">Related articles</p>
+<ul>
+<li><a href="../en/Android.html#Transferring_files" title="Android">Android#Transferring files</a></li>
+<li><a href="../en/USB_storage_devices.html" title="USB storage devices">USB storage devices</a></li>
+</ul>
+</div>
+<p>The <a href="https://en.wikipedia.org/wiki/Media_Transfer_Protocol" class="extiw" title="wikipedia:Media Transfer Protocol">Media Transfer Protocol</a> (MTP) can be used to transfer media files to and from many mobile phones (all Windows Phone 7/8/10 devices, most newer <a href="../en/Android.html" title="Android">Android</a> devices) and media players (e.g. Creative Zen).
+</p>
+<mw:tocplace></mw:tocplace>
+<h2><span class="mw-headline" id="Connecting">Connecting</span></h2>
+<p>To connect your computer to a device via MTP:
+</p>
+<ul>
+<li>the device needs to be connected to your computer via USB</li>
+<li>MTP needs to be enabled on the device</li>
+<li>the device's screen needs to be unlocked (for security reasons)</li>
+</ul>
+<h2><span class="mw-headline" id="FUSE_filesystems">FUSE filesystems</span></h2>
+<p>The following programs let you access MTP devices via a <a href="../en/FUSE.html" title="FUSE">FUSE</a> filesystem.
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> MTP is messy and its implementation varies between devices. Try the below clients and see which one works best with your device.</div>
+<div class="archwiki-template-box archwiki-template-box-tip">
+<strong>Tip:</strong> It is recommended to reboot your computer after installing MTP related packages.</div>
+<p>For the FUSE-based file systems, you might need to create the mount-point directory first. The directory <code>~/mnt</code> is used in the examples below.
+</p>
+<p>FUSE mounts can generally be unmounted using <code>fusermount -u <i>mountpoint</i></code>.
+</p>
+<h3><span class="mw-headline" id="Android_File_Transfer">Android File Transfer</span></h3>
+<p><b>Android File Transfer</b> — MTP client with CLI, Qt UI, and FUSE wrapper which uses a custom MTP implementation
+</p>
+<dl><dd>
+<a rel="nofollow" class="external free" href="https://whoozle.github.io/android-file-transfer-linux/">https://whoozle.github.io/android-file-transfer-linux/</a> || <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=android-file-transfer">android-file-transfer</a></span>
+</dd></dl>
+<p>Mount your device on <code>~/mnt</code>:
+</p>
+<pre>$ aft-mtp-mount ~/mnt
+</pre>
+<p>If you want album art to be displayed, it must be named <code>albumart.xxx</code> and placed first in the destination folder. Then copy other files. Also, note that fuse could be 7-8 times slower than ui/cli file transfer.
+</p>
+<p>If you want to interact with it via the command line interface, run the command:
+</p>
+<pre>$ aft-mtp-cli
+</pre>
+<p>Type <i>help</i> in order to list all the commands available, <i>exit</i> to quit.
+</p>
+<p>If you want to interact with it via the graphical user interface, start the <i>android-file-transfer</i> application, choose a destination folder and click any button on the toolbar. Available options are: <i>Upload Album</i>, <i>Upload Directory</i> and <i>Upload Files</i>. The latter two are self-explanatory. <i>Upload album</i> searches the source directory for album covers, and sets the best available cover.
+</p>
+<h3><span class="mw-headline" id="MTPfs">MTPfs</span></h3>
+<p><b>MTPfs</b> — based on <a href="#libmtp">libmtp</a>, it is a FUSE filesystem that supports reading and writing from any MTP device
+</p>
+<dl><dd>
+<a rel="nofollow" class="external free" href="https://www.adebenham.com/mtpfs/">https://www.adebenham.com/mtpfs/</a> || <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=mtpfs">mtpfs</a></span>
+</dd></dl>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong>  The following is likely to not work and you might have to resort to <a href="../en/GPhoto.html" class="mw-redirect" title="Libgphoto2">libgphoto2</a> or a file manager with gvfs support like <a href="../en/PCManFM.html" title="PCManFM">PCManFM</a>. </div>
+<p>First edit your <code>/etc/fuse.conf</code> and uncomment the following line:
+</p>
+<pre>user_allow_other
+</pre>
+<p>Mount your device on <code>~/mnt</code>:
+</p>
+<pre>$ mtpfs -o allow_other ~/mnt
+</pre>
+<h3><span class="mw-headline" id="jmtpfs">jmtpfs</span></h3>
+<p><b>jmtpfs</b> — based on <a href="#libmtp">libmtp</a> for accessing MTP (Media Transfer Protocol) devices
+</p>
+<dl><dd>
+<a rel="nofollow" class="external free" href="https://github.com/JasonFerrara/jmtpfs">https://github.com/JasonFerrara/jmtpfs</a> || <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/jmtpfs/">jmtpfs</a></span><sup><small>AUR</small></sup>
+</dd></dl>
+<p>Mount device on <code>~/mnt</code>:
+</p>
+<pre>$ jmtpfs ~/mnt
+</pre>
+<p>Make this cohere to the rest of Linux (use regular mount/umount commands) by doing two steps
+</p>
+<pre>$# ln -s &lt;actual mount command's path/name&gt;  &lt;a name consistent with Linux's mount convention&gt;
+$  ln -s /sbin/jmtpfs                        /sbin/mount.jmtpfs
+</pre>
+<p>add this line to <code>/etc/fstab</code>; 
+</p>
+<pre> #jmtpfs &lt;mount path&gt;        fuse nodev,allow_other,&lt;other options&gt;                             0    0
+  jmtpfs /home/sam/run/motog fuse nodev,allow_other,rw,user,noauto,noatime,uid=1000,gid=1000    0    0
+</pre>
+<p>Now mount the device and see if the options "took"
+</p>
+<pre> $ mount /home/sam/run/motog
+ Device 0 (VID=22b8 and PID=2e82) is a Motorola Moto G (ID2).
+ Android device detected, assigning default bug flags
+ $ mount 
+  ...
+  jmtpfs on /home/sam/run/motog type fuse.jmtpfs (rw,nosuid,nodev,noexec,noatime,user_id=1000,group_id=1000,allow_other,user=sam)
+</pre>
+<h3><span class="mw-headline" id="SIMPLE-MTPFS">SIMPLE-MTPFS</span></h3>
+<p><b>SIMPLE-MTPFS</b> — based on <a href="#libmtp">libmtp</a> Simple Media Transfer Protocol FileSystem is a file system capable of operating on files on MTP devices attached via USB to local machine
+</p>
+<dl><dd>
+<a rel="nofollow" class="external free" href="https://github.com/phatina/simple-mtpfs/">https://github.com/phatina/simple-mtpfs/</a> || <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/simple-mtpfs/">simple-mtpfs</a></span><sup><small>AUR</small></sup>
+</dd></dl>
+<p>Run <code>simple-mtpfs -l</code> to list detected devices.
+</p>
+<p>To mount the first device in the list to <code>~/mnt</code>, run <code>simple-mtpfs --device 1 ~/mnt</code>.
+</p>
+<h3><span class="mw-headline" id="go-mtpfs">go-mtpfs</span></h3>
+<p><b>go-mtpfs</b> — FUSE filesystem with custom MTP implementation, written in Go
+</p>
+<dl><dd>
+<a rel="nofollow" class="external free" href="https://github.com/hanwen/go-mtpfs">https://github.com/hanwen/go-mtpfs</a> || <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/go-mtpfs-git/">go-mtpfs-git</a></span><sup><small>AUR</small></sup>
+</dd></dl>
+<p>Install <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=android-udev">android-udev</a></span>, which will allow you to edit <code>/etc/udev/rules.d/51-android.rules</code> and apply to your <code>idVendor</code> and <code>idProduct</code>, which you can see after running <i>mtp-detect</i>. To the end of the line, add your user <code>OWNER="&lt;user&gt;"</code>.
+</p>
+<p>Mount device on <code>~/mnt</code>:
+</p>
+<pre>$ go-mtpfs ~/mnt
+</pre>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> 
+<ul>
+<li>When using multiple devices you may want to use the <code>-d</code> flag to specify a device (id can be found by running <code>mtp-detect</code>
+</li>
+<li>Mounting with <code>go-mtpfs</code> might fail if an external SD Card is present. If you try to access your device while having an SD card and go-mtpfs complains, try removing the SD card and mounting again.)</li>
+</ul>
+</div>
+<h2><span class="mw-headline" id="libmtp">libmtp</span></h2>
+<p><a rel="nofollow" class="external text" href="http://libmtp.sourceforge.net/">libmtp</a> is a library MTP implementation, which also comes with some example command-line tools (which you can list using <code>pacman -Ql libmtp</code>).
+</p>
+<p><a href="../en/Help:Reading.html#Installation_of_packages" class="mw-redirect" title="Install">Install</a> the <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=libmtp">libmtp</a></span> package.
+</p>
+<p>Run <code>mtp-detect</code> to detect your device.
+</p>
+<p>If an error is returned, make sure your user is in the <code>adbusers</code> <a href="../en/Users_and_groups.html#Group_management" class="mw-redirect" title="User group">user group</a>.
+</p>
+<p>You can transfer files using the <code>mtp-connect</code> command.
+</p>
+<h3><span class="mw-headline" id="Frontends">Frontends</span></h3>
+<p><b>gMTP</b> — A graphical frontend for libmtp. It lets you connect to Android devices and manage files using a desktop agnostic GUI.
+</p>
+<dl><dd>
+<a rel="nofollow" class="external free" href="https://gmtp.sourceforge.io/">https://gmtp.sourceforge.io/</a> || <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=gmtp">gmtp</a></span>
+</dd></dl>
+<h2><span class="mw-headline" id="Media_players">Media players</span></h2>
+<p>You can also use your MTP device in music players such as <a href="../en/Amarok.html" title="Amarok">Amarok</a>. To achieve this, you might have to edit <code>/etc/udev/rules.d/51-android.rules</code> (the MTP device used in the following example is a Galaxy Nexus). 
+Run:
+</p>
+<pre>$ lsusb
+</pre>
+<p>Search for your device. It should be something like that:
+</p>
+<pre>Bus 003 Device 011: ID 04e8:6860 Samsung Electronics Co., Ltd GT-I9100 Phone [Galaxy S II], GT-P7500 [Galaxy Tab 10.1]
+</pre>
+<p>And entry to <code>/etc/udev/rules.d/51-android.rules</code> will be this:
+</p>
+<pre>SUBSYSTEM=="usb", ATTR{idVendor}=="04e8", ATTR{idProduct}=="6860", MODE="0666", OWNER="[username]"
+</pre>
+<p>Also reload udev rules:
+</p>
+<pre># udevadm control --reload
+</pre>
+<h2><span class="mw-headline" id="File_manager_integration">File manager integration</span></h2>
+<p>To view the contents of your Android device's storage via MTP in your file manager, install the corresponding plugin:
+</p>
+<ul>
+<li>For file managers that use <a href="../en/File_manager_functionality.html#Mounting" class="mw-redirect" title="GVFS">GVFS</a> (GNOME Files), install <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=gvfs-mtp">gvfs-mtp</a></span> for MTP or <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=gvfs-gphoto2">gvfs-gphoto2</a></span> for PTP support.</li>
+<li>For file managers that use KIO (KDE's Dolphin), MTP support is included in <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=kio-extras">kio-extras</a></span> (dependency of dolphin).</li>
+</ul>
+<p>After installing the required package, the device should show up in the file manager automatically and be accessible via an URL, for example <code>mtp://[usb:002,013]/</code>.
+</p>
+<h3><span class="mw-headline" id="gvfs-mtp">gvfs-mtp</span></h3>
+<div class="noprint archwiki-template-message">
+<p><a href="../File:Merge-arrows-2.png" class="image"><img alt="Merge-arrows-2.png" src="../File:Merge-arrows-2.png" decoding="async" width="48" height="48"></a><b>This article or section is a candidate for merging with <a href="../en/Udev.html" title="Udev">udev</a>.</b><a href="../File:Merge-arrows-2.png" class="image"><img alt="Merge-arrows-2.png" src="../File:Merge-arrows-2.png" decoding="async" width="48" height="48"></a></p>
+<div>
+<b>Notes:</b> <span style="color:red;">please use the second argument of the template to provide more detailed indications.</span> (Discuss in <a rel="nofollow" class="external text" href="https://wiki.archlinux.org/title/Talk:Media_Transfer_Protocol">Talk:Media Transfer Protocol</a>)</div>
+</div>
+<p>The <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=gvfs-mtp">gvfs-mtp</a></span> is available in the official repositories.
+</p>
+<p>With <code>lsusb</code> you can get information about your device where Bus and Device numbers can be used with <code>gvfs-mtp</code> and device ID for creating of an <a href="../en/Udev.html" title="Udev">udev</a> rule.
+</p>
+<pre>Bus <b>002</b> Device <b>018</b>: ID <b>04b7</b>:<b>88a9</b> Compal Electronics, Inc.
+</pre>
+<p>To see detected device with enabled MTP
+</p>
+<p>Use <i>gio mount</i>:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">gio mount -li | grep -e ^Volume -e activation_root</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">Volume(0): MT65xx Android Phone
+  activation_root=mtp://[usb:<b>002</b>,<b>018</b>]/</pre>
+<p>Use <i>lsusb</i>:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">lsusb -v 2&gt; /dev/null | grep -e Bus -e iInterface -e bInterfaceProtocol</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">...
+Bus 002 Device 018: ID 04b7:88a9 Compal Electronics, Inc. 
+      bInterfaceProtocol      0 
+      iInterface              5 MTP
+...</pre>
+<p>To mount all available connected MTP devices use inline script
+</p>
+<pre>gio mount -li | awk -F= '{if(index($2,"mtp") == 1)system("gio mount "$2)}'
+</pre>
+<p>To mount or dismount from a command with gvfs-mtp use Bus and Device numbers, e.g. to mount <code>gio mount mtp://[usb:001,007]/</code> and to unmount <code>gio mount -u mtp://[usb:001,007]/</code>. The mounted device will be available in a directory that begins with <i>mtp:host=</i> and is located under <i>/run/user/$UID/gvfs/</i>.
+</p>
+<p>To disable automount of MTP devices with gvfs you will need to change value <i>true</i> to <i>false</i> for variable <i>AutoMount</i> that is located in <code>/usr/share/gvfs/mounts/mtp.mount</code>.
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> The file managers can have own options for automount. On start they checking for all available mountable devices.</div>
+<p>If your device is not showing up in the file manager then <a href="#libmtp">#libmtp</a> is missing a native support and is not currently available in the list of the <a rel="nofollow" class="external text" href="https://sourceforge.net/p/libmtp/code/ci/HEAD/tree/src/music-players.h">supported devices</a>. If you will try to mount by using command line you may also get an error
+</p>
+<pre>Device 0 (VID=<i>XXXX</i> and PID=<i>XXXX</i>) is UNKNOWN.
+Please report this VID/PID and the device model to the libmtp development team</pre>
+<p>The workaround to make it shown in the file manager is to write an <a href="../en/Udev.html" title="Udev">udev</a> rule for the device but it is no guaranty that you will be able to mount it with by using MTP connection.
+</p>
+<p>Use ID number that represents by pattern <b>vendorId</b>:<b>productID</b>,e.g. <b>04b7</b>:<b>88a9</b>, and make an udev rule by creating a configuration file
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/udev/rules.d/51-android.rules</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">SUBSYSTEM=="usb", ATTR{idVendor}=="04b7", ATTR{idProduct}=="88a9", MODE="0660", GROUP="uucp", ENV{ID_MTP_DEVICE}="1", SYMLINK+="libmtp"
+</pre>
+<p>Reload the udev rules.
+</p>
+<pre># udevadm control --reload
+</pre>
+<p>The file managers with support for <a href="../en/File_manager_functionality.html" class="mw-redirect" title="Gvfs">gvfs</a> will be able to show MTP devices and mount them if supported by <a href="#libmtp">#libmtp</a> but if has no support and cannot be opened then change settings in the phone to PTP and install <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=gvfs-gphoto2">gvfs-gphoto2</a></span> for having access at least to the photos, command line mounting of PTP is a little similar to mounting of the MTP devices: <code>gio mount gphoto2://[usb:002,019]/</code>.
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> If you getting limited access to the device and cannot use standard commands from command line such as e.g. <code>cp</code>,<code>ls</code> then look for <a href="../en/File_manager_functionality.html" class="mw-redirect" title="Gvfs">gvfs</a> own alternatives, <code>ls -1 /usr/bin/gvfs-*</code>.</div>
+<h2><span class="mw-headline" id="Troubleshooting">Troubleshooting</span></h2>
+<h3>
+<span id="libmtp_.28gvfs-mtp.29:_filemanager_.28nautilus.2C_pcmanfm.2C_vifm_and_etc.29_hangs_on_accessing_DCIM.2FCamera_of_Android_device"></span><span class="mw-headline" id="libmtp_(gvfs-mtp):_filemanager_(nautilus,_pcmanfm,_vifm_and_etc)_hangs_on_accessing_DCIM/Camera_of_Android_device">libmtp (gvfs-mtp): filemanager (nautilus, pcmanfm, vifm and etc) hangs on accessing DCIM/Camera of Android device</span>
+</h3>
+<p>Symptoms: everything works fine till moment of entering DCIM/Camera directory. In this case filemanager freezes and even in command line you cannot run even <code>ls</code> on that directory.
+</p>
+<p>Possible and very probable reason is the bug of libmtp.
+</p>
+<p>It seems that it is caused by file with name like <code>20180915_180351(0).jpg</code>. Samsung phones for example like to create files with such names.
+</p>
+<p>There are several tickets (<a rel="nofollow" class="external text" href="https://sourceforge.net/p/libmtp/bugs/1830/">one</a>, <a rel="nofollow" class="external text" href="https://sourceforge.net/p/libmtp/bugs/1808/">two</a> and etc) and questions (<a rel="nofollow" class="external text" href="https://askubuntu.com/questions/995383/nautilus-hangs-on-accessing-dcim-camera-on-android">one</a>, <a rel="nofollow" class="external text" href="https://askubuntu.com/questions/1030736/cant-open-photos-stored-on-android-system-from-ubuntu/1148034#1148034">two</a>) about it.
+</p>
+<p>So possible workaround is to use different mtp option from <a href="#FUSE_filesystems">#FUSE filesystems</a> like go-mtpfs for such directories or somehow change file naming policy of your phone camera (or switch to another camera app like <a rel="nofollow" class="external text" href="https://opencamera.sourceforge.io/">Open Camera</a> for example).
+</p>
+<h3>
+<span id="jmtpfs:_Input.2Foutput_error_upon_first_access"></span><span class="mw-headline" id="jmtpfs:_Input/output_error_upon_first_access">jmtpfs: Input/output error upon first access</span>
+</h3>
+<p>Symptoms: jmtpfs successfully mounts, but as soon as one attempts to access files on the device (e.g. via <code>ls</code>), an error is reported:
+</p>
+<pre> cannot access &lt;mount-point&gt;: Input/output error
+</pre>
+<p>This appears to be a security feature: MTP does not work when the phone is locked by the lockscreen.  Unlock the phone and it should work again as long as the cord remains connected.
+</p>
+<h3>
+<span id="kio-mtp:_cannot_use_.22Open_with_File_Manager.22_action"></span><span class="mw-headline" id='kio-mtp:_cannot_use_"Open_with_File_Manager"_action'>kio-mtp: cannot use "Open with File Manager" action</span>
+</h3>
+<p>If you are not able to use the action "Open with File Manager", you may work around this problem by editing the file <code>/usr/share/solid/actions/solid_mtp.desktop</code>.
+</p>
+<p>Change the line <code>Exec=kioclient exec mtp:udi=%i/</code> to <code>Exec=dolphin "mtp:/"</code>.
+</p>
+<h3><span class="mw-headline" id="kio-mtp_being_called_simultaneously_by_different_services">kio-mtp being called simultaneously by different services</span></h3>
+<p>Parallel usage of mtpfs and kio-mtp, as well as conflicting services using kio-mtp -music players included- should be avoided, as mentioned in <a rel="nofollow" class="external text" href="https://bbs.archlinux.org/viewtopic.php?pid=1657736#p1657736">this forum</a>.
+</p>
+<p>Amarok's plugin for MTP services, for example, might be preventing Dolphin (plasma) to access different phone model's files. Switching it off was a solution for at least one user.
+</p>
+<h3><span class="mw-headline" id="Android_File_Transfer:_connect_failed:_no_MTP_device_found">Android File Transfer: connect failed: no MTP device found</span></h3>
+<p>After installing <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=android-file-transfer">android-file-transfer</a></span>, while trying to mount any MTP device if you get the following error:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">$ aft-mtp-mount /path/to/folder</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">connect failed: no MTP device found
+</pre>
+<p>then install the package: <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=android-udev">android-udev</a></span>. This package contains per manufacturer/device <a href="../en/Udev.html" class="mw-redirect" title="Udev rules">udev rules</a> for MTP devices, making it easier to use <a href="../en/Android_Debug_Bridge.html" class="mw-redirect" title="ADB">ADB</a> or MTP.
+</p>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface">
+<div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../Special:Categories.html" title="Special:Categories">Categories</a>: <ul>
+<li><a href="../en/Category:Storage.html" title="Category:Storage">Storage</a></li>
+<li><a href="../en/Category:Mobile_devices.html" title="Category:Mobile devices">Mobile devices</a></li>
+</ul>
+</div>
+<div id="mw-hidden-catlinks" class="mw-hidden-catlinks mw-hidden-cats-hidden">Hidden category: <ul><li><a href="../en/Category:Pages_or_sections_flagged_with_Template:Merge.html" title="Category:Pages or sections flagged with Template:Merge">Pages or sections flagged with Template:Merge</a></li></ul>
+</div>
+</div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=Media_Transfer_Protocol&amp;oldid=773401">https://wiki.archlinux.org/index.php?title=Media_Transfer_Protocol&amp;oldid=773401</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 21 March 2023, at 13:47.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

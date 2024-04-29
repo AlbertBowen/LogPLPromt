@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>Amavis - ArchWiki</title>
+<link rel="stylesheet" href="../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Amavis rootpage-Amavis skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Installation_and_setup" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Installation_and_setup">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Installation and setup</div>
+			</a>
+			
+				<button aria-controls="toc-Installation_and_setup-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Installation and setup subsection
+				</button>
+			
+			<ul id="toc-Installation_and_setup-sublist" class="sidebar-toc-list">
+				<li id="toc-Basic_configuration" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Basic_configuration">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.1</span>Basic configuration</div>
+			</a>
+			
+			<ul id="toc-Basic_configuration-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Testing" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Testing">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.2</span>Testing</div>
+			</a>
+			
+			<ul id="toc-Testing-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Integration_with_Postfix" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Integration_with_Postfix">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Integration with Postfix</div>
+			</a>
+			
+				<button aria-controls="toc-Integration_with_Postfix-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Integration with Postfix subsection
+				</button>
+			
+			<ul id="toc-Integration_with_Postfix-sublist" class="sidebar-toc-list">
+				<li id="toc-Quick_start" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Quick_start">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.1</span>Quick start</div>
+			</a>
+			
+			<ul id="toc-Quick_start-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-SpamAssassin_support" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#SpamAssassin_support">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>SpamAssassin support</div>
+			</a>
+			
+			<ul id="toc-SpamAssassin_support-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Final_test" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Final_test">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4</span>Final test</div>
+			</a>
+			
+			<ul id="toc-Final_test-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-See_also" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#See_also">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5</span>See also</div>
+			</a>
+			
+			<ul id="toc-See_also-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../en/Amavis.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="new mw-list-item"><a href="/index.php?title=Talk:Amavis&amp;action=edit&amp;redlink=1" rel="discussion" title="Discussion about the content page (page does not exist) [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">English</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../en/Amavis.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=Amavis&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=Amavis&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../en/Amavis.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Amavis&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Amavis&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output">
+<div class="archwiki-template-meta-related-articles-start">
+<p class="mw-no-invert">Related articles</p>
+<ul>
+<li><a href="../en/ClamAV.html" title="ClamAV">ClamAV</a></li>
+<li><a href="../en/Postfix.html" title="Postfix">Postfix</a></li>
+<li><a href="../en/Dovecot.html" title="Dovecot">Dovecot</a></li>
+</ul>
+</div>
+<p>From <a rel="nofollow" class="external text" href="https://www.ijs.si/software/amavisd/">Amavis's site</a>:
+</p>
+<dl><dd>amavisd-new is a high-performance interface between mailer (MTA) and content checkers: virus scanners, and/or SpamAssassin. It is written in Perl for maintainability, without paying a significant price for speed. It talks to MTA via (E)SMTP or LMTP, or by using helper programs. Best with Postfix, fine with dual-sendmail setup and Exim v4, works with sendmail/milter, or with any MTA as a SMTP relay.</dd></dl>
+<mw:tocplace></mw:tocplace>
+<h2><span class="mw-headline" id="Installation_and_setup">Installation and setup</span></h2>
+<p>In this setup it is assumed that you are using <a href="../en/ClamAV.html" title="ClamAV">ClamAV</a> as anti-virus scanner.
+</p>
+<ul>
+<li>Install <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=amavisd-new">amavisd-new</a></span>. You would be wise to also install optdepends such as <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=p7zip">p7zip</a></span> and <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=unrar">unrar</a></span> so your filters can actually see inside compressed files.</li>
+<li>Install <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=clamav">clamav</a></span>.</li>
+</ul>
+<h3><span class="mw-headline" id="Basic_configuration">Basic configuration</span></h3>
+<p>If your hostname is not a FQDN, you must set <code>$myhostname</code> and <code>$mydomain</code> accordingly in <code>/etc/amavisd/amavisd.conf</code>.
+</p>
+<p>You can enable <a href="../en/ClamAV.html" title="ClamAV">ClamAV</a> support by commenting out the following lines (do not forget to put the same <code>clamd.sock</code> as in <code>/etc/clamav/clamd.conf</code>):
+</p>
+<pre># ### http://www.clamav.net/
+['ClamAV-clamd',
+   \&amp;ask_daemon, ["CONTSCAN {}\n", "/var/lib/clamav/clamd.sock"],
+   qr/\bOK$/m, qr/\bFOUND$/m,
+   qr/^.*?: (?!Infected Archive)(.*) FOUND$/m ],
+# # NOTE: run clamd under the same user as amavisd - or run it under its own
+# #   uid such as clamav, add user clamav to the amavis group, and then add
+# # NOTE: match socket name (LocalSocket) in clamav.conf to the socket name in
+# #   this entry; when running chrooted one may prefer a socket under $MYHOME.
+</pre>
+<p>Add a comment to this line to enable anti-virus scan:
+</p>
+<pre># @bypass_virus_check_maps = (1);  # controls running of anti-virus code
+</pre>
+<p>After that, add <code>clamav</code> user to <code>amavis</code> group to avoid permission problems:
+</p>
+<pre># usermod -a -G amavis clamav
+</pre>
+<p>Finally restart the services:
+</p>
+<ul>
+<li>
+<a href="../en/Help:Reading.html#Control_of_systemd_units" class="mw-redirect" title="Restart">restart</a> <code>clamav-daemon.service</code>.</li>
+<li>
+<a href="../en/Help:Reading.html#Control_of_systemd_units" class="mw-redirect" title="Start">start</a> <code>amavisd.service</code> and possibly <a href="../en/Help:Reading.html#Control_of_systemd_units" class="mw-redirect" title="Enable">enable</a> it.</li>
+</ul>
+<p>Check for errors with these commands:
+</p>
+<pre># systemctl status amavisd
+# journalctl -u amavisd
+</pre>
+<h3><span class="mw-headline" id="Testing">Testing</span></h3>
+<p>To test the new configuration just telnet to the amavisd default listening port:
+</p>
+<pre>$ telnet 127.0.0.1 10024
+</pre>
+<p>You should see something like:
+</p>
+<pre>Trying 127.0.0.1...
+Connected to 127.0.0.1.
+Escape character is '^]'
+220 [127.0.0.1] ESMTP amavisd-new service ready
+</pre>
+<p>Type <code>ehlo 127.0.0.1</code>:
+</p>
+<pre>EHLO localhost
+250-[127.0.0.1]
+250-VRFY
+250-PIPELINING
+250-SIZE
+250-ENHANCEDSTATUSCODES
+250-8BITMIME
+250-DSN
+250 XFORWARD NAME ADDR PORT PROTO HELO IDENT SOURCE
+</pre>
+<p>Now just type <code>quit</code> to exit.
+</p>
+<h2><span class="mw-headline" id="Integration_with_Postfix">Integration with Postfix</span></h2>
+<h3><span class="mw-headline" id="Quick_start">Quick start</span></h3>
+<p>To configure amavis for <a href="../en/Postfix.html" title="Postfix">Postfix</a> add the following to <code>/etc/postfix/master.cf</code>:
+</p>
+<pre>#
+# anti spam &amp; anti virus section
+#
+amavisfeed      unix  -    -       n       -       2       smtp
+ -o smtp_data_done_timeout=1200
+ -o smtp_send_xforward_command=yes
+ -o disable_dns_lookups=yes
+ -o max_use=20
+127.0.0.1:10025 inet n  -       y       -       -       smtpd
+ -o content_filter=
+ -o smtpd_delay_reject=no
+ -o smtpd_client_restrictions=permit_mynetworks,reject
+ -o smtpd_helo_restrictions=
+ -o smtpd_sender_restrictions=
+ -o smtpd_recipient_restrictions=permit_mynetworks,reject
+ -o smtpd_data_restrictions=reject_unauth_pipelining
+ -o smtpd_end_of_data_restrictions=
+ -o smtpd_restriction_classes=
+ -o mynetworks=127.0.0.0/8
+ -o smtpd_error_sleep_time=0
+ -o smtpd_soft_error_limit=1001 
+ -o smtpd_hard_error_limit=1000
+ -o smtpd_client_connection_count_limit=0
+ -o smtpd_client_connection_rate_limit=0
+ -o receive_override_options=no_header_body_checks,no_unknown_recipient_checks,no_milters
+ -o local_header_rewrite_clients=</pre>
+<p>In this configuration we assume that postfix and Amavis are running on the same machine (i.e. <code>127.0.0.1</code>). If that is not the case edit <code>/etc/amavisd/amavisd.conf</code> and the prevous Postfix entry accordingly.
+</p>
+<p>Postfix will listen to port <code>10025</code> so that Amavis can send back checked emails to that port.
+</p>
+<p>You also have to add another other configuration in your <code>smtp</code> or <code>submission</code> sections:
+</p>
+<pre>-o content_filter=amavisfeed:[127.0.0.1]:10024
+</pre>
+<p>Using this options implies that Postfix will send emails to Amavis on port <code>10024</code>, so that these can be checked. If mail passes the control then these are sent to port <code>10025</code>, as explained before.
+</p>
+<p>We can now <a href="../en/Help:Reading.html#Control_of_systemd_units" class="mw-redirect" title="Restart">restart</a> <code>postfix.service</code> and <code>amavisd.service</code>.
+</p>
+<p>To check that Postfix is listening on port <code>10025</code> do the same operations as the port <code>10024</code> case.
+</p>
+<h2><span class="mw-headline" id="SpamAssassin_support">SpamAssassin support</span></h2>
+<div class="noprint archwiki-template-message">
+<p><a href="../File:Tango-view-fullscreen.png" class="image"><img alt="Tango-view-fullscreen.png" src="../File:Tango-view-fullscreen.png" decoding="async" width="48" height="48"></a><b>This article or section needs expansion.</b><a href="../File:Tango-view-fullscreen.png" class="image"><img alt="Tango-view-fullscreen.png" src="../File:Tango-view-fullscreen.png" decoding="async" width="48" height="48"></a></p>
+<div>
+<b>Reason:</b> todo (Discuss in <a rel="nofollow" class="external text" href="https://wiki.archlinux.org/title/Talk:Amavis">Talk:Amavis</a>)</div>
+</div>
+<p>Install <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=spamassassin">spamassassin</a></span>
+</p>
+<p>Spamassassin is integrated in Amavis so you do not have to start <code>spamassassin.service</code>. To enable support for Spamassassin comment the following line in <code>/etc/amavis/amavis.conf</code> like this:
+</p>
+<pre># @bypass_spam_checks_maps = (1);  # controls running of anti-spam code
+</pre>
+<p>Edit the SpamAssassin configuration based on your needs:
+</p>
+<pre>$sa_tag_level_deflt  = 1.0;  # add spam info headers if at, or above that level
+$sa_tag2_level_deflt = 1.0;  # add 'spam detected' headers at that level
+$sa_kill_level_deflt = 5.0;  # triggers spam evasive actions (e.g. blocks mail)
+$sa_dsn_cutoff_level = 8;   # spam level beyond which a DSN is not sent
+# $sa_quarantine_cutoff_level = 25; # spam level beyond which quarantine is off
+$penpals_threshold_high = $sa_kill_level_deflt;  # do not waste time on hi spam
+$bounce_killer_score = 100;  # spam score points to add for joe-jobbed bounces</pre>
+<p>Before you <a href="../en/Help:Reading.html#Control_of_systemd_units" class="mw-redirect" title="Restart">restart</a> the <code>amavisd</code> service, run <code>sa-update</code>.
+</p>
+<h2><span class="mw-headline" id="Final_test">Final test</span></h2>
+<div class="noprint archwiki-template-message">
+<p><a href="../File:Tango-view-fullscreen.png" class="image"><img alt="Tango-view-fullscreen.png" src="../File:Tango-view-fullscreen.png" decoding="async" width="48" height="48"></a><b>This article or section needs expansion.</b><a href="../File:Tango-view-fullscreen.png" class="image"><img alt="Tango-view-fullscreen.png" src="../File:Tango-view-fullscreen.png" decoding="async" width="48" height="48"></a></p>
+<div>
+<b>Reason:</b> todo (Discuss in <a rel="nofollow" class="external text" href="https://wiki.archlinux.org/title/Talk:Amavis">Talk:Amavis</a>)</div>
+</div>
+<p>To check that everything is working as intended:
+</p>
+<ul>
+<li>Send a normal email.</li>
+<li>Send an email with an <a rel="nofollow" class="external text" href="https://www.eicar.org/?page_id=3950">EICAR test file</a> as attachment.</li>
+<li>Send an email that would result as spam.</li>
+<li>Check both Postfix and Amavis logs.</li>
+</ul>
+<h2><span class="mw-headline" id="See_also">See also</span></h2>
+<ul>
+<li><a rel="nofollow" class="external text" href="https://www.ijs.si/software/amavisd/README.postfix.html">Amavis official documentation</a></li>
+<li><a href="https://wiki.gentoo.org/wiki/Complete_Virtual_Mail_Server/amvisd_spamassassin_clamav" class="extiw" title="gentoo:Complete Virtual Mail Server/amvisd spamassassin clamav">Gentoo:Complete Virtual Mail Server/amvisd spamassassin clamav</a></li>
+</ul>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface">
+<div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="../en/Category:Mail_server.html" title="Category:Mail server">Mail server</a></li></ul>
+</div>
+<div id="mw-hidden-catlinks" class="mw-hidden-catlinks mw-hidden-cats-hidden">Hidden category: <ul><li><a href="../en/Category:Pages_or_sections_flagged_with_Template:Expansion.html" title="Category:Pages or sections flagged with Template:Expansion">Pages or sections flagged with Template:Expansion</a></li></ul>
+</div>
+</div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=Amavis&amp;oldid=779924">https://wiki.archlinux.org/index.php?title=Amavis&amp;oldid=779924</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 30 May 2023, at 16:33.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

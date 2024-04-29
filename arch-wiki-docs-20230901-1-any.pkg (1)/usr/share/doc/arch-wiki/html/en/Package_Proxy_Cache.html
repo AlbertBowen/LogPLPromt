@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>Package Proxy Cache - ArchWiki</title>
+<link rel="stylesheet" href="../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Package_Proxy_Cache rootpage-Package_Proxy_Cache skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Install_Squid" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Install_Squid">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Install Squid</div>
+			</a>
+			
+			<ul id="toc-Install_Squid-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Configure_Squid" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Configure_Squid">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Configure Squid</div>
+			</a>
+			
+				<button aria-controls="toc-Configure_Squid-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Configure Squid subsection
+				</button>
+			
+			<ul id="toc-Configure_Squid-sublist" class="sidebar-toc-list">
+				<li id="toc-Cache_Rules" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Cache_Rules">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.1</span>Cache Rules</div>
+			</a>
+			
+			<ul id="toc-Cache_Rules-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Maximum_Filesize" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Maximum_Filesize">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.2</span>Maximum Filesize</div>
+			</a>
+			
+			<ul id="toc-Maximum_Filesize-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Cache_Directory" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Cache_Directory">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.3</span>Cache Directory</div>
+			</a>
+			
+			<ul id="toc-Cache_Directory-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Shutdown_Lifetime" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Shutdown_Lifetime">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.4</span>Shutdown Lifetime</div>
+			</a>
+			
+			<ul id="toc-Shutdown_Lifetime-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Start_Squid" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Start_Squid">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>Start Squid</div>
+			</a>
+			
+			<ul id="toc-Start_Squid-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Follow_Squid_access_log" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Follow_Squid_access_log">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4</span>Follow Squid access log</div>
+			</a>
+			
+			<ul id="toc-Follow_Squid_access_log-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Manual_Arch_Install" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Manual_Arch_Install">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5</span>Manual Arch Install</div>
+			</a>
+			
+			<ul id="toc-Manual_Arch_Install-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Intercepting_local_requests" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Intercepting_local_requests">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6</span>Intercepting local requests</div>
+			</a>
+			
+			<ul id="toc-Intercepting_local_requests-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../en/Package_Proxy_Cache.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="new mw-list-item"><a href="/index.php?title=Talk:Package_Proxy_Cache&amp;action=edit&amp;redlink=1" rel="discussion" title="Discussion about the content page (page does not exist) [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">English</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../en/Package_Proxy_Cache.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=Package_Proxy_Cache&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=Package_Proxy_Cache&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../en/Package_Proxy_Cache.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Package_Proxy_Cache&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Package_Proxy_Cache&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output">
+<div class="noprint archwiki-template-message">
+<p><a href="../File:Merge-arrows-2.png" class="image"><img alt="Merge-arrows-2.png" src="../File:Merge-arrows-2.png" decoding="async" width="48" height="48"></a><b>This article or section is a candidate for merging with <a href="../en/Pacman/Tips_and_tricks.html#Network_shared_pacman_cache" title="Pacman/Tips and tricks">Pacman/Tips_and_tricks#Network_shared_pacman_cache</a>.</b><a href="../File:Merge-arrows-2.png" class="image"><img alt="Merge-arrows-2.png" src="../File:Merge-arrows-2.png" decoding="async" width="48" height="48"></a></p>
+<div>
+<b>Notes:</b> Same topic (Discuss in <a rel="nofollow" class="external text" href="https://wiki.archlinux.org/title/Talk:Package_Proxy_Cache">Talk:Package Proxy Cache</a>)</div>
+</div>
+<p>If you want to install the same Arch packages over and over - e.g. for testing purposes - it could help if you would not have to get the packages every time from the internet. This article shows you how to setup a <a href="../en/Squid.html" title="Squid">Squid</a> proxy that only caches arch packages and can be used with aif/pacman/wget/etc with minimal configuration on the client system.
+</p>
+<mw:tocplace></mw:tocplace>
+<h2><span class="mw-headline" id="Install_Squid">Install Squid</span></h2>
+<p>Install <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=squid">squid</a></span>.
+</p>
+<h2><span class="mw-headline" id="Configure_Squid">Configure Squid</span></h2>
+<p>This is the minimum configuration to get squid cache arch packages.
+</p>
+<h3><span class="mw-headline" id="Cache_Rules">Cache Rules</span></h3>
+<p>Before defining these rules, remove/comment (if you do not need them) all the default refresh_patterns
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/squid/squid.conf </pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">refresh_pattern \.pkg\.tar\.   0       20%     4320      reload-into-ims
+refresh_pattern .              0       0%      0</pre>
+<p>That should define that *.pkg.tar.* gets cached, and anything else should not.
+</p>
+<div class="archwiki-template-box archwiki-template-box-tip">
+<strong>Tip:</strong> <a rel="nofollow" class="external free" href="http://www.squid-cache.org/Doc/config/refresh_pattern">http://www.squid-cache.org/Doc/config/refresh_pattern</a>
+</div>
+<h3><span class="mw-headline" id="Maximum_Filesize">Maximum Filesize</span></h3>
+<p>Objects larger than this size will NOT be saved on disk:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/squid/squid.conf </pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">maximum_object_size 256 MB</pre>
+<div class="archwiki-template-box archwiki-template-box-tip">
+<strong>Tip:</strong> <a rel="nofollow" class="external free" href="http://www.squid-cache.org/Doc/config/maximum_object_size">http://www.squid-cache.org/Doc/config/maximum_object_size</a>
+</div>
+<h3><span class="mw-headline" id="Cache_Directory">Cache Directory</span></h3>
+<p>Set the cache dir and its maximum size and subdirs:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/squid/squid.conf </pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">cache_dir aufs /var/cache/squid 10000 16 256</pre>
+<div class="archwiki-template-box archwiki-template-box-tip">
+<strong>Tip:</strong> <a rel="nofollow" class="external free" href="http://www.squid-cache.org/Doc/config/cache_dir">http://www.squid-cache.org/Doc/config/cache_dir</a>
+</div>
+<h3><span class="mw-headline" id="Shutdown_Lifetime">Shutdown Lifetime</span></h3>
+<p>Time to wait until all active client sockets are closed:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/squid/squid.conf </pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">shutdown_lifetime 1 seconds </pre>
+<div class="archwiki-template-box archwiki-template-box-tip">
+<strong>Tip:</strong> <a rel="nofollow" class="external free" href="http://www.squid-cache.org/Doc/config/shutdown_lifetime">http://www.squid-cache.org/Doc/config/shutdown_lifetime</a>
+</div>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> 
+<p>Every time you change the cache_dir path (and after fresh install), you need to (re)create this directory:
+</p>
+<pre># squid -z</pre>
+<p>and it could be helpful to check the configuration file before running squid:
+</p>
+<pre># squid -k parse</pre>
+</div>
+<h2><span class="mw-headline" id="Start_Squid">Start Squid</span></h2>
+<p>Just <a href="../en/Help:Reading.html#Control_of_systemd_units" class="mw-redirect" title="Start">start</a> <code>squid.service</code> or if squid is already running <a href="../en/Help:Reading.html#Control_of_systemd_units" class="mw-redirect" title="Restart">restart</a> it. 
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> 
+<p>It could be helpful to check the configuration file before running:
+</p>
+<pre># squid -k check</pre>
+</div>
+<h2><span class="mw-headline" id="Follow_Squid_access_log">Follow Squid access log</span></h2>
+<p>To see the access to squid:
+</p>
+<pre># tail -f /var/log/squid/access.log</pre>
+<p>You should see this for packages that are directed to original host:
+</p>
+<pre>...TCP_MISS/200...DIRECT...</pre>
+<p>and for packages that are delivered from the cache:
+</p>
+<pre>...TCP_HIT/200...NONE...</pre>
+<h2><span class="mw-headline" id="Manual_Arch_Install">Manual Arch Install</span></h2>
+<div class="noprint archwiki-template-message">
+<p><a href="../File:Tango-view-refresh-red.png" class="image"><img alt="Tango-view-refresh-red.png" src="../File:Tango-view-refresh-red.png" decoding="async" width="48" height="48"></a><b>This article or section is out of date.</b><a href="../File:Tango-view-refresh-red.png" class="image"><img alt="Tango-view-refresh-red.png" src="../File:Tango-view-refresh-red.png" decoding="async" width="48" height="48"></a></p>
+<div>
+<b>Reason:</b> Mentions <a href="../en/Arch_Linux.html#Arch_Install_Scripts" class="mw-redirect" title="AIF">AIF</a> (<code>/arch/setup</code>). (Discuss in <a rel="nofollow" class="external text" href="https://wiki.archlinux.org/title/Talk:Package_Proxy_Cache">Talk:Package Proxy Cache</a>)</div>
+</div>
+<p>Before running /arch/setup, add variables for your proxy. To do so, run on the console:
+</p>
+<pre># export http_proxy='http://<i>your_squid_machine_ip</i>:3128/'
+# export ftp_proxy='ftp://<i>your_squid_machine_ip</i>:3128/'
+</pre>
+<p>Now just use /arch/setup to normally install the system, and it should use your proxy. Watch the squid logs to verify this.
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> If you want to use the proxy settings in the installed system, you need to add the http_proxy and/or ftp_proxy variables in an appropriate place on the installed system. (like /etc/profile.d/proxy.sh)</div>
+<h2><span class="mw-headline" id="Intercepting_local_requests">Intercepting local requests</span></h2>
+<p>If you want all HTTP requests on local machine <i>automagically</i> go through squid, we first need to add an intercepting port for squid:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/squid/squid.conf </pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">http_port 3127 intercept</pre>
+<p>and iptables rules to redirect all (except the ones from squid) port 80 requests to squid:
+</p>
+<pre># iptables -t nat -A OUTPUT -p tcp --dport 80 -m owner --uid-owner proxy -j ACCEPT
+# iptables -t nat -A OUTPUT -p tcp --dport 80 -j REDIRECT --to-ports 3127</pre>
+<div class="archwiki-template-box archwiki-template-box-tip">
+<strong>Tip:</strong> <a rel="nofollow" class="external free" href="https://wiki.squid-cache.org/ConfigExamples/Intercept/LinuxLocalhost">https://wiki.squid-cache.org/ConfigExamples/Intercept/LinuxLocalhost</a>
+</div>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> 
+if you get random slow download speeds in vagrant/packer/virtualbox, try using <code>virtio</code> network device type.</div>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface">
+<div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="../en/Category:Package_management.html" title="Category:Package management">Package management</a></li></ul>
+</div>
+<div id="mw-hidden-catlinks" class="mw-hidden-catlinks mw-hidden-cats-hidden">Hidden categories: <ul>
+<li><a href="../en/Category:Pages_or_sections_flagged_with_Template:Merge.html" title="Category:Pages or sections flagged with Template:Merge">Pages or sections flagged with Template:Merge</a></li>
+<li><a href="../en/Category:Pages_or_sections_flagged_with_Template:Out_of_date.html" title="Category:Pages or sections flagged with Template:Out of date">Pages or sections flagged with Template:Out of date</a></li>
+</ul>
+</div>
+</div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=Package_Proxy_Cache&amp;oldid=779243">https://wiki.archlinux.org/index.php?title=Package_Proxy_Cache&amp;oldid=779243</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 21 May 2023, at 13:38.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

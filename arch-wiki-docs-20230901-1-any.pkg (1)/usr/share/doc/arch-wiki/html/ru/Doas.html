@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>doas (Русский) - ArchWiki</title>
+<link rel="stylesheet" href="../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Doas_Русский rootpage-Doas_Русский skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Установка" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Установка</div>
+			</a>
+			
+			<ul id="toc-Установка-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Использование" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#%D0%98%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Использование</div>
+			</a>
+			
+			<ul id="toc-Использование-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Настройка" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#%D0%9D%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>Настройка</div>
+			</a>
+			
+			<ul id="toc-Настройка-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Советы_и_рекомендации" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#%D0%A1%D0%BE%D0%B2%D0%B5%D1%82%D1%8B_%D0%B8_%D1%80%D0%B5%D0%BA%D0%BE%D0%BC%D0%B5%D0%BD%D0%B4%D0%B0%D1%86%D0%B8%D0%B8">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4</span>Советы и рекомендации</div>
+			</a>
+			
+				<button aria-controls="toc-Советы_и_рекомендации-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Советы и рекомендации subsection
+				</button>
+			
+			<ul id="toc-Советы_и_рекомендации-sublist" class="sidebar-toc-list">
+				<li id="toc-Запоминание" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#%D0%97%D0%B0%D0%BF%D0%BE%D0%BC%D0%B8%D0%BD%D0%B0%D0%BD%D0%B8%D0%B5">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.1</span>Запоминание</div>
+			</a>
+			
+			<ul id="toc-Запоминание-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Плавный_переход_от_sudo_к_doas" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#%D0%9F%D0%BB%D0%B0%D0%B2%D0%BD%D1%8B%D0%B9_%D0%BF%D0%B5%D1%80%D0%B5%D1%85%D0%BE%D0%B4_%D0%BE%D1%82_sudo_%D0%BA_doas">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.2</span>Плавный переход от sudo к doas</div>
+			</a>
+			
+			<ul id="toc-Плавный_переход_от_sudo_к_doas-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Автодополнение_в_bash" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#%D0%90%D0%B2%D1%82%D0%BE%D0%B4%D0%BE%D0%BF%D0%BE%D0%BB%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5_%D0%B2_bash">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.3</span>Автодополнение в bash</div>
+			</a>
+			
+			<ul id="toc-Автодополнение_в_bash-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../ru/Doas.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="new mw-list-item"><a href="/index.php?title=Talk:Doas_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)&amp;action=edit&amp;redlink=1" rel="discussion" title="Discussion about the content page (page does not exist) [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">русский</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../ru/Doas.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=Doas_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=Doas_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../ru/Doas.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Doas_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Doas_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="ru" dir="ltr">
+<div class="mw-parser-output">
+<p><span>
+</span>
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Состояние перевода:</strong> На этой странице представлен перевод статьи <a href="../en/Doas.html" title="Doas">doas</a>. Дата последней синхронизации: 26 января 2023. Вы можете <a href="../ru/ArchWiki:Translation_Team.html" title="ArchWiki:Translation Team (Русский)">помочь</a> синхронизировать перевод, если в английской версии произошли <a rel="nofollow" class="external text" href="https://wiki.archlinux.org/index.php?title=Doas&amp;diff=0&amp;oldid=765091">изменения</a>.</div>
+<div class="archwiki-template-meta-related-articles-start">
+<p class="mw-no-invert">Ссылки по теме</p>
+<ul>
+<li><a href="../ru/Users_and_groups.html" class="mw-redirect" title="Пользователи и группы">Пользователи и группы</a></li>
+<li><a href="../ru/Sudo.html" title="Sudo (Русский)">sudo (Русский)</a></li>
+<li><a href="../ru/List_of_applications/Security.html#%D0%9F%D0%BE%D0%B2%D1%8B%D1%88%D0%B5%D0%BD%D0%B8%D0%B5_%D0%BF%D1%80%D0%B8%D0%B2%D0%B8%D0%BB%D0%B5%D0%B3%D0%B8%D0%B9" class="mw-redirect" title="Список приложений/Безопасность">Список приложений/Безопасность#Повышение привилегий</a></li>
+</ul>
+</div>
+<p><a href="https://en.wikipedia.org/wiki/doas" class="extiw" title="wikipedia:doas">OpenDoas</a> — Linux-порт команды doas из OpenBSD, которая известна тем, что имеет значительно меньший размер по сравнению с <a href="../ru/Sudo.html" title="Sudo (Русский)">sudo</a>. Как и <i>sudo</i>, <i>doas</i> используется для выполнения команд от имени других пользователей.
+</p>
+<mw:tocplace></mw:tocplace>
+<h2>
+<span id=".D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0"></span><span class="mw-headline" id="Установка">Установка</span>
+</h2>
+<p><a href="../ru/Help:Reading.html#%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0_%D0%BF%D0%B0%D0%BA%D0%B5%D1%82%D0%BE%D0%B2" class="mw-redirect" title="Установите">Установите</a> пакет <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=opendoas">opendoas</a></span>.
+</p>
+<h2>
+<span id=".D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5"></span><span class="mw-headline" id="Использование">Использование</span>
+</h2>
+<p>Для запуска <i>doas</i> от имени обычного пользователя требуется предварительная <a href="#%D0%9D%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0">#Настройка</a>.
+</p>
+<p>Для использования <i>doas</i> просто добавьте <code>doas</code> и пробел перед нужной командой:
+</p>
+<pre>$ doas <i>команда</i>
+</pre>
+<p>Пример запуска <a href="../ru/Pacman.html" title="Pacman (Русский)">pacman</a>:
+</p>
+<pre>$ doas pacman -Syu
+</pre>
+<p>Запуск интерактивной облочки root:
+</p>
+<pre>$ doas -s
+</pre>
+<p>Смотрите <span class="plainlinks archwiki-template-man" title="$ man 1 doas"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/doas.1">doas(1)</a></span> для более подробной информации.
+</p>
+<h2>
+<span id=".D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0"></span><span class="mw-headline" id="Настройка">Настройка</span>
+</h2>
+<p>Вместе с <i>doas</i> устанавливается модуль <a href="../ru/PAM.html" title="PAM (Русский)">PAM</a>, но по умолчанию для него нет конфигурации или примеров.
+</p>
+<p>Чтобы разрешить членам группы <a href="../ru/Users_and_groups.html#%D0%A1%D0%BF%D0%B8%D1%81%D0%BE%D0%BA_%D0%B3%D1%80%D1%83%D0%BF%D0%BF" title="Users and groups (Русский)">wheel</a> выполнять команды от имени других пользователей, создайте файл настроек со следующим содержимым:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/doas.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">permit :wheel
+
+</pre>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Примечание:</strong> В конце файла обязательно должна быть пустая строка.</div>
+<p>Владелец и группа файла <code>/etc/doas.conf</code> должны быть <code>0</code>, права доступа к файлу должны быть установлены на <code>0400</code>:
+</p>
+<pre># chown -c root:root /etc/doas.conf
+# chmod -c 0400 /etc/doas.conf
+</pre>
+<p>Для проверки синтаксиса файла <code>/etc/doas.conf</code> выполните команду:
+</p>
+<pre># doas -C /etc/doas.conf &amp;&amp; echo "config ok" || echo "config error" 
+</pre>
+<div class="archwiki-template-box archwiki-template-box-warning">
+<strong>Важно:</strong> В файле <code>/etc/doas.conf</code> не должно быть синтаксических ошибок!</div>
+<p>Чтобы разрешить членам группы <code>plugdev</code> запускать <a href="../ru/S.M.A.R.T..html#smartctl" title="S.M.A.R.T. (Русский)">smartctl</a> от имени <a href="../ru/Users_and_groups.html#%D0%9E%D0%B1%D0%B7%D0%BE%D1%80" title="Users and groups (Русский)">root</a> без запроса пароля:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/doas.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">permit nopass :plugdev as root cmd /usr/bin/smartctl
+</pre>
+<p>Базовый синтаксис файла <code>/etc/doas.conf</code> такой:
+</p>
+<pre>permit|deny [опции] личность [as цель] [cmd команда [аргументы ...]]
+</pre>
+<p>Смотрите <span class="plainlinks archwiki-template-man" title="$ man 5 doas.conf"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/doas.conf.5">doas.conf(5)</a></span> для более подробной информации.
+</p>
+<h2>
+<span id=".D0.A1.D0.BE.D0.B2.D0.B5.D1.82.D1.8B_.D0.B8_.D1.80.D0.B5.D0.BA.D0.BE.D0.BC.D0.B5.D0.BD.D0.B4.D0.B0.D1.86.D0.B8.D0.B8"></span><span class="mw-headline" id="Советы_и_рекомендации">Советы и рекомендации</span>
+</h2>
+<h3>
+<span id=".D0.97.D0.B0.D0.BF.D0.BE.D0.BC.D0.B8.D0.BD.D0.B0.D0.BD.D0.B8.D0.B5"></span><span class="mw-headline" id="Запоминание">Запоминание</span>
+</h3>
+<p><i>doas</i> имеет функцию запоминания: после успешной аутентификации пользователя не запрашивать пароль снова в течение некоторого времени. По умолчанию она отключена, включить её можно с помощью опции <code>persist</code>:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/doas.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">permit persist :wheel
+</pre>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Примечание:</strong> Функция persist отключена по умолчанию и потому, что она является новой и потенциально опасной. В оригинальном <i>doas</i> для установки и сброса таймаутов используется API ядра. Этот API специфичен для OpenBSD, и его аналогов в других операционных системах нет. В качестве обходного пути функция persist реализована с использованием timestamp-файлов аналогично <i>sudo</i>.</div>
+<h3>
+<span id=".D0.9F.D0.BB.D0.B0.D0.B2.D0.BD.D1.8B.D0.B9_.D0.BF.D0.B5.D1.80.D0.B5.D1.85.D0.BE.D0.B4_.D0.BE.D1.82_sudo_.D0.BA_doas"></span><span class="mw-headline" id="Плавный_переход_от_sudo_к_doas">Плавный переход от sudo к doas</span>
+</h3>
+<p>Для плавного перехода от sudo к doas и для сохранения совместимости можно добавить:
+</p>
+<pre>alias sudo='doas'
+alias sudoedit='doas rnano'
+</pre>
+<p>Или сделать символическую ссылку (<span class="plainlinks archwiki-template-man" title="$ man 8 sudoedit"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/sudoedit.8">sudoedit(8)</a></span> не предоставляется):
+</p>
+<pre># ln -s $(which doas) /usr/bin/sudo
+</pre>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Примечание:</strong> По умолчанию <i>sudo</i> сохраняет некоторые переменные окружения, а <i>doas</i> — нет, в частности, XAUTHORITY, LANG и LC_ALL. Это означает, что вы не сможете запустить графические приложения под X или получить доступ к локали пользователя без дополнительной настройки. Например, чтобы разрешить членам группы <i>wheel</i> запускать графические приложения и получать доступ к локали пользователя, используйте опцию setenv:
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/doas.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">permit setenv { XAUTHORITY LANG LC_ALL } :wheel
+</pre>
+</div>
+<h3>
+<span id=".D0.90.D0.B2.D1.82.D0.BE.D0.B4.D0.BE.D0.BF.D0.BE.D0.BB.D0.BD.D0.B5.D0.BD.D0.B8.D0.B5_.D0.B2_bash"></span><span class="mw-headline" id="Автодополнение_в_bash">Автодополнение в bash</span>
+</h3>
+<p>По умолчанию Bash использует автодополнение по Tab только для файлов и каталогов внутри текущего или указанного каталога. Чтобы указать Bash заполнять аргументы, как если бы они были отдельными командами (также используя настройки автодополнения других команд), можно добавить следующее в пользовательский <code>.bashrc</code> или в общесистемный <code>/etc/bash.bashrc</code>:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">~/.bashrc</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">complete -cf doas
+</pre>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../Special:Categories.html" title="Special:Categories">Categories</a>: <ul>
+<li><a href="../ru/Category:Security.html" title="Category:Security (Русский)">Security (Русский)</a></li>
+<li><a href="../ru/Category:Commands.html" title="Category:Commands (Русский)">Commands (Русский)</a></li>
+</ul>
+</div></div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=Doas_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)&amp;oldid=765099">https://wiki.archlinux.org/index.php?title=Doas_(Русский)&amp;oldid=765099</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 26 January 2023, at 09:08.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

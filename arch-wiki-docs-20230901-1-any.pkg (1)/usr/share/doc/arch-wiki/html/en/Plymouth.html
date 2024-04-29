@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>Plymouth - ArchWiki</title>
+<link rel="stylesheet" href="../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Plymouth rootpage-Plymouth skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Preparation" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#Preparation">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Preparation</div>
+			</a>
+			
+			<ul id="toc-Preparation-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Installation" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#Installation">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Installation</div>
+			</a>
+			
+				<button aria-controls="toc-Installation-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Installation subsection
+				</button>
+			
+			<ul id="toc-Installation-sublist" class="sidebar-toc-list">
+				<li id="toc-mkinitcpio" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#mkinitcpio">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.1</span>mkinitcpio</div>
+			</a>
+			
+			<ul id="toc-mkinitcpio-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-dracut" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#dracut">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.2</span>dracut</div>
+			</a>
+			
+			<ul id="toc-dracut-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Configuration" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#Configuration">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>Configuration</div>
+			</a>
+			
+				<button aria-controls="toc-Configuration-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Configuration subsection
+				</button>
+			
+			<ul id="toc-Configuration-sublist" class="sidebar-toc-list">
+				<li id="toc-Changing_the_theme" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Changing_the_theme">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.1</span>Changing the theme</div>
+			</a>
+			
+			<ul id="toc-Changing_the_theme-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Install_new_themes" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Install_new_themes">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.2</span>Install new themes</div>
+			</a>
+			
+			<ul id="toc-Install_new_themes-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Show_delay" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Show_delay">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.3</span>Show delay</div>
+			</a>
+			
+			<ul id="toc-Show_delay-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-HiDPI" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#HiDPI">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.4</span>HiDPI</div>
+			</a>
+			
+			<ul id="toc-HiDPI-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Tips_and_tricks" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#Tips_and_tricks">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4</span>Tips and tricks</div>
+			</a>
+			
+				<button aria-controls="toc-Tips_and_tricks-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Tips and tricks subsection
+				</button>
+			
+			<ul id="toc-Tips_and_tricks-sublist" class="sidebar-toc-list">
+				<li id="toc-Show_boot_messages" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Show_boot_messages">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.1</span>Show boot messages</div>
+			</a>
+			
+			<ul id="toc-Show_boot_messages-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Smooth_transition" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Smooth_transition">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.2</span>Smooth transition</div>
+			</a>
+			
+			<ul id="toc-Smooth_transition-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Preview_themes" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Preview_themes">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.3</span>Preview themes</div>
+			</a>
+			
+			<ul id="toc-Preview_themes-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Change_background_image" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Change_background_image">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.4</span>Change background image</div>
+			</a>
+			
+			<ul id="toc-Change_background_image-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Missing_BGRT_image" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Missing_BGRT_image">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.5</span>Missing BGRT image</div>
+			</a>
+			
+			<ul id="toc-Missing_BGRT_image-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Slow_down_boot_to_show_the_full_animation" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Slow_down_boot_to_show_the_full_animation">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.6</span>Slow down boot to show the full animation</div>
+			</a>
+			
+			<ul id="toc-Slow_down_boot_to_show_the_full_animation-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Troubleshooting" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#Troubleshooting">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5</span>Troubleshooting</div>
+			</a>
+			
+				<button aria-controls="toc-Troubleshooting-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Troubleshooting subsection
+				</button>
+			
+			<ul id="toc-Troubleshooting-sublist" class="sidebar-toc-list">
+				<li id="toc-Disable_with_kernel_parameters" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Disable_with_kernel_parameters">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5.1</span>Disable with kernel parameters</div>
+			</a>
+			
+			<ul id="toc-Disable_with_kernel_parameters-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Debugging" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Debugging">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5.2</span>Debugging</div>
+			</a>
+			
+			<ul id="toc-Debugging-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Password_prompt_does_not_update" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Password_prompt_does_not_update">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5.3</span>Password prompt does not update</div>
+			</a>
+			
+			<ul id="toc-Password_prompt_does_not_update-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Display_is_not_centered" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Display_is_not_centered">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5.4</span>Display is not centered</div>
+			</a>
+			
+			<ul id="toc-Display_is_not_centered-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-See_also" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#See_also">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6</span>See also</div>
+			</a>
+			
+			<ul id="toc-See_also-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../en/Plymouth.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="mw-list-item"><a href="../en/Talk:Plymouth.html" rel="discussion" title="Discussion about the content page [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">English</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../en/Plymouth.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=Plymouth&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=Plymouth&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../en/Plymouth.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Plymouth&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Plymouth&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output">
+<div class="archwiki-template-meta-related-articles-start">
+<p class="mw-no-invert">Related articles</p>
+<ul>
+<li><a href="../en/Silent_boot.html" title="Silent boot">Silent boot</a></li>
+</ul>
+</div>
+<p><a rel="nofollow" class="external text" href="https://www.freedesktop.org/wiki/Software/Plymouth">Plymouth</a> is a project from Fedora and now listed among the <a rel="nofollow" class="external text" href="https://www.freedesktop.org/wiki/Software/#graphicsdriverswindowsystemsandsupportinglibraries">freedesktop.org's official resources</a> providing a flicker-free graphical boot process. It relies on <a href="../en/Kernel_mode_setting.html" title="Kernel mode setting">kernel mode setting</a> (KMS) to set the native resolution of the display as early as possible, then provides an eye-candy splash screen leading all the way up to the login manager.
+</p>
+<mw:tocplace></mw:tocplace>
+<h2><span class="mw-headline" id="Preparation">Preparation</span></h2>
+<p><i>Plymouth</i> primarily uses KMS to display graphics, but on UEFI systems it can utilize the EFI framebuffer.
+</p>
+<p>If you cannot use KMS, e.g. because you are using a proprietary driver, or if you do not want to use the EFI framebuffer, consider using <a href="../en/Uvesafb.html" title="Uvesafb">Uvesafb</a> as it works with widescreen resolutions. If you have neither KMS nor a framebuffer, <i>Plymouth</i> will fall back to text-mode.
+</p>
+<h2><span class="mw-headline" id="Installation">Installation</span></h2>
+<p>Plymouth is available with the stable package <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=plymouth">plymouth</a></span>. For the development version, use <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/plymouth-git/">plymouth-git</a></span><sup><small>AUR</small></sup>.
+</p>
+<p>By default, Plymouth logs the boot messages into <code>/var/log/boot.log</code>, and does not show the graphical splash screen.
+</p>
+<ul>
+<li>If you want to see the splash screen, append <code>splash</code> to the <a href="../en/Kernel_parameters.html" title="Kernel parameters">kernel parameters</a>.</li>
+<li>If you want <a href="../en/Silent_boot.html" title="Silent boot">silent boot</a>, append <code>quiet</code> too.</li>
+<li>If you want to disable the logging, append <code>plymouth.nolog</code>.</li>
+</ul>
+<p>To start Plymouth on early boot, you must configure your <a href="../en/Arch_boot_process.html#initramfs" class="mw-redirect" title="Initramfs">initramfs</a> generator to create images including Plymouth.
+</p>
+<h3><span class="mw-headline" id="mkinitcpio">mkinitcpio</span></h3>
+<p>Add <code>plymouth</code> to the <code>HOOKS</code> array in <a href="../en/Mkinitcpio.html#Configuration" class="mw-redirect" title="Mkinitcpio.conf">mkinitcpio.conf</a>.
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/mkinitcpio.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">HOOKS=(... plymouth ...)</pre>
+<h3><span class="mw-headline" id="dracut">dracut</span></h3>
+<p>After installing Plymouth, <a href="../en/Dracut.html" title="Dracut">dracut</a> will automatically detect it and add it to your initramfs images. If autodetection fails, you can force dracut to include Plymouth by adding the following line to your dracut configuration:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/dracut.conf.d/myflags.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">add_dracutmodules+=" plymouth "</pre>
+<h2><span class="mw-headline" id="Configuration">Configuration</span></h2>
+<p>Plymouth can be configured in file <code>/etc/plymouth/plymouthd.conf</code>. You can see the default values in <code>/usr/share/plymouth/plymouthd.defaults</code>.
+</p>
+<h3><span class="mw-headline" id="Changing_the_theme">Changing the theme</span></h3>
+<p>Plymouth comes with a selection of themes:
+</p>
+<ol>
+<li>
+<b>BGRT</b>: A variation of Spinner that keeps the OEM logo if available (BGRT stands for Boot Graphics Resource Table)</li>
+<li>
+<b>Fade-in</b>: "Simple theme that fades in and out with shimmering stars"</li>
+<li>
+<b>Glow</b>: "Corporate theme with pie chart boot progress followed by a glowing emerging logo"</li>
+<li>
+<b>Script</b>: "Script example plugin" (Despite the description seems to be a quite nice Arch logo theme)</li>
+<li>
+<b>Solar</b>: "Space theme with violent flaring blue star"</li>
+<li>
+<b>Spinner</b>: "Simple theme with a loading spinner"</li>
+<li>
+<b>Spinfinity</b>: "Simple theme that shows a rotating infinity sign in the center of the screen"</li>
+<li>
+<b>Tribar</b>: "Text mode theme with tricolor progress bar"</li>
+<li><i>(<b>Text</b>: "Text mode theme with tricolor progress bar")</i></li>
+<li><i>(<b>Details</b>: "Verbose fallback theme")</i></li>
+</ol>
+<p>By default, the <b>bgrt</b> theme is selected. The theme can be changed editing the configuration file, for example:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/plymouth/plymouthd.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">[Daemon]
+Theme=fade-in</pre>
+<p>or by this command:
+</p>
+<pre># plymouth-set-default-theme -R <i>theme</i>
+</pre>
+<p>Every time a theme is changed, the <code>initrd</code> must be rebuilt. The <code>-R</code> option ensures that it is rebuilt (otherwise <a href="../en/Mkinitcpio.html#Image_creation_and_activation" class="mw-redirect" title="Regenerate the initramfs">regenerate the initramfs</a> manually).
+</p>
+<h3><span class="mw-headline" id="Install_new_themes">Install new themes</span></h3>
+<p>You can install other themes from <a href="../en/Arch_User_Repository.html" class="mw-redirect" title="AUR">AUR</a>. <a rel="nofollow" class="external autonumber" href="https://aur.archlinux.org/packages?K=plymouth-theme-">[1]</a>, alternatively 
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=plymouth-kcm">plymouth-kcm</a></span> provides integration into KDE Plasma's settings and offers themes not available on the <a href="../en/Arch_User_Repository.html" class="mw-redirect" title="AUR">AUR</a>.
+</p>
+<p>All currently installed themes can be listed by using this command:
+</p>
+<pre>$ plymouth-set-default-theme -l
+</pre>
+<p>or:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">$ ls /usr/share/plymouth/themes</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">bgrt  details  fade-in  glow  script  solar  spinfinity  spinner  text  tribar
+</pre>
+<h3><span class="mw-headline" id="Show_delay">Show delay</span></h3>
+<p>Plymouth has a configuration option to delay the splash screen:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/plymouth/plymouthd.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">[Daemon]
+ShowDelay=5</pre>
+<p>On systems that boot quickly, you may only see a flicker of your splash theme before your DM or login prompt is ready. You can set <code>ShowDelay</code> to an interval (in seconds) longer than your boot time to prevent this flicker and only show a blank screen. The default is 0 seconds, so you should not need to change this to a different value to see your splash earlier during boot.
+</p>
+<h3><span class="mw-headline" id="HiDPI">HiDPI</span></h3>
+<p>Edit the configuration file:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/plymouth/plymouthd.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">DeviceScale=<i>an-integer-scaling-factor</i></pre> 
+<p>and rebuild the initrd.
+</p>
+<h2><span class="mw-headline" id="Tips_and_tricks">Tips and tricks</span></h2>
+<h3><span class="mw-headline" id="Show_boot_messages">Show boot messages</span></h3>
+<p>During boot you can switch to boot messages by pressing the <code>Esc</code> key.
+</p>
+<h3><span class="mw-headline" id="Smooth_transition">Smooth transition</span></h3>
+<p><a href="../en/GDM.html" title="GDM">GDM</a> supports <i>smooth transition</i> out of the box.
+</p>
+<p>For other display managers you can get a nearly smooth transition with the following <a href="../en/Systemd.html#Drop-in_files" class="mw-redirect" title="Drop-in snippet">drop-in snippet</a> for <code>display-manager.service</code>:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/systemd/system/display-manager.service.d/plymouth.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">[Unit]
+Conflicts=plymouth-quit.service
+After=plymouth-quit.service rc-local.service plymouth-start.service systemd-user-sessions.service
+OnFailure=plymouth-quit.service
+
+[Service]
+ExecStartPre=-/usr/bin/plymouth deactivate
+ExecStartPost=-/usr/bin/sleep 30
+ExecStartPost=-/usr/bin/plymouth quit --retain-splash</pre>
+<h3><span class="mw-headline" id="Preview_themes">Preview themes</span></h3>
+<p>Themes can be previewed without rebuilding initrd, press <code>Ctrl+Alt+F6</code> to switch to a text terminal, log in as root and type:
+</p>
+<pre># plymouthd
+# plymouth --show-splash
+</pre>
+<p>To quit the preview, press <code>Ctrl+Alt+F6</code> again and type:
+</p>
+<pre># plymouth --quit
+</pre>
+<h3><span class="mw-headline" id="Change_background_image">Change background image</span></h3>
+<p>You can add a background image for two-step-based themes (such as spinner and bgrt). Just place your desired image into <code>/usr/share/plymouth/themes/spinner/background-tile.png</code>. Do not forget to regenerate the initrd once the theme changed.
+</p>
+<h3><span class="mw-headline" id="Missing_BGRT_image">Missing BGRT image</span></h3>
+<p>In case you are using the BGRT theme but the UEFI does not provide a vendor logo, you can place a fallback image into <code>/usr/share/plymouth/themes/spinner/bgrt-fallback.png</code> to show it instead.
+</p>
+<p>
+Alternatively, set the following to keep the firmware background: </p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/plymouth/plymouthd.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">UseFirmwareBackground=true</pre> 
+<h3><span class="mw-headline" id="Slow_down_boot_to_show_the_full_animation">Slow down boot to show the full animation</span></h3>
+<p>On systems with a very fast boot time, it might be necessary to add a delay to <code>plymouth-quit.service</code> with a <a href="../en/Systemd.html#Drop-in_files" class="mw-redirect" title="Drop-in snippet">drop-in snippet</a> containing <code>ExecStartPre=/usr/bin/sleep 5</code> if showing the whole animation is desired. See <a rel="nofollow" class="external text" href="https://www.reddit.com/r/archlinux/comments/u5fjbi/how_do_i_make_my_boot_time_slower/.compact">this reddit post</a>.
+</p>
+<h2><span class="mw-headline" id="Troubleshooting">Troubleshooting</span></h2>
+<h3><span class="mw-headline" id="Disable_with_kernel_parameters">Disable with kernel parameters</span></h3>
+<p>If you experience problems during boot, you can temporary disable Plymouth with the following <a href="../en/Kernel_parameters.html" title="Kernel parameters">kernel parameters</a>:
+</p>
+<pre>plymouth.enable=0 disablehooks=plymouth
+</pre>
+<h3><span class="mw-headline" id="Debugging">Debugging</span></h3>
+<p>To write debug output into <code>/var/log/plymouth-debug.log</code>, add the following kernel parameter:
+</p>
+<pre>plymouth.debug
+</pre>
+<h3><span class="mw-headline" id="Password_prompt_does_not_update">Password prompt does not update</span></h3>
+<p>When using <code>systemd</code> instead of <code>udev</code> hooks in <a href="../en/Mkinitcpio.html" title="Mkinitcpio">Mkinitcpio</a>, the password prompt may not update on themes that handle it via Plymouth scripting.
+</p>
+<p>You can try switching to development version <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/plymouth-git/">plymouth-git</a></span><sup><small>AUR</small></sup> or using substitutes from <a href="../en/Mkinitcpio.html#Common_hooks" title="Mkinitcpio">Mkinitcpio#Common hooks</a>.
+</p>
+<h3><span class="mw-headline" id="Display_is_not_centered">Display is not centered</span></h3>
+<p>Certain themes may have trouble centering the display when there is more than one monitor enabled during boot.
+</p>
+<p>You can use <a href="../en/Kernel_mode_setting.html#Forcing_modes" title="Kernel mode setting">Kernel mode setting#Forcing modes</a> to disable specific monitors.
+</p>
+<h2><span class="mw-headline" id="See_also">See also</span></h2>
+<ul>
+<li><a href="https://fedoraproject.org/wiki/Features/BetterStartup" class="extiw" title="fedora:Features/BetterStartup">Original specification</a></li>
+<li><a rel="nofollow" class="external text" href="https://bbs.archlinux.org/viewtopic.php?id=81406">Related forum thread</a></li>
+</ul>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="../en/Category:Bootsplash.html" title="Category:Bootsplash">Bootsplash</a></li></ul>
+</div></div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=Plymouth&amp;oldid=785007">https://wiki.archlinux.org/index.php?title=Plymouth&amp;oldid=785007</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 10 August 2023, at 16:08.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

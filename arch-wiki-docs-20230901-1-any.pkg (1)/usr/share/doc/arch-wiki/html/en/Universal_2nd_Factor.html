@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>Universal 2nd Factor - ArchWiki</title>
+<link rel="stylesheet" href="../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Universal_2nd_Factor rootpage-Universal_2nd_Factor skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Authentication_for_websites" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Authentication_for_websites">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Authentication for websites</div>
+			</a>
+			
+				<button aria-controls="toc-Authentication_for_websites-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Authentication for websites subsection
+				</button>
+			
+			<ul id="toc-Authentication_for_websites-sublist" class="sidebar-toc-list">
+				<li id="toc-Firefox" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Firefox">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.1</span>Firefox</div>
+			</a>
+			
+			<ul id="toc-Firefox-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Chromium/Chrome" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Chromium/Chrome">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.2</span>Chromium/Chrome</div>
+			</a>
+			
+			<ul id="toc-Chromium/Chrome-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Authentication_for_user_sessions" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Authentication_for_user_sessions">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Authentication for user sessions</div>
+			</a>
+			
+				<button aria-controls="toc-Authentication_for_user_sessions-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Authentication for user sessions subsection
+				</button>
+			
+			<ul id="toc-Authentication_for_user_sessions-sublist" class="sidebar-toc-list">
+				<li id="toc-Installing_the_PAM_module" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Installing_the_PAM_module">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.1</span>Installing the PAM module</div>
+			</a>
+			
+			<ul id="toc-Installing_the_PAM_module-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Adding_a_key" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Adding_a_key">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.2</span>Adding a key</div>
+			</a>
+			
+			<ul id="toc-Adding_a_key-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Passwordless_sudo" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Passwordless_sudo">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.3</span>Passwordless sudo</div>
+			</a>
+			
+			<ul id="toc-Passwordless_sudo-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-GDM_login" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#GDM_login">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.4</span>GDM login</div>
+			</a>
+			
+			<ul id="toc-GDM_login-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Other_authentication_methods" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Other_authentication_methods">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.5</span>Other authentication methods</div>
+			</a>
+			
+			<ul id="toc-Other_authentication_methods-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Troubleshooting" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Troubleshooting">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.6</span>Troubleshooting</div>
+			</a>
+			
+			<ul id="toc-Troubleshooting-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-OpenSSH" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#OpenSSH">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>OpenSSH</div>
+			</a>
+			
+			<ul id="toc-OpenSSH-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Data-at-rest_encryption_with_LUKS" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Data-at-rest_encryption_with_LUKS">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4</span>Data-at-rest encryption with LUKS</div>
+			</a>
+			
+				<button aria-controls="toc-Data-at-rest_encryption_with_LUKS-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Data-at-rest encryption with LUKS subsection
+				</button>
+			
+			<ul id="toc-Data-at-rest_encryption_with_LUKS-sublist" class="sidebar-toc-list">
+				<li id="toc-Non-root_partitions" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Non-root_partitions">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.1</span>Non-root partitions</div>
+			</a>
+			
+			<ul id="toc-Non-root_partitions-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../en/Universal_2nd_Factor.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="mw-list-item"><a href="../en/Talk:Universal_2nd_Factor.html" rel="discussion" title="Discussion about the content page [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">English</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../en/Universal_2nd_Factor.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=Universal_2nd_Factor&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=Universal_2nd_Factor&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../en/Universal_2nd_Factor.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Universal_2nd_Factor&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Universal_2nd_Factor&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output">
+<p><a href="https://en.wikipedia.org/wiki/Universal_2nd_Factor" class="extiw" title="wikipedia:Universal 2nd Factor">Universal 2nd Factor (U2F)</a> is an open standard that strengthens and simplifies two-factor authentication (2FA) using specialized USB or NFC devices based on similar security technology found in smart cards.
+</p>
+<p>While initially developed by Google and Yubico, with contribution from NXP Semiconductors, the standard is now hosted by the FIDO Alliance.
+</p>
+<p>For all articles on U2F and U2F-devices see: <a href="../en/Category:Universal_2nd_Factor.html" title="Category:Universal 2nd Factor">Category:Universal 2nd Factor</a>.
+</p>
+<mw:tocplace></mw:tocplace>
+<h2><span class="mw-headline" id="Authentication_for_websites">Authentication for websites</span></h2>
+<p>U2F is supported by major sites like Google, Facebook, Twitter, or GitHub. Check out <a rel="nofollow" class="external text" href="https://2fa.directory/">2fa.directory</a> or <a rel="nofollow" class="external text" href="https://www.dongleauth.com/">dongleauth.com</a> to find other websites and links to setup documentation. For all browsers which support it, likely the only action required is to install <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=libfido2">libfido2</a></span>. Yubico offers a <a rel="nofollow" class="external text" href="https://demo.yubico.com/">demo page</a> for testing.
+</p>
+<h3><span class="mw-headline" id="Firefox">Firefox</span></h3>
+<p><a href="../en/Firefox/Tweaks.html#Fido_U2F_authentication" title="Firefox/Tweaks">Firefox/Tweaks#Fido U2F authentication</a>
+</p>
+<h3>
+<span id="Chromium.2FChrome"></span><span class="mw-headline" id="Chromium/Chrome">Chromium/Chrome</span>
+</h3>
+<p><a href="../en/Chromium.html#U2F_authentication" class="mw-redirect" title="Chromium/Tips and tricks">Chromium/Tips and tricks#U2F authentication</a>
+</p>
+<h2><span class="mw-headline" id="Authentication_for_user_sessions">Authentication for user sessions</span></h2>
+<p>Yubico, the company creating the YubiKey, develops an U2F <a href="../en/PAM.html" title="PAM">PAM</a> module. It can be used to act as a second factor during login or replace the need for a password entirely.
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong>  Despite the mentions of Yubico/YubiKey in this document, <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=pam-u2f">pam-u2f</a></span> should also support any u2f and/or fido2 compliant keys. </div>
+<h3><span class="mw-headline" id="Installing_the_PAM_module">Installing the PAM module</span></h3>
+<p>The module is part of the package <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=pam-u2f">pam-u2f</a></span>.
+</p>
+<h3><span class="mw-headline" id="Adding_a_key">Adding a key</span></h3>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong>  The folder name below is the default location. It can be changed for <b>single user</b> implementations by moving the file to your preferred directory and appending <code>authfile=/path/to/u2f_keys</code> to the end of the line for pam_u2f.so. This is also useful if you wish to move <code>u2f_keys</code> to a protected part of the file-system. For multi-user implementations use a central mapping file as explained in the <a rel="nofollow" class="external text" href="https://developers.yubico.com/pam-u2f/">official documentation of pam-u2f</a>. </div>
+<p>Keys need to be added with the tool <code>pamu2fcfg</code>:
+</p>
+<pre>$ mkdir ~/.config/Yubico
+$ pamu2fcfg -o pam://hostname -i pam://hostname &gt; ~/.config/Yubico/u2f_keys
+</pre>
+<p>After entering your PIN, click the button of your U2F key to confirm the key.
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> If the hostname of your system changes, e.g. because of DHCP in different networks, you would be unable to login. In order to prevent that, it is recommended to specify the above mentioned options and replace <code>hostname</code> with the actual hostname.</div>
+<p>If you own more than 1 key, append the next ones with
+</p>
+<pre>$ pamu2fcfg -o pam://hostname -i pam://hostname -n &gt;&gt; ~/.config/Yubico/u2f_keys
+</pre>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> The <code>-n</code> in the above command is required. It will omit the username portion of the generated line as required in the spec for subsequent entries for the same user. Multiple lines with the same username will cause unpredictable behaviour in PAM.</div>
+<h3><span class="mw-headline" id="Passwordless_sudo">Passwordless sudo</span></h3>
+<div class="archwiki-template-box archwiki-template-box-warning">
+<strong>Warning:</strong> Before making any changes to your configuration, start a separate shell with root permissions (e.g. <code>sudo -s</code>). This way you can revert any changes if something goes wrong.</div>
+<p>Add
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/pam.d/sudo</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">auth            sufficient      pam_u2f.so cue origin=pam://hostname appid=pam://hostname</pre>
+<p>as the first line. Be sure to replace the <code>hostname</code> as mentioned above. Then create a new terminal and type <code>sudo ls</code>. Your key's LED should flash and after clicking it the command is executed. The option <code>cue</code> is set to provide indication of what to do, i.e. <code>Please touch the device</code>.
+</p>
+<p>In order to make the token the only method of sudo (ie. no password fallback) you will need to comment out the other auth methods present. This is usually just the default system-auth include. 
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/pam.d/sudo</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">#auth           include         system-auth
+</pre>
+<p>You should also change <code>sufficient</code> to <code>required</code> in the above pam_u2f.so line. 
+</p>
+<div class="archwiki-template-box archwiki-template-box-warning">
+<strong>Warning:</strong> This will mean that no user on the system will be able to sudo without a U2F token configured.</div>
+<h3><span class="mw-headline" id="GDM_login">GDM login</span></h3>
+<p>Add:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/pam.d/gdm-password</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">auth            required      pam_u2f.so nouserok origin=pam://hostname appid=pam://hostname
+</pre>
+<p>after the existing <code>auth</code> lines. Please note the use of the <code>nouserok</code> option which allows the rule to fail if the user did not configure a key. This way setups with multiple users where only some of them use a U2F key are supported.
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> This method will not work with encrypted home partitions because the decryption is not done before the login process completed, so the <code>u2f_keys</code> file is unavailable. In this case use a central mapping file as explained in the <a rel="nofollow" class="external text" href="https://developers.yubico.com/pam-u2f/">official documentation of pam-u2f</a>.</div>
+<h3><span class="mw-headline" id="Other_authentication_methods">Other authentication methods</span></h3>
+<p>Enable the PAM module for other services like explained above. For example, to secure the screensaver of <a href="../en/Cinnamon.html" title="Cinnamon">Cinnamon</a>, edit <code>/etc/pam.d/cinnamon-screensaver</code>.
+</p>
+<h3><span class="mw-headline" id="Troubleshooting">Troubleshooting</span></h3>
+<p>If you managed to lock yourself out of the system, boot into recovery mode or from a USB pen drive. Then revert the changes in the PAM configuration and reboot.
+</p>
+<p>In case the pam-u2f module silently fails, add <i>debug</i> keyword to the auth line in a file in <code>/etc/pam.d/</code>.
+</p>
+<h2><span class="mw-headline" id="OpenSSH">OpenSSH</span></h2>
+<p><a href="../en/OpenSSH.html" title="OpenSSH">OpenSSH</a> ≥8.2 supports FIDO/U2F hardware tokens natively, see <a href="../en/SSH_keys.html#FIDO/U2F" title="SSH keys">SSH keys#FIDO/U2F</a>.
+</p>
+<h2><span class="mw-headline" id="Data-at-rest_encryption_with_LUKS">Data-at-rest encryption with LUKS</span></h2>
+<div class="noprint archwiki-template-message">
+<p><a href="../File:Tango-go-next.png" class="image"><img alt="Tango-go-next.png" src="../File:Tango-go-next.png" decoding="async" width="48" height="48"></a><b>This article or section is a candidate for moving to <a href="/index.php?title=Systemd-cryptenroll&amp;action=edit&amp;redlink=1" class="new" title="Systemd-cryptenroll (page does not exist)">systemd-cryptenroll</a>.</b><a href="../File:Tango-go-next.png" class="image"><img alt="Tango-go-next.png" src="../File:Tango-go-next.png" decoding="async" width="48" height="48"></a></p>
+<div>
+<b>Notes:</b> <i>systemd-cryptenroll</i> supports more than just FIDO. (Discuss in <a href="../en/Talk:Trusted_Platform_Module.html#move_systemd-cryptenroll_to_separate_article" title="Talk:Trusted Platform Module">Talk:Trusted Platform Module#move systemd-cryptenroll to separate article</a>)</div>
+</div>
+<p>Since version 248, <a href="../en/Systemd.html" title="Systemd">systemd</a> can be use to unlock a <a href="../en/Dm-crypt/Encrypting_an_entire_system.html" title="Dm-crypt/Encrypting an entire system">LUKS partition</a> using a FIDO2 key.
+</p>
+<p>First, you will need to setup your <code>/etc/crypttab</code> file (see below), or customize your <a href="../en/Arch_boot_process.html#initramfs" class="mw-redirect" title="Initramfs">initramfs</a> if you wish to unlock your root partition. The full procedure is similar to the use of a TPM chip for unlocking. See <a href="../en/Trusted_Platform_Module.html#systemd-cryptenroll" title="Trusted Platform Module">Trusted Platform Module#systemd-cryptenroll</a>.
+</p>
+<p>To register the key, you will need to use the <i>systemd-cryptenroll</i> utility. First, run the following command to list your detected keys: 
+</p>
+<pre>$ systemd-cryptenroll --fido2-device=list
+</pre>
+<p>Then you can register the key in a LUKS slot, specifying <code>auto</code> value (or path to the FIDO2 device such as <code>/dev/hidrawX</code> if you have multiple):
+</p>
+<pre>$ systemd-cryptenroll --fido2-device=auto /dev/sd<i>X</i>
+</pre>
+<h3><span class="mw-headline" id="Non-root_partitions">Non-root partitions</span></h3>
+<p>For a non-root data partition the <a href="../en/Dm-crypt/System_configuration.html#crypttab" class="mw-redirect" title="Crypttab">crypttab</a> would look like this:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/crypttab</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">data /dev/sd<i>X</i> none fido2-device=auto
+</pre>
+<p>This should also work if your encrypted partition is a logical volume managed under <a href="../en/LVM.html" title="LVM">LVM</a>:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/crypttab</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">data /dev/vg1/data none fido2-device=auto
+</pre>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface">
+<div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="../en/Category:Universal_2nd_Factor.html" title="Category:Universal 2nd Factor">Universal 2nd Factor</a></li></ul>
+</div>
+<div id="mw-hidden-catlinks" class="mw-hidden-catlinks mw-hidden-cats-hidden">Hidden category: <ul><li><a href="../en/Category:Pages_or_sections_flagged_with_Template:Move.html" title="Category:Pages or sections flagged with Template:Move">Pages or sections flagged with Template:Move</a></li></ul>
+</div>
+</div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=Universal_2nd_Factor&amp;oldid=786451">https://wiki.archlinux.org/index.php?title=Universal_2nd_Factor&amp;oldid=786451</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 29 August 2023, at 19:30.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

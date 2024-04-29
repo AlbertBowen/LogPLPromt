@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>HTTP tunneling - ArchWiki</title>
+<link rel="stylesheet" href="../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-HTTP_tunneling rootpage-HTTP_tunneling skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Creating_the_tunnel" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Creating_the_tunnel">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Creating the tunnel</div>
+			</a>
+			
+				<button aria-controls="toc-Creating_the_tunnel-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Creating the tunnel subsection
+				</button>
+			
+			<ul id="toc-Creating_the_tunnel-sublist" class="sidebar-toc-list">
+				<li id="toc-Using_corkscrew_and_HTTP_CONNECT" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Using_corkscrew_and_HTTP_CONNECT">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.1</span>Using corkscrew and HTTP CONNECT</div>
+			</a>
+			
+			<ul id="toc-Using_corkscrew_and_HTTP_CONNECT-sublist" class="sidebar-toc-list">
+				<li id="toc-Tunneling_Git" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Tunneling_Git">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.1.1</span>Tunneling Git</div>
+			</a>
+			
+			<ul id="toc-Tunneling_Git-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Using_httptunnel" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Using_httptunnel">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.2</span>Using httptunnel</div>
+			</a>
+			
+			<ul id="toc-Using_httptunnel-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Using_proxytunnel" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Using_proxytunnel">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.3</span>Using proxytunnel</div>
+			</a>
+			
+			<ul id="toc-Using_proxytunnel-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Using_openbsd-netcat" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Using_openbsd-netcat">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.4</span>Using openbsd-netcat</div>
+			</a>
+			
+			<ul id="toc-Using_openbsd-netcat-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Using_the_tunnel" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Using_the_tunnel">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Using the tunnel</div>
+			</a>
+			
+			<ul id="toc-Using_the_tunnel-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-See_also" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#See_also">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>See also</div>
+			</a>
+			
+			<ul id="toc-See_also-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../en/HTTP_tunneling.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="mw-list-item"><a href="../en/Talk:HTTP_tunneling.html" rel="discussion" title="Discussion about the content page [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">English</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../en/HTTP_tunneling.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=HTTP_tunneling&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=HTTP_tunneling&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../en/HTTP_tunneling.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=HTTP_tunneling&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=HTTP_tunneling&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output">
+<p>In networking, tunneling is using a protocol of higher level (in our case HTTP) to transport a lower level protocol (in our case TCP).
+</p>
+<mw:tocplace></mw:tocplace>
+<h2><span class="mw-headline" id="Creating_the_tunnel">Creating the tunnel</span></h2>
+<h3><span class="mw-headline" id="Using_corkscrew_and_HTTP_CONNECT">Using corkscrew and HTTP CONNECT</span></h3>
+<p>To open the connection to the server running the SSH daemon, we will use the HTTP CONNECT method which allows a client to connect to a server through an HTTP proxy by sending an HTTP CONNECT request to this proxy.
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> If your proxy does not support the HTTP Connect method, see the other methods below.</div>
+<p>For this, we will use <a rel="nofollow" class="external text" href="https://github.com/patpadgett/corkscrew">corkscrew</a>, a tool for tunneling SSH through HTTP proxies available as <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=corkscrew">corkscrew</a></span>.
+</p>
+<p>Opening an SSH connection is pretty simple:
+</p>
+<pre>$ ssh <i>user</i>@<i>server</i> -o "ProxyCommand corkscrew <i>proxy_ip_or_domain_name proxy_port destination_ip_or_domain_name destination_port</i>"
+</pre>
+<p>but that just opens a shell. What we want is a SOCKS tunnel, so we do this:
+</p>
+<pre>$ ssh -ND <i>port user</i>@<i>server</i> -o "ProxyCommand corkscrew <i>proxy_ip_or_domain_name proxy_port destination_ip_or_domain_name destination_port</i>"
+</pre>
+<p>which creates a <a href="https://en.wikipedia.org/wiki/SOCKS" class="extiw" title="wikipedia:SOCKS">SOCKS</a> proxy on <code>localhost:$port</code>.
+</p>
+<h4><span class="mw-headline" id="Tunneling_Git">Tunneling Git</span></h4>
+<p>Restrictive corporate firewalls typically block the port that <a href="../en/Git.html" title="Git">git</a> uses. However, git can be made to tunnel through HTTP proxies using utilities such as <i>corkscrew</i>. When git sees the environment variable <code>GIT_PROXY_COMMAND</code> set, it will run the command in <code>$GIT_PROXY_COMMAND</code> and use the program's stdin and stdout, instead of a network socket.
+</p>
+<p><a href="../en/Help:Reading.html#Append,_add,_create,_edit" class="mw-redirect" title="Create">Create</a> a script:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">corkscrewtunnel.sh</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">#!/bin/bash
+corkscrew <i>proxyhost</i> <i>proxyport</i> "$@"
+</pre>
+<p>Set <code>GIT_PROXY_COMMAND</code>
+</p>
+<pre>export GIT_PROXY_COMMAND=<i>/path/to/corkscrewtunnel.sh</i>
+</pre>
+<p>Now, <i>git</i> should be able to tunnel successfully through the HTTP proxy.
+</p>
+<h3><span class="mw-headline" id="Using_httptunnel">Using httptunnel</span></h3>
+<p><a rel="nofollow" class="external text" href="https://github.com/larsbrinkhoff/httptunnel">httptunnel</a>, available as <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=httptunnel">httptunnel</a></span>, creates a bidirectional virtual data connection tunneled in HTTP requests. The HTTP requests can be sent via an HTTP proxy if so desired. This can be useful for users behind restrictive firewalls. If WWW access is allowed through a HTTP proxy, it is possible to use httptunnel and, say, telnet or PPP to connect to a computer outside the firewall.
+</p>
+<p>One limitation of <i>httptunnel</i> is it explicitly can not handle HTTPS.<a rel="nofollow" class="external autonumber" href="https://github.com/larsbrinkhoff/httptunnel/blob/ebe25833aae50e3b76d9acd5d662cd06381f8b8c/FAQ#L78">[1]</a>
+</p>
+<p>If you already have a web server listening on port 80, you are probably going to want to create a virtual host and tell your web server to proxy request to the hts server. This is not covered here.
+</p>
+<p>If you do not have any web server listening on port 80, you can do:
+</p>
+<ul><li>on the server:</li></ul>
+<pre>hts --forward-port localhost:22 80
+</pre>
+<ul><li>on the client:</li></ul>
+<pre>htc --forward-port 8888 example.net:80
+ssh -ND user@localhost -p 8888
+</pre>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> As SSH thinks it is connecting to localhost it will not recognize the fingerprint and display a warning.</div>
+<p>You can now use <code>localhost:8888</code> as a <a href="https://en.wikipedia.org/wiki/SOCKS" class="extiw" title="wikipedia:SOCKS">SOCKS</a> proxy.
+</p>
+<h3><span class="mw-headline" id="Using_proxytunnel">Using proxytunnel</span></h3>
+<p><a rel="nofollow" class="external text" href="https://proxytunnel.sourceforge.io/intro.php">ProxyTunnel</a> is: 
+</p>
+<dl><dd>"a program that connects stdin and stdout to a server somewhere on the network, through a standard HTTP(S) proxy".</dd></dl>
+<p>The proxy connection is used to tunnel another protocol, for example SSH through a HTTPS connection. It can be <a href="../en/Help:Reading.html#Installation_of_packages" class="mw-redirect" title="Install">installed</a> with the <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=proxytunnel">proxytunnel</a></span> package.
+</p>
+<p>An example for using it with <a href="../en/OpenSSH.html" title="OpenSSH">OpenSSH</a>, to eventually connect to <code>mybox.athome.nl</code>, is having the following content:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">$HOME/.ssh/config</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">Host <i>foobar</i>
+	ProtocolKeepAlives 30
+	ProxyCommand <i>/path/to/proxytunnel</i> -p <i>proxy.customer.com</i>:8080 -u <i>user</i> -s <i>password</i> -d <i>mybox.athome.nl</i>:443
+</pre>
+<h3><span class="mw-headline" id="Using_openbsd-netcat">Using openbsd-netcat</span></h3>
+<p><a href="../en/Help:Reading.html#Installation_of_packages" class="mw-redirect" title="Install">Install</a> the <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=openbsd-netcat">openbsd-netcat</a></span> package.
+</p>
+<p>To open a connection using the OpenBSD <i>netcat</i> version:
+</p>
+<pre>$ ssh <i>user</i>@<i>final_server</i> -o "ProxyCommand=nc -X connect -x <i>some_proxy</i>:<i>proxy_port</i> %h %p"
+</pre>
+<p>The OpenBSD <i>netcat</i> also supports SOCKS tunneling. See <span class="plainlinks archwiki-template-man" title="$ man 1 nc"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/nc.1#X">nc(1) § X</a></span> for more on the <code>-X</code> option.
+</p>
+<h2><span class="mw-headline" id="Using_the_tunnel">Using the tunnel</span></h2>
+<p>See <a href="../en/Proxy_server.html#Using_a_SOCKS_proxy" title="Proxy server">Proxy server#Using a SOCKS proxy</a>.
+</p>
+<h2><span class="mw-headline" id="See_also">See also</span></h2>
+<ul>
+<li>
+<a rel="nofollow" class="external text" href="https://proxytunnel.sourceforge.io/paper.php">Background, and usage examples, for ProxyTunnel</a>,  by one of the authors.</li>
+<li>
+<a rel="nofollow" class="external text" href="https://blog.bmaehr.com/tunneling-ssh-over-https-with-apache-2-4-and-virtual-hosts/">Tunneling SSH over HTTPS with Apache 2.4 and virtual hosts</a> using ProxyTunnel.</li>
+</ul>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../Special:Categories.html" title="Special:Categories">Categories</a>: <ul>
+<li><a href="../en/Category:Networking.html" title="Category:Networking">Networking</a></li>
+<li><a href="../en/Category:Secure_Shell.html" title="Category:Secure Shell">Secure Shell</a></li>
+</ul>
+</div></div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=HTTP_tunneling&amp;oldid=775144">https://wiki.archlinux.org/index.php?title=HTTP_tunneling&amp;oldid=775144</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 9 April 2023, at 14:48.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

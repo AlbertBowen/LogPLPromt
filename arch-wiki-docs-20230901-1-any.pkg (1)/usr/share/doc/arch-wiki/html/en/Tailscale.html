@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>Tailscale - ArchWiki</title>
+<link rel="stylesheet" href="../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Tailscale rootpage-Tailscale skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Installation" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Installation">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Installation</div>
+			</a>
+			
+			<ul id="toc-Installation-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Usage" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Usage">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Usage</div>
+			</a>
+			
+			<ul id="toc-Usage-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Advanced_usage" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Advanced_usage">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>Advanced usage</div>
+			</a>
+			
+				<button aria-controls="toc-Advanced_usage-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Advanced usage subsection
+				</button>
+			
+			<ul id="toc-Advanced_usage-sublist" class="sidebar-toc-list">
+				<li id="toc-Using_a_custom_Control_Server" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Using_a_custom_Control_Server">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.1</span>Using a custom Control Server</div>
+			</a>
+			
+			<ul id="toc-Using_a_custom_Control_Server-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Running_as_a_Docker_container" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Running_as_a_Docker_container">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.2</span>Running as a Docker container</div>
+			</a>
+			
+			<ul id="toc-Running_as_a_Docker_container-sublist" class="sidebar-toc-list">
+				<li id="toc-As_an_exit_node" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#As_an_exit_node">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.2.1</span>As an exit node</div>
+			</a>
+			
+			<ul id="toc-As_an_exit_node-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-See_also" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#See_also">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4</span>See also</div>
+			</a>
+			
+			<ul id="toc-See_also-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../en/Tailscale.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="new mw-list-item"><a href="/index.php?title=Talk:Tailscale&amp;action=edit&amp;redlink=1" rel="discussion" title="Discussion about the content page (page does not exist) [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">English</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../en/Tailscale.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=Tailscale&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=Tailscale&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../en/Tailscale.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Tailscale&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Tailscale&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output">
+<div class="archwiki-template-meta-related-articles-start">
+<p class="mw-no-invert">Related articles</p>
+<ul>
+<li><a href="../en/WireGuard.html" class="mw-redirect" title="Wireguard">Wireguard</a></li>
+</ul>
+</div>
+<p>Tailscale builds on top of <a href="../en/WireGuard.html" title="WireGuard">WireGuard</a> and provides OAuth2 (SSO), OpenID, and SAML authentication for peers to build a mesh network. It is crossplatform, has ACL settings and internal DNS.
+</p>
+<mw:tocplace></mw:tocplace>
+<h2><span class="mw-headline" id="Installation">Installation</span></h2>
+<p><a href="../en/Help:Reading.html#Installation_of_packages" class="mw-redirect" title="Install">Install</a> <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=tailscale">tailscale</a></span>. Alternatively, one can use unstable builds by installing the <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/tailscale-git/">tailscale-git</a></span><sup><small>AUR</small></sup> or <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/tailscale-unstable-bin/">tailscale-unstable-bin</a></span><sup><small>AUR</small></sup> package.
+</p>
+<p>It is also possible to run tailscale as a <a href="../en/Docker.html" title="Docker">Docker</a> container. This way, one can run multiple exit nodes on a single machine, each with its own tailnet.
+</p>
+<h2><span class="mw-headline" id="Usage">Usage</span></h2>
+<p>To use <i>tailscale</i>, <a href="../en/Help:Reading.html#Control_of_systemd_units" class="mw-redirect" title="Enable/start">enable/start</a> <code>tailscaled.service</code> and run the server as follows:
+</p>
+<pre># tailscale up
+</pre>
+<p>You can authenticate a headless machine by specifying the <a rel="nofollow" class="external text" href="https://tailscale.com/kb/1085/auth-keys/">auth key</a>: 
+</p>
+<pre># tailscale up --authkey=tskey-<i>KEY</i>
+</pre>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong>  By default tailscale will send <a rel="nofollow" class="external text" href="https://tailscale.com/kb/1011/log-mesh-traffic#centralized-log-management">logs to their servers for central storage</a>. You may want to opt out with one of the following steps:
+<ul>
+<li>Edit <code>/etc/default/tailscaled</code> to include <code>TS_NO_LOGS_NO_SUPPORT=true</code>
+</li>
+<li>Edit <code>/etc/default/tailscaled</code> and add <code>--no-logs-no-support</code> to <code>FLAGS</code>
+</li>
+</ul>
+By opting out of centralized logging, you are also opting out of receiving support from tailscale.</div>
+<h2><span class="mw-headline" id="Advanced_usage">Advanced usage</span></h2>
+<h3><span class="mw-headline" id="Using_a_custom_Control_Server">Using a custom Control Server</span></h3>
+<p>Using a custom control server like <a rel="nofollow" class="external text" href="https://github.com/juanfont/headscale">headscale</a> is possible.
+</p>
+<p>To login run
+</p>
+<pre># tailscale up --login-server <a rel="nofollow" class="external free" href="https://example.com">https://example.com</a>
+</pre>
+<p>On headless systems a non-interactive login using a token is possible.
+</p>
+<pre># tailscale up --login-server <a rel="nofollow" class="external free" href="https://example.com">https://example.com</a> --authkey <i>your_auth_key</i>
+</pre>
+<h3><span class="mw-headline" id="Running_as_a_Docker_container">Running as a Docker container</span></h3>
+<p>Follow <a rel="nofollow" class="external text" href="https://hub.docker.com/r/tailscale/tailscale">this guide</a> for a general idea of how to run tailscale as a docker container.
+</p>
+<h4><span class="mw-headline" id="As_an_exit_node">As an exit node</span></h4>
+<p>In order to be able to use a tailscale instance running as a docker container as an exit node, we need to use a smaller MTU for the container's network. This is due to an <a rel="nofollow" class="external text" href="https://github.com/tailscale/tailscale/issues/3877">MTU-related issue</a>.
+</p>
+<p>If you don't have one already, create a custom network:
+</p>
+<pre># docker network create --opt com.docket.network.driver.mtu=1280 <i>my_custom_network</i>
+</pre>
+<p>Then, use that network for the container instance:
+</p>
+<pre># docker run --detach --name=<i>my_tailscale_container</i> --network=<i>my_custom_network</i> --volume /var/lib/tailscale-exitnode-1:/var/lib/tailscale --env TS_STATE_DIR=/var/lib/tailscale --env TS_USERSPACE=1 --env TS_AUTHKEY=<i>tskey-auth-XXX</i> --env TS_EXTRA_ARGS='--advertise-exit-node' tailscale/tailscale
+</pre>
+<p>Note that:
+</p>
+<ul>
+<li>By default, docker will create a network of type <code>bridge</code>, so no need to specify it here.</li>
+<li>Use an auth key to authenticate the node. Authenticating with the regular SSO method usually takes too long, and the process may time out before initial authentication is successful.</li>
+<li>Define <code>TS_USERSPACE=1</code> so that the container doesn't need elevated permissions (<code>CAP_NET_ADMIN</code> and <code>CAP_NET_RAW</code>).</li>
+<li>Bind mount an unused directory on the host (<code>/var/lib/tailscale-exitnode-1</code>) to <code>/var/lib/tailscale</code> inside the container, and also define <code>TS_STATE_DIR=/var/lib/tailscale</code>, so that tailscale will use a persistent state file. Without these, the exit node will use volatile memory to keep state, and thus get a new ID and tailnet IP address <a rel="nofollow" class="external text" href="https://github.com/tailscale/tailscale/issues/7119">every time the container is restarted</a>.</li>
+</ul>
+<h2><span class="mw-headline" id="See_also">See also</span></h2>
+<ul>
+<li><a rel="nofollow" class="external free" href="https://tailscale.com/">https://tailscale.com/</a></li>
+<li><a rel="nofollow" class="external free" href="https://github.com/juanfont/headscale">https://github.com/juanfont/headscale</a></li>
+</ul>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="../en/Category:Virtual_Private_Network.html" title="Category:Virtual Private Network">Virtual Private Network</a></li></ul>
+</div></div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=Tailscale&amp;oldid=778744">https://wiki.archlinux.org/index.php?title=Tailscale&amp;oldid=778744</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 20 May 2023, at 01:05.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

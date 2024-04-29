@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>Kdump - ArchWiki</title>
+<link rel="stylesheet" href="../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Kdump rootpage-Kdump skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Compiling_kernel" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Compiling_kernel">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Compiling kernel</div>
+			</a>
+			
+			<ul id="toc-Compiling_kernel-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Prepare_kdump_initramfs" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Prepare_kdump_initramfs">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Prepare kdump initramfs</div>
+			</a>
+			
+			<ul id="toc-Prepare_kdump_initramfs-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Setup_kdump_kernel" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Setup_kdump_kernel">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>Setup kdump kernel</div>
+			</a>
+			
+			<ul id="toc-Setup_kdump_kernel-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Testing_crash" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Testing_crash">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4</span>Testing crash</div>
+			</a>
+			
+			<ul id="toc-Testing_crash-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Dump_crashed_kernel" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Dump_crashed_kernel">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5</span>Dump crashed kernel</div>
+			</a>
+			
+			<ul id="toc-Dump_crashed_kernel-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Analyzing_core_dump" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Analyzing_core_dump">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6</span>Analyzing core dump</div>
+			</a>
+			
+			<ul id="toc-Analyzing_core_dump-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-See_also" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#See_also">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">7</span>See also</div>
+			</a>
+			
+			<ul id="toc-See_also-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../en/Kdump.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="mw-list-item"><a href="../en/Talk:Kdump.html" rel="discussion" title="Discussion about the content page [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">English</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../en/Kdump.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=Kdump&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=Kdump&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../en/Kdump.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Kdump&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Kdump&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output">
+<div class="archwiki-template-meta-related-articles-start">
+<p class="mw-no-invert">Related articles</p>
+<ul>
+<li><a href="../en/Kexec.html" title="Kexec">Kexec</a></li>
+</ul>
+</div>
+<p><a rel="nofollow" class="external text" href="https://docs.kernel.org/admin-guide/kdump/kdump.html">Kdump</a> is a standard Linux mechanism to dump machine memory content on kernel crash. Kdump is based on <a href="../en/Kexec.html" title="Kexec">Kexec</a>. Kdump utilizes two kernels: system kernel and dump capture kernel. System kernel is a normal kernel that is booted with special kdump-specific flags. We need to tell the system kernel to reserve some amount of physical memory where dump-capture kernel will be loaded. We need to load the dump capture kernel in advance because at the moment crash happens there is no way to read any data from disk because kernel is broken.
+</p>
+<p>Once kernel crash happens the kernel crash handler uses <a href="../en/Kexec.html" title="Kexec">Kexec</a> mechanism to boot dump capture kernel. Please note that memory with system kernel is untouched and accessible from dump capture kernel as seen at the moment of crash. Once dump capture kernel is booted, the user can use the file <code>/proc/vmcore</code> to get access to memory of crashed system kernel. The dump can be saved to disk or copied over network to some other machine for further investigation.
+</p>
+<p>In real production environments system and dump capture kernel will be different - system kernel needs a lot of features and compiled with a many kernel flags/drivers. While dump capture kernel goal is to be minimalistic and take as small amount of memory as possible, e.g. dump capture kernel can be compiled without network support if we store memory dump to disk only. But in this article we will simplify things and use the same kernel both as system and dump capture one. It means we will load the same kernel code twice - one as normal system kernel, another one to reserved memory area.
+</p>
+<mw:tocplace></mw:tocplace>
+<h2><span class="mw-headline" id="Compiling_kernel">Compiling kernel</span></h2>
+<p>System/dump capture kernel requires some configuration flags that may not be set by default. Please consult <a href="../en/Kernel.html#Compilation" class="mw-redirect" title="Kernel Compilation">Kernel Compilation</a> article for more information about compiling a custom kernel in Arch. Here we will emphasize on Kdump specific configuration. Current default Arch kernel builds seem to have these flags already set.  You can verify if your running kernel has these set by looking in <code>/proc/config.gz</code>.
+</p>
+<p>To create a kernel you need to edit kernel <code>config</code> (or <code>config.x86_64</code>) file and enable following configuration options:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">config{.x86_64} file</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">CONFIG_DEBUG_INFO=y
+CONFIG_CRASH_DUMP=y
+CONFIG_PROC_VMCORE=y
+</pre>
+<p>Also change package base name to something like <b>linux-kdump</b> to distinguish the kernel from the default Arch one. Compile kernel package and install it. Save <i>./src/linux-X.Y/vmlinux</i> uncompressed system kernel binary - it contains debug symbols and you will need them later when analyzing the crash.
+</p>
+<p>In case if you have a separate kernel for the system and dump capture then it is recommended to consult <a rel="nofollow" class="external text" href="https://docs.kernel.org/admin-guide/kdump/kdump.html">Kdump</a> documentation. It has several recommendations how to make dump capture kernel smaller.
+</p>
+<h2><span class="mw-headline" id="Prepare_kdump_initramfs">Prepare kdump initramfs</span></h2>
+<p>The kdump initramfs should contain tools for extraction of <code>/proc/vmcore</code> information (see <a href="#Dump_crashed_kernel">#Dump crashed kernel</a> below). If you wish to save the artifacts to your root filesystem, it is easiest to modify your default initramfs. For example, if initramfs is built with <a href="../en/Mkinitcpio.html" title="Mkinitcpio">mkinitcpio</a> (<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=makedumpfile">makedumpfile</a></span> is required)
+</p>
+<pre>--- mkinitcpio.conf
++++ mkinitcpio-kdump.conf
+@@ -11,12 +11,12 @@
+ # wish into the CPIO image.  This is run last, so it may be used to
+ # override the actual binaries included by a given hook
+ # BINARIES are dependency parsed, so you may safely ignore libraries
+-BINARIES=()
++BINARIES=(/usr/bin/makedumpfile)
+
+ # FILES
+ # This setting is similar to BINARIES above, however, files are added
+ # as-is and are not parsed in any way.  This is useful for config files.
+-FILES=()
++FILES=(/etc/systemd/system/kdump-save.service)
+
+ # HOOKS
+ # This is the most important setting in this file.  The HOOKS control the
+</pre>
+<p>and remember to update mkinitcpio preset file so that fresh initrd is rebuilt upon each kernel update.
+</p>
+<h2><span class="mw-headline" id="Setup_kdump_kernel">Setup kdump kernel</span></h2>
+<p>First, you need to reserve memory for dump capture kernel. Edit your bootloader configuration and add <code>crashkernel=[size]</code> <a href="../en/Kernel_parameters.html" class="mw-redirect" title="Kernel parameter">kernel parameter</a>.
+</p>
+<p><i>64M</i> of memory should be enough to handle crash dumps on machines with up to 12G of RAM. Some systems require more reserved memory. In case if dump capture kernel unable not load, try to increase the memory to <i>256M</i> or even to <i>512M</i>, but note that this memory is unavailable to system kernel.
+</p>
+<p>Reboot into your system kernel.  To make sure that the kernel is booted with correct options please check the <code>/proc/cmdline</code> file.
+</p>
+<p>Next you need to tell <a href="../en/Kexec.html" title="Kexec">Kexec</a> that you want to use your dump capture kernel. Specify your kernel, initramfs file, root device and other parameters if needed:
+</p>
+<pre># kexec -p [/boot/vmlinuz-linux-kdump] --initrd=[/boot/initramfs-linux-kdump.img] --append="root=[root-device] single irqpoll maxcpus=1 reset_devices"
+</pre>
+<p>It loads the kernel into the reserved area. Without the <code>-p</code> flag <i>kexec</i> would boot the kernel right away, but in presence of the flag kernel will be loaded into reserved memory but boot postponed until a crash. 
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> For a loaded kernel <code>cat /sys/devices/system/cpu/online</code> shows the active CPU cores. The <code>maxcpus=1</code> kernel parameter should <a rel="nofollow" class="external text" href="https://docs.kernel.org/core-api/cpu_hotplug.html">limit</a> it to one. If it has no effect or your SMP-enabled kernel <a rel="nofollow" class="external text" href="https://bbs.archlinux.org/viewtopic.php?pid=1424049#p1424049">does not boot</a>, try using <code>nr_cpus=1</code> instead.</div>
+<p>Instead of running <i>kexec</i> manually you might want to setup <a href="../en/Systemd.html" title="Systemd">Systemd</a> service that will run kexec on boot:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/systemd/system/kdump.service</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">[Unit]
+Description=Load dump capture kernel
+After=local-fs.target
+
+[Service]
+ExecStart=/usr/bin/kexec -p [/boot/vmlinuz-linux-kdump] --initrd=[/boot/initramfs-linux-kdump.img] --append="root=[root-device] single irqpoll maxcpus=1 reset_devices"
+Type=oneshot
+
+[Install]
+WantedBy=multi-user.target
+</pre>
+<p>Then <a href="../en/Help:Reading.html#Control_of_systemd_units" class="mw-redirect" title="Enable">enable</a> <code>kdump.service</code>.
+</p>
+<p>To check whether the crash kernel is already loaded please run following command:
+</p>
+<pre>$ cat /sys/kernel/kexec_crash_loaded
+</pre>
+<h2><span class="mw-headline" id="Testing_crash">Testing crash</span></h2>
+<p>
+If you want to test crash then you can use <i>sysrq</i> for this. </p>
+<div class="archwiki-template-box archwiki-template-box-warning">
+<strong>Warning:</strong> kernel crash may corrupt data on your disks, run it at your own risk!</div>
+<pre># echo c &gt; /proc/sysrq-trigger
+</pre>
+<p>Once crash happens kexec will load your dump capture kernel.
+</p>
+<h2><span class="mw-headline" id="Dump_crashed_kernel">Dump crashed kernel</span></h2>
+<p>Once booted into dump capture kernel you can read <code>/proc/vmcore</code> file. It is recommended to dump core to a file and analyze it later.
+</p>
+<pre># cp /proc/vmcore /root/crash.dump
+</pre>
+<p>or optionally you can copy the crash to another machine. Once dump is saved you should reboot the machine into normal system kernel.
+</p>
+<p>The crash dump can be quite big, <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=makedumpfile">makedumpfile</a></span> can be used to create smaller dumps by ignoring some memory regions and using compression:
+</p>
+<pre># makedumpfile -c -d 31 /proc/vmcore /root/crash.dump
+</pre>
+<p>The following systemd service can be used to automatically save crash dumps and reboot into the main kernel:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/systemd/system/kdump-save.service</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">[Unit]
+Description=Create dump after kernel crash
+DefaultDependencies=no
+Wants=local-fs.target
+After=local-fs.target
+
+[Service]
+Type=idle
+ExecStart=/bin/sh -c 'mkdir -p /var/crash/ &amp;&amp; /usr/bin/makedumpfile -c -d 31 /proc/vmcore "/var/crash/crashdump-$$(date +%%F-%%T)"'
+ExecStopPost=/usr/bin/systemctl reboot
+UMask=0077
+StandardInput=tty-force
+StandardOutput=inherit
+StandardError=inherit
+</pre>
+<p>This can be invoked from the dump capture kernel command line:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/systemd/system/kdump.service</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">[Unit]
+Description=Load dump capture kernel
+After=local-fs.target
+
+[Service]
+Type=oneshot
+RemainAfterExit=true
+ExecStart=/usr/bin/kexec -p [/boot/vmlinuz-linux-kdump] --initrd=[/boot/initramfs-linux-kdump.img] --append="root=[root-device] <b>systemd.unit=kdump-save.service</b> irqpoll maxcpus=1 reset_devices"
+# convenience
+ExecStartPost=/bin/sh -c 'mkdir -p /var/crash/ &amp;&amp; /usr/bin/makedumpfile --dump-dmesg /proc/vmcore "/var/crash/crashdump-$$(date +%%F-%%T)".dmesg'
+ExecStop=/usr/bin/kexec -p -u
+
+[Install]
+WantedBy=multi-user.target</pre>
+<p>Note that, in the above, "single" has been removed from the kernel command line.
+</p>
+<h2><span class="mw-headline" id="Analyzing_core_dump">Analyzing core dump</span></h2>
+<p>You can use either <i>gdb</i> tool or special gdb extension called <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=crash">crash</a></span>. Run <i>crash</i> as
+</p>
+<pre>$ crash <i>vmlinux</i> <i>path</i>/crash.dump
+</pre>
+<p>Where <i>vmlinux</i> previously saved kernel binary with debug symbols.
+</p>
+<p>Follow <i>man crash</i> or <a rel="nofollow" class="external autonumber" href="https://crash-utility.github.io/crash_whitepaper.html">[1]</a> for more information about debugging practices.
+</p>
+<h2><span class="mw-headline" id="See_also">See also</span></h2>
+<ul>
+<li>
+<a rel="nofollow" class="external free" href="https://docs.kernel.org/admin-guide/kdump/kdump.html">https://docs.kernel.org/admin-guide/kdump/kdump.html</a> - Official kdump documentation</li>
+<li>
+<a rel="nofollow" class="external free" href="https://www.dedoimedo.com/computers/www.dedoimedo.com-crash-book.pdf">https://www.dedoimedo.com/computers/www.dedoimedo.com-crash-book.pdf</a> - The crash book</li>
+<li>
+<a rel="nofollow" class="external free" href="https://crash-utility.github.io">https://crash-utility.github.io</a> - The crash website</li>
+</ul>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../Special:Categories.html" title="Special:Categories">Categories</a>: <ul>
+<li><a href="../en/Category:Boot_process.html" title="Category:Boot process">Boot process</a></li>
+<li><a href="../en/Category:Kernel.html" title="Category:Kernel">Kernel</a></li>
+</ul>
+</div></div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=Kdump&amp;oldid=743371">https://wiki.archlinux.org/index.php?title=Kdump&amp;oldid=743371</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 26 August 2022, at 06:59.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

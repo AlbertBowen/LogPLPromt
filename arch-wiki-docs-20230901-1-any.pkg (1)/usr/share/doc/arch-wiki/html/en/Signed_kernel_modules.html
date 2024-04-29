@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>Signed kernel modules - ArchWiki</title>
+<link rel="stylesheet" href="../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Signed_kernel_modules rootpage-Signed_kernel_modules skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Overview" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Overview">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Overview</div>
+			</a>
+			
+			<ul id="toc-Overview-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Summary_of_what_needs_to_be_done" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Summary_of_what_needs_to_be_done">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Summary of what needs to be done</div>
+			</a>
+			
+			<ul id="toc-Summary_of_what_needs_to_be_done-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Kernel_configuration" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Kernel_configuration">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>Kernel configuration</div>
+			</a>
+			
+				<button aria-controls="toc-Kernel_configuration-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Kernel configuration subsection
+				</button>
+			
+			<ul id="toc-Kernel_configuration-sublist" class="sidebar-toc-list">
+				<li id="toc-Kernel_command_line" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Kernel_command_line">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.1</span>Kernel command line</div>
+			</a>
+			
+			<ul id="toc-Kernel_command_line-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Tools_needed" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Tools_needed">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4</span>Tools needed</div>
+			</a>
+			
+				<button aria-controls="toc-Tools_needed-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Tools needed subsection
+				</button>
+			
+			<ul id="toc-Tools_needed-sublist" class="sidebar-toc-list">
+				<li id="toc-kernel_build_package" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#kernel_build_package">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.1</span>kernel build package</div>
+			</a>
+			
+			<ul id="toc-kernel_build_package-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-DKMS_support" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#DKMS_support">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.2</span>DKMS support</div>
+			</a>
+			
+			<ul id="toc-DKMS_support-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Modify_PKGBUILD" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Modify_PKGBUILD">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5</span>Modify PKGBUILD</div>
+			</a>
+			
+				<button aria-controls="toc-Modify_PKGBUILD-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Modify PKGBUILD subsection
+				</button>
+			
+			<ul id="toc-Modify_PKGBUILD-sublist" class="sidebar-toc-list">
+				<li id="toc-prepare()" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#prepare()">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5.1</span>prepare()</div>
+			</a>
+			
+			<ul id="toc-prepare()-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-package-headers()" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#package-headers()">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5.2</span>_package-headers()</div>
+			</a>
+			
+			<ul id="toc-package-headers()-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Files_required" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Files_required">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6</span>Files required</div>
+			</a>
+			
+			<ul id="toc-Files_required-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Helper_scripts" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Helper_scripts">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">7</span>Helper scripts</div>
+			</a>
+			
+			<ul id="toc-Helper_scripts-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../en/Signed_kernel_modules.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="mw-list-item"><a href="../en/Talk:Signed_kernel_modules.html" rel="discussion" title="Discussion about the content page [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">English</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../en/Signed_kernel_modules.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=Signed_kernel_modules&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=Signed_kernel_modules&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../en/Signed_kernel_modules.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Signed_kernel_modules&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Signed_kernel_modules&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output">
+<div class="archwiki-template-meta-related-articles-start">
+<p class="mw-no-invert">Related articles</p>
+<ul>
+<li><a href="../en/Kernel.html" title="Kernel">Kernel</a></li>
+<li><a href="../en/Kernel_module.html" title="Kernel module">Kernel module</a></li>
+<li><a href="../en/Kernel/Arch_build_system.html" class="mw-redirect" title="Kernel/Arch Build System">Kernel/Arch Build System</a></li>
+</ul>
+</div>
+<p><a rel="nofollow" class="external text" href="https://docs.kernel.org/admin-guide/module-signing.html">Signed</a> <a href="../en/Kernel_module.html" class="mw-redirect" title="Kernel modules">kernel modules</a> provide a mechanism for the kernel to verify the integrity of a module.
+</p>
+<mw:tocplace></mw:tocplace>
+<h2><span class="mw-headline" id="Overview">Overview</span></h2>
+<p>The Linux kernel distinguishes and keeps separate the verification of modules from requiring or forcing modules to verify before allowing them to be loaded. Kernel modules fall into 2 classes:
+</p>
+<ul>
+<li>Standard <i>in-tree</i> modules which come with the kernel source code. They are compiled during the normal kernel build.</li>
+<li>
+<i>Out-of-tree</i> modules which are not part of the kernel source distribution. They are built outside of the kernel tree, requiring the kernel headers package for each kernel they are to be built for. They can be built manually for a specific kernel and packaged, or they can be built whenever needed using <a href="../en/Dynamic_Kernel_Module_Support.html" class="mw-redirect" title="DKMS">DKMS</a>.</li>
+</ul>
+<p>During a standard kernel compilation, the kernel build tools create a private/public key pair and sign every in-tree module (using the private key). The public key is saved in the kernel itself. When a module is subsequently loaded, the public key can then be used to verify that the module is unchanged.
+</p>
+<p>The kernel can be enabled to always verify modules and report any failures to standard logs. The choice to permit the loading and use of a module which could not be verified can be either compiled into kernel or turned on at runtime using a <a href="../en/Kernel_parameters.html" class="mw-redirect" title="Kernel parameter">kernel parameter</a> as explained below.
+</p>
+<h2><span class="mw-headline" id="Summary_of_what_needs_to_be_done">Summary of what needs to be done</span></h2>
+<p>The starting point is based on a custom kernel package as outlined in <a href="../en/Kernel/Arch_build_system.html" title="Kernel/Arch build system">Kernel/Arch build system</a>. We will modify the build to sign the standard in-tree kernel modules and to provide the prerequisites for signing and verifying out-of-tree modules.
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> 
+<p>The goal is to have:
+</p>
+<ul>
+<li>In-tree modules signed during the standard kernel build process. The standard kernel build creates a fresh public/private key pair on each build.</li>
+<li>Out-of-tree modules are signed and the associated public key is compiled into the kernel. We will create a separate public/private key pair on each build.</li>
+</ul>
+</div>
+<p>Each kernel build needs to made aware of the key pair to be used for signing out-of-tree modules. A kernel configuration parameter is now used to make the kernel aware of additional signing keys: <code>CONFIG_SYSTEM_TRUSTED_KEYS="/path/to/oot-signing_keys.pem"</code>.
+</p>
+<p>Keys and signing tools will be stored in the current module build directory. Nothing needs to be done to clean this as removal is handled by the standard module cleanup. The private and public keys are both installed in <code>/usr/lib/modules/<i>kernel_version</i>-<i>build</i>/certs-local</code>.
+</p>
+<h2><span class="mw-headline" id="Kernel_configuration">Kernel configuration</span></h2>
+<p><code>CONFIG_SYSTEM_TRUSTED_KEYS</code> will be updated automatically using the script <code>genkeys.py</code> provided below. In addition, the following configuration options should be set either manually by editing the <code>.config</code> file, or via <code>make menuconfig</code> in the Linux <code>src</code> directory and subsequently copying the updated <code>.config</code> file back to the build file <code>config</code>. It is preferable to use elliptic curve type keys and zstd compression.
+</p>
+<pre>CONFIG_MODULE_SIG=y
+  Enable Loadable module suppot ---&gt;
+  Module Signature Verification           -  activate
+
+CONFIG_MODULE_SIG_FORCE=n
+  Require modules to be validly signed -&gt; leave off (for now)
+
+        This allows the decision to enforce verified modules only as boot command line.
+        If you are comfortable all is working then by all means change this to 'y'
+        Command line version of this is : module.sig_enforce=1
+
+CONFIG_MODULE_SIG_HASH=sha512
+  Automatically sign all modules  - activate
+  Which hash algorithm    -&gt; SHA-512
+  
+CONFIG_MODULE_COMPRESS_ZSTD=y
+  Compress modules on installation        - activate
+  Compression algorithm (ZSTD)
+
+CONFIG_MODULE_SIG_KEY_TYPE_ECDSA=y
+  Cryptographic API ---&gt;
+  Certificates for Signature Checking ---&gt;
+  Type of module signing key to be generated -&gt; ECDSA
+
+CONFIG_MODULE_ALLOW_MISSING_NAMESPACE_IMPORTS=n
+  Enable Loadable module support ---&gt;
+  Allow loading of modules with missing namespace imports - set to no
+</pre>
+<h3><span class="mw-headline" id="Kernel_command_line">Kernel command line</span></h3>
+<p>When you have confirmed that the modules are being signed and that the kernel works as it should, you can enable the following <a href="../en/Kernel_parameters.html" class="mw-redirect" title="Kernel parameter">kernel parameter</a> to require that the kernel only permits verified modules to be loaded:
+</p>
+<pre>module.sig_enforce=1
+</pre>
+<p>Before forcing verified modules on, please confirm that the system logs do not show any module signature failures being reported.
+</p>
+<h2><span class="mw-headline" id="Tools_needed">Tools needed</span></h2>
+<h3><span class="mw-headline" id="kernel_build_package">kernel build package</span></h3>
+<p>In the directory where the kernel package is built:
+</p>
+<pre>$ mkdir certs-local
+</pre>
+<p>This directory will provide the tools to create the keys, as well as signing kernel modules.
+</p>
+<p>Put these files into <code>certs-local</code>:
+</p>
+<ul>
+<li><code>x509.oot.genkey</code></li>
+<li><code>genkeys.py</code></li>
+<li><code>install-certs.py</code></li>
+<li><code>sign_module.py</code></li>
+<li><code>signer_class.py</code></li>
+<li><code>utils.py</code></li>
+</ul>
+<p>The files <code>genkeys.py</code> and its companion configuration file <code>x509.oot.genkey</code> are used to create key pairs.
+</p>
+<p><code>genkeys.py</code> also provides the kernel with the key information by updating the configuration file(s) used to build the kernel.
+</p>
+<p>The script <code>sign_module.py</code> signs out-of-tree kernel modules. It can be run manually and is invoked by <code>dkms/kernel-sign.sh</code>. It handles modules compressed with xzand gzip and depends on python-zstandard to help handle those compressed with zstd.
+</p>
+<p><code>genkeys.py</code> will create the key pairs in a directory named by date-time
+</p>
+<p><code>genkeys.py</code> will check and update kernel configs given by the --config config(s) option. It takes either a single config file, or a shell glob for multiple files. e.g. --config 'conf/config.*'. All configs will be updated with the same key. The default keytype is ec (elliptic curve) and the default hash is sha512. These can be changed with command line options. See <code>genkeys.py</code> -h for more details. 
+</p>
+<p>It also creates a soft link <code>current</code> to the same directory holding the current key pairs.
+</p>
+<p><code>install-certs.py</code> is to be called from the package_headers() function of PKGBUILD to install the signing keys. Example is given below.
+</p>
+<p>These files are available and links are provided below.
+</p>
+<h3><span class="mw-headline" id="DKMS_support">DKMS support</span></h3>
+<pre>$ mkdir certs-local/dkms
+</pre>
+<p>Add 2 files to the <code>dkms</code> directory:
+</p>
+<ul>
+<li><code>kernel-sign.conf</code></li>
+<li><code>kernel-sign.sh</code></li>
+</ul>
+<p>These will be installed in <code>/etc/dkms</code> and provide the means for DKMS to automatically sign modules using the local key. This is the recommended way to sign out-of-tree kernel modules. As explained below, once this is installed, all that is needed is for DKMS to automatically sign modules is to make a soft link for each module to the configuration file.
+</p>
+<pre>$ cd /etc/dkms
+# ln -s kernel-sign.conf <i>module_name.conf</i>
+</pre>
+<p>For example:
+</p>
+<pre># ln -s kernel-sign.conf vboxdrv.conf
+</pre>
+<p>The link creation can easily be added to an arch package to simplify further if desired.
+</p>
+<h2><span class="mw-headline" id="Modify_PKGBUILD">Modify PKGBUILD</span></h2>
+<p>We need to make changes to kernel build as follows:
+</p>
+<h3>
+<span id="prepare.28.29"></span><span class="mw-headline" id="prepare()">prepare()</span>
+</h3>
+<p>Add the following to the top of the <code>prepare()</code> function:
+</p>
+<pre>prepare() {
+
+    msg2 "Rebuilding local signing key..."
+    ../certs-local/genkeys.py -v --config config
+
+    ... 
+}
+</pre>
+<p>The default key regeneration refresh period is 7 days, but this can be changed on the command line. So if you want to create new keys monthly, then add "--refresh 30days" as an argument to genekeys.py. You can refresh on every build by using "--refresh always". Refresh units can be seconds,minutes,hours,days or weeks.
+</p>
+<h3>
+<span id="package-headers.28.29"></span><span class="mw-headline" id="package-headers()">_package-headers()</span>
+</h3>
+<p>Add the following to the bottom of the <code>_package-headers()</code> function:
+</p>
+<pre>_package-headers() {
+
+    ...
+
+    #
+    # Out-of-tree module signing
+    # This is run in the kernel source / build directory
+    #
+    msg2 "Local Signing certs for out-of-tree modules..."
+
+    certs_local_src="../../certs-local" 
+    certs_local_dst="${builddir}/certs-local"
+    $certs_local_src/install-certs.py $certs_local_dst
+
+    # DKMS tools
+    dkms_src="$certs_local_src/dkms"
+    dkms_dst="${pkgdir}/etc/dkms"
+    mkdir -p $dkms_dst
+
+    rsync -a $dkms_src/{kernel-sign.conf,kernel-sign.sh} $dkms_dst/
+}</pre>
+<h2><span class="mw-headline" id="Files_required">Files required</span></h2>
+<p>The 5 supporting files referenced above are available for download from the <a rel="nofollow" class="external text" href="https://github.com/gene-git/Arch-SKM/tree/master">github.com/gene-git/Arch-SKM</a> repository:
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> There is also an aur version of these files available (<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/arch-sign-modules/">arch-sign-modules</a></span><sup><small>AUR</small></sup>). After building and install they can be found at <code>/usr/src/certs-local</code>
+</div>
+<ul>
+<li><a rel="nofollow" class="external text" href="https://github.com/gene-git/Arch-SKM/blob/master/certs-local/x509.oot.genkey">certs-local/x509.oot.genkey</a></li>
+<li><a rel="nofollow" class="external text" href="https://github.com/gene-git/Arch-SKM/blob/master/certs-local/genkeys.py">certs-local/genkeys.py</a></li>
+<li><a rel="nofollow" class="external text" href="https://github.com/gene-git/Arch-SKM/blob/master/certs-local/install-certs.py">certs-local/install-certs.py</a></li>
+<li><a rel="nofollow" class="external text" href="https://github.com/gene-git/Arch-SKM/blob/master/certs-local/sign_module.py">certs-local/sign_module.py</a></li>
+<li>
+<a rel="nofollow" class="external text" href="https://github.com/gene-git/Arch-SKM/blob/master/certs-local/signer_classpy">certs-local/signer_class.py</a><sup title="Last check status: 404">[<a href="https://en.wikipedia.org/wiki/Wikipedia:Link_rot" class="extiw" title="wikipedia:Wikipedia:Link rot">dead link</a> 2022-09-23 ⓘ]</sup>
+</li>
+<li><a rel="nofollow" class="external text" href="https://github.com/gene-git/Arch-SKM/blob/master/certs-local/utils.py">certs-local/utils.py</a></li>
+<li><a rel="nofollow" class="external text" href="https://github.com/gene-git/Arch-SKM/blob/master/certs-local/dkms/kernel-sign.conf">certs-local/dkms/kernel-sign.conf</a></li>
+<li><a rel="nofollow" class="external text" href="https://github.com/gene-git/Arch-SKM/blob/master/certs-local/dkms/kernel-sign.sh">certs-local/dkms/kernel-sign.sh</a></li>
+</ul>
+<p>Remember to ensure that the scripts are <a href="../en/Help:Reading.html#Make_executable" class="mw-redirect" title="Executable">executable</a>.
+</p>
+<h2><span class="mw-headline" id="Helper_scripts">Helper scripts</span></h2>
+<div class="noprint archwiki-template-message">
+<p><a href="../File:Tango-inaccurate.png" class="image"><img alt="Tango-inaccurate.png" src="../File:Tango-inaccurate.png" decoding="async" width="48" height="48"></a><b>The factual accuracy of this article or section is disputed.</b><a href="../File:Tango-inaccurate.png" class="image"><img alt="Tango-inaccurate.png" src="../File:Tango-inaccurate.png" decoding="async" width="48" height="48"></a></p>
+<div>
+<b>Reason:</b> The <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/arch-sign-modules/">arch-sign-modules</a></span><sup><small>AUR</small></sup> package comes from a fork of the <a rel="nofollow" class="external text" href="https://github.com/gene-git/Arch-SKM/tree/master">Arch-SKM</a> repository which is used in the previous sections. It is not clear what is wrong with the original repository nor why changes resulted in a fork instead of fixing/improving the original repository. (Discuss in <a rel="nofollow" class="external text" href="https://wiki.archlinux.org/title/Talk:Signed_kernel_modules">Talk:Signed kernel modules</a>)</div>
+</div>
+<p><span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/arch-sign-modules/">arch-sign-modules</a></span><sup><small>AUR</small></sup> builds:
+</p>
+<ul>
+<li><span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=linux-hardened">linux-hardened</a></span></li>
+<li><span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=linux-lts">linux-lts</a></span></li>
+<li><span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=linux-zen">linux-zen</a></span></li>
+<li><span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=linux">linux</a></span></li>
+<li>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/linux-amd/">linux-amd</a></span><sup><small>AUR</small></sup>
+</li>
+<li>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/linux-ck/">linux-ck</a></span><sup><small>AUR</small></sup>
+</li>
+<li>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/linux-libre/">linux-libre</a></span><sup><small>AUR</small></sup>
+</li>
+</ul>
+<p>&amp; other AUR kernels.
+</p>
+<p>The <i><b>abk</b></i> helper script reduces the manual steps for building a fully signed custom kernel to 3 commands to <i><b>Update</b></i> / <i><b>Build</b></i> &amp; <i><b>Install</b></i> the kernel:
+</p>
+<pre>abk -u kernel-name
+abk -b kernel-name
+abk -i kernel-name
+</pre>
+<p>With signed kernel module support for:
+</p>
+<ul><li>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/zfs-dkms/">zfs-dkms</a></span><sup><small>AUR</small></sup> <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/nvidia-beta-dkms/">nvidia-beta-dkms</a></span><sup><small>AUR</small></sup> <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/lkrg-dkms/">lkrg-dkms</a></span><sup><small>AUR</small></sup> <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=nvidia-dkms">nvidia-dkms</a></span>
+</li></ul>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface">
+<div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="../en/Category:Kernel.html" title="Category:Kernel">Kernel</a></li></ul>
+</div>
+<div id="mw-hidden-catlinks" class="mw-hidden-catlinks mw-hidden-cats-hidden">Hidden categories: <ul>
+<li><a href="../en/Category:Pages_with_dead_links.html" title="Category:Pages with dead links">Pages with dead links</a></li>
+<li><a href="../en/Category:Pages_or_sections_flagged_with_Template:Accuracy.html" title="Category:Pages or sections flagged with Template:Accuracy">Pages or sections flagged with Template:Accuracy</a></li>
+</ul>
+</div>
+</div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=Signed_kernel_modules&amp;oldid=785093">https://wiki.archlinux.org/index.php?title=Signed_kernel_modules&amp;oldid=785093</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 11 August 2023, at 06:17.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

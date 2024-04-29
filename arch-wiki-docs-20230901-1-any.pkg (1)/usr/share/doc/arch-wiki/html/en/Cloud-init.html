@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>Cloud-init - ArchWiki</title>
+<link rel="stylesheet" href="../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Cloud-init rootpage-Cloud-init skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Installation" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Installation">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Installation</div>
+			</a>
+			
+			<ul id="toc-Installation-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Configuration" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Configuration">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Configuration</div>
+			</a>
+			
+				<button aria-controls="toc-Configuration-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Configuration subsection
+				</button>
+			
+			<ul id="toc-Configuration-sublist" class="sidebar-toc-list">
+				<li id="toc-Default_user_configuration" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Default_user_configuration">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.1</span>Default user configuration</div>
+			</a>
+			
+			<ul id="toc-Default_user_configuration-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Configuring_data_sources" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Configuring_data_sources">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.2</span>Configuring data sources</div>
+			</a>
+			
+			<ul id="toc-Configuring_data_sources-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Modules" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Modules">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.3</span>Modules</div>
+			</a>
+			
+			<ul id="toc-Modules-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Systemd_integration" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Systemd_integration">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>Systemd integration</div>
+			</a>
+			
+			<ul id="toc-Systemd_integration-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Using" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Using">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4</span>Using</div>
+			</a>
+			
+				<button aria-controls="toc-Using-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Using subsection
+				</button>
+			
+			<ul id="toc-Using-sublist" class="sidebar-toc-list">
+				<li id="toc-QEMU" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#QEMU">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.1</span>QEMU</div>
+			</a>
+			
+			<ul id="toc-QEMU-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Troubleshooting" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Troubleshooting">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5</span>Troubleshooting</div>
+			</a>
+			
+				<button aria-controls="toc-Troubleshooting-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Troubleshooting subsection
+				</button>
+			
+			<ul id="toc-Troubleshooting-sublist" class="sidebar-toc-list">
+				<li id="toc-FAQ" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#FAQ">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5.1</span>FAQ</div>
+			</a>
+			
+			<ul id="toc-FAQ-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Unmounted_image" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Unmounted_image">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5.2</span>Unmounted image</div>
+			</a>
+			
+			<ul id="toc-Unmounted_image-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id='toc-"device_/dev/sr0_with_label_cidata_not_a_valid_seed"' class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href='#"device_/dev/sr0_with_label_cidata_not_a_valid_seed"'>
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5.3</span>"device /dev/sr0 with label cidata not a valid seed"</div>
+			</a>
+			
+			<ul id='toc-"device_/dev/sr0_with_label_cidata_not_a_valid_seed"-sublist' class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id='toc-"unhandled_non-multipart_[...]_ssh_authorized_keys"' class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href='#"unhandled_non-multipart_[...]_ssh_authorized_keys"'>
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5.4</span>"unhandled non-multipart [...] ssh_authorized_keys"</div>
+			</a>
+			
+			<ul id='toc-"unhandled_non-multipart_[...]_ssh_authorized_keys"-sublist' class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-See_also" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#See_also">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6</span>See also</div>
+			</a>
+			
+			<ul id="toc-See_also-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../en/Cloud-init.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="new mw-list-item"><a href="/index.php?title=Talk:Cloud-init&amp;action=edit&amp;redlink=1" rel="discussion" title="Discussion about the content page (page does not exist) [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">English</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../en/Cloud-init.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=Cloud-init&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=Cloud-init&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../en/Cloud-init.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Cloud-init&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Cloud-init&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output">
+<p><a rel="nofollow" class="external text" href="https://cloud-init.io/">Cloud-init</a> is a package that contains utilities for early initialization of cloud instances. It is needed in Arch Linux images that are built with the intention of being launched in cloud environments like <a href="../en/OpenStack.html" title="OpenStack">OpenStack</a>, <a href="../en/Arch_Linux_AMIs_for_Amazon_Web_Services.html" class="mw-redirect" title="AWS">AWS</a> etc.
+</p>
+<mw:tocplace></mw:tocplace>
+<h2><span class="mw-headline" id="Installation">Installation</span></h2>
+<p><a href="../en/Help:Reading.html#Installation_of_packages" class="mw-redirect" title="Install">Install</a> the <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=cloud-init">cloud-init</a></span> package.
+</p>
+<p>If you intend to use the <a rel="nofollow" class="external text" href="https://cloudinit.readthedocs.io/en/latest/reference/modules.html#growpart">growpart module</a> you will also need the <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=cloud-guest-utils">cloud-guest-utils</a></span> package.
+</p>
+<h2><span class="mw-headline" id="Configuration">Configuration</span></h2>
+<p>This section only discusses the most basic settings. For a full list of available configuration options, please see the <a rel="nofollow" class="external text" href="https://cloudinit.readthedocs.io">cloud-init documentation</a>.
+</p>
+<p>The main configuration file is <code>/etc/cloud/cloud.cfg</code>. Optionally, additional <code>*.cfg</code> files to be loaded can be placed in <code>/etc/cloud/cloud.cfg.d</code>. All of their contents will be <a rel="nofollow" class="external text" href="https://cloudinit.readthedocs.io/en/latest/reference/merging.html">merged</a>.
+</p>
+<p>The default configuration shipped with cloud-init 19.3 and later should work out of the box with most major cloud environments. In rough terms, it does the following:
+</p>
+<ul>
+<li>Disable the root user, create a user <code>arch</code> for logging in</li>
+<li>Rely on cloud-init's built-in detection for data sources</li>
+<li>Run all modules known to work on Arch Linux</li>
+</ul>
+<p>Depending on the use case, the default configuration might need to be adapted.
+</p>
+<h3><span class="mw-headline" id="Default_user_configuration">Default user configuration</span></h3>
+<p>The default configuration includes the following contents (comments omitted for brevity):
+</p>
+<pre>users:
+   - default
+</pre>
+<p>The users to be added to the system. The special name <code>default</code> is just a reference to the <code>default_user</code> in the <code>system_info</code> section (see below), but <a rel="nofollow" class="external text" href="https://cloudinit.readthedocs.io/en/latest/reference/examples.html#including-users-and-groups">the syntax</a> supports configuring arbitrary users with many options. The first user in this list will be considered the "default" user by other modules, for example the one that sets up SSH keys passed in from the cloud environment.
+</p>
+<pre>disable_root: true
+</pre>
+<p>Disable root SSH access. You may also delete the root user password on the cloud image:
+</p>
+<pre># passwd -d root
+</pre>
+<pre>system_info:
+   default_user:
+     name: arch
+     lock_passwd: true
+     gecos: arch Cloud User
+     groups: [wheel, adm]
+     sudo: ["ALL=(ALL) NOPASSWD:ALL"]
+     shell: /bin/bash
+</pre>
+<p>This is the specification of the distribution's default user:
+</p>
+<ul>
+<li>the default user's name will be <code>arch</code>
+</li>
+<li>the default user is password locked, which means you can only log into the instance with the SSH keys configured during boot</li>
+<li>the default user will be added to the groups <code>adm</code> and <code>wheel</code>
+</li>
+<li>the default user is allowed passwordless <code>sudo</code> usage</li>
+<li>the default user's shell is <code>/bin/bash</code>
+</li>
+</ul>
+<p>Note that the user specified here will only be created if the special user "default" is included in the <code>users:</code> section above (or the section is omitted entirely).
+</p>
+<h3><span class="mw-headline" id="Configuring_data_sources">Configuring data sources</span></h3>
+<p>Data Sources define how the instance metadata is pulled during boot. This depends on the cloud environment (OpenStack, AWS, OpenNebula etc.) you are running your instance in. Under the hood, this translates to a corresponding module which implements a few methods defined in a common interface.
+</p>
+<p>The default configuration specifies no data sources, which means that cloud-init will attempt to auto-detect the cloud environment. However, some environments cannot be detected or may require special configuration to work. In this case, the data sources to be used can be explictly specified and configured. Refer to the <a rel="nofollow" class="external text" href="https://cloudinit.readthedocs.io/en/latest/reference/datasources.html#known-sources">list of known data sources</a> in the documentation.
+</p>
+<p>To specify a list of data sources to be used in your <code>/etc/cloud/cloud.cfg</code> add something like this:
+</p>
+<pre>datasource_list: [ NoCloud, ConfigDrive, OpenNebula, Azure, AltCloud, OVF, MAAS, GCE, OpenStack, CloudSigma, Ec2, CloudStack, None ]
+</pre>
+<p>This instructs cloud-init what modules to load while trying to download instance metadata. Optionally further configuration parameters may be passed specific to each datasource as follows:
+</p>
+<pre>datasource:
+  OpenStack:
+    metadata_urls: [ 'http://169.254.169.254:80' ]
+    dsmode: net
+</pre>
+<p>The above configuration tells OpenStack datasource to use the url <code>http://169.254.169.254:80</code> to download metadata and to run after network initialization, both of which are the default behaviour and may be omitted.
+</p>
+<h3><span class="mw-headline" id="Modules">Modules</span></h3>
+<p>Cloud-init comes with a <a rel="nofollow" class="external text" href="https://cloudinit.readthedocs.io/en/latest/reference/modules.html">set of modules</a> that can be enabled or disabled in the configuration. The default configuration enables all modules that are known to work on Arch Linux. Omitted modules include e.g. those specific to other distributions or operating systems.
+</p>
+<p>The fact that a module is enabled usually does not mean that it will actually do anything. It will however check if any configuration relevant to it was passed in, e.g. from the cloud environment via the data source. Only then it will attempt to act. As such, enabling all modules usually helps to maximize compatibility with cloud environments. Nevertheless, modules known to be not needed can be removed from configuration, e.g. to improve start-up times. You can use <code>cloud-init analyze</code> on a booted instance to see how much time was spent on individual modules.
+</p>
+<p>Some modules declare to cloud-init which distributions they have been verified for. Even if you specify that you want to run them, they will refuse to run unless the distribution specified in <code>cloud.cfg</code> is one of the verified distributions for that module. If you need to override this behavior to run a module on Arch anyway, add the module to the <code>unverified_modules</code> section in the cloud config, e.g.:
+</p>
+<pre>unverified_modules: ['ssh-import-id']
+</pre>
+<h2><span class="mw-headline" id="Systemd_integration">Systemd integration</span></h2>
+<p>Package cloud-init provides four <span class="plainlinks archwiki-template-man" title="$ man 5 systemd.service"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/systemd.service.5">systemd.service(5)</a></span>, two <span class="plainlinks archwiki-template-man" title="$ man 5 systemd.target"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/systemd.target.5">systemd.target(5)</a></span>, and a <span class="plainlinks archwiki-template-man" title="$ man 7 systemd.generator"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/systemd.generator.7">systemd.generator(7)</a></span>, whose dependencies are constructed in a way that they are activated in the sequence listed:
+</p>
+<ul>
+<li>
+<code>cloud-init-generator</code>. Determines availability of any data source and enables or disables <code>cloud-init.target</code>
+</li>
+<li>
+<code>cloud-init-local.service</code>. Only requires the filesystems to be up. Executes <code>cloud-init init --local</code>
+</li>
+<li>
+<code>cloud-init.service</code>. Requires the network to be up. Executes <code>cloud-init init</code>
+</li>
+<li>
+<code>cloud-config.target</code>. Corresponds to the cloud-config upstart event "to inform third parties that cloud-config is available"</li>
+<li>
+<code>cloud-config.service</code>. Executes <code>cloud-init modules --mode=config</code>
+</li>
+<li>
+<code>cloud-final.service</code>. Executes <code>cloud-init modules --mode=final</code>
+</li>
+<li>
+<code>cloud-init.target</code>. Reached when all services have been started</li>
+</ul>
+<p>The <a href="../en/Arch_Linux_AMIs_for_Amazon_Web_Services.html" title="Arch Linux AMIs for Amazon Web Services">Uplink Labs EC2 images</a> have all of them enabled, although that appears to be overkill due to the dependencies. When preparing an image, enabling <code>cloud-init.service</code> and <code>cloud-final.service</code> should be sufficient. Note that this does not mean that the cloud-init services will actually be run - that still depends on the generator enabling the <code>cloud-init.target</code> on early boot.
+</p>
+<p>See also the <a rel="nofollow" class="external text" href="https://cloudinit.readthedocs.io/en/latest/explanation/boot.html">cloud-init boot stages documentation</a> for more information.
+</p>
+<h2><span class="mw-headline" id="Using">Using</span></h2>
+<h3><span class="mw-headline" id="QEMU">QEMU</span></h3>
+<p>Here is how to test an <a href="../en/Archiso.html" title="Archiso">Archiso</a> with cloud-init (see <a rel="nofollow" class="external free" href="https://gitlab.archlinux.org/archlinux/archiso/-/issues/27">https://gitlab.archlinux.org/archlinux/archiso/-/issues/27</a>) using <a href="../en/QEMU.html" title="QEMU">QEMU</a>:
+</p>
+<p>Create a <code>user-data</code> file in YAML format for cloud-init containing username(s) and public SSH key(s).  You can either use the convenient <code>create_cloud-init.sh</code> script proposed in <a rel="nofollow" class="external text" href="https://gitlab.archlinux.org/archlinux/archiso/-/merge_requests/117/diffs">archiso Merge Request #117</a>, or just hand write as below, as-is or adding any <a rel="nofollow" class="external text" href="https://cloudinit.readthedocs.io/en/latest/reference/examples.html">additional options shown on the cloud-init documentation</a>. Beware that the <code>#cloud-config</code> is NOT a YAML comment, but is required to be present by cloud-init.
+</p>
+<pre>#cloud-config
+users:
+  - name: vorburger
+    ssh_authorized_keys:
+      - ssh-rsa (...)
+</pre>
+<p>We can use <code>meta-data</code> as well, but do not have to, so we can just make that an empty file (but it has to exist):
+</p>
+<pre>$ touch meta-data
+</pre>
+<p>Then build a <code>cloud-init.iso</code> containing (only) the <code>user-data</code> and <code>meta-data</code> using <i>xorriso</i> from <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=libisoburn">libisoburn</a></span>:
+</p>
+<pre>$ xorriso -as genisoimage -output cloud-init.iso -volid CIDATA -joliet -rock user-data meta-data
+</pre>
+<p>Now add this <code>cloud-init.iso</code> as an additional second drive to the VM, using e.g. <code>qemu-system-x86_64 ... -cdrom cloud-init.iso</code>, or if using <a href="../en/Archiso.html" title="Archiso">archiso</a> then with the <code>run_archiso -c</code>.
+</p>
+<p>You should then be able to SSH into the machine using as the chosen user and public key supplied in <code>user-data</code>. Note that it may take a moment to be available, due to a delay at the boot menu; e.g. the standard releng <code>archlinux*.iso</code> will wait there for 30s at start-up. For frequent re-testing of new instances with changing hostkeys, <code>ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null</code> may be handy.
+</p>
+<div class="archwiki-template-box archwiki-template-box-tip">
+<strong>Tip:</strong> <a rel="nofollow" class="external text" href="https://cloudinit.readthedocs.io/en/latest/reference/datasources/nocloud.html">Cloud-init's nocloud documenation</a> explains an alternative approach, based on using <code>-smbios type=1,serial=ds=nocloud-net</code>. However but that is often less practical, because you need working networking, plus a running webserver you can point to.  That approach is also not applicable when booting bare metal (whereas the <code>cloud-init.iso</code> approach is - you could just "burn" two separate USB sticks, for <code>archlinux*.iso</code> and <code>cloud-init.iso</code>, and boot from both).  Lastly note that <code>ds=nocloud</code> (as opposed to <code>ds=nocloud-net</code>) is of limited use, as the <code>seedfrom</code> path must reference a file inside on the ISO, not outside on the host - which is what this all about not needing in the first place.</div>
+<h2><span class="mw-headline" id="Troubleshooting">Troubleshooting</span></h2>
+<h3><span class="mw-headline" id="FAQ">FAQ</span></h3>
+<p><a rel="nofollow" class="external text" href="https://cloudinit.readthedocs.io/en/latest/reference/faq.html">The cloud-init FAQ</a> has useful information about how to debug cloud-init, including where its log files are, and how to re-run datasource detection and cloud-init during development.
+</p>
+<h3><span class="mw-headline" id="Unmounted_image">Unmounted image</span></h3>
+<p>The first thing to check is often if the cloud-init image (ISO) is seen, with <code>lsblk</code> and <code>mount</code>.
+</p>
+<h3>
+<span id=".22device_.2Fdev.2Fsr0_with_label_cidata_not_a_valid_seed.22"></span><span class="mw-headline" id='"device_/dev/sr0_with_label_cidata_not_a_valid_seed"'>"device /dev/sr0 with label cidata not a valid seed"</span>
+</h3>
+<p><code>datasourcenocloud.py warning device /dev/sr0 with label cidata not a valid seed</code> appears when the nocloud datasource sees an ISO that e.g. only contains <code>user-data</code> but no <code>meta-data</code> - both are required, even if one is empty.
+</p>
+<h3>
+<span id=".22unhandled_non-multipart_.5B....5D_ssh_authorized_keys.22"></span><span class="mw-headline" id='"unhandled_non-multipart_[...]_ssh_authorized_keys"'>"unhandled non-multipart [...] ssh_authorized_keys"</span>
+</h3>
+<p><code>unhandled non-multipart (text-x-not-multipart) userdata 'b'ssh_authorized_keys</code> appears when <code>user-data</code> YAML does not start with <code>#cloud-config</code> (no space, apparently; even though <code>yamllint</code> will tell you that it is <code>missing starting space in comment</code>).
+</p>
+<h2><span class="mw-headline" id="See_also">See also</span></h2>
+<ul><li><a rel="nofollow" class="external text" href="https://cloudinit.readthedocs.io/en/latest/">cloud-init documentation</a></li></ul>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../Special:Categories.html" title="Special:Categories">Categories</a>: <ul>
+<li><a href="../en/Category:Virtualization.html" title="Category:Virtualization">Virtualization</a></li>
+<li><a href="../en/Category:Networking.html" title="Category:Networking">Networking</a></li>
+</ul>
+</div></div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=Cloud-init&amp;oldid=783200">https://wiki.archlinux.org/index.php?title=Cloud-init&amp;oldid=783200</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 15 July 2023, at 11:08.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>EFISTUB - ArchWiki</title>
+<link rel="stylesheet" href="../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-EFISTUB rootpage-EFISTUB skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Preparing_for_EFISTUB" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Preparing_for_EFISTUB">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Preparing for EFISTUB</div>
+			</a>
+			
+			<ul id="toc-Preparing_for_EFISTUB-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Booting_EFISTUB" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Booting_EFISTUB">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Booting EFISTUB</div>
+			</a>
+			
+				<button aria-controls="toc-Booting_EFISTUB-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Booting EFISTUB subsection
+				</button>
+			
+			<ul id="toc-Booting_EFISTUB-sublist" class="sidebar-toc-list">
+				<li id="toc-Using_UEFI_directly" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Using_UEFI_directly">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.1</span>Using UEFI directly</div>
+			</a>
+			
+			<ul id="toc-Using_UEFI_directly-sublist" class="sidebar-toc-list">
+				<li id="toc-efibootmgr" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#efibootmgr">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.1.1</span>efibootmgr</div>
+			</a>
+			
+			<ul id="toc-efibootmgr-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-bcfg" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#bcfg">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.1.2</span>bcfg</div>
+			</a>
+			
+			<ul id="toc-bcfg-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-kesboot" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#kesboot">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.1.3</span>kesboot</div>
+			</a>
+			
+			<ul id="toc-kesboot-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Using_UEFI_Shell" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Using_UEFI_Shell">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.2</span>Using UEFI Shell</div>
+			</a>
+			
+			<ul id="toc-Using_UEFI_Shell-sublist" class="sidebar-toc-list">
+				<li id="toc-Using_a_startup.nsh_script" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Using_a_startup.nsh_script">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.2.1</span>Using a startup.nsh script</div>
+			</a>
+			
+			<ul id="toc-Using_a_startup.nsh_script-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Troubleshooting" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Troubleshooting">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>Troubleshooting</div>
+			</a>
+			
+				<button aria-controls="toc-Troubleshooting-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Troubleshooting subsection
+				</button>
+			
+			<ul id="toc-Troubleshooting-sublist" class="sidebar-toc-list">
+				<li id="toc-EFISTUB_does_not_work_on_some_Dell_systems" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#EFISTUB_does_not_work_on_some_Dell_systems">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.1</span>EFISTUB does not work on some Dell systems</div>
+			</a>
+			
+			<ul id="toc-EFISTUB_does_not_work_on_some_Dell_systems-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Changes_to_boot_entries_are_not_applied" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Changes_to_boot_entries_are_not_applied">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.2</span>Changes to boot entries are not applied</div>
+			</a>
+			
+			<ul id="toc-Changes_to_boot_entries_are_not_applied-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-See_also" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#See_also">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4</span>See also</div>
+			</a>
+			
+			<ul id="toc-See_also-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../en/EFISTUB.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="mw-list-item"><a href="../en/Talk:EFISTUB.html" rel="discussion" title="Discussion about the content page [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">English</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../en/EFISTUB.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=EFISTUB&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=EFISTUB&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../en/EFISTUB.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=EFISTUB&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=EFISTUB&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output">
+<div class="archwiki-template-meta-related-articles-start">
+<p class="mw-no-invert">Related articles</p>
+<ul>
+<li><a href="../en/Arch_boot_process.html" title="Arch boot process">Arch boot process</a></li>
+<li><a href="../en/Unified_Extensible_Firmware_Interface.html" title="Unified Extensible Firmware Interface">Unified Extensible Firmware Interface</a></li>
+<li><a href="../en/Unified_kernel_image.html" title="Unified kernel image">Unified kernel image</a></li>
+</ul>
+</div>
+<p>The Linux kernel supports EFISTUB booting which allows <a href="../en/Unified_Extensible_Firmware_Interface.html" class="mw-redirect" title="EFI">EFI</a> firmware to load the kernel as an EFI executable. The option is enabled by default on Arch Linux kernels, or if compiling the kernel one can activate it by setting <code>CONFIG_EFI_STUB=y</code> in the Kernel configuration. See <a rel="nofollow" class="external text" href="https://docs.kernel.org/admin-guide/efi-stub.html">The EFI Boot Stub</a> for more information.
+</p>
+<p>With EFISTUB a kernel can be booted directly by a UEFI motherboard or indirectly using a <a href="../en/Arch_boot_process.html#Boot_loader" class="mw-redirect" title="Boot loader">boot loader</a>. Using a boot loader is recommended if you have multiple kernel/initramfs pairs and your motherboard's UEFI boot menu is not easy to use.
+</p>
+<mw:tocplace></mw:tocplace>
+<h2><span class="mw-headline" id="Preparing_for_EFISTUB">Preparing for EFISTUB</span></h2>
+<p>First, you must create an <a href="../en/EFI_system_partition.html" title="EFI system partition">EFI system partition</a> and choose how it is mounted. See <a href="../en/EFI_system_partition.html#Mount_the_partition" title="EFI system partition">EFI system partition#Mount the partition</a> for all available ESP mounting options.
+</p>
+<div class="archwiki-template-box archwiki-template-box-tip">
+<strong>Tip:</strong> 
+<ul>
+<li>
+<a href="../en/Pacman.html" title="Pacman">pacman</a> will directly update the kernel that the EFI firmware will read if you mount the ESP to <code>/boot</code>.</li>
+<li>You can keep the kernel and initramfs off of the ESP if you use a boot manager which has a file system driver for the partition where they reside, e.g. <a href="../en/REFInd.html" title="REFInd">rEFInd</a>.</li>
+</ul>
+</div>
+<h2><span class="mw-headline" id="Booting_EFISTUB">Booting EFISTUB</span></h2>
+<div class="archwiki-template-box archwiki-template-box-tip">
+<strong>Tip:</strong>  There are several UEFI boot managers which can provide additional options or simplify the process of UEFI booting - especially if you are experimenting with <a href="../en/Kernel_parameters.html" title="Kernel parameters">kernel parameters</a> or if you have multiple kernels/operating systems. See <a href="../en/Arch_boot_process.html#Boot_loader" title="Arch boot process">Arch boot process#Boot loader</a> for more information. </div>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> Linux Kernel EFISTUB initramfs path should be relative to the EFI system partition's root and use backslashes (in accordance with EFI standards). For example, if the initramfs is located in <code><i>esp</i>/EFI/arch/initramfs-linux.img</code>, the corresponding UEFI formatted line should be <code>initrd=\EFI\arch\initramfs-linux.img</code>. In the following examples we will assume that everything is under <code><i>esp</i>/</code>.</div>
+<h3><span class="mw-headline" id="Using_UEFI_directly">Using UEFI directly</span></h3>
+<p>UEFI is designed to remove the need for an intermediate bootloader such as <a href="../en/GRUB.html" title="GRUB">GRUB</a>. If your motherboard has a good UEFI implementation, it is possible to embed the kernel parameters within a UEFI boot entry and for the motherboard to boot Arch directly. You can use <a href="../en/Unified_Extensible_Firmware_Interface.html#efibootmgr" class="mw-redirect" title="Efibootmgr">efibootmgr</a> or UEFI Shell v2 to modify your motherboard's boot entries.
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> 
+<ul>
+<li>Outdated UEFI implementations may have compatibility issues with the Linux kernel. If there is a newer version of your UEFI with bug fixes, consider flashing it with the manufacturer's recommended tool.</li>
+<li>Some firmwares (notably <b>Lenovo</b> and <b>Dell</b> laptops) do not pass command line parameters from the boot entries in NVRAM to the EFI binaries.<a rel="nofollow" class="external autonumber" href="https://bbs.archlinux.org/viewtopic.php?id=178154">[1]</a> In that case, the kernel and parameters can be combined into a <a href="../en/Unified_kernel_image.html" title="Unified kernel image">unified kernel image</a>, then create a boot entry with the resulting <i>.efi</i> file.</li>
+</ul>
+</div>
+<h4><span class="mw-headline" id="efibootmgr">efibootmgr</span></h4>
+<p>To create a boot entry with <i>efibootmgr</i> that will load the kernel:
+</p>
+<pre># efibootmgr --create --disk <i>/dev/sdX</i> --part <i>Y</i> --label "Arch Linux" --loader /vmlinuz-linux --unicode 'root=<i>block_device_identifier</i> rw initrd=\initramfs-linux.img'
+</pre>
+<p>or create a boot entry with <i>efibootmgr</i> and hibernation on swap partition:
+</p>
+<pre># efibootmgr --create --disk <i>/dev/sdX</i> --part <i>Y</i> --label "Arch Linux" --loader /vmlinuz-linux --unicode 'root=<i>block_device_identifier</i> resume=<i>block_device_identifier</i> rw initrd=\initramfs-linux.img'
+</pre>
+<p>Where <code><i>/dev/sdX</i></code> and <code><i>Y</i></code> are the drive and partition number where the ESP is located. Change the <code>root=</code>  and <code>resume=</code> parameters to reflect your Linux root and swap partitions. 
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> See <a href="../en/Kernel_parameters.html#Parameter_list" title="Kernel parameters">kernel parameters</a> for supported device name formats, <a href="../en/Persistent_block_device_naming.html" title="Persistent block device naming">persistent block device naming</a> for how to obtain the corresponding value and <a href="../en/Persistent_block_device_naming.html#Kernel_parameters" title="Persistent block device naming">Persistent block device naming#Kernel parameters</a> for examples.</div>
+<p>If omitted, then the first partition on <code><i>/dev/sda</i></code> is used as the ESP.
+</p>
+<p>Note that the <code>-u</code>/<code>--unicode</code> argument in quotes is just the list of <a href="../en/Kernel_parameters.html" title="Kernel parameters">kernel parameters</a>, so you may need to add additional parameters (e.g. for <a href="../en/Power_management/Suspend_and_hibernate.html#Required_kernel_parameters" class="mw-redirect" title="Suspend and hibernate">suspend to disk</a> or <a href="../en/Microcode.html" title="Microcode">microcode</a>).
+</p>
+<p>After adding the boot entry, you can verify the entry was added properly with:
+</p>
+<pre># efibootmgr --unicode
+</pre>
+<p>To set the boot order:
+</p>
+<pre># efibootmgr --bootorder <i>XXXX</i>,<i>XXXX</i> --unicode
+</pre>
+<p>Where <i>XXXX</i> is the number that appears in the output of <i>efibootmgr</i> command against each entry.
+</p>
+<div class="archwiki-template-box archwiki-template-box-tip">
+<strong>Tip:</strong> 
+<ul>
+<li>
+<a rel="nofollow" class="external free" href="https://github.com/de-arl/auto-UEFI-entry">https://github.com/de-arl/auto-UEFI-entry</a> is a tool to create the commands</li>
+<li>It is convenient to save the command to create the boot entry in a shell script, which makes it easier to modify, for example when changing kernel parameters. In doing so, consider automating the deletion of old boot entries, as <i>efibootmgr</i> currently <a rel="nofollow" class="external text" href="https://github.com/rhboot/efibootmgr/issues/49">does not support editing existing entries</a>.</li>
+<li>The forum post titled <a rel="nofollow" class="external text" href="https://bbs.archlinux.org/viewtopic.php?pid=1090040#p1090040">The linux kernel with build in bootloader?</a> might also be of interest.</li>
+</ul>
+</div>
+<h4><span class="mw-headline" id="bcfg">bcfg</span></h4>
+<p>Some UEFI implementations make it difficult to modify the NVRAM successfully using <i>efibootmgr</i>. If <i>efibootmgr</i> cannot successfully create an entry, you can use the <a href="../en/Unified_Extensible_Firmware_Interface.html#bcfg" class="mw-redirect" title="UEFI">bcfg</a> command in UEFI Shell v2 (i.e., from the <a rel="nofollow" class="external text" href="https://archlinux.org/download/">Arch Linux live iso</a>).
+</p>
+<p>First, find out the device number where your <a href="../en/EFI_system_partition.html" class="mw-redirect" title="ESP">ESP</a> resides with:
+</p>
+<pre>Shell&gt; map
+</pre>
+<p>In this example, <code>1</code> is used as the device number. To list the contents of the <a href="../en/EFI_system_partition.html" class="mw-redirect" title="ESP">ESP</a>:
+</p>
+<pre>Shell&gt; ls FS1:
+</pre>
+<p>To view the current boot entries:
+</p>
+<pre>Shell&gt; bcfg boot dump
+</pre>
+<p>To add an entry for your kernel, use:
+</p>
+<pre>Shell&gt; bcfg boot add <i>N</i> FS1:\vmlinuz-linux "Arch Linux"
+</pre>
+<p>Where <code><i>N</i></code> is the location where the entry will be added in the boot menu. 0 is the first menu item. Menu items already existing will be shifted in the menu without being discarded.
+</p>
+<p>Add the necessary kernel options by creating a file on your ESP:
+</p>
+<pre>Shell&gt; edit FS1:\options.txt
+</pre>
+<p>In the file, add the boot line. For example:
+</p>
+<pre>root=/dev/sda2 rw initrd=\initramfs-linux.img
+</pre>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> Add extra spaces in the beginning of the line in the file. There is a <a href="https://en.wikipedia.org/wiki/Byte_order_mark" class="extiw" title="wikipedia:Byte order mark">byte order mark</a> at the beginning of the line that will squash any character next to it which will cause an error when booting.</div>
+<p>Press <code>F2</code> to save and then <code>F3</code> to exit.
+</p>
+<p>Add these options to your previous entry:
+</p>
+<pre>Shell&gt; bcfg boot -opt <i>N</i> FS1:\options.txt
+</pre>
+<p>Repeat this process for any additional entries.
+</p>
+<p>To remove a previously added item do:
+</p>
+<pre>Shell&gt; bcfg boot rm <i>N</i>
+</pre>
+<h4><span class="mw-headline" id="kesboot">kesboot</span></h4>
+<p>You can also simplify and automate the work with EFISTUB using a script from the <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/kesboot-git/">kesboot-git</a></span><sup><small>AUR</small></sup> package. It also contains a <a href="../en/Pacman.html#Hooks" class="mw-redirect" title="Pacman hook">pacman hook</a> that can add and remove EFI variables during actions with packages.
+</p>
+<p>First, install the package, and then configure the <code>/etc/kesboot.conf</code> file:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/kesboot.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">CMDLINES=('linux' 'acpi=on'
+          'linux-zen' 'iommu=off')</pre>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> If you use a hook (the variables <code>INSTALL_HOOK</code> and <code>REMOVE_HOOK</code>), then it will overwrite the <code>CMDLINES</code> array every time it runs (preserving the contents of all records).</div>
+<p>Then, execute
+</p>
+<pre># kesboot -u
+</pre>
+<p>The package also contains a program for the initial configuration of the EFI boot. After <a href="../en/EFI_system_partition.html#Mount_the_partition" title="EFI system partition">mounting the ESP</a> directory, run
+</p>
+<pre># /usr/lib/setup-efi-boot
+</pre>
+<h3><span class="mw-headline" id="Using_UEFI_Shell">Using UEFI Shell</span></h3>
+<p>If you do not want to create a permanent boot entry it is possible to launch the kernel from UEFI Shell since it is a normal UEFI application:
+</p>
+<pre>&gt; FS0:
+&gt; \vmlinuz-linux root=PARTUUID=3518bb68-d01e-45c9-b973-0b5d918aae96 rw initrd=\initramfs-linux.img
+</pre>
+<p>In this case, the kernel parameters are passed as normal parameters to the launched EFISTUB kernel file.
+</p>
+<p>To avoid needing to remember all of your kernel parameters every time, you can save the executable command to a shell script such as <code>archlinux.nsh</code> on your EFI system partition, then run it with:
+</p>
+<pre>&gt; FS0:
+&gt; archlinux
+</pre>
+<h4><span class="mw-headline" id="Using_a_startup.nsh_script">Using a startup.nsh script</span></h4>
+<p>Some UEFI implementations do not retain EFI variables between cold boots (e.g. <a href="../en/VirtualBox.html" title="VirtualBox">VirtualBox</a> before version 6.1) and anything set through the UEFI firmware interface is lost on poweroff.
+</p>
+<p>The <a rel="nofollow" class="external text" href="https://www.uefi.org/sites/default/files/resources/UEFI_Shell_Spec_2_0.pdf">UEFI Shell Specification 2.0</a> establishes that a script called <code>startup.nsh</code> at the root of the ESP partition will always be interpreted and can contain arbitrary instructions; among those you can set a bootloading line. Make sure you mount the ESP partition on <code>/boot</code> and create a <code>startup.nsh</code> script that contains a kernel bootloading line. For example:
+</p>
+<pre>vmlinuz-linux rw root=/dev/sd<i>X</i> [rootfs=<i>myfs</i>] [rootflags=<i>myrootflags</i>] \
+ [kernel.flag=<i>foo</i>] [<i>mymodule</i>.flag=<i>bar</i>] \
+ [initrd=\intel-ucode.img] initrd=\initramfs-linux.img
+</pre>
+<p>This method will work with almost all UEFI firmware versions you may encounter in real hardware, you can use it as last resort. <b>The script must be a single long line.</b> Sections in brackets are optional and given only as a guide. Shell style linebreaks are for visual clarification only. FAT filesystems use the backslash as path separator and in this case, the backslash declares the initramfs is located in the root of the ESP partition. Only Intel microcode is loaded in the booting parameters line; AMD microcode is read from disk later during the boot process; this is done automatically by the kernel.
+</p>
+<h2><span class="mw-headline" id="Troubleshooting">Troubleshooting</span></h2>
+<h3><span class="mw-headline" id="EFISTUB_does_not_work_on_some_Dell_systems">EFISTUB does not work on some Dell systems</span></h3>
+<p>Several generation Dell firmwares are wrongly passing the arguments to the bootloader, thus making EFISTUB parse a null command line which normally means unbootable system (see the complete <a rel="nofollow" class="external text" href="https://lore.kernel.org/linux-efi/20200907170021.GA2284449@rani.riverdale.lan/">linux-efi thread</a>).
+</p>
+<p>A workaround has been found since Linux 5.10 to correct this behavior (see this <a rel="nofollow" class="external text" href="https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=4a568ce29d3f48df95919f82a80e4b9be7ea0dc1">commit </a>). For Linux &lt; 5.10, you can use an efi-packer like <a rel="nofollow" class="external text" href="https://github.com/RobertCsordas/arch-efiboot">arch-efiboot</a>, or a different bootloader.
+</p>
+<h3><span class="mw-headline" id="Changes_to_boot_entries_are_not_applied">Changes to boot entries are not applied</span></h3>
+<p>Some motherboards, such as Haswell-era Asus boards (<a rel="nofollow" class="external text" href="https://forums.archlinux.fr/viewtopic.php?t=19618">as encountered on the french forum</a>), will not notice changes to boot entries unless the system is booted with another pre-existing boot entry before booting the updated EFISTUB entry.
+</p>
+<h2><span class="mw-headline" id="See_also">See also</span></h2>
+<ul>
+<li><a rel="nofollow" class="external text" href="https://docs.kernel.org/admin-guide/efi-stub.html">Linux Kernel Documentation on EFISTUB</a></li>
+<li><a rel="nofollow" class="external text" href="https://git.kernel.org/?p=linux/kernel/git/torvalds/linux.git;a=commitdiff;h=291f36325f9f252bd76ef5f603995f37e453fc60;hp=55839d515495e766605d7aaabd9c2758370a8d27">Linux Kernel EFISTUB Git Commit</a></li>
+<li><a rel="nofollow" class="external text" href="https://www.rodsbooks.com/efi-bootloaders/efistub.html">Rod Smith's page on EFISTUB</a></li>
+</ul>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="../en/Category:Boot_loaders.html" title="Category:Boot loaders">Boot loaders</a></li></ul>
+</div></div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=EFISTUB&amp;oldid=785512">https://wiki.archlinux.org/index.php?title=EFISTUB&amp;oldid=785512</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 15 August 2023, at 10:34.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>Lean Theorem Prover - ArchWiki</title>
+<link rel="stylesheet" href="../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Lean_Theorem_Prover rootpage-Lean_Theorem_Prover skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Installation_of_lean_and_mathlib" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Installation_of_lean_and_mathlib">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Installation of lean and mathlib</div>
+			</a>
+			
+				<button aria-controls="toc-Installation_of_lean_and_mathlib-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Installation of lean and mathlib subsection
+				</button>
+			
+			<ul id="toc-Installation_of_lean_and_mathlib-sublist" class="sidebar-toc-list">
+				<li id="toc-Lean_4_using_elan" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Lean_4_using_elan">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.1</span>Lean 4 using elan</div>
+			</a>
+			
+			<ul id="toc-Lean_4_using_elan-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Lean_3_via_the_AUR" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Lean_3_via_the_AUR">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.2</span>Lean 3 via the AUR</div>
+			</a>
+			
+			<ul id="toc-Lean_3_via_the_AUR-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Text_editors" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Text_editors">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Text editors</div>
+			</a>
+			
+				<button aria-controls="toc-Text_editors-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Text editors subsection
+				</button>
+			
+			<ul id="toc-Text_editors-sublist" class="sidebar-toc-list">
+				<li id="toc-Using_Lean_with_Emacs" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Using_Lean_with_Emacs">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.1</span>Using Lean with Emacs</div>
+			</a>
+			
+			<ul id="toc-Using_Lean_with_Emacs-sublist" class="sidebar-toc-list">
+				<li id="toc-Install_lean-mode" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Install_lean-mode">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.1.1</span>Install lean-mode</div>
+			</a>
+			
+			<ul id="toc-Install_lean-mode-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Keybindings" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Keybindings">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.1.2</span>Keybindings</div>
+			</a>
+			
+			<ul id="toc-Keybindings-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Automatic_unicode_input" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Automatic_unicode_input">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.1.3</span>Automatic unicode input</div>
+			</a>
+			
+			<ul id="toc-Automatic_unicode_input-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Viewing_goal_in_separate_buffer" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Viewing_goal_in_separate_buffer">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.1.4</span>Viewing goal in separate buffer</div>
+			</a>
+			
+			<ul id="toc-Viewing_goal_in_separate_buffer-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Using_Lean_with_Neovim" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Using_Lean_with_Neovim">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.2</span>Using Lean with Neovim</div>
+			</a>
+			
+			<ul id="toc-Using_Lean_with_Neovim-sublist" class="sidebar-toc-list">
+				<li id="toc-Install_lean.nvim" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Install_lean.nvim">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.2.1</span>Install lean.nvim</div>
+			</a>
+			
+			<ul id="toc-Install_lean.nvim-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Tips_and_tricks" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Tips_and_tricks">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>Tips and tricks</div>
+			</a>
+			
+				<button aria-controls="toc-Tips_and_tricks-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Tips and tricks subsection
+				</button>
+			
+			<ul id="toc-Tips_and_tricks-sublist" class="sidebar-toc-list">
+				<li id="toc-Caches_and_oleans" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Caches_and_oleans">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.1</span>Caches and oleans</div>
+			</a>
+			
+			<ul id="toc-Caches_and_oleans-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Lean_documentation" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Lean_documentation">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4</span>Lean documentation</div>
+			</a>
+			
+			<ul id="toc-Lean_documentation-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../en/Lean_Theorem_Prover.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="new mw-list-item"><a href="/index.php?title=Talk:Lean_Theorem_Prover&amp;action=edit&amp;redlink=1" rel="discussion" title="Discussion about the content page (page does not exist) [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">English</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../en/Lean_Theorem_Prover.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=Lean_Theorem_Prover&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=Lean_Theorem_Prover&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../en/Lean_Theorem_Prover.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Lean_Theorem_Prover&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Lean_Theorem_Prover&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output">
+<p>The <a rel="nofollow" class="external text" href="https://leanprover.github.io/">Lean theorem prover</a> is a proof assistant developed principally by Leonardo de Moura at Microsoft Research. The Lean mathematical library, mathlib, is a community-driven effort to build a unified library of mathematics formalized in the Lean proof assistant.
+</p>
+<mw:tocplace></mw:tocplace>
+<h2><span class="mw-headline" id="Installation_of_lean_and_mathlib">Installation of lean and mathlib</span></h2>
+<h3><span class="mw-headline" id="Lean_4_using_elan">Lean 4 using elan</span></h3>
+<p><a rel="nofollow" class="external text" href="https://github.com/leanprover/elan">elan</a> is a tool to manage installs of the lean theorem prover.
+It facilitates maintaining several concurrent versions of lean.
+In addition, as lean 4 is under heavy development, using it often requires installing nightly builds, which is made easy using elan.
+elan installs lean in subdirectories of <code>$HOME/.elan/toolchains</code>, and does not require root access.
+</p>
+<p>Install <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/elan-lean/">elan-lean</a></span><sup><small>AUR</small></sup> from the AUR.
+To install the latest stable version of lean 4, use
+</p>
+<pre>$ elan toolchain install leanprover/lean4:stable
+</pre>
+<p>However, many applications (including using mathlib4) require development versions of lean4, which can be installed using
+</p>
+<pre>$ elan toolchain install leanprover/lean4:nightly-yyyy-mm-dd
+</pre>
+<p>where <code>yyyy-mm-dd</code> should be replaced with the desired date of the nightly build.
+</p>
+<p>The installed versions of lean can be listed with
+</p>
+<pre>$ elan show
+</pre>
+<p>and a default can be selected with
+</p>
+<pre>$ elan default &lt;build&gt;
+</pre>
+<p>When using lean 4, the default can be overridden for a given project by <code>cd</code>-ing to the project directory and creating a file
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">lean-toolchain</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">&lt;build&gt;</pre>
+<p>(replace <code>&lt;build&gt;</code> with the appropriate build identifier.
+To get the path to an executable in the current lean build, use
+</p>
+<pre>$ elan which &lt;name_of_executable&gt;
+</pre>
+<p>To download mathlib, create a project:
+</p>
+<pre>$ $(elan which lake) new &lt;path/to/project&gt; math
+</pre>
+<p>which will create a new directory at <code>path/to/project</code>.
+Inside it will be a file named <code>lakefile.lean</code> which lists the dependencies of the project.
+Specifying <code>math</code> in the command above will make mathlib a dependency.
+To download mathlib, run
+</p>
+<pre>$ $(elan which lake) update
+$ $(elan which lake) exe cache get
+</pre>
+<p><br>
+</p>
+<h3><span class="mw-headline" id="Lean_3_via_the_AUR">Lean 3 via the AUR</span></h3>
+<p>Install <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/lean-community-bin/">lean-community-bin</a></span><sup><small>AUR</small></sup> or <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/lean-community/">lean-community</a></span><sup><small>AUR</small></sup> from the AUR.
+</p>
+<p>To install mathlib, you must first install <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/python-mathlibtools/">python-mathlibtools</a></span><sup><small>AUR</small></sup> from the AUR, which will install 'leanproject'.
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/python-mathlibtools/">python-mathlibtools</a></span><sup><small>AUR</small></sup> will not install mathlib, just the tools needed to download mathlib.</div>
+<p>To install mathlib, you must create a lean project:
+</p>
+<pre>$ cd <i>/path/to/project</i>
+$ leanproject new <i>name_of_project</i>
+</pre>
+<p>which will download mathlib to <code><i>/path/to/project/name_of_project/</i>_target/deps/mathlib</code>.
+</p>
+<p><br>
+</p>
+<h2><span class="mw-headline" id="Text_editors">Text editors</span></h2>
+<h3><span class="mw-headline" id="Using_Lean_with_Emacs">Using Lean with Emacs</span></h3>
+<h4><span class="mw-headline" id="Install_lean-mode">Install lean-mode</span></h4>
+<p>To use lean with emacs, you must install the <a rel="nofollow" class="external text" href="https://github.com/leanprover/lean-mode">lean-mode</a> package. To install it from the <a rel="nofollow" class="external text" href="https://melpa.org/">MELPA</a> repository, add: 
+</p>
+<pre>(require 'package)
+(add-to-list 'package-archives
+  '("melpa" . "<a rel="nofollow" class="external free" href="https://melpa.org/packages/">https://melpa.org/packages/</a>"))
+(package-initialize)
+(package-refresh-contents)
+</pre>
+<p>to your <a href="../en/Emacs.html#Configuration_file" title="Emacs">Emacs configuration file</a> open emacs, and type
+</p>
+<pre>M-x package-install RET
+lean-mode RET
+</pre>
+<p>Opening a file in emacs with the <code>.lean</code> extension will now automatically be opened in Lean mode.
+</p>
+<h4><span class="mw-headline" id="Keybindings">Keybindings</span></h4>
+<p>A list of keybindings is available at <a rel="nofollow" class="external text" href="https://github.com/leanprover/lean-mode">https://github.com/leanprover/lean-mode</a>.
+</p>
+<h4><span class="mw-headline" id="Automatic_unicode_input">Automatic unicode input</span></h4>
+<p>Lean uses unicode symbols as part of its language.
+<code>lean-mode</code> can handle this input easily by translating standard text to unicode characters, for instance, typing <code>\R</code> will resolve to the unicode character <code>ℝ</code>.
+To do this, the <code>Lean</code> input method needs to be selected.
+This can be done automatically by adding the following to your <a href="../en/Emacs.html#Configuration_file" title="Emacs">Emacs configuration file</a>:
+</p>
+<pre>(add-hook 'lean-mode-hook
+  (lambda () (set-input-method "Lean")))
+</pre>
+<h4><span class="mw-headline" id="Viewing_goal_in_separate_buffer">Viewing goal in separate buffer</span></h4>
+<p>Keeping track of the "goal" is very useful when writing proofs in Lean.
+The goal can be seen directly in emacs using the <code>C-c C-b</code> keybinding, which will open a new buffer in which the goal is shown. 
+This buffer can also be opened automatically when editing a <code>.lean</code> file by adding:
+</p>
+<pre>(add-hook 'lean-mode-hook 'lean-toggle-show-goal)
+</pre>
+<p>to your <a href="../en/Emacs.html#Configuration_file" title="Emacs">Emacs configuration file</a>.
+</p>
+<p><br>
+</p>
+<h3><span class="mw-headline" id="Using_Lean_with_Neovim">Using Lean with Neovim</span></h3>
+<h4><span class="mw-headline" id="Install_lean.nvim">Install lean.nvim</span></h4>
+<p>To use lean with <a href="../en/Neovim.html" title="Neovim">Neovim</a>, you must install the <a rel="nofollow" class="external text" href="https://github.com/Julian/lean.nvim/">lean.nvim</a> plugin. This can be done easily using <a href="../en/Vim.html#Using_a_plugin_manager" title="Vim">vim-plug</a> byadding the following to your <a href="../en/Neovim.html#Configuration" title="Neovim">Neovim Configuration file</a>:
+</p>
+<pre>call plug#begin() 
+
+...
+
+Plug 'Julian/lean.nvim'
+Plug 'neovim/nvim-lspconfig'
+Plug 'nvim-lua/plenary.nvim'
+
+...
+
+call plug#end()
+</pre>
+<p>open nvim, and type
+</p>
+<pre>:PlugInstall
+</pre>
+<p>If you are using lean 3, you will also need to install <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/lean-language-server/">lean-language-server</a></span><sup><small>AUR</small></sup>, which is available from the AUR. (The language server is built into lean 4, so it is not necessary for lean 4 installs).
+</p>
+<p>Next, create a configuration file at <code>$XDG_CONFIG_HOME/nvim/plugin/lean.lua</code>:
+</p>
+<pre>require('lean').setup{
+ abbreviations = { builtin = true },
+ mappings = true,
+}
+</pre>
+<p><code>abbreviatons</code> enables abbreviating unicode characters, and <code>mappings</code> enables a number of useful keybindings, see <a rel="nofollow" class="external text" href="https://github.com/Julian/lean.nvim/">https://github.com/Julian/lean.nvim/</a> for a full list.
+More configuration options are available at <a rel="nofollow" class="external text" href="https://github.com/Julian/lean.nvim/">https://github.com/Julian/lean.nvim/</a>.
+</p>
+<h2><span class="mw-headline" id="Tips_and_tricks">Tips and tricks</span></h2>
+<h3><span class="mw-headline" id="Caches_and_oleans">Caches and oleans</span></h3>
+<p>In order to use the theorems and lemmas in mathlib, mathlib needs to be built (i.e. compiled).
+This is a long process.
+To avoid this, the mathlib community provides a repository of pre-compiled mathlib files (also called "oleans").
+To download them using lean 4, use
+</p>
+<pre>$ $(elan which lake) exe cache get
+</pre>
+<p>and using lean 3, use
+</p>
+<pre>$ leanproject get-cache
+</pre>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> In order for the oleans to be used, they have to have been pre-compiled with the same version of lean (i.e. the same nightly build if you are using those) as is used by the project.</div>
+<p>When using lean 4, a simple way of ensuring that the project always uses the same version as mathlib is to link the mathlib <code>lean-toolchain</code> file to the project directory:
+</p>
+<pre>$ ln -sf lake-packages/mathlib/lean-toolchain ./
+$ $(elan which lake) update
+</pre>
+<h2><span class="mw-headline" id="Lean_documentation">Lean documentation</span></h2>
+<p>As of this writing, the documentation for lean and mathlib is incomplete, and difficult to find (this is especially true of lean 4).
+There is some documentation for lean 4 available at <a rel="nofollow" class="external autonumber" href="https://leanprover.github.io/documentation/">[1]</a> and for lean 3 at <a rel="nofollow" class="external autonumber" href="https://leanprover-community.github.io/learn.html">[2]</a>.
+Of particular note, a succinct "cheatsheet" for useful commands for theorem proving in lean 4 is available from <a rel="nofollow" class="external autonumber" href="https://github.com/madvorak/lean4-cheatsheet/blob/main/lean-tactics.pdf">[3]</a> and for lean 3 from <a rel="nofollow" class="external autonumber" href="https://leanprover-community.github.io//img/lean-tactics.pdf">[4]</a>.
+</p>
+<p>The documentation for mathlib in lean 4 is available at <a rel="nofollow" class="external autonumber" href="https://leanprover-community.github.io/mathlib4_docs/">[5]</a>, and for lean 3 at <a rel="nofollow" class="external autonumber" href="https://leanprover-community.github.io/mathlib_docs/">[6]</a>.
+</p>
+<p>Since the documentation is still rather sparse, it is often more productive to address questions to the lean community directly.
+The most popular forum for this is the <a rel="nofollow" class="external text" href="https://leanprover.zulipchat.com">leanprover Zulip chat</a>.
+</p>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="../en/Category:Science.html" title="Category:Science">Science</a></li></ul>
+</div></div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=Lean_Theorem_Prover&amp;oldid=777820">https://wiki.archlinux.org/index.php?title=Lean_Theorem_Prover&amp;oldid=777820</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 11 May 2023, at 18:41.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

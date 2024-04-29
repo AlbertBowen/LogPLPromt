@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>cURL - ArchWiki</title>
+<link rel="stylesheet" href="../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-CURL rootpage-CURL skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Installation" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Installation">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Installation</div>
+			</a>
+			
+			<ul id="toc-Installation-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Usage" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Usage">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Usage</div>
+			</a>
+			
+				<button aria-controls="toc-Usage-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Usage subsection
+				</button>
+			
+			<ul id="toc-Usage-sublist" class="sidebar-toc-list">
+				<li id="toc-Downloading" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Downloading">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.1</span>Downloading</div>
+			</a>
+			
+			<ul id="toc-Downloading-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-HTTP_POST" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#HTTP_POST">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.2</span>HTTP POST</div>
+			</a>
+			
+			<ul id="toc-HTTP_POST-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Tips_and_tricks" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Tips_and_tricks">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>Tips and tricks</div>
+			</a>
+			
+				<button aria-controls="toc-Tips_and_tricks-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Tips and tricks subsection
+				</button>
+			
+			<ul id="toc-Tips_and_tricks-sublist" class="sidebar-toc-list">
+				<li id="toc-Following_redirects" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Following_redirects">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.1</span>Following redirects</div>
+			</a>
+			
+			<ul id="toc-Following_redirects-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Show_download_errors" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Show_download_errors">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.2</span>Show download errors</div>
+			</a>
+			
+			<ul id="toc-Show_download_errors-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Compression" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Compression">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.3</span>Compression</div>
+			</a>
+			
+			<ul id="toc-Compression-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-ProgressBar" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#ProgressBar">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.4</span>ProgressBar</div>
+			</a>
+			
+			<ul id="toc-ProgressBar-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Globbing" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Globbing">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.5</span>Globbing</div>
+			</a>
+			
+			<ul id="toc-Globbing-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-config_file" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#config_file">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4</span>config file</div>
+			</a>
+			
+			<ul id="toc-config_file-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-See_also" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#See_also">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5</span>See also</div>
+			</a>
+			
+			<ul id="toc-See_also-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../en/CURL.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="new mw-list-item"><a href="/index.php?title=Talk:CURL&amp;action=edit&amp;redlink=1" rel="discussion" title="Discussion about the content page (page does not exist) [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">English</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../en/CURL.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=CURL&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=CURL&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../en/CURL.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=CURL&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=CURL&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output">
+<p><span>
+</span>
+<a rel="nofollow" class="external text" href="https://curl.haxx.se/">cURL</a> is a command line tool and library for transferring data with URLs. The command supports a number of different protocols, including <a href="../en/Category:Web.html" class="mw-redirect" title="HTTP">HTTP</a>, HTTPS, <a href="../en/Category:File_Transfer_Protocol.html" class="mw-redirect" title="FTP">FTP</a>, <a href="../en/SCP_and_SFTP.html" class="mw-redirect" title="SCP">SCP</a>, and SFTP. It is also designed to work without user interaction, like in scripts.
+</p>
+<mw:tocplace></mw:tocplace>
+<h2><span class="mw-headline" id="Installation">Installation</span></h2>
+<p><a href="../en/Help:Reading.html#Installation_of_packages" class="mw-redirect" title="Install">Install</a> the <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=curl">curl</a></span> package.
+</p>
+<h2><span class="mw-headline" id="Usage">Usage</span></h2>
+<h3><span class="mw-headline" id="Downloading">Downloading</span></h3>
+<p>A common use case for cURL is to download the resource to a specified file:
+</p>
+<pre>$ curl -o <i>file name</i> <i>URL</i>
+</pre>
+<p>If the URL contains the file name, you can save the resource directly to a file of that name:
+</p>
+<pre>$ curl -O <i>URL</i>
+</pre>
+<p>Similarly, you can use <code>-J</code> to accept a hint from an HTTP server (from the <code>Content-Disposition</code> header) for what the file should be named. If combined with <code>-O</code>, curl will use the file name specified by the URL if the HTTP server does not return a file name hint in its response.
+</p>
+<p>Alternatively you can print the resource to stdout by omitting the output options:
+</p>
+<pre>$ curl <i>URL</i>
+</pre>
+<h3><span class="mw-headline" id="HTTP_POST">HTTP POST</span></h3>
+<p>You can use cURL to make HTTP POST requests:
+</p>
+<pre>$ curl -d <i>'request body'</i> <i>URL</i>
+</pre>
+<p>If the request body cannot fit on the command line, cURL can read it from a file:
+</p>
+<pre>$ curl -d @<i>file name</i> <i>URL</i>
+</pre>
+<p>Sometimes, you may need to specify a custom value for the <code>Content-Type</code> header (cURL's default is <code>application/x-www-form-urlencoded</code>). You can do this with <code>-H</code>. For example, if you wanted to make a POST request with a JSON body:
+</p>
+<pre>$ curl -d <i>'json body'</i> -H 'Content-Type: application/json' <i>URL</i>
+</pre>
+<p>note that curl also has a option to write post data in json and change those headers automatically: <code>--json</code>:
+</p>
+<pre>$ curl --json '{"key":"value"}' <i>URL</i>
+</pre>
+<h2><span class="mw-headline" id="Tips_and_tricks">Tips and tricks</span></h2>
+<h3><span class="mw-headline" id="Following_redirects">Following redirects</span></h3>
+<p>To follow redirects (e.g. an HTTP to HTTPS redirect):
+</p>
+<pre>$ curl -L <i>URL</i>
+</pre>
+<h3><span class="mw-headline" id="Show_download_errors">Show download errors</span></h3>
+<p>By default curl would ignore errors (e.g. when downloading to a file, if there is a error curl would not notify you, and the file would be created empty) so use <code>--fail</code> to make it show a message on error:
+</p>
+<pre>$ curl --fail <i>URL</i>
+</pre>
+<h3><span class="mw-headline" id="Compression">Compression</span></h3>
+<p>If you want to transfer the data <a rel="nofollow" class="external text" href="https://everything.curl.dev/usingcurl/downloads/compression">compressed</a>, (e.g. in situations where bandwidth is more limited than CPU,curl would download the data compressed then uncompressed it after the downlod):
+</p>
+<pre>$ curl --compressed <i>URL</i>
+</pre>
+<h3><span class="mw-headline" id="ProgressBar">ProgressBar</span></h3>
+<p>curl has option to a normal ProgressBar when it download files (e.g. <code>[#####  ] 80%</code> )
+</p>
+<pre>$ curl '-#' <i>URL</i>
+</pre>
+<h3><span class="mw-headline" id="Globbing">Globbing</span></h3>
+<p>You can also use <a rel="nofollow" class="external text" href="https://everything.curl.dev/cmdline/globbing">globing</a> in curl:
+</p>
+<pre>$ curl "example.com/images/[1-9].png"
+$ curl "example.com/{first_page,second_page,third_page}"
+</pre>
+<h2><span class="mw-headline" id="config_file">config file</span></h2>
+<p>curl also search for a <a rel="nofollow" class="external text" href="https://everything.curl.dev/cmdline/configfile">config file</a> called <code>.curlrc</code> in home directory and in <code>$XDG_CONFIG_HOME</code>. you can just put the command line argument you want to use with curl by default, for example :
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">$HOME/.curlrc</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;"># this is a comment, the next line would be the option for progressbar:
+-#
+# to make curl always compress:
+--compressed
+# or just
+compressed</pre>
+<h2><span class="mw-headline" id="See_also">See also</span></h2>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/cURL" class="extiw" title="wikipedia:cURL">Wikipedia:cURL</a></li>
+<li>
+<a rel="nofollow" class="external text" href="https://everything.curl.dev/">Everything curl</a> - Extensive guide to using cURL</li>
+<li><span class="plainlinks archwiki-template-man" title="$ man 1 curl"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/curl.1">curl(1)</a></span></li>
+</ul>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="../en/Category:Download_utilities.html" title="Category:Download utilities">Download utilities</a></li></ul>
+</div></div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=CURL&amp;oldid=786635">https://wiki.archlinux.org/index.php?title=CURL&amp;oldid=786635</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 1 September 2023, at 09:54.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

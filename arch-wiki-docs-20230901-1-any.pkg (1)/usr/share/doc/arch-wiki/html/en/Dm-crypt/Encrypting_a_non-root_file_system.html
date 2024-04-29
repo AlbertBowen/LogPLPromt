@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>dm-crypt/Encrypting a non-root file system - ArchWiki</title>
+<link rel="stylesheet" href="../../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Dm-crypt_Encrypting_a_non-root_file_system rootpage-Dm-crypt skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Overview" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Overview">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Overview</div>
+			</a>
+			
+			<ul id="toc-Overview-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Partition" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Partition">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Partition</div>
+			</a>
+			
+				<button aria-controls="toc-Partition-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Partition subsection
+				</button>
+			
+			<ul id="toc-Partition-sublist" class="sidebar-toc-list">
+				<li id="toc-Manual_mounting_and_unmounting" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Manual_mounting_and_unmounting">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.1</span>Manual mounting and unmounting</div>
+			</a>
+			
+			<ul id="toc-Manual_mounting_and_unmounting-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Automated_unlocking_and_mounting" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Automated_unlocking_and_mounting">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.2</span>Automated unlocking and mounting</div>
+			</a>
+			
+			<ul id="toc-Automated_unlocking_and_mounting-sublist" class="sidebar-toc-list">
+				<li id="toc-At_boot_time" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#At_boot_time">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.2.1</span>At boot time</div>
+			</a>
+			
+			<ul id="toc-At_boot_time-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-On_user_login" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#On_user_login">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.2.2</span>On user login</div>
+			</a>
+			
+			<ul id="toc-On_user_login-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-File_container" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#File_container">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>File container</div>
+			</a>
+			
+				<button aria-controls="toc-File_container-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle File container subsection
+				</button>
+			
+			<ul id="toc-File_container-sublist" class="sidebar-toc-list">
+				<li id="toc-Manual_mounting_and_unmounting_using_losetup" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Manual_mounting_and_unmounting_using_losetup">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.1</span>Manual mounting and unmounting using losetup</div>
+			</a>
+			
+			<ul id="toc-Manual_mounting_and_unmounting_using_losetup-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../../en/Dm-crypt/Encrypting_a_non-root_file_system.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="mw-list-item"><a href="../../en/Talk:Dm-crypt/Encrypting_a_non-root_file_system.html" rel="discussion" title="Discussion about the content page [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">English</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../../en/Dm-crypt/Encrypting_a_non-root_file_system.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=Dm-crypt/Encrypting_a_non-root_file_system&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=Dm-crypt/Encrypting_a_non-root_file_system&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../../en/Dm-crypt/Encrypting_a_non-root_file_system.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Dm-crypt/Encrypting_a_non-root_file_system&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Dm-crypt/Encrypting_a_non-root_file_system&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					<div id="contentSub"><span class="subpages">&lt; <a href="../../en/Dm-crypt.html" title="Dm-crypt">Dm-crypt</a></span></div>
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output">
+<p><span>
+</span>
+The following are examples of encrypting a secondary, i.e. non-root, filesystem with dm-crypt.   
+</p>
+<mw:tocplace></mw:tocplace>
+<h2><span class="mw-headline" id="Overview">Overview</span></h2>
+<p>Encrypting a secondary filesystem usually protects only sensitive data while leaving the operating system and program files unencrypted. This is useful for encrypting an external medium, such as a USB drive, so that it can be moved to different computers securely. One might also choose to encrypt sets of data separately according to who has access to it. 
+</p>
+<p>Because dm-crypt is a <a href="../../en/Data-at-rest_encryption.html#Block_device_encryption" title="Data-at-rest encryption">block-level encryption</a> layer, it only encrypts whole <a href="../../en/Device_file.html#Block_devices" class="mw-redirect" title="Block device">block devices</a>, e.g. <a href="#Partition">partitions</a> and <a href="#File_container">loop devices</a>. Encrypting individual files requires a filesystem-level encryption layer, such as <a href="../../en/ECryptfs.html" title="ECryptfs">eCryptfs</a> or <a href="../../en/EncFS.html" title="EncFS">EncFS</a>. See <a href="../../en/Data-at-rest_encryption.html" title="Data-at-rest encryption">Data-at-rest encryption</a> for general information about securing private data.
+</p>
+<h2><span class="mw-headline" id="Partition">Partition</span></h2>
+<p>This example covers the encryption of the <code>/home</code> partition, but it can be applied to any other comparable non-root partition containing user data.
+</p>
+<div class="archwiki-template-box archwiki-template-box-tip">
+<strong>Tip:</strong> You can either have a single user's <code>/home</code> directory on a partition, or create a common partition for all user's <code>/home</code> directories.</div>
+<p>First make sure the partition is empty (has no file system attached to it). Delete the partition and create an empty one if it has a file system. Then prepare the partition by securely erasing it, see <a href="../../en/Dm-crypt/Drive_preparation.html#Secure_erasure_of_the_hard_disk_drive" title="Dm-crypt/Drive preparation">Dm-crypt/Drive preparation#Secure erasure of the hard disk drive</a>. 
+</p>
+<p>Create the partition which will contain the encrypted container. 
+</p>
+<p>Then setup the LUKS header with:
+</p>
+<pre># cryptsetup <i>options</i> luksFormat <i>device</i>
+</pre>
+<p>Replace <code><i>device</i></code> with the previously created partition. See <a href="../../en/Dm-crypt/Device_encryption.html#Encryption_options_for_LUKS_mode" title="Dm-crypt/Device encryption">Dm-crypt/Device encryption#Encryption options for LUKS mode</a> for details like the available <code><i>options</i></code>.
+</p>
+<p>To gain access to the encrypted partition, unlock it with the device mapper, using:
+</p>
+<pre># cryptsetup open <i>device</i> <i>name</i>
+</pre>
+<p>After unlocking the partition, it will be available at <code>/dev/mapper/<i>name</i></code>. Now create a <a href="../../en/File_systems.html" class="mw-redirect" title="File system">file system</a> of your choice with:
+</p>
+<pre># mkfs.<i>fstype</i> /dev/mapper/<i>name</i>
+</pre>
+<p>Mount the file system to <code>/home</code>, or if it should be accessible to only one user to <code>/home/<i>username</i></code>, see <a href="#Manual_mounting_and_unmounting">#Manual mounting and unmounting</a>.
+</p>
+<div class="archwiki-template-box archwiki-template-box-tip">
+<strong>Tip:</strong> Unmount and mount once to verify that the mapping is working as intended.</div>
+<h3><span class="mw-headline" id="Manual_mounting_and_unmounting">Manual mounting and unmounting</span></h3>
+<p>To mount the partition:
+</p>
+<pre># cryptsetup open <i>device</i> <i>name</i>
+# mount -t <i>fstype</i> /dev/mapper/<i>name</i> /mnt/home
+</pre>
+<p>To unmount it:
+</p>
+<pre># umount /mnt/home
+# cryptsetup close <i>name</i>
+</pre>
+<div class="archwiki-template-box archwiki-template-box-tip">
+<strong>Tip:</strong> <a href="../../en/File_manager_functionality.html#Mounting" class="mw-redirect" title="GVFS">GVFS</a> can also mount encrypted partitions. One can use a file manager with gvfs support (e.g. <a href="../../en/Thunar.html" title="Thunar">Thunar</a>) to mount the partition, and a password dialog will pop-up. For other desktops, <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/zulucrypt/">zulucrypt</a></span><sup><small>AUR</small></sup> also provides a GUI.</div>
+<h3><span class="mw-headline" id="Automated_unlocking_and_mounting">Automated unlocking and mounting</span></h3>
+<p>There are three different solutions for automating the process of unlocking the partition and mounting its filesystem.
+</p>
+<h4><span class="mw-headline" id="At_boot_time">At boot time</span></h4>
+<p>Using the <code>/etc/crypttab</code> configuration file, unlocking happens at boot time by systemd's automatic parsing. This is the recommended solution if you want to use one common partition for all user's home partitions or automatically mount another encrypted block device. 
+</p>
+<p>See <a href="../../en/Dm-crypt/System_configuration.html#crypttab" title="Dm-crypt/System configuration">Dm-crypt/System configuration#crypttab</a> for references and <a href="../../en/Dm-crypt/System_configuration.html#Mounting_at_boot_time" title="Dm-crypt/System configuration">Dm-crypt/System configuration#Mounting at boot time</a> for an example setup.
+</p>
+<h4><span class="mw-headline" id="On_user_login">On user login</span></h4>
+<ul>
+<li>Using <a href="../../en/Dm-crypt/Mounting_at_login.html" title="Dm-crypt/Mounting at login">pam-exec</a>: recommended if you want to have a single user's home directory on a partition.</li>
+<li>Using <a href="../../en/Pam_mount.html" title="Pam mount">pam_mount</a>.</li>
+</ul>
+<h2><span class="mw-headline" id="File_container">File container</span></h2>
+<p>Cryptsetup operates with devices, therefore a loop device is required when using a file container. But <i>cryptsetup</i> can take care of the loop device management in the background (see <a href="https://wiki.gentoo.org/wiki/Custom_Initramfs#Encrypted_keyfile" class="extiw" title="gentoo:Custom Initramfs">Gentoo:Custom Initramfs#Encrypted keyfile</a>), the user is not required to invoke <code>losetup</code> manually.
+</p>
+<p>First, start by creating an encrypted file container with <a href="../../en/Dd.html" title="Dd">dd</a>, using an appropriate <a href="../../en/Random_number_generation.html" class="mw-redirect" title="Random number generator">random number generator</a>:
+</p>
+<pre>$ dd if=/dev/urandom of=bigsecret.img bs=100M count=1 iflag=fullblock
+</pre>
+<p>This will create the file <code>bigsecret.img</code> with a size of 100 mebibytes.
+</p>
+<p>Make sure to not omit the <code>iflag=fullblock</code> option, otherwise <i>dd</i> might return a partial read. See <a href="../../en/Dd.html#Partial_read:_copied_data_is_smaller_than_requested" title="Dd">dd#Partial read: copied data is smaller than requested</a> for details.
+</p>
+<p>To avoid having to <a href="../../en/Dm-crypt/Device_encryption.html#Loopback_file_system" title="Dm-crypt/Device encryption">resize</a> the container later on, make sure to make it larger than the total size of the files to be encrypted, plus internal file-system/metadata overhead, plus LUKS header. If you are going to use LUKS mode, its metadata header alone requires up to 16 mebibytes. Creating a file smaller than the LUKS2 header (16 MiB) will give a <code>Requested offset is beyond real size of device bigsecret.img</code> error when trying to open the device. 
+</p>
+<p>The subsequent steps are the same as described in <a href="#Partition">#Partition</a>, but instead of using a <code>device</code> use <code>bigsecret.img</code>.
+</p>
+<p>In the background, cryptsetup will take care of finding a free loop device and attaching the file to it. After unmouting, the file container should be closed accordingly; cryptsetup will also detach the used loop device afterwards.
+</p>
+<div class="archwiki-template-box archwiki-template-box-tip">
+<strong>Tip:</strong> Containers with <i>dm-crypt</i> can be very flexible. Have a look at the features and documentation of <a href="../../en/Tomb.html" title="Tomb">Tomb</a>. It provides a <i>dm-crypt</i> script wrapper for fast and flexible handling.</div>
+<h3><span class="mw-headline" id="Manual_mounting_and_unmounting_using_losetup">Manual mounting and unmounting using losetup</span></h3>
+<p>To manually mount a file container with a LUKS and an ext4 filesystem inside, first find an unused loop device:
+</p>
+<pre># losetup --find
+</pre>
+<p>Then attach the file container to a loop device, e.g. <code>loop0</code>:
+</p>
+<pre># losetup /dev/loop0 bigsecret.img
+</pre>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> If it gives you the error <code>/dev/loop0: No such file or directory</code>, you need to first load the kernel module with <code>modprobe loop</code> as root. These days (Kernel 3.2) loop devices are created on demand. Ask for a new loop device with <code>losetup -f</code> as root.</div>
+<p>Now proceed with the normal cryptsetup operation:
+</p>
+<pre># cryptsetup open /dev/loop0 secret
+# mount -t ext4 /dev/mapper/secret /mnt/secret
+</pre>
+<p>Proceed in reverse order to unmount the container properly:
+</p>
+<pre># umount /mnt/secret
+# cryptsetup close secret
+</pre>
+<p>To detach the used loop device:
+</p>
+<pre># losetup --detach /dev/loop0
+</pre>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../../Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="../../en/Category:Data-at-rest_encryption.html" title="Category:Data-at-rest encryption">Data-at-rest encryption</a></li></ul>
+</div></div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=Dm-crypt/Encrypting_a_non-root_file_system&amp;oldid=758357">https://wiki.archlinux.org/index.php?title=Dm-crypt/Encrypting_a_non-root_file_system&amp;oldid=758357</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 29 November 2022, at 07:05.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

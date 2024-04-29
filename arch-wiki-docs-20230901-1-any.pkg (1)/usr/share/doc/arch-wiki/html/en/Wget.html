@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>Wget - ArchWiki</title>
+<link rel="stylesheet" href="../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Wget rootpage-Wget skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Installation" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Installation">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Installation</div>
+			</a>
+			
+			<ul id="toc-Installation-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Configuration" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Configuration">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Configuration</div>
+			</a>
+			
+				<button aria-controls="toc-Configuration-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Configuration subsection
+				</button>
+			
+			<ul id="toc-Configuration-sublist" class="sidebar-toc-list">
+				<li id="toc-FTP_automation" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#FTP_automation">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.1</span>FTP automation</div>
+			</a>
+			
+			<ul id="toc-FTP_automation-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Proxy" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Proxy">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.2</span>Proxy</div>
+			</a>
+			
+			<ul id="toc-Proxy-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-pacman_integration" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#pacman_integration">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.3</span>pacman integration</div>
+			</a>
+			
+			<ul id="toc-pacman_integration-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Usage" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Usage">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>Usage</div>
+			</a>
+			
+				<button aria-controls="toc-Usage-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Usage subsection
+				</button>
+			
+			<ul id="toc-Usage-sublist" class="sidebar-toc-list">
+				<li id="toc-Basic_usage" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Basic_usage">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.1</span>Basic usage</div>
+			</a>
+			
+			<ul id="toc-Basic_usage-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Archive_a_complete_website" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Archive_a_complete_website">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.2</span>Archive a complete website</div>
+			</a>
+			
+			<ul id="toc-Archive_a_complete_website-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../en/Wget.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="new mw-list-item"><a href="/index.php?title=Talk:Wget&amp;action=edit&amp;redlink=1" rel="discussion" title="Discussion about the content page (page does not exist) [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">English</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../en/Wget.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=Wget&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=Wget&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../en/Wget.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Wget&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Wget&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output">
+<p><a rel="nofollow" class="external text" href="https://www.gnu.org/software/wget/">GNU Wget</a> is a free software package for retrieving files using <a href="../en/Category:Web.html" class="mw-redirect" title="HTTP">HTTP</a>, HTTPS, <a href="../en/Category:File_Transfer_Protocol.html" class="mw-redirect" title="FTP">FTP</a> and FTPS <i>(FTPS since version 1.18)</i>. It is a non-interactive commandline tool, so it may easily be called from scripts.
+</p>
+<mw:tocplace></mw:tocplace>
+<h2><span class="mw-headline" id="Installation">Installation</span></h2>
+<p><a href="../en/Help:Reading.html#Installation_of_packages" class="mw-redirect" title="Install">Install</a> the <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=wget">wget</a></span> package. The <a href="../en/Git.html" title="Git">git</a> version is present in the <a href="../en/Arch_User_Repository.html" class="mw-redirect" title="AUR">AUR</a> by the name <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/wget-git/">wget-git</a></span><sup><small>AUR</small></sup>.
+</p>
+<p>There is an alternative to wget: <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/mwget/">mwget</a></span><sup><small>AUR</small></sup><sup>[<a href="../en/Help:Procedures.html#Fix_broken_package_links" title="Help:Procedures">broken link</a>: package not found]</sup>, which is a multi-threaded download application that can significantly improve download speed.
+</p>
+<h2><span class="mw-headline" id="Configuration">Configuration</span></h2>
+<p>Configuration is performed in <code>/etc/wgetrc</code>. Not only is the default configuration file well documented; altering it is seldom necessary. See <span class="plainlinks archwiki-template-man" title="$ man 1 wget"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/wget.1#OPTIONS">wget(1) § OPTIONS</a></span> for more intricate options.
+</p>
+<h3><span class="mw-headline" id="FTP_automation">FTP automation</span></h3>
+<p>Normally, <a href="../en/Secure_Shell.html" class="mw-redirect" title="SSH">SSH</a> is used to securely transfer files among a network. However, FTP is lighter on resources compared to scp and <a href="../en/Rsync.html" title="Rsync">rsyncing</a> over SSH. FTP is not secure, but when transfering large amounts of data inside a firewall protected environment on CPU-bound systems, using FTP can prove beneficial.
+</p>
+<pre>wget ftp://root:somepassword@10.13.X.Y//ifs/home/test/big/"*.tar"
+
+3,562,035,200 74.4M/s   in 47s
+</pre>
+<p>In this case, Wget transfered a 3.3 GiB file at 74.4MB/second rate.
+</p>
+<p>In short, this procedure is:
+</p>
+<ul>
+<li>scriptable</li>
+<li>faster than ssh</li>
+<li>easily used by languages than can substitute string variables</li>
+<li>
+<a href="https://en.wikipedia.org/wiki/glob_(programming)" class="extiw" title="wikipedia:glob (programming)">globbing</a> capable</li>
+</ul>
+<h3><span class="mw-headline" id="Proxy">Proxy</span></h3>
+<p>Wget uses the standard proxy environment variables. See <a href="../en/Proxy_server.html" class="mw-redirect" title="Proxy settings">Proxy settings</a>.
+</p>
+<p>To use the proxy authentication feature:
+</p>
+<pre>$ wget --proxy-user "DOMAIN\USER" --proxy-password "PASSWORD" URL
+</pre>
+<p>Proxies that use HTML authentication forms are not covered.
+</p>
+<h3><span class="mw-headline" id="pacman_integration">pacman integration</span></h3>
+<p>To have <a href="../en/Pacman.html" title="Pacman">pacman</a> automatically use Wget and a proxy with authentication, place the Wget command into <code>/etc/pacman.conf</code>, in the <code>[options]</code> section:
+</p>
+<pre>XferCommand = /usr/bin/wget --proxy-user "domain\user" --proxy-password="password" --passive-ftp -q --show-progress -c -O %o %u
+</pre>
+<div class="archwiki-template-box archwiki-template-box-warning">
+<strong>Warning:</strong> Be aware that storing passwords in plain text is not safe. Make sure that only root can read this file with <code>chmod 600 /etc/pacman.conf</code>.</div>
+<h2><span class="mw-headline" id="Usage">Usage</span></h2>
+<p>This section explains some of the use case scenarios for Wget.
+</p>
+<h3><span class="mw-headline" id="Basic_usage">Basic usage</span></h3>
+<p>One of the most basic and common use cases for Wget is to download a file from the internet.
+</p>
+<pre>$ wget &lt;url&gt;
+</pre>
+<p>When you already know the URL of a file to download, this can be much faster than the usual routine downloading it on your browser and moving it to the correct directory manually. Needless to say, just from the simplest usage, you can probably see a few ways of utilising this for some automated downloading if that's what you want.
+</p>
+<h3><span class="mw-headline" id="Archive_a_complete_website">Archive a complete website</span></h3>
+<p>Wget can archive a complete website whilst preserving the correct link destinations by changing absolute links to relative links.
+</p>
+<pre>$ wget -r -np -k 'target-url-here'
+</pre>
+<p>In case of a dynamic website, some additional options for conversion into static HTML are available.
+</p>
+<pre>$ wget -r -np -p -E -k -K 'target-url-here'
+</pre>
+<p><i>wget</i> also provides options for bypassing download-prevention mechanisms.
+</p>
+<pre>$ wget -r -np -k --random-wait -e robots=off --user-agent "Mozilla/5.0" 'target-url-here'
+</pre>
+<p>And if third-party content is to be included in the download, <code>-H</code> switch can be used alongside <code>-r</code> to recurse to linked hosts.
+</p>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface">
+<div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../Special:Categories.html" title="Special:Categories">Categories</a>: <ul>
+<li><a href="../en/Category:Download_utilities.html" title="Category:Download utilities">Download utilities</a></li>
+<li><a href="../en/Category:GNU.html" title="Category:GNU">GNU</a></li>
+</ul>
+</div>
+<div id="mw-hidden-catlinks" class="mw-hidden-catlinks mw-hidden-cats-hidden">Hidden category: <ul><li><a href="../en/Category:Pages_with_broken_package_links.html" title="Category:Pages with broken package links">Pages with broken package links</a></li></ul>
+</div>
+</div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=Wget&amp;oldid=782279">https://wiki.archlinux.org/index.php?title=Wget&amp;oldid=782279</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 1 July 2023, at 06:14.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

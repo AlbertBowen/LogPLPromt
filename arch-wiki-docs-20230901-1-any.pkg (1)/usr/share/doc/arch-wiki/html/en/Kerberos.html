@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>Kerberos - ArchWiki</title>
+<link rel="stylesheet" href="../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Kerberos rootpage-Kerberos skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Installation" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#Installation">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Installation</div>
+			</a>
+			
+			<ul id="toc-Installation-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Server_configuration" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#Server_configuration">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Server configuration</div>
+			</a>
+			
+				<button aria-controls="toc-Server_configuration-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Server configuration subsection
+				</button>
+			
+			<ul id="toc-Server_configuration-sublist" class="sidebar-toc-list">
+				<li id="toc-Domain_creation" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Domain_creation">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.1</span>Domain creation</div>
+			</a>
+			
+			<ul id="toc-Domain_creation-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Add_principals" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Add_principals">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.2</span>Add principals</div>
+			</a>
+			
+			<ul id="toc-Add_principals-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Firewall" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Firewall">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.3</span>Firewall</div>
+			</a>
+			
+			<ul id="toc-Firewall-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-DNS_records" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#DNS_records">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.4</span>DNS records</div>
+			</a>
+			
+			<ul id="toc-DNS_records-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Client_configuration" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#Client_configuration">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>Client configuration</div>
+			</a>
+			
+				<button aria-controls="toc-Client_configuration-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Client configuration subsection
+				</button>
+			
+			<ul id="toc-Client_configuration-sublist" class="sidebar-toc-list">
+				<li id="toc-Testing" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Testing">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.1</span>Testing</div>
+			</a>
+			
+			<ul id="toc-Testing-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Configuring_kadmin" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#Configuring_kadmin">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4</span>Configuring kadmin</div>
+			</a>
+			
+				<button aria-controls="toc-Configuring_kadmin-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Configuring kadmin subsection
+				</button>
+			
+			<ul id="toc-Configuring_kadmin-sublist" class="sidebar-toc-list">
+				<li id="toc-Configuring_kadmin_ACL" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Configuring_kadmin_ACL">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.1</span>Configuring kadmin ACL</div>
+			</a>
+			
+			<ul id="toc-Configuring_kadmin_ACL-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Service_principals_and_keytabs" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#Service_principals_and_keytabs">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5</span>Service principals and keytabs</div>
+			</a>
+			
+				<button aria-controls="toc-Service_principals_and_keytabs-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Service principals and keytabs subsection
+				</button>
+			
+			<ul id="toc-Service_principals_and_keytabs-sublist" class="sidebar-toc-list">
+				<li id="toc-With_remote_kadmin" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#With_remote_kadmin">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5.1</span>With remote kadmin</div>
+			</a>
+			
+			<ul id="toc-With_remote_kadmin-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Without_remote_kadmin" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Without_remote_kadmin">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5.2</span>Without remote kadmin</div>
+			</a>
+			
+			<ul id="toc-Without_remote_kadmin-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Cross-Realm_Trust" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#Cross-Realm_Trust">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6</span>Cross-Realm Trust</div>
+			</a>
+			
+			<ul id="toc-Cross-Realm_Trust-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-SSH_authentication" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#SSH_authentication">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">7</span>SSH authentication</div>
+			</a>
+			
+				<button aria-controls="toc-SSH_authentication-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle SSH authentication subsection
+				</button>
+			
+			<ul id="toc-SSH_authentication-sublist" class="sidebar-toc-list">
+				<li id="toc-Authorize_other_principals" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Authorize_other_principals">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">7.1</span>Authorize other principals</div>
+			</a>
+			
+			<ul id="toc-Authorize_other_principals-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-NFS_security" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#NFS_security">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">8</span>NFS security</div>
+			</a>
+			
+				<button aria-controls="toc-NFS_security-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle NFS security subsection
+				</button>
+			
+			<ul id="toc-NFS_security-sublist" class="sidebar-toc-list">
+				<li id="toc-NFS_server" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#NFS_server">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">8.1</span>NFS server</div>
+			</a>
+			
+			<ul id="toc-NFS_server-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-NFS_client" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#NFS_client">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">8.2</span>NFS client</div>
+			</a>
+			
+			<ul id="toc-NFS_client-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Browsers" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#Browsers">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">9</span>Browsers</div>
+			</a>
+			
+				<button aria-controls="toc-Browsers-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Browsers subsection
+				</button>
+			
+			<ul id="toc-Browsers-sublist" class="sidebar-toc-list">
+				<li id="toc-Chromium" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Chromium">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">9.1</span>Chromium</div>
+			</a>
+			
+			<ul id="toc-Chromium-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Firefox" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Firefox">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">9.2</span>Firefox</div>
+			</a>
+			
+			<ul id="toc-Firefox-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Troubleshooting" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#Troubleshooting">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">10</span>Troubleshooting</div>
+			</a>
+			
+				<button aria-controls="toc-Troubleshooting-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Troubleshooting subsection
+				</button>
+			
+			<ul id="toc-Troubleshooting-sublist" class="sidebar-toc-list">
+				<li id="toc-Cannot_set_GSSAPI_authentication_names" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Cannot_set_GSSAPI_authentication_names">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">10.1</span>Cannot set GSSAPI authentication names</div>
+			</a>
+			
+			<ul id="toc-Cannot_set_GSSAPI_authentication_names-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-SSH_authentication_fails_while_connecting_to_a_server_requiring_GSSAPI_with_KeyExchange" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#SSH_authentication_fails_while_connecting_to_a_server_requiring_GSSAPI_with_KeyExchange">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">10.2</span>SSH authentication fails while connecting to a server requiring GSSAPI with KeyExchange</div>
+			</a>
+			
+			<ul id="toc-SSH_authentication_fails_while_connecting_to_a_server_requiring_GSSAPI_with_KeyExchange-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-See_also" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#See_also">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">11</span>See also</div>
+			</a>
+			
+			<ul id="toc-See_also-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../en/Kerberos.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="mw-list-item"><a href="../en/Talk:Kerberos.html" rel="discussion" title="Discussion about the content page [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">English</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../en/Kerberos.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=Kerberos&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=Kerberos&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../en/Kerberos.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Kerberos&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Kerberos&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output">
+<div class="archwiki-template-meta-related-articles-start">
+<p class="mw-no-invert">Related articles</p>
+<ul>
+<li><a href="../en/Active_Directory_integration.html" class="mw-redirect" title="Active Directory Integration">Active Directory Integration</a></li>
+<li><a href="../en/Identity_management.html" title="Identity management">identity management</a></li>
+</ul>
+</div>
+<p><a href="https://en.wikipedia.org/wiki/Kerberos_(protocol)" class="extiw" title="wikipedia:Kerberos (protocol)">Kerberos</a> is a network authentication system. See <a rel="nofollow" class="external text" href="https://web.mit.edu/kerberos/krb5-latest/doc/">krb5 documentation</a>.
+</p>
+<mw:tocplace></mw:tocplace>
+<h2><span class="mw-headline" id="Installation">Installation</span></h2>
+<p><a href="../en/Help:Reading.html#Installation_of_packages" class="mw-redirect" title="Install">Install</a> the <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=krb5">krb5</a></span> package on your clients and server.
+</p>
+<p>It is <b>highly</b> recommended to use a <a href="../en/System_time.html#Time_synchronization" class="mw-redirect" title="Time synchronization">time synchronization</a> daemon to keep client/server clocks in sync.
+</p>
+<p>If hostname resolution has not been configured, you can manually add your clients and server to the <span class="plainlinks archwiki-template-man" title="$ man 5 hosts"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/hosts.5">hosts(5)</a></span> file of each machine. Note that the FQDN (myclient.example.com) must be the first hostname after the IP address in the hosts file.
+</p>
+<h2><span class="mw-headline" id="Server_configuration">Server configuration</span></h2>
+<h3><span class="mw-headline" id="Domain_creation">Domain creation</span></h3>
+<p>Edit <code>/etc/krb5.conf</code> to configure your domain:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/krb5.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">[libdefaults]
+    default_realm = EXAMPLE.COM
+
+[realms]
+    EXAMPLE.COM = {
+        admin_server = $ADDRESS
+        # use "kdc = ..." if the kerberos SRV records aren't in DNS (see Advanced section)
+        kdc = $ADDRESS
+        # This breaks krb4 compatibility but increases security
+        default_principal_flags = +preauth
+    }
+
+[domain_realm]
+    example.com  = EXAMPLE.COM
+    .example.com = EXAMPLE.COM
+
+[logging]
+    kdc          = SYSLOG:NOTICE
+    admin_server = SYSLOG:NOTICE
+    default      = SYSLOG:NOTICE
+</pre>
+<p>Where <code>$ADDRESS</code> is IP address or domain name, where kerberos lives, like <code>10.0.0.120</code> or <code>kerberos.example.com</code>.
+</p>
+<p>This file's format is described in the MIT Kerberos <a rel="nofollow" class="external text" href="https://web.mit.edu/kerberos/krb5-1.12/doc/admin/conf_files/krb5_conf.html">documentation</a>
+</p>
+<p>Create the database:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;"># kdb5_util -r EXAMPLE.COM create -s</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">Loading random data                                                             
+Initializing database '/var/lib/krb5kdc/principal' for realm 'EXAMPLE.COM',                  
+master key name 'K/M@EXAMPLE.COM'
+You will be prompted for the database Master Password.                          
+It is important that you NOT FORGET this password.                              
+Enter KDC database master key: ***
+Re-enter KDC database master key to verify: ***
+</pre>
+<p>Finally, <a href="../en/Help:Reading.html#Control_of_systemd_units" class="mw-redirect" title="Start/enable">start/enable</a> <code>krb5-kdc.service</code> and <code>krb5-kadmind.service</code>.
+</p>
+<h3><span class="mw-headline" id="Add_principals">Add principals</span></h3>
+<p>Start the Kerberos administration tool, using local authentication
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;"># kadmin.local</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">Authenticating as principal root/admin@EXAMPLE.COM with password.
+kadmin.local:</pre>
+<p>Add a user principal to the Kerberos database:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">kadmin.local: addprinc myuser@EXAMPLE.COM</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">WARNING: no policy specified for myuser@EXAMPLE.COM; defaulting to no policy
+Enter password for principal "myuser@EXAMPLE.COM": ***
+Re-enter password for principal "myuser@EXAMPLE.COM": ***
+Principal "myuser@EXAMPLE.COM" created.
+</pre>
+<p>Add the KDC principal to the Kerberos database:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">kadmin.local: addprinc -randkey host/kerberos.example.com</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">WARNING: no policy specified for host/kerberos.example.com@EXAMPLE.COM; defaulting to no policy
+Principal "host/kerberos.example.com@EXAMPLE.COM" created.
+</pre>
+<p>Finally, Add the KDC principal to the server's keytab:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">kadmin.local: ktadd host/kerberos.example.com</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">Entry for principal host/kerberos.example.com with kvno 2, encryption type aes256-cts-hmac-sha1-96 added to keytab FILE:/etc/krb5.keytab.
+Entry for principal host/kerberos.example.com with kvno 2, encryption type aes128-cts-hmac-sha1-96 added to keytab FILE:/etc/krb5.keytab.
+</pre>
+<p>Quit the Kerberos administration tool:
+</p>
+<pre>kadmin.local: quit
+</pre>
+<p>You should now be able to get a Kerberos ticket:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">$ kinit</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">Password for myuser@EXAMPLE.COM: ***
+</pre>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">$ klist</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">Ticket cache: FILE:/tmp/krb5cc_1000
+Default principal: myuser@EXAMPLE.COM
+
+Valid starting       Expires              Service principal
+08/30/2017 14:26:09  08/31/2017 14:26:09  krbtgt/EXAMPLE.COM@EXAMPLE.COM
+</pre>
+<h3><span class="mw-headline" id="Firewall">Firewall</span></h3>
+<p>Add ALLOW rules to your firewall for any applicable ports/protocols:
+</p>
+<ul>
+<li>88, TCP and UDP for Kerberos v5</li>
+<li>749, TCP and UDP for kadmin if you plan to configure it</li>
+<li>750, TCP and UDP for Kerberos v4 if you need backwards compatibility</li>
+</ul>
+<h3><span class="mw-headline" id="DNS_records">DNS records</span></h3>
+<p>This is not necessary if you specify the kerberos and kadmin server in each machine's krb5.conf
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">db.example.com</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">kerberos.example.com.           A     1.2.3.4
+_kerberos.example.com.          TXT   "EXAMPLE.COM"
+_kerberos._udp.example.com.     SRV   0 0  88 kerberos.example.com.
+_kerberos-adm._udp.example.com. SRV   0 0 749 kerberos.example.com.
+</pre>
+<p>Do not forget reverse DNS.
+</p>
+<h2><span class="mw-headline" id="Client_configuration">Client configuration</span></h2>
+<p>Edit the client's <code>/etc/krb5.conf</code> to match your server's configuration. You can copy this file from the server, or just set the required realm information.
+</p>
+<h3><span class="mw-headline" id="Testing">Testing</span></h3>
+<p>You should now be able to get a Kerberos ticket on the client:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">$ kinit</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">Password for myuser@EXAMPLE.COM: ***
+</pre>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">$ klist</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">Ticket cache: FILE:/tmp/krb5cc_1000
+Default principal: myuser@EXAMPLE.COM
+
+Valid starting       Expires              Service principal
+08/30/2017 15:36:10  08/31/2017 15:36:10  krbtgt/EXAMPLE.COM@EXAMPLE.COM
+</pre>
+<h2><span class="mw-headline" id="Configuring_kadmin">Configuring kadmin</span></h2>
+<p>You will need /etc/krb5.conf configured on the kadmin client, and the server's firewall configured for kadmin.
+</p>
+<h3><span class="mw-headline" id="Configuring_kadmin_ACL">Configuring kadmin ACL</span></h3>
+<p>Create a principal for administration:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">kadmin.local:  add_principal myuser/admin@EXAMPLE.COM</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">WARNING: no policy specified for myuser/admin@EXAMPLE.COM; defaulting to no policy
+Enter password for principal "myuser/admin@EXAMPLE.COM": ***
+Re-enter password for principal "myuser/admin@EXAMPLE.COM": ***
+Principal "myuser/admin@EXAMPLE.COM" created.
+</pre>
+<p>Add the user to the kadmin ACL file:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/var/lib/krb5kdc/kadm5.acl</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">myuser/admin@EXAMPLE.COM *</pre>
+<p>This file's format is described in the MIT Kerberos <a rel="nofollow" class="external text" href="https://web.mit.edu/kerberos/krb5-1.12/doc/admin/conf_files/kadm5_acl.html">documentation</a>
+</p>
+<p>Configure kdc.conf:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/var/lib/krb5kdc/kdc.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">[kdcdefaults]
+    kdc_ports = 750,88
+
+[realms]
+    EXAMPLE.COM = {
+        database_name = /var/lib/krb5kdc/principal
+        acl_file = /var/lib/krb5kdc/kadm5.acl
+        key_stash_file = /var/lib/krb5kdc/.k5.EXAMPLE.COM
+        kdc_ports = 750,88
+        max_life = 10h 0m 0s
+        max_renewable_life = 7d 0h 0m 0s
+    }
+</pre>
+<p>This file's format is described in the MIT Kerberos <a rel="nofollow" class="external text" href="https://web.mit.edu/kerberos/krb5-1.12/doc/admin/conf_files/kdc_conf.html">documentation</a>
+</p>
+<p><a href="../en/Help:Reading.html#Control_of_systemd_units" class="mw-redirect" title="Restart">Restart</a> <code>krb5-kdc.service</code> and <code>krb5-kadmind.service</code>.
+</p>
+<p>You can now use kadmin as your own user, authenticating with kerberos:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">$ kadmin</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">Authenticating as principal myuser/admin@EXAMPLE.COM with password.
+Password for myuser/admin@EXAMPLE.COM: ***
+kadmin:
+</pre>
+<h2><span class="mw-headline" id="Service_principals_and_keytabs">Service principals and keytabs</span></h2>
+<p>First, ensure you have configured krb5.conf on all involved machines.
+</p>
+<p>A kerberos principal has three components, formatted as `primary/instance@REALM`. For user principals, the primary is your username and the instance is omitted or is a role (eg. "admin"): `myuser@EXAMPLE.COM` or `myuser/admin@EXAMPLE.COM`. For hosts, the primary is "host" and the instance is the server FQDN: `host/myserver.example.com@EXAMPLE.COM`. For services, the primary is the service abbreviation and the instance is the FQDN: `nfs/myserver.example.com@EXAMPLE.COM`.
+The realm can often be omitted, the local computer's default realm is usually assumed.
+</p>
+<h3><span class="mw-headline" id="With_remote_kadmin">With remote kadmin</span></h3>
+<p>This is the easier method, but requires you to have configured <a href="#Configuring_kadmin">kadmin</a>.
+</p>
+<p>Open kadmin as root (so we can write the keytab) on the client, authenticating with your admin principal:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">client# kadmin -p myuser/admin</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">Authenticating as principal myuser/admin with password.
+Password for myuser/admin@EXAMPLE.COM:
+kadmin:
+</pre>
+<p>Add a principal for any services you will be using, eg. "host" for SSH authentication or "nfs" for NFS:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">kadmin: addprinc -randkey host/kbclient.example.com</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">WARNING: no policy specified for host/kbclient.example.com@EXAMPLE.COM; defaulting to no policy
+Principal "host/kbclient.example.com@EXAMPLE.COM" created.</pre>
+<p>Save each key to the local keytab:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">kadmin: ktadd host/kbclient.example.com</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">Entry for principal host/kbclient.example.com with kvno 2, encryption type aes256-cts-hmac-sha1-96 added to keytab FILE:/etc/krb5.keytab.
+Entry for principal host/kbclient.example.com with kvno 2, encryption type aes128-cts-hmac-sha1-96 added to keytab FILE:/etc/krb5.keytab.
+</pre>
+<h3><span class="mw-headline" id="Without_remote_kadmin">Without remote kadmin</span></h3>
+<p>Start kadmin on the Kerberos server, using either unix or kerberos authentication:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;"># kadmin.local</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">Authenticating as principal root/admin@EXAMPLE.COM with password.
+kadmin.local:
+</pre>
+<p>Add a principal for any services you will be using, eg. "host" for SSH authentication or "nfs" for NFS:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">kadmin.local: addprinc -randkey host/kbclient.example.com</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">WARNING: no policy specified for host/kbclient.example.com@EXAMPLE.COM; defaulting to no policy
+Principal "host/kbclient.example.com@EXAMPLE.COM" created.
+</pre>
+<p>Save each key to a new keytab to be transferred to the client:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">kadmin.local: ktadd -k kbclient.keytab host/kbclient.example.com</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">Entry for principal host/kbclient.example.com with kvno 2, encryption type aes256-cts-hmac-sha1-96 added to keytab FILE:/etc/krb5.keytab.
+Entry for principal host/kbclient.example.com with kvno 2, encryption type aes128-cts-hmac-sha1-96 added to keytab FILE:/etc/krb5.keytab.
+</pre>
+<p>Finally, copy <code>kbclient.keytab</code> from the server to the client using SCP or similar, then put it in place with correct permissions:
+</p>
+<pre># install -b -o root -g root -m 600 kbclient.keytab /etc/krb5.keytab</pre>
+<p>Finally, delete kbclient.keytab from the server and client.
+</p>
+<h2><span class="mw-headline" id="Cross-Realm_Trust">Cross-Realm Trust</span></h2>
+<p>Set up a second server as shown above, then create the cross-realm principal on both KDCs. Cross-realm principals must be created with strong passwords, not <code>-randkey</code>, and the same password must be used on both KDCs. The principal must have the same key version number (kvno) in both KDCs.
+</p>
+<p>To grant EXAMPLE.COM principals access to EXAMPLE.ORG resources, you would use the following principal:
+</p>
+<pre>kadmin# addprinc krbtgt/EXAMPLE.ORG@EXAMPLE.COM
+</pre>
+<p>The <code>[capaths]</code> section of <code>krb5.conf</code> can be used to further control cross-realm trust relationships.
+</p>
+<h2><span class="mw-headline" id="SSH_authentication">SSH authentication</span></h2>
+<p>Use the instructions in <a href="#Service_principals_and_keytabs">Service principals and keytabs</a> to create a principal for the "host" service for both client and server, then put the client's keys in the client's keytab and the server's keys in the server's keytab.
+</p>
+<p>Modify your <a href="../en/Secure_Shell.html" class="mw-redirect" title="SSH">SSH</a> server configuration to enable GSSAPI authentication:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/ssh/sshd_config</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;"># GSSAPI Options
+GSSAPIAuthentication yes
+GSSAPICleanupCredentials yes
+</pre>
+<p>And modify your client configuration to send GSSAPI requests:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/ssh/ssh_config</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">Host *
+  GSSAPIAuthentication yes
+  GSSAPIDelegateCredentials yes
+</pre>
+<p>Get a ticket-granting ticket on the client before using ssh:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">$ kinit myuser@EXAMPLE.COM</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">Password for myuser@EXAMPLE.COM: ***</pre>
+<p>Pass the -v option to ssh to watch what's happening:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">$ ssh sshserver.example.com -v</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">debug1: Authentications that can continue: publickey,gssapi-with-mic,password
+debug1: Next authentication method: gssapi-with-mic
+debug1: Delegating credentials
+debug1: Delegating credentials
+debug1: Authentication succeeded (gssapi-with-mic).
+Authenticated to sshserver.example.com ([192.168.100.136]:22).
+debug1: channel 0: new [client-session]
+debug1: Requesting no-more-sessions@openssh.com
+debug1: Entering interactive session.
+debug1: pledge: network
+debug1: client_input_global_request: rtype hostkeys-00@openssh.com want_reply 0
+Last login: Wed Aug 30 15:52:41 2017 from 192.168.100.1
+</pre>
+<p>And you should now see a host ticket on the client:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">client$ klist</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">Ticket cache: FILE:/tmp/krb5cc_1000
+Default principal: myuser@EXAMPLE.COM
+
+Valid starting       Expires              Service principal
+08/30/2017 15:37:40  08/31/2017 15:37:40  krbtgt/EXAMPLE.COM@EXAMPLE.COM
+08/30/2017 15:53:04  08/31/2017 15:37:40  host/sshserver.example.com@EXAMPLE.COM
+</pre>
+<h3><span class="mw-headline" id="Authorize_other_principals">Authorize other principals</span></h3>
+<p>To allow a different kerberos principal to authenticate to a user account, add the principal name to the target account's <code>.k5login</code> file. For example, to allow <code>robert@EXAMPLE.COM</code> to SSH to alice's account:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/home/alice/.k5login</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">robert@EXAMPLE.COM
+</pre>
+<h2><span class="mw-headline" id="NFS_security">NFS security</span></h2>
+<p>First, configure your <a href="../en/NFS.html#Server" title="NFS">NFS server</a>. Also see <a href="../en/NFS/Troubleshooting.html" title="NFS/Troubleshooting">NFS/Troubleshooting</a>. Configuring a <a href="../en/System_time.html#Time_synchronization" class="mw-redirect" title="Time synchronization">time synchronization</a> daemon on both the clients and the server is strongly recommended. Clock drift will cause this to break, and the error message will not be helpful.
+</p>
+<p>Use the instructions in <a href="#Service_principals_and_keytabs">#Service principals and keytabs</a> to create a principal for the "nfs" service for both client and server, then put the client's keys in the client's keytab and the server's keys in the server's keytab.
+</p>
+<h3><span class="mw-headline" id="NFS_server">NFS server</span></h3>
+<p>Add a Kerberos export option. If necessary, multiple options can be specified using a colon as a delimiter with the preferred setting first, e.g. <code>sec=krb5p:krb5i</code>.
+</p>
+<ul>
+<li>
+<code>sec=krb5p</code> uses kerberos for authentication, integrity, and encryption.</li>
+<li>
+<code>sec=krb5i</code> uses kerberos for authentication and integrity checking, but still transmits data unencrypted.</li>
+<li>
+<code>sec=krb5</code> uses kerberos for authentication only, and transmits the data unauthenticated and unencrypted.</li>
+<li>
+<code>sec=sys</code> is the default and does not provide any cryptographic security.</li>
+</ul>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/exports</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">/srv/export *(rw,async,no_subtree_check,no_root_squash,sec=krb5p)</pre>
+<p>And reload the exports:
+</p>
+<pre># exportfs -arv
+</pre>
+<h3><span class="mw-headline" id="NFS_client">NFS client</span></h3>
+<p>Mount the exported directory:
+</p>
+<pre># mount nfsserver:/srv/export /mnt/
+</pre>
+<p>You can add <code>-vv</code> for verbose information, and may need <code>-t nfs4</code> and <code>-o sec=krb5p</code> or your chosen security option.
+</p>
+<p>Check that it worked with the <code>mount</code> command:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">mount | grep nfs</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">nfsserver:/srv/export on /mnt type nfs4 (rw,relatime,vers=4.1,rsize=131072,wsize=131072,namlen=255,hard,proto=tcp,port=0,timeo=600,retrans=2,sec=krb5,clientaddr=192.168.100.139,local_lock=none,addr=192.168.100.136)</pre>
+<h2><span class="mw-headline" id="Browsers">Browsers</span></h2>
+<p>Some browsers have support for Kerberos protocol but disable it by default. Here are the instructions how to enable it:
+</p>
+<h3><span class="mw-headline" id="Chromium">Chromium</span></h3>
+<p>Chromium needs to be run with a command line parameter that specifies a list of sites where Kerberos authentication is allowed. The easiest way is to add persistent flag to the configuration file:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/chromium/policies/managed/test_policy.json</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">{
+  "AuthServerAllowlist": "*.mycompany.com",
+  "DisableAuthNegotiateCnameLookup": true
+}
+</pre>
+<h3><span class="mw-headline" id="Firefox">Firefox</span></h3>
+<p>To configure Firefox with trusted sites visit <code>about:config</code> and set <code>network.negotiate-auth.trusted-uris</code> property to FOO.COM (Note: for Firefox there is no "*."; for Chrome, there is).
+</p>
+<h2><span class="mw-headline" id="Troubleshooting">Troubleshooting</span></h2>
+<h3><span class="mw-headline" id="Cannot_set_GSSAPI_authentication_names">Cannot set GSSAPI authentication names</span></h3>
+<pre>Cannot set GSSAPI authentication names, aborting
+</pre>
+<p>Your realm is missing either the <code>kadmin/admin</code> or <code>kadmin/changepw</code> principal.
+</p>
+<p>For clients, invalid arguments/options may happen on first setup if rpc-gssd is not loaded. Loading it is usually acomplished by <a href="../en/Help:Reading.html#Control_of_systemd_units" class="mw-redirect" title="Enabling">enabling</a> and <a href="../en/Help:Reading.html#Control_of_systemd_units" class="mw-redirect" title="Starting">starting</a> <code>nfs-client.target</code>, but after first setup this target will need a <a href="../en/Help:Reading.html#Control_of_systemd_units" class="mw-redirect" title="Restart">restart</a>.
+</p>
+<h3><span class="mw-headline" id="SSH_authentication_fails_while_connecting_to_a_server_requiring_GSSAPI_with_KeyExchange">SSH authentication fails while connecting to a server requiring GSSAPI with KeyExchange</span></h3>
+<p>If any of the following errors are encountered:
+</p>
+<pre>$ ssh -v -o GSSAPIDelegateCredentials=yes -o GSSAPIAuthentication=yes &lt;user&gt;@&lt;IP address&gt;
+Unable to negotiate with &lt;IP address&gt; port 22: no matching key exchange method found. Their offer: gss-group14-sha1-...
+</pre>
+<pre>$ ssh -v -o GSSAPIDelegateCredentials=yes -o GSSAPIKeyExchange=yes -o GSSAPIAuthentication=yes &lt;user&gt;@&lt;IP address&gt;
+command-line: line 0: Bad configuration option: gssapikeyexchange
+</pre>
+<p>it means that package <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=openssh">openssh</a></span> is not configured with GSSAPI patch for OpenSSH. You can install <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/openssh-gssapi/">openssh-gssapi</a></span><sup><small>AUR</small></sup> or <a rel="nofollow" class="external text" href="https://www.pdc.kth.se/support/documents/login/other_linux_login.html">follow this method</a>.
+</p>
+<h2><span class="mw-headline" id="See_also">See also</span></h2>
+<ul>
+<li><a rel="nofollow" class="external text" href="https://www.certdepot.net/rhel7-configure-kerberos-kdc/">RHEL7: Configure a Kerberos KDC</a></li>
+<li><a rel="nofollow" class="external text" href="https://www.certdepot.net/rhel7-configure-system-authenticate-using-kerberos/">RHEL7: Configure a system to authenticate using Kerberos</a></li>
+</ul>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../Special:Categories.html" title="Special:Categories">Categories</a>: <ul>
+<li><a href="../en/Category:Networking.html" title="Category:Networking">Networking</a></li>
+<li><a href="../en/Category:Authentication.html" title="Category:Authentication">Authentication</a></li>
+</ul>
+</div></div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=Kerberos&amp;oldid=757672">https://wiki.archlinux.org/index.php?title=Kerberos&amp;oldid=757672</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 20 November 2022, at 15:08.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

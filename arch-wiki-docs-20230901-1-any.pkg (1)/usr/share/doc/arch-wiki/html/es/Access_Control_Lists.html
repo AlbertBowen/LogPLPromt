@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>Access Control Lists (Español) - ArchWiki</title>
+<link rel="stylesheet" href="../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Access_Control_Lists_Español rootpage-Access_Control_Lists_Español skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Instalación" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Instalaci%C3%B3n">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Instalación</div>
+			</a>
+			
+			<ul id="toc-Instalación-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Configuración" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Configuraci%C3%B3n">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Configuración</div>
+			</a>
+			
+				<button aria-controls="toc-Configuración-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Configuración subsection
+				</button>
+			
+			<ul id="toc-Configuración-sublist" class="sidebar-toc-list">
+				<li id="toc-Habilitando_ACL" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Habilitando_ACL">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.1</span>Habilitando ACL</div>
+			</a>
+			
+			<ul id="toc-Habilitando_ACL-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Establecer_ACL" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Establecer_ACL">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.2</span>Establecer ACL</div>
+			</a>
+			
+			<ul id="toc-Establecer_ACL-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Mostrar_ACL" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Mostrar_ACL">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.3</span>Mostrar ACL</div>
+			</a>
+			
+			<ul id="toc-Mostrar_ACL-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Ejemplos" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Ejemplos">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>Ejemplos</div>
+			</a>
+			
+				<button aria-controls="toc-Ejemplos-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Ejemplos subsection
+				</button>
+			
+			<ul id="toc-Ejemplos-sublist" class="sidebar-toc-list">
+				<li id="toc-Salida_del_comando_ls" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Salida_del_comando_ls">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.1</span>Salida del comando ls</div>
+			</a>
+			
+			<ul id="toc-Salida_del_comando_ls-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Conceder_permisos_de_ejecución_para_archivos_privados_a_un_servidor_Web" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Conceder_permisos_de_ejecuci%C3%B3n_para_archivos_privados_a_un_servidor_Web">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.2</span>Conceder permisos de ejecución para archivos privados a un servidor Web</div>
+			</a>
+			
+			<ul id="toc-Conceder_permisos_de_ejecución_para_archivos_privados_a_un_servidor_Web-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-También_puede_ver" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Tambi%C3%A9n_puede_ver">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4</span>También puede ver</div>
+			</a>
+			
+			<ul id="toc-También_puede_ver-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../es/Access_Control_Lists.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="new mw-list-item"><a href="/index.php?title=Talk:Access_Control_Lists_(Espa%C3%B1ol)&amp;action=edit&amp;redlink=1" rel="discussion" title="Discussion about the content page (page does not exist) [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">español</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../es/Access_Control_Lists.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=Access_Control_Lists_(Espa%C3%B1ol)&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=Access_Control_Lists_(Espa%C3%B1ol)&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../es/Access_Control_Lists.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Access_Control_Lists_(Espa%C3%B1ol)&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Access_Control_Lists_(Espa%C3%B1ol)&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="es" dir="ltr">
+<div class="mw-parser-output">
+<div class="archwiki-template-box archwiki-template-box-note">Esta traducción de <a href="../en/Access_Control_Lists.html" title="Access Control Lists">Access Control Lists</a> fue revisada el <b>2017-07-22</b>. Si existen <a rel="nofollow" class="external text" href="https://wiki.archlinux.org/index.php?title=Access_Control_Lists&amp;diff=0&amp;oldid=479232">cambios</a> puede <a href="../es/ArchWiki:Translation_Team/Contributing.html" title="ArchWiki:Translation Team (Español)/Contributing (Español)">actualizarla</a> o avisar al <a href="../es/ArchWiki:Translation_Team.html" title="ArchWiki:Translation Team (Español)">equipo de traducción</a>.</div>
+<p>Proporciona un mecanismo de permisos adicionales más flexibles para los sistemas de archivos. Está diseñado para ayudar con los permiso de archivos en UNIX. ACL  permite dar permisos para cualquier usuario o grupo a cualquier recurso del disco.
+</p>
+<mw:tocplace></mw:tocplace>
+<h2>
+<span id="Instalaci.C3.B3n"></span><span class="mw-headline" id="Instalación">Instalación</span>
+</h2>
+<p>El paquete <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=acl">acl</a></span> es una dependencia de <a href="../es/Systemd.html" title="Systemd (Español)">systemd</a> que debería estar instalado.
+</p>
+<h2>
+<span id="Configuraci.C3.B3n"></span><span class="mw-headline" id="Configuración">Configuración</span>
+</h2>
+<h3><span class="mw-headline" id="Habilitando_ACL">Habilitando ACL</span></h3>
+<p>Para habilitar ACL los sistema de archivos se deben haber montado con la opción <code>acl</code>, puede usar <a href="../es/Fstab.html" title="Fstab (Español)">fstab</a> para hacer el montaje con acl permanente en su sistema.
+</p>
+<p>Es posible que la opción <code>acl</code> estés activada por defecto como opción de montaje en el sistema de archivos; en Btrfs y ext* también. Use el siguiente comando para verificar las particiones formateadas con ext* con la opción:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;"># tune2fs -l /dev/sd<i>XY</i> | grep "Default mount options:"</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">Default mount options:    user_xattr acl
+</pre>
+<p>También puede verificar que el punto de montaje por defecto no está anulado, en tal caso vería <code>noacl</code> en <code>/proc/mounts</code>.
+</p>
+<p>Puede configurar las opciones de montajes predeterminadas de un sistema de archivos utilizando el comando <code>tune2fs -o <i>opción</i> <i>partición</i></code> por ejemplo:
+</p>
+<pre># tune2fs -o acl /dev/sdXY
+</pre>
+<p>Utilizar las opciones de montaje por defecto en lugar de las entradas en <code>/etc/fstab</code> es muy útil para unidades externa, tales particiones serán montadas con la opción <code>acl</code> en otras máquinas GNU/Linux; sin necesidad de editar /etc/fstab en cada máquina.
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Nota:</strong> 
+<ul>
+<li>
+<code>acl</code> se especifica por defecto cuando se crean sistemas de archivos   ext2/3/4 y se configura en <code>/etc/mke2fs.conf</code>.</li>
+<li>Por defecto las opciones de montaje no están en la lista de <code>/proc/mounts</code>.</li>
+</ul>
+</div>
+<h3><span class="mw-headline" id="Establecer_ACL">Establecer ACL</span></h3>
+<p>ACL puede ser modificado usando el comando ‘’’setfacl’’’ 
+</p>
+<p>Para agregar permiso a un usuario (<code><i>user</i></code> es el nombre del usuario o el  ID): 
+</p>
+<pre># setfacl -m "u:<i>user:permissions</i>" &lt;file/dir&gt;
+</pre>
+<p>Agregar permisos para un grupo (<code><i>group</i></code> es el nombre del grupo o el  ID del grupo):
+</p>
+<pre># setfacl -m "g:<i>group:permissions</i>" &lt;file/dir&gt;
+</pre>
+<p>Para permitir que todos los archivos o directorios hereden las entradas de ACL desde el directorio con:
+</p>
+<pre># setfacl -dm "<i>entry</i>" &lt;dir&gt;
+</pre>
+<p>Para eliminar un entrada específica:
+</p>
+<pre># setfacl -x "<i>entry</i>" &lt;file/dir&gt;
+</pre>
+<p>Para remover todas las entradas:
+</p>
+<pre> # setfacl -b &lt;file/dir&gt;
+</pre>
+<h3><span class="mw-headline" id="Mostrar_ACL">Mostrar ACL</span></h3>
+<p>Para mostrar los permisos use:
+</p>
+<pre># getfacl &lt;nombre archivo&gt;
+</pre>
+<h2><span class="mw-headline" id="Ejemplos">Ejemplos</span></h2>
+<p>Establecer todos lo permisos para el usuario johnny en el archivo con nombre “abc”:
+</p>
+<pre># setfacl -m "u:johnny:rwx" abc
+</pre>
+<p>Check permissions
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;"># getfacl abc</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;"># file: abc
+# owner: someone
+# group: someone
+user::rw-
+user:johnny:rwx
+group::r--
+mask::rwx
+other::r--
+</pre>
+<p>Listar los permisos
+</p>
+<pre># setfacl -m "u:johnny:r-x" abc
+</pre>
+<p>Check permissions
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;"># getfacl abc</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;"># file: abc
+# owner: someone
+# group: someone
+user::rw-
+user:johnny:r-x
+group::r--
+mask::r-x
+other::r--
+</pre>
+<p>Eliminar todas las entradas ACL extendidas:
+</p>
+<pre># setfacl -b abc
+</pre>
+<p>Check permissions
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;"># getfacl abc</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;"># file: abc
+# owner: someone
+# group: someone
+user::rw-
+group::r--
+other::r--
+</pre>
+<h3><span class="mw-headline" id="Salida_del_comando_ls">Salida del comando ls</span></h3>
+<p>Notará que hay un ACL para un archivo dado porque se mostrará  un <code><b>+</b></code> (signo más) después del permiso Unix en la salida de <code>ls -l</code>.
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">$ ls -l /dev/audio</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">crw-rw----+ 1 root audio 14, 4 nov.   9 12:49 /dev/audio
+</pre>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">$ getfacl /dev/audio</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">getfacl: Removing leading '/' from absolute path names
+# file: dev/audio
+# owner: root
+# group: audio
+user::rw-
+user:solstice:rw-
+group::rw-
+mask::rw-
+other::---
+</pre>
+<h3>
+<span id="Conceder_permisos_de_ejecuci.C3.B3n_para_archivos_privados_a_un_servidor_Web"></span><span class="mw-headline" id="Conceder_permisos_de_ejecución_para_archivos_privados_a_un_servidor_Web">Conceder permisos de ejecución para archivos privados a un servidor Web</span>
+</h3>
+<p>La siguiente técnica describe de cómo un  proceso de un servidor web puede tener acceso a los archivos que residen en el directorio personal de un usuario sin comprometer la seguridad dando acceso a todo el mundo.
+</p>
+<p>Supongamos que el servidor web se ejecuta como <code>webserver</code> del usuario y le concede acceso al directorio personal del usuario geoffrey que es <code>/home/geoffrey</code> 
+</p>
+<p>El primer paso es otorgar permiso de ejecución a <code>webserver</code> para que pueda acceder a directorio  personal de <code>geoffrey</code>:
+</p>
+<pre># setfacl -m "u:webserver:--x" /home/geoffrey
+</pre>
+<p><i>Recuerda</i>: Los permisos de ejecución en un directorio son necesarios para que un proceso enumere el contenido del directorio.  
+</p>
+<p>Ahora <code>webserver</code> puede acceder a los archivos en <code>/home/geoffrey</code> y otros no necesitan acceso por lo tanto se puede remover de forma segura.
+</p>
+<pre># chmod o-rx /home/geoffrey
+</pre>
+<p>El comando <code>getfacl</code> puede ser usado para verificar los cambios.
+</p>
+<pre>$ getfacl /home/geoffrey
+getfacl: Removing leading '/' from absolute path names
+# file: home/geoffrey
+# owner: geoffrey
+# group: geoffrey
+user::rwx
+user:webserver:--x
+group::r-x
+mask::r-x
+otros::---
+</pre>
+<p>Como se muestra en la salida anterior  ya no tiene permisos pero <code>webserver</code> todavía puede acceder a los archivos, por lo tanto la seguridad se ha incrementado.
+</p>
+<h2>
+<span id="Tambi.C3.A9n_puede_ver"></span><span class="mw-headline" id="También_puede_ver">También puede ver</span>
+</h2>
+<ul>
+<li><span class="plainlinks archwiki-template-man" title="$ man 1 getfacl"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/getfacl.1">getfacl(1)</a></span></li>
+<li><span class="plainlinks archwiki-template-man" title="$ man 1 setfacl"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/setfacl.1">setfacl(1)</a></span></li>
+<li>Un antiguo, exhaustivo y relevante recurso <a rel="nofollow" class="external text" href="https://web.archive.org/web/20191220012518/http://vanemery.net:80/Linux/ACL/linux-acl.html">guia</a> de ACL</li>
+<li><a rel="nofollow" class="external text" href="https://unix.stackexchange.com/questions/1314/how-to-set-default-file-permissions-for-all-folders-files-in-a-directory">How to set default file permissions for all folders/files in a directory?</a></li>
+</ul>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="../es/Category:Security.html" title="Category:Security (Español)">Security (Español)</a></li></ul>
+</div></div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=Access_Control_Lists_(Espa%C3%B1ol)&amp;oldid=689418">https://wiki.archlinux.org/index.php?title=Access_Control_Lists_(Español)&amp;oldid=689418</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 26 July 2021, at 12:42.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

@@ -1,0 +1,996 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>Font configuration (Русский) - ArchWiki</title>
+<link rel="stylesheet" href="../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Font_configuration_Русский rootpage-Font_configuration_Русский skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Пути_шрифтов" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#%D0%9F%D1%83%D1%82%D0%B8_%D1%88%D1%80%D0%B8%D1%84%D1%82%D0%BE%D0%B2">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Пути шрифтов</div>
+			</a>
+			
+			<ul id="toc-Пути_шрифтов-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Настройка_Fontconfig" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#%D0%9D%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0_Fontconfig">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Настройка Fontconfig</div>
+			</a>
+			
+				<button aria-controls="toc-Настройка_Fontconfig-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Настройка Fontconfig subsection
+				</button>
+			
+			<ul id="toc-Настройка_Fontconfig-sublist" class="sidebar-toc-list">
+				<li id="toc-Предварительные_установки" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#%D0%9F%D1%80%D0%B5%D0%B4%D0%B2%D0%B0%D1%80%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5_%D1%83%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B8">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.1</span>Предварительные установки</div>
+			</a>
+			
+			<ul id="toc-Предварительные_установки-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Anti-aliasing_(сглаживание)" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Anti-aliasing_(%D1%81%D0%B3%D0%BB%D0%B0%D0%B6%D0%B8%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5)">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.2</span>Anti-aliasing (сглаживание)</div>
+			</a>
+			
+			<ul id="toc-Anti-aliasing_(сглаживание)-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Hinting_(Хинтинг)" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Hinting_(%D0%A5%D0%B8%D0%BD%D1%82%D0%B8%D0%BD%D0%B3)">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.3</span>Hinting (Хинтинг)</div>
+			</a>
+			
+			<ul id="toc-Hinting_(Хинтинг)-sublist" class="sidebar-toc-list">
+				<li id="toc-Интерпретатор_байт-кода_(Byte-Code_Interpreter,_BCI)" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#%D0%98%D0%BD%D1%82%D0%B5%D1%80%D0%BF%D1%80%D0%B5%D1%82%D0%B0%D1%82%D0%BE%D1%80_%D0%B1%D0%B0%D0%B9%D1%82-%D0%BA%D0%BE%D0%B4%D0%B0_(Byte-Code_Interpreter,_BCI)">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.3.1</span>Интерпретатор байт-кода (Byte-Code Interpreter, BCI)</div>
+			</a>
+			
+			<ul id="toc-Интерпретатор_байт-кода_(Byte-Code_Interpreter,_BCI)-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Autohinter_(Авто_Хинтинг)" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Autohinter_(%D0%90%D0%B2%D1%82%D0%BE_%D0%A5%D0%B8%D0%BD%D1%82%D0%B8%D0%BD%D0%B3)">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.3.2</span>Autohinter (Авто Хинтинг)</div>
+			</a>
+			
+			<ul id="toc-Autohinter_(Авто_Хинтинг)-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Hintstyle_(Стиль_Хинтинга)" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Hintstyle_(%D0%A1%D1%82%D0%B8%D0%BB%D1%8C_%D0%A5%D0%B8%D0%BD%D1%82%D0%B8%D0%BD%D0%B3%D0%B0)">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.3.3</span>Hintstyle (Стиль Хинтинга)</div>
+			</a>
+			
+			<ul id="toc-Hintstyle_(Стиль_Хинтинга)-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Расположение_пикселей" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#%D0%A0%D0%B0%D1%81%D0%BF%D0%BE%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5_%D0%BF%D0%B8%D0%BA%D1%81%D0%B5%D0%BB%D0%B5%D0%B9">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.4</span>Расположение пикселей</div>
+			</a>
+			
+			<ul id="toc-Расположение_пикселей-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Субпиксельное_отображение" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#%D0%A1%D1%83%D0%B1%D0%BF%D0%B8%D0%BA%D1%81%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE%D0%B5_%D0%BE%D1%82%D0%BE%D0%B1%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.5</span>Субпиксельное отображение</div>
+			</a>
+			
+			<ul id="toc-Субпиксельное_отображение-sublist" class="sidebar-toc-list">
+				<li id="toc-LCD_filter_(ЖК-фильтр)" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#LCD_filter_(%D0%96%D0%9A-%D1%84%D0%B8%D0%BB%D1%8C%D1%82%D1%80)">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.5.1</span>LCD filter (ЖК-фильтр)</div>
+			</a>
+			
+			<ul id="toc-LCD_filter_(ЖК-фильтр)-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Расширенная_спецификация_ЖК-фильтра_(LCD_filter)" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#%D0%A0%D0%B0%D1%81%D1%88%D0%B8%D1%80%D0%B5%D0%BD%D0%BD%D0%B0%D1%8F_%D1%81%D0%BF%D0%B5%D1%86%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D1%8F_%D0%96%D0%9A-%D1%84%D0%B8%D0%BB%D1%8C%D1%82%D1%80%D0%B0_(LCD_filter)">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.5.2</span>Расширенная спецификация ЖК-фильтра (LCD filter)</div>
+			</a>
+			
+			<ul id="toc-Расширенная_спецификация_ЖК-фильтра_(LCD_filter)-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Отключение_авто_хинтинга_(auto-hinter)_для_жирных_(bold)_шрифтов" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#%D0%9E%D1%82%D0%BA%D0%BB%D1%8E%D1%87%D0%B5%D0%BD%D0%B8%D0%B5_%D0%B0%D0%B2%D1%82%D0%BE_%D1%85%D0%B8%D0%BD%D1%82%D0%B8%D0%BD%D0%B3%D0%B0_(auto-hinter)_%D0%B4%D0%BB%D1%8F_%D0%B6%D0%B8%D1%80%D0%BD%D1%8B%D1%85_(bold)_%D1%88%D1%80%D0%B8%D1%84%D1%82%D0%BE%D0%B2">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.6</span>Отключение авто хинтинга (auto-hinter) для жирных (bold) шрифтов</div>
+			</a>
+			
+			<ul id="toc-Отключение_авто_хинтинга_(auto-hinter)_для_жирных_(bold)_шрифтов-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Заменить_или_установить_шрифты_по_умолчанию" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#%D0%97%D0%B0%D0%BC%D0%B5%D0%BD%D0%B8%D1%82%D1%8C_%D0%B8%D0%BB%D0%B8_%D1%83%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D1%8C_%D1%88%D1%80%D0%B8%D1%84%D1%82%D1%8B_%D0%BF%D0%BE_%D1%83%D0%BC%D0%BE%D0%BB%D1%87%D0%B0%D0%BD%D0%B8%D1%8E">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.7</span>Заменить или установить шрифты по умолчанию</div>
+			</a>
+			
+			<ul id="toc-Заменить_или_установить_шрифты_по_умолчанию-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Белый_список_и_чёрный_список_шрифтов" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#%D0%91%D0%B5%D0%BB%D1%8B%D0%B9_%D1%81%D0%BF%D0%B8%D1%81%D0%BE%D0%BA_%D0%B8_%D1%87%D1%91%D1%80%D0%BD%D1%8B%D0%B9_%D1%81%D0%BF%D0%B8%D1%81%D0%BE%D0%BA_%D1%88%D1%80%D0%B8%D1%84%D1%82%D0%BE%D0%B2">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.8</span>Белый список и чёрный список шрифтов</div>
+			</a>
+			
+			<ul id="toc-Белый_список_и_чёрный_список_шрифтов-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Отключение_растровых_шрифтов" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#%D0%9E%D1%82%D0%BA%D0%BB%D1%8E%D1%87%D0%B5%D0%BD%D0%B8%D0%B5_%D1%80%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B2%D1%8B%D1%85_%D1%88%D1%80%D0%B8%D1%84%D1%82%D0%BE%D0%B2">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.9</span>Отключение растровых шрифтов</div>
+			</a>
+			
+			<ul id="toc-Отключение_растровых_шрифтов-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Отключить_масштабирование_растровых_шрифтов" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#%D0%9E%D1%82%D0%BA%D0%BB%D1%8E%D1%87%D0%B8%D1%82%D1%8C_%D0%BC%D0%B0%D1%81%D1%88%D1%82%D0%B0%D0%B1%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5_%D1%80%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B2%D1%8B%D1%85_%D1%88%D1%80%D0%B8%D1%84%D1%82%D0%BE%D0%B2">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.10</span>Отключить масштабирование растровых шрифтов</div>
+			</a>
+			
+			<ul id="toc-Отключить_масштабирование_растровых_шрифтов-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Создать_стили_для_жирных_и_курсивных_«некомплектных»_шрифтов" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#%D0%A1%D0%BE%D0%B7%D0%B4%D0%B0%D1%82%D1%8C_%D1%81%D1%82%D0%B8%D0%BB%D0%B8_%D0%B4%D0%BB%D1%8F_%D0%B6%D0%B8%D1%80%D0%BD%D1%8B%D1%85_%D0%B8_%D0%BA%D1%83%D1%80%D1%81%D0%B8%D0%B2%D0%BD%D1%8B%D1%85_%C2%AB%D0%BD%D0%B5%D0%BA%D0%BE%D0%BC%D0%BF%D0%BB%D0%B5%D0%BA%D1%82%D0%BD%D1%8B%D1%85%C2%BB_%D1%88%D1%80%D0%B8%D1%84%D1%82%D0%BE%D0%B2">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.11</span>Создать стили для жирных и курсивных «некомплектных» шрифтов</div>
+			</a>
+			
+			<ul id="toc-Создать_стили_для_жирных_и_курсивных_«некомплектных»_шрифтов-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Приоритет_правил" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#%D0%9F%D1%80%D0%B8%D0%BE%D1%80%D0%B8%D1%82%D0%B5%D1%82_%D0%BF%D1%80%D0%B0%D0%B2%D0%B8%D0%BB">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.12</span>Приоритет правил</div>
+			</a>
+			
+			<ul id="toc-Приоритет_правил-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Запрос_текущих_настроек" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#%D0%97%D0%B0%D0%BF%D1%80%D0%BE%D1%81_%D1%82%D0%B5%D0%BA%D1%83%D1%89%D0%B8%D1%85_%D0%BD%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B5%D0%BA">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.13</span>Запрос текущих настроек</div>
+			</a>
+			
+			<ul id="toc-Запрос_текущих_настроек-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Приложения_без_поддержки_fontconfig" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#%D0%9F%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F_%D0%B1%D0%B5%D0%B7_%D0%BF%D0%BE%D0%B4%D0%B4%D0%B5%D1%80%D0%B6%D0%BA%D0%B8_fontconfig">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>Приложения без поддержки fontconfig</div>
+			</a>
+			
+			<ul id="toc-Приложения_без_поддержки_fontconfig-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Решение_проблем" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#%D0%A0%D0%B5%D1%88%D0%B5%D0%BD%D0%B8%D0%B5_%D0%BF%D1%80%D0%BE%D0%B1%D0%BB%D0%B5%D0%BC">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4</span>Решение проблем</div>
+			</a>
+			
+				<button aria-controls="toc-Решение_проблем-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Решение проблем subsection
+				</button>
+			
+			<ul id="toc-Решение_проблем-sublist" class="sidebar-toc-list">
+				<li id="toc-Искаженные_шрифты" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#%D0%98%D1%81%D0%BA%D0%B0%D0%B6%D0%B5%D0%BD%D0%BD%D1%8B%D0%B5_%D1%88%D1%80%D0%B8%D1%84%D1%82%D1%8B">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.1</span>Искаженные шрифты</div>
+			</a>
+			
+			<ul id="toc-Искаженные_шрифты-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Calibri,_Cambria,_Monaco,_и_т._д._не_отображаются_правильно" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Calibri,_Cambria,_Monaco,_%D0%B8_%D1%82._%D0%B4._%D0%BD%D0%B5_%D0%BE%D1%82%D0%BE%D0%B1%D1%80%D0%B0%D0%B6%D0%B0%D1%8E%D1%82%D1%81%D1%8F_%D0%BF%D1%80%D0%B0%D0%B2%D0%B8%D0%BB%D1%8C%D0%BD%D0%BE">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.2</span>Calibri, Cambria, Monaco, и т. д. не отображаются правильно</div>
+			</a>
+			
+			<ul id="toc-Calibri,_Cambria,_Monaco,_и_т._д._не_отображаются_правильно-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Приложения_переопределяют_hinting" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#%D0%9F%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F_%D0%BF%D0%B5%D1%80%D0%B5%D0%BE%D0%BF%D1%80%D0%B5%D0%B4%D0%B5%D0%BB%D1%8F%D1%8E%D1%82_hinting">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.3</span>Приложения переопределяют hinting</div>
+			</a>
+			
+			<ul id="toc-Приложения_переопределяют_hinting-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Приложения_не_используют_hinting_из_настроек_DE" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#%D0%9F%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F_%D0%BD%D0%B5_%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D1%83%D1%8E%D1%82_hinting_%D0%B8%D0%B7_%D0%BD%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B5%D0%BA_DE">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.4</span>Приложения не используют hinting из настроек DE</div>
+			</a>
+			
+			<ul id="toc-Приложения_не_используют_hinting_из_настроек_DE-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Неправильный_hinting_в_приложениях_GTK" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#%D0%9D%D0%B5%D0%BF%D1%80%D0%B0%D0%B2%D0%B8%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9_hinting_%D0%B2_%D0%BF%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F%D1%85_GTK">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.5</span>Неправильный hinting в приложениях GTK</div>
+			</a>
+			
+			<ul id="toc-Неправильный_hinting_в_приложениях_GTK-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Проблема_шрифтов_в_Сгенерированных_файлах_PDF" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#%D0%9F%D1%80%D0%BE%D0%B1%D0%BB%D0%B5%D0%BC%D0%B0_%D1%88%D1%80%D0%B8%D1%84%D1%82%D0%BE%D0%B2_%D0%B2_%D0%A1%D0%B3%D0%B5%D0%BD%D0%B5%D1%80%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D1%8B%D1%85_%D1%84%D0%B0%D0%B9%D0%BB%D0%B0%D1%85_PDF">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.6</span>Проблема шрифтов в Сгенерированных файлах PDF</div>
+			</a>
+			
+			<ul id="toc-Проблема_шрифтов_в_Сгенерированных_файлах_PDF-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Отсутствует_подчёркивание_со_шрифтом_Dejavu_Monospace" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#%D0%9E%D1%82%D1%81%D1%83%D1%82%D1%81%D1%82%D0%B2%D1%83%D0%B5%D1%82_%D0%BF%D0%BE%D0%B4%D1%87%D1%91%D1%80%D0%BA%D0%B8%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5_%D1%81%D0%BE_%D1%88%D1%80%D0%B8%D1%84%D1%82%D0%BE%D0%BC_Dejavu_Monospace">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.7</span>Отсутствует подчёркивание со шрифтом Dejavu Monospace</div>
+			</a>
+			
+			<ul id="toc-Отсутствует_подчёркивание_со_шрифтом_Dejavu_Monospace-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Отладка_шрифтов_FreeType" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#%D0%9E%D1%82%D0%BB%D0%B0%D0%B4%D0%BA%D0%B0_%D1%88%D1%80%D0%B8%D1%84%D1%82%D0%BE%D0%B2_FreeType">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.8</span>Отладка шрифтов FreeType</div>
+			</a>
+			
+			<ul id="toc-Отладка_шрифтов_FreeType-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Смотрите_также" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#%D0%A1%D0%BC%D0%BE%D1%82%D1%80%D0%B8%D1%82%D0%B5_%D1%82%D0%B0%D0%BA%D0%B6%D0%B5">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5</span>Смотрите также</div>
+			</a>
+			
+			<ul id="toc-Смотрите_также-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../ru/Font_configuration.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="mw-list-item"><a href="../ru/Talk:Font_configuration.html" rel="discussion" title="Discussion about the content page [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">русский</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../ru/Font_configuration.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=Font_configuration_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=Font_configuration_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../ru/Font_configuration.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Font_configuration_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Font_configuration_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="ru" dir="ltr">
+<div class="mw-parser-output">
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Состояние перевода:</strong> На этой странице представлен перевод статьи <a href="../en/Font_configuration.html" title="Font configuration">Font configuration</a>. Дата последней синхронизации: 16 апреля 2022. Вы можете <a href="../ru/ArchWiki:Translation_Team.html" title="ArchWiki:Translation Team (Русский)">помочь</a> синхронизировать перевод, если в английской версии произошли <a rel="nofollow" class="external text" href="https://wiki.archlinux.org/index.php?title=Font_configuration&amp;diff=0&amp;oldid=725595">изменения</a>.</div>
+<div class="archwiki-template-meta-related-articles-start">
+<p class="mw-no-invert">Ссылки по теме</p>
+<ul>
+<li><a href="../ru/Font_configuration/Examples.html" class="mw-redirect" title="Настройка шрифтов/Примеры">Настройка шрифтов/Примеры</a></li>
+<li><a href="../en/Fonts.html" class="mw-redirect" title="Шрифты">Шрифты</a></li>
+<li><a href="../en/Metric-compatible_fonts.html" title="Metric-compatible fonts">Metric-compatible fonts</a></li>
+<li><a href="../ru/Microsoft_fonts.html" class="mw-redirect" title="Шрифты Microsoft">Шрифты Microsoft</a></li>
+<li><a href="../ru/Java_Runtime_Environment_fonts.html" class="mw-redirect" title="Шрифты окружения Java Runtime">Шрифты окружения Java Runtime</a></li>
+<li><a href="../en/X_Logical_Font_Description.html" title="X Logical Font Description">X Logical Font Description</a></li>
+</ul>
+</div>
+<p><a rel="nofollow" class="external text" href="https://www.freedesktop.org/wiki/Software/fontconfig/">Fontconfig</a> - это библиотека, разработанная для предоставления списка доступных <a href="../en/Fonts.html" class="mw-redirect" title="Fonts (Русский)">шрифтов</a> приложениям, а также для настройки того, как шрифты будут отображены: смотрите <a href="https://en.wikipedia.org/wiki/Fontconfig" class="extiw" title="wikipedia:Fontconfig">Wikipedia:Fontconfig</a>. Библиотека FreeType <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=freetype2">freetype2</a></span> отображает (рендерит) шрифты, основываясь на этих настройках.
+</p>
+<p>Хотя Fontconfig является стандартом в современном Linux, некоторые приложения полагаются на оригинальном способе отбора шрифтов и отображения, в <a href="../en/X_Logical_Font_Description.html" title="X Logical Font Description">X Logical Font Description</a>.
+</p>
+<p>Пакеты отображения шрифтов на Arch Linux включает в себя поддержку <i>freetype2</i> с включенным переводчиком байт-кода (BCI). Для лучшего отображения шрифтов, особенно на ЖК-мониторах, см <a href="#%D0%9D%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0_Fontconfig">#Настройка Fontconfig</a> и <a href="../ru/Font_configuration/Examples.html" class="mw-redirect" title="Настройка шрифтов/Примеры">Настройка шрифтов/Примеры</a>.
+</p>
+<mw:tocplace></mw:tocplace>
+<h2>
+<span id=".D0.9F.D1.83.D1.82.D0.B8_.D1.88.D1.80.D0.B8.D1.84.D1.82.D0.BE.D0.B2"></span><span class="mw-headline" id="Пути_шрифтов">Пути шрифтов</span>
+</h2>
+<p>Шрифты, которые будут известны приложениям, должны быть каталогизированы для лёгкого и быстрого доступа.
+</p>
+<p>Пути шрифтов изначально известные Fontconfig находятся в: <code>/usr/share/fonts/</code>, <code>~/.local/share/fonts</code> (и <code>~/.fonts/</code>, - в настоящее время не рекомендуется). Fontconfig будет сканировать эти каталоги рекурсивно. Для простоты организации и установки, рекомендуется использовать эти пути шрифтов, когда <a href="../en/Fonts.html#Installation" title="Fonts">добавляете шрифты</a>.
+</p>
+<p>Чтобы увидеть список известных Fontconfig шрифтов:
+</p>
+<pre>$ fc-list : file
+</pre>
+<p>Для больших выводных форматов, смотрите <span class="plainlinks archwiki-template-man" title="$ man 1 fc-list"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/fc-list.1">fc-list(1)</a></span>.
+</p>
+<p>Проверьте известные пути шрифтов <a href="../ru/Xorg.html" title="Xorg (Русский)">Xorg</a>, посмотрев свой журнал:
+</p>
+<pre>$ grep /fonts ~/.local/share/xorg/Xorg.0.log
+</pre>
+<div class="archwiki-template-box archwiki-template-box-tip">
+<strong>Совет:</strong> 
+<ul>
+<li>Вы также можете проверить список путей шрифтов, о которых знает <a href="../ru/Xorg.html" title="Xorg (Русский)">Xorg</a>, с помощью команды <code>xset q</code>.</li>
+<li>Используйте <code>/var/log/Xorg.0.log</code> если Xorg запускается с правами суперпользователя.</li>
+</ul>
+</div>
+<p>Имейте в виду, что Xorg не ищет рекурсивно в каталоге <code>/usr/share/fonts/</code> как это делает Fontconfig. Чтобы добавить путь, нужно указать полный путь:
+</p>
+<pre>Section "Files"
+    FontPath     "/usr/share/fonts/local/"
+EndSection
+</pre>
+<p>Если вы хотите установить пути шрифтов на уровне пользователя, вы можете добавлять и удалять пути шрифтов по умолчанию, добавив следующую строку(и) в <code>~/.xinitrc</code>:
+</p>
+<pre>xset +fp /usr/share/fonts/local/           # Добавляет путь шрифтов в список известных путей шрифтов Xorg'а
+xset -fp /usr/share/fonts/sucky_fonts/     # Удаляет указанный путь шрифта из списка известных путей шрифтов Xorg'а
+</pre>
+<p>Чтобы увидеть список известных шрифтов Xorg, используйте <code>xlsfonts</code> из пакета <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=xorg-xlsfonts">xorg-xlsfonts</a></span>.
+</p>
+<h2>
+<span id=".D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0_Fontconfig"></span><span class="mw-headline" id="Настройка_Fontconfig">Настройка Fontconfig</span>
+</h2>
+<p>Документация fontconfig доступна в <span class="plainlinks archwiki-template-man" title="$ man 5 fonts-conf"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/fonts-conf.5">fonts-conf(5)</a></span>.
+</p>
+<p>Настройка может быть сделана для каждого пользователя отдельно, с помощью <code>$XDG_CONFIG_HOME/fontconfig/fonts.conf</code> (обычно это <code>$HOME/.config/fontconfig/fonts.conf</code>), и на глобальном уровне с помощью <code>/etc/fonts/local.conf</code>. Оба эти файла используют тот же синтаксис.
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Примечание:</strong> 
+<ul>
+<li>Предустановка <code>50-user.conf</code> должна быть включена, чтобы пользовательская конфигурация вступила в силу, а предустановка <code>51-local.conf</code> предназначена для глобальной конфигурации. Включение предустановок описано в разделе <a href="#%D0%9F%D1%80%D0%B5%D0%B4%D0%B2%D0%B0%D1%80%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5_%D1%83%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B8">#Предварительные установки</a>.</li>
+<li>Файлы настроек и каталоги: <code>~/.fonts.conf/</code>, <code>~/.fonts.conf.d/</code> и <code>~/.fontconfig/*.cache-*</code> являются устаревшими и не будут по умолчанию считываться в будущих версиях пакета. Новые пути — <code>$XDG_CONFIG_HOME/fontconfig/fonts.conf</code>, <code>$XDG_CONFIG_HOME/fontconfig/conf.d/NN-name.conf</code> и <code>$XDG_CACHE_HOME/fontconfig/*.cache-*</code> соответственно. Если используется второе расположение, убедитесь в правильном названии файла (где <code>NN</code> состоит из двух цифр, как <code>00</code>, <code>10</code>, или <code>99</code>).</li>
+</ul>
+</div>
+<p>Fontconfig собирает все свои настройки в центральном файле (<code>/etc/fonts/fonts.conf</code>). Этот файл перезаписывается в ходе обновления fontconfig, поэтому не следует редактировать его напрямую. Fontconfig-совместимые приложения читают этот файл, чтобы узнать о доступных шрифтах и как они будут отображены. Этот файл представляет собой конгломерат из правил глобальных настроек (<code>/etc/fonts/local.conf</code>), настроенных предустановок в <code>/etc/fonts/conf.d/</code> и пользовательского файла настроек (<code>$XDG_CONFIG_HOME/fontconfig/fonts.conf</code>). Можно пересобрать настройки fontconfig с помощью <code>fc-cache</code>, но изменения будут применены только для вновь запущенных приложений.
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Примечание:</strong> В некоторых средах рабочего стола (например <a href="../ru/GNOME.html" title="GNOME (Русский)">GNOME</a> и <a href="../ru/KDE.html" title="KDE (Русский)">KDE</a>) используется <i>Панель Управления Шрифтами</i>, которая будет автоматически создавать или перезаписывать файл настроек шрифтов пользователя. Для этих рабочих сред лучше, чтобы настройки соответствовали вашим уже определённым настройкам шрифтов, чтобы получить ожидаемое поведение.</div>
+<p>Файлы настроек Fontconfig используют формат <a href="https://en.wikipedia.org/wiki/ru:XML" class="extiw" title="wikipedia:ru:XML">XML</a> и обязательный заголовок:
+</p>
+<pre>&lt;?xml version="1.0"?&gt;
+&lt;!DOCTYPE fontconfig SYSTEM "urn:fontconfig:fonts.dtd"&gt;
+&lt;fontconfig&gt;
+
+  &lt;!-- поместите настройки сюда --&gt;
+
+&lt;/fontconfig&gt;
+</pre>
+<p>В примерах, представленных далее в статье, эти теги опущены для краткости.
+</p>
+<h3>
+<span id=".D0.9F.D1.80.D0.B5.D0.B4.D0.B2.D0.B0.D1.80.D0.B8.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D1.8B.D0.B5_.D1.83.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B8"></span><span class="mw-headline" id="Предварительные_установки">Предварительные установки</span>
+</h3>
+<p>Предварительные установки есть в каталоге <code>/usr/share/fontconfig/conf.avail</code>. Они могут быть включены созданием <a href="https://en.wikipedia.org/wiki/ru:%D0%A1%D0%B8%D0%BC%D0%B2%D0%BE%D0%BB%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B0%D1%8F_%D1%81%D1%81%D1%8B%D0%BB%D0%BA%D0%B0" class="extiw" title="w:ru:Символическая ссылка">символьной ссылки</a> на них, глобально или для отдельных пользователей, как описано в <code>/etc/fonts/conf.d/README</code>. Эти предустановки переопределят соответствие параметров в соответствующих файлах настроек.
+</p>
+<p>Например, для включения sub-pixel (суб-пиксельного) RGB отображения глобально:
+</p>
+<pre>$ cd /etc/fonts/conf.d
+# ln -s /usr/share/fontconfig/conf.avail/10-sub-pixel-rgb.conf
+</pre>
+<p>Тоже самое, но для настройки каждому пользователю:
+</p>
+<pre>$ mkdir $XDG_CONFIG_HOME/fontconfig/conf.d
+$ ln -s /usr/share/fontconfig/conf.avail/10-sub-pixel-rgb.conf $XDG_CONFIG_HOME/fontconfig/conf.d
+</pre>
+<h3>
+<span id="Anti-aliasing_.28.D1.81.D0.B3.D0.BB.D0.B0.D0.B6.D0.B8.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5.29"></span><span class="mw-headline" id="Anti-aliasing_(сглаживание)">Anti-aliasing (сглаживание)</span>
+</h3>
+<p><a href="https://en.wikipedia.org/wiki/Font_rasterization" class="extiw" title="wikipedia:Font rasterization">Растеризация шрифтов</a> преобразует данные векторного шрифта в растровые для отображения на экране. В результате могут появиться ступеньки/зубцы, из-за <a href="https://en.wikipedia.org/wiki/ru:%D0%90%D0%BB%D0%B8%D0%B0%D1%81%D0%B8%D0%BD%D0%B3" class="extiw" title="wikipedia:ru:Алиасинг">наложения (алиасинга)</a>. Методика, известная как <a href="https://en.wikipedia.org/wiki/Anti-aliasing" class="extiw" title="wikipedia:Anti-aliasing">анти-алиасинг/сглаживание (Anti-aliasing)</a>, может быть использована для повышения разрешения видимых краёв шрифта. Сглаживание <b>включено</b> по умолчанию. Для того, чтобы отключить его:
+</p>
+<pre>  &lt;match target="font"&gt;
+    &lt;edit name="antialias" mode="assign"&gt;
+      &lt;bool&gt;false&lt;/bool&gt;
+    &lt;/edit&gt;
+  &lt;/match&gt;</pre>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Примечание:</strong> Некоторые приложения могут <a href="#%D0%9F%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F_%D0%BF%D0%B5%D1%80%D0%B5%D0%BE%D0%BF%D1%80%D0%B5%D0%B4%D0%B5%D0%BB%D1%8F%D1%8E%D1%82_hinting">переопределять настройки сглаживания по умолчанию</a>.</div>
+<h3>
+<span id="Hinting_.28.D0.A5.D0.B8.D0.BD.D1.82.D0.B8.D0.BD.D0.B3.29"></span><span class="mw-headline" id="Hinting_(Хинтинг)">Hinting (Хинтинг)</span>
+</h3>
+<p><a href="https://en.wikipedia.org/wiki/ru:%D0%A5%D0%B8%D0%BD%D1%82%D0%B8%D0%BD%D0%B3" class="extiw" title="wikipedia:ru:Хинтинг">Хинтинг</a> (также известный как инструктаж) - это использование математических инструкций для настройки отображения контура шрифта так, чтобы он был на одной линии с растрировой сеткой (т.е. пиксельной сеткой экрана). Ожидаемый эффект - сделать шрифты на вид более чёткими, чтобы они были более читабельные. Шрифты выравниваются правильно без хинтинга, когда экран имеет 300 <a href="https://en.wikipedia.org/wiki/ru:Dots_per_inch" class="extiw" title="wikipedia:ru:Dots per inch">DPI</a>. Доступно два типа Хинтинга.
+</p>
+<h4>
+<span id=".D0.98.D0.BD.D1.82.D0.B5.D1.80.D0.BF.D1.80.D0.B5.D1.82.D0.B0.D1.82.D0.BE.D1.80_.D0.B1.D0.B0.D0.B9.D1.82-.D0.BA.D0.BE.D0.B4.D0.B0_.28Byte-Code_Interpreter.2C_BCI.29"></span><span class="mw-headline" id="Интерпретатор_байт-кода_(Byte-Code_Interpreter,_BCI)">Интерпретатор байт-кода (Byte-Code Interpreter, BCI)</span>
+</h4>
+<p>При использовании хинтинга BCI инструкции в шрифтах TrueType предоставляются в соответствии с интерпретатором FreeType. Хинтинг BCI прекрасно работает со шрифтами с хорошими инструкциями хинтинга. По умолчанию хинтинг <b>включен</b>. Для его отключения:
+</p>
+<pre>  &lt;match target="font"&gt;
+    &lt;edit name="hinting" mode="assign"&gt;
+      &lt;bool&gt;false&lt;/bool&gt;
+    &lt;/edit&gt;
+  &lt;/match&gt;</pre>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Примечание:</strong> Используемую реализацию BCI можно переключить в скрипте <code>/etc/profile.d/freetype2.sh</code>. Интерпретатор устанавливается путём передачи параметра <code>truetype:interpreter-version=<i>NN</i></code>, где <i>NN</i> соответствует выбранной версии, в переменную <code>FREETYPE_PROPERTIES</code> в скрипте. Наиболее популярными значениями являются:
+<ul>
+<li>35 для классического режима (эмулирует Windows 98),</li>
+<li>36 для классического стиля Windows ClearType (до Windows XP),</li>
+<li>38 для режима "Infinality" (высоконастраиваемый рендеринг, считается медленным и устаревшим),</li>
+<li>
+<b>40</b> для <a rel="nofollow" class="external text" href="https://www.freetype.org/freetype2/docs/hinting/subpixel-hinting.html">minimal mode</a> (урезанный Infinality, используется по умолчанию).</li>
+</ul>
+Субпиксельный рендеринг должен использовать субпиксельный BCI. Подробнее смотрите <a rel="nofollow" class="external autonumber" href="https://www.freetype.org/freetype2/docs/reference/ft2-properties.html#tt_interpreter_version_xxx">[1]</a>.</div>
+<h4>
+<span id="Autohinter_.28.D0.90.D0.B2.D1.82.D0.BE_.D0.A5.D0.B8.D0.BD.D1.82.D0.B8.D0.BD.D0.B3.29"></span><span class="mw-headline" id="Autohinter_(Авто_Хинтинг)">Autohinter (Авто Хинтинг)</span>
+</h4>
+<p>Autohinter пытается сделать автоматический хинтинг и игнорирует существующую информацию хинтинга. Раньше он использовался по умолчанию, поскольку шрифты TrueType2 были защищены патентами, но теперь срок патентов истёк и использовать Autohinter нет большого смысла. Он может лучше работать со шрифтами, которые поломанные или не содержат информацию по хинтингу, но это будет не оптимально для шрифтов с хорошей информацией хинтинга. К распространённым шрифтам Autohinter в дальейшем не будет полезным. По умолчанию автохинтинг <b>отключен</b>. Чтобы его включить:
+</p>
+<pre>  &lt;match target="font"&gt;
+    &lt;edit name="autohint" mode="assign"&gt;
+      &lt;bool&gt;true&lt;/bool&gt;
+    &lt;/edit&gt;
+  &lt;/match&gt;</pre>
+<h4>
+<span id="Hintstyle_.28.D0.A1.D1.82.D0.B8.D0.BB.D1.8C_.D0.A5.D0.B8.D0.BD.D1.82.D0.B8.D0.BD.D0.B3.D0.B0.29"></span><span class="mw-headline" id="Hintstyle_(Стиль_Хинтинга)">Hintstyle (Стиль Хинтинга)</span>
+</h4>
+<p>Hintstyle это сумма изменений шрифта, сделанных чтобы выстроить его по пиксельной сетке. Значения хинтинга: <code>hintnone</code>(без хинтинга), <code>hintslight</code>(лёгкий хинтинг), <code>hintmedium</code>(средний хинтинг), и <code>hintfull</code>(полный хинтинг).  <code>hintslight</code> сделает шрифт более нечётким выстраивая по сетке, но сохранит лучше форму шрифта, в то время как <code>hintfull</code> сделает чётким шрифт, выровняет хорошо по пиксельной сетке, но больше потеряет форму шрифта. <b><code>hintslight</code></b> установлен по умолчанию. Для того, чтобы изменить его:
+</p>
+<pre>  &lt;match target="font"&gt;
+    &lt;edit name="hintstyle" mode="assign"&gt;
+      &lt;const&gt;hintnone&lt;/const&gt;
+    &lt;/edit&gt;
+  &lt;/match&gt;</pre>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Примечание:</strong> Некоторые приложения могут <a href="#%D0%9F%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F_%D0%BF%D0%B5%D1%80%D0%B5%D0%BE%D0%BF%D1%80%D0%B5%D0%B4%D0%B5%D0%BB%D1%8F%D1%8E%D1%82_hinting">переопределять настройки хинтинга по умолчанию</a>.</div>
+<h3>
+<span id=".D0.A0.D0.B0.D1.81.D0.BF.D0.BE.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BF.D0.B8.D0.BA.D1.81.D0.B5.D0.BB.D0.B5.D0.B9"></span><span class="mw-headline" id="Расположение_пикселей">Расположение пикселей</span>
+</h3>
+<p>Большинство современных мониторов использует спецификацию RGB (Red, Green, Blue, - Красный, Зелёный, Синий). Fontconfig'у нужно знать тип монитора, чтобы иметь возможность отображать шрифты правильно. Мониторы могут быть: <b>RGB</b> (наиболее распространенный), <b>BGR</b>, <b>V-RGB</b> (вертикальный), или даже <b>V-BGR</b>. Тест монитора можно найти <a rel="nofollow" class="external text" href="http://www.lagom.nl/lcd-test/subpixel.php">здесь</a>.
+</p>
+<pre>  &lt;match target="font"&gt;
+    &lt;edit name="rgba" mode="assign"&gt;
+      &lt;const&gt;rgb&lt;/const&gt;
+    &lt;/edit&gt;
+  &lt;/match&gt;</pre>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Примечание:</strong> Без субпиксельного отображения (смотрите ниже) для freetype нужно только расположение (горизонтальное или вертикальное). Без него, например, нет разницы между <b>RGB</b> и <b>BGR</b>.</div>
+<h3>
+<span id=".D0.A1.D1.83.D0.B1.D0.BF.D0.B8.D0.BA.D1.81.D0.B5.D0.BB.D1.8C.D0.BD.D0.BE.D0.B5_.D0.BE.D1.82.D0.BE.D0.B1.D1.80.D0.B0.D0.B6.D0.B5.D0.BD.D0.B8.D0.B5"></span><span class="mw-headline" id="Субпиксельное_отображение">Субпиксельное отображение</span>
+</h3>
+<p><a href="https://en.wikipedia.org/wiki/Subpixel_rendering" class="extiw" title="wikipedia:Subpixel rendering">Субпиксельный рендеринг</a> — это техника улучшения чёткости рендеринга шрифтов путём утроения горизонтального (или вертикального) разрешения за счёт использования субпикселей. На машинах Windows эта техника называется <a href="https://en.wikipedia.org/wiki/ru:ClearType" class="extiw" title="wikipedia:ru:ClearType">ClearType</a>.
+</p>
+<p>FreeType2 предоставляет два различных типа субпиксельного рендеринга, называемых Harmony и ClearType (<code>FT_CONFIG_OPTION_SUBPIXEL_RENDERING</code>) <a rel="nofollow" class="external autonumber" href="https://www.freetype.org/freetype2/docs/reference/ft2-lcd_rendering.html">[2]</a>.
+</p>
+<p>При включении субпиксельного рендеринга ClearType рекомендуется использовать ЖК-фильтр (субпиксельный рендеринг Harmony не требует установки ЖК-фильтра). О том, как включить ЖК-фильтр и его преимуществах, смотрите следующий раздел.
+</p>
+<p>Начиная с версии FreeType 2.10.3, Arch Linux включает субпиксельный рендеринг ClearType по умолчанию <a rel="nofollow" class="external autonumber" href="https://gitlab.archlinux.org/archlinux/packaging/packages/freetype2/-/commit/35e925e946da41b7a2d7c297ee43c4cab386048c">[3]</a>.
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Примечание:</strong> Используйте ЖК-фильтр <code>lcdlight</code>, чтобы получить поведение субпиксельного рендеринга как до версии FreeType 2.10.3 — Harmony (вместо ClearType).</div>
+<h4>
+<span id="LCD_filter_.28.D0.96.D0.9A-.D1.84.D0.B8.D0.BB.D1.8C.D1.82.D1.80.29"></span><span class="mw-headline" id="LCD_filter_(ЖК-фильтр)">LCD filter (ЖК-фильтр)</span>
+</h4>
+<p>При использовании субпиксельного отображения ClearType необходимо включить ЖК-фильтр, который предназначен для снижения цветной окантовки. Это описано в разделе <a rel="nofollow" class="external text" href="https://www.freetype.org/freetype2/docs/reference/ft2-lcd_rendering.html">LCD filtering</a> в справке по FreeType 2 API. Различные варианты описаны в разделе <a rel="nofollow" class="external text" href="https://www.freetype.org/freetype2/docs/reference/ft2-lcd_rendering.html#ft_lcdfilter">FT_LcdFilter</a> и проиллюстрированы на этой <a rel="nofollow" class="external text" href="http://www.spasche.net/files/lcdfiltering/">странице теста ЖК-фильтра</a>.
+</p>
+<p>Фильтр <code>lcddefault</code> будет работать для большинства пользователей. Другие доступные фильтры, которые могут использоваться в особых случаях: <code>lcdlight</code>; фильтр идеально подходит для шрифтов, которые выглядят слишком жирными или нечеткими, <code>lcdlegacy</code>, оригинальный фильтр Cairo; и <code>lcdnone</code> чтобы отключить его полностью.
+</p>
+<pre>  &lt;match target="font"&gt;
+    &lt;edit name="lcdfilter" mode="assign"&gt;
+      &lt;const&gt;lcddefault&lt;/const&gt;
+    &lt;/edit&gt;
+  &lt;/match&gt;</pre>
+<h4>
+<span id=".D0.A0.D0.B0.D1.81.D1.88.D0.B8.D1.80.D0.B5.D0.BD.D0.BD.D0.B0.D1.8F_.D1.81.D0.BF.D0.B5.D1.86.D0.B8.D1.84.D0.B8.D0.BA.D0.B0.D1.86.D0.B8.D1.8F_.D0.96.D0.9A-.D1.84.D0.B8.D0.BB.D1.8C.D1.82.D1.80.D0.B0_.28LCD_filter.29"></span><span class="mw-headline" id="Расширенная_спецификация_ЖК-фильтра_(LCD_filter)">Расширенная спецификация ЖК-фильтра (LCD filter)</span>
+</h4>
+<p>Если встроенные ЖК-фильтры не устраивают, можно настроить отображение шрифта очень специфично путём создания пользовательского пакета freetype2 и модификации жёстко закодированных фильтров. Для создания и установки пакетов из исходников можно использовать <a href="../ru/Arch_build_system.html" title="Arch build system (Русский)">Система сборки Arch</a>. 
+</p>
+<p>Скачайте PKGBUILD для пакета <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=freetype2">freetype2</a></span> и получите файлы сборки.
+</p>
+<p>Включите субпиксельный рендеринг ClearType путём редактирования файла <code>src/freetype-VERSION/include/freetype/config/ftoption.h</code>, раскомментировав в нём макрос <code>FT_CONFIG_OPTION_SUBPIXEL_RENDERING</code>.
+</p>
+<p>Отредактируйте файл <code>src/freetype-VERSION/src/base/ftlcdfil.c</code> и найдите определённые константы <code>default_filter[5]</code>:
+</p>
+<pre>static const FT_Byte  default_filter[5] =
+    { 0x10, 0x40, 0x70, 0x40, 0x10 };
+</pre>
+<p>Эта константа определяет применение низкочастотного фильтра к отоброжению символа. Измените его как требуется. Сохраните файл, соберите и установите пользовательский пакет:
+</p>
+<pre>$ makepkg -e
+# pacman -Rd freetype2
+# pacman -U freetype2-VERSION-ARCH.pkg.tar.xz
+</pre>
+<p>Перезапустите X. Теперь фильтр lcddefault должен отобразить шрифты по-другому.
+</p>
+<h3>
+<span id=".D0.9E.D1.82.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_.D0.B0.D0.B2.D1.82.D0.BE_.D1.85.D0.B8.D0.BD.D1.82.D0.B8.D0.BD.D0.B3.D0.B0_.28auto-hinter.29_.D0.B4.D0.BB.D1.8F_.D0.B6.D0.B8.D1.80.D0.BD.D1.8B.D1.85_.28bold.29_.D1.88.D1.80.D0.B8.D1.84.D1.82.D0.BE.D0.B2"></span><span class="mw-headline" id="Отключение_авто_хинтинга_(auto-hinter)_для_жирных_(bold)_шрифтов">Отключение авто хинтинга (auto-hinter) для жирных (bold) шрифтов</span>
+</h3>
+<p>Авто хинтинг использует сложные методы для отображения шрифтов, но часто делает жирные шрифты слишком широкими. К счастью, решение может быть найдено в отключении авто хинтинга для жирных шрифтов, оставляя авто хинтинг для остальных:
+</p>
+<pre>...
+&lt;match target="font"&gt;
+    &lt;test name="weight" compare="more"&gt;
+        &lt;const&gt;medium&lt;/const&gt;
+    &lt;/test&gt;
+    &lt;edit name="autohint" mode="assign"&gt;
+        &lt;bool&gt;false&lt;/bool&gt;
+    &lt;/edit&gt;
+&lt;/match&gt;
+...
+</pre>
+<p>Некоторые шрифты могут плохо выглядеть с хинтингом BCI. Его можно отключить только для этих шрифтов:
+</p>
+<pre>...
+&lt;match target="font"&gt;
+    &lt;test name="family" qual="any"&gt;
+        &lt;string&gt;My Font&lt;/string&gt;
+    &lt;/test&gt;
+    &lt;edit name="hinting" mode="assign"&gt;
+        &lt;bool&gt;false&lt;/bool&gt;
+    &lt;/edit&gt;
+&lt;/match&gt;
+...
+</pre>
+<h3>
+<span id=".D0.97.D0.B0.D0.BC.D0.B5.D0.BD.D0.B8.D1.82.D1.8C_.D0.B8.D0.BB.D0.B8_.D1.83.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.B8.D1.82.D1.8C_.D1.88.D1.80.D0.B8.D1.84.D1.82.D1.8B_.D0.BF.D0.BE_.D1.83.D0.BC.D0.BE.D0.BB.D1.87.D0.B0.D0.BD.D0.B8.D1.8E"></span><span class="mw-headline" id="Заменить_или_установить_шрифты_по_умолчанию">Заменить или установить шрифты по умолчанию</span>
+</h3>
+<p>Самый надёжный способ сделать это, добавить фрагмент XML, похожий на тот, как показано ниже. Использование атрибута "binding" (связывания) даст вам лучший результат, например, в Firefox где вы не можете изменить замену шрифтов. Следующий пример приведёт к использованию шрифта <i>Ubuntu</i> в тех местах, где предполагалось использование <i>Georgia</i>:
+</p>
+<pre>...
+&lt;match target="pattern"&gt;
+  &lt;test qual="any" name="family"&gt;&lt;string&gt;Georgia&lt;/string&gt;&lt;/test&gt;
+  &lt;edit name="family" mode="assign" binding="same"&gt;&lt;string&gt;Ubuntu&lt;/string&gt;&lt;/edit&gt;
+&lt;/match&gt;
+...</pre>
+<p>Альтернативный подход состоит в установке "предпочтительного" шрифта. Шрифты, соответствующие элементу <i>&lt;family&gt;</i>, редактируются для добавления списка <i>&lt;prefer&gt;</i> семейств перед соответствующим <i>&lt;family&gt;</i>. Это работает только если оригинального шрифта нет в системе, в этом случае указанный шрифт будет заменён:
+</p>
+<pre>...
+&lt;!-- Заменить Helvetica на Bitstream Vera Sans Mono --&gt;
+&lt;!-- Обратите внимание, что псевдоним для Helvetica должен уже существовать по умолчанию в файлах настроек --&gt;
+&lt;alias&gt;
+    &lt;family&gt;Helvetica&lt;/family&gt;
+    &lt;prefer&gt;
+        &lt;family&gt;Bitstream Vera Sans Mono&lt;/family&gt;
+    &lt;/prefer&gt;
+&lt;/alias&gt;
+...
+</pre>
+<h3>
+<span id=".D0.91.D0.B5.D0.BB.D1.8B.D0.B9_.D1.81.D0.BF.D0.B8.D1.81.D0.BE.D0.BA_.D0.B8_.D1.87.D1.91.D1.80.D0.BD.D1.8B.D0.B9_.D1.81.D0.BF.D0.B8.D1.81.D0.BE.D0.BA_.D1.88.D1.80.D0.B8.D1.84.D1.82.D0.BE.D0.B2"></span><span class="mw-headline" id="Белый_список_и_чёрный_список_шрифтов">Белый список и чёрный список шрифтов</span>
+</h3>
+<p>Элемент <code>&lt;selectfont&gt;</code> используется в сочетании с элементами выбора: <code>&lt;acceptfont&gt;</code> и <code>&lt;rejectfont&gt;</code>, - белого списка или черного списка шрифтов, для принятия перечня и согласования запросов. Самый простой и наиболее типичный случай его использования — для <code>&lt;rejectfont&gt;</code> (отклонения) одного шрифта, который должен быть установлен, однако выходит сопоставимым со стандартным запросом шрифту, который вызывает проблемы в пользовательских интерфейсах.
+</p>
+<p>Во-первых, получите имя Family (семейства) как указано в самом шрифте:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">$ fc-scan .fonts/lklug.ttf --format='%{family}\n'</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">LKLUG</pre>
+<p>Затем используйте это имя Family в строфе <code>&lt;rejectfont&gt;</code>:
+</p>
+<pre>&lt;selectfont&gt;
+    &lt;rejectfont&gt;
+        &lt;pattern&gt;
+            &lt;patelt name="family" &gt;
+                &lt;string&gt;LKLUG&lt;/string&gt;
+            &lt;/patelt&gt;
+        &lt;/pattern&gt;
+    &lt;/rejectfont&gt;
+&lt;/selectfont&gt;</pre>
+<p>Обычно, когда оба элемента объединены, <code>&lt;rejectfont&gt;</code> сначала используется в более общем согласовании glob для reject (отклонения) большой группы (таких, как целый каталог), затем после него используется <code>&lt;acceptfont&gt;</code> белый список отдельных шрифтов из большой группы чёрного списка.
+</p>
+<pre>&lt;selectfont&gt;
+    &lt;rejectfont&gt;
+        &lt;glob&gt;/usr/share/fonts/OTF/*&lt;/glob&gt;
+    &lt;/rejectfont&gt;
+    &lt;acceptfont&gt;
+        &lt;pattern&gt;
+            &lt;patelt name="family" &gt;
+                &lt;string&gt;Monaco&lt;/string&gt;
+            &lt;/patelt&gt;
+        &lt;/pattern&gt;
+    &lt;/acceptfont&gt;
+&lt;/selectfont&gt;</pre>
+<h3>
+<span id=".D0.9E.D1.82.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_.D1.80.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B2.D1.8B.D1.85_.D1.88.D1.80.D0.B8.D1.84.D1.82.D0.BE.D0.B2"></span><span class="mw-headline" id="Отключение_растровых_шрифтов">Отключение растровых шрифтов</span>
+</h3>
+<p>Чтобы отключить растровые шрифты (которые иногда используются в качестве «резерва» вместо отсутствующих шрифтов, в результате чего текст будет отображён некачественно), используйте <a href="#%D0%9F%D1%80%D0%B5%D0%B4%D0%B2%D0%B0%D1%80%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5_%D1%83%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B8">предварительную установку</a> <code>70-no-bitmaps.conf</code>.
+</p>
+<p>Чтобы отключить встроенные растровые шрифты у всех шрифтов:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">~/.config/fontconfig/conf.d/20-no-embedded.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">&lt;?xml version="1.0"?&gt;
+&lt;!DOCTYPE fontconfig SYSTEM "urn:fontconfig:fonts.dtd"&gt;
+&lt;fontconfig&gt;
+  &lt;match target="font"&gt;
+    &lt;edit name="embeddedbitmap" mode="assign"&gt;
+      &lt;bool&gt;false&lt;/bool&gt;
+    &lt;/edit&gt;
+  &lt;/match&gt;
+&lt;/fontconfig&gt;
+</pre>
+<p>Чтобы отключить встроенные растровые шрифты для определенного шрифта:
+</p>
+<pre>&lt;match target="font"&gt;
+  &lt;test qual="any" name="family"&gt;
+    &lt;string&gt;Monaco&lt;/string&gt;
+  &lt;/test&gt;
+  &lt;edit name="embeddedbitmap"&gt;
+    &lt;bool&gt;false&lt;/bool&gt;
+  &lt;/edit&gt;
+&lt;/match&gt;
+</pre>
+<h3>
+<span id=".D0.9E.D1.82.D0.BA.D0.BB.D1.8E.D1.87.D0.B8.D1.82.D1.8C_.D0.BC.D0.B0.D1.81.D1.88.D1.82.D0.B0.D0.B1.D0.B8.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_.D1.80.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B2.D1.8B.D1.85_.D1.88.D1.80.D0.B8.D1.84.D1.82.D0.BE.D0.B2"></span><span class="mw-headline" id="Отключить_масштабирование_растровых_шрифтов">Отключить масштабирование растровых шрифтов</span>
+</h3>
+<p>Чтобы отключить масштабирование растровых шрифтов (которое часто делает их размытыми), удалите <code>/etc/fonts/conf.d/10-scale-bitmap-fonts.conf</code>.
+Имейте в виду, что это может нарушить масштабирование шрифтов эмодзи, таких как Segoe UI Emoji, сделав их огромными.
+</p>
+<h3>
+<span id=".D0.A1.D0.BE.D0.B7.D0.B4.D0.B0.D1.82.D1.8C_.D1.81.D1.82.D0.B8.D0.BB.D0.B8_.D0.B4.D0.BB.D1.8F_.D0.B6.D0.B8.D1.80.D0.BD.D1.8B.D1.85_.D0.B8_.D0.BA.D1.83.D1.80.D1.81.D0.B8.D0.B2.D0.BD.D1.8B.D1.85_.C2.AB.D0.BD.D0.B5.D0.BA.D0.BE.D0.BC.D0.BF.D0.BB.D0.B5.D0.BA.D1.82.D0.BD.D1.8B.D1.85.C2.BB_.D1.88.D1.80.D0.B8.D1.84.D1.82.D0.BE.D0.B2"></span><span class="mw-headline" id="Создать_стили_для_жирных_и_курсивных_«некомплектных»_шрифтов">Создать стили для жирных и курсивных «некомплектных» шрифтов</span>
+</h3>
+<p>FreeType имеет возможность автоматически создавать <i>italic</i> (курсивные) и <b>bold</b> (жирные) стили для шрифтов, которые не имеют их, но только если это явно требуется приложению. Данные программы редко отправляют эти запросы. В этом разделе охватывается принуждение «вручную» генерировать отсутствующие стили.
+</p>
+<p>Начните редактировать <code>/usr/share/fonts/fonts.cache-1</code> как описано ниже. Храните изменённые копии в другом файле, поскольку обновление шрифтов с помощью <code>fc-cache</code> будет перезаписывать <code>/usr/share/fonts/fonts.cache-1</code>.
+</p>
+<p>Предположим что шрифт Dupree установлен:
+</p>
+<pre>"dupree.ttf" 0 "Dupree:style=Regular:slant=0:weight=80:width=100:foundry=unknown:index=0:outline=True:<i>etc...</i>
+</pre>
+<p>Дублируйте строку, измените <code>style=Regular</code> на <code>style=Bold</code> или любой другой стиль. Также измените <code>slant=0</code> на <code>slant=100</code> для italic (курсива), <code>weight=80</code> на <code>weight=200</code> для bold (жирного), или объедините их для <i><b>bold italic</b></i> (жирного курсива):
+</p>
+<pre>"dupree.ttf" 0 "Dupree:style=Bold Italic:slant=100:weight=200:width=100:foundry=unknown:index=0:outline=True:<i>etc...</i>
+</pre>
+<p>Теперь добавьте необходимые изменения в<code>$XDG_CONFIG_HOME/fontconfig/fonts.conf</code>:
+</p>
+<pre>...
+&lt;match target="font"&gt;
+    &lt;test name="family" qual="any"&gt;
+        &lt;string&gt;Dupree&lt;/string&gt;
+         &lt;!-- other fonts here .... --&gt;
+     &lt;/test&gt;
+     &lt;test name="weight" compare="more_eq"&gt;&lt;int&gt;140&lt;/int&gt;&lt;/test&gt;
+     &lt;edit name="embolden" mode="assign"&gt;&lt;bool&gt;true&lt;/bool&gt;&lt;/edit&gt;
+&lt;/match&gt;
+
+&lt;match target="font"&gt;
+    &lt;test name="family" qual="any"&gt;
+        &lt;string&gt;Dupree&lt;/string&gt;
+        &lt;!-- other fonts here .... --&gt;
+    &lt;/test&gt;
+    &lt;test name="slant" compare="more_eq"&gt;&lt;int&gt;80&lt;/int&gt;&lt;/test&gt;
+    &lt;edit name="matrix" mode="assign"&gt;
+        &lt;times&gt;
+            &lt;name&gt;matrix&lt;/name&gt;
+                &lt;matrix&gt;
+                    &lt;double&gt;1&lt;/double&gt;&lt;double&gt;0.2&lt;/double&gt;
+                    &lt;double&gt;0&lt;/double&gt;&lt;double&gt;1&lt;/double&gt;
+                &lt;/matrix&gt;
+        &lt;/times&gt;
+    &lt;/edit&gt;
+&lt;/match&gt;
+...</pre>
+<div class="archwiki-template-box archwiki-template-box-tip">
+<strong>Совет:</strong> Используйте значение 'embolden' для существующих bold (жирных) шрифтов, чтобы сделать их ещё жирнее.</div>
+<h3>
+<span id=".D0.9F.D1.80.D0.B8.D0.BE.D1.80.D0.B8.D1.82.D0.B5.D1.82_.D0.BF.D1.80.D0.B0.D0.B2.D0.B8.D0.BB"></span><span class="mw-headline" id="Приоритет_правил">Приоритет правил</span>
+</h3>
+<p>Fontconfig обрабатывает файлы <code>/etc/fonts/conf.d</code> в числовом порядке. Таким образом, правила из файлов <code>01-aaa.conf</code> и <code>02-bbb.conf</code> имеют такой же эффект, как если бы один файл <code>01-aaabbb.conf</code> содержал в себе сначала правила из <code>01-aaa</code>, а затем правила из <code>02-bbb</code>.
+</p>
+<p>Обычно это означает, что файлы с меньшим префиксом будут иметь больший приоритет. Однако синтаксис fontconfig гибок и позволяет новому правилу иметь приоритет над существующим. Поэтому рекомендуется выполнить <a href="#%D0%97%D0%B0%D0%BF%D1%80%D0%BE%D1%81_%D1%82%D0%B5%D0%BA%D1%83%D1%89%D0%B8%D1%85_%D0%BD%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B5%D0%BA">#Запрос текущих настроек</a>, чтобы проверить результат взаимодействия правил. 
+</p>
+<h3>
+<span id=".D0.97.D0.B0.D0.BF.D1.80.D0.BE.D1.81_.D1.82.D0.B5.D0.BA.D1.83.D1.89.D0.B8.D1.85_.D0.BD.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B5.D0.BA"></span><span class="mw-headline" id="Запрос_текущих_настроек">Запрос текущих настроек</span>
+</h3>
+<p>Чтобы узнать, какие настройки вступили в силу, используйте<code>fc-match --verbose</code>. К примеру:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">$ fc-match --verbose Sans</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">family: "DejaVu Sans"(s)
+hintstyle: 3(i)(s)
+hinting: True(s)
+...
+</pre>
+<p>Посмотрите значения чисел в <span class="plainlinks archwiki-template-man" title="$ man 5 fonts-conf"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/fonts-conf.5">fonts-conf(5)</a></span>. Например. 'hintstyle: 3' означает  'hintfull'
+</p>
+<h2>
+<span id=".D0.9F.D1.80.D0.B8.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.B8.D1.8F_.D0.B1.D0.B5.D0.B7_.D0.BF.D0.BE.D0.B4.D0.B4.D0.B5.D1.80.D0.B6.D0.BA.D0.B8_fontconfig"></span><span class="mw-headline" id="Приложения_без_поддержки_fontconfig">Приложения без поддержки fontconfig</span>
+</h2>
+<p>Некоторые приложения, как <a href="../ru/Rxvt-unicode.html" title="Rxvt-unicode (Русский)">Urxvt</a> игнорируют настройки fontconfig. Вы можете обойти эту проблему с помощью <code>~/.Xresources</code>, который такой же гибкий как fontconfig. Как пример (смотрите <a href="#%D0%9D%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0_Fontconfig">#Настройка Fontconfig</a>), и для объяснения вариантов :
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">~/.Xresources</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">Xft.autohint: 0
+Xft.lcdfilter: lcddefault
+Xft.hintstyle: hintslight
+Xft.hinting: 1
+Xft.antialias: 1
+Xft.rgba: rgb
+</pre>
+<p>Убедитесь, что настройки загружаются должным образом, когда запускается X с <code>xrdb -q</code> (для получения дополнительной информации смотрите статью <a href="../ru/X_resources.html" class="mw-redirect" title="Ресурсы Х">Ресурсы Х</a>).
+</p>
+<h2>
+<span id=".D0.A0.D0.B5.D1.88.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BF.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC"></span><span class="mw-headline" id="Решение_проблем">Решение проблем</span>
+</h2>
+<h3>
+<span id=".D0.98.D1.81.D0.BA.D0.B0.D0.B6.D0.B5.D0.BD.D0.BD.D1.8B.D0.B5_.D1.88.D1.80.D0.B8.D1.84.D1.82.D1.8B"></span><span class="mw-headline" id="Искаженные_шрифты">Искаженные шрифты</span>
+</h3>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Примечание:</strong> 96 DPI не является стандартом. Вы должны использовать фактическое DPI монитора, чтобы получить надлежащее отображение шрифтов, особенно при использовании субпиксельного отображения.</div>
+<p>Если шрифты еще неожиданно большие или маленькие, с плохими пропорциями или просто отображаются плохо, то Fontconfig может использовать неверный DPI.
+</p>
+<p>Fontconfig должен быть в состоянии определить параметры DPI, обнаруженные сервером Xorg. Вы можете проверить автоматическое обнаружение DPI с помощью <code>xdpyinfo</code> (предоставляется пакетом <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=xorg-xdpyinfo">xorg-xdpyinfo</a></span>):
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">$ xdpyinfo | grep dots</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">  resolution:    102x102 dots per inch
+</pre>
+<p>Если DPI определяется некорректно (обычно из-за неправильного <a href="https://en.wikipedia.org/wiki/ru:Extended_display_identification_data" class="extiw" title="wikipedia:ru:Extended display identification data">EDID</a> монитора), вы можете указать его вручную в настройках Xorg, смотрите <a href="../ru/Xorg.html#%D0%A0%D0%B0%D0%B7%D0%BC%D0%B5%D1%80_%D0%B4%D0%B8%D1%81%D0%BF%D0%BB%D0%B5%D1%8F/DPI" title="Xorg (Русский)">Размер дисплея/DPI</a>. Это рекомендуемое решение, но оно не может работать c драйверами, в которых есть баги/ошибки.
+</p>
+<p>Fontconfig пользуется по умолчанию переменной Xft.dpi, если она установлена. Xft.dpi обычно устанавливается окружением рабочего стола (обычно в настройках DPI Xorg'а) либо вручную в <code>~/.Xdefaults</code> или <code>~/.Xresources</code>. Воспользуйтесь xrdb для получения значения:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">$ xrdb -query | grep dpi</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">Xft.dpi:    102
+</pre>
+<p>Те, кто еще имеют проблемы, могут вернуться к ручной установке DPI используя FontConfig:
+</p>
+<pre>...
+&lt;match target="pattern"&gt;
+   &lt;edit name="dpi" mode="assign"&gt;&lt;double&gt;102&lt;/double&gt;&lt;/edit&gt;
+&lt;/match&gt;
+...
+</pre>
+<h3>
+<span id="Calibri.2C_Cambria.2C_Monaco.2C_.D0.B8_.D1.82._.D0.B4._.D0.BD.D0.B5_.D0.BE.D1.82.D0.BE.D0.B1.D1.80.D0.B0.D0.B6.D0.B0.D1.8E.D1.82.D1.81.D1.8F_.D0.BF.D1.80.D0.B0.D0.B2.D0.B8.D0.BB.D1.8C.D0.BD.D0.BE"></span><span class="mw-headline" id="Calibri,_Cambria,_Monaco,_и_т._д._не_отображаются_правильно">Calibri, Cambria, Monaco, и т. д. не отображаются правильно</span>
+</h3>
+<p>Некоторые масштабируемые шрифты имеют встроенные растровые версии, которые предоставляются, главным образом, при меньших размерах. В этом случае использование <a href="../en/Metric-compatible_fonts.html" title="Metric-compatible fonts">Metric-compatible fonts</a> в качестве замены, может улучшить отображение.
+</p>
+<p>Также можно включить обязательное использование масштабируемых шрифтов для всех размеров путём <a href="#%D0%9E%D1%82%D0%BA%D0%BB%D1%8E%D1%87%D0%B5%D0%BD%D0%B8%D0%B5_%D1%80%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B2%D1%8B%D1%85_%D1%88%D1%80%D0%B8%D1%84%D1%82%D0%BE%D0%B2">отключения встроенных растровых шрифтов</a>, немного жертвуя качеством рендеринга.
+</p>
+<h3>
+<span id=".D0.9F.D1.80.D0.B8.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.B8.D1.8F_.D0.BF.D0.B5.D1.80.D0.B5.D0.BE.D0.BF.D1.80.D0.B5.D0.B4.D0.B5.D0.BB.D1.8F.D1.8E.D1.82_hinting"></span><span class="mw-headline" id="Приложения_переопределяют_hinting">Приложения переопределяют hinting</span>
+</h3>
+<p>Некоторые приложения или окружения рабочего стола, по умолчанию, могут переопределять настройки fontconfig, такие как хинтинг и сглаживание. Это может случиться с <a href="../ru/GNOME.html" title="GNOME (Русский)">GNOME</a> 3, например когда вы используете приложения Qt, как <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=vlc">vlc</a></span> или <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=smplayer">smplayer</a></span>. В таких случаях используйте специальную программу для применения настроек. Для GNOME попробуйте <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=gnome-tweaks">gnome-tweaks</a></span> и установите сглаживание в <code>Rgba</code> вместо установленного по умолчанию <code>Grayscale</code>.
+</p>
+<h3>
+<span id=".D0.9F.D1.80.D0.B8.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.B8.D1.8F_.D0.BD.D0.B5_.D0.B8.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D1.83.D1.8E.D1.82_hinting_.D0.B8.D0.B7_.D0.BD.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B5.D0.BA_DE"></span><span class="mw-headline" id="Приложения_не_используют_hinting_из_настроек_DE">Приложения не используют hinting из настроек DE</span>
+</h3>
+<p>Например, в GNOME иногда случается, что Firefox применяет полный хинтинг (full hinting) даже если он установлен на "none" в настройках GNOME, что в результате приводит к резким и широким шрифтам. В этом случае вам придётся добавить настройку хинтинга в ваш файл <code>fonts.conf</code>:
+</p>
+<pre>&lt;?xml version='1.0'?&gt;
+&lt;!DOCTYPE fontconfig SYSTEM 'urn:fontconfig:fonts.dtd'&gt; 
+&lt;fontconfig&gt;
+ &lt;match target="font"&gt;
+  &lt;edit mode="assign" name="hinting"&gt;
+   &lt;bool&gt;false&lt;/bool&gt;
+  &lt;/edit&gt;
+ &lt;/match&gt;
+&lt;/fontconfig&gt;
+</pre>
+<p>В этом примере хинтинг установлен на "grayscale".
+</p>
+<h3>
+<span id=".D0.9D.D0.B5.D0.BF.D1.80.D0.B0.D0.B2.D0.B8.D0.BB.D1.8C.D0.BD.D1.8B.D0.B9_hinting_.D0.B2_.D0.BF.D1.80.D0.B8.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.B8.D1.8F.D1.85_GTK"></span><span class="mw-headline" id="Неправильный_hinting_в_приложениях_GTK">Неправильный hinting в приложениях GTK</span>
+</h3>
+<p>В некоторых средах рабочего стола, в частности за пределами <a href="../ru/GNOME.html" title="GNOME (Русский)">GNOME</a> и <a href="../ru/KDE.html#Plasma" title="KDE (Русский)">Plasma</a>, некоторые приложения GTK не считывают настройки шрифта корректно. Для решения проблемы установите <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=xsettingsd">xsettingsd</a></span> или <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/xsettingsd-git/">xsettingsd-git</a></span><sup><small>AUR</small></sup> и запускайте его при каждом запуске системы. Подробности можно почитать в стате <a href="../en/Xsettingsd.html" title="Xsettingsd">Xsettingsd</a> и в <a rel="nofollow" class="external text" href="https://github.com/derat/xsettingsd/wiki/Settings">xsettingsd wiki</a>. Он может быть настроен следующей общей конфигурацией:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">~/.xsettingsd</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">Xft/Hinting 1
+Xft/HintStyle "hintslight"
+Xft/Antialias 1
+Xft/RGBA "rgb"
+</pre>
+<p>Если в каких-то приложениях это тоже не работает, попробуйте установить <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=xorg-xrdb">xorg-xrdb</a></span> и прописать следующие настройки:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">~/.Xresources</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">Xft.hinting: 1
+Xft.hintstyle: hintslight
+Xft.antialias: 1
+Xft.rgba: rgb 
+</pre>
+<p>После этого запускайте скрипт <code>xrdb -merge ~/.Xresources</code> при каждой загрузке системы для применения настроек. Смотрите также <a href="../ru/X_resources.html" title="X resources (Русский)">X resources (Русский)</a> и <a href="#%D0%9F%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F_%D0%B1%D0%B5%D0%B7_%D0%BF%D0%BE%D0%B4%D0%B4%D0%B5%D1%80%D0%B6%D0%BA%D0%B8_fontconfig">#Приложения без поддержки fontconfig</a>.
+</p>
+<h3>
+<span id=".D0.9F.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC.D0.B0_.D1.88.D1.80.D0.B8.D1.84.D1.82.D0.BE.D0.B2_.D0.B2_.D0.A1.D0.B3.D0.B5.D0.BD.D0.B5.D1.80.D0.B8.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.BD.D1.8B.D1.85_.D1.84.D0.B0.D0.B9.D0.BB.D0.B0.D1.85_PDF"></span><span class="mw-headline" id="Проблема_шрифтов_в_Сгенерированных_файлах_PDF">Проблема шрифтов в Сгенерированных файлах PDF</span>
+</h3>
+<p>Если следующая команда
+</p>
+<pre>fc-match helvetica
+</pre>
+<p>выдаёт
+</p>
+<pre>helvR12-ISO8859-1.pcf.gz: "Helvetica" "Regular"
+</pre>
+<p>то, скорее всего, растровый шрифт обеспечивается <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=xorg-fonts-75dpi">xorg-fonts-75dpi</a></span>, шрифт будет встроен в PDF сгенерированный каким-либо приложением с помощью "Печать в файл" или "Экспорт". Скорее всего растровый шрифт был установлен в результате установки всей группы <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/groups/x86_64/xorg/">xorg</a></span> (что обычно НЕ рекомендуется). Чтобы решить проблему растровых шрифтов, вы можете удлить пакет. Установите <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=gsfonts">gsfonts</a></span> (Type 1) или <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=tex-gyre-fonts">tex-gyre-fonts</a></span> (OpenType) для соответствующей свободной замены Helvetica (и других шрифтоф на основе PostScript/PDF).
+</p>
+<p>Также эта проблема может появится при открытии PDF, которому требуется Helvetica, и он не встроен для просмотра.
+</p>
+<h3>
+<span id=".D0.9E.D1.82.D1.81.D1.83.D1.82.D1.81.D1.82.D0.B2.D1.83.D0.B5.D1.82_.D0.BF.D0.BE.D0.B4.D1.87.D1.91.D1.80.D0.BA.D0.B8.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_.D1.81.D0.BE_.D1.88.D1.80.D0.B8.D1.84.D1.82.D0.BE.D0.BC_Dejavu_Monospace"></span><span class="mw-headline" id="Отсутствует_подчёркивание_со_шрифтом_Dejavu_Monospace">Отсутствует подчёркивание со шрифтом Dejavu Monospace</span>
+</h3>
+<p><a rel="nofollow" class="external text" href="https://gitlab.gnome.org/GNOME/pango/issues/392">Начиная с Pango 1.44</a>, символы подчеркивания исчезают при определённых размерах шрифта DejaVu Sans Mono. Обходным решением является использование Liberation Mono в качестве моноширинного шрифта, смотрите <a href="#%D0%97%D0%B0%D0%BC%D0%B5%D0%BD%D0%B8%D1%82%D1%8C_%D0%B8%D0%BB%D0%B8_%D1%83%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D1%8C_%D1%88%D1%80%D0%B8%D1%84%D1%82%D1%8B_%D0%BF%D0%BE_%D1%83%D0%BC%D0%BE%D0%BB%D1%87%D0%B0%D0%BD%D0%B8%D1%8E">#Заменить или установить шрифты по умолчанию</a>.
+</p>
+<h3>
+<span id=".D0.9E.D1.82.D0.BB.D0.B0.D0.B4.D0.BA.D0.B0_.D1.88.D1.80.D0.B8.D1.84.D1.82.D0.BE.D0.B2_FreeType"></span><span class="mw-headline" id="Отладка_шрифтов_FreeType">Отладка шрифтов FreeType</span>
+</h3>
+<p><span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=freetype2-demos">freetype2-demos</a></span> предоставляет инструменты для отладки конфигурации шрифтов FreeType. <code>ftview</code> — это графический интерфейс, в котором можно настроить параметры рендеринга шрифтов с предварительным просмотром в реальном времени. Например:
+</p>
+<pre>$ ftview -e unic -d 1024x768x24 -r 96 10 /usr/share/fonts/noto/NotoSans-Regular.ttf
+</pre>
+<h2>
+<span id=".D0.A1.D0.BC.D0.BE.D1.82.D1.80.D0.B8.D1.82.D0.B5_.D1.82.D0.B0.D0.BA.D0.B6.D0.B5"></span><span class="mw-headline" id="Смотрите_также">Смотрите также</span>
+</h2>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Fontconfig" class="extiw" title="wikipedia:Fontconfig">Wikipedia:Fontconfig</a></li>
+<li>
+<a rel="nofollow" class="external text" href="https://www.x.org/X11R6.8.2/doc/fonts.html">Fonts in X11R6.8.2</a> - Официальная информация по шрифтам Xorg (Англ.)</li>
+<li><a rel="nofollow" class="external text" href="https://freetype.sourceforge.net/freetype2/">обзор FreeType 2 (Англ.)</a></li>
+<li><a rel="nofollow" class="external text" href="https://forums.gentoo.org/viewtopic-t-723341.html">Дискуссия Gentoo об отображении шрифтов (Англ.)</a></li>
+<li><a rel="nofollow" class="external text" href="https://www.freetype.org/freetype2/docs/hinting/text-rendering-general.html">On slight hinting</a></li>
+<li><a rel="nofollow" class="external text" href="https://www.freetype.org/freetype2/docs/reference/index.html#controlling-freetype-modules">FreeType 2 API Reference: Controlling FreeType Modules</a></li>
+</ul>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="../ru/Category:Fonts.html" title="Category:Fonts (Русский)">Fonts (Русский)</a></li></ul>
+</div></div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=Font_configuration_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)&amp;oldid=784943">https://wiki.archlinux.org/index.php?title=Font_configuration_(Русский)&amp;oldid=784943</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 10 August 2023, at 06:38.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

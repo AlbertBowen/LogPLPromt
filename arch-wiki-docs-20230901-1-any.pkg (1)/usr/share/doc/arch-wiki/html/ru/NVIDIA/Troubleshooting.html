@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>NVIDIA (Русский)/Troubleshooting (Русский) - ArchWiki</title>
+<link rel="stylesheet" href="../../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-NVIDIA_Русский_Troubleshooting_Русский rootpage-NVIDIA_Русский skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id='toc-Повреждённый_экран:_проблема_"шести_экранов"' class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href='#%D0%9F%D0%BE%D0%B2%D1%80%D0%B5%D0%B6%D0%B4%D1%91%D0%BD%D0%BD%D1%8B%D0%B9_%D1%8D%D0%BA%D1%80%D0%B0%D0%BD:_%D0%BF%D1%80%D0%BE%D0%B1%D0%BB%D0%B5%D0%BC%D0%B0_"%D1%88%D0%B5%D1%81%D1%82%D0%B8_%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%BE%D0%B2"'>
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Повреждённый экран: проблема "шести экранов"</div>
+			</a>
+			
+			<ul id='toc-Повреждённый_экран:_проблема_"шести_экранов"-sublist' class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-'/dev/nvidia0'_input/output_error" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#'/dev/nvidia0'_input/output_error">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>'/dev/nvidia0' input/output error</div>
+			</a>
+			
+			<ul id="toc-'/dev/nvidia0'_input/output_error-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Сбои_в_целом" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#%D0%A1%D0%B1%D0%BE%D0%B8_%D0%B2_%D1%86%D0%B5%D0%BB%D0%BE%D0%BC">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>Сбои в целом</div>
+			</a>
+			
+			<ul id="toc-Сбои_в_целом-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Плохая_производительность_после_обновления_драйвера" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#%D0%9F%D0%BB%D0%BE%D1%85%D0%B0%D1%8F_%D0%BF%D1%80%D0%BE%D0%B8%D0%B7%D0%B2%D0%BE%D0%B4%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE%D1%81%D1%82%D1%8C_%D0%BF%D0%BE%D1%81%D0%BB%D0%B5_%D0%BE%D0%B1%D0%BD%D0%BE%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F_%D0%B4%D1%80%D0%B0%D0%B9%D0%B2%D0%B5%D1%80%D0%B0">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4</span>Плохая производительность после обновления драйвера</div>
+			</a>
+			
+			<ul id="toc-Плохая_производительность_после_обновления_драйвера-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Избавление_от_разрывов" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#%D0%98%D0%B7%D0%B1%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5_%D0%BE%D1%82_%D1%80%D0%B0%D0%B7%D1%80%D1%8B%D0%B2%D0%BE%D0%B2">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5</span>Избавление от разрывов</div>
+			</a>
+			
+				<button aria-controls="toc-Избавление_от_разрывов-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Избавление от разрывов subsection
+				</button>
+			
+			<ul id="toc-Избавление_от_разрывов-sublist" class="sidebar-toc-list">
+				<li id="toc-Несколько_мониторов" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#%D0%9D%D0%B5%D1%81%D0%BA%D0%BE%D0%BB%D1%8C%D0%BA%D0%BE_%D0%BC%D0%BE%D0%BD%D0%B8%D1%82%D0%BE%D1%80%D0%BE%D0%B2">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5.1</span>Несколько мониторов</div>
+			</a>
+			
+			<ul id="toc-Несколько_мониторов-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Ошибка_modprobe:_&quot;Could_not_insert_'nvidia':_No_such_device&quot;_на_linux_&gt;=4.8" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#%D0%9E%D1%88%D0%B8%D0%B1%D0%BA%D0%B0_modprobe:_&quot;Could_not_insert_'nvidia':_No_such_device&quot;_%D0%BD%D0%B0_linux_&gt;=4.8">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6</span>Ошибка modprobe: "Could not insert 'nvidia': No such device" на linux &gt;=4.8</div>
+			</a>
+			
+			<ul id="toc-Ошибка_modprobe:_&quot;Could_not_insert_'nvidia':_No_such_device&quot;_на_linux_&gt;=4.8-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Повреждение_экрана_после_ждущего_режима" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#%D0%9F%D0%BE%D0%B2%D1%80%D0%B5%D0%B6%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5_%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0_%D0%BF%D0%BE%D1%81%D0%BB%D0%B5_%D0%B6%D0%B4%D1%83%D1%89%D0%B5%D0%B3%D0%BE_%D1%80%D0%B5%D0%B6%D0%B8%D0%BC%D0%B0">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">7</span>Повреждение экрана после ждущего режима</div>
+			</a>
+			
+			<ul id="toc-Повреждение_экрана_после_ждущего_режима-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Скачки_нагрузки_процессора_при_использовании_карт_серии_400" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#%D0%A1%D0%BA%D0%B0%D1%87%D0%BA%D0%B8_%D0%BD%D0%B0%D0%B3%D1%80%D1%83%D0%B7%D0%BA%D0%B8_%D0%BF%D1%80%D0%BE%D1%86%D0%B5%D1%81%D1%81%D0%BE%D1%80%D0%B0_%D0%BF%D1%80%D0%B8_%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B8_%D0%BA%D0%B0%D1%80%D1%82_%D1%81%D0%B5%D1%80%D0%B8%D0%B8_400">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">8</span>Скачки нагрузки процессора при использовании карт серии 400</div>
+			</a>
+			
+			<ul id="toc-Скачки_нагрузки_процессора_при_использовании_карт_серии_400-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Полное_зависание_системы_или_сбои_при_использовании_Flash" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#%D0%9F%D0%BE%D0%BB%D0%BD%D0%BE%D0%B5_%D0%B7%D0%B0%D0%B2%D0%B8%D1%81%D0%B0%D0%BD%D0%B8%D0%B5_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D1%8B_%D0%B8%D0%BB%D0%B8_%D1%81%D0%B1%D0%BE%D0%B8_%D0%BF%D1%80%D0%B8_%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B8_Flash">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">9</span>Полное зависание системы или сбои при использовании Flash</div>
+			</a>
+			
+			<ul id="toc-Полное_зависание_системы_или_сбои_при_использовании_Flash-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-X_зависает_на_ноутбуках_при_входе_или_выходе,_обходится_через_Ctrl+Alt+Backspace" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#X_%D0%B7%D0%B0%D0%B2%D0%B8%D1%81%D0%B0%D0%B5%D1%82_%D0%BD%D0%B0_%D0%BD%D0%BE%D1%83%D1%82%D0%B1%D1%83%D0%BA%D0%B0%D1%85_%D0%BF%D1%80%D0%B8_%D0%B2%D1%85%D0%BE%D0%B4%D0%B5_%D0%B8%D0%BB%D0%B8_%D0%B2%D1%8B%D1%85%D0%BE%D0%B4%D0%B5,_%D0%BE%D0%B1%D1%85%D0%BE%D0%B4%D0%B8%D1%82%D1%81%D1%8F_%D1%87%D0%B5%D1%80%D0%B5%D0%B7_Ctrl+Alt+Backspace">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">10</span>X зависает на ноутбуках при входе или выходе, обходится через Ctrl+Alt+Backspace</div>
+			</a>
+			
+			<ul id="toc-X_зависает_на_ноутбуках_при_входе_или_выходе,_обходится_через_Ctrl+Alt+Backspace-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Экран(ы)_найден(ы),_но_ни_один_из_них_не_имеет_пригодной_для_использования_конфигурации" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#%D0%AD%D0%BA%D1%80%D0%B0%D0%BD(%D1%8B)_%D0%BD%D0%B0%D0%B9%D0%B4%D0%B5%D0%BD(%D1%8B),_%D0%BD%D0%BE_%D0%BD%D0%B8_%D0%BE%D0%B4%D0%B8%D0%BD_%D0%B8%D0%B7_%D0%BD%D0%B8%D1%85_%D0%BD%D0%B5_%D0%B8%D0%BC%D0%B5%D0%B5%D1%82_%D0%BF%D1%80%D0%B8%D0%B3%D0%BE%D0%B4%D0%BD%D0%BE%D0%B9_%D0%B4%D0%BB%D1%8F_%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F_%D0%BA%D0%BE%D0%BD%D1%84%D0%B8%D0%B3%D1%83%D1%80%D0%B0%D1%86%D0%B8%D0%B8">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">11</span>Экран(ы) найден(ы), но ни один из них не имеет пригодной для использования конфигурации</div>
+			</a>
+			
+			<ul id="toc-Экран(ы)_найден(ы),_но_ни_один_из_них_не_имеет_пригодной_для_использования_конфигурации-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Чёрный_экран_при_запуске_X_/_Выключение_компьютера_при_остановке_X" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#%D0%A7%D1%91%D1%80%D0%BD%D1%8B%D0%B9_%D1%8D%D0%BA%D1%80%D0%B0%D0%BD_%D0%BF%D1%80%D0%B8_%D0%B7%D0%B0%D0%BF%D1%83%D1%81%D0%BA%D0%B5_X_/_%D0%92%D1%8B%D0%BA%D0%BB%D1%8E%D1%87%D0%B5%D0%BD%D0%B8%D0%B5_%D0%BA%D0%BE%D0%BC%D0%BF%D1%8C%D1%8E%D1%82%D0%B5%D1%80%D0%B0_%D0%BF%D1%80%D0%B8_%D0%BE%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B5_X">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">12</span>Чёрный экран при запуске X / Выключение компьютера при остановке X</div>
+			</a>
+			
+			<ul id="toc-Чёрный_экран_при_запуске_X_/_Выключение_компьютера_при_остановке_X-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Подсветка_не_выключается_в_некоторых_случаях" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#%D0%9F%D0%BE%D0%B4%D1%81%D0%B2%D0%B5%D1%82%D0%BA%D0%B0_%D0%BD%D0%B5_%D0%B2%D1%8B%D0%BA%D0%BB%D1%8E%D1%87%D0%B0%D0%B5%D1%82%D1%81%D1%8F_%D0%B2_%D0%BD%D0%B5%D0%BA%D0%BE%D1%82%D0%BE%D1%80%D1%8B%D1%85_%D1%81%D0%BB%D1%83%D1%87%D0%B0%D1%8F%D1%85">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">13</span>Подсветка не выключается в некоторых случаях</div>
+			</a>
+			
+				<button aria-controls="toc-Подсветка_не_выключается_в_некоторых_случаях-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Подсветка не выключается в некоторых случаях subsection
+				</button>
+			
+			<ul id="toc-Подсветка_не_выключается_в_некоторых_случаях-sublist" class="sidebar-toc-list">
+				<li id="toc-Драйвер_415:_HardDPMS" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#%D0%94%D1%80%D0%B0%D0%B9%D0%B2%D0%B5%D1%80_415:_HardDPMS">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">13.1</span>Драйвер 415: HardDPMS</div>
+			</a>
+			
+			<ul id="toc-Драйвер_415:_HardDPMS-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Не_удаётся_запустить_Xorg,_или_красный_экран_смерти" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#%D0%9D%D0%B5_%D1%83%D0%B4%D0%B0%D1%91%D1%82%D1%81%D1%8F_%D0%B7%D0%B0%D0%BF%D1%83%D1%81%D1%82%D0%B8%D1%82%D1%8C_Xorg,_%D0%B8%D0%BB%D0%B8_%D0%BA%D1%80%D0%B0%D1%81%D0%BD%D1%8B%D0%B9_%D1%8D%D0%BA%D1%80%D0%B0%D0%BD_%D1%81%D0%BC%D0%B5%D1%80%D1%82%D0%B8">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">14</span>Не удаётся запустить Xorg, или красный экран смерти</div>
+			</a>
+			
+			<ul id="toc-Не_удаётся_запустить_Xorg,_или_красный_экран_смерти-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Чёрный_экран_на_системах_со_встроенным_GPU_Intel" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#%D0%A7%D1%91%D1%80%D0%BD%D1%8B%D0%B9_%D1%8D%D0%BA%D1%80%D0%B0%D0%BD_%D0%BD%D0%B0_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0%D1%85_%D1%81%D0%BE_%D0%B2%D1%81%D1%82%D1%80%D0%BE%D0%B5%D0%BD%D0%BD%D1%8B%D0%BC_GPU_Intel">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">15</span>Чёрный экран на системах со встроенным GPU Intel</div>
+			</a>
+			
+			<ul id="toc-Чёрный_экран_на_системах_со_встроенным_GPU_Intel-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Нет_звука_через_HDMI" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#%D0%9D%D0%B5%D1%82_%D0%B7%D0%B2%D1%83%D0%BA%D0%B0_%D1%87%D0%B5%D1%80%D0%B5%D0%B7_HDMI">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">16</span>Нет звука через HDMI</div>
+			</a>
+			
+			<ul id="toc-Нет_звука_через_HDMI-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Чёрный_экран_на_системах_со_встроенным_GPU_VIA" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#%D0%A7%D1%91%D1%80%D0%BD%D1%8B%D0%B9_%D1%8D%D0%BA%D1%80%D0%B0%D0%BD_%D0%BD%D0%B0_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0%D1%85_%D1%81%D0%BE_%D0%B2%D1%81%D1%82%D1%80%D0%BE%D0%B5%D0%BD%D0%BD%D1%8B%D0%BC_GPU_VIA">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">17</span>Чёрный экран на системах со встроенным GPU VIA</div>
+			</a>
+			
+			<ul id="toc-Чёрный_экран_на_системах_со_встроенным_GPU_VIA-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id='toc-Ошибка_"no_screens_found"_при_использовании_нескольких_видеокарт' class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href='#%D0%9E%D1%88%D0%B8%D0%B1%D0%BA%D0%B0_"no_screens_found"_%D0%BF%D1%80%D0%B8_%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B8_%D0%BD%D0%B5%D1%81%D0%BA%D0%BE%D0%BB%D1%8C%D0%BA%D0%B8%D1%85_%D0%B2%D0%B8%D0%B4%D0%B5%D0%BE%D0%BA%D0%B0%D1%80%D1%82'>
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">18</span>Ошибка "no screens found" при использовании нескольких видеокарт</div>
+			</a>
+			
+			<ul id='toc-Ошибка_"no_screens_found"_при_использовании_нескольких_видеокарт-sublist' class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Xorg_не_запускается_при_включении_системы,_но_в_остальном_работает_нормально" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#Xorg_%D0%BD%D0%B5_%D0%B7%D0%B0%D0%BF%D1%83%D1%81%D0%BA%D0%B0%D0%B5%D1%82%D1%81%D1%8F_%D0%BF%D1%80%D0%B8_%D0%B2%D0%BA%D0%BB%D1%8E%D1%87%D0%B5%D0%BD%D0%B8%D0%B8_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D1%8B,_%D0%BD%D0%BE_%D0%B2_%D0%BE%D1%81%D1%82%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%BC_%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B0%D0%B5%D1%82_%D0%BD%D0%BE%D1%80%D0%BC%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">19</span>Xorg не запускается при включении системы, но в остальном работает нормально</div>
+			</a>
+			
+			<ul id="toc-Xorg_не_запускается_при_включении_системы,_но_в_остальном_работает_нормально-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-xrandr_BadMatch" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#xrandr_BadMatch">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">20</span>xrandr BadMatch</div>
+			</a>
+			
+			<ul id="toc-xrandr_BadMatch-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Переопределение_EDID" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#%D0%9F%D0%B5%D1%80%D0%B5%D0%BE%D0%BF%D1%80%D0%B5%D0%B4%D0%B5%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5_EDID">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">21</span>Переопределение EDID</div>
+			</a>
+			
+			<ul id="toc-Переопределение_EDID-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Попытка_разгона_выдаёт_Unknown_Error" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#%D0%9F%D0%BE%D0%BF%D1%8B%D1%82%D0%BA%D0%B0_%D1%80%D0%B0%D0%B7%D0%B3%D0%BE%D0%BD%D0%B0_%D0%B2%D1%8B%D0%B4%D0%B0%D1%91%D1%82_Unknown_Error">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">22</span>Попытка разгона выдаёт Unknown Error</div>
+			</a>
+			
+			<ul id="toc-Попытка_разгона_выдаёт_Unknown_Error-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Система_не_включается_после_установки_драйвера" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#%D0%A1%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0_%D0%BD%D0%B5_%D0%B2%D0%BA%D0%BB%D1%8E%D1%87%D0%B0%D0%B5%D1%82%D1%81%D1%8F_%D0%BF%D0%BE%D1%81%D0%BB%D0%B5_%D1%83%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B8_%D0%B4%D1%80%D0%B0%D0%B9%D0%B2%D0%B5%D1%80%D0%B0">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">23</span>Система не включается после установки драйвера</div>
+			</a>
+			
+			<ul id="toc-Система_не_включается_после_установки_драйвера-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id='toc-X_выдаёт_ошибку_"Failing_initialization_of_X_screen"' class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href='#X_%D0%B2%D1%8B%D0%B4%D0%B0%D1%91%D1%82_%D0%BE%D1%88%D0%B8%D0%B1%D0%BA%D1%83_"Failing_initialization_of_X_screen"'>
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">24</span>X выдаёт ошибку "Failing initialization of X screen"</div>
+			</a>
+			
+			<ul id='toc-X_выдаёт_ошибку_"Failing_initialization_of_X_screen"-sublist' class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Система_не_возвращается_из_ждущего_режима" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#%D0%A1%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0_%D0%BD%D0%B5_%D0%B2%D0%BE%D0%B7%D0%B2%D1%80%D0%B0%D1%89%D0%B0%D0%B5%D1%82%D1%81%D1%8F_%D0%B8%D0%B7_%D0%B6%D0%B4%D1%83%D1%89%D0%B5%D0%B3%D0%BE_%D1%80%D0%B5%D0%B6%D0%B8%D0%BC%D0%B0">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">25</span>Система не возвращается из ждущего режима</div>
+			</a>
+			
+			<ul id="toc-Система_не_возвращается_из_ждущего_режима-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Ошибка_при_запуске_Vulkan-приложений" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#%D0%9E%D1%88%D0%B8%D0%B1%D0%BA%D0%B0_%D0%BF%D1%80%D0%B8_%D0%B7%D0%B0%D0%BF%D1%83%D1%81%D0%BA%D0%B5_Vulkan-%D0%BF%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B9">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">26</span>Ошибка при запуске Vulkan-приложений</div>
+			</a>
+			
+			<ul id="toc-Ошибка_при_запуске_Vulkan-приложений-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../../ru/NVIDIA/Troubleshooting.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="new mw-list-item"><a href="/index.php?title=Talk:NVIDIA_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)/Troubleshooting_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)&amp;action=edit&amp;redlink=1" rel="discussion" title="Discussion about the content page (page does not exist) [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">русский</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../../ru/NVIDIA/Troubleshooting.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=NVIDIA_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)/Troubleshooting_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=NVIDIA_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)/Troubleshooting_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../../ru/NVIDIA/Troubleshooting.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=NVIDIA_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)/Troubleshooting_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=NVIDIA_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)/Troubleshooting_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					<div id="contentSub"><span class="subpages">&lt; <a href="../../ru/NVIDIA.html" title="NVIDIA (Русский)">NVIDIA (Русский)</a></span></div>
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="ru" dir="ltr">
+<div class="mw-parser-output">
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Состояние перевода:</strong> На этой странице представлен перевод статьи <a href="../../en/NVIDIA/Troubleshooting.html" title="NVIDIA/Troubleshooting">NVIDIA/Troubleshooting</a>. Дата последней синхронизации: 9 февраля 2022. Вы можете <a href="../../ru/ArchWiki:Translation_Team.html" title="ArchWiki:Translation Team (Русский)">помочь</a> синхронизировать перевод, если в английской версии произошли <a rel="nofollow" class="external text" href="https://wiki.archlinux.org/index.php?title=NVIDIA/Troubleshooting&amp;diff=0&amp;oldid=710280">изменения</a>.</div>
+<mw:tocplace></mw:tocplace>
+<h2>
+<span id=".D0.9F.D0.BE.D0.B2.D1.80.D0.B5.D0.B6.D0.B4.D1.91.D0.BD.D0.BD.D1.8B.D0.B9_.D1.8D.D0.BA.D1.80.D0.B0.D0.BD:_.D0.BF.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC.D0.B0_.22.D1.88.D0.B5.D1.81.D1.82.D0.B8_.D1.8D.D0.BA.D1.80.D0.B0.D0.BD.D0.BE.D0.B2.22"></span><span class="mw-headline" id='Повреждённый_экран:_проблема_"шести_экранов"'>Повреждённый экран: проблема "шести экранов"</span>
+</h2>
+<p>У некоторых пользователей с GeForce GT 100M, после запуска X экран оказывается повреждённым, разделённым на 6 секций с ограниченным разрешением 640x480.
+Сообщалось о такой же проблеме с Quadro 2000 и мониторами высокого разрешения.
+</p>
+<p>Чтобы решить эту проблему, пропишите <code>NoTotalSizeCheck</code> в секции <code>Device</code>:
+</p>
+<pre>Section "Device"
+ ...
+ Option "ModeValidation" "NoTotalSizeCheck"
+ ...
+EndSection
+</pre>
+<h2>
+<span id=".27.2Fdev.2Fnvidia0.27_input.2Foutput_error"></span><span class="mw-headline" id="'/dev/nvidia0'_input/output_error">'/dev/nvidia0' input/output error</span>
+</h2>
+<p>Эта ошибка может возникать по различным причинам, и чаще всего предлагается проверка прав доступа к группам/файлам, что почти в каждом случае <i>не</i> является проблемой. В документации NVIDIA не говорится подробно о том, что нужно делать для решения проблемы, но есть несколько вещей, которые помогли некоторым людям. Проблема может заключаться в конфликте IRQ с другим устройством или в неправильной маршрутизации ядром или BIOS.
+</p>
+<p>Первым делом попробуйте убрать другие видеоустройства, например, карты видеозахвата, и посмотрите, исчезнет ли проблема. Если в одной системе слишком много видеопроцессоров, это может привести к тому, что ядро не сможет их запустить из-за проблем с распределением памяти видеоконтроллера. На системах с малым объёмом видеопамяти это может произойти даже при наличии только одной видеокарты. Узнайте объём видеопамяти системы (например, с помощью <code>lspci -v</code>) и передайте параметры распределения ядру, например, для 32-битного ядра:
+</p>
+<pre>vmalloc=384M
+</pre>
+<p>В 64-битном ядре дефект драйвера может привести к тому, что модуль NVIDIA не инициализируется при включенном IOMMU. Отключение этого параметра в BIOS помогало некоторым пользователям. <a rel="nofollow" class="external autonumber" href="http://www.nvnews.net/vbulletin/showthread.php?s=68bb2fabadcb53b10b286aa42d13c5bc&amp;t=159335">[1]</a> <a href="../../User:Clickthem.html#nvidia_module" title="User:Clickthem">User:Clickthem#nvidia module</a>
+</p>
+<p>Ещё можно попробовать изменить маршрутизацию IRQ BIOS с <code>Operating system controlled</code> на <code>BIOS controlled</code> или наоборот. Первый вариант может быть передан как <a href="../../ru/Kernel_parameters.html" class="mw-redirect" title="Параметр ядра">параметр ядра</a>:
+</p>
+<pre>PCI=biosirq
+</pre>
+<p>Параметр ядра <code>noacpi</code> также предлагался в качестве решения, но поскольку он полностью отключает ACPI, его следует использовать с осторожностью. Иногда оборудование повреждается от перегрева.
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Примечание:</strong> Параметры ядра могут быть переданы либо через командную строку ядра, либо через файл конфигурации загрузчика. Более подробную информацию можно найти на вики-странице вашего загрузчика.</div>
+<h2>
+<span id=".D0.A1.D0.B1.D0.BE.D0.B8_.D0.B2_.D1.86.D0.B5.D0.BB.D0.BE.D0.BC"></span><span class="mw-headline" id="Сбои_в_целом">Сбои в целом</span>
+</h2>
+<ul>
+<li>Попробуйте отключить <code>RenderAccel</code> в xorg.conf.</li>
+<li>Если Xorg пишет ошибки про <code>"conflicting memory type"</code> или <code>"failed to allocate primary buffer: out of memory"</code> или падает с сигналом 11, добавьте <code>nopat</code> в <a href="../../ru/Kernel_parameters.html" class="mw-redirect" title="Параметры ядра">параметры ядра</a>.</li>
+<li>Если компилятор NVIDIA жалуется на разные версии GCC между текущей и той, которая использовалась для компиляции ядра, добавьте в <code>/etc/profile</code>:</li>
+</ul>
+<pre>export IGNORE_CC_MISMATCH=1
+</pre>
+<p>Больше информации про решение проблем драйвера можно найти на <a rel="nofollow" class="external text" href="https://forums.geforce.com/">форуме NVIDIA</a>.
+</p>
+<h2>
+<span id=".D0.9F.D0.BB.D0.BE.D1.85.D0.B0.D1.8F_.D0.BF.D1.80.D0.BE.D0.B8.D0.B7.D0.B2.D0.BE.D0.B4.D0.B8.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D0.BE.D1.81.D1.82.D1.8C_.D0.BF.D0.BE.D1.81.D0.BB.D0.B5_.D0.BE.D0.B1.D0.BD.D0.BE.D0.B2.D0.BB.D0.B5.D0.BD.D0.B8.D1.8F_.D0.B4.D1.80.D0.B0.D0.B9.D0.B2.D0.B5.D1.80.D0.B0"></span><span class="mw-headline" id="Плохая_производительность_после_обновления_драйвера">Плохая производительность после обновления драйвера</span>
+</h2>
+<p>Если FPS упал относительно старых драйверов, проверьте, работает ли direct rendering (с помощью команды <code>glxinfo</code> из пакета <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=mesa-utils">mesa-utils</a></span>):
+</p>
+<pre>$ glxinfo | grep direct
+</pre>
+<p>Если эта команда выведет:
+</p>
+<pre>direct rendering: No
+</pre>
+<p>Возможным решением может быть откат к старой версии драйвера и последующая перезагрузка.
+</p>
+<h2>
+<span id=".D0.98.D0.B7.D0.B1.D0.B0.D0.B2.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BE.D1.82_.D1.80.D0.B0.D0.B7.D1.80.D1.8B.D0.B2.D0.BE.D0.B2"></span><span class="mw-headline" id="Избавление_от_разрывов">Избавление от разрывов</span>
+</h2>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Примечание:</strong> Сообщалось, что это снижает производительность некоторых приложений OpenGL и может вызвать проблемы в WebGL. (<a rel="nofollow" class="external text" href="https://forums.developer.nvidia.com/t/if-you-have-gpu-clock-boost-problems-please-try-gl-experimentalperfstrategy-1/71762">Nvidia-Support-Thread</a>)</div>
+<p>Разрывы (тиринг) можно избежать принудительным включением цепочки полного композитинга, независимо от используемого вами композитора. Для проверки работоспособности опции, выполните
+</p>
+<pre>$ nvidia-settings --assign CurrentMetaMode="nvidia-auto-select +0+0 { ForceFullCompositionPipeline = On }"
+</pre>
+<p>Или нажмите кнопку <i>Advanced</i> в меню <i>X Server Display Configuration</i>. Выберите<i>Force Composition Pipeline</i> или <i>Force Full Composition Pipeline</i> и нажмите <i>Apply</i>.
+</p>
+<p>Для постоянного использования сделанных изменений, вам необходимо добавить следующую строку в секцию <code>"Screen"</code> в настройках Xorg. При изменении <code>TripleBuffering</code> должен быть включен, а <code>AllowIndirectGLXProtocol</code> — отключен.
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/X11/xorg.conf.d/20-nvidia.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">Section "Device"
+        Identifier "Nvidia Card"
+        Driver     "nvidia"
+        VendorName "NVIDIA Corporation"
+        BoardName  "GeForce GTX 1050 Ti"
+EndSection
+
+Section "Screen"
+    Identifier     "Screen0"
+    Device         "Device0"
+    Monitor        "Monitor0"
+    Option         "MetaModes" "nvidia-auto-select +0+0 {ForceFullCompositionPipeline=On}"
+    Option         "AllowIndirectGLXProtocol" "off"
+    Option         "TripleBuffer" "on"
+EndSection</pre>
+<p>Если у вас нет конфигурационного файла Xorg, вы можете создать его для текущей видеокарты исполльзуя <code>nvidia-xconfig</code> (смотрите <a href="../../ru/NVIDIA.html#%D0%90%D0%B2%D1%82%D0%BE%D0%BC%D0%B0%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B0%D1%8F_%D0%BD%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0" title="NVIDIA (Русский)">NVIDIA (Русский)#Автоматическая настройка</a>) и переместить его из <code>/etc/X11/xorg.conf</code> в более удобное место <code>/etc/X11/xorg.conf.d/20-nvidia.conf</code>.
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Примечание:</strong> Многие параметры конфигурации, которые генерирует <code>nvidia-xconfig</code>, устанавливаются драйвером автоматически и на самом деле не нужны. Для включения полного композитинга нужна только секция "Screen", содержащая строки со значениями <code>Identifier</code> и <code>Option</code> Остальные секции могут быть удалены из этого файла.</div>
+<h3>
+<span id=".D0.9D.D0.B5.D1.81.D0.BA.D0.BE.D0.BB.D1.8C.D0.BA.D0.BE_.D0.BC.D0.BE.D0.BD.D0.B8.D1.82.D0.BE.D1.80.D0.BE.D0.B2"></span><span class="mw-headline" id="Несколько_мониторов">Несколько мониторов</span>
+</h3>
+<p>В случае нескольких мониторов нужно указать <code>ForceCompositionPipeline=On</code> для каждого. Например:
+</p>
+<pre>$ nvidia-settings --assign CurrentMetaMode="DP-2: nvidia-auto-select +0+0 {ForceCompositionPipeline=On}, DP-4: nvidia-auto-select +3840+0 {ForceCompositionPipeline=On}"
+</pre>
+<p>Без этого <code>nvidia-settings</code> отключит второй монитор.
+</p>
+<p>Узнать информацию о текущем состоянии экранов можно с помощью <code>--query</code>:
+</p>
+<pre>$ nvidia-settings --query CurrentMetaMode
+</pre>
+<p>Строка из примера выше предназначена для двух мониторов 3840x2160, подключенных к DP-2 и DP-4. Вам нужно будет прочитать правильный <code>CurrentMetaMode</code> путём экспорта <code>xorg.conf</code> и добавить <code>ForceCompositionPipeline</code> для каждого из ваших мониторов. Установка <code>ForceCompositionPipeline</code> влияет только на целевой монитор.
+</p>
+<div class="archwiki-template-box archwiki-template-box-tip">
+<strong>Совет:</strong> Многомониторные установки, использующие мониторы разных моделей, могут иметь немного разные частоты обновления. Если vsync включен драйвером, он будет синхронизироваться только с одной из этих частот, что может привести к появлению разрывов экрана на неправильно синхронизированных мониторах. Выберите для синхронизации основной монитор, поскольку другие не будут синхронизироваться должным образом. Это можно настроить в <code>~/.nvidia-settings-rc</code> как <code>0/XVideoSyncToDisplayID=</code> или установив <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=nvidia-settings">nvidia-settings</a></span> и используя графические настройки.</div>
+<h2>
+<span id=".D0.9E.D1.88.D0.B8.D0.B1.D0.BA.D0.B0_modprobe:_.22Could_not_insert_.27nvidia.27:_No_such_device.22_.D0.BD.D0.B0_linux_.3E.3D4.8"></span><span class="mw-headline" id="Ошибка_modprobe:_&quot;Could_not_insert_'nvidia':_No_such_device&quot;_на_linux_&gt;=4.8">Ошибка modprobe: "Could not insert 'nvidia': No such device" на linux &gt;=4.8</span>
+</h2>
+<p>На linux 4.8 при попытке использовать видеокарту можно получить следующие ошибки:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">$ modprobe nvidia -vv</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">modprobe: INFO: custom logging function 0x409c10 registered
+modprobe: INFO: Failed to insert module '/lib/modules/4.8.6-1-ARCH/extramodules/nvidia.ko.gz': No such device
+modprobe: ERROR: could not insert 'nvidia': No such device
+modprobe: INFO: context 0x24481e0 released
+insmod /lib/modules/4.8.6-1-ARCH/extramodules/nvidia.ko.gz
+</pre>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;"># dmesg</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">...
+NVRM: The NVIDIA GPU 0000:01:00.0 (PCI ID: 10de:139b)
+NVRM: installed in this system is not supported by the 370.28
+NVRM: NVIDIA Linux driver release.  Please see 'Appendix
+NVRM: A - Supported NVIDIA GPU Products' in this release's
+NVRM: README, available on the Linux driver download page
+NVRM: at www.nvidia.com.
+...
+</pre>
+<p>Проблема вызвана плохими коммитами, относящимися к управлению питанием PCIe в ядре Linux (как описано в <a rel="nofollow" class="external text" href="https://devtalk.nvidia.com/default/topic/971733/-370-28-with-kernel-4-8-on-gt-2015-machines-driver-claims-card-not-supported-if-nvidia-is-not-primary-card/">этой ветке на NVIDIA DevTalk</a>).
+</p>
+<p>Обходным решением является добавление <code>pcie_port_pm=off</code> в <a href="../../ru/Kernel_parameters.html" class="mw-redirect" title="Параметры ядра">параметры ядра</a>. Обратите внимание, что это отключает управление питанием PCIe для всех устройств.
+</p>
+<h2>
+<span id=".D0.9F.D0.BE.D0.B2.D1.80.D0.B5.D0.B6.D0.B4.D0.B5.D0.BD.D0.B8.D0.B5_.D1.8D.D0.BA.D1.80.D0.B0.D0.BD.D0.B0_.D0.BF.D0.BE.D1.81.D0.BB.D0.B5_.D0.B6.D0.B4.D1.83.D1.89.D0.B5.D0.B3.D0.BE_.D1.80.D0.B5.D0.B6.D0.B8.D0.BC.D0.B0"></span><span class="mw-headline" id="Повреждение_экрана_после_ждущего_режима">Повреждение экрана после ждущего режима</span>
+</h2>
+<p>Драйвер nvidia обычно сохраняет только основные распределения видеопамяти в ждущем и спящем режимах. В результате потеря содержимого видеопамяти может привести к повреждению рендеринга и сбоям приложений.
+</p>
+<p>Смотрите <a href="../../ru/NVIDIA/Tips_and_tricks.html#%D0%A1%D0%BE%D1%85%D1%80%D0%B0%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5_%D0%B2%D0%B8%D0%B4%D0%B5%D0%BE%D0%BF%D0%B0%D0%BC%D1%8F%D1%82%D0%B8_%D0%B2_%D0%B6%D0%B4%D1%83%D1%89%D0%B5%D0%BC_%D1%80%D0%B5%D0%B6%D0%B8%D0%BC%D0%B5" class="mw-redirect" title="NVIDIA/Советы и рекомендации">NVIDIA/Советы и рекомендации#Сохранение видеопамяти в ждущем режиме</a>.
+</p>
+<h2>
+<span id=".D0.A1.D0.BA.D0.B0.D1.87.D0.BA.D0.B8_.D0.BD.D0.B0.D0.B3.D1.80.D1.83.D0.B7.D0.BA.D0.B8_.D0.BF.D1.80.D0.BE.D1.86.D0.B5.D1.81.D1.81.D0.BE.D1.80.D0.B0_.D0.BF.D1.80.D0.B8_.D0.B8.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B8_.D0.BA.D0.B0.D1.80.D1.82_.D1.81.D0.B5.D1.80.D0.B8.D0.B8_400"></span><span class="mw-headline" id="Скачки_нагрузки_процессора_при_использовании_карт_серии_400">Скачки нагрузки процессора при использовании карт серии 400</span>
+</h2>
+<p>Это может быть вызвано тем, что PowerMizer постоянно изменяет тактовую частоту GPU. Переключив настройки PowerMizer с Adaptive на Performance, добавьте следующее в секцию <code>Device</code> настроек Xorg:
+</p>
+<pre>Option "RegistryDwords" "PowerMizerEnable=0x1; PerfLevelSrc=0x3322; PowerMizerDefaultAC=0x1"
+</pre>
+<h2>
+<span id=".D0.9F.D0.BE.D0.BB.D0.BD.D0.BE.D0.B5_.D0.B7.D0.B0.D0.B2.D0.B8.D1.81.D0.B0.D0.BD.D0.B8.D0.B5_.D1.81.D0.B8.D1.81.D1.82.D0.B5.D0.BC.D1.8B_.D0.B8.D0.BB.D0.B8_.D1.81.D0.B1.D0.BE.D0.B8_.D0.BF.D1.80.D0.B8_.D0.B8.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B8_Flash"></span><span class="mw-headline" id="Полное_зависание_системы_или_сбои_при_использовании_Flash">Полное зависание системы или сбои при использовании Flash</span>
+</h2>
+<p>Попробуйте отключить аппаратное ускорение:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/adobe/mms.cfg</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">EnableLinuxHWVideoDecode=0</pre>
+<p>Или, если вы хотите оставить аппаратное ускорение включенным, но допускаете больший шанс возникновения разрывов экрана, вы можете попробовать сделать это перед запуском браузера:
+</p>
+<pre>export VDPAU_NVIDIA_NO_OVERLAY=1
+</pre>
+<h2>
+<span id="X_.D0.B7.D0.B0.D0.B2.D0.B8.D1.81.D0.B0.D0.B5.D1.82_.D0.BD.D0.B0_.D0.BD.D0.BE.D1.83.D1.82.D0.B1.D1.83.D0.BA.D0.B0.D1.85_.D0.BF.D1.80.D0.B8_.D0.B2.D1.85.D0.BE.D0.B4.D0.B5_.D0.B8.D0.BB.D0.B8_.D0.B2.D1.8B.D1.85.D0.BE.D0.B4.D0.B5.2C_.D0.BE.D0.B1.D1.85.D0.BE.D0.B4.D0.B8.D1.82.D1.81.D1.8F_.D1.87.D0.B5.D1.80.D0.B5.D0.B7_Ctrl.2BAlt.2BBackspace"></span><span class="mw-headline" id="X_зависает_на_ноутбуках_при_входе_или_выходе,_обходится_через_Ctrl+Alt+Backspace">X зависает на ноутбуках при входе или выходе, обходится через Ctrl+Alt+Backspace</span>
+</h2>
+<p>Если при использовании старых драйверов NVIDIA Xorg зависает при входе и выходе из системы (особенно при странном разделении экрана на две чёрно-бело-серые части), но вход в систему всё ещё возможен с помощью <code>Ctrl+Alt+Backspace</code> (или другом сочетании клавиш для «убийства X»), попробуйте добавить следующее в <code>/etc/modprobe.d/modprobe.conf</code>:
+</p>
+<pre>options nvidia NVreg_Mobile=1
+</pre>
+<p>Одному пользователю помогло следующее, но у других производительность значительно падает:
+</p>
+<pre>options nvidia NVreg_DeviceFileUID=0 NVreg_DeviceFileGID=33 NVreg_DeviceFileMode=0660 NVreg_SoftEDIDs=0 NVreg_Mobile=1
+</pre>
+<p>Значение <code>NVreg_Mobile</code> может понадобиться изменить в зависимости от производителя ноутбука:
+</p>
+<ul>
+<li>1 — Dell</li>
+<li>2 — не-Compal Toshiba</li>
+<li>3 — другие ноутбуки</li>
+<li>4 — Compal Toshiba</li>
+<li>5 — Gateway</li>
+</ul>
+<p>Смотрите <a rel="nofollow" class="external text" href="ftp://download.nvidia.com/XFree86/Linux-x86/355.11/README/README.txt">NVIDIA Driver's README: Appendix K</a> для более подробной информации.
+</p>
+<h2>
+<span id=".D0.AD.D0.BA.D1.80.D0.B0.D0.BD.28.D1.8B.29_.D0.BD.D0.B0.D0.B9.D0.B4.D0.B5.D0.BD.28.D1.8B.29.2C_.D0.BD.D0.BE_.D0.BD.D0.B8_.D0.BE.D0.B4.D0.B8.D0.BD_.D0.B8.D0.B7_.D0.BD.D0.B8.D1.85_.D0.BD.D0.B5_.D0.B8.D0.BC.D0.B5.D0.B5.D1.82_.D0.BF.D1.80.D0.B8.D0.B3.D0.BE.D0.B4.D0.BD.D0.BE.D0.B9_.D0.B4.D0.BB.D1.8F_.D0.B8.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D1.8F_.D0.BA.D0.BE.D0.BD.D1.84.D0.B8.D0.B3.D1.83.D1.80.D0.B0.D1.86.D0.B8.D0.B8"></span><span class="mw-headline" id="Экран(ы)_найден(ы),_но_ни_один_из_них_не_имеет_пригодной_для_использования_конфигурации">Экран(ы) найден(ы), но ни один из них не имеет пригодной для использования конфигурации</span>
+</h2>
+<p>Иногда у NVIDIA и X возникают проблемы с поиском активного экрана. Если ваша видеокарта имеет несколько выходов, попробуйте подключить монитор к другим выходам. На ноутбуке это может быть связано с тем, что ваша видеокарта имеет VGA/TV выход. Xorg.0.log предоставит больше информации.
+</p>
+<p>Ещё можно попробовать добавить некорректную опцию <code>"ConnectedMonitor"</code> в секцию <code>Section "Device"</code>, чтобы Xorg выкинул ошибку и показал, как её исправить. <a rel="nofollow" class="external text" href="ftp://download.nvidia.com/XFree86/Linux-x86/355.11/README/xconfigoptions.html">Здесь</a> подробнее о настройке ConnectedMonitor.
+</p>
+<p>После повторного запуска X посмотрите Xorg.0.log, чтобы узнать правильные значения CRT-x, DFP-x, TV-x.
+</p>
+<p><code>nvidia-xconfig --query-gpu-info</code> может быть полезен.
+</p>
+<h2>
+<span id=".D0.A7.D1.91.D1.80.D0.BD.D1.8B.D0.B9_.D1.8D.D0.BA.D1.80.D0.B0.D0.BD_.D0.BF.D1.80.D0.B8_.D0.B7.D0.B0.D0.BF.D1.83.D1.81.D0.BA.D0.B5_X_.2F_.D0.92.D1.8B.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BA.D0.BE.D0.BC.D0.BF.D1.8C.D1.8E.D1.82.D0.B5.D1.80.D0.B0_.D0.BF.D1.80.D0.B8_.D0.BE.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B5_X"></span><span class="mw-headline" id="Чёрный_экран_при_запуске_X_/_Выключение_компьютера_при_остановке_X">Чёрный экран при запуске X / Выключение компьютера при остановке X</span>
+</h2>
+<p>Если вы установили обновление Nvidia и ваш экран остаётся черным после запуска Xorg, или если остановка Xorg приводит к выключению компьютера, попробуйте следующие обходные пути:
+</p>
+<ul>
+<li>Добавьте "xrandr --auto" в xinitrc</li>
+<li>Используйте <a href="../../ru/Kernel_parameters.html" class="mw-redirect" title="Параметр ядра">параметр ядра</a> <code>rcutree.rcu_idle_gp_delay=1</code>
+</li>
+<li>Вы также можете попробовать добавить модуль <code>nvidia</code> в <a href="../../ru/Mkinitcpio.html" title="Mkinitcpio (Русский)">mkinitcpio</a>
+</li>
+<li>Если экран всё равно чёрный после выполнения двух предыдущих пунктов, попробуйте переустановить <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=nvidia">nvidia</a></span> и <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=nvidia-utils">nvidia-utils</a></span> именно в таком порядке, и, наконец, перезагрузить драйвер:</li>
+</ul>
+<pre># modprobe nvidia
+</pre>
+<h2>
+<span id=".D0.9F.D0.BE.D0.B4.D1.81.D0.B2.D0.B5.D1.82.D0.BA.D0.B0_.D0.BD.D0.B5_.D0.B2.D1.8B.D0.BA.D0.BB.D1.8E.D1.87.D0.B0.D0.B5.D1.82.D1.81.D1.8F_.D0.B2_.D0.BD.D0.B5.D0.BA.D0.BE.D1.82.D0.BE.D1.80.D1.8B.D1.85_.D1.81.D0.BB.D1.83.D1.87.D0.B0.D1.8F.D1.85"></span><span class="mw-headline" id="Подсветка_не_выключается_в_некоторых_случаях">Подсветка не выключается в некоторых случаях</span>
+</h2>
+<p>По умолчанию DPMS должен отключать подсветку при установленных таймаутах или при запуске xset. Однако, вероятно, из-за ошибки в проприетарных драйверах Nvidia в результате получается пустой экран без какого-либо отключения подсветки. Чтобы обойти это, пока ошибка не будет исправлена, можно использовать <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=vbetool">vbetool</a></span> от имени root.
+</p>
+<p>Следующая команда выключит экран, а затем нажатие случайной клавиши включит подсветку снова:
+</p>
+<pre>vbetool dpms off &amp;&amp; read -n1; vbetool dpms on
+</pre>
+<p>Или можно попробовать xrandr, который не требует root:
+</p>
+<pre>xrandr --output DP-1 --off; read -n1; xrandr --output DP-1 --auto
+</pre>
+<h3>
+<span id=".D0.94.D1.80.D0.B0.D0.B9.D0.B2.D0.B5.D1.80_415:_HardDPMS"></span><span class="mw-headline" id="Драйвер_415:_HardDPMS">Драйвер 415: HardDPMS</span>
+</h3>
+<p>Собственный драйвер 415 имеет новую функцию под названием HardDPMS. По сообщениям некоторых пользователей, она решает проблемы с приостановкой мониторов, подключенных через DisplayPort.
+Сообщается, что в одной из будущих версий драйвера она будет использоваться по умолчанию, а пока опцию <code>HardDPMS</code> можно установить в секциях <code>Device</code> или <code>Screen</code>. Например:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/X11/xorg.conf.d/20-nvidia.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">Section "Device"
+    ...
+    Option         "HardDPMS" "true"
+    ...
+EndSection
+
+Section "Screen"
+    ...
+    Option         "HardDPMS" "true"
+    ...
+EndSection
+</pre>
+<p><code>HardDPMS</code> будет срабатывать от настроек хранителя экрана, таких как <code>BlankTime</code>. Следующие <code>ServerFlags</code> настроят монитор(ы) на приостановку после 10 минут бездействия:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/X11/xorg.conf.d/20-nvidia.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">Section "ServerFlags"
+    Option     "BlankTime" "10"
+EndSection
+</pre>
+<h2>
+<span id=".D0.9D.D0.B5_.D1.83.D0.B4.D0.B0.D1.91.D1.82.D1.81.D1.8F_.D0.B7.D0.B0.D0.BF.D1.83.D1.81.D1.82.D0.B8.D1.82.D1.8C_Xorg.2C_.D0.B8.D0.BB.D0.B8_.D0.BA.D1.80.D0.B0.D1.81.D0.BD.D1.8B.D0.B9_.D1.8D.D0.BA.D1.80.D0.B0.D0.BD_.D1.81.D0.BC.D0.B5.D1.80.D1.82.D0.B8"></span><span class="mw-headline" id="Не_удаётся_запустить_Xorg,_или_красный_экран_смерти">Не удаётся запустить Xorg, или красный экран смерти</span>
+</h2>
+<p>Если вы получаете красный экран и используете GRUB, отключите фреймбуфер GRUB, и раскомментировав строку <code>GRUB_TERMINAL_OUTPUT=console</code> в файле <code>/etc/default/grub</code>. Подробнее: <a href="../../en/GRUB/Tips_and_tricks.html#Disable_framebuffer" title="GRUB/Tips and tricks">GRUB/Tips and tricks#Disable framebuffer</a>.
+</p>
+<h2>
+<span id=".D0.A7.D1.91.D1.80.D0.BD.D1.8B.D0.B9_.D1.8D.D0.BA.D1.80.D0.B0.D0.BD_.D0.BD.D0.B0_.D1.81.D0.B8.D1.81.D1.82.D0.B5.D0.BC.D0.B0.D1.85_.D1.81.D0.BE_.D0.B2.D1.81.D1.82.D1.80.D0.BE.D0.B5.D0.BD.D0.BD.D1.8B.D0.BC_GPU_Intel"></span><span class="mw-headline" id="Чёрный_экран_на_системах_со_встроенным_GPU_Intel">Чёрный экран на системах со встроенным GPU Intel</span>
+</h2>
+<p>Если у вас процессор Intel с интегрированным GPU (например, Intel HD 4000) и установлен пакет <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=nvidia">nvidia</a></span>, вы можете столкнуться с чёрным экраном при загрузке, при смене виртуального терминала или при выходе из X-сессии. Это может быть вызвано конфликтом между графическими модулями. Эта проблема решается внесением модулей Intel GPU в чёрный список. Создайте файл <code>/etc/modprobe.d/blacklist.conf</code> и запретите модулям <i>i915</i> и <i>intel_agp</i> загружаться при включении:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/modprobe.d/blacklist.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">install i915 /usr/bin/false
+install intel_agp /usr/bin/false
+</pre>
+<h2>
+<span id=".D0.9D.D0.B5.D1.82_.D0.B7.D0.B2.D1.83.D0.BA.D0.B0_.D1.87.D0.B5.D1.80.D0.B5.D0.B7_HDMI"></span><span class="mw-headline" id="Нет_звука_через_HDMI">Нет звука через HDMI</span>
+</h2>
+<p>Иногда аудиоустройства nvidia HDMI не отображаются в выводе команды
+</p>
+<pre>aplay -l
+</pre>
+<p>По какой-то причине на некоторых новых компьютерах аудиочип на графическом процессоре nvidia отключается при загрузке. Подробности <a rel="nofollow" class="external text" href="https://devtalk.nvidia.com/default/topic/1024022/linux/gtx-1060-no-audio-over-hdmi-only-hda-intel-detected-azalia/?offset=4">здесь</a> и <a rel="nofollow" class="external text" href="https://bbs.archlinux.org/viewtopic.php?id=230125">здесь</a>.
+</p>
+<p>Вам необходимо перезагрузить устройство nvidia с включенным звуком. Для этого убедитесь, что ваш GPU включен (в случае ноутбуков/Bumblebee) и на нём нет работающего X, потому что он перезагрузится:
+</p>
+<pre># setpci -s 01:00.0 0x488.l=0x2000000:0x2000000
+# rmmod nvidia-drm nvidia-modeset nvidia
+# echo 1 &gt; /sys/bus/pci/devices/0000:01:00.0/remove
+# echo 1 &gt; /sys/bus/pci/devices/0000:00:01.0/rescan
+# modprobe nvidia-drm
+# xinit -- -retro
+</pre>
+<p>Если ваш терминал работает через nvidia, поместите эти строки в скрипт, чтобы не остаться без работающего экрана.
+</p>
+<h2>
+<span id=".D0.A7.D1.91.D1.80.D0.BD.D1.8B.D0.B9_.D1.8D.D0.BA.D1.80.D0.B0.D0.BD_.D0.BD.D0.B0_.D1.81.D0.B8.D1.81.D1.82.D0.B5.D0.BC.D0.B0.D1.85_.D1.81.D0.BE_.D0.B2.D1.81.D1.82.D1.80.D0.BE.D0.B5.D0.BD.D0.BD.D1.8B.D0.BC_GPU_VIA"></span><span class="mw-headline" id="Чёрный_экран_на_системах_со_встроенным_GPU_VIA">Чёрный экран на системах со встроенным GPU VIA</span>
+</h2>
+<p>Аналогично ситуации с GPU Intel, внесение модуля <i>viafb</i> в чёрный список может решить конфликты с драйверами NVIDIA:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/modprobe.d/blacklist.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">install viafb /usr/bin/false
+</pre>
+<h2>
+<span id=".D0.9E.D1.88.D0.B8.D0.B1.D0.BA.D0.B0_.22no_screens_found.22_.D0.BF.D1.80.D0.B8_.D0.B8.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B8_.D0.BD.D0.B5.D1.81.D0.BA.D0.BE.D0.BB.D1.8C.D0.BA.D0.B8.D1.85_.D0.B2.D0.B8.D0.B4.D0.B5.D0.BE.D0.BA.D0.B0.D1.80.D1.82"></span><span class="mw-headline" id='Ошибка_"no_screens_found"_при_использовании_нескольких_видеокарт'>Ошибка "no screens found" при использовании нескольких видеокарт</span>
+</h2>
+<p>Если есть несколько видеокарт и X не запускается с ошибкой:
+</p>
+<pre>[ 76.633] (EE) No devices detected.
+[ 76.633] Fatal server error:
+[ 76.633] no screens found
+</pre>
+<p>то вам нужно добавить BusID дискретной карты в конфигурацию X. Это может произойти в системах с процессором Intel и встроенном GPU или при подключении нескольких карт Nvidia. Найдите свой BusID:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;"># lspci | grep -E "VGA|3D controller"</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">00:02.0 VGA compatible controller: Intel Corporation Xeon E3-1200 v2/3rd Gen Core processor Graphics Controller (rev 09)
+01:00.0 VGA compatible controller: NVIDIA Corporation GK107 [GeForce GTX 650] (rev a1)
+08:00.0 3D controller: NVIDIA Corporation GM108GLM [Quadro K620M / Quadro M500M] (rev a2)
+</pre>
+<p>Затем исправьте это, добавив его в раздел <code>"Device"</code> карты в конфигурации X. В данном случае:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/X11/xorg.conf.d/10-nvidia.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">Section "Device"
+    Identifier     "Device0"
+    Driver         "nvidia"
+    VendorName     "NVIDIA Corporation"
+    BusID          "PCI:1:0:0"
+EndSection
+</pre>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Примечание:</strong> Формат BusID имеет значение.</div>
+<p>В этом примере <code>01:00.0</code> становится <code>1:0:0</code>, однако некоторые преобразования могут быть более сложными. <code>lspci</code> использует шестнадцатеричный формат для вывода, но в конфигурационных файлах BusID должен быть десятичным.
+</p>
+<p>То есть, к примеру, <code>5e:00.0</code> из lspci нужно будет преобразовать в <code>PCI:94:0:0</code>.
+</p>
+<h2>
+<span id="Xorg_.D0.BD.D0.B5_.D0.B7.D0.B0.D0.BF.D1.83.D1.81.D0.BA.D0.B0.D0.B5.D1.82.D1.81.D1.8F_.D0.BF.D1.80.D0.B8_.D0.B2.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D0.B8_.D1.81.D0.B8.D1.81.D1.82.D0.B5.D0.BC.D1.8B.2C_.D0.BD.D0.BE_.D0.B2_.D0.BE.D1.81.D1.82.D0.B0.D0.BB.D1.8C.D0.BD.D0.BE.D0.BC_.D1.80.D0.B0.D0.B1.D0.BE.D1.82.D0.B0.D0.B5.D1.82_.D0.BD.D0.BE.D1.80.D0.BC.D0.B0.D0.BB.D1.8C.D0.BD.D0.BE"></span><span class="mw-headline" id="Xorg_не_запускается_при_включении_системы,_но_в_остальном_работает_нормально">Xorg не запускается при включении системы, но в остальном работает нормально</span>
+</h2>
+<p>На очень быстро загружающихся системах systemd может попытаться запустить экранный менеджер до того, как драйвер NVIDIA полностью инициализируется. Вы можете увидеть такое сообщение в журнале Xorg, который запускается при включении компьютера:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/var/log/Xorg.0.log</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">[     1.807] (EE) NVIDIA(0): Failed to initialize the NVIDIA kernel module. Please see the
+[     1.807] (EE) NVIDIA(0):     system's kernel log for additional error messages and
+[     1.808] (EE) NVIDIA(0):     consult the NVIDIA README for details.
+[     1.808] (EE) NVIDIA(0):  *** Aborting ***</pre>
+<p>В таком случае нужно будет установить зависимость экранного менеджера от устройства DRI. Сначала создайте файлы для устройств DRI, создав новое <a href="../../ru/Udev.html#%D0%9E_%D0%BF%D1%80%D0%B0%D0%B2%D0%B8%D0%BB%D0%B0%D1%85_udev" title="Udev (Русский)">правило udev</a>.
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/udev/rules.d/99-systemd-dri-devices.rules</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">ACTION=="add", KERNEL=="card*", SUBSYSTEM=="drm", TAG+="systemd"</pre>
+<p>Затем добавьте вашему экранному менеджеру зависимость от этого устройства.
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/systemd/system/display-manager.service.d/10-wait-for-dri-devices.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">[Unit]
+Wants=dev-dri-card0.device
+After=dev-dri-card0.device</pre>
+<p>Если у вас есть ещё видеокарты, нужные рабочему столу, перечислите их в Wants и After через пробел.
+</p>
+<h2><span class="mw-headline" id="xrandr_BadMatch">xrandr BadMatch</span></h2>
+<p>Если вы пытаетесь настроить WQHD монитор, например DELL U2515H, используя <a href="../../en/Xrandr.html" class="mw-redirect" title="Xrandr (Русский)">xrandr</a>, и <code>xrandr --addmode</code> выдаёт ошибку <code>X Error of failed request: BadMatch</code>, это может быть связано с тем, что проприетарный драйвер NVIDIA обрезает максимальную частоту пиксельной синхронизации HDMI выхода до 225 МГц или ниже. Чтобы настроить монитор на максимальное разрешение, необходимо установить драйверы <a href="../../en/Nouveau.html" class="mw-redirect" title="Nouveau (Русский)">nouveau</a>. Вы можете заставить nouveau использовать определённую частоту, прописав <code>nouveau.hdmimhz=297</code> (или <code>330</code>) в <a href="../../ru/Kernel_parameters.html" class="mw-redirect" title="Параметры ядра">параметры ядра</a>.
+</p>
+<p>Другой причиной может быть неправильный EDID вашего монитора. Смотрите <a href="#%D0%9F%D0%B5%D1%80%D0%B5%D0%BE%D0%BF%D1%80%D0%B5%D0%B4%D0%B5%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5_EDID">#Переопределение EDID</a>.
+</p>
+<p>Ещё причиной может быть то, что по умолчанию текущие драйверы NVidia разрешают только режимы, явно указанные в EDID; но иногда требуются частоты обновления и/или разрешения, о которых монитор не сообщает (хотя информация EDID верна; просто текущие драйверы NVidia слишком строгие).
+</p>
+<p>В этом случае вы можете добавить опцию в <code>xorg.conf</code>, чтобы разрешить режимы, не указанные в EDID:
+</p>
+<pre>Section "Device"
+    Identifier     "Device0"
+    Driver         "nvidia"
+    VendorName     "NVIDIA Corporation"
+...
+    Option         "ModeValidation" "AllowNonEdidModes"
+...
+EndSection
+</pre>
+<p>Этот параметр может быть установлен для каждого выхода. Подробности можно узнать в NVidia driver readme (Appendix B. X Config Options).
+</p>
+<h2>
+<span id=".D0.9F.D0.B5.D1.80.D0.B5.D0.BE.D0.BF.D1.80.D0.B5.D0.B4.D0.B5.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5_EDID"></span><span class="mw-headline" id="Переопределение_EDID">Переопределение EDID</span>
+</h2>
+<p>Смотрите <a href="../../ru/Kernel_mode_setting.html#%D0%9F%D1%80%D0%B8%D0%BD%D1%83%D0%B4%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9_%D1%80%D0%B5%D0%B6%D0%B8%D0%BC_%D0%B8_EDID" title="Kernel mode setting (Русский)">Kernel mode setting (Русский)#Принудительный режим и EDID</a>, <a href="../../en/Xrandr.html#Troubleshooting" title="Xrandr">Xrandr#Troubleshooting</a> и <a href="../../en/Qnix_QX2710.html#Fixing_X11_with_Nvidia" title="Qnix QX2710">Qnix QX2710#Fixing X11 with Nvidia</a>.
+</p>
+<h2>
+<span id=".D0.9F.D0.BE.D0.BF.D1.8B.D1.82.D0.BA.D0.B0_.D1.80.D0.B0.D0.B7.D0.B3.D0.BE.D0.BD.D0.B0_.D0.B2.D1.8B.D0.B4.D0.B0.D1.91.D1.82_Unknown_Error"></span><span class="mw-headline" id="Попытка_разгона_выдаёт_Unknown_Error">Попытка разгона выдаёт Unknown Error</span>
+</h2>
+<p>Если вы запускаете Xorg без прав root и пытаетесь разогнать видеокарту, вы получите ошибку вроде такой:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">$ nvidia-settings -a "[gpu:0]/GPUGraphicsClockOffset[3]=10"</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">ERROR: Error assigning value 10 to attribute 'GPUGraphicsClockOffset' (trinity-zero:1[gpu:0]) as specified in assignment
+        '[gpu:0]/GPUGraphicsClockOffset[3]=10' (Unknown Error).</pre>
+<p>Для разгона необходимо запускать Xorg от имени root. Смотрите <a href="../../ru/Xorg.html#%D0%98%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5_Xorg_%D0%B1%D0%B5%D0%B7_%D0%BF%D1%80%D0%B0%D0%B2_%D1%81%D1%83%D0%BF%D0%B5%D1%80%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8F" title="Xorg (Русский)">Xorg (Русский)#Использование Xorg без прав суперпользователя</a> для подробностей.
+</p>
+<h2>
+<span id=".D0.A1.D0.B8.D1.81.D1.82.D0.B5.D0.BC.D0.B0_.D0.BD.D0.B5_.D0.B2.D0.BA.D0.BB.D1.8E.D1.87.D0.B0.D0.B5.D1.82.D1.81.D1.8F_.D0.BF.D0.BE.D1.81.D0.BB.D0.B5_.D1.83.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B8_.D0.B4.D1.80.D0.B0.D0.B9.D0.B2.D0.B5.D1.80.D0.B0"></span><span class="mw-headline" id="Система_не_включается_после_установки_драйвера">Система не включается после установки драйвера</span>
+</h2>
+<p>Если после установки драйвера NVIDIA система зависает, не доходя до экранного менеджера, попробуйте <a href="../../ru/Kernel_mode_setting.html#%D0%9E%D1%82%D0%BA%D0%BB%D1%8E%D1%87%D0%B5%D0%BD%D0%B8%D0%B5_modesetting" title="Kernel mode setting (Русский)">отключить kernel mode setting</a>.
+</p>
+<h2>
+<span id="X_.D0.B2.D1.8B.D0.B4.D0.B0.D1.91.D1.82_.D0.BE.D1.88.D0.B8.D0.B1.D0.BA.D1.83_.22Failing_initialization_of_X_screen.22"></span><span class="mw-headline" id='X_выдаёт_ошибку_"Failing_initialization_of_X_screen"'>X выдаёт ошибку "Failing initialization of X screen"</span>
+</h2>
+<p>Если в <code>/var/log/Xorg.0.log</code> есть такое:
+</p>
+<pre>(EE) NVIDIA(G0): GPU screens are not yet supported by the NVIDIA driver
+(EE) NVIDIA(G0): Failing initialization of X screen
+</pre>
+<p>и <i>nvidia-smi</i> пишет <code>No running processes found</code>
+</p>
+<p>Решение заключается в том, чтобы сначала переустановить последнюю версию <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=nvidia-utils">nvidia-utils</a></span>, скопировать <code>/usr/share/X11/xorg.conf.d/10-nvidia-drm-outputclass.conf</code> в <code>/etc/X11/xorg.conf.d/10-nvidia-drm-outputclass.conf</code>, а затем отредактировать <code>/etc/X11/xorg.conf.d/10-nvidia-drm-outputclass.conf</code>, добавить туда <code>Option "PrimaryGPU" "yes"</code> и перезагрузиться.
+</p>
+<h2>
+<span id=".D0.A1.D0.B8.D1.81.D1.82.D0.B5.D0.BC.D0.B0_.D0.BD.D0.B5_.D0.B2.D0.BE.D0.B7.D0.B2.D1.80.D0.B0.D1.89.D0.B0.D0.B5.D1.82.D1.81.D1.8F_.D0.B8.D0.B7_.D0.B6.D0.B4.D1.83.D1.89.D0.B5.D0.B3.D0.BE_.D1.80.D0.B5.D0.B6.D0.B8.D0.BC.D0.B0"></span><span class="mw-headline" id="Система_не_возвращается_из_ждущего_режима">Система не возвращается из ждущего режима</span>
+</h2>
+<p>Если в журнале вы видите:
+</p>
+<pre>kernel: nvidia-modeset: ERROR: GPU:0: Failed detecting connected display devices
+kernel: nvidia-modeset: ERROR: GPU:0: Failed detecting connected display devices
+kernel: nvidia-modeset: WARNING: GPU:0: Failure processing EDID for display device DELL U2412M (DP-0).
+kernel: nvidia-modeset: WARNING: GPU:0: Unable to read EDID for display device DELL U2412M (DP-0)
+kernel: nvidia-modeset: ERROR: GPU:0: Failure reading maximum pixel clock value for display device DELL U2412M (DP-0).
+</pre>
+<p>Возможное решение <a rel="nofollow" class="external autonumber" href="https://forums.developer.nvidia.com/t/solution-for-nvidia-sleep-wake-issue-in-linux/110911">[2]</a>:
+</p>
+<p>Выполните эту команду, чтобы получить строку <code><i>version</i></code>:
+</p>
+<pre># strings /sys/firmware/acpi/tables/DSDT | grep -i 'windows ' | sort | tail -1
+</pre>
+<p>И добавьте <a href="../../ru/Kernel_parameters.html" class="mw-redirect" title="Параметр ядра">параметр ядра</a> <code>acpi_osi=! "acpi_osi=<i>version</i>"</code>.
+</p>
+<h2>
+<span id=".D0.9E.D1.88.D0.B8.D0.B1.D0.BA.D0.B0_.D0.BF.D1.80.D0.B8_.D0.B7.D0.B0.D0.BF.D1.83.D1.81.D0.BA.D0.B5_Vulkan-.D0.BF.D1.80.D0.B8.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.B8.D0.B9"></span><span class="mw-headline" id="Ошибка_при_запуске_Vulkan-приложений">Ошибка при запуске Vulkan-приложений</span>
+</h2>
+<p>Если при запуске приложений, требующих Vulkan, вы видите такую ошибку
+</p>
+<pre>Vulkan call failed: -4
+</pre>
+<p>Попробуйте удалить каталог <code>~/.nv</code> или <code>~/.cache/nvidia</code>.
+</p>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../../Special:Categories.html" title="Special:Categories">Categories</a>: <ul>
+<li><a href="../../ru/Category:Graphics.html" title="Category:Graphics (Русский)">Graphics (Русский)</a></li>
+<li><a href="../../ru/Category:X_server.html" title="Category:X server (Русский)">X server (Русский)</a></li>
+</ul>
+</div></div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=NVIDIA_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)/Troubleshooting_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)&amp;oldid=760070">https://wiki.archlinux.org/index.php?title=NVIDIA_(Русский)/Troubleshooting_(Русский)&amp;oldid=760070</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 12 December 2022, at 06:56.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

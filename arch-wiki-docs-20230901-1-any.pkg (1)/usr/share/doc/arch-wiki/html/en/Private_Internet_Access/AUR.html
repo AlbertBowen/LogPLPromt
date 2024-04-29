@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>Private Internet Access/AUR - ArchWiki</title>
+<link rel="stylesheet" href="../../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Private_Internet_Access_AUR rootpage-Private_Internet_Access skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Installation" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Installation">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Installation</div>
+			</a>
+			
+			<ul id="toc-Installation-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-After_installation" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#After_installation">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>After installation</div>
+			</a>
+			
+			<ul id="toc-After_installation-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Usage" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Usage">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>Usage</div>
+			</a>
+			
+				<button aria-controls="toc-Usage-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Usage subsection
+				</button>
+			
+			<ul id="toc-Usage-sublist" class="sidebar-toc-list">
+				<li id="toc-Enabling_auto-login" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Enabling_auto-login">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.1</span>Enabling auto-login</div>
+			</a>
+			
+			<ul id="toc-Enabling_auto-login-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Manually_connecting_to_VPN" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Manually_connecting_to_VPN">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.2</span>Manually connecting to VPN</div>
+			</a>
+			
+			<ul id="toc-Manually_connecting_to_VPN-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Automatically_connecting_to_VPN" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Automatically_connecting_to_VPN">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.3</span>Automatically connecting to VPN</div>
+			</a>
+			
+			<ul id="toc-Automatically_connecting_to_VPN-sublist" class="sidebar-toc-list">
+				<li id="toc-For_connman" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#For_connman">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.3.1</span>For connman</div>
+			</a>
+			
+			<ul id="toc-For_connman-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-For_openvpn_you_can_look_here:_OpenVPN#systemd_service_configuration." class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#For_openvpn_you_can_look_here:_OpenVPN#systemd_service_configuration.">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.3.2</span>For <span>openvpn</span> you can look here: OpenVPN#systemd service configuration.</div>
+			</a>
+			
+			<ul id="toc-For_openvpn_you_can_look_here:_OpenVPN#systemd_service_configuration.-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Advanced_options" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Advanced_options">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.4</span>Advanced options</div>
+			</a>
+			
+			<ul id="toc-Advanced_options-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Example_configuration" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Example_configuration">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.5</span>Example configuration</div>
+			</a>
+			
+			<ul id="toc-Example_configuration-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Troubleshooting" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Troubleshooting">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4</span>Troubleshooting</div>
+			</a>
+			
+				<button aria-controls="toc-Troubleshooting-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Troubleshooting subsection
+				</button>
+			
+			<ul id="toc-Troubleshooting-sublist" class="sidebar-toc-list">
+				<li id="toc-Using_NetworkManager's_applet" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Using_NetworkManager's_applet">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.1</span>Using NetworkManager's applet</div>
+			</a>
+			
+			<ul id="toc-Using_NetworkManager's_applet-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-DNS_Leaks" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#DNS_Leaks">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.2</span>DNS Leaks</div>
+			</a>
+			
+			<ul id="toc-DNS_Leaks-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-See_also" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#See_also">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5</span>See also</div>
+			</a>
+			
+			<ul id="toc-See_also-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../../en/Private_Internet_Access/AUR.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="mw-list-item"><a href="../../en/Talk:Private_Internet_Access/AUR.html" rel="discussion" title="Discussion about the content page [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">English</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../../en/Private_Internet_Access/AUR.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=Private_Internet_Access/AUR&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=Private_Internet_Access/AUR&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../../en/Private_Internet_Access/AUR.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Private_Internet_Access/AUR&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Private_Internet_Access/AUR&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					<div id="contentSub"><span class="subpages">&lt; <a href="../../en/Private_Internet_Access.html" title="Private Internet Access">Private Internet Access</a></span></div>
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output">
+<div class="archwiki-template-meta-related-articles-start">
+<p class="mw-no-invert">Related articles</p>
+<ul>
+<li><a href="../../en/ConnMan.html" title="ConnMan">ConnMan</a></li>
+<li><a href="../../en/NetworkManager.html" title="NetworkManager">NetworkManager</a></li>
+<li><a href="../../en/OpenVPN.html" title="OpenVPN">OpenVPN</a></li>
+</ul>
+</div>
+<div class="noprint archwiki-template-message">
+<p><a href="../../File:Tango-edit-clear.png" class="image"><img alt="Tango-edit-clear.png" src="../../File:Tango-edit-clear.png" decoding="async" width="48" height="48"></a><b>This article or section needs language, wiki syntax or style improvements. See <a href="../../en/Help:Style.html" title="Help:Style">Help:Style</a> for reference.</b><a href="../../File:Tango-edit-clear.png" class="image"><img alt="Tango-edit-clear.png" src="../../File:Tango-edit-clear.png" decoding="async" width="48" height="48"></a></p>
+<div>
+<b>Reason:</b> Multiple style issues with whitespace, see <a href="../../en/Help:Style/White_space.html" title="Help:Style/White space">Help:Style/White space</a> (Discuss in <a rel="nofollow" class="external text" href="https://wiki.archlinux.org/title/Talk:Private_Internet_Access/AUR">Talk:Private Internet Access/AUR</a>)</div>
+</div>
+<div class="noprint archwiki-template-message">
+<p><a href="../../File:Merge-arrows-2.png" class="image"><img alt="Merge-arrows-2.png" src="../../File:Merge-arrows-2.png" decoding="async" width="48" height="48"></a><b>This article or section is a candidate for merging with <a href="../../en/Private_Internet_Access.html" title="Private Internet Access">Private Internet Access</a>.</b><a href="../../File:Merge-arrows-2.png" class="image"><img alt="Merge-arrows-2.png" src="../../File:Merge-arrows-2.png" decoding="async" width="48" height="48"></a></p>
+<div>
+<b>Notes:</b> There should not be a subpage for installation from AUR, this should be incorporated within the main page. (Discuss in <a rel="nofollow" class="external text" href="https://wiki.archlinux.org/title/Talk:Private_Internet_Access/AUR">Talk:Private Internet Access/AUR</a>)</div>
+</div>
+<p>This article details the installation and usage of <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/private-internet-access-vpn/">private-internet-access-vpn</a></span><sup><small>AUR</small></sup>. For the general information on the service and additional packages, see <a href="../../en/Private_Internet_Access.html" title="Private Internet Access">Private Internet Access</a>.
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> In 2019, PIA merged with Kape Technologies, and this event has been surrounded by a lot of controversy, especially via reddit posts. However since the merger, the following improvements have been made to the PIA infrastructure:
+<ul>
+<li>All PIA applications got released as Open Source: <a rel="nofollow" class="external free" href="https://github.com/pia-foss">https://github.com/pia-foss</a>
+</li>
+<li>WireGuard got added to the VPN servers and VPN Apps</li>
+<li>VPN servers got migrated from Ubuntu 14 LTS to Arch Linux</li>
+<li>All VPN servers now are encrypted via dm-crypt, following advice from Arch devs</li>
+<li>All VPN services now run in memory via ramdisk</li>
+</ul>
+</div>
+<mw:tocplace></mw:tocplace>
+<h2><span class="mw-headline" id="Installation">Installation</span></h2>
+<p><a href="../../en/Help:Reading.html#Installation_of_packages" class="mw-redirect" title="Install">Install</a> <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/private-internet-access-vpn/">private-internet-access-vpn</a></span><sup><small>AUR</small></sup>.
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> This is not meant to be installed through <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=python-pip">python-pip</a></span> directly. See <a rel="nofollow" class="external autonumber" href="https://github.com/flamusdiu/python-pia/issues/30">[1]</a> for more information.</div>
+<p>The package provides a tool that downloads the <a rel="nofollow" class="external text" href="https://www.privateinternetaccess.com/openvpn/openvpn.zip">OpenVPN configuration files</a> and stores them in <code>/etc/openvpn</code>. However, it updates the file names to better support using them on the command line.
+</p>
+<p>Configuration for the package is stored in <code>/etc/private-internet-access</code>.
+</p>
+<h2><span class="mw-headline" id="After_installation">After installation</span></h2>
+<p>If there are any issues with connectivity and you are running <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=connman">connman</a></span>, please <a href="../../en/Help:Reading.html#Control_of_systemd_units" class="mw-redirect" title="Restart">restart</a> <code>connman-vpn.service</code>.
+</p>
+<h2><span class="mw-headline" id="Usage">Usage</span></h2>
+<h3><span class="mw-headline" id="Enabling_auto-login">Enabling auto-login</span></h3>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong>  This is a limitation of <a href="../../en/OpenVPN.html" title="OpenVPN">OpenVPN</a>. See PIA's Support Center: <a rel="nofollow" class="external text" href="https://helpdesk.privateinternetaccess.com/hc/en-us/articles/219458787-How-can-I-make-OpenVPN-remember-my-username-and-password-">How can I make OpenVPN remember my username and password? </a><sup title="Last check status: 404">[<a href="https://en.wikipedia.org/wiki/Wikipedia:Link_rot" class="extiw" title="wikipedia:Wikipedia:Link rot">dead link</a> 2021-05-17 ⓘ]</sup>
+</div>
+<p>Enabling auto-login allows a user to connect to the VPN service without having to type any passwords on the command line (needed when using <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=networkmanager">networkmanager</a></span>). To set this up, you must do the following:
+</p>
+<ul>
+<li>Create <code>/etc/private-internet-access/login.conf</code>
+</li>
+<li>Add your username and password in the file. Make sure LINE 1 is your username and LINE 2 is your password. Do not add any other text to the file or it will not work (this is a limitation of <a href="../../en/OpenVPN.html" title="OpenVPN">OpenVPN</a>):</li>
+</ul>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/private-internet-access/login.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">USERNAME
+PASSWORD</pre>
+<ul><li>Change permissions of the file to <i>0600</i> and owner to <i>root:root</i>:</li></ul>
+ <pre># chmod 0600 /etc/private-internet-access/login.conf
+# chown root:root /etc/private-internet-access/login.conf</pre>
+<p> This secures the access to the file from non-root users. Read more on <a href="../../en/File_permissions_and_attributes.html" title="File permissions and attributes">File permissions and attributes</a>. It is <b>required</b> when activating auto-login.
+</p>
+<ul><li>Run <code>pia -a</code> as root.
+<ul>
+<li>If you have <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=networkmanager">networkmanager</a></span> installed, it will create the configuration files for <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=networkmanager">networkmanager</a></span>. Make sure to <a href="../../en/Help:Reading.html#Control_of_systemd_units" class="mw-redirect" title="Restart">restart</a> <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=networkmanager">networkmanager</a></span> to see them.</li>
+<li>If you have <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=connman">connman</a></span> installed, it will create the configuration files for <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=connman">connman</a></span>. <a href="../../en/Help:Reading.html#Control_of_systemd_units" class="mw-redirect" title="Start">Start</a> <code>connman-vpn.service</code> if not running already. It will auto load the profiles.</li>
+<li>Regardless, it will create the OpenVPN <code>.conf</code> files in <code>/etc/openvpn/client</code>.</li>
+</ul>
+</li></ul>
+<div class="archwiki-template-box archwiki-template-box-tip">
+<strong>Tip:</strong> Disable auto-login in configurations by adding <code>openvpn_auto_login = False</code> to <code>/etc/private-internet-access/pia.conf</code> and running <code>pia -a</code> </div>
+<h3><span class="mw-headline" id="Manually_connecting_to_VPN">Manually connecting to VPN</span></h3>
+<pre># openvpn --config /etc/openvpn/client/{config_file_name}</pre> <p><code>{config_file_name}</code> will be listed in the /etc/openvpn directory or run <code>pia -l</code>.
+</p>
+<h3><span class="mw-headline" id="Automatically_connecting_to_VPN">Automatically connecting to VPN</span></h3>
+<h4><span class="mw-headline" id="For_connman">For connman</span></h4>
+<ul>
+<li>
+<a href="../../en/Help:Reading.html#Control_of_systemd_units" class="mw-redirect" title="Enable">enable</a> the <code>connman-vpn.service</code>.</li>
+<li>Run <code>pia -a</code> as root (if you have not already)</li>
+</ul>
+<pre># pia -a</pre>
+<ul><li>Get a list of all connman services and find the name of the VPN config <code>(for example, Finland)</code> in the second column</li></ul>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">connmanctl services</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">...
+
+*   Finland_VPN          vpn_fi_privateinternetaccess_com_privateinternetaccess_com
+...</pre>
+<ul><li>Connect to your VPN chosen VPN config to create a connman settings file for it:</li></ul>
+<pre># connmanctl connect vpn_fi_privateinternetaccess_com_privateinternetaccess_com</pre>
+<ul>
+<li>Edit the relevant settings file, e.g <code>/var/lib/connman/vpn_fi_privateinternetaccess_com_privateinternetaccess_com/settings</code>
+</li>
+<li>Change the <code>AutoConnect=false</code> line to <code>AutoConnect=true</code>, save, exit, reboot</li>
+</ul>
+<div class="archwiki-template-box archwiki-template-box-tip">
+<strong>Tip:</strong> 
+<ul>
+<li>You can also configure autoconnect in the Details tab of <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/cmst/">cmst</a></span><sup><small>AUR</small></sup>
+</li>
+<li>The VPN will keep working even after waking from suspend, unlike vanilla <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=openvpn">openvpn</a></span> (see below)</li>
+</ul>
+</div>
+<h4>
+<span id="For_openvpn_you_can_look_here:_OpenVPN.23systemd_service_configuration."></span><span class="mw-headline" id="For_openvpn_you_can_look_here:_OpenVPN#systemd_service_configuration.">For <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=openvpn">openvpn</a></span> you can look here: <a href="../../en/OpenVPN.html#systemd_service_configuration" title="OpenVPN">OpenVPN#systemd service configuration</a>.</span>
+</h4>
+<h3><span class="mw-headline" id="Advanced_options">Advanced options</span></h3>
+<div class="archwiki-template-box archwiki-template-box-warning">
+<strong>Warning:</strong> Protocols and port combinations no longer work as of Version 3.1. See <a rel="nofollow" class="external text" href="https://github.com/flamusdiu/python-pia/issues/17">Github Issue #17</a> or PIA's Support - <a rel="nofollow" class="external text" href="https://www.privateinternetaccess.com/helpdesk/kb/articles/which-encryption-auth-settings-should-i-use-for-ports-on-your-gateways-3">Which encryption/auth settings should I use for ports on your gateways?</a>
+</div>
+<ul>
+<li>Create <code>/etc/private-internet-access/pia.conf</code>
+</li>
+<li>For the <code>[pia]</code> section:</li>
+</ul>
+<table class="wikitable">
+<tbody>
+<tr>
+<th scope="col" style="width:5%;">option
+</th>
+<th scope="col" style="width:10%;">option values
+</th>
+<th scope="col" style="width:10%;">description
+</th>
+</tr>
+<tr>
+<td>openvpn_auto_login
+</td>
+<td>True,False
+</td>
+<td>Default: True; Configures if OpenVPN configuration files should have auto-login enabled. See <a href="#Enabling_auto-login">#Enabling auto-login</a>
+</td>
+</tr>
+</tbody>
+</table>
+<ul><li>For the <code>[configure]</code> section:</li></ul>
+<table class="wikitable">
+<tbody>
+<tr>
+<th scope="col" style="width:5%;">option
+</th>
+<th scope="col" style="width:10%;">option values
+</th>
+<th scope="col" style="width:10%;">description
+</th>
+</tr>
+<tr>
+<td>apps
+</td>
+<td>cm, nm
+</td>
+<td>Default: all; This configures which applications are configured. The application will configure all applications installed; however, if a user only needed configurations for Conman, then setting this to 'cm' would generate only those configurations even if they had NetworkManager installed. OpenVPN configurations are always generated. cm = Conman; nm = NetworkManager
+</td>
+</tr>
+<tr>
+<td>port
+</td>
+<td>See for list: PIA's Support - <br><a rel="nofollow" class="external text" href="https://www.privateinternetaccess.com/helpdesk/kb/articles/which-encryption-auth-settings-should-i-use-for-ports-on-your-gateways-3">Which encryption/auth settings should I use for ports on your gateways?</a>
+</td>
+<td>Default: 1198
+</td>
+</tr>
+</tbody>
+</table>
+<h3><span class="mw-headline" id="Example_configuration">Example configuration</span></h3>
+<p>The configuration enables auto-login, configures only Connman and OpenVPN, uses port 8080 over UDP, and configures only US East, US West, Japan, UK London, and UK Southampton VPN endpoints. OpenVPN is always configured.
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/private-internet-access/pia.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">
+
+[pia]
+openvpn_auto_login = True
+
+[configure]
+apps = cm
+port = 8080
+hosts = US East, US West, Japan, UK London, UK Southampton
+
+</pre>
+<h2><span class="mw-headline" id="Troubleshooting">Troubleshooting</span></h2>
+<h3>
+<span id="Using_NetworkManager.27s_applet"></span><span class="mw-headline" id="Using_NetworkManager's_applet">Using NetworkManager's applet</span>
+</h3>
+<p>In order to use the <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=network-manager-applet">network-manager-applet</a></span> to connect:
+</p>
+<ol>
+<li>Right click the NetworkManager icon in the system tray</li>
+<li>and click <i>Configure Network Connections...</i>
+</li>
+<li>then click <i>Add</i>
+</li>
+<li>choose <i>Import VPN...</i>
+</li>
+<li>browse to <code>/etc/openvpn/client/CA_Toronto.conf</code> or whichever configuration you would like to use</li>
+<li>then click <i>Open</i>
+</li>
+<li>Remove only the <code>:1198</code> from the <code>Gateway:</code> (if present) as only the domain name should be in this box</li>
+<li>for the <code>Username:</code> type in your <code>p1234567</code> username</li>
+<li>for the <code>Password:</code> type in the password that goes with your <code>p-xxxxx</code> username</li>
+<li>then click <i>Advanced...</i>
+</li>
+<li>set <code>Custom gateway port:</code> and set it to <code>1198</code>
+</li>
+<li>click on the <i>Security</i> tab</li>
+<li>set the <code>Cipher:</code> to <code>AES-128-CBC</code>
+</li>
+<li>set the <code>HMAC Authentication:</code> to <code>SHA-1</code>
+</li>
+<li>click <i>OK</i>
+</li>
+<li>click <i>OK</i> again</li>
+</ol>
+<h3><span class="mw-headline" id="DNS_Leaks">DNS Leaks</span></h3>
+<p>Concerning DNS Leaks (see <a rel="nofollow" class="external text" href="https://github.com/flamusdiu/python-pia/issues/13">python-pia/#13</a>), NetworkManager leaks information due to how <code>/etc/resolv.conf</code> is setup. The script below was posted by <a rel="nofollow" class="external text" href="https://github.com/maximbaz">@maximbaz</a> to work around the problem. You may need to <a href="../../en/IPv6.html#Disable_IPv6" class="mw-redirect" title="Disable IPv6">disable IPv6</a> if you continue to get leaks.
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/NetworkManager/dispatcher.d/pia-vpn</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">
+
+#!/bin/bash
+#/etc/NetworkManager/dispatcher.d/pia-vpn
+
+interface="$1"
+status=$2
+
+case $status in
+  vpn-up)
+    if [[ $interface == "tun0" ]]; then
+      chattr -i /etc/resolv.conf
+      echo -e "nameserver 209.222.18.222\nnameserver 209.222.18.218" &gt; /etc/resolv.conf
+      chattr +i /etc/resolv.conf
+    fi
+    ;;
+  vpn-down)
+    if [[ $interface == "tun0" ]]; then
+      chattr -i /etc/resolv.conf
+    fi
+    ;;
+esac
+
+</pre>
+<h2><span class="mw-headline" id="See_also">See also</span></h2>
+<ul>
+<li><a rel="nofollow" class="external text" href="https://github.com/flamusdiu/python-pia/">python-pia GitHub</a></li>
+<li><a rel="nofollow" class="external text" href="https://www.privateinternetaccess.com/pages/client-support/">PIA Client Support</a></li>
+</ul>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface">
+<div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../../Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="../../en/Category:VPN_providers.html" title="Category:VPN providers">VPN providers</a></li></ul>
+</div>
+<div id="mw-hidden-catlinks" class="mw-hidden-catlinks mw-hidden-cats-hidden">Hidden categories: <ul>
+<li><a href="../../en/Category:Pages_or_sections_flagged_with_Template:Style.html" title="Category:Pages or sections flagged with Template:Style">Pages or sections flagged with Template:Style</a></li>
+<li><a href="../../en/Category:Pages_or_sections_flagged_with_Template:Merge.html" title="Category:Pages or sections flagged with Template:Merge">Pages or sections flagged with Template:Merge</a></li>
+<li><a href="../../en/Category:Pages_with_dead_links.html" title="Category:Pages with dead links">Pages with dead links</a></li>
+</ul>
+</div>
+</div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=Private_Internet_Access/AUR&amp;oldid=773022">https://wiki.archlinux.org/index.php?title=Private_Internet_Access/AUR&amp;oldid=773022</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 17 March 2023, at 11:32.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

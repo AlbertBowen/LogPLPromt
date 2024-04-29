@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>RepRap - ArchWiki</title>
+<link rel="stylesheet" href="../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-RepRap rootpage-RepRap skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Installation" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Installation">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Installation</div>
+			</a>
+			
+			<ul id="toc-Installation-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Configuration" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Configuration">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Configuration</div>
+			</a>
+			
+			<ul id="toc-Configuration-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Host_software_alternatives" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Host_software_alternatives">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>Host software alternatives</div>
+			</a>
+			
+				<button aria-controls="toc-Host_software_alternatives-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Host software alternatives subsection
+				</button>
+			
+			<ul id="toc-Host_software_alternatives-sublist" class="sidebar-toc-list">
+				<li id="toc-Cura" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Cura">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.1</span>Cura</div>
+			</a>
+			
+			<ul id="toc-Cura-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-MatterControl" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#MatterControl">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.2</span>MatterControl</div>
+			</a>
+			
+			<ul id="toc-MatterControl-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Repetier" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Repetier">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.3</span>Repetier</div>
+			</a>
+			
+			<ul id="toc-Repetier-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-See_Also" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#See_Also">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4</span>See Also</div>
+			</a>
+			
+				<button aria-controls="toc-See_Also-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle See Also subsection
+				</button>
+			
+			<ul id="toc-See_Also-sublist" class="sidebar-toc-list">
+				<li id="toc-Calibration" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Calibration">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.1</span>Calibration</div>
+			</a>
+			
+			<ul id="toc-Calibration-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-3D_models_&amp;_STL_files" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#3D_models_&amp;_STL_files">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.2</span>3D models &amp; STL files</div>
+			</a>
+			
+			<ul id="toc-3D_models_&amp;_STL_files-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Manual" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Manual">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.3</span>Manual</div>
+			</a>
+			
+			<ul id="toc-Manual-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../en/RepRap.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="mw-list-item"><a href="../en/Talk:RepRap.html" rel="discussion" title="Discussion about the content page [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">English</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../en/RepRap.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=RepRap&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=RepRap&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../en/RepRap.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=RepRap&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=RepRap&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output">
+<p><br>
+</p>
+<div class="noprint archwiki-template-message">
+<p><a href="../File:Tango-go-next.png" class="image"><img alt="Tango-go-next.png" src="../File:Tango-go-next.png" decoding="async" width="48" height="48"></a><b>This article or section is a candidate for moving to <a href="../en/List_of_applications/Science.html#3D_printing" class="mw-redirect" title="3D Printing">3D Printing</a>.</b><a href="../File:Tango-go-next.png" class="image"><img alt="Tango-go-next.png" src="../File:Tango-go-next.png" decoding="async" width="48" height="48"></a></p>
+<div>
+<b>Notes:</b> RepRap is a project from the early days of hobbyist 3D printing and is much less relevant these days. Mention of several pieces of popular and heavily used modern software such as PrusaSlicer and OctoPrint is missing as well. It would be better to migrate to a generic 3D printing page with RepRap as a subsection. (Discuss in <a rel="nofollow" class="external text" href="https://wiki.archlinux.org/title/Talk:RepRap">Talk:RepRap</a>)</div>
+</div>
+<p>RepRap is an open-source 3D printer project. A RepRap prints objects of plastic and is intended for rapid-prototyping, the printer itself is built with small plastic parts which can be printed out and replaced. This page explains how to install RepRap host software on Arch Linux and how to print 3D models. More information is available on the <a rel="nofollow" class="external text" href="https://www.reprap.org">RepRap homepage</a>.
+</p>
+<mw:tocplace></mw:tocplace>
+<h2><span class="mw-headline" id="Installation">Installation</span></h2>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong>  Custom firmware may be available to you from your electronics supplier, it may even be pre-installed.</div>
+<p>Many of the controller chips for RepRap are arduino based, or arduino derived (such as Melzi). Figure out what electronics you have from the RepRap <a rel="nofollow" class="external text" href="https://reprap.org/wiki/%22Official%22_Electronics">Official Electronics</a> page. You will also find what firmware you have on that page.
+</p>
+<p>Follow the <a href="../en/Arduino.html" title="Arduino">arduino</a> wiki page if you have an arduino based controller. Do the Installation and Configuration steps.
+</p>
+<p>Install the host software by following this guide <a rel="nofollow" class="external text" href="https://reprap.org/wiki/Installing_RepRap_on_your_computer">Installing RepRap on your computer</a>. There are alternative host software solutions which are easier to install and are described in the following sections.
+</p>
+<h2><span class="mw-headline" id="Configuration">Configuration</span></h2>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong>  If you do not have firmware installed on your electronics, you may not be able to connect via USB or control the motors.</div>
+<p>Connect your 3D printer to your computer and run the host software. Use the host software's user interface to send commands to the printer.
+</p>
+<div class="archwiki-template-box archwiki-template-box-warning">
+<strong>Warning:</strong>  If you have not tested your printer previously, make sure you have your hand on the emergency stop button (your power plug). Do not let the hotend go through the hotbed, if the stepper motors do not stop when they reach the end stoppers or move the wrong way, stop the printer and check your wiring.</div>
+<h2><span class="mw-headline" id="Host_software_alternatives">Host software alternatives</span></h2>
+<p>See also <a href="../en/List_of_applications.html#3D_printing" title="List of applications">List of applications#3D printing</a> for a more up-to-date list.
+</p>
+<h3><span class="mw-headline" id="Cura">Cura</span></h3>
+<ul><li>Install <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/cura/">cura</a></span><sup><small>AUR</small></sup>.</li></ul>
+<p>Run cura
+</p>
+<pre>$ cura
+</pre>
+<p>Configure it to use RepRap in the startup configuration wizard. Select the RepRap model you are using, or select Custom RepRap.
+</p>
+<p>Alternatively, install <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/cura-aleph-bin/">cura-aleph-bin</a></span><sup><small>AUR</small></sup> or the new <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/cura-lulzbot/">cura-lulzbot</a></span><sup><small>AUR</small></sup> and add yourself to the uucp <a href="../en/Users_and_groups.html#Group_management" class="mw-redirect" title="User group">user group</a>.
+</p>
+<h3><span class="mw-headline" id="MatterControl">MatterControl</span></h3>
+<p>MatterControl is a combined slicer/host similar to Cura. Install <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/mattercontrol/">mattercontrol</a></span><sup><small>AUR</small></sup> from <a href="../en/Arch_User_Repository.html" class="mw-redirect" title="AUR">AUR</a>, then run it.
+</p>
+<pre>$ mattercontrol
+</pre>
+<h3><span class="mw-headline" id="Repetier">Repetier</span></h3>
+<p>Repetier is a little like pronterface.
+</p>
+<ul><li>Install <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/repetier-host/">repetier-host</a></span><sup><small>AUR</small></sup> from <a href="../en/Arch_User_Repository.html" class="mw-redirect" title="AUR">AUR</a>.</li></ul>
+<p>Read more at <a rel="nofollow" class="external text" href="https://www.repetier.com/">http://www.repetier.com/</a>
+</p>
+<h2><span class="mw-headline" id="See_Also">See Also</span></h2>
+<h3><span class="mw-headline" id="Calibration">Calibration</span></h3>
+<ul>
+<li><a rel="nofollow" class="external free" href="https://youtu.be/wAL9d7FgInk">https://youtu.be/wAL9d7FgInk</a></li>
+<li><a rel="nofollow" class="external free" href="http://calculator.josefprusa.cz/">http://calculator.josefprusa.cz/</a></li>
+<li><a rel="nofollow" class="external free" href="https://reprap.org/wiki/Calibration">https://reprap.org/wiki/Calibration</a></li>
+<li><a rel="nofollow" class="external free" href="https://reprap.org/wiki/Triffid_Hunter%27s_Calibration_Guide">https://reprap.org/wiki/Triffid_Hunter%27s_Calibration_Guide</a></li>
+<li><a rel="nofollow" class="external free" href="https://www.thingiverse.com/thing:5573">https://www.thingiverse.com/thing:5573</a></li>
+<li><a rel="nofollow" class="external free" href="https://sites.google.com/site/repraplogphase/calibration-of-your-reprap">https://sites.google.com/site/repraplogphase/calibration-of-your-reprap</a></li>
+</ul>
+<h3>
+<span id="3D_models_.26_STL_files"></span><span class="mw-headline" id="3D_models_&amp;_STL_files">3D models &amp; STL files</span>
+</h3>
+<p><a rel="nofollow" class="external free" href="https://www.thingiverse.com/">https://www.thingiverse.com/</a>
+</p>
+<h3><span class="mw-headline" id="Manual">Manual</span></h3>
+<p><a rel="nofollow" class="external free" href="http://reprapbook.appspot.com/">http://reprapbook.appspot.com/</a>
+</p>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface">
+<div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="../en/Category:Printers.html" title="Category:Printers">Printers</a></li></ul>
+</div>
+<div id="mw-hidden-catlinks" class="mw-hidden-catlinks mw-hidden-cats-hidden">Hidden category: <ul><li><a href="../en/Category:Pages_or_sections_flagged_with_Template:Move.html" title="Category:Pages or sections flagged with Template:Move">Pages or sections flagged with Template:Move</a></li></ul>
+</div>
+</div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=RepRap&amp;oldid=780269">https://wiki.archlinux.org/index.php?title=RepRap&amp;oldid=780269</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 3 June 2023, at 20:13.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

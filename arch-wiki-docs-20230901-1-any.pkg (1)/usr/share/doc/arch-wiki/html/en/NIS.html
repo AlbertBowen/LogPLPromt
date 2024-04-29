@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>NIS - ArchWiki</title>
+<link rel="stylesheet" href="../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-NIS rootpage-NIS skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-NIS_Server" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#NIS_Server">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>NIS Server</div>
+			</a>
+			
+				<button aria-controls="toc-NIS_Server-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle NIS Server subsection
+				</button>
+			
+			<ul id="toc-NIS_Server-sublist" class="sidebar-toc-list">
+				<li id="toc-Install_Packages" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Install_Packages">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.1</span>Install Packages</div>
+			</a>
+			
+			<ul id="toc-Install_Packages-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Configuration" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Configuration">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.2</span>Configuration</div>
+			</a>
+			
+			<ul id="toc-Configuration-sublist" class="sidebar-toc-list">
+				<li id="toc-/etc/hosts" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#/etc/hosts">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.2.1</span>/etc/hosts</div>
+			</a>
+			
+			<ul id="toc-/etc/hosts-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-/etc/nisdomainname" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#/etc/nisdomainname">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.2.2</span>/etc/nisdomainname</div>
+			</a>
+			
+			<ul id="toc-/etc/nisdomainname-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-/etc/ypserv.conf" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#/etc/ypserv.conf">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.2.3</span>/etc/ypserv.conf</div>
+			</a>
+			
+			<ul id="toc-/etc/ypserv.conf-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-/var/yp/Makefile" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#/var/yp/Makefile">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.2.4</span>/var/yp/Makefile</div>
+			</a>
+			
+			<ul id="toc-/var/yp/Makefile-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-/var/yp/securenets" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#/var/yp/securenets">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.2.5</span>/var/yp/securenets</div>
+			</a>
+			
+			<ul id="toc-/var/yp/securenets-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-/var/yp/ypservers" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#/var/yp/ypservers">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.2.6</span>/var/yp/ypservers</div>
+			</a>
+			
+			<ul id="toc-/var/yp/ypservers-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Set_your_domain_name" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Set_your_domain_name">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.2.7</span>Set your domain name</div>
+			</a>
+			
+			<ul id="toc-Set_your_domain_name-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Start_NIS_Daemons" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Start_NIS_Daemons">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.3</span>Start NIS Daemons</div>
+			</a>
+			
+			<ul id="toc-Start_NIS_Daemons-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-NIS_Client" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#NIS_Client">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>NIS Client</div>
+			</a>
+			
+				<button aria-controls="toc-NIS_Client-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle NIS Client subsection
+				</button>
+			
+			<ul id="toc-NIS_Client-sublist" class="sidebar-toc-list">
+				<li id="toc-Install_Packages_2" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Install_Packages_2">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.1</span>Install Packages</div>
+			</a>
+			
+			<ul id="toc-Install_Packages_2-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Configuration_2" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Configuration_2">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.2</span>Configuration</div>
+			</a>
+			
+			<ul id="toc-Configuration_2-sublist" class="sidebar-toc-list">
+				<li id="toc-Set_your_domain_name_2" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Set_your_domain_name_2">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.2.1</span>Set your domain name</div>
+			</a>
+			
+			<ul id="toc-Set_your_domain_name_2-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-/etc/hosts_2" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#/etc/hosts_2">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.2.2</span>/etc/hosts</div>
+			</a>
+			
+			<ul id="toc-/etc/hosts_2-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Start_NIS_Daemons_2" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Start_NIS_Daemons_2">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.2.3</span>Start NIS Daemons</div>
+			</a>
+			
+			<ul id="toc-Start_NIS_Daemons_2-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Early_testing" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Early_testing">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.2.4</span>Early testing</div>
+			</a>
+			
+			<ul id="toc-Early_testing-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-/etc/nsswitch.conf" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#/etc/nsswitch.conf">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.2.5</span>/etc/nsswitch.conf</div>
+			</a>
+			
+			<ul id="toc-/etc/nsswitch.conf-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-/etc/pam.d/passwd" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#/etc/pam.d/passwd">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.2.6</span>/etc/pam.d/passwd</div>
+			</a>
+			
+			<ul id="toc-/etc/pam.d/passwd-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Connections_after_Systemd_V235" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Connections_after_Systemd_V235">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.2.7</span>Connections after Systemd V235</div>
+			</a>
+			
+			<ul id="toc-Connections_after_Systemd_V235-sublist" class="sidebar-toc-list">
+				<li id="toc-systemd-userdbd.service" class="sidebar-toc-list-item sidebar-toc-level-4">
+			<a class="sidebar-toc-link" href="#systemd-userdbd.service">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.2.7.1</span>systemd-userdbd.service</div>
+			</a>
+			
+			<ul id="toc-systemd-userdbd.service-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+	</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-More_resources" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#More_resources">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>More resources</div>
+			</a>
+			
+			<ul id="toc-More_resources-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../en/NIS.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="mw-list-item"><a href="../en/Talk:NIS.html" rel="discussion" title="Discussion about the content page [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">English</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../en/NIS.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=NIS&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=NIS&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../en/NIS.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=NIS&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=NIS&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output">
+<div class="noprint archwiki-template-message">
+<p><a href="../File:Tango-edit-clear.png" class="image"><img alt="Tango-edit-clear.png" src="../File:Tango-edit-clear.png" decoding="async" width="48" height="48"></a><b>This article or section needs language, wiki syntax or style improvements. See <a href="../en/Help:Style.html" title="Help:Style">Help:Style</a> for reference.</b><a href="../File:Tango-edit-clear.png" class="image"><img alt="Tango-edit-clear.png" src="../File:Tango-edit-clear.png" decoding="async" width="48" height="48"></a></p>
+<div>
+<b>Reason:</b> Needs language improvements. (Discuss in <a rel="nofollow" class="external text" href="https://wiki.archlinux.org/title/Talk:NIS">Talk:NIS</a>)</div>
+</div>
+<p><a href="https://en.wikipedia.org/wiki/Network_Information_Service" class="extiw" title="wikipedia:Network Information Service">Network Information Service</a> (NIS) is a protocol developed by Sun to allow one to defer user authentication to a server. The server software is in the <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/ypserv/">ypserv</a></span><sup><small>AUR</small></sup> package, and the client software is in the <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/yp-tools/">yp-tools</a></span><sup><small>AUR</small></sup> package. <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/ypbind-mt/">ypbind-mt</a></span><sup><small>AUR</small></sup> is also available, which is a multi threaded version of the client daemon.
+</p>
+<mw:tocplace></mw:tocplace>
+<h2><span class="mw-headline" id="NIS_Server">NIS Server</span></h2>
+<h3><span class="mw-headline" id="Install_Packages">Install Packages</span></h3>
+<p><a href="../en/Help:Reading.html#Installation_of_packages" class="mw-redirect" title="Install">Install</a> the <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/ypbind-mt/">ypbind-mt</a></span><sup><small>AUR</small></sup>, <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/ypserv/">ypserv</a></span><sup><small>AUR</small></sup>, and <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/yp-tools/">yp-tools</a></span><sup><small>AUR</small></sup> packages.
+</p>
+<h3><span class="mw-headline" id="Configuration">Configuration</span></h3>
+<h4>
+<span id=".2Fetc.2Fhosts"></span><span class="mw-headline" id="/etc/hosts">/etc/hosts</span>
+</h4>
+<p>Add your server's <b>external</b> (not 127.0.0.1) IP address to the hosts file. Make sure it is the first non-commented line in the file, yes, even above the localhost line, like so:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/hosts</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">#&lt;ip-address&gt;	&lt;hostname.domain.org&gt;	&lt;hostname&gt;
+#::1		localhost.localdomain	localhost
+192.168.1.10   nis_server.domain.com   nis_server
+127.0.0.1	localhost.localdomain	localhost nis_server
+# End of file
+</pre>
+<p>This is due to a peculiarity in ypinit (maybe it is a bug, maybe it is a feature), which will <b>always</b> add the first line in <code>/etc/hosts</code> to the list of ypservers.
+</p>
+<h4>
+<span id=".2Fetc.2Fnisdomainname"></span><span class="mw-headline" id="/etc/nisdomainname">/etc/nisdomainname</span>
+</h4>
+<p>Add the domain name:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/nisdomainname</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;"># NISDOMAINNAME="nis-domain-name"</pre>
+<h4>
+<span id=".2Fetc.2Fypserv.conf"></span><span class="mw-headline" id="/etc/ypserv.conf">/etc/ypserv.conf</span>
+</h4>
+<p>Add rules to <code>/etc/ypserv.conf</code> for your your nis clients of this form:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/ypserv.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;"># ip-address-of-client : nis-domain-name : rule : security
+</pre>
+<p>For example:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/ypserv.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;"># 192.168. : home-domain : * : port
+</pre>
+<p>For more information see <code>man ypserv.conf</code>.
+</p>
+<h4>
+<span id=".2Fvar.2Fyp.2FMakefile"></span><span class="mw-headline" id="/var/yp/Makefile">/var/yp/Makefile</span>
+</h4>
+<p>Add or remove files you would like NIS to use to <code>/var/yp/Makefile</code> under the "all" rule.
+</p>
+<p>Default:
+</p>
+<pre># all:  passwd group hosts rpc services netid protocols netgrp \
+#         shadow # publickey networks ethers bootparams printcap mail \
+#         # amd.home auto.master auto.home auto.local passwd.adjunct \
+#         # timezone locale netmasks
+</pre>
+<p>After that you have to build your NIS database:
+</p>
+<pre># cd /var/yp
+# make
+</pre>
+<p>Or you can do it in a more automated fashion:
+</p>
+<pre># /usr/lib/yp/ypinit -m
+</pre>
+<p>If you use this way you may skip manually adding lines to <code>/var/yp/ypservers</code>.
+</p>
+<h4>
+<span id=".2Fvar.2Fyp.2Fsecurenets"></span><span class="mw-headline" id="/var/yp/securenets">/var/yp/securenets</span>
+</h4>
+<p>Add rules to <code>/var/yp/securenets</code> to restrict access:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/var/yp/securenets</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;"># 255.255.0.0 192.168.0.0 # Gives access to anyone in 192.168.0.0/16
+</pre>
+<p>Be sure to comment out this line, as it gives access to anyone.
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/var/yp/securenets</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;"># 0.0.0.0      0.0.0.0
+</pre>
+<h4>
+<span id=".2Fvar.2Fyp.2Fypservers"></span><span class="mw-headline" id="/var/yp/ypservers">/var/yp/ypservers</span>
+</h4>
+<p>Add your server to <code>/var/yp/ypservers</code>:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/var/yp/ypservers</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;"># your.nis.server
+</pre>
+<h4><span class="mw-headline" id="Set_your_domain_name">Set your domain name</span></h4>
+<pre># ypdomainname EXAMPLE.COM
+</pre>
+<p>Now edit the <code>/etc/yp.conf</code> file and add your ypserver or nis server.
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/yp.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">ypserver nis_server
+</pre>
+<h3><span class="mw-headline" id="Start_NIS_Daemons">Start NIS Daemons</span></h3>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> The daemons MUST be started in this order.</div>
+<p><a href="../en/Help:Reading.html#Control_of_systemd_units" class="mw-redirect" title="Start/enable">Start/enable</a> the following systemd units:
+</p>
+<ul>
+<li><code>rpcbind.service</code></li>
+<li><code>ypbind.service</code></li>
+<li><code>ypserv.service</code></li>
+<li>
+<code>yppasswdd.service</code> (to allow clients to change their password with <code>passwd</code>)</li>
+</ul>
+<h2><span class="mw-headline" id="NIS_Client">NIS Client</span></h2>
+<h3><span class="mw-headline" id="Install_Packages_2">Install Packages</span></h3>
+<p>The first step is to install the tools that you need. This provides the configuration files and general tools needed to use NIS. Install <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/yp-tools/">yp-tools</a></span><sup><small>AUR</small></sup> <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/ypbind-mt/">ypbind-mt</a></span><sup><small>AUR</small></sup>.
+</p>
+<h3><span class="mw-headline" id="Configuration_2">Configuration</span></h3>
+<h4><span class="mw-headline" id="Set_your_domain_name_2">Set your domain name</span></h4>
+<pre># ypdomainname EXAMPLE.COM
+</pre>
+<p>You can apply this permanently by editing <code>/etc/nisdomainname</code> and adding:
+</p>
+<pre># NISDOMAINNAME="EXAMPLE.COM"
+</pre>
+<p>Now edit the <code>/etc/yp.conf</code> file and add your ypserver or nis server.
+</p>
+<pre>ypserver nis_server
+</pre>
+<h4>
+<span id=".2Fetc.2Fhosts_2"></span><span class="mw-headline" id="/etc/hosts_2">/etc/hosts</span>
+</h4>
+<p>It may be a good idea to add your NIS server to <code>/etc/hosts</code>
+</p>
+<pre>192.168.1.10   nis_server.domain.com   nis_server
+</pre>
+<h4><span class="mw-headline" id="Start_NIS_Daemons_2">Start NIS Daemons</span></h4>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> The daemons MUST be started in this order.</div>
+<p><a href="../en/Help:Reading.html#Control_of_systemd_units" class="mw-redirect" title="Start/enable">Start/enable</a> the <code>rpcbind.service</code> and <code>ypbind.service</code> systemd units.
+</p>
+<h4><span class="mw-headline" id="Early_testing">Early testing</span></h4>
+<p>To test the setup so far you can run the command yptest:
+</p>
+<pre># yptest
+</pre>
+<p>If it works you will, among other things, see the contents of the NIS user database (which is printed in the same format as <code>/etc/passwd</code>).
+</p>
+<h4>
+<span id=".2Fetc.2Fnsswitch.conf"></span><span class="mw-headline" id="/etc/nsswitch.conf">/etc/nsswitch.conf</span>
+</h4>
+<p>To actually use NIS to log in you have to edit <code>/etc/nsswitch.conf</code>.  Modify the lines for passwd, group and shadow to read:
+</p>
+<pre>passwd: files nis
+group: files nis
+shadow: files nis
+</pre>
+<p>And then do not forget to <a href="../en/Help:Reading.html#Control_of_systemd_units" class="mw-redirect" title="Restart">restart</a> <code>ypbind.service</code>.
+</p>
+<h4>
+<span id=".2Fetc.2Fpam.d.2Fpasswd"></span><span class="mw-headline" id="/etc/pam.d/passwd">/etc/pam.d/passwd</span>
+</h4>
+<p>To allow a user on a client machine to change their password on the server, be sure that <code>yppasswdd.service</code> is <a href="../en/Help:Reading.html#Control_of_systemd_units" class="mw-redirect" title="Started/enabled">started/enabled</a> on the server.
+</p>
+<p>Edit <code>/etc/pam.d/passwd</code> on the client to add the <code>nis</code> parameter to <code>password/pam_unix.so</code>:
+</p>
+<pre>password     required     pam_unix.so sha512 shadow nullok nis
+</pre>
+<p>See <a rel="nofollow" class="external text" href="https://www.tldp.org/HOWTO/NIS-HOWTO/settingup_client.html">section 7 of The Linux NIS HOWTO</a> for further information on configuring NIS clients.
+</p>
+<h4><span class="mw-headline" id="Connections_after_Systemd_V235">Connections after Systemd V235</span></h4>
+<p>Due to sandboxing on <code>systemd-logind</code>, any IP connections from and to the <code>systemd-logind</code> service are now denied. This will cause failures to log in, even though <code>yptest</code> works as expected, and can also cause <code>accounts-daemon</code> to crash outright. The basic problem is that the default <code>systemd-logind.service</code> file that ships with <code>systemd</code> specifies <code>IPAddressDeny=any</code>, and this prevents it from communicating with the NIS server at login. Moreover, since V239, that file also specifies <code>RestrictAddressFamilies=AF_UNIX AF_NETLINK</code>, dropping <code>AF_INET AF_INET6</code> from the list.
+</p>
+<p>The solution is to whitelist the address or address range of your NIS server. 
+</p>
+<p>Use a <a href="../en/Systemd.html#Drop-in_files" class="mw-redirect" title="Drop-in unit file">drop-in unit file</a> for <code>systemd-logind.service</code>, with these lines (the following allows connections <code>from 10.0.*.*</code>, edit as appropriate): 
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/systemd/system/systemd-logind.service.d/open_network_interface.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">[Service]
+RestrictAddressFamilies=AF_UNIX AF_NETLINK AF_INET AF_INET6
+IPAddressAllow=10.0.0.0/16</pre> 
+<h5><span class="mw-headline" id="systemd-userdbd.service">systemd-userdbd.service</span></h5>
+<p>After updating nis clients to systemd 245-1, the <code>systemd-userdbd.service</code> can be affected by a similar issue as the <code>systemd-logind.service</code> which can cause 25 second login delays.
+</p>
+<p>Use a <a href="../en/Systemd.html#Drop-in_files" class="mw-redirect" title="Drop-in unit file">drop-in unit file</a> for <code>systemd-userdbd.service</code> containing your NIS server IP address to correct the issue.
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/systemd/system/systemd-userdbd.service.d/override.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">[Service]
+IPAddressAllow=n.n.n.n/32</pre>
+<h2><span class="mw-headline" id="More_resources">More resources</span></h2>
+<ul>
+<li>
+<a rel="nofollow" class="external text" href="https://www.tldp.org/HOWTO/NIS-HOWTO/">The Linux NIS HOWTO</a>,very helpful and generally applicable to Arch Linux.</li>
+<li><a rel="nofollow" class="external text" href="http://www.yolinux.com/TUTORIALS/NIS.html">YoLinux NIS tutorial</a></li>
+<li><a rel="nofollow" class="external text" href="https://web.archive.org/web/20201111171924/http://www.linuxhomenetworking.com/wiki/index.php/Quick_HOWTO_:_Ch30_:_Configuring_NIS">Quick HOWTO, Configuring NIS</a></li>
+</ul>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface">
+<div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="../en/Category:Directory_services.html" title="Category:Directory services">Directory services</a></li></ul>
+</div>
+<div id="mw-hidden-catlinks" class="mw-hidden-catlinks mw-hidden-cats-hidden">Hidden category: <ul><li><a href="../en/Category:Pages_or_sections_flagged_with_Template:Style.html" title="Category:Pages or sections flagged with Template:Style">Pages or sections flagged with Template:Style</a></li></ul>
+</div>
+</div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=NIS&amp;oldid=774477">https://wiki.archlinux.org/index.php?title=NIS&amp;oldid=774477</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 2 April 2023, at 11:57.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

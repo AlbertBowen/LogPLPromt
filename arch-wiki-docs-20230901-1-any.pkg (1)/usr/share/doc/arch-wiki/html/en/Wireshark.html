@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>Wireshark - ArchWiki</title>
+<link rel="stylesheet" href="../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Wireshark rootpage-Wireshark skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Installation" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Installation">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Installation</div>
+			</a>
+			
+			<ul id="toc-Installation-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Capturing_privileges" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Capturing_privileges">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Capturing privileges</div>
+			</a>
+			
+			<ul id="toc-Capturing_privileges-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-A_few_capturing_techniques" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#A_few_capturing_techniques">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>A few capturing techniques</div>
+			</a>
+			
+				<button aria-controls="toc-A_few_capturing_techniques-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle A few capturing techniques subsection
+				</button>
+			
+			<ul id="toc-A_few_capturing_techniques-sublist" class="sidebar-toc-list">
+				<li id="toc-Filtering_TCP_packets" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Filtering_TCP_packets">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.1</span>Filtering TCP packets</div>
+			</a>
+			
+			<ul id="toc-Filtering_TCP_packets-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Filtering_UDP_packets" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Filtering_UDP_packets">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.2</span>Filtering UDP packets</div>
+			</a>
+			
+			<ul id="toc-Filtering_UDP_packets-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Filter_packets_to_a_specific_IP_address" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Filter_packets_to_a_specific_IP_address">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.3</span>Filter packets to a specific IP address</div>
+			</a>
+			
+			<ul id="toc-Filter_packets_to_a_specific_IP_address-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Exclude_packets_from_a_specific_IP_address" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Exclude_packets_from_a_specific_IP_address">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.4</span>Exclude packets from a specific IP address</div>
+			</a>
+			
+			<ul id="toc-Exclude_packets_from_a_specific_IP_address-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Filter_packets_to_LAN" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Filter_packets_to_LAN">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.5</span>Filter packets to LAN</div>
+			</a>
+			
+			<ul id="toc-Filter_packets_to_LAN-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Filter_packets_by_port" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Filter_packets_by_port">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.6</span>Filter packets by port</div>
+			</a>
+			
+			<ul id="toc-Filter_packets_by_port-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Headless_capturing_with_dumpcap" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Headless_capturing_with_dumpcap">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.7</span>Headless capturing with dumpcap</div>
+			</a>
+			
+			<ul id="toc-Headless_capturing_with_dumpcap-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../en/Wireshark.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="mw-list-item"><a href="../en/Talk:Wireshark.html" rel="discussion" title="Discussion about the content page [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">English</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../en/Wireshark.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=Wireshark&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=Wireshark&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../en/Wireshark.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Wireshark&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Wireshark&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output">
+<p><a rel="nofollow" class="external text" href="https://www.wireshark.org/">Wireshark</a> is a free and open-source packet analyzer. It is used for network troubleshooting, analysis, software and communications protocol development, and education.
+</p>
+<mw:tocplace></mw:tocplace>
+<h2><span class="mw-headline" id="Installation">Installation</span></h2>
+<p><a href="../en/Help:Reading.html#Installation_of_packages" class="mw-redirect" title="Install">Install</a> the <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=wireshark-qt">wireshark-qt</a></span> package for the Wireshark GUI or <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=wireshark-cli">wireshark-cli</a></span> for just the <span class="plainlinks archwiki-template-man" title="$ man 1 tshark"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/tshark.1">tshark(1)</a></span> CLI.
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> The deprecated GTK interface has been removed in Wireshark 3.0.</div>
+<p><span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=termshark">termshark</a></span> is an alternative terminal UI.
+</p>
+<h2><span class="mw-headline" id="Capturing_privileges">Capturing privileges</span></h2>
+<p>Do not run Wireshark as root; it is insecure. Wireshark has implemented privilege separation, which means that the Wireshark GUI (or the tshark CLI) can run as a normal user while the dumpcap capture utility runs as root<a rel="nofollow" class="external autonumber" href="https://gitlab.com/wireshark/wireshark/-/wikis/CaptureSetup/CapturePrivileges#most-unixes">[1]</a>.
+</p>
+<p>The <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=wireshark-cli">wireshark-cli</a></span> <a href="../en/PKGBUILD.html#install" title="PKGBUILD">install script</a> sets packet capturing <a href="../en/Capabilities.html" title="Capabilities">capabilities</a> on the <code>/usr/bin/dumpcap</code> executable.
+</p>
+<p><code>/usr/bin/dumpcap</code> can only be executed by root and members of the <code>wireshark</code> group, so to use Wireshark as a normal user, you have to add your user to the <code>wireshark</code> <a href="../en/Users_and_groups.html#Group_management" class="mw-redirect" title="User group">user group</a>.
+</p>
+<h2><span class="mw-headline" id="A_few_capturing_techniques">A few capturing techniques</span></h2>
+<p>There are a number of different ways to capture exactly what you are looking for in Wireshark, by applying <a rel="nofollow" class="external text" href="https://gitlab.com/wireshark/wireshark/-/wikis/CaptureFilters">capture filters</a> or <a rel="nofollow" class="external text" href="https://gitlab.com/wireshark/wireshark/-/wikis/DisplayFilters">display filters</a>.
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> To learn the capture filter syntax, see <span class="plainlinks archwiki-template-man" title="$ man 7 pcap-filter"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/pcap-filter.7">pcap-filter(7)</a></span>. For display filters, see <span class="plainlinks archwiki-template-man" title="$ man 4 wireshark-filter"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/wireshark-filter.4">wireshark-filter(4)</a></span>.</div>
+<h3><span class="mw-headline" id="Filtering_TCP_packets">Filtering TCP packets</span></h3>
+<p>If you want to see all the current TCP packets, type <code>tcp</code> into the <i>Filter</i> bar or in the CLI, enter:
+</p>
+<pre>$ tshark -f "tcp"
+</pre>
+<h3><span class="mw-headline" id="Filtering_UDP_packets">Filtering UDP packets</span></h3>
+<p>If you want to see all the current UDP packets, type <code>udp</code> into the <i>Filter</i> bar or in the CLI, enter:
+</p>
+<pre>$ tshark -f "udp"
+</pre>
+<h3><span class="mw-headline" id="Filter_packets_to_a_specific_IP_address">Filter packets to a specific IP address</span></h3>
+<ul>
+<li>If you would like to see all the traffic going to a specific address, enter display filter <code>ip.dst == 1.2.3.4</code>, replacing <code>1.2.3.4</code> with the IP address the outgoing traffic is being sent to.</li>
+<li>If you would like to see all the incoming traffic for a specific address, enter display filter <code>ip.src == 1.2.3.4</code>, replacing <code>1.2.3.4</code> with the IP address the incoming traffic is being sent to.</li>
+<li>If you would like to see all the incoming and outgoing traffic for a specific address, enter display filter <code>ip.addr == 1.2.3.4</code>, replacing <code>1.2.3.4</code> with the relevant IP address.</li>
+</ul>
+<h3><span class="mw-headline" id="Exclude_packets_from_a_specific_IP_address">Exclude packets from a specific IP address</span></h3>
+<pre>ip.addr != 1.2.3.4
+</pre>
+<h3><span class="mw-headline" id="Filter_packets_to_LAN">Filter packets to LAN</span></h3>
+<p>To only see LAN traffic and no internet traffic, run
+</p>
+<pre>(ip.src==10.0.0/8 AND ip.dst==10.0.0/8) OR (ip.src==172.16.0.0/12 AND ip.dst==172.16.0.0/12) OR (ip.src==192.168.0.0/16 and ip.dst==192.168.0.0/16)
+</pre>
+<p>This will filter traffic within any of the private network spaces.
+</p>
+<h3><span class="mw-headline" id="Filter_packets_by_port">Filter packets by port</span></h3>
+<p>See all traffic on two ports or more:
+</p>
+<pre>tcp.port==80||tcp.port==3306
+tcp.port==80||tcp.port==3306||tcp.port==443
+</pre>
+<h3><span class="mw-headline" id="Headless_capturing_with_dumpcap">Headless capturing with dumpcap</span></h3>
+<p><i>dumpcap</i> is part of Wireshark and can be used for capturing packets without the GUI. Used in combination with <a href="../en/Tmux.html" title="Tmux">tmux</a> will allow the capture of packets in a detached session.
+</p>
+<p>To see all dumpcap options, use the <code>-h</code> flag.
+</p>
+<p>The following example will provide a ringbuffer capture. It captures twenty <code>.pcap</code> files of 100MB each, replacing the oldest file with the twenty-first file and so on… This allows a continuous capture without exhausting disk space.
+</p>
+<pre># dumpcap -i 1 -b filesize:100000 -b files:20 -w <i>mycapture</i>.pcapng
+</pre>
+<ul><li>
+<code>-i</code> − interface number (listed from <code>dumpcap -D</code>)</li></ul>
+<ul><li>
+<code>-b filesize:</code> − file size in kB before starting a new <code>.pcap</code> file</li></ul>
+<ul><li>
+<code>-b files:</code> − the number of files to capture before overwriting the oldest</li></ul>
+<ul><li>
+<code>-w</code> − write the output to the file <code>mycapture<i>identifier</i>.pcapng</code>
+</li></ul>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../Special:Categories.html" title="Special:Categories">Categories</a>: <ul>
+<li><a href="../en/Category:Security.html" title="Category:Security">Security</a></li>
+<li><a href="../en/Category:Networking.html" title="Category:Networking">Networking</a></li>
+</ul>
+</div></div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=Wireshark&amp;oldid=737744">https://wiki.archlinux.org/index.php?title=Wireshark&amp;oldid=737744</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 15 July 2022, at 08:06.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

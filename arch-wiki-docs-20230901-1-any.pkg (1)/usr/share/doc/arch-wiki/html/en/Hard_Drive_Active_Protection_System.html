@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>Hard Drive Active Protection System - ArchWiki</title>
+<link rel="stylesheet" href="../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Hard_Drive_Active_Protection_System rootpage-Hard_Drive_Active_Protection_System skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Shock_detection" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Shock_detection">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Shock detection</div>
+			</a>
+			
+				<button aria-controls="toc-Shock_detection-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Shock detection subsection
+				</button>
+			
+			<ul id="toc-Shock_detection-sublist" class="sidebar-toc-list">
+				<li id="toc-tp_smapi" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#tp_smapi">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.1</span>tp_smapi</div>
+			</a>
+			
+			<ul id="toc-tp_smapi-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Invert_module_parameter" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Invert_module_parameter">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.2</span>Invert module parameter</div>
+			</a>
+			
+			<ul id="toc-Invert_module_parameter-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Shock_protection" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Shock_protection">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Shock protection</div>
+			</a>
+			
+				<button aria-controls="toc-Shock_protection-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Shock protection subsection
+				</button>
+			
+			<ul id="toc-Shock_protection-sublist" class="sidebar-toc-list">
+				<li id="toc-hdapsd" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#hdapsd">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.1</span>hdapsd</div>
+			</a>
+			
+			<ul id="toc-hdapsd-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-GUI_Utilities" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#GUI_Utilities">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>GUI Utilities</div>
+			</a>
+			
+			<ul id="toc-GUI_Utilities-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-See_also" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#See_also">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4</span>See also</div>
+			</a>
+			
+			<ul id="toc-See_also-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../en/Hard_Drive_Active_Protection_System.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="mw-list-item"><a href="../en/Talk:Hard_Drive_Active_Protection_System.html" rel="discussion" title="Discussion about the content page [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">English</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../en/Hard_Drive_Active_Protection_System.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=Hard_Drive_Active_Protection_System&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=Hard_Drive_Active_Protection_System&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../en/Hard_Drive_Active_Protection_System.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Hard_Drive_Active_Protection_System&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Hard_Drive_Active_Protection_System&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output">
+<div class="archwiki-template-meta-related-articles-start">
+<p class="mw-no-invert">Related articles</p>
+<ul>
+<li><a href="../en/Hpfall.html" title="Hpfall">hpfall</a></li>
+</ul>
+</div>
+<p>Hard Drive Active Protection System (<b>HDAPS</b>) protects your hard drive from sudden shocks (such as dropping or banging your laptop on a desk). It does this by parking the disk heads, so that shocks do not cause them to crash into the drive's platters. Hopefully, this will prevent catastrophic failure.
+Also see <a href="https://en.wikipedia.org/wiki/Active_hard-drive_protection" class="extiw" title="wikipedia:Active hard-drive protection">Active hard-drive protection</a>.
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> <a href="../en/Solid_state_drive.html" class="mw-redirect" title="SSD">SSD</a> drives do not need HDAPS as they lack any mechanical components.</div>
+<mw:tocplace></mw:tocplace>
+<h2><span class="mw-headline" id="Shock_detection">Shock detection</span></h2>
+<p>Your hardware needs to support some kind of shock detection.  This is usually in the form of an accelerometer built into your laptop's motherboard.  If you have the hardware, you also need a way to communicate what the hardware is detecting to your operating system.  This section describes drivers to communicate the accelerometer's state to the OS so it can detect and protect against shocks.
+</p>
+<h3><span class="mw-headline" id="tp_smapi">tp_smapi</span></h3>
+<p><a href="../en/Tp_smapi.html" title="Tp smapi">tp_smapi</a> is a set of drivers for many ThinkPad laptops.  It is highly recommended if you have a supported ThinkPad, even if you do not plan to use HDAPS.  Among a plethora of other useful things, tp_smapi represents the accelerometer output as joystick devices <code>/dev/input/js#</code>.
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> This could interfere with other joystick devices on your system.</div>
+<p><a href="../en/Help:Reading.html#Installation_of_packages" class="mw-redirect" title="Install">Install</a> <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=tp_smapi">tp_smapi</a></span>. After a reboot, this will activate most of the drivers, represented through the <code>/sys/devices/platform/smapi</code> filesystem.
+</p>
+<p>The kernel provides its own HDAPS drivers. The <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=tp_smapi">tp_smapi</a></span> package installs <code>hdaps.ko</code> to <a rel="nofollow" class="external text" href="https://www.mail-archive.com/arch-dev-public@archlinux.org/msg01995.html">/lib/modules/$(uname -r)/updates</a>, which will let it supercede the built-in module.  Thus, you can simply add <code>hdaps</code> to your <code>MODULES</code> array.
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> According to <a rel="nofollow" class="external text" href="https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=628829">this bug report</a>, certain ThinkPad laptops use different firmware which tp_smapi does not support and is unlikely to support in the near future. This includes the following series: Edge, SL, L, X1xxe. Only one of these is listed in the "unsupported hardware" page for the project, however, and that listing suggests that the x121e should mostly work. I get the same error with the x121e listed at the bottom of the bug report as a different and more fundamental problem, though, so it may be that some models of the x121e are mostly supported and others are entirely unsupported.</div>
+<h3><span class="mw-headline" id="Invert_module_parameter">Invert module parameter</span></h3>
+<p>For some ThinkPads, the invert module parameter is needed in order to handle the X and Y rotation axes correctly. In that case, you can add the option in <code>/etc/modprobe.d/modprobe.conf</code>:
+</p>
+<pre>options hdaps invert=1
+</pre>
+<p><code>invert=1</code> is an example value used for a ThinkPad T410. The invert option takes the following values:
+</p>
+<ul>
+<li>invert=1 invert both X and Y axes;</li>
+<li>invert=2 invert the X axes (uninvert if already both axes inverted)</li>
+<li>invert=4 swap X and Y (takes place before inverting)</li>
+</ul>
+<p>Note that options can be summed. For instance, invert=5 swaps the axes and inverts them. The maximum value of invert is obviously 7. If you do not know which option is correct for you, just try them out with hdaps-gl or some other GUI (see below). Alternatively, you can determine the exact value for your thinkpad model from <a rel="nofollow" class="external text" href="https://www.thinkwiki.org/wiki/Tp_smapi">this table</a> under the column labelled "HDAPS axis orientation".
+</p>
+<p>As an alternative to reloading the <code>hdaps</code> module, the <code>invert</code> value can also be written directly to <code>/sys/devices/platform/hdaps/invert</code>.
+</p>
+<h2><span class="mw-headline" id="Shock_protection">Shock protection</span></h2>
+<p>Now that your hardware is reporting its shock detection to the OS, we need to do something with this data. This section describes software utilities to transform the sensor output into shock protection.
+</p>
+<h3><span class="mw-headline" id="hdapsd">hdapsd</span></h3>
+<p>hdapsd monitors the output of the HDAPS joystick devices to determine if a shock is about to occur, then tells the kernel to park the disk heads.
+</p>
+<p>You should check your "Load cycle count" in <a href="../en/S.M.A.R.T..html" class="mw-redirect" title="SMART">SMART</a> when setting up hdaps, if it is too sensitive the head would park too often and load cycle count would rise too rapidly.
+</p>
+<p><a href="../en/Help:Reading.html#Installation_of_packages" class="mw-redirect" title="Install">Install</a> <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=hdapsd">hdapsd</a></span>. You can <a href="../en/Help:Reading.html#Control_of_systemd_units" class="mw-redirect" title="Start">start</a> hdapsd with <code>hdapsd@device.service</code>, however you do not need to enable it.
+</p>
+<p>The package installs udev rules. Udev will start one hdapsd instance for each rotational, non-removable disk it finds.
+For more information, see the <a rel="nofollow" class="external text" href="https://github.com/evgeni/hdapsd#systemd-and-udev-integration:Link">hdapsd github page</a>.
+</p>
+<p>It may be desirable to tweak the parameters used by hdaspd. <a href="../en/Systemd.html#Editing_provided_units" class="mw-redirect" title="Edit">Edit</a> <code>hdapsd.service</code> and add e.g <code>--sensitivity=40 -blp</code> to the parameters.
+</p>
+<h2><span class="mw-headline" id="GUI_Utilities">GUI Utilities</span></h2>
+<p>Utilities exist to monitor hdapsd's status so you know what is going on while you are using your laptop. These are entirely optional.
+</p>
+<p><b>xfce4-hdaps</b> — Xfce4 panel applet that can represents the current status of your hard drive.
+</p>
+<dl><dd>
+<a rel="nofollow" class="external free" href="http://michael.orlitzky.com/code/xfce4-hdaps.xhtml">http://michael.orlitzky.com/code/xfce4-hdaps.xhtml</a> || <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/xfce4-hdaps/">xfce4-hdaps</a></span><sup><small>AUR</small></sup>
+</dd></dl>
+<p><b>HDAPSicon</b> — Formerly thinkhdaps, standalone GTK applet for HDAPS disk protection status.
+</p>
+<dl><dd>
+<a rel="nofollow" class="external free" href="https://github.com/thpani/thinkhdaps">https://github.com/thpani/thinkhdaps</a> || <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/hdapsicon-git/">hdapsicon-git</a></span><sup><small>AUR</small></sup>
+</dd></dl>
+<p><b>hdaps-gl</b> — Simple OpenGL application showing the 3D animation of your Thinkpad. Similar to the apllication Lenovo distributes with Windows.
+</p>
+<dl><dd>
+<a rel="nofollow" class="external free" href="https://github.com/evgeni/hdapsd">https://github.com/evgeni/hdapsd</a> || <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/hdaps-gl/">hdaps-gl</a></span><sup><small>AUR</small></sup>
+</dd></dl>
+<h2><span class="mw-headline" id="See_also">See also</span></h2>
+<ul>
+<li><a rel="nofollow" class="external text" href="https://www.thinkwiki.org/wiki/How_to_protect_the_harddisk_through_APS">How to protect the harddisk through APS at ThinkWiki</a></li>
+<li><a rel="nofollow" class="external text" href="https://www.thinkwiki.org/wiki/HDAPS">HDAPS at ThinkWiki</a></li>
+</ul>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="../en/Category:Lenovo.html" title="Category:Lenovo">Lenovo</a></li></ul>
+</div></div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=Hard_Drive_Active_Protection_System&amp;oldid=778604">https://wiki.archlinux.org/index.php?title=Hard_Drive_Active_Protection_System&amp;oldid=778604</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 19 May 2023, at 13:35.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

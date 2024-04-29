@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>TOMOYO Linux - ArchWiki</title>
+<link rel="stylesheet" href="../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-TOMOYO_Linux rootpage-TOMOYO_Linux skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Introduction" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Introduction">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Introduction</div>
+			</a>
+			
+			<ul id="toc-Introduction-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Branches_of_development" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Branches_of_development">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Branches of development</div>
+			</a>
+			
+			<ul id="toc-Branches_of_development-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-TOMOYO_Linux_1.x" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#TOMOYO_Linux_1.x">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>TOMOYO Linux 1.x</div>
+			</a>
+			
+				<button aria-controls="toc-TOMOYO_Linux_1.x-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle TOMOYO Linux 1.x subsection
+				</button>
+			
+			<ul id="toc-TOMOYO_Linux_1.x-sublist" class="sidebar-toc-list">
+				<li id="toc-Initializing_configuration" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Initializing_configuration">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.1</span>Initializing configuration</div>
+			</a>
+			
+			<ul id="toc-Initializing_configuration-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-AKARI" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#AKARI">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4</span>AKARI</div>
+			</a>
+			
+				<button aria-controls="toc-AKARI-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle AKARI subsection
+				</button>
+			
+			<ul id="toc-AKARI-sublist" class="sidebar-toc-list">
+				<li id="toc-Limitations_of_AKARI" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Limitations_of_AKARI">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.1</span>Limitations of AKARI</div>
+			</a>
+			
+			<ul id="toc-Limitations_of_AKARI-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Installation" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Installation">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.2</span>Installation</div>
+			</a>
+			
+			<ul id="toc-Installation-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Initializing_configuration_2" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Initializing_configuration_2">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.3</span>Initializing configuration</div>
+			</a>
+			
+			<ul id="toc-Initializing_configuration_2-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-TOMOYO_Linux_2.x" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#TOMOYO_Linux_2.x">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5</span>TOMOYO Linux 2.x</div>
+			</a>
+			
+				<button aria-controls="toc-TOMOYO_Linux_2.x-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle TOMOYO Linux 2.x subsection
+				</button>
+			
+			<ul id="toc-TOMOYO_Linux_2.x-sublist" class="sidebar-toc-list">
+				<li id="toc-Limitations_of_TOMOYO_Linux_2.x" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Limitations_of_TOMOYO_Linux_2.x">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5.1</span>Limitations of TOMOYO Linux 2.x</div>
+			</a>
+			
+			<ul id="toc-Limitations_of_TOMOYO_Linux_2.x-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Installation_2" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Installation_2">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5.2</span>Installation</div>
+			</a>
+			
+			<ul id="toc-Installation_2-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Activation" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Activation">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5.3</span>Activation</div>
+			</a>
+			
+			<ul id="toc-Activation-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Disabling" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Disabling">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5.4</span>Disabling</div>
+			</a>
+			
+			<ul id="toc-Disabling-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Initializing_configuration_3" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Initializing_configuration_3">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5.5</span>Initializing configuration</div>
+			</a>
+			
+			<ul id="toc-Initializing_configuration_3-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Log_daemon" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Log_daemon">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5.6</span>Log daemon</div>
+			</a>
+			
+			<ul id="toc-Log_daemon-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Usage" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Usage">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6</span>Usage</div>
+			</a>
+			
+			<ul id="toc-Usage-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-See_also" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#See_also">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">7</span>See also</div>
+			</a>
+			
+			<ul id="toc-See_also-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../en/TOMOYO_Linux.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="mw-list-item"><a href="../en/Talk:TOMOYO_Linux.html" rel="discussion" title="Discussion about the content page [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">English</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../en/TOMOYO_Linux.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=TOMOYO_Linux&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=TOMOYO_Linux&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../en/TOMOYO_Linux.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=TOMOYO_Linux&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=TOMOYO_Linux&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output">
+<div class="archwiki-template-meta-related-articles-start">
+<p class="mw-no-invert">Related articles</p>
+<ul>
+<li><a href="../en/AppArmor.html" title="AppArmor">AppArmor</a></li>
+<li><a href="../en/SELinux.html" title="SELinux">SELinux</a></li>
+</ul>
+</div>
+<p><a rel="nofollow" class="external text" href="https://tomoyo.osdn.jp/">TOMOYO Linux</a> is a <a href="../en/Security.html#Mandatory_access_control" class="mw-redirect" title="Mandatory Access Control">Mandatory Access Control</a> (MAC) implementation for Linux. It was launched in March 2003 and was sponsored by <a rel="nofollow" class="external text" href="https://www.nttdata.com/global/en/">NTT Data Corporation</a>. TOMOYO Linux focuses on the behaviour of a system, allowing each process to declare behaviours and resources needed to achieve its purpose. It can be used as a system analysis tool as well as an access restriction tool.
+</p>
+<p>The security goal of TOMOYO Linux is to provide "MAC that covers practical requirements for most users and keeps usable for most administrators". TOMOYO Linux is not a tool for just security professionals, but also for average users and administrators.
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> This article does not aim to be an exhaustive guide and should be used as a supplement to the extensive <a rel="nofollow" class="external text" href="https://tomoyo.osdn.jp/documentation.html">user documentation</a> provided by the project.</div>
+<div class="archwiki-template-box archwiki-template-box-tip">
+<strong>Tip:</strong> The <a href="#TOMOYO_Linux_2.x">TOMOYO Linux 2.x</a> will eventually come closer to reaching feature parity with the 1.x branch, but for those wanting an easy start the 2.x branch is easy to install. The <a href="#TOMOYO_Linux_1.x">TOMOYO Linux 1.x</a> branch is for those wanting the greatest security, while <a href="#AKARI">AKARI</a> is somewhere in between.</div>
+<mw:tocplace></mw:tocplace>
+<h2><span class="mw-headline" id="Introduction">Introduction</span></h2>
+<p>TOMOYO Linux attempts to make the system where everything is prearranged in an easy to understand way:
+</p>
+<ul>
+<li>Make all access requests that will occur at least once during the lifetime of the kernel known in advance.</li>
+<li>Allow the administrator to write a policy that only allows expected and desirable access requests.</li>
+</ul>
+<p>Unlike AppArmor, TOMOYO Linux is intended to protect the whole system from attackers exploiting vulnerabilities in applications. TOMOYO Linux addresses this threat by recording the behaviour of all applications in the test environment and then forcing all applications to act within these recorded behaviours in the production environment.
+</p>
+<p>TOMOYO Linux is not for users wanting ready-made policy files supplied by others. It involves creating policy from scratch, aided by the "learning mode" which can automatically generate policy files with necessary and sufficient permissions for a specific system. TOMOYO Linux reports what is happening within the Linux system and can therefore be used as a system analysis tool. It resembles strace and reports what is being executed by each program and what files/networks are accessed.
+</p>
+<p>This <a rel="nofollow" class="external text" href="https://web.archive.org/web/20200724003239/http://tomoyo.osdn.jp/wiki-e/?WhatIs#comparison">table</a> provides a comprehensive comparison of TOMOYO Linux with <a href="../en/AppArmor.html" title="AppArmor">AppArmor</a>, <a href="../en/SELinux.html" title="SELinux">SELinux</a> and <a href="https://en.wikipedia.org/wiki/Smack_(software)" class="extiw" title="wikipedia:Smack (software)">SMACK</a>.
+</p>
+<h2><span class="mw-headline" id="Branches_of_development">Branches of development</span></h2>
+<p><a rel="nofollow" class="external text" href="https://tomoyo.osdn.jp/1.8/index.html">TOMOYO Linux 1.x</a> is the original branch of development. TOMOYO Linux was first released on 11th November 2005. It was implemented as a patch that can be applied to the Linux kernel and is still in active development. It can coexist with other security modules such as SELinux, SMACK and AppArmor.
+</p>
+<p><a rel="nofollow" class="external text" href="https://tomoyo.osdn.jp/2.6/index.html">TOMOYO Linux 2.x</a> is the Linux mainline kernel branch of development. In June 2009, TOMOYO was merged into the Linux kernel version 2.6.30 and it uses standard Linux Security Module (LSM) hooks. However, the LSM hooks must be extended further in order to port the full MAC functionality of TOMOYO Linux into the Linux kernel. Thus, it does not yet provide equal functionality with the 1.x branch of development. This <a rel="nofollow" class="external text" href="https://tomoyo.osdn.jp/comparison.html">chart</a> compares the differences between each branch.
+</p>
+<p><a rel="nofollow" class="external text" href="https://akari.osdn.jp/">AKARI</a> is based on the TOMOYO Linux 1.x branch and is implemented as a Loadable Kernel Module (LKM). It therefore has the advantage of not requiring the user to patch and recompile the kernel. This <a rel="nofollow" class="external text" href="https://akari.osdn.jp/comparison.html">table</a> provides a comprehensive comparison of AKARI with the TOMOYO Linux 1.x and 2.x branches.
+</p>
+<h2><span class="mw-headline" id="TOMOYO_Linux_1.x">TOMOYO Linux 1.x</span></h2>
+<p>Implementing TOMOYO Linux 1.x using a kernel patched with ccs-patch provides the full functionality obtainable from the TOMOYO Linux project. However, implementation of this branch requires the most hurdles to be overcome, as the kernel must be patched with <a rel="nofollow" class="external text" href="https://osdn.net/projects/tomoyo/">ccs-patch</a> and subsequently recompiled.
+</p>
+<p>Both a patched kernel and the userspace tools must be installed. A package for <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/ccs-tools/">ccs-tools</a></span><sup><small>AUR</small></sup> is available on the AUR.
+</p>
+<h3><span class="mw-headline" id="Initializing_configuration">Initializing configuration</span></h3>
+<p>The policy must first be initialized:
+</p>
+<pre># /usr/lib/ccs/init_policy
+</pre>
+<p>The policy files are saved in the <code>/etc/css/</code> directory and can be edited by running:
+</p>
+<pre># ccs-editpolicy
+</pre>
+<h2><span class="mw-headline" id="AKARI">AKARI</span></h2>
+<h3><span class="mw-headline" id="Limitations_of_AKARI">Limitations of AKARI</span></h3>
+<p>If using the TOMOYO Linux project purely for system analysis, then AKARI is the easiest method of achieving this. If using the TOMOYO Linux project for system restriction, it is a minimal effort way to gain most of the functionality of the TOMOYO Linux 1.x branch. However, there are a few limitations that must be considered:
+</p>
+<ul>
+<li>It depends on the kernel version and configuration provided by the distribution: <pre>CONFIG_SECURITY=y [required]
+CONFIG_KALLSYMS=y [required]
+CONFIG_PROC_FS=y [required]
+CONFIG_MODULES=y [required]
+CONFIG_SECURITY_PATH=y [optional: for using absolute pathnames]
+CONFIG_SECURITY_NETWORK=y [optional: for providing network restriction]
+</pre>
+</li>
+<li>The restriction of a few advanced networking operations are limited or unavailable due to the absence of required LSM hooks.</li>
+<li>Restricting use of <a href="../en/Capabilities.html" title="Capabilities">capabilities</a> is not possible.</li>
+<li>Looking up per-task variables is slower as they are managed outside "struct task_struct" in order to keep KABI unchanged. However, this should not be noticeable for the typical end-user as performance decrease by pathname based permission checking is dominant.</li>
+</ul>
+<p>This <a rel="nofollow" class="external text" href="https://akari.osdn.jp/comparison.html">table</a> provides a comprehensive comparison of AKARI with the TOMOYO Linux 1.x and 2.x branches.
+</p>
+<h3><span class="mw-headline" id="Installation">Installation</span></h3>
+<p>Both AKARI and the userspace tools must be installed. A package for <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/akari/">akari</a></span><sup><small>AUR</small></sup> and a package for <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/ccs-tools/">ccs-tools</a></span><sup><small>AUR</small></sup> are available on the AUR.
+</p>
+<p>To activate AKARI, set the following <a href="../en/Kernel_parameters.html" class="mw-redirect" title="Kernel parameter">kernel parameter</a>:
+</p>
+<pre>init=/usr/bin/ccs-init
+</pre>
+<h3><span class="mw-headline" id="Initializing_configuration_2">Initializing configuration</span></h3>
+<p>The policy must first be initialized:
+</p>
+<pre># /usr/lib/ccs/init_policy --module_name=akari
+</pre>
+<p>The policy files are saved in the <code>/etc/css/</code> directory and can be edited by running:
+</p>
+<pre># ccs-editpolicy
+</pre>
+<h2><span class="mw-headline" id="TOMOYO_Linux_2.x">TOMOYO Linux 2.x</span></h2>
+<h3><span class="mw-headline" id="Limitations_of_TOMOYO_Linux_2.x">Limitations of TOMOYO Linux 2.x</span></h3>
+<p>The implementation of TOMOYO Linux 2.x into the Linux mainline kernel is not yet complete but is very close to 1.x since 2.5.x. There are a few features that still need to be implemented as compared to the 1.x branch. This <a rel="nofollow" class="external text" href="https://tomoyo.osdn.jp/comparison.html">chart</a> has a comprehensive comparison of the differences between each branch of development.
+</p>
+<h3><span class="mw-headline" id="Installation_2">Installation</span></h3>
+<p>TOMOYO is supported by all <a href="../en/Kernel.html#Officially_supported_kernels" title="Kernel">officially supported kernels</a>.
+</p>
+<p>For custom kernels make sure that the following kernel options are set:
+</p>
+<pre>CONFIG_SECURITY=y
+CONFIG_SECURITYFS=y
+CONFIG_SECURITY_NETWORK=y
+CONFIG_SECURITY_PATH=y
+CONFIG_SECURITY_TOMOYO=y
+CONFIG_SECURITY_TOMOYO_POLICY_LOADER="/usr/bin/tomoyo-init"
+CONFIG_SECURITY_TOMOYO_ACTIVATION_TRIGGER="/usr/lib/systemd/systemd"
+CONFIG_LSM="landlock,lockdown,yama,integrity,tomoyo,bpf"
+</pre>
+<p>Install the 2.6 branch of the userspace tools with <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/tomoyo-tools/">tomoyo-tools</a></span><sup><small>AUR</small></sup>.
+</p>
+<h3><span class="mw-headline" id="Activation">Activation</span></h3>
+<p>To activate TOMOYO Linux, set the following <a href="../en/Kernel_parameters.html" title="Kernel parameters">kernel parameters</a> to enable the Linux Security Module:
+</p>
+<pre>lsm=landlock,lockdown,yama,integrity,tomoyo,bpf
+</pre>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> The <code>lsm=</code> kernel parameter sets the initialization order of Linux security modules. The kernel's configured <code>lsm=</code> value can be found with <code>zgrep CONFIG_LSM= /proc/config.gz</code> and the current value with <code>cat /sys/kernel/security/lsm</code>.
+<ul>
+<li>Make sure that <code>tomoyo</code> is the first "major" module in the list.<a rel="nofollow" class="external autonumber" href="https://docs.kernel.org/admin-guide/LSM/index.html">[1]</a> Examples of valid values and their order can be found in <a rel="nofollow" class="external text" href="https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/security/Kconfig">security/Kconfig</a>.</li>
+<li>
+<code>capability</code> should be omitted from <code>lsm=</code> as it will always get included automatically.</li>
+</ul>
+</div>
+<p>TOMOYO will load all saved policies from <code>/etc/tomoyo/policy/current</code> when <code>/usr/lib/systemd/systemd</code> executes.
+</p>
+<p>Next, check whether the activation was successful. You should have the following lines (or similar) from <a href="../en/Core_utilities.html#Essentials" class="mw-redirect" title="Dmesg">dmesg</a>:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;"># dmesg | grep -A 1 -B 1 TOMOYO</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">[    0.003375] Security Framework initialized
+[    0.003387] TOMOYO Linux initialized
+[    0.003396] AppArmor: AppArmor disabled by boot time parameter
+--
+[    6.829798] Calling /usr/bin/tomoyo-init to load policy. Please wait.
+[    6.833709] TOMOYO: 2.5.0
+[    6.833712] Mandatory Access Control activated.
+</pre>
+<p>For first time, you may want to auto-save in-memory policies to filesystem when computer goes to shutdown/reboot. If yes, create the following <a href="../en/Systemd.html" title="Systemd">systemd</a> unit:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/systemd/system/tomoyo-savepolicy.service</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">[Unit]                                                                                        
+Description=Tomoyo savepolicy
+
+[Service]
+Type=oneshot
+ExecStart=/bin/true
+ExecStop=/usr/bin/tomoyo-savepolicy
+StandardInput=tty
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
+</pre>
+<p><a href="../en/Help:Reading.html#Control_of_systemd_units" class="mw-redirect" title="Enable">Enable</a> <code>tomoyo-savepolicy.service</code>.
+</p>
+<h3><span class="mw-headline" id="Disabling">Disabling</span></h3>
+<p>Remove <code>tomoyo</code> from the <code>lsm=</code> <a href="../en/Kernel_parameters.html" class="mw-redirect" title="Kernel parameter">kernel parameter</a> or remove <code>lsm=</code> entirely.
+</p>
+<h3><span class="mw-headline" id="Initializing_configuration_3">Initializing configuration</span></h3>
+<p>The policy must first be initialized:
+</p>
+<pre># /usr/lib/tomoyo/init_policy
+</pre>
+<p>The policy files are saved in the <code>/etc/tomoyo/</code> directory and can be edited by running:
+</p>
+<pre># tomoyo-editpolicy
+</pre>
+<p>By default, tomoyo will start with "Disabled" profile (see profile-table below). You may want to enable learning mode for everybody right now. Just switch profile for <code>&lt;kernel&gt;</code> namespace in <code>/etc/tomoyo/policy/current/domain_policy.conf</code>:
+</p>
+<pre>&lt;kernel&gt;
+use_profile 1
+use_group 0
+</pre>
+<p>If unsure if such wide learning is needed, just ignore this step. You can switch profiles later using <i>tomoyo-editpolicy</i> in "Domain transition editor" by pressing <i>S</i> on any selected domain (domains).
+</p>
+<p>Now, the computer should be restarted.
+</p>
+<h3><span class="mw-headline" id="Log_daemon">Log daemon</span></h3>
+<p>For tomoyo exists the log-daemon <code>tomoyo-auditd</code>. It is useful for monitoring the behavior of closed-source applications. The initial configuration file is well explained and can be found in <code>/etc/tomoyo/tools/auditd.conf</code> whereas the log files can be found in <code>/var/log/tomoyo/</code>.
+</p>
+<p>To use it with systemd create the file <code>/etc/systemd/system/tomoyo-auditd.service</code> with the content described in chapter 4.6 in the official <a rel="nofollow" class="external text" href="https://tomoyo.osdn.jp/2.6/chapter-4.html">documentation</a>.
+</p>
+<h2><span class="mw-headline" id="Usage">Usage</span></h2>
+<p>It is important to consult the relevant documentation in order to use TOMOYO Linux or AKARI effectively:
+</p>
+<ul>
+<li><a rel="nofollow" class="external text" href="https://tomoyo.osdn.jp/documentation.html">TOMOYO Linux documentation</a></li>
+<li><a rel="nofollow" class="external text" href="https://akari.osdn.jp/index.html">AKARI documentation</a></li>
+</ul>
+<p>Run the policy editor to begin editing. If using TOMOYO Linux 1.x or AKARI, then <i>ccs-tools</i> should be used:
+</p>
+<pre># ccs-editpolicy
+</pre>
+<p>If using TOMOYO Linux 2.x, then <i>tomoyo-tools</i> should be used:
+</p>
+<pre># tomoyo-editpolicy
+</pre>
+<p>As the system runs, TOMOYO Linux will create domains and add them to the tree. The access analysis/restriction in TOMOYO Linux is applied via domains. Every process belongs to a single domain and the process will transit to a different domain whenever it executes a program. The name of a domain is a concatenated string expression for the process execution history. For example, the name of the domain which the kernel belongs to is "&lt;kernel&gt;"; the name of domain which <code>/sbin/init</code> invoked by the kernel belongs to is "&lt;kernel&gt; /sbin/init"; if <code>/sbin/init</code> invokes <code>/etc/rc.d/rc</code> then the domain it belongs to is "&lt;kernel&gt; /sbin/init /etc/rc.d/rc". You can suppress or initialize domain transitions as needed.
+</p>
+<p>Profiles can be assigned to each domain. There are four default profiles:
+</p>
+<table class="wikitable">
+<tbody>
+<tr>
+<td>Disabled</td>
+<td>Works as if regular kernel.
+</td>
+</tr>
+<tr>
+<td>Learning</td>
+<td>Do not reject an access request if it violates policy. Append the request to policy.
+</td>
+</tr>
+<tr>
+<td>Permissive</td>
+<td>Do not reject an access request if it violates policy. Do not append the request to policy.
+</td>
+</tr>
+<tr>
+<td>Enforcing</td>
+<td>Reject an access request if it violates policy. Do not append the request to policy.
+</td>
+</tr>
+</tbody>
+</table>
+<p>The learning profile can be used to analyse the system or a specific application. Once all of the desired access requests of a domain have been identified, the policy for that domain can be edited as required before selecting the enforcing profile. This can be done for any and all domains from the start of system boot.
+</p>
+<h2><span class="mw-headline" id="See_also">See also</span></h2>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Tomoyo_Linux" class="extiw" title="wikipedia:Tomoyo Linux">Wikipedia:Tomoyo Linux</a></li>
+<li><a rel="nofollow" class="external text" href="https://tomoyo.osdn.jp/">TOMOYO Linux Home Page</a></li>
+<li><a rel="nofollow" class="external text" href="https://web.archive.org/web/20200422131542/http://tomoyo.osdn.jp/wiki-e/">TOMOYO Linux Wiki</a></li>
+<li><a rel="nofollow" class="external text" href="https://akari.osdn.jp/">AKARI Home Page</a></li>
+<li><a rel="nofollow" class="external text" href="https://akari.osdn.jp/documentation.html">AKARI Documentation</a></li>
+<li><a rel="nofollow" class="external text" href="https://akari.osdn.jp/comparison.html">AKARI/TOMOYO functionality comparison table</a></li>
+<li><a rel="nofollow" class="external text" href="https://tomoyo.osdn.jp/1.8/index.html">TOMOYO Linux 1.8.x : The Official Guide</a></li>
+<li><a rel="nofollow" class="external text" href="https://tomoyo.osdn.jp/2.6/index.html">TOMOYO Linux 2.6.x : The Official Guide</a></li>
+<li><a rel="nofollow" class="external text" href="https://lwn.net/Articles/263179/">TOMOYO Linux Security Goal</a></li>
+<li><a rel="nofollow" class="external text" href="https://tomoyo.osdn.jp/cgi-bin/lxr/source/centos5.5/domain_policy.conf?v=policy-sample">Policy sample</a></li>
+<li><a rel="nofollow" class="external text" href="https://elinux.org/TomoyoLinux">TOMOYO Linux on the Embedded Linux Wiki</a></li>
+<li><a rel="nofollow" class="external text" href="https://osdn.net/projects/tomoyo/docs/PacSec2007-en-demo.pdf">Presentation slides from PacSec 2007</a></li>
+</ul>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../Special:Categories.html" title="Special:Categories">Categories</a>: <ul>
+<li><a href="../en/Category:Access_control.html" title="Category:Access control">Access control</a></li>
+<li><a href="../en/Category:Kernel.html" title="Category:Kernel">Kernel</a></li>
+</ul>
+</div></div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=TOMOYO_Linux&amp;oldid=774151">https://wiki.archlinux.org/index.php?title=TOMOYO_Linux&amp;oldid=774151</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 29 March 2023, at 18:54.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

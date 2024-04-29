@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>Arch Linux AMIs for Amazon Web Services - ArchWiki</title>
+<link rel="stylesheet" href="../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Arch_Linux_AMIs_for_Amazon_Web_Services rootpage-Arch_Linux_AMIs_for_Amazon_Web_Services skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Public_community_Arch_AMIs" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Public_community_Arch_AMIs">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Public community Arch AMIs</div>
+			</a>
+			
+				<button aria-controls="toc-Public_community_Arch_AMIs-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Public community Arch AMIs subsection
+				</button>
+			
+			<ul id="toc-Public_community_Arch_AMIs-sublist" class="sidebar-toc-list">
+				<li id="toc-AMIs" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#AMIs">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.1</span>AMIs</div>
+			</a>
+			
+			<ul id="toc-AMIs-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-REST_API_to_List_AMIs" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#REST_API_to_List_AMIs">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.2</span>REST API to List AMIs</div>
+			</a>
+			
+			<ul id="toc-REST_API_to_List_AMIs-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-First_Run" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#First_Run">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.3</span>First Run</div>
+			</a>
+			
+			<ul id="toc-First_Run-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Build_process" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Build_process">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.4</span>Build process</div>
+			</a>
+			
+			<ul id="toc-Build_process-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Credits" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Credits">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.5</span>Credits</div>
+			</a>
+			
+			<ul id="toc-Credits-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Wishlist" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Wishlist">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.6</span>Wishlist</div>
+			</a>
+			
+			<ul id="toc-Wishlist-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Building_Arch_AMIs" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Building_Arch_AMIs">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Building Arch AMIs</div>
+			</a>
+			
+			<ul id="toc-Building_Arch_AMIs-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-AMI_Images_from_Uplink_Labs" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#AMI_Images_from_Uplink_Labs">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>AMI Images from Uplink Labs</div>
+			</a>
+			
+			<ul id="toc-AMI_Images_from_Uplink_Labs-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../en/Arch_Linux_AMIs_for_Amazon_Web_Services.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="mw-list-item"><a href="../en/Talk:Arch_Linux_AMIs_for_Amazon_Web_Services.html" rel="discussion" title="Discussion about the content page [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">English</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../en/Arch_Linux_AMIs_for_Amazon_Web_Services.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=Arch_Linux_AMIs_for_Amazon_Web_Services&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=Arch_Linux_AMIs_for_Amazon_Web_Services&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../en/Arch_Linux_AMIs_for_Amazon_Web_Services.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Arch_Linux_AMIs_for_Amazon_Web_Services&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Arch_Linux_AMIs_for_Amazon_Web_Services&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output">
+<mw:tocplace></mw:tocplace>
+<h2><span class="mw-headline" id="Public_community_Arch_AMIs">Public community Arch AMIs</span></h2>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> Arch Linux currently does not offer official <i>A</i>mazon <i>M</i>achine <i>I</i>mages. The ones listed here are created by the community.</div>
+<h3><span class="mw-headline" id="AMIs">AMIs</span></h3>
+<p><b>Arch Linux AMIs are listed here:</b> <a rel="nofollow" class="external free" href="http://arch-ami-list.drzee.net/">http://arch-ami-list.drzee.net/</a> 
+</p>
+<p>AMIs are build twice a month (the 1st and the 15th - 2:00am UTC) and are available for all regions that to do not explicitly require 'Opt-in' - see <a rel="nofollow" class="external text" href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions">Region List</a>. If an AMI is needed in a region where its currently not available, an AMI can be <a rel="nofollow" class="external text" href="https://aws.amazon.com/premiumsupport/knowledge-center/copy-ami-region/">copied</a> to that region.
+</p>
+<p>The AMIs are EBS HVM AMIs and are available with two different kernels:
+</p>
+<ul>
+<li>
+<b>std</b> - using the Standard Arch Linux Kernel from the default Arch repositories configured with the necessary modules for EC2 usage. The scheduler and I/O is not optimized for Cloud usage reducing performance.</li>
+<li>
+<b>ec2</b> - using an EC2 optimized kernel of the Standard Arch Linux Kernel created by UplinkLabs and hosted in a dedicated repository: <a rel="nofollow" class="external free" href="https://arch-linux-ami.s3.amazonaws.com/repo/$arch">https://arch-linux-ami.s3.amazonaws.com/repo/$arch</a><sup title="Last check status: 403">[<a href="https://en.wikipedia.org/wiki/Wikipedia:Link_rot" class="extiw" title="wikipedia:Wikipedia:Link rot">dead link</a> 2022-09-17 ⓘ]</sup> (see also <a rel="nofollow" class="external free" href="https://git.uplinklabs.net/steven/ec2-packages.git">https://git.uplinklabs.net/steven/ec2-packages.git</a>)</li>
+</ul>
+<p>Both kernels have been tested on many different EC2 instance types (t2, t3, t3a, m/r/c5, m/r/c6 and advanced hardware with GPUs) and are booting fine. 
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> As of 2023-06-12, there is confirmation that EC2 optimized kernel from UplinkLabs hangs upon boot when running on an instance family using the XEN hypervisor (e.g. <code>t2-micro</code>). The XEN kernel modules are not included in the latest kernel which is why the boot fails. Please use only instance families using the new Nitro Hypervisor - see: <a rel="nofollow" class="external text" href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/instance-types.html#ec2-nitro-instances">Instances build on Nitro</a>. These will still work with the EC2 optimized kernel.</div>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> <b>ec2</b> repository ships other packages alongside <b>linux-ec2</b> kernel. On default, <b>ec2</b> is set as the top most repository in <code>pacman.conf</code>. As a result, packages from <b>ec2</b> may have a higher priority than those from the <a href="../en/Official_repositories.html" title="Official repositories">Official repositories</a>. This can lead to some inconsistent behaviors depending on actual versions of packages.</div>
+<p>AMIs with LTS kernels are not build.
+</p>
+<h3><span class="mw-headline" id="REST_API_to_List_AMIs">REST API to List AMIs</span></h3>
+<p>An REST API is available to get a JSON of available AMIs:
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> The API endpoint may change without warning.</div>
+<ul>
+<li>Get all AMIs: <code><a rel="nofollow" class="external free" href="https://5nplxwo1k1.execute-api.eu-central-1.amazonaws.com/prod">https://5nplxwo1k1.execute-api.eu-central-1.amazonaws.com/prod</a></code>
+</li>
+<li>Get list of latest AMI in each region: <code><a rel="nofollow" class="external free" href="https://5nplxwo1k1.execute-api.eu-central-1.amazonaws.com/prod/latest">https://5nplxwo1k1.execute-api.eu-central-1.amazonaws.com/prod/latest</a></code> (this produces the same list as <a rel="nofollow" class="external free" href="http://arch-ami-list.drzee.net/">http://arch-ami-list.drzee.net/</a> but in JSON)</li>
+<li>Get all AMIs in region: <code><a rel="nofollow" class="external free" href="https://5nplxwo1k1.execute-api.eu-central-1.amazonaws.com/prod/region">https://5nplxwo1k1.execute-api.eu-central-1.amazonaws.com/prod/region</a></code> - replace <code>region</code> with the desired region: <code>eu-north-1</code>, <code>eu-west-1</code>, <code>us-east-1</code> etc.</li>
+<li>Get all AMIs in region for CPU architecture: <code><a rel="nofollow" class="external free" href="https://5nplxwo1k1.execute-api.eu-central-1.amazonaws.com/prod/region/arch">https://5nplxwo1k1.execute-api.eu-central-1.amazonaws.com/prod/region/arch</a></code> - replace <code>arch</code> with <code>x86_64</code>
+</li>
+<li>Get all AMIs in region for CPU architecture and kernel-type: <code><a rel="nofollow" class="external free" href="https://5nplxwo1k1.execute-api.eu-central-1.amazonaws.com/prod/region/arch/type">https://5nplxwo1k1.execute-api.eu-central-1.amazonaws.com/prod/region/arch/type</a></code> - replace <code>type</code> with <code>std</code> or <code>ec2</code>
+</li>
+<li>Get Latest AMI in region for in region for CPU architecture and kernel-type: <code><a rel="nofollow" class="external free" href="https://5nplxwo1k1.execute-api.eu-central-1.amazonaws.com/prod/region/arch/type/latest">https://5nplxwo1k1.execute-api.eu-central-1.amazonaws.com/prod/region/arch/type/latest</a></code> - replace <code>region</code>, <code>arch</code> and <code>type</code>
+</li>
+</ul>
+<h3><span class="mw-headline" id="First_Run">First Run</span></h3>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> The mirror list baked into the AMI was generated at time of image build and is using servers in Germany.</div>
+<p>After booting the AMI it is recommended/required to execute the following steps to initialize pacman and select fast local repositories: 
+</p>
+<pre># pacman-key --init
+# pacman-key --populate
+# reflector --country "<i>ISO 3166-1 Alpha-2 Country Code</i>" --protocol https,http --score 20 --sort rate --save /etc/pacman.d/mirrorlist
+# pacman -Syu
+</pre>
+<p>The <a href="../en/Reflector.html" title="Reflector">Reflector</a> package is preinstalled in the AMIs.
+</p>
+<p>It is recommended to set a proper configuration for reflector in <code>/etc/xdg/reflector/reflector.conf</code> and enable the timer services to regularly refresh the mirror list. For details see the <a href="../en/Reflector.html" title="Reflector">Reflector</a> package documentation. 
+</p>
+<p>Alternative provide your own mirrorlist and do not use the reflector package.
+</p>
+<h3><span class="mw-headline" id="Build_process">Build process</span></h3>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> This section provides a short description on how the AMIs are build.</div>
+<p>The entire build process runs on AWS and is fully automated. 
+</p>
+<p>Overall the automated build procedure is managed by a AWS Step Function that is executed at regular intervals using a Amazon EventBridge timed event. 
+</p>
+<p>The step function will initiate the build process and uses a combination of native calls and AWS Lambda functions for more complex elements.
+</p>
+<p>A new set of AMIs is build, by booting an EC2 instance with the previous AMI and using it as the <i>work or build machine</i>. The <i>build machine</i> is bootstrapped with a special build script that largely follows the steps outlined here: <a rel="nofollow" class="external free" href="http://mathcom.com/arch.aws.ami.html">http://mathcom.com/arch.aws.ami.html</a><sup title="Last check status: 404">[<a href="https://en.wikipedia.org/wiki/Wikipedia:Link_rot" class="extiw" title="wikipedia:Wikipedia:Link rot">dead link</a> 2023-04-22 ⓘ]</sup> with some minor modifications, tweaks and additions. Step 7.4 is skipped as we do not need a dedicated firewall. 
+</p>
+<p>Following the build of the AMI the new AMI is <i>test booted</i> on an EC2 instance to verify that it start up correctly. If successful the AMI is distributed to the regions and registered in a DynamoDB database. The database can be queried using the API REST endpoint. Old AMIs are deleted from the regions and the DynamoDB database.
+</p>
+<h3><span class="mw-headline" id="Credits">Credits</span></h3>
+<p>Thanks to <b>Steven</b> from UplinkLabs for helping to understand the build process and test the initial quality of the images. Also thanks to <b>Mathcom</b> for the <a rel="nofollow" class="external text" href="http://mathcom.com/arch.aws.ami.html">guide</a><sup title="Last check status: 404">[<a href="https://en.wikipedia.org/wiki/Wikipedia:Link_rot" class="extiw" title="wikipedia:Wikipedia:Link rot">dead link</a> 2023-04-22 ⓘ]</sup>, which accelerate putting the basic build process together.
+</p>
+<p>You may send comments and suggestions (without any promise that they will be looked at) to: <b>arch-ami 'at' drzee.net</b>
+</p>
+<h3><span class="mw-headline" id="Wishlist">Wishlist</span></h3>
+<ul>
+<li>Create official EC2/Cloud optimized kernels in the Standard Arch Linux repositories.</li>
+<li>
+<s>Add the AWS CLI v2 to the Standard Arch Linux repositories (v1 is available, but may be discontinued in the future)</s> - Thanks to yan12125 for adding <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=aws-cli-v2">aws-cli-v2</a></span>
+</li>
+</ul>
+<h2><span class="mw-headline" id="Building_Arch_AMIs">Building Arch AMIs</span></h2>
+<p>You can also build your own Arch Linux AMI. Here are some guides:
+</p>
+<ul>
+<li>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/linux-ec2/">linux-ec2</a></span><sup><small>AUR</small></sup> compiles the Arch Linux kernel for AWS with Xen modules enabled and the XSAVE patch applied. Note that at least some instance types will also work with the stock Arch Linux kernel.</li>
+<li>
+<a rel="nofollow" class="external text" href="https://www.uplinklabs.net/projects/arch-linux-on-ec2/">Uplink Labs</a> has a manual on the build process.</li>
+<li>Another tutorial on building your own AMIs can be found at <a rel="nofollow" class="external free" href="https://gitlab.com/anemos-io/archlinux-ec2">https://gitlab.com/anemos-io/archlinux-ec2</a>
+</li>
+<li>Mathcom publishes a detailed guide that uses only core Arch tools, at <a rel="nofollow" class="external free" href="http://mathcom.com/arch.aws.ami.html">http://mathcom.com/arch.aws.ami.html</a><sup title="Last check status: 404">[<a href="https://en.wikipedia.org/wiki/Wikipedia:Link_rot" class="extiw" title="wikipedia:Wikipedia:Link rot">dead link</a> 2023-04-22 ⓘ]</sup>
+</li>
+</ul>
+<h2><span class="mw-headline" id="AMI_Images_from_Uplink_Labs">AMI Images from Uplink Labs</span></h2>
+<div class="noprint archwiki-template-message">
+<p><a href="../File:Tango-view-refresh-red.png" class="image"><img alt="Tango-view-refresh-red.png" src="../File:Tango-view-refresh-red.png" decoding="async" width="48" height="48"></a><b>This article or section is out of date.</b><a href="../File:Tango-view-refresh-red.png" class="image"><img alt="Tango-view-refresh-red.png" src="../File:Tango-view-refresh-red.png" decoding="async" width="48" height="48"></a></p>
+<div>
+<b>Reason:</b> The AMIs provided by Uplink Labs are no longer maintained (Discuss in <a rel="nofollow" class="external text" href="https://wiki.archlinux.org/title/Talk:Arch_Linux_AMIs_for_Amazon_Web_Services">Talk:Arch Linux AMIs for Amazon Web Services</a>)</div>
+</div>
+<p>Uplink Labs creates new images approximately twice a month. Images are being built
+for a number of regions, and cover the following configurations:
+</p>
+<ul>
+<li>ebs hvm x86_64 lts</li>
+<li>s3  hvm x86_64 lts</li>
+<li>ebs hvm x86_64 stable</li>
+<li>s3  hvm x86_64 stable</li>
+</ul>
+<p>AMI links and more information are available at <a rel="nofollow" class="external free" href="https://www.uplinklabs.net/projects/arch-linux-on-ec2/">https://www.uplinklabs.net/projects/arch-linux-on-ec2/</a> .
+</p>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface">
+<div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="../en/Category:Installation_process.html" title="Category:Installation process">Installation process</a></li></ul>
+</div>
+<div id="mw-hidden-catlinks" class="mw-hidden-catlinks mw-hidden-cats-hidden">Hidden categories: <ul>
+<li><a href="../en/Category:Pages_with_dead_links.html" title="Category:Pages with dead links">Pages with dead links</a></li>
+<li><a href="../en/Category:Pages_or_sections_flagged_with_Template:Out_of_date.html" title="Category:Pages or sections flagged with Template:Out of date">Pages or sections flagged with Template:Out of date</a></li>
+</ul>
+</div>
+</div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=Arch_Linux_AMIs_for_Amazon_Web_Services&amp;oldid=786517">https://wiki.archlinux.org/index.php?title=Arch_Linux_AMIs_for_Amazon_Web_Services&amp;oldid=786517</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 31 August 2023, at 06:34.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

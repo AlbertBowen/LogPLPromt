@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>Install Arch Linux via Docker - ArchWiki</title>
+<link rel="stylesheet" href="../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Install_Arch_Linux_via_Docker rootpage-Install_Arch_Linux_via_Docker skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Pre-installation" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Pre-installation">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Pre-installation</div>
+			</a>
+			
+				<button aria-controls="toc-Pre-installation-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Pre-installation subsection
+				</button>
+			
+			<ul id="toc-Pre-installation-sublist" class="sidebar-toc-list">
+				<li id="toc-Prepare_an_installation_medium" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Prepare_an_installation_medium">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.1</span>Prepare an installation medium</div>
+			</a>
+			
+			<ul id="toc-Prepare_an_installation_medium-sublist" class="sidebar-toc-list">
+				<li id="toc-Full_disk_partitions" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Full_disk_partitions">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.1.1</span>Full disk partitions</div>
+			</a>
+			
+			<ul id="toc-Full_disk_partitions-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Volumes" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Volumes">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.1.2</span>Volumes</div>
+			</a>
+			
+			<ul id="toc-Volumes-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Mount_the_file_systems" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Mount_the_file_systems">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.2</span>Mount the file systems</div>
+			</a>
+			
+			<ul id="toc-Mount_the_file_systems-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Installation" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Installation">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Installation</div>
+			</a>
+			
+				<button aria-controls="toc-Installation-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Installation subsection
+				</button>
+			
+			<ul id="toc-Installation-sublist" class="sidebar-toc-list">
+				<li id="toc-Launching_the_container" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Launching_the_container">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.1</span>Launching the container</div>
+			</a>
+			
+			<ul id="toc-Launching_the_container-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Select_the_mirrors" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Select_the_mirrors">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.2</span>Select the mirrors</div>
+			</a>
+			
+			<ul id="toc-Select_the_mirrors-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Install_essential_packages" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Install_essential_packages">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.3</span>Install essential packages</div>
+			</a>
+			
+			<ul id="toc-Install_essential_packages-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Reboot" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Reboot">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>Reboot</div>
+			</a>
+			
+			<ul id="toc-Reboot-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Post-installation" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Post-installation">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4</span>Post-installation</div>
+			</a>
+			
+			<ul id="toc-Post-installation-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../en/Install_Arch_Linux_via_Docker.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="mw-list-item"><a href="../en/Talk:Install_Arch_Linux_via_Docker.html" rel="discussion" title="Discussion about the content page [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">English</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../en/Install_Arch_Linux_via_Docker.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=Install_Arch_Linux_via_Docker&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=Install_Arch_Linux_via_Docker&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../en/Install_Arch_Linux_via_Docker.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Install_Arch_Linux_via_Docker&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Install_Arch_Linux_via_Docker&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output">
+<div class="noprint archwiki-template-message">
+<p><a href="../File:Tango-edit-clear.png" class="image"><img alt="Tango-edit-clear.png" src="../File:Tango-edit-clear.png" decoding="async" width="48" height="48"></a><b>This article or section needs language, wiki syntax or style improvements. See <a href="../en/Help:Style.html" title="Help:Style">Help:Style</a> for reference.</b><a href="../File:Tango-edit-clear.png" class="image"><img alt="Tango-edit-clear.png" src="../File:Tango-edit-clear.png" decoding="async" width="48" height="48"></a></p>
+<div>
+<b>Reason:</b> Formatting does not comply to the guidelines, see <a href="../en/Help:Style.html" title="Help:Style">Help:Style</a>. (Discuss in <a rel="nofollow" class="external text" href="https://wiki.archlinux.org/title/Talk:Install_Arch_Linux_via_Docker">Talk:Install Arch Linux via Docker</a>)</div>
+</div>
+<p>This document is a guide for installing <a href="../en/Arch_Linux.html" title="Arch Linux">Arch Linux</a> using the official <a rel="nofollow" class="external text" href="https://hub.docker.com/_/archlinux">Arch Linux Container Image from Docker Hub</a>. For alternative means of installation, see <a href="../en/Category:Installation_process.html" title="Category:Installation process">Category:Installation process</a>.
+</p>
+<p>Before installing, it would be advised to view the <a href="../en/Frequently_asked_questions.html" class="mw-redirect" title="FAQ">FAQ</a>. For conventions used in this document, see <a href="../en/Help:Reading.html" title="Help:Reading">Help:Reading</a>. In particular, code examples may contain placeholders (formatted in <code><i>italics</i></code>) that must be replaced manually.
+</p>
+<p>For more detailed instructions, see the respective <a href="../en/ArchWiki:About.html" class="mw-redirect" title="ArchWiki">ArchWiki</a> articles or the various programs' <a href="../en/Man_page.html" title="Man page">man pages</a>, both linked from this guide. For interactive help, the <a href="../en/Arch_IRC_channels.html" class="mw-redirect" title="IRC channel">IRC channel</a> and the <a rel="nofollow" class="external text" href="https://bbs.archlinux.org/">forums</a> are also available.
+</p>
+<p>Arch Linux should run on any <a href="https://en.wikipedia.org/wiki/X86-64" class="extiw" title="wikipedia:X86-64">x86_64</a>-compatible machine with a minimum of 512 MiB RAM, though more memory is needed to boot the live system for installation <a rel="nofollow" class="external autonumber" href="https://lists.archlinux.org/archives/list/arch-releng@lists.archlinux.org/message/D5HSGOFTPGYI6IZUEB3ZNAX4D3F3ID37/">[1]</a>. A basic installation should take less than 2 GiB of disk space. As the installation process needs to retrieve packages from a remote repository, this guide assumes a working internet connection is available. Furthermore a working <a href="../en/Docker.html" title="Docker">Docker</a> setup on the host is required. While technically it is certainly possible to use any qemu supported host to install Arch with, this guide will not cover this however.
+</p>
+<mw:tocplace></mw:tocplace>
+<h2><span class="mw-headline" id="Pre-installation">Pre-installation</span></h2>
+<p>This guide assumes that the host system is already pre-configured with regards to normally expected things. E.g. the time is setup correctly, internet connection is working normally, EFI mode if required is setup correctly etc.
+</p>
+<h3><span class="mw-headline" id="Prepare_an_installation_medium">Prepare an installation medium</span></h3>
+<p>The installation requires a target directory to which Arch Linux will be installed. Any writable directory can be used, but it is quite likely that the target directory has a partition or volume mounted that will server as the root disk.
+</p>
+<h4><span class="mw-headline" id="Full_disk_partitions">Full disk partitions</span></h4>
+<p>If a full disk is being used as a target, it may need to be formatted. For details see <a href="../en/Installation_guide.html#Partition_the_disks" title="Installation guide">Installation guide#Partition the disks</a> as the same partitioning instructions and order can be followed from there. All the same restrictions and requirements as from there apply as well.
+</p>
+<p>Likewise, the new disk will also needed to be formatted. The instructions from <a href="../en/Installation_guide.html#Format_the_partitions" title="Installation guide">Installation guide#Format the partitions</a> can be used for this as well.
+</p>
+<h4><span class="mw-headline" id="Volumes">Volumes</span></h4>
+<p>When using filesystems such as <a href="../en/Btrfs.html" title="Btrfs">btrfs</a> or zfs, filesystem volumes are an option to use. Depending on what filesystem is used, creating them uses their own list of commands. In this guide, btrfs will be used as an example.
+</p>
+<p>First, a root volume for Arch Linux is created. This command assumes the current working directory is the btrfs root volume (subvolid=5), but anywhere could be used. If a different location is used, within an existing hierarchy, keep this in mind when later defining fstab and similar. Also note, that as the Arch Linux specific volume is created on a mounted (root) volume, it could be the case that the underlying stack is using (full)disk encryption.
+</p>
+<pre> # btrfs subvolume create "arch_root"
+</pre>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> To get the root volume, mount the btrfs with the <code>subvolid=5</code> option.</div>
+<h3><span class="mw-headline" id="Mount_the_file_systems">Mount the file systems</span></h3>
+<p>The following section assumes the location Arch Linux will be installed into <i>/tmp/target</i>. It is thus required that the partition is thus mounted there. Using a btrfs subvolume called <b>arch_root</b>, with <i>autodefrag</i> and <i>LZO compression</i> enabled would look as:
+</p>
+<pre># mkdir -p /tmp/target
+# mount /dev/<i>disk</i> /tmp/target -o subvol=arch_root,compress=lzo,autodefrag
+</pre>
+<p>The instructions from <a href="../en/Installation_guide.html#Mount_the_file_systems" title="Installation guide">Installation guide#Mount the file systems</a> can be used for this as well.
+</p>
+<h2><span class="mw-headline" id="Installation">Installation</span></h2>
+<h3><span class="mw-headline" id="Launching_the_container">Launching the container</span></h3>
+<p>The remainder of the installation will be done inside a docker container, abbreviated with ADC, Arch Docker Container.
+</p>
+<pre> # docker run \
+          --env PS1="ADC(\#)[\d \T:\w]\\$ " \
+          --interactive \
+          --privileged \
+          --rm \
+          --tty \
+          --volume "/tmp/target:/target" \
+          "index.docker.io/library/archlinux:latest" /bin/sh
+</pre>
+<h3><span class="mw-headline" id="Select_the_mirrors">Select the mirrors</span></h3>
+<p>Packages to be installed must be downloaded from <a href="../en/Mirrors.html" title="Mirrors">mirror servers</a>, which are defined in <code>/etc/pacman.d/mirrorlist</code>. In the docker container we first install <a href="../en/Reflector.html" title="Reflector">reflector</a>, which  updates the mirror list by choosing 70 most recently synchronized HTTPS mirrors and sorting them by download rate. <a rel="nofollow" class="external autonumber" href="https://gitlab.archlinux.org/archlinux/archiso/-/blob/master/configs/releng/airootfs/etc/systemd/system/reflector.service">[2]</a>
+First we have to <a href="../en/Help:Reading.html#Installation_of_packages" class="mw-redirect" title="Install">install</a> <a href="../en/Reflector.html" title="Reflector">reflector</a> in the docker container to be able to use it.
+</p>
+<pre># reflector [--country &lt;country&gt;] \
+             --latest 5 \
+             --protocol http,https \
+             --save "/etc/pacman.d/mirrorlist" \
+             --sort rate
+</pre>
+<p>The higher a mirror is placed in the list, the more priority it is given when downloading a package. Ensure to inspect the file to see if it is satisfactory. If it is not, edit the file accordingly, and move the geographically closest mirrors to the top of the list, although other criteria should be taken into account.
+</p>
+<p>This file will later be copied to the new system by <i>pacstrap</i>, so it is worth getting right.
+</p>
+<h3><span class="mw-headline" id="Install_essential_packages">Install essential packages</span></h3>
+<p>To be able to start the installation, the <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=arch-install-scripts">arch-install-scripts</a></span> package must be <a href="../en/Help:Reading.html#Installation_of_packages" class="mw-redirect" title="Install">installed</a> into the Docker image first. Once completed, the official installation guide can be followed starting with the section <a href="../en/Installation_guide.html#Install_essential_packages" title="Installation guide">Installation guide#Install essential packages</a>.
+</p>
+<p>Return to this guide before executing the <b>Reboot</b> step from the section <a href="../en/Installation_guide.html#Reboot" title="Installation guide">Installation guide#Reboot</a> to instead continue with the <a href="#Reboot">#Reboot</a> below.
+</p>
+<h2><span class="mw-headline" id="Reboot">Reboot</span></h2>
+<p>Exit the docker container by typing <code>exit</code> or pressing <code>Ctrl+d</code>.
+</p>
+<p>Optionally manually unmount all the partitions with <code>umount -R "/target"</code>: this allows noticing any "busy" partitions, and finding the cause with <span class="plainlinks archwiki-template-man" title="$ man 1 fuser"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/fuser.1">fuser(1)</a></span>.
+</p>
+<p>With a correctly setup boot loader, a reboot should now be possible into the freshly installed Arch Linux.
+</p>
+<h2><span class="mw-headline" id="Post-installation">Post-installation</span></h2>
+<p>See <a href="../en/General_recommendations.html" title="General recommendations">General recommendations</a> for system management directions and post-installation tutorials (like setting up a graphical user interface, sound or a touchpad).
+</p>
+<p>For a list of applications that may be of interest, see <a href="../en/List_of_applications.html" title="List of applications">List of applications</a>.
+</p>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface">
+<div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="../en/Category:Installation_process.html" title="Category:Installation process">Installation process</a></li></ul>
+</div>
+<div id="mw-hidden-catlinks" class="mw-hidden-catlinks mw-hidden-cats-hidden">Hidden category: <ul><li><a href="../en/Category:Pages_or_sections_flagged_with_Template:Style.html" title="Category:Pages or sections flagged with Template:Style">Pages or sections flagged with Template:Style</a></li></ul>
+</div>
+</div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=Install_Arch_Linux_via_Docker&amp;oldid=745608">https://wiki.archlinux.org/index.php?title=Install_Arch_Linux_via_Docker&amp;oldid=745608</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 10 September 2022, at 14:34.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>Extended attributes - ArchWiki</title>
+<link rel="stylesheet" href="../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Extended_attributes rootpage-Extended_attributes skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-User_extended_attributes" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#User_extended_attributes">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>User extended attributes</div>
+			</a>
+			
+			<ul id="toc-User_extended_attributes-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Preserving_extended_attributes" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Preserving_extended_attributes">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Preserving extended attributes</div>
+			</a>
+			
+			<ul id="toc-Preserving_extended_attributes-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Support" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Support">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>Support</div>
+			</a>
+			
+				<button aria-controls="toc-Support-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Support subsection
+				</button>
+			
+			<ul id="toc-Support-sublist" class="sidebar-toc-list">
+				<li id="toc-File_systems" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#File_systems">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.1</span>File systems</div>
+			</a>
+			
+			<ul id="toc-File_systems-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Software" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Software">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.2</span>Software</div>
+			</a>
+			
+			<ul id="toc-Software-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Other_tagging_systems" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Other_tagging_systems">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4</span>Other tagging systems</div>
+			</a>
+			
+				<button aria-controls="toc-Other_tagging_systems-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Other tagging systems subsection
+				</button>
+			
+			<ul id="toc-Other_tagging_systems-sublist" class="sidebar-toc-list">
+				<li id="toc-gvfs" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#gvfs">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.1</span>gvfs</div>
+			</a>
+			
+			<ul id="toc-gvfs-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-See_also" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#See_also">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5</span>See also</div>
+			</a>
+			
+			<ul id="toc-See_also-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../en/Extended_attributes.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="mw-list-item"><a href="../en/Talk:Extended_attributes.html" rel="discussion" title="Discussion about the content page [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">English</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../en/Extended_attributes.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=Extended_attributes&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=Extended_attributes&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../en/Extended_attributes.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Extended_attributes&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Extended_attributes&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output">
+<div class="archwiki-template-meta-related-articles-start">
+<p class="mw-no-invert">Related articles</p>
+<ul>
+<li><a href="../en/File_permissions_and_attributes.html" title="File permissions and attributes">File permissions and attributes</a></li>
+<li><a href="../en/Capabilities.html" title="Capabilities">Capabilities</a></li>
+</ul>
+</div>
+<p>From <span class="plainlinks archwiki-template-man" title="$ man 7 xattr"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/xattr.7">xattr(7)</a></span>: "Extended attributes are name:value pairs associated permanently with files and directories". There are four extended attribute classes: security, system, trusted and user.
+</p>
+<div class="archwiki-template-box archwiki-template-box-warning">
+<strong>Warning:</strong> By default, extended attributes are not preserved by <a href="../en/Core_utilities.html" class="mw-redirect" title="Cp">cp</a>, <a href="../en/Rsync.html" title="Rsync">rsync</a>, and other similar programs, see <a href="#Preserving_extended_attributes">#Preserving extended attributes</a>.</div>
+<p>Extended attributes are also used to set <a href="../en/Capabilities.html" title="Capabilities">Capabilities</a>.
+</p>
+<mw:tocplace></mw:tocplace>
+<h2><span class="mw-headline" id="User_extended_attributes">User extended attributes</span></h2>
+<p>User extended attributes can be used to store arbitrary information about a file. To create one:
+</p>
+<pre>$ setfattr -n user.checksum -v "3baf9ebce4c664ca8d9e5f6314fb47fb" file.txt
+</pre>
+<p>Use getfattr to display extended attributes:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">$ getfattr -e text -d file.txt</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;"># file: file.txt
+user.checksum="3baf9ebce4c664ca8d9e5f6314fb47fb"</pre>
+<p>To remove an extended attribute:
+</p>
+<pre>$ setfattr -x user.checksum file.txt
+</pre>
+<p>To find files with certain extended attributes use <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/rawhide/">rawhide</a></span><sup><small>AUR</small></sup>:
+</p>
+<pre>$ rh <i>/path/to/dir</i> '"<i>XATTR_REGEX</i>".reea'
+</pre>
+<p>Some other user extended attributes include:
+</p>
+<ul>
+<li>
+<code>user.mime_type</code>: helps programs know mimetype and set it with less guesswork.</li>
+<li>
+<code>user.charset</code>: used by the Apache httpd module <a rel="nofollow" class="external text" href="http://0pointer.de/lennart/projects/mod_mime_xattr">mod_mime_xattr</a>.</li>
+<li>
+<code>user.creator</code>: The name of the application that created the file.</li>
+</ul>
+<p>XDG also proposes a set of standardized extended attributes to be used by programs:
+</p>
+<ul>
+<li>
+<code>user.xdg.comment</code>: supported by Dolphin and other file managers.</li>
+<li>
+<code>user.xdg.origin.url</code>: for files downloaded from a url.</li>
+<li>
+<code>user.xdg.robots.index</code>: "true" if a file is included in indexing, "false" otherwise</li>
+<li>
+<code>user.xdg.robots.backup</code>: "true" if a file is included in backup, "false" otherwise</li>
+<li><code>user.xdg.language</code></li>
+<li><code>user.xdg.creator</code></li>
+<li><code>user.xdg.publisher</code></li>
+<li><code>user.xdg.origin.email.subject</code></li>
+<li><code>user.xdg.origin.email.from</code></li>
+<li><code>user.xdg.origin.email.message-id</code></li>
+</ul>
+<h2><span class="mw-headline" id="Preserving_extended_attributes">Preserving extended attributes</span></h2>
+<table class="wikitable">
+<tbody>
+<tr>
+<th>Command</th>
+<th>Preserves by default?/Required flag
+</th>
+</tr>
+<tr>
+<td><code>cp</code></td>
+<td>
+<code>--archive</code>/<code>--preserve=all</code>/<code>--preserve=xattr</code>
+</td>
+</tr>
+<tr>
+<td><code>mv</code></td>
+<td data-sort-value="5" style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Yes<sup>1</sup>
+</td>
+</tr>
+<tr>
+<td><code>tar</code></td>
+<td>
+<code>--xattrs</code> for creation and <code>--xattrs-include='*'</code> for extraction
+</td>
+</tr>
+<tr>
+<td><code>bsdtar</code></td>
+<td>
+<code>-p</code> for extraction
+</td>
+</tr>
+<tr>
+<td><a href="../en/Rsync.html" title="Rsync">rsync</a></td>
+<td>
+<code>-X, --xattrs</code>
+</td>
+</tr>
+<tr>
+<td><span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=cpio">cpio</a></span></td>
+<td data-sort-value="1" style="background: #faa; color: inherit; vertical-align: middle; text-align: center;">No
+</td>
+</tr>
+<tr>
+<td><span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=gzip">gzip</a></span></td>
+<td data-sort-value="1" style="background: #faa; color: inherit; vertical-align: middle; text-align: center;">No
+</td>
+</tr>
+<tr>
+<td><span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=pax">pax</a></span></td>
+<td data-sort-value="1" style="background: #faa; color: inherit; vertical-align: middle; text-align: center;">No
+</td>
+</tr>
+<tr>
+<td><a href="../en/Syncthing.html" title="Syncthing">syncthing</a></td>
+<td>by enabling <a rel="nofollow" class="external text" href="https://docs.syncthing.net/advanced/folder-sync-xattrs">syncXattrs</a>
+</td>
+</tr>
+</tbody>
+</table>
+<ol><li>mv silently discards extended attributes when the target file system does not support them.</li></ol>
+<p>To preserve extended attributes with <a href="../en/List_of_applications.html#Text_editors" class="mw-redirect" title="Text editor">text editors</a> you need to configure them to truncate files on saving instead of using <span class="plainlinks archwiki-template-man" title="$ man 2 rename"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/rename.2">rename(2)</a></span>. <a rel="nofollow" class="external autonumber" href="https://unix.stackexchange.com/questions/45407">[1]</a>
+</p>
+<h2><span class="mw-headline" id="Support">Support</span></h2>
+<h3><span class="mw-headline" id="File_systems">File systems</span></h3>
+<p>All major Linux <a href="../en/File_systems.html" title="File systems">file systems</a> including <a href="../en/Ext4.html" title="Ext4">Ext4</a>, <a href="../en/Btrfs.html" title="Btrfs">Btrfs</a>, <a href="../en/ZFS.html" title="ZFS">ZFS</a>, and <a href="../en/XFS.html" title="XFS">XFS</a> support extended attributes. The kernel allows to have extended attribute names of up to 255 bytes and values of up to 64 KiB, but <a href="../en/Ext4.html" title="Ext4">Ext4</a> and <a href="../en/Btrfs.html" title="Btrfs">Btrfs</a> might impose smaller limits, requiring extended attributes to be within a "filesystem block".
+</p>
+<p><a href="../en/NTFS.html" title="NTFS">NTFS</a> uses Alternative Data Streams to store user. The mount option <code>user_xattr</code> or <code>streams_interface=xattr</code> should be used by default. However, it might not be supported if mount option <code>streams_interface=windows</code> is used. <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=ntfs-3g">ntfs-3g</a></span> supports mapping Alternative Data Streams to extended attributes in FUSE.
+</p>
+<p><a href="../en/NFS.html" title="NFS">NFS</a> does not currently support extended attributes.
+</p>
+<h3><span class="mw-headline" id="Software">Software</span></h3>
+<table class="wikitable">
+<tbody>
+<tr>
+<th>Application
+</th>
+<th>Supported extended attributes
+</th>
+<th>Notes
+</th>
+</tr>
+<tr>
+<td>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=baloo">baloo</a></span>
+</td>
+<td>
+<pre>user.xdg.tags
+user.baloo.rating
+</pre> 
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=caja">caja</a></span>
+</td>
+<td data-sort-value="5" style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Yes
+</td>
+<td>Supported by caja-xattr-tags and caja.eiciel extensions.
+</td>
+</tr>
+<tr>
+<td>
+<a href="../en/Chromium.html" title="Chromium">Chromium</a>
+</td>
+<td data-sort-value="1" style="background: #faa; color: inherit; vertical-align: middle; text-align: center;">
+<a rel="nofollow" class="external text" href="https://chromium.googlesource.com/chromium/src/+/a9b4fb70b4318b220deee0da7b1693d16b8ed071">No</a>
+</td>
+<td>Used to support referrer and url, but was disabled due to privacy and security concerns. See also <a rel="nofollow" class="external text" href="https://cve.circl.lu/cve/CVE-2018-20483">CVE-2018-20483</a>.
+</td>
+</tr>
+<tr>
+<td>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=brave">brave</a></span>
+</td>
+<td data-sort-value="1" style="background: #faa; color: inherit; vertical-align: middle; text-align: center;">
+<a rel="nofollow" class="external text" href="https://github.com/brave/brave-browser/issues/2766">No</a>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<a href="../en/CURL.html" title="CURL">CURL</a>
+</td>
+<td>
+<pre>user.xdg.origin.url
+user.xdg.referrer.url
+</pre>
+</td>
+<td>Enabled with <code>--xattrs</code> flag.
+</td>
+</tr>
+<tr>
+<td>
+<a href="../en/Dolphin.html" title="Dolphin">dolphin</a>
+</td>
+<td>
+<pre>user.baloo.rating
+user.xdg.comment
+user.xdg.tags
+</pre>
+</td>
+<td>
+<a rel="nofollow" class="external autonumber" href="https://bugs.kde.org/show_bug.cgi?id=473808">[2]</a>
+</td>
+</tr>
+<tr>
+<td>
+<a href="../en/Dropbox.html" title="Dropbox">Dropbox</a>
+</td>
+<td>
+<code>user.com.dropbox.attributes</code>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<a href="../en/Emacs.html" title="Emacs">emacs-vm</a>
+</td>
+<td data-sort-value="1" style="background: #faa; color: inherit; vertical-align: middle; text-align: center;">No
+</td>
+<td>Resets mbox xattrs.
+</td>
+</tr>
+<tr>
+<td>
+<a href="../en/GNOME/Web.html" class="mw-redirect" title="Epiphany">Epiphany</a>
+</td>
+<td data-sort-value="1" style="background: #faa; color: inherit; vertical-align: middle; text-align: center;">
+<a rel="nofollow" class="external text" href="https://gitlab.gnome.org/GNOME/epiphany/-/issues/2165">No</a>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<a href="../en/List_of_applications/Multimedia.html#Metadata" class="mw-redirect" title="Exiftool">Exiftool</a>
+</td>
+<td data-sort-value="1" style="background: #faa; color: inherit; vertical-align: middle; text-align: center;">
+<a rel="nofollow" class="external text" href="https://exiftool.org/forum/index.php?topic=12762">No</a>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=fd">fd</a></span>
+</td>
+<td data-sort-value="1" style="background: #faa; color: inherit; vertical-align: middle; text-align: center;">
+<a rel="nofollow" class="external text" href="https://github.com/sharkdp/fd/issues/830">No</a>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=find">find</a></span>
+</td>
+<td data-sort-value="1" style="background: #faa; color: inherit; vertical-align: middle; text-align: center;">
+<a rel="nofollow" class="external text" href="https://savannah.gnu.org/bugs/?64605">No</a>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<a href="../en/Firefox.html" title="Firefox">Firefox</a>
+</td>
+<td data-sort-value="1" style="background: #faa; color: inherit; vertical-align: middle; text-align: center;">
+<a rel="nofollow" class="external text" href="https://bugzilla.mozilla.org/show_bug.cgi?id=665531">No</a>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/gallery-dl/">gallery-dl</a></span><sup><small>AUR</small></sup>
+</td>
+<td data-sort-value="1" style="background: #faa; color: inherit; vertical-align: middle; text-align: center;">
+<a rel="nofollow" class="external text" href="https://github.com/mikf/gallery-dl/issues/4472">No</a>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<a href="../en/Gwenview.html" title="Gwenview">Gwenview</a>
+</td>
+<td>
+<code>user.xdg.tags</code>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=kfind">kfind</a></span>
+</td>
+<td data-sort-value="1" style="background: #faa; color: inherit; vertical-align: middle; text-align: center;">
+<a rel="nofollow" class="external text" href="https://bugs.kde.org/show_bug.cgi?id=473864">No</a>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=konqueror">konqueror</a></span>
+</td>
+<td data-sort-value="1" style="background: #faa; color: inherit; vertical-align: middle; text-align: center;">
+<a rel="nofollow" class="external text" href="https://bugs.kde.org/show_bug.cgi?id=473809">No</a>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>kio
+</td>
+<td>
+<a rel="nofollow" class="external autonumber" href="https://bugs.kde.org/show_bug.cgi?id=116617">[3]</a>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<a href="../en/GNOME/Files.html" class="mw-redirect" title="Nautilus">Nautilus</a>
+</td>
+<td data-sort-value="1" style="background: #faa; color: inherit; vertical-align: middle; text-align: center;">
+<a rel="nofollow" class="external text" href="https://discourse.gnome.org/t/16892">No</a>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=recoll">recoll</a></span>
+</td>
+<td>
+<code>user.xdg.tags</code>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/tagspaces/">tagspaces</a></span><sup><small>AUR</small></sup>
+</td>
+<td data-sort-value="1" style="background: #faa; color: inherit; vertical-align: middle; text-align: center;">
+<a rel="nofollow" class="external text" href="https://trello.com/c/iapsXZZe/64-option-to-store-tags-in-file-using-extended-attributes-xattr">No</a>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/tmsu/">tmsu</a></span><sup><small>AUR</small></sup>
+</td>
+<td data-sort-value="1" style="background: #faa; color: inherit; vertical-align: middle; text-align: center;">
+<a rel="nofollow" class="external text" href="https://github.com/oniony/TMSU/issues/10">No</a>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<a href="../en/Thunar.html" title="Thunar">Thunar</a>
+</td>
+<td data-sort-value="1" style="background: #faa; color: inherit; vertical-align: middle; text-align: center;">
+<a rel="nofollow" class="external text" href="https://gitlab.xfce.org/xfce/thunar/-/issues/1195">No</a>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=youtube-dl">youtube-dl</a></span>, <a href="../en/Yt-dlp.html" title="Yt-dlp">yt-dlp</a>
+</td>
+<td>
+<pre>user.xdg.referrer.url
+user.dublincore.title
+user.dublincore.date
+user.dublincore.description
+user.dublincore.contributor
+user.dublincore.format
+</pre>
+</td>
+<td>Enabled with <code>--xattrs</code> flag.
+</td>
+</tr>
+<tr>
+<td>
+<a href="../en/Wget.html" title="Wget">Wget</a>
+</td>
+<td>
+<pre>user.xdg.origin.url
+user.xdg.referrer.url
+</pre>
+</td>
+<td>Enabled with <code>--xattrs</code> flag.
+</td>
+</tr>
+<tr>
+<td>Webkit
+</td>
+<td data-sort-value="1" style="background: #faa; color: inherit; vertical-align: middle; text-align: center;">
+<a rel="nofollow" class="external text" href="https://bugs.webkit.org/show_bug.cgi?id=260778">No</a>
+</td>
+<td>
+</td>
+</tr>
+</tbody>
+</table>
+<h2><span class="mw-headline" id="Other_tagging_systems">Other tagging systems</span></h2>
+<p>It might not be possible to use extended attributes due to lack of support of either the file system or software. For this reason, many media formats store metadata included in the file format that can be viewed using programs like <a href="../en/List_of_applications/Multimedia.html#Metadata" class="mw-redirect" title="Exiftool">Exiftool</a> or more specified ones like <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/id3/">id3</a></span><sup><small>AUR</small></sup> for audio.
+</p>
+<ul>
+<li>For all files: <a href="../en/List_of_applications/Multimedia.html#Metadata" class="mw-redirect" title="Exiftool">Exiftool</a>
+</li>
+<li>For audio: <a rel="nofollow" class="external text" href="https://wiki.archlinux.org/title/List_of_applications/Multimedia#Audio_tag_editors">Audio tag editors</a>
+</li>
+<li>For video: <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=ffprobe">ffprobe</a></span>
+</li>
+</ul>
+<h3><span class="mw-headline" id="gvfs">gvfs</span></h3>
+<p>Another filesystem-independent workaround is Gnome virtual filesystem: <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=gvfs">gvfs</a></span> which is used to store metadata (gvfsd-metadata). For example, Firefox <a rel="nofollow" class="external text" href="https://hg.mozilla.org/mozilla-central/file/tip/toolkit/components/downloads/DownloadPlatform.cpp">stores metadata</a> this way and can be viewed with:
+</p>
+<pre>$ gio info --attributes=metadata:: <i>downloaded.html</i>
+</pre>
+<p>Other programs that use this approach include:
+</p>
+<ul><li>
+<a href="../en/Thunar.html" title="Thunar">Thunar</a>: to save file color highlights.</li></ul>
+<h2><span class="mw-headline" id="See_also">See also</span></h2>
+<ul>
+<li><a rel="nofollow" class="external text" href="https://www.freedesktop.org/wiki/CommonExtendedAttributes">XDG guidelines for extended attributes</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Extended_file_attributes#Linux" class="extiw" title="wikipedia:Extended file attributes">wikipedia:Extended file attributes#Linux</a></li>
+<li><a rel="nofollow" class="external text" href="https://www.lesbonscomptes.com/pages/extattrs.html">Extended attributes: the good, the not so good, the bad.</a></li>
+</ul>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="../en/Category:File_systems.html" title="Category:File systems">File systems</a></li></ul>
+</div></div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=Extended_attributes&amp;oldid=786413">https://wiki.archlinux.org/index.php?title=Extended_attributes&amp;oldid=786413</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 29 August 2023, at 04:45.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

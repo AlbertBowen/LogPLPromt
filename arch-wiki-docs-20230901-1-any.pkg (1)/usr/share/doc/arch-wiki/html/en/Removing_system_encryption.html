@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>Removing system encryption - ArchWiki</title>
+<link rel="stylesheet" href="../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Removing_system_encryption rootpage-Removing_system_encryption skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Removing_LUKS_Encryption_in-place" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Removing_LUKS_Encryption_in-place">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Removing LUKS Encryption in-place</div>
+			</a>
+			
+				<button aria-controls="toc-Removing_LUKS_Encryption_in-place-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Removing LUKS Encryption in-place subsection
+				</button>
+			
+			<ul id="toc-Removing_LUKS_Encryption_in-place-sublist" class="sidebar-toc-list">
+				<li id="toc-Overview" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Overview">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.1</span>Overview</div>
+			</a>
+			
+			<ul id="toc-Overview-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Decrypting_LUKS1_devices_in-place" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Decrypting_LUKS1_devices_in-place">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.2</span>Decrypting LUKS1 devices in-place</div>
+			</a>
+			
+			<ul id="toc-Decrypting_LUKS1_devices_in-place-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Decrypting_LUKS2_devices_in-place" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Decrypting_LUKS2_devices_in-place">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.3</span>Decrypting LUKS2 devices in-place</div>
+			</a>
+			
+			<ul id="toc-Decrypting_LUKS2_devices_in-place-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Cleaning_up_system_files" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Cleaning_up_system_files">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.4</span>Cleaning up system files</div>
+			</a>
+			
+			<ul id="toc-Cleaning_up_system_files-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Removing_LUKS_via_Backup-Format-Restore" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Removing_LUKS_via_Backup-Format-Restore">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Removing LUKS via Backup-Format-Restore</div>
+			</a>
+			
+				<button aria-controls="toc-Removing_LUKS_via_Backup-Format-Restore-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Removing LUKS via Backup-Format-Restore subsection
+				</button>
+			
+			<ul id="toc-Removing_LUKS_via_Backup-Format-Restore-sublist" class="sidebar-toc-list">
+				<li id="toc-Prerequisites" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Prerequisites">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.1</span>Prerequisites</div>
+			</a>
+			
+			<ul id="toc-Prerequisites-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Boot_into_a_live_environment" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Boot_into_a_live_environment">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.2</span>Boot into a live environment</div>
+			</a>
+			
+			<ul id="toc-Boot_into_a_live_environment-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Activate_partitions" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Activate_partitions">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.3</span>Activate partitions</div>
+			</a>
+			
+			<ul id="toc-Activate_partitions-sublist" class="sidebar-toc-list">
+				<li id="toc-Note_About_Different_Setups" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Note_About_Different_Setups">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.3.1</span>Note About Different Setups</div>
+			</a>
+			
+			<ul id="toc-Note_About_Different_Setups-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Once_partitions_are_located" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Once_partitions_are_located">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.3.2</span>Once partitions are located</div>
+			</a>
+			
+			<ul id="toc-Once_partitions_are_located-sublist" class="sidebar-toc-list">
+				<li id="toc-Mounting_backup_space" class="sidebar-toc-list-item sidebar-toc-level-4">
+			<a class="sidebar-toc-link" href="#Mounting_backup_space">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.3.2.1</span>Mounting backup space</div>
+			</a>
+			
+			<ul id="toc-Mounting_backup_space-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Backup_data" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Backup_data">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.4</span>Backup data</div>
+			</a>
+			
+			<ul id="toc-Backup_data-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Undo_encryption" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Undo_encryption">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.5</span>Undo encryption</div>
+			</a>
+			
+			<ul id="toc-Undo_encryption-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Restore_data" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Restore_data">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.6</span>Restore data</div>
+			</a>
+			
+			<ul id="toc-Restore_data-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Adjust_configurations" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Adjust_configurations">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.7</span>Adjust configurations</div>
+			</a>
+			
+			<ul id="toc-Adjust_configurations-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../en/Removing_system_encryption.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="mw-list-item"><a href="../en/Talk:Removing_system_encryption.html" rel="discussion" title="Discussion about the content page [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">English</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../en/Removing_system_encryption.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=Removing_system_encryption&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=Removing_system_encryption&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../en/Removing_system_encryption.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Removing_system_encryption&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Removing_system_encryption&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output">
+<div class="noprint archwiki-template-message">
+<p><a href="../File:Tango-edit-clear.png" class="image"><img alt="Tango-edit-clear.png" src="../File:Tango-edit-clear.png" decoding="async" width="48" height="48"></a><b>This article or section needs language, wiki syntax or style improvements. See <a href="../en/Help:Style.html" title="Help:Style">Help:Style</a> for reference.</b><a href="../File:Tango-edit-clear.png" class="image"><img alt="Tango-edit-clear.png" src="../File:Tango-edit-clear.png" decoding="async" width="48" height="48"></a></p>
+<div>
+<b>Reason:</b> written in first person, other style issues. (Discuss in <a rel="nofollow" class="external text" href="https://wiki.archlinux.org/title/Talk:Removing_system_encryption">Talk:Removing system encryption</a>)</div>
+</div>
+<p>Removing system encryption with <a href="../en/Dm-crypt.html" title="Dm-crypt">dm-crypt and LUKS</a>.
+</p>
+<mw:tocplace></mw:tocplace>
+<h2><span class="mw-headline" id="Removing_LUKS_Encryption_in-place">Removing LUKS Encryption in-place</span></h2>
+<div class="noprint archwiki-template-message">
+<p><a href="../File:Tango-view-refresh-red.png" class="image"><img alt="Tango-view-refresh-red.png" src="../File:Tango-view-refresh-red.png" decoding="async" width="48" height="48"></a><b>This article or section is out of date.</b><a href="../File:Tango-view-refresh-red.png" class="image"><img alt="Tango-view-refresh-red.png" src="../File:Tango-view-refresh-red.png" decoding="async" width="48" height="48"></a></p>
+<div>
+<b>Reason:</b> <code>cryptsetup-reencrypt</code> tool has been <a rel="nofollow" class="external text" href="https://mirrors.edge.kernel.org/pub/linux/utils/cryptsetup/v2.5/v2.5.0-ReleaseNotes">removed</a> as of <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=cryptsetup">cryptsetup</a></span> 2.5.0. See <span class="plainlinks archwiki-template-man" title="$ man 8 cryptsetup-reencrypt"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/cryptsetup-reencrypt.8">cryptsetup-reencrypt(8)</a></span>  (Discuss in <a rel="nofollow" class="external text" href="https://wiki.archlinux.org/title/Talk:Removing_system_encryption">Talk:Removing system encryption</a>)</div>
+</div>
+<h3><span class="mw-headline" id="Overview">Overview</span></h3>
+<p>Although not as safe as backing up your data and restoring it on to a reformatted device,
+cryptsetup does allow the user to permanently remove the LUKS encryption from a device in-place. For example, if you have an ext4 filesystem living inside a LUKS-encrypted partition,
+performing in-place decryption will remove the LUKS signature, and place the ext4 filesystem
+directly on the partition, so that you can mount it directly. Unless something goes wrong,
+the files in the filesystem will remain intact. The terms used by cryptsetup's documentation for this is "decryption."
+</p>
+<p>Support for non-destructive offline decryption of LUKS1 devices has been available starting with <code>cryptsetup</code> version 1.5.0, which was released in 2012. LUKS1 decryption only supported offline mode decryption.
+</p>
+<p>For LUKS2 devices, both offline and online (i.e. unmount not required) decryption are supported. 
+</p>
+<div class="archwiki-template-box archwiki-template-box-warning">
+<strong>Warning:</strong> The procedures which follow are inherently risky and may cause catastrophic data loss. You should always backup your drive and LUKS headers before proceeding, to protect your data from accidents during decryption.</div>
+<h3><span class="mw-headline" id="Decrypting_LUKS1_devices_in-place">Decrypting LUKS1 devices in-place</span></h3>
+<p>Decryption is done in offline mode, using the (noq legacy) <code>cryptsetup-reencrypt</code> command.
+The steps are:
+</p>
+<ol>
+<li>Verify that your block device has a LUKS1 header (and not LUKS2) using <code>cryptsetup luksDump &lt;dev&gt;</code>
+</li>
+<li>reboot into a live environment using a USB stick.</li>
+<li>Identify your block device using <code>blkid</code>, <code>lsblk</code>, etc'</li>
+<li>Make sure that the block device to be decrypted has not been opened by cryptsetup (there is no entry under `/dev/mapper/`, let alone mounted. If it has been, unmount and use <code>cryptsetup luksClose</code> to close it.</li>
+<li>Use the legacy command <code>cryptsetup-reencrypt</code>:</li>
+</ol>
+<pre># cryptsetup-reencrypt --decrypt &lt;device_path&gt;
+</pre>
+<p>The process might take a while. If no problems occur, the contents of the encrypted block device should not be accessible directly from the block device. i.e., you should be able to mount it directly.
+</p>
+<h3><span class="mw-headline" id="Decrypting_LUKS2_devices_in-place">Decrypting LUKS2 devices in-place</span></h3>
+<p>Decryption can be done in either offline or online mode, using the <code>cryptsetup</code> command.
+</p>
+<div class="archwiki-template-box archwiki-template-box-warning">
+<strong>Warning:</strong> As of 2020, and version 2.3.3, when using <i>cryptsetup</i> to decrypt a LUKS2 block device the program requires you to provide a LUKS <code>--header</code> file. If you do not use the "detached header" feature of LUKS, and naively try to pass the block device itself (which contains a LUKS2  header) as the subject of the <code>--header</code>, <i>cryptsetup</i> will accept this and go ahead with alleged decryption. Afterwards the block device will show up as a LUKS2 device with no key-slots, and <b>your data will be lost</b>. If you try to use <code>cryptsetup luksHeaderBackup</code> as the header file used with <code>--header</code>, <b>your data will be lost</b>. If you try to restore a backed-up header after this faulty decryption, <b>your data will still be lost</b>.
+<p>If you still went ahead with the decryption, the data might be recoverable by shifting the partition start after the now defunct LUKS header: <a rel="nofollow" class="external autonumber" href="https://gitlab.com/cryptsetup/cryptsetup/-/issues/614#note_454401132">[1]</a>, still, <b>do not rely on this</b>.
+</p>
+</div>
+<p>Given the data loss risk just noted, you should avoid in-place decryption of LUKS2
+devices unless you use detached header. I have tested offline LUKS2 decryption for a device with a detached header file and the procedure went smoothly. This functionality is also part of the tests included in the cryptsetup source.
+</p>
+<p>If you do not use a detached header, your safest course is to use the safer backup-format-restore procedure described below. Alternatively, you can choose to convert your LUKS2 device to a LUKS1 device, and then proceed with the LUKS1 decryption procedure.
+</p>
+<p>The conversion with take a significant amount of time, the system should be connected to mains power and extreme care should be taken to avoid any event that may lead to a system crash or loss of power. <b>Data loss may occur</b> if interrupted.
+</p>
+<p>Steps:
+</p>
+<ol>
+<li>Verify that your block device has a LUKS2 header (and not LUKS1) using <code>cryptsetup luksDump <i>dev</i></code>
+</li>
+<li>Note what key slots are in use using <code>cryptsetup luksDump <i>dev</i></code>
+</li>
+<li>Reboot into a live environment using a USB stick.</li>
+<li>Identify your block device using <code>blkid</code> or <code>lsblk</code>.</li>
+<li>Make sure that the block device to be decrypted has not been opened by <code>cryptsetup</code> (there is no entry under <code>/dev/mapper/</code>, let alone mounted). If it has been, unmount and use <code>cryptsetup luksClose</code> to close it.</li>
+<li>Before converting the device, you must convert the Password-Based Key Derivation Function (PBKDF) for all key-slots to be LUKS1 compatible. Use the following command for each key slot: <code>sudo cryptsetup luksConvertKey --key-slot <i>key_slot_number</i> --pbkdf pbkdf2 <i>device_path</i></code>
+</li>
+<li>Verify that all key slots PBKDFs are convert to pbkdf2: <code>cryptsetup luksDump <i>dev</i></code>
+</li>
+<li>Convert the device from LUKS2 to LUKS1: <code>sudo cryptsetup convert --type luks1 <i>device_path</i></code>
+</li>
+<li>Decrypt the (now) LUKS1 device: <code>sudo cryptsetup-reencrypt --decrypt <i>device_path</i></code>
+</li>
+</ol>
+<p>If successful, you should now be able to mount whatever filesystem was previously inside the LUKS device, by mounting the block device directly.
+</p>
+<p>Hopefully, the <code>cryptsetup</code> project will address these usability and data loss issues in a future release (written August 2020).
+</p>
+<h3><span class="mw-headline" id="Cleaning_up_system_files">Cleaning up system files</span></h3>
+<p>Device names and UUIDs may change due to decryption, and you will likely need to update relevant configuration files. The files most likely to need updating are  <code>/etc/crypttab</code>, <code>/etc/fstab</code> and, if your recently decrypted device appeared on the kernel command line, your bootloader's configuration (e.g, <code>/etc/default/grub</code>). If you edit the latter, remember to regenerate the grub configuration as described in <a href="../en/GRUB.html" title="GRUB">GRUB</a>.
+</p>
+<h2><span class="mw-headline" id="Removing_LUKS_via_Backup-Format-Restore">Removing LUKS via Backup-Format-Restore</span></h2>
+<h3><span class="mw-headline" id="Prerequisites">Prerequisites</span></h3>
+<ul>
+<li>An encrypted root filesystem you wish to decrypt.</li>
+<li>Enough drive space to store a backup.</li>
+<li>An Arch Linux (or other) live CD/USB.</li>
+<li>A few hours.</li>
+</ul>
+<h3><span class="mw-headline" id="Boot_into_a_live_environment">Boot into a live environment</span></h3>
+<p>Download and burn the latest Arch ISO to a CD or USB, reboot the system, and boot to cd.
+</p>
+<h3><span class="mw-headline" id="Activate_partitions">Activate partitions</span></h3>
+<div class="noprint archwiki-template-message">
+<p><a href="../File:Tango-edit-clear.png" class="image"><img alt="Tango-edit-clear.png" src="../File:Tango-edit-clear.png" decoding="async" width="48" height="48"></a><b>This article or section needs language, wiki syntax or style improvements. See <a href="../en/Help:Style.html" title="Help:Style">Help:Style</a> for reference.</b><a href="../File:Tango-edit-clear.png" class="image"><img alt="Tango-edit-clear.png" src="../File:Tango-edit-clear.png" decoding="async" width="48" height="48"></a></p>
+<div>
+<b>Reason:</b> Hard to read, written like a blog post, misses some prompts. (Discuss in <a rel="nofollow" class="external text" href="https://wiki.archlinux.org/title/Talk:Removing_system_encryption">Talk:Removing system encryption</a>)</div>
+</div>
+<h4><span class="mw-headline" id="Note_About_Different_Setups">Note About Different Setups</span></h4>
+<p>An example setup is shown here:
+</p>
+<table class="wikitable">
+
+<tbody>
+<tr>
+<th colspan="4">Disk
+</th>
+</tr>
+<tr>
+<td style="background: #ddd; color: inherit; vertical-align: middle; text-align: center;">NTFS
+</td>
+<td colspan="2" style="background: inherit; color: inherit; vertical-align: middle; text-align: center;">myvg(lvm)
+</td>
+<td data-sort-value="3" style="background: #ffa; color: inherit; vertical-align: middle; text-align: center;">NTFS
+</td>
+</tr>
+<tr>
+<td rowspan="3" style="background: #ddd; color: inherit; vertical-align: middle; text-align: center;">Other OS
+</td>
+<td style="background: inherit; color: inherit; vertical-align: middle; text-align: center;">cryptswap(lv)
+</td>
+<td data-sort-value="5" style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">cryptroot(lv)
+</td>
+<td rowspan="3" data-sort-value="3" style="background: #ffa; color: inherit; vertical-align: middle; text-align: center;">Shared
+</td>
+</tr>
+<tr>
+<td style="background: inherit; color: inherit; vertical-align: middle; text-align: center;">luks
+</td>
+<td data-sort-value="5" style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">luks
+</td>
+</tr>
+<tr>
+<td style="background: inherit; color: inherit; vertical-align: middle; text-align: center;">swap
+</td>
+<td data-sort-value="5" style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">root(xfs)
+</td>
+</tr>
+</tbody>
+</table>
+<p>The grey partition is a frame of reference and can be ignored.
+The yellow partition will be used as storage space and may be changed at will.
+The green partitions will be modified. Bold text must match your system's setup.
+</p>
+<p>In the example system:
+<b>myvg</b> contains lvs called <b>cryptroot</b> and <b>cryptswap</b>. They are located at <code>/dev/myvg/cryptroot</code> and <code>/dev/myvg/cryptswap</code>. Upon boot, LUKS is used along with a few crypttab entries to create <code>/dev/mapper/root</code> and <code>/dev/mapper/swap</code>. 
+</p>
+<p>Swap will not be unencrypted as part of this guide, as undoing the swap encryption does not require any complex backup or restoration.
+</p>
+<p>The example system is not indicative of all systems. Different filesystems require different tools to effectively backup and restore their data. LVM can be ignored if not used.
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> XFS requires <i>xfs_copy</i> to ensure an effective backup and restore, <i>dd</i> is insufficient. <i>dd</i> may be used with ext2, 3 and 4.</div>
+<div class="noprint archwiki-template-message">
+<p><a href="../File:Tango-view-fullscreen.png" class="image"><img alt="Tango-view-fullscreen.png" src="../File:Tango-view-fullscreen.png" decoding="async" width="48" height="48"></a><b>This article or section needs expansion.</b><a href="../File:Tango-view-fullscreen.png" class="image"><img alt="Tango-view-fullscreen.png" src="../File:Tango-view-fullscreen.png" decoding="async" width="48" height="48"></a></p>
+<div>
+<b>Reason:</b> What of jfs, reiserfs and reiser4fs? (Discuss in <a rel="nofollow" class="external text" href="https://wiki.archlinux.org/title/Talk:Removing_system_encryption">Talk:Removing system encryption</a>)</div>
+</div>
+<h4><span class="mw-headline" id="Once_partitions_are_located">Once partitions are located</span></h4>
+<p>Load necessary modules. For device mapper/LVM: 
+</p>
+<pre># modprobe dm-mod 
+</pre>
+<p>For LUKS: 
+</p>
+<pre># modprobe dm-crypt
+</pre>
+<p>Scan for physical, volume and logical volumes:
+</p>
+<pre># pvscan; vgscan; lvscan
+</pre>
+<p>Activate the LVM volume group:
+</p>
+<pre># lvchange -ay <b>myvg/cryptroot</b>
+</pre>
+<p>Open the encrypted filesystem with LUKS so that it can be read:
+</p>
+<pre># cryptsetup luksOpen <b>/dev/myvg/cryptroot</b> root
+</pre>
+<p>Enter password.
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> The only partition that will be operated on that should be mounted at this point is the backup partition. If a partition other than the backup partition is already mounted, it can be safely umounted it now.</div>
+<h5><span class="mw-headline" id="Mounting_backup_space">Mounting backup space</span></h5>
+<p>Only if using NTFS to store the backup, install <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=ntfs-3g">ntfs-3g</a></span>.
+</p>
+<p>The next step is important for backup storage.
+</p>
+<pre># mount -t ntfs-3g -o rw /dev/sd<i>XY</i> <i>/mount/point/</i>
+</pre>
+<p>or use netcat to store the backup on a remote system.
+</p>
+<div class="noprint archwiki-template-message">
+<p><a href="../File:Tango-view-fullscreen.png" class="image"><img alt="Tango-view-fullscreen.png" src="../File:Tango-view-fullscreen.png" decoding="async" width="48" height="48"></a><b>This article or section needs expansion.</b><a href="../File:Tango-view-fullscreen.png" class="image"><img alt="Tango-view-fullscreen.png" src="../File:Tango-view-fullscreen.png" decoding="async" width="48" height="48"></a></p>
+<div>
+<b>Reason:</b> Add netcat instructions. (Discuss in <a rel="nofollow" class="external text" href="https://wiki.archlinux.org/title/Talk:Removing_system_encryption">Talk:Removing system encryption</a>)</div>
+</div>
+<h3><span class="mw-headline" id="Backup_data">Backup data</span></h3>
+<p>Using <i>xfs_copy</i>:
+</p>
+<pre>xfs_copy -db <b>/dev/mapper/root</b> <i>/mount/point/backup_root.img</i>
+</pre>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> The <code>-d</code> flag preserves UUIDs and <code>-b</code> ensures direct IO is not attempted to any of the target files.</div>
+<p>Using <i>dd</i>:
+</p>
+<pre>dd if=<b>/dev/mapper/root</b> of=<i>/mount/point/backup_root.img</i>
+</pre>
+<h3><span class="mw-headline" id="Undo_encryption">Undo encryption</span></h3>
+<p>This is the point of no return. Make sure that you are ready for this step. If you plan to undo this later, you will have to start almost from scratch.
+</p>
+<pre>cryptsetup luksClose root
+lvm lvremove <b>myvg/cryptroot</b>
+</pre>
+<h3><span class="mw-headline" id="Restore_data">Restore data</span></h3>
+<p>We have to create a new logical volume to house our root filesystem, then we restore our filesystem.
+</p>
+<pre>lvm lvcreate <b>-l 100%FREE -n root myvg</b>
+xfs_copy -db <i>/mount/point/backup_root.img</i> <b>/dev/myvg/root</b>
+</pre>
+<p>The second drive name is changed now.
+</p>
+<h3><span class="mw-headline" id="Adjust_configurations">Adjust configurations</span></h3>
+<p>You need to boot into your system and edit <code>/etc/crypttab</code>, <code>/etc/mkinitcpio.conf</code>, <code>/etc/fstab</code>, and possibly <code>/boot/grub/menu.lst</code>.
+</p>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface">
+<div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="../en/Category:Data-at-rest_encryption.html" title="Category:Data-at-rest encryption">Data-at-rest encryption</a></li></ul>
+</div>
+<div id="mw-hidden-catlinks" class="mw-hidden-catlinks mw-hidden-cats-hidden">Hidden categories: <ul>
+<li><a href="../en/Category:Pages_or_sections_flagged_with_Template:Style.html" title="Category:Pages or sections flagged with Template:Style">Pages or sections flagged with Template:Style</a></li>
+<li><a href="../en/Category:Pages_or_sections_flagged_with_Template:Out_of_date.html" title="Category:Pages or sections flagged with Template:Out of date">Pages or sections flagged with Template:Out of date</a></li>
+<li><a href="../en/Category:Pages_or_sections_flagged_with_Template:Expansion.html" title="Category:Pages or sections flagged with Template:Expansion">Pages or sections flagged with Template:Expansion</a></li>
+</ul>
+</div>
+</div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=Removing_system_encryption&amp;oldid=779447">https://wiki.archlinux.org/index.php?title=Removing_system_encryption&amp;oldid=779447</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 24 May 2023, at 00:52.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

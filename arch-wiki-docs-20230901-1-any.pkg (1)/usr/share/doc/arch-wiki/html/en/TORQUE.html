@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>TORQUE - ArchWiki</title>
+<link rel="stylesheet" href="../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-TORQUE rootpage-TORQUE skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Installation" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Installation">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Installation</div>
+			</a>
+			
+			<ul id="toc-Installation-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Must_haves" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Must_haves">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Must haves</div>
+			</a>
+			
+				<button aria-controls="toc-Must_haves-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Must haves subsection
+				</button>
+			
+			<ul id="toc-Must_haves-sublist" class="sidebar-toc-list">
+				<li id="toc-/etc/hosts" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#/etc/hosts">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.1</span>/etc/hosts</div>
+			</a>
+			
+			<ul id="toc-/etc/hosts-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Firewall_configuration_(if_installed)" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Firewall_configuration_(if_installed)">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.2</span>Firewall configuration (if installed)</div>
+			</a>
+			
+			<ul id="toc-Firewall_configuration_(if_installed)-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-NFS" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#NFS">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.3</span>NFS</div>
+			</a>
+			
+			<ul id="toc-NFS-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Configuration" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Configuration">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>Configuration</div>
+			</a>
+			
+				<button aria-controls="toc-Configuration-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Configuration subsection
+				</button>
+			
+			<ul id="toc-Configuration-sublist" class="sidebar-toc-list">
+				<li id="toc-Server_(head_node)_configuration" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Server_(head_node)_configuration">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.1</span>Server (head node) configuration</div>
+			</a>
+			
+			<ul id="toc-Server_(head_node)_configuration-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Client_(compute_node)_configuration" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Client_(compute_node)_configuration">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.2</span>Client (compute node) configuration</div>
+			</a>
+			
+			<ul id="toc-Client_(compute_node)_configuration-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Restart_the_server" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Restart_the_server">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.3</span>Restart the server</div>
+			</a>
+			
+			<ul id="toc-Restart_the_server-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Starting_the_client(s)" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Starting_the_client(s)">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.4</span>Starting the client(s)</div>
+			</a>
+			
+			<ul id="toc-Starting_the_client(s)-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Verifying_cluster_status" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Verifying_cluster_status">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4</span>Verifying cluster status</div>
+			</a>
+			
+			<ul id="toc-Verifying_cluster_status-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Queuing_jobs" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Queuing_jobs">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5</span>Queuing jobs</div>
+			</a>
+			
+			<ul id="toc-Queuing_jobs-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Checking_job_status" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Checking_job_status">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6</span>Checking job status</div>
+			</a>
+			
+			<ul id="toc-Checking_job_status-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-See_also" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#See_also">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">7</span>See also</div>
+			</a>
+			
+			<ul id="toc-See_also-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../en/TORQUE.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="new mw-list-item"><a href="/index.php?title=Talk:TORQUE&amp;action=edit&amp;redlink=1" rel="discussion" title="Discussion about the content page (page does not exist) [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">English</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../en/TORQUE.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=TORQUE&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=TORQUE&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../en/TORQUE.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=TORQUE&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=TORQUE&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output">
+<div class="archwiki-template-meta-related-articles-start">
+<p class="mw-no-invert">Related articles</p>
+<ul>
+<li><a href="../en/Distcc.html" title="Distcc">distcc</a></li>
+<li><a href="../en/Slurm.html" title="Slurm">Slurm</a></li>
+</ul>
+</div>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> TORQUE is <b>not</b> free software anymore.</div>
+<p><a rel="nofollow" class="external text" href="https://www.adaptivecomputing.com/products/open-source/torque/">TORQUE</a><sup title="Last check status: 404">[<a href="https://en.wikipedia.org/wiki/Wikipedia:Link_rot" class="extiw" title="wikipedia:Wikipedia:Link rot">dead link</a> 2023-05-06 ⓘ]</sup> is a resource manager providing control over batch jobs and distributed compute nodes. Basically, one can setup a home or small office Linux cluster and queue jobs with this software. A cluster consists of one head node and many compute nodes. The head node runs the <b>torque-server</b> daemon and the compute nodes run the <b>torque-client</b> daemon. The head node also runs a scheduler daemon.
+</p>
+<mw:tocplace></mw:tocplace>
+<h2><span class="mw-headline" id="Installation">Installation</span></h2>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> Although TORQUE is a very powerful queuing system, if the goal of the cluster is solely to increase compilation throughput, <a href="../en/Distcc.html" title="Distcc">distcc</a> is a much easier and elegant solution.</div>
+<p><a href="../en/Help:Reading.html#Installation_of_packages" class="mw-redirect" title="Install">Install</a> the <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/torque/">torque</a></span><sup><small>AUR</small></sup> package.
+</p>
+<h2><span class="mw-headline" id="Must_haves">Must haves</span></h2>
+<h3>
+<span id=".2Fetc.2Fhosts"></span><span class="mw-headline" id="/etc/hosts">/etc/hosts</span>
+</h3>
+<p>Make sure that <code>/etc/hosts</code> on <b>all</b> of the boxes in the cluster contains the hostnames of every PC in the cluster. Example, cluster consists of 3 PCs, mars, phobos, and deimos.
+</p>
+<pre>192.168.0.20   mars
+192.168.0.21   phobos
+192.168.0.22   deimos
+</pre>
+<h3>
+<span id="Firewall_configuration_.28if_installed.29"></span><span class="mw-headline" id="Firewall_configuration_(if_installed)">Firewall configuration (if installed)</span>
+</h3>
+<p>Be sure to open TCP for all machines using TORQUE.
+</p>
+<p>The pbs_server (server) and pbs_mom (client) by default use TCP and UDP ports 15001-15004.
+pbs_mom (client) also uses UDP ports 1023 and below if privileged ports are configured (the default).
+</p>
+<h3><span class="mw-headline" id="NFS">NFS</span></h3>
+<p>Technically, one does not need to use NFS but doing so simplifies the whole process. An <a href="../en/NFS.html" title="NFS">NFS</a> share either on the server or another machine is highly recommended to simplify the process of sharing common build disk space.
+</p>
+<h2><span class="mw-headline" id="Configuration">Configuration</span></h2>
+<h3>
+<span id="Server_.28head_node.29_configuration"></span><span class="mw-headline" id="Server_(head_node)_configuration">Server (head node) configuration</span>
+</h3>
+<p>Follow these steps on the head node/scheduler.
+</p>
+<p>Edit <code>/var/spool/torque/server_name</code> to name the head node. It is recommended to match the hostname in <code>/etc/hostname</code> for simplicity's sake.
+</p>
+<p>Create and configure the torque server:
+</p>
+<pre># pbs_server -t create
+PBS_Server localhost.localdomain: Create mode and server database exists,
+do you wish to continue y/(n)?y
+</pre>
+<p>Then start trqauthd by running
+</p>
+<pre># trqauthd</pre>
+<p>A minimal set of options are provided here. Adjust the first line substituting "mars" with the hostname entered in <code>/var/spool/torque/server_name</code>:
+</p>
+<pre>qmgr -c "set server acl_hosts = mars"
+qmgr -c "set server scheduling=true"
+qmgr -c "create queue batch queue_type=execution"
+qmgr -c "set queue batch started=true"
+qmgr -c "set queue batch enabled=true"
+qmgr -c "set queue batch resources_default.nodes=1"
+qmgr -c "set queue batch resources_default.walltime=3600"
+qmgr -c "set server default_queue=batch"
+</pre>
+<p>It may be of interest to keep finished jobs in the queue for a period of time.
+</p>
+<pre>qmgr -c "set server keep_completed = 86400"
+</pre>
+<p>Here, 86400 sec = 24 h after which point, the job will be auto removed from the queue. One can see the full log of jobs removed from the queue with the <code>-f</code> switch on qstat:
+</p>
+<pre>qstat -f
+</pre>
+<p>Verify the server configuration with this command:
+</p>
+<pre># qmgr -c 'p s'
+</pre>
+<p>Edit <code>/var/spool/torque/server_priv/nodes</code> adding all compute nodes. Again, it is recommended to match the hostname(s) of the machines on the LAN. The syntax is HOSTNAME np=x gpus=y properties
+</p>
+<ul>
+<li>HOSTNAME=the hostname of the machine</li>
+<li>np=number of processors</li>
+<li>gpus=number of gpus</li>
+<li>properties=comments</li>
+</ul>
+<p>Only the hostname is required, all other fields are optional.
+</p>
+<p>Example:
+</p>
+<pre>mars np=4
+phobos np=2
+deimos np=2
+</pre>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> 
+<ul>
+<li>One can run both the server and client on the same box.</li>
+<li>Re-running <code>pbs_server -t create</code> may delete this nodes file.</li>
+</ul>
+</div>
+<p>Restart the server and the new options are sourced.
+</p>
+<h3>
+<span id="Client_.28compute_node.29_configuration"></span><span class="mw-headline" id="Client_(compute_node)_configuration">Client (compute node) configuration</span>
+</h3>
+<p>Follow these steps on each compute node in the cluster.
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> If running both the server and client on the same box, be sure to complete these steps as well for that machine as well as other <i>pure</i> clients on the cluster.</div>
+<p>Edit <code>/var/spool/torque/mom_priv/config</code> to contain some basic info identifying the server:
+</p>
+<pre>$pbsserver      mars          # note: this is the hostname of the headnode
+$logevent       255           # bitmap of which events to log
+</pre>
+<h3><span class="mw-headline" id="Restart_the_server">Restart the server</span></h3>
+<p>That should be it. Now restart the server so the settings can take effect.
+</p>
+<pre># killall -s 9 pbs_server
+# pbs_server
+</pre>
+<h3>
+<span id="Starting_the_client.28s.29"></span><span class="mw-headline" id="Starting_the_client(s)">Starting the client(s)</span>
+</h3>
+<p>In order to start the clients run the following on each of the clients, including the server if it is also a client:
+</p>
+<pre># pbs_mom
+</pre>
+<h2><span class="mw-headline" id="Verifying_cluster_status">Verifying cluster status</span></h2>
+<p>To check the status of the cluster, issue the following:
+</p>
+<pre>$ pbsnodes -a
+</pre>
+<p>Each node if up should indicate that it is ready to receive jobs echoing a <i>state</i> of <i>free.</i>  If a node is not working, it will report a state of <i>down.</i>
+</p>
+<p>Example output:
+</p>
+<pre>     mars
+     state = free
+     np = 4
+     ntype = cluster
+     status = rectime=1308479899,varattr=,jobs=0.localhost.localdomain,state=free,netload=1638547057,
+gres=,loadave=2.69,ncpus=4,physmem=8195892kb,availmem=7172508kb,totmem=8195892kb,
+idletime=24772,nusers=1,nsessions=5,sessions=1333 1349 1353 1388 9095,
+uname=Linux mars 2.6.39-ck #1 SMP PREEMPT Sat Jun 18 14:19:01 EDT 2011 x86_64,opsys=linux
+     mom_service_port = 15002
+     mom_manager_port = 15003
+     gpus = 2
+
+phobos
+     state = free
+     np = 2
+     ntype = cluster
+     status = rectime=1308479933,varattr=,jobs=,state=free,netload=1085755815,
+gres=,loadave=2.84,ncpus=2,physmem=4019704kb,availmem=5753552kb,totmem=6116852kb,
+idletime=7324,nusers=2,nsessions=6,sessions=1565 1562 1691 1716 1737 1851,
+uname=Linux phobos 2.6.37-ck #1 SMP PREEMPT Sun Apr 3 17:16:35 EDT 2011 x86_64,opsys=linux
+     mom_service_port = 15002
+     mom_manager_port = 15003
+     gpus = 1
+
+deimos
+     state = free
+     np = 2
+     ntype = cluster
+     status = rectime=1308479890,varattr=,jobs=2.localhost.localdomain,state=free,netload=527239670,
+gres=,loadave=0.52,ncpus=2,physmem=4057808kb,availmem=3955624kb,totmem=4057808kb,
+idletime=644,nusers=1,nsessions=1,sessions=865,
+uname=Linux deimos 2.6.39-ck #1 SMP PREEMPT Sat Jun 11 12:36:21 EDT 2011 x86_64,opsys=linux
+     mom_service_port = 15002
+     mom_manager_port = 15003
+     gpus = 1
+</pre>
+<h2><span class="mw-headline" id="Queuing_jobs">Queuing jobs</span></h2>
+<p>Queuing to the cluster is accomplished via the <i>qsub</i> command.
+</p>
+<p>A trivial test is to simply run sleep:
+</p>
+<pre>$ echo "sleep 30" | qsub
+</pre>
+<p>Check the status of the queue via the <i>qstat</i> command described below. At this point, the work will have a status of "Q" which means queued. To start it, run the scheduler:
+</p>
+<pre># pbs_sched
+</pre>
+<p>One can modify the <i>torque-server</i>  <i>systemd</i> daemon to activate pbs_sched at boot.
+</p>
+<p>Another usage of qsub is to name a job and queue a script:
+</p>
+<pre>$ qsub -N x264 /home/facade/bin/x264_HQ.sh
+</pre>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> STDOUT and STDERR for a queued job will be logged by default in the form text files corresponding to the respective outputs <i>pid.o</i> and <i>pid.e</i> and will be written to the path from which the qsub command was issued.</div>
+<p>Another example can use a wrapper script to make and queue work <i>en mass</i> automatically.
+</p>
+<h2><span class="mw-headline" id="Checking_job_status">Checking job status</span></h2>
+<p><code>qstat</code> is used to check work status.
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">$ qstat</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">Job id                    Name             User            Time Use S Queue
+------------------------- ---------------- --------------- -------- - -----
+13.localhost               generic-i686.pbs facade         00:05:06 R batch          
+14.localhost               atom-i686.pbs    facade         00:03:09 R batch          
+15.localhost               core2-i686.pbs   facade         00:01:02 R batch          
+16.localhost               k7-i686.pbs      facade                0 Q batch          
+17.localhost               k8-i686.pbs      facade                0 Q batch          
+18.localhost               k10-i686.pbs     facade                0 Q batch          
+19.localhost               p4-i686.pbs      facade                0 Q batch          
+20.localhost               pentm-i686.pbs   facade                0 Q batch          
+21.localhost               ...ic-x86_64.pbs facade                0 Q batch          
+22.localhost               atom-x86_64.pbs  facade                0 Q batch          
+23.localhost               core2-x86_64.pbs facade                0 Q batch          
+24.localhost               k8-x86_64.pbs    facade                0 Q batch          
+25.localhost               k10-x86_64.pbs   facade                0 Q batch          
+</pre>
+<p>Append the <code>-n</code> switch to see which nodes are doing which jobs.
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">$ qstat -n</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">localhost.localdomain:
+405.localhost.lo     facade  batch    i686-generic       3035     1   0    --  01:00 C 00:12
+   mars/3+mars/2+mars/1+mars/0
+406.localhost.lo     facade  batch    i686-atom          5768     1   0    --  01:00 C 00:46
+   phobos/1+phobos/0
+407.localhost.lo     facade  batch    i686-core2        22941     1   0    --  01:00 C 00:12
+   mars/3+mars/2+mars/1+mars/0
+408.localhost.lo     facade  batch    i686-k7           10152     1   0    --  01:00 C 00:12
+   mars/3+mars/2+mars/1+mars/0
+409.localhost.lo     facade  batch    i686-k8           29657     1   0    --  01:00 C 00:12
+   mars/3+mars/2+mars/1+mars/0
+410.localhost.lo     facade  batch    i686-k10          16838     1   0    --  01:00 C 00:12
+   mars/3+mars/2+mars/1+mars/0
+411.localhost.lo     facade  batch    i686-p4           25340     1   0    --  01:00 C 00:46
+   deimos/1+deimos/0
+412.localhost.lo     facade  batch    i686-pentm        12544     1   0    --  01:00 R 00:20
+   phobos/1+phobos/0
+413.localhost.lo     facade  batch    x86_64-generic     4024     1   0    --  01:00 C 00:13
+   mars/3+mars/2+mars/1+mars/0
+414.localhost.lo     facade  batch    x86_64-atom       19330     1   0    --  01:00 C 00:13
+   mars/3+mars/2+mars/1+mars/0
+415.localhost.lo     facade  batch    x86_64-core2       2146     1   0    --  01:00 C 00:13
+   mars/3+mars/2+mars/1+mars/0
+416.localhost.lo     facade  batch    x86_64-k8         17234     1   0    --  01:00 R 00:11
+   mars/3+mars/2+mars/1+mars/0
+417.localhost.lo     facade  batch    x86_64-k10          --      1   0    --  01:00 Q   -- 
+    -- 
+</pre>
+<h2><span class="mw-headline" id="See_also">See also</span></h2>
+<ul>
+<li>
+<a rel="nofollow" class="external text" href="https://www.cgl.ucsf.edu/Resources/pbs/user_guide.html">TORQUE short course from University of California, San Francisco</a> - Good guide with templates.</li>
+<li>
+<a rel="nofollow" class="external text" href="https://docs.adaptivecomputing.com/torque/5-1-0/help.htm">TORQUE admin manual</a><sup title="Last check status: SSL error">[<a href="https://en.wikipedia.org/wiki/Wikipedia:Link_rot" class="extiw" title="wikipedia:Wikipedia:Link rot">dead link</a> 2023-05-06 ⓘ]</sup> - Great resource and easy to read.</li>
+<li>
+<a rel="nofollow" class="external text" href="https://web.archive.org/web/20180806104323/http://www.bc.edu/offices/researchservices/cluster/torqueug.html">Boston College's Torque user guide</a> - Guide not extensive but gives a flavor for how end-users can use a cluster. Probably overkill for home clusters where only one user is submitting work.</li>
+<li>
+<a rel="nofollow" class="external text" href="https://web.archive.org/web/20170703105932/http://www.adaptivecomputing.com/support/download-center/torque-download/mailing-lists/">TORQUE mailing lists</a> - The TORQUE community is very knowledgeable and a key asset.</li>
+<li>
+<a rel="nofollow" class="external text" href="https://web.archive.org/web/20150905052324/http://www.clusterresources.com/pipermail/torqueusers/">TORQUE users mailing list archives</a> - Searchable archive of TORQUE-users.</li>
+</ul>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface">
+<div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="../en/Category:Distributed_computing.html" title="Category:Distributed computing">Distributed computing</a></li></ul>
+</div>
+<div id="mw-hidden-catlinks" class="mw-hidden-catlinks mw-hidden-cats-hidden">Hidden category: <ul><li><a href="../en/Category:Pages_with_dead_links.html" title="Category:Pages with dead links">Pages with dead links</a></li></ul>
+</div>
+</div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=TORQUE&amp;oldid=777280">https://wiki.archlinux.org/index.php?title=TORQUE&amp;oldid=777280</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 6 May 2023, at 20:28.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

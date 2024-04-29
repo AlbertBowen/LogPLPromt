@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>CrashPlan - ArchWiki</title>
+<link rel="stylesheet" href="../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-CrashPlan rootpage-CrashPlan skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Installation" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Installation">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Installation</div>
+			</a>
+			
+			<ul id="toc-Installation-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Basic_Usage" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Basic_Usage">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Basic Usage</div>
+			</a>
+			
+			<ul id="toc-Basic_Usage-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Running_Crashplan_on_a_headless_server" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Running_Crashplan_on_a_headless_server">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>Running Crashplan on a headless server</div>
+			</a>
+			
+				<button aria-controls="toc-Running_Crashplan_on_a_headless_server-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Running Crashplan on a headless server subsection
+				</button>
+			
+			<ul id="toc-Running_Crashplan_on_a_headless_server-sublist" class="sidebar-toc-list">
+				<li id="toc-X11_forwarding_over_SSH" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#X11_forwarding_over_SSH">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.1</span>X11 forwarding over SSH</div>
+			</a>
+			
+			<ul id="toc-X11_forwarding_over_SSH-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Local_client" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Local_client">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.2</span>Local client</div>
+			</a>
+			
+			<ul id="toc-Local_client-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Troubleshooting" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Troubleshooting">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4</span>Troubleshooting</div>
+			</a>
+			
+				<button aria-controls="toc-Troubleshooting-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Troubleshooting subsection
+				</button>
+			
+			<ul id="toc-Troubleshooting-sublist" class="sidebar-toc-list">
+				<li id="toc-Waiting_for_Backup" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Waiting_for_Backup">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.1</span>Waiting for Backup</div>
+			</a>
+			
+			<ul id="toc-Waiting_for_Backup-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Restore_stuck_preparing" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Restore_stuck_preparing">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.2</span>Restore stuck preparing</div>
+			</a>
+			
+			<ul id="toc-Restore_stuck_preparing-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Desktop_GUI_Crashes_on_startup" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Desktop_GUI_Crashes_on_startup">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.3</span>Desktop GUI Crashes on startup</div>
+			</a>
+			
+			<ul id="toc-Desktop_GUI_Crashes_on_startup-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Out_of_Memory" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Out_of_Memory">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.4</span>Out of Memory</div>
+			</a>
+			
+			<ul id="toc-Out_of_Memory-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Real_time_protection" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Real_time_protection">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.5</span>Real time protection</div>
+			</a>
+			
+			<ul id="toc-Real_time_protection-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-JRE_Version_Update" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#JRE_Version_Update">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.6</span>JRE Version Update</div>
+			</a>
+			
+			<ul id="toc-JRE_Version_Update-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-See_also" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#See_also">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5</span>See also</div>
+			</a>
+			
+			<ul id="toc-See_also-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../en/CrashPlan.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="new mw-list-item"><a href="/index.php?title=Talk:CrashPlan&amp;action=edit&amp;redlink=1" rel="discussion" title="Discussion about the content page (page does not exist) [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">English</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../en/CrashPlan.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=CrashPlan&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=CrashPlan&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../en/CrashPlan.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=CrashPlan&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=CrashPlan&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output">
+<p><a rel="nofollow" class="external text" href="https://www.crashplan.com/en-us/">CrashPlan</a> is a <a href="../en/Synchronization_and_backup_programs.html" class="mw-redirect" title="Backup program">backup program</a> that backs up data to remote servers, other computers, or hard drives. Backing up to the cloud servers requires a monthly subscription.
+</p>
+<mw:tocplace></mw:tocplace>
+<h2><span class="mw-headline" id="Installation">Installation</span></h2>
+<p><a href="../en/Help:Reading.html#Installation_of_packages" class="mw-redirect" title="Install">Install</a> <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/crashplan-pro/">crashplan-pro</a></span><sup><small>AUR</small></sup>.
+</p>
+<h2><span class="mw-headline" id="Basic_Usage">Basic Usage</span></h2>
+<p>Before accessing CrashPlan's graphical user interface, you should <a href="../en/Help:Reading.html#Control_of_systemd_units" class="mw-redirect" title="Start">start</a> the <code>crashplan-pro.service</code> unit.
+</p>
+<p>CrashPlan can be configured entirely through its graphical user interface. To start the graphical interface:
+</p>
+<pre>$ CrashPlanDesktop
+</pre>
+<p>To make CrashPlan automatically start upon system startup, <a href="../en/Help:Reading.html#Control_of_systemd_units" class="mw-redirect" title="Enable">enable</a> the systemd unit.
+</p>
+<h2><span class="mw-headline" id="Running_Crashplan_on_a_headless_server">Running Crashplan on a headless server</span></h2>
+<p>Running CrashPlan on a headless server is not officially supported. However, it is possible to do so.
+</p>
+<p>The CrashPlan daemon's configuration files (in <code>/opt/crashplan/conf</code>) are in an obscure XML format, and they are meant to be edited programmatically by the CrashPlan client.
+</p>
+<p>CrashPlan 5 introduced a new client which unfortunately dropped support for configuring a remote server with a local client, so you will need to use X11 forwarding.
+</p>
+<h3><span class="mw-headline" id="X11_forwarding_over_SSH">X11 forwarding over SSH</span></h3>
+<p>Ensure that <code>X11Forwarding</code> is set to <code>yes</code> in the headless server's <code>/etc/ssh/sshd_config</code> and from another machine running X11, SSH to the headless machine with <code>-Y</code>, and from the remote shell run <code>CrashPlanDesktop</code>. The headless machine's windows will appear on the local X11 server. If you have problems, check <code>/opt/crashplan/log/ui_error.log</code>.
+</p>
+<h3><span class="mw-headline" id="Local_client">Local client</span></h3>
+<p>On CrashPlan v4.x and below, the client and daemon communicate on port 4243 by default. Thus, an easy way of configuring the CrashPlan daemon on a headless server is to create an SSH tunnel:
+</p>
+<ol>
+<li>
+<a href="../en/Help:Reading.html#Control_of_systemd_units" class="mw-redirect" title="Start">Start</a> the CrashPlan daemon on the server.</li>
+<li>Create an SSH tunnel. On the client: <code>ssh -N -L 4243:localhost:4243 headless.example.com</code>.</li>
+<li>Start the CrashPlan client. (Again, the executable is named <code>CrashPlanDesktop</code>.)</li>
+</ol>
+<p>Note that the authentication token (located in <code>/var/lib/crashplan/.ui_info</code>) on the local and remote servers must match. More ideas can be found on these websites:
+</p>
+<ul>
+<li>The CrashPlan support site <a rel="nofollow" class="external text" href="https://web.archive.org/web/20210224184059/https://support.code42.com/CrashPlan/4/Configuring/Use_CrashPlan_on_a_headless_computer">details</a> a slightly more complicated method of tunneling traffic from the client (CrashPlan Desktop) to the daemon (CrashPlan Engine) through an SSH tunnel.</li>
+<li>A <a rel="nofollow" class="external text" href="https://www.liquidstate.net/how-to-manage-your-crashplan-server-remotely/">post by Bryan Ross</a> details how to make CrashPlan Desktop connect directly to CrashPlan Engine. Note that this method can be less secure than tunneling traffic through an SSH tunnel.</li>
+</ul>
+<h2><span class="mw-headline" id="Troubleshooting">Troubleshooting</span></h2>
+<h3><span class="mw-headline" id="Waiting_for_Backup">Waiting for Backup</span></h3>
+<p>If the backup is stuck on «Waiting for Backup» even after you engage it manually, it might be that CrashPlan cannot access the tempdir or it is mounted as <code>noexec</code>. It uses the default Java tmp dir which is normally <code>/tmp</code>. You can either remove the <code>noexec</code> mount option (not recommended) or change the tmpdir CrashPlan is using.
+</p>
+<p>To change the tmpdir CrashPlan uses, open <code>/opt/crashplan/bin/run.conf</code> and insert <code>-Djava.io.tmpdir=/new-tempdir</code> to <code>SRV_JAVA_OPTS</code>, for example:
+</p>
+<pre>SRV_JAVA_OPTS="-Djava.io.tmpdir=/var/tmp/crashplan -Dfile.encoding=UTF-8 …
+</pre>
+<p>Make sure to create the new tmpdir and verify CrashPlan's user has access to it.
+</p>
+<pre># mkdir /var/tmp/crashplan
+</pre>
+<p><a href="../en/Help:Reading.html#Control_of_systemd_units" class="mw-redirect" title="Restart">Restart</a> CrashPlan.
+</p>
+<h3><span class="mw-headline" id="Restore_stuck_preparing">Restore stuck preparing</span></h3>
+<p>If a restore gets stuck at «Preparing», it may be due to a permission restriction on <code>/tmp</code> that causes communication between the restore tool and backup engine to fail. This can be caused by the sysctl variable <code>fs.protected_fifos</code> restricting the engine (running as <code>root</code>) from connecting to a named pipe owned by the desktop user contained in <code>/tmp</code> (similar to <a href="../en/Tmpfs.html#Opening_symlinks_in_tmpfs_as_root_fails" title="Tmpfs">tmpfs#Opening symlinks in tmpfs as root fails</a>).
+</p>
+<p>The protection can be disabled to permit the restore to occur with
+</p>
+<pre># sysctl fs.protected_fifos=0
+</pre>
+<p>systemd since version 241 sets this option to 1 by default; refer to  <a rel="nofollow" class="external text" href="https://github.com/systemd/systemd/blob/2732587540035227fe59e4b64b60127352611b35/NEWS#L32">the systemd documentation</a> for how to correctly change it, and see <a href="../en/Sysctl.html" title="Sysctl">Sysctl</a> for more information.
+</p>
+<h3><span class="mw-headline" id="Desktop_GUI_Crashes_on_startup">Desktop GUI Crashes on startup</span></h3>
+<p>On systems with Gnome 3 installed, or with libwebkit-gtk installed, there may be an issue where the GUI crashes on launch. This can be fixed by following the instructions <a rel="nofollow" class="external text" href="https://support.code42.com/CrashPlan/Latest/Troubleshooting/CrashPlan_Client_Closes_In_Some_Linux_Installations">here</a><sup title="Last check status: 404">[<a href="https://en.wikipedia.org/wiki/Wikipedia:Link_rot" class="extiw" title="wikipedia:Wikipedia:Link rot">dead link</a> 2023-04-23 ⓘ]</sup>.
+</p>
+<h3><span class="mw-headline" id="Out_of_Memory">Out of Memory</span></h3>
+<p>For backup sets containing large numbers of files, the default maximum heap size may not be large enough because the memory required scales with the number of files to back up. If the server runs out of memory it will silently restart, and usually get stuck restarting as it continually reaches the memory limit. To increase the heap size limit, adjust the <code>-Xmx</code> option in <code>/opt/crashplan/bin/run.conf</code> to a reasonable value for your system.
+</p>
+<h3><span class="mw-headline" id="Real_time_protection">Real time protection</span></h3>
+<p>If you use real time protection for your backup set and have a lot of files to backup, the default system configuration might not be able to allocate all required handles to follow all files in real time. This issue can manifest itself with logs like "inotify_add_watch: No space left on device" in the syslog journal. 
+CrashPlan Support has instructions <a rel="nofollow" class="external text" href="https://support.crashplan.com/Troubleshooting/Real-Time_Backup_For_Network-Attached_Drives">here</a><sup title="Last check status: 404">[<a href="https://en.wikipedia.org/wiki/Wikipedia:Link_rot" class="extiw" title="wikipedia:Wikipedia:Link rot">dead link</a> 2023-04-23 ⓘ]</sup> describing how to modify inotify max_user_watches to a bigger value to fix the issue. <b>You cannot follow their instructions directly though</b>, you need to create a new file in /etc/sysctl.d as /etc/sysctl.conf is now ignored by systemd. See <a href="../en/Sysctl.html#Configuration" title="Sysctl">sysctl#Configuration</a> for more information.
+</p>
+<h3><span class="mw-headline" id="JRE_Version_Update">JRE Version Update</span></h3>
+<p>If, during upgrade, CrashPlan is attempting to upgrade the self-installed JRE version and the upgrade never gets passed downloading the JRE from CrashPlan (checking in logs/upgrade&lt;unique_number&gt;.log, the last message is a curl/wget for the "latest" JRE tgz), it is possible to stop CrashPlan, download the JRE (from the ugprade log) manually and replace the jre folder in the CrashPlan install with the upgrade version. This should allow CrashPlan to get past being stuck trying to upgrade the JRE.
+</p>
+<pre> cd &lt;crashplan/install/dir&gt;
+ ./bin/CrashPlanEngine stop
+ rm -rf jre
+ curl &lt;jre url from crashplan log&gt;
+ tar xzvf &lt;jre.tgz&gt;
+ ./bin/CrashPlanEngine start
+</pre>
+<h2><span class="mw-headline" id="See_also">See also</span></h2>
+<ul>
+<li><a rel="nofollow" class="external text" href="https://www.code42.com/crashplan/">CrashPlan home page</a></li>
+<li><a rel="nofollow" class="external text" href="https://web.archive.org/web/20210224184059/https://support.code42.com/CrashPlan/4/Configuring/Use_CrashPlan_on_a_headless_computer">CrashPlan On A Headless Server - Code42Support</a></li>
+<li><a href="https://en.wikipedia.org/wiki/CrashPlan" class="extiw" title="wikipedia:CrashPlan">Wikipedia:CrashPlan</a></li>
+</ul>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface">
+<div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="../en/Category:Backup.html" title="Category:Backup">Backup</a></li></ul>
+</div>
+<div id="mw-hidden-catlinks" class="mw-hidden-catlinks mw-hidden-cats-hidden">Hidden category: <ul><li><a href="../en/Category:Pages_with_dead_links.html" title="Category:Pages with dead links">Pages with dead links</a></li></ul>
+</div>
+</div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=CrashPlan&amp;oldid=776148">https://wiki.archlinux.org/index.php?title=CrashPlan&amp;oldid=776148</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 23 April 2023, at 05:08.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

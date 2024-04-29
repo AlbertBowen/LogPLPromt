@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>SpamAssassin - ArchWiki</title>
+<link rel="stylesheet" href="../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-SpamAssassin rootpage-SpamAssassin skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Installation" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Installation">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Installation</div>
+			</a>
+			
+			<ul id="toc-Installation-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Usage" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Usage">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Usage</div>
+			</a>
+			
+				<button aria-controls="toc-Usage-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Usage subsection
+				</button>
+			
+			<ul id="toc-Usage-sublist" class="sidebar-toc-list">
+				<li id="toc-Updating_rules" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Updating_rules">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.1</span>Updating rules</div>
+			</a>
+			
+			<ul id="toc-Updating_rules-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Set_maximum_size_for_scanning" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Set_maximum_size_for_scanning">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>Set maximum size for scanning</div>
+			</a>
+			
+			<ul id="toc-Set_maximum_size_for_scanning-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Using_a_SQL_database" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Using_a_SQL_database">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4</span>Using a SQL database</div>
+			</a>
+			
+				<button aria-controls="toc-Using_a_SQL_database-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Using a SQL database subsection
+				</button>
+			
+			<ul id="toc-Using_a_SQL_database-sublist" class="sidebar-toc-list">
+				<li id="toc-MySQL" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#MySQL">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.1</span>MySQL</div>
+			</a>
+			
+			<ul id="toc-MySQL-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Plugins" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Plugins">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5</span>Plugins</div>
+			</a>
+			
+				<button aria-controls="toc-Plugins-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Plugins subsection
+				</button>
+			
+			<ul id="toc-Plugins-sublist" class="sidebar-toc-list">
+				<li id="toc-ClamAV" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#ClamAV">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5.1</span>ClamAV</div>
+			</a>
+			
+			<ul id="toc-ClamAV-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Razor" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Razor">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5.2</span>Razor</div>
+			</a>
+			
+			<ul id="toc-Razor-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Tips_and_tricks" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Tips_and_tricks">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6</span>Tips and tricks</div>
+			</a>
+			
+				<button aria-controls="toc-Tips_and_tricks-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Tips and tricks subsection
+				</button>
+			
+			<ul id="toc-Tips_and_tricks-sublist" class="sidebar-toc-list">
+				<li id="toc-Maintaining_TxRep_SQL_table" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Maintaining_TxRep_SQL_table">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6.1</span>Maintaining TxRep SQL table</div>
+			</a>
+			
+			<ul id="toc-Maintaining_TxRep_SQL_table-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../en/SpamAssassin.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="mw-list-item"><a href="../en/Talk:SpamAssassin.html" rel="discussion" title="Discussion about the content page [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">English</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../en/SpamAssassin.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=SpamAssassin&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=SpamAssassin&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../en/SpamAssassin.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=SpamAssassin&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=SpamAssassin&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output">
+<div class="archwiki-template-meta-related-articles-start">
+<p class="mw-no-invert">Related articles</p>
+<ul>
+<li><a href="../en/Postfix.html#SpamAssassin" title="Postfix">Postfix#SpamAssassin</a></li>
+</ul>
+</div>
+<p><a rel="nofollow" class="external text" href="https://spamassassin.apache.org/">SpamAssassin</a> is a mail filter to identify spam.
+</p>
+<mw:tocplace></mw:tocplace>
+<h2><span class="mw-headline" id="Installation">Installation</span></h2>
+<p><a href="../en/Help:Reading.html#Installation_of_packages" class="mw-redirect" title="Install">Install</a> the <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=spamassassin">spamassassin</a></span> package.
+</p>
+<p>Create a sa-update-keys directory in <code>/etc/mail/spamassassin</code> and change the owner and group:
+</p>
+<pre># mkdir /etc/mail/spamassassin/sa-update-keys
+# chown spamd:spamd /etc/mail/spamassassin/sa-update-keys
+# chmod 700 /etc/mail/spamassassin/sa-update-keys
+</pre>
+<p>Next <a href="../en/Help:Reading.html#Control_of_systemd_units" class="mw-redirect" title="Start/enable">start/enable</a> <code>spamassassin.service</code>.
+</p>
+<h2><span class="mw-headline" id="Usage">Usage</span></h2>
+<p>Go over <code>/etc/mail/spamassassin/local.cf</code> and configure it to your needs.
+</p>
+<h3><span class="mw-headline" id="Updating_rules">Updating rules</span></h3>
+<p>Update the SpamAssassin matching patterns and compile them:
+</p>
+<pre># sudo -u spamd /usr/bin/vendor_perl/sa-update &amp;&amp; sudo -u spamd /usr/bin/vendor_perl/sa-compile
+</pre>
+<p>You will want to run this periodically, the best way to do so is by setting up a <a href="../en/Systemd/Timers.html" class="mw-redirect" title="Systemd timer">systemd timer</a>.
+</p>
+<p>Create the following service, which will run these commands:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/systemd/system/spamassassin-update.service</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">[Unit]
+Description=spamassassin housekeeping stuff
+After=network.target
+
+[Service]
+User=spamd
+Group=spamd
+Type=oneshot
+
+ExecStart=/usr/bin/vendor_perl/sa-update
+SuccessExitStatus=1
+ExecStart=/usr/bin/vendor_perl/sa-compile
+ExecStart=!/usr/bin/systemctl -q --no-block try-restart spamassassin.service
+
+# uncomment the following ExecStart line to train SA's bayes filter
+# and specify the path to the mailbox that contains spam email(s)
+#ExecStart=/usr/bin/vendor_perl/sa-learn --spam &lt;path_to_your_spam_mailbox&gt;</pre>
+<p>Then create the timer, which will execute the previous service daily:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/systemd/system/spamassassin-update.timer</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">[Unit]
+Description=spamassassin house keeping
+
+[Timer]
+OnCalendar=daily
+Persistent=true
+
+[Install]
+WantedBy=timers.target</pre>
+<p>Now you can <a href="../en/Help:Reading.html#Control_of_systemd_units" class="mw-redirect" title="Start">start</a> and <a href="../en/Help:Reading.html#Control_of_systemd_units" class="mw-redirect" title="Enable">enable</a> <code>spamassassin-update.timer</code>.
+</p>
+<h2><span class="mw-headline" id="Set_maximum_size_for_scanning">Set maximum size for scanning</span></h2>
+<p>The default maximum size for scanning is 500 KB (see <span class="plainlinks archwiki-template-man" title="$ man 1p spamc"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/spamc.1p">spamc(1p)</a></span>). You can modify it: create the spamc configuration file. For example :
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/mail/spamassassin/spamc.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;"># spamc global configuration file
+
+# max message size for scanning = 1Mo
+-s 1000000</pre>
+<h2><span class="mw-headline" id="Using_a_SQL_database">Using a SQL database</span></h2>
+<p>SpamAssassin can load user preferences, Bayesian filter data and auto-whitelist from a SQL database. This is specially helpful for a virtual user mail setup, where users do not have a <code>$HOME/.spamassassin</code> directory with their SpamAssassin data.
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> Since <a rel="nofollow" class="external text" href="https://cwiki.apache.org/confluence/display/SPAMASSASSIN/TxRep">TxRep plugin</a> is a newer and enhanced replacement for <a rel="nofollow" class="external text" href="https://cwiki.apache.org/confluence/display/SPAMASSASSIN/AutoWelcomelist">Auto-Welcomelist</a> and <a rel="nofollow" class="external text" href="https://cwiki.apache.org/confluence/display/spamassassin/AutoWhitelist">Auto-Whitelist</a>, this is the covered implementation in this article</div>
+<h3><span class="mw-headline" id="MySQL">MySQL</span></h3>
+<p>Install <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=perl-dbd-mysql">perl-dbd-mysql</a></span>. Then, create the database:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">$ mysql -u root -p</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">CREATE DATABASE &lt;db_name&gt;;
+GRANT ALL ON &lt;db_name&gt;.* TO '&lt;db_user&gt;'@'localhost' IDENTIFIED BY '&lt;password&gt;';</pre>
+<p>Git-clone <a rel="nofollow" class="external text" href="https://github.com/apache/spamassassin">SpamAssassin's source</a>. Under the <code>sql/</code> directory you will find the required files to create the database tables. Note that <code>TYPE</code> has been replaced by <code>ENGINE</code> in recent MySQL versions, so replace it accordingly in the used <code>.sql</code> files if needed.
+</p>
+<p>Create the tables for user preferences, Bayesian filter data and TxRep, respectively:
+</p>
+<pre>$ mysql -u root -p &lt;db_name&gt; &lt; userpref_mysql.sql
+$ mysql -u root -p &lt;db_name&gt; &lt; bayes_mysql.sql
+$ mysql -u root -p &lt;db_name&gt; &lt; txrep_mysql.sql
+</pre>
+<p>TxRep is optional, so skip it if you're not using it. In case you want to use it but haven't configured it yet, please refer to <span class="plainlinks archwiki-template-man" title="$ man 3 Mail::SpamAssassin::Plugin::TxRep"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/Mail%3A%3ASpamAssassin%3A%3APlugin%3A%3ATxRep.3">Mail::SpamAssassin::Plugin::TxRep(3)</a></span>
+</p>
+<p>Make sure to have the following your configuration file:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/mail/spamassassin/local.cf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">## MySQL database setup
+# User scores
+user_scores_dsn             DBI:mysql:&lt;db_name&gt;:localhost
+user_scores_sql_username    &lt;db_user&gt;
+user_scores_sql_password    &lt;password&gt;
+
+# Bayesian filter
+bayes_store_module          Mail::SpamAssassin::BayesStore::MySQL
+bayes_sql_dsn               DBI:mysql:&lt;db_name&gt;:localhost
+bayes_sql_username          &lt;db_user&gt;
+bayes_sql_password          &lt;password&gt;
+
+# TxRep plugin
+txrep_factory               Mail::SpamAssassin::SQLBasedAddrList
+user_awl_dsn                DBI:mysql:&lt;db_name&gt;:localhost
+user_awl_sql_username       &lt;db_user&gt;
+user_awl_sql_password       &lt;password&gt;</pre>
+<p>Finally, <a href="../en/Help:Reading.html#Control_of_systemd_units" class="mw-redirect" title="Restart">restart</a> <code>spamassassin.service</code>.
+</p>
+<h2><span class="mw-headline" id="Plugins">Plugins</span></h2>
+<h3><span class="mw-headline" id="ClamAV">ClamAV</span></h3>
+<p>Install and setup clamd as described in <a href="../en/ClamAV.html" title="ClamAV">ClamAV</a>.
+</p>
+<p>Follow one of the above instructions to call SpamAssassin from within your mail system.
+</p>
+<p><a href="../en/Help:Reading.html#Installation_of_packages" class="mw-redirect" title="Install">Install</a> the <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=perl-cpanplus-dist-arch">perl-cpanplus-dist-arch</a></span> package. Then install the ClamAV perl library as follows:
+</p>
+<pre># /usr/bin/vendor_perl/cpanp -i File::Scan::ClamAV
+</pre>
+<p>Add the 2 files from <a rel="nofollow" class="external free" href="https://wiki.apache.org/spamassassin/ClamAVPlugin">https://wiki.apache.org/spamassassin/ClamAVPlugin</a> into <code>/etc/mail/spamassassin/</code>.
+Edit <code>/etc/mail/spamassassin/clamav.pm</code> and update <code>$CLAMD_SOCK</code> to point to your Clamd socket location (default is <code>/run/clamav/clamd.ctl</code>).
+</p>
+<p>Finally, <a href="../en/Help:Reading.html#Control_of_systemd_units" class="mw-redirect" title="Restart">restart</a> <code>spamassassin.service</code>.
+</p>
+<h3><span class="mw-headline" id="Razor">Razor</span></h3>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> The last version was released 2008.<a rel="nofollow" class="external autonumber" href="https://sourceforge.net/projects/razor/files/razor-agents/">[1]</a>
+</div>
+<p><a rel="nofollow" class="external text" href="http://razor.sourceforge.net/">Vipul's Razor</a> is a distributed, collaborative, spam detection and filtering network.
+</p>
+<p>Make sure you have installed SpamAssassin first, then:
+</p>
+<p><a href="../en/Help:Reading.html#Installation_of_packages" class="mw-redirect" title="Install">Install</a> the <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=razor">razor</a></span> package.
+</p>
+<p>Register with Razor.
+</p>
+<pre># mkdir /etc/mail/spamassassin/razor
+# chown spamd:spamd /etc/mail/spamassassin/razor
+# sudo -u spamd -s
+$ cd /etc/mail/spamassassin/razor
+$ razor-admin -home=/etc/mail/spamassassin/razor -register
+$ razor-admin -home=/etc/mail/spamassassin/razor -create
+$ razor-admin -home=/etc/mail/spamassassin/razor -discover
+</pre>
+<p>To tell SpamAssassin about Razor, add the following line to <code>/etc/mail/spamassassin/local.cf</code>:
+</p>
+<pre>razor_config /etc/mail/spamassassin/razor/razor-agent.conf
+</pre>
+<p>To tell Razor about itself, add the following line to <code>/etc/mail/spamassassin/razor/razor-agent.conf</code>:
+</p>
+<pre>razorhome = /etc/mail/spamassassin/razor/
+</pre>
+<p>Finally, <a href="../en/Help:Reading.html#Control_of_systemd_units" class="mw-redirect" title="Restart">restart</a> <code>spamassassin.service</code>.
+</p>
+<h2><span class="mw-headline" id="Tips_and_tricks">Tips and tricks</span></h2>
+<h3><span class="mw-headline" id="Maintaining_TxRep_SQL_table">Maintaining TxRep SQL table</span></h3>
+<p>It is recommended to keep TxRep SQL table clear of stale data, for performance and storage reasons. Here is a sample query that can be run on a regular schedule:
+</p>
+<pre>DELETE FROM txrep WHERE last_hit &lt;= (now() - INTERVAL 120 day);
+</pre>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="../en/Category:Mail_server.html" title="Category:Mail server">Mail server</a></li></ul>
+</div></div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=SpamAssassin&amp;oldid=771582">https://wiki.archlinux.org/index.php?title=SpamAssassin&amp;oldid=771582</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 8 March 2023, at 12:08.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

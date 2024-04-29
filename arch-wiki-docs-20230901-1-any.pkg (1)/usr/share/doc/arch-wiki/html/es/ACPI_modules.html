@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>ACPI modules (Español) - ArchWiki</title>
+<link rel="stylesheet" href="../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-ACPI_modules_Español rootpage-ACPI_modules_Español skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-¿Qué_módulos_están_disponibles?" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#%C2%BFQu%C3%A9_m%C3%B3dulos_est%C3%A1n_disponibles?">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>¿Qué módulos están disponibles?</div>
+			</a>
+			
+			<ul id="toc-¿Qué_módulos_están_disponibles?-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Cómo_seleccionar_los_adecuados" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#C%C3%B3mo_seleccionar_los_adecuados">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Cómo seleccionar los adecuados</div>
+			</a>
+			
+			<ul id="toc-Cómo_seleccionar_los_adecuados-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Obteniendo_información" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Obteniendo_informaci%C3%B3n">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>Obteniendo información</div>
+			</a>
+			
+			<ul id="toc-Obteniendo_información-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Solución_de_problemas" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Soluci%C3%B3n_de_problemas">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4</span>Solución de problemas</div>
+			</a>
+			
+				<button aria-controls="toc-Solución_de_problemas-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Solución de problemas subsection
+				</button>
+			
+			<ul id="toc-Solución_de_problemas-sublist" class="sidebar-toc-list">
+				<li id="toc-Corregir_DSDT" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Corregir_DSDT">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.1</span>Corregir DSDT</div>
+			</a>
+			
+			<ul id="toc-Corregir_DSDT-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Corregir_ACPI_para_portátiles" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Corregir_ACPI_para_port%C3%A1tiles">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.2</span>Corregir ACPI  para portátiles</div>
+			</a>
+			
+			<ul id="toc-Corregir_ACPI_para_portátiles-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Véase_también" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#V%C3%A9ase_tambi%C3%A9n">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5</span>Véase también</div>
+			</a>
+			
+			<ul id="toc-Véase_también-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../es/ACPI_modules.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="new mw-list-item"><a href="/index.php?title=Talk:ACPI_modules_(Espa%C3%B1ol)&amp;action=edit&amp;redlink=1" rel="discussion" title="Discussion about the content page (page does not exist) [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">español</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../es/ACPI_modules.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=ACPI_modules_(Espa%C3%B1ol)&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=ACPI_modules_(Espa%C3%B1ol)&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../es/ACPI_modules.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=ACPI_modules_(Espa%C3%B1ol)&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=ACPI_modules_(Espa%C3%B1ol)&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="es" dir="ltr">
+<div class="mw-parser-output">
+<div class="archwiki-template-box archwiki-template-box-note">Esta traducción de <a href="../en/ACPI_modules.html" title="ACPI modules">ACPI modules</a> fue revisada el <b>2022-11-03</b>. Si existen <a rel="nofollow" class="external text" href="https://wiki.archlinux.org/index.php?title=ACPI_modules&amp;diff=0&amp;oldid=754082">cambios</a> puede <a href="../es/ArchWiki:Translation_Team/Contributing.html" title="ArchWiki:Translation Team (Español)/Contributing (Español)">actualizarla</a> o avisar al <a href="../es/ArchWiki:Translation_Team.html" title="ArchWiki:Translation Team (Español)">equipo de traducción</a>.</div>
+<div class="archwiki-template-meta-related-articles-start">
+<p class="mw-no-invert">Artículos relacionados</p>
+<ul>
+<li><a href="../es/Acpid.html" title="Acpid (Español)">acpid</a></li>
+<li><a href="../en/DSDT.html" title="DSDT">DSDT</a></li>
+</ul>
+</div>
+<p>De <a rel="nofollow" class="external text" href="https://uefi.org/acpi">uefi.org</a>:
+</p>
+<dl><dd>La especificación Advanced Configuration and Power Interface (ACPI) se desarrolló para establecer interfaces comunes en la industria que permiten una configuración robusta de los dispositivos de la placa base dirigida por un sistema operativo (SO) y la administración de energía tanto de los dispositivos como del sistema completo. ACPI es el elemento clave en la configuración dirigida por el sistema operativo y la administración de energía (OSPM).</dd></dl>
+<p>Los módulos ACPI son módulos del kernel para diferentes partes de ACPI. Permiten funciones ACPI especiales o añaden información en <code>/proc</code> o <code>/sys</code>. Esta información puede ser analizada por <a href="../es/Acpid.html" title="Acpid (Español)">acpid</a> para eventos u otras aplicaciones de supervisión.
+</p>
+<mw:tocplace></mw:tocplace>
+<h2>
+<span id=".C2.BFQu.C3.A9_m.C3.B3dulos_est.C3.A1n_disponibles.3F"></span><span class="mw-headline" id="¿Qué_módulos_están_disponibles?">¿Qué módulos están disponibles?</span>
+</h2>
+<p>Esta es una pequeña lista y un resumen de los módulos del kernel de ACPI:
+</p>
+<ul>
+<li>ac (estado del conector de alimentación)</li>
+<li>asus-laptop (útil en portátiles ASUS/medion)</li>
+<li>battery (estado de la batería)</li>
+<li>bay (estado de las bahías)</li>
+<li>button (eventos de botón de captura, como LID o POWER BUTTON)</li>
+<li>container (estado del contenedor)</li>
+<li>dock (estado de la estación de acoplamiento, <i>docking station</i>)</li>
+<li>fan (estado del los ventiladores)</li>
+<li>i2c_ec (driver EC SMBus)</li>
+<li>thinkpad_acpi (útil en portátiles Lenovo ThinkPad)</li>
+<li>processor (estado de los procesadores)</li>
+<li>sbs (estado de la batería inteligente)</li>
+<li>thermal (estado de los sensores de temperatura)</li>
+<li>toshiba_acpi (útil en portátiles Toshiba)</li>
+<li>video (estado de los dispositivos de vídeo)</li>
+</ul>
+<p>Se puede obtener una lista completa para su kernel en ejecución con la siguiente orden:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">$ ls -l /usr/lib/modules/$(uname -r)/kernel/drivers/acpi</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">total 112
+-rw-r--r-- 1 root root  2808 Aug 29 23:58 ac.ko.gz
+-rw-r--r-- 1 root root  3021 Aug 29 23:58 acpi_ipmi.ko.gz
+-rw-r--r-- 1 root root  3354 Aug 29 23:58 acpi_memhotplug.ko.gz
+-rw-r--r-- 1 root root  4628 Aug 29 23:58 acpi_pad.ko.gz
+drwxr-xr-x 2 root root  4096 Aug 29 23:59 apei
+-rw-r--r-- 1 root root  7120 Aug 29 23:58 battery.ko.gz
+-rw-r--r-- 1 root root  3700 Aug 29 23:58 button.ko.gz
+-rw-r--r-- 1 root root  2181 Aug 29 23:58 container.ko.gz
+-rw-r--r-- 1 root root  1525 Aug 29 23:58 custom_method.ko.gz
+-rw-r--r-- 1 root root  1909 Aug 29 23:58 ec_sys.ko.gz
+-rw-r--r-- 1 root root  2001 Aug 29 23:58 fan.ko.gz
+-rw-r--r-- 1 root root  1532 Aug 29 23:58 hed.ko.gz
+-rw-r--r-- 1 root root  3241 Aug 29 23:58 pci_slot.ko.gz
+-rw-r--r-- 1 root root 17742 Aug 29 23:58 processor.ko.gz
+-rw-r--r-- 1 root root  3073 Aug 29 23:58 sbshc.ko.gz
+-rw-r--r-- 1 root root  7098 Aug 29 23:58 sbs.ko.gz
+-rw-r--r-- 1 root root  6311 Aug 29 23:58 thermal.ko.gz
+-rw-r--r-- 1 root root  8891 Aug 29 23:58 video.ko.gz
+</pre>
+<h2>
+<span id="C.C3.B3mo_seleccionar_los_adecuados"></span><span class="mw-headline" id="Cómo_seleccionar_los_adecuados">Cómo seleccionar los adecuados</span>
+</h2>
+<p>Debe ir probando los módulos que funcionan en su máquina utilizando <code>modprobe <i>módulo</i></code>, entonces compruebe si el módulo es compatible con su hardware utilizando <a href="../es/Core_utilities.html#Esenciales" class="mw-redirect" title="Dmesg (Español)">dmesg</a>. Puede ser útil añadir una búsqueda de texto <i>grep</i> para restringir los resultados:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;"># dmesg | grep -i acpi</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">[    0.000000] ACPI: LAPIC (acpi_id[0x00] lapic_id[0x00] enabled)
+[    0.000000] ACPI: LAPIC (acpi_id[0x01] lapic_id[0x04] enabled)
+[    0.000000] ACPI: LAPIC (acpi_id[0x02] lapic_id[0x01] enabled)
+[    0.000000] ACPI: LAPIC (acpi_id[0x03] lapic_id[0x05] enabled)
+[    0.000000] ACPI: LAPIC_NMI (acpi_id[0x00] high edge lint[0x1])
+[    0.000000] ACPI: LAPIC_NMI (acpi_id[0x01] high edge lint[0x1])
+[    0.000000] ACPI: LAPIC_NMI (acpi_id[0x02] high edge lint[0x1])
+[    0.000000] ACPI: LAPIC_NMI (acpi_id[0x03] high edge lint[0x1])
+[    5.066752] ACPI: acpi_idle yielding to intel_idle
+[    5.438998] acpi device:04: registered as cooling_device4
+</pre>
+<p>Puede <a href="../es/Kernel_module.html#Carga_autom%C3%A1tica_de_m%C3%B3dulos" class="mw-redirect" title="Load the module at boot (Español)">cargar el módulo en el arranque</a> para que el cambio sea permanente para los que funcionan.
+</p>
+<h2>
+<span id="Obteniendo_informaci.C3.B3n"></span><span class="mw-headline" id="Obteniendo_información">Obteniendo información</span>
+</h2>
+<p>Para obtener la información de la batería, simplemente <a href="../es/Help:Reading.html#Instalaci%C3%B3n_de_paquetes" class="mw-redirect" title="Install (Español)">instale</a> el paquete <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=acpi">acpi</a></span> y ejecute  <code>acpi -i</code>.
+</p>
+<p>El uso de <code>/proc</code> para almacenar información ACPI ha sido desaconsejado y desaprobado desde Linux 2.6.24. Los mismos datos están ahora disponibles en <code>/sys</code>, y las partes de interés pueden (deberían) suscribirse a los eventos ACPI desde el kernel a través de netlink. Por ejemplo, para la batería:
+</p>
+<pre>/sys/class/power_supply/BAT0/
+</pre>
+<h2>
+<span id="Soluci.C3.B3n_de_problemas"></span><span class="mw-headline" id="Solución_de_problemas">Solución de problemas</span>
+</h2>
+<h3><span class="mw-headline" id="Corregir_DSDT">Corregir DSDT</span></h3>
+<p>Si persisten los problemas con la administración de energía a pesar de haber cargado los módulos adecuados, un <a href="../en/DSDT.html" title="DSDT">DSDT</a> poco amistoso para Linux podría ser la causa.
+</p>
+<h3>
+<span id="Corregir_ACPI_para_port.C3.A1tiles"></span><span class="mw-headline" id="Corregir_ACPI_para_portátiles">Corregir ACPI  para portátiles</span>
+</h3>
+<p>A veces verá "ACPI: EC: input buffer is not empty, aborting transaction". Este es un problema con ACPI, más específicamente una incompatibilidad de la BIOS. Puede haber cuatro formas de resolver este problema:
+</p>
+<ul>
+<li>Si está disponible, <a href="../en/Flashing_BIOS_from_Linux.html" class="mw-redirect" title="Flash BIOS">actualice la BIOS</a>.</li>
+<li>Utilice <code>acpi=off</code> como <a href="../es/Kernel_parameters.html" title="Kernel parameters (Español)">parámetro del kernel</a>, sin embargo, esto matará todas las funciones ACPI, como la carga de la batería y el ahorro de energía.</li>
+<li>En algunos casos, se informó que desactivando <a href="../en/Display_Power_Management_Signaling.html" class="mw-redirect" title="DPMS">DPMS</a> se solucionó el problema <a rel="nofollow" class="external autonumber" href="https://ubuntuforums.org/showthread.php?p=8030130#10">[1]</a>. Sin embargo, el brillo de la pantalla ya no puede ser totalmente controlable: <pre>$ xset dpms force off</pre>
+</li>
+<li>Construya un <a href="../en/Kernel.html" class="mw-redirect" title="Kernel (Español)">kernel</a> a medida con los parches en <a rel="nofollow" class="external text" href="https://bugs.launchpad.net/ubuntu/+source/linux/+bug/578506">bugs.launchpad.net</a>.</li>
+</ul>
+<h2>
+<span id="V.C3.A9ase_tambi.C3.A9n"></span><span class="mw-headline" id="Véase_también">Véase también</span>
+</h2>
+<ul><li><a href="https://en.wikipedia.org/wiki/es:Advanced_Configuration_and_Power_Interface" class="extiw" title="wikipedia:es:Advanced Configuration and Power Interface">Wikipedia:es:Advanced Configuration and Power Interface</a></li></ul>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="../es/Category:Power_management.html" title="Category:Power management (Español)">Power management (Español)</a></li></ul>
+</div></div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=ACPI_modules_(Espa%C3%B1ol)&amp;oldid=755792">https://wiki.archlinux.org/index.php?title=ACPI_modules_(Español)&amp;oldid=755792</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 3 November 2022, at 22:41.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

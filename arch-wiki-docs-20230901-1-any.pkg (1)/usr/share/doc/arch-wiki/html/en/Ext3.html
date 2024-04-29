@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>Ext3 - ArchWiki</title>
+<link rel="stylesheet" href="../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Ext3 rootpage-Ext3 skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Using_tune2fs_and_e2fsck" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Using_tune2fs_and_e2fsck">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Using tune2fs and e2fsck</div>
+			</a>
+			
+			<ul id="toc-Using_tune2fs_and_e2fsck-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Using_directory_indexing" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Using_directory_indexing">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Using directory indexing</div>
+			</a>
+			
+			<ul id="toc-Using_directory_indexing-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Enable_full_journaling" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Enable_full_journaling">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>Enable full journaling</div>
+			</a>
+			
+			<ul id="toc-Enable_full_journaling-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Disable_lengthy_boot_time_checks" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Disable_lengthy_boot_time_checks">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4</span>Disable lengthy boot time checks</div>
+			</a>
+			
+			<ul id="toc-Disable_lengthy_boot_time_checks-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Reclaim_reserved_filesystem_space" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Reclaim_reserved_filesystem_space">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5</span>Reclaim reserved filesystem space</div>
+			</a>
+			
+			<ul id="toc-Reclaim_reserved_filesystem_space-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Assigning_a_label" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Assigning_a_label">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6</span>Assigning a label</div>
+			</a>
+			
+			<ul id="toc-Assigning_a_label-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../en/Ext3.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="mw-list-item"><a href="../en/Talk:Ext3.html" rel="discussion" title="Discussion about the content page [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">English</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../en/Ext3.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=Ext3&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=Ext3&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../en/Ext3.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Ext3&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Ext3&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output">
+<div class="archwiki-template-meta-related-articles-start">
+<p class="mw-no-invert">Related articles</p>
+<ul>
+<li><a href="../en/File_systems.html" title="File systems">File systems</a></li>
+<li><a href="../en/Ext4.html" title="Ext4">Ext4</a></li>
+</ul>
+</div>
+<p>There are many strengths to the Third Extended ("ext3") filesystem. Its in-kernel and userspace code has been tried, tested, fixed, and improved upon more than almost every other Linux-compatible filesystem. It is simple, robust, and extensible. This article explains some tips that can improve both the performance and the reliability of the filesystem.
+</p>
+<mw:tocplace></mw:tocplace>
+<h2><span class="mw-headline" id="Using_tune2fs_and_e2fsck">Using tune2fs and e2fsck</span></h2>
+<p>Before we begin, we need to make sure you are comfortable with using the tune2fs utility to alter the filesystem options of an ext2 or ext3 partition (or <a href="../en/Ext4.html#Migrating_from_ext2/ext3_to_ext4" class="mw-redirect" title="Convert ext2 to ext3">convert ext2 to ext3</a>). Please read <span class="plainlinks archwiki-template-man" title="$ man 8 tune2fs"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/tune2fs.8">tune2fs(8)</a></span>.
+</p>
+<p>It is generally a good idea to run a filesystem check using the <b>e2fsck</b> utility after you have completed the alterations you wish to make on your filesystem. This will verify that your filesystem is clean and fix it if needed. You should also read the manual page for the <b>e2fsck</b> utility if you have not yet done so.
+</p>
+<div class="archwiki-template-box archwiki-template-box-warning">
+<strong>Warning:</strong> <b>Only run unmounted!</b> Make sure any filesystems are cleanly unmounted before altering them with the <b>tune2fs</b> or <b>e2fsck</b> utilities! Altering or tuning a filesystem while it is mounted can cause severe corruption! Consider booting from a LiveCD such as <a rel="nofollow" class="external text" href="https://partedmagic.com">Parted Magic</a> or the Arch Linux one.
+</div>
+<h2><span class="mw-headline" id="Using_directory_indexing">Using directory indexing</span></h2>
+<p>This feature improves file access in large directories or directories containing many files by using hashed binary trees to store the directory information. It is perfectly safe to use, and it provides a fairly substantial improvement in most cases; so it is a good idea to enable it:
+</p>
+<pre># tune2fs -O dir_index /dev/sd<i>XY</i>
+</pre>
+<p>This will only take effect with directories created on that filesystem after <b>tune2fs</b> is run. In order to apply this to currently existing directories, we must run the <b>e2fsck</b> utility to optimize and reindex the directories on the filesystem:
+</p>
+<pre># e2fsck -D -f /dev/sd<i>XY</i>
+</pre>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> 
+<ul>
+<li>This should work with ext2, ext3 and ext4 filesystems. Depending on the size of your filesystem, this could take a long time.</li>
+<li>Directory indexing is activated by default in Arch Linux via <code>/etc/mke2fs.conf</code>.</li>
+</ul>
+</div>
+<h2><span class="mw-headline" id="Enable_full_journaling">Enable full journaling</span></h2>
+<div class="archwiki-template-box archwiki-template-box-warning">
+<strong>Warning:</strong> <a href="../en/Ext4.html" title="Ext4">ext4</a> partitions will not mount if both delayed allocation and full journaling (e.g. <code>journal=data</code>) are enabled.</div>
+<p>By default, ext3 partitions mount with the 'ordered' data mode. In this mode, all data is written to the main filesystem and its metadata is committed to the journal, whose blocks are logically grouped into transactions to decrease disk I/O. This tends to be a good default for most people. However, I have found a method that increases both reliability and performance (in some situations): journaling everything, including the file data itself (known as 'journal' data mode). Normally, one would think that journaling all data would decrease performance, because the data is written to disk twice: once to the journal then later committed to the main filesystem, but this does not seem to be the case. I have enabled it on all nine of my partitions and have only seen a minor performance loss in deleting large files. In fact, doing this can actually improve performance on a filesystem where much reading and writing is to be done simultaneously. See <a rel="nofollow" class="external text" href="https://www.ibm.com/developerworks/linux/library/l-fs8/index.html#4">this article</a> written by Daniel Robbins on IBM's website for more information.
+</p>
+<p>There are two different ways to activate journal data mode. The first is by adding data=journal as a mount option in /etc/fstab. If you do it this way and want your root filesystem to also use it, you should also pass rootflags=data=journal as a kernel parameter in your bootloader's configuration. In the second method, you will use tune2fs to modify the default mount options in the filesystem's superblock:
+</p>
+<pre># tune2fs -O has_journal -o journal_data /dev/sd<i>XY</i>
+</pre>
+<p>Please note that the second method may not work for older kernels. Especially Linux 2.4.20 and below will likely disregard the default mount options on the superblock. If you are feeling adventurous you may also want to tweak the journal size. (I have left the journal size at the default.) A larger journal may give you better performance (at the cost of more disk space and longer recovery times). Please be sure to read the relevant section of the tune2fs manual before doing so:
+</p>
+<pre># tune2fs -J size=$SIZE /dev/sd<i>XY</i>
+</pre>
+<h2><span class="mw-headline" id="Disable_lengthy_boot_time_checks">Disable lengthy boot time checks</span></h2>
+<div class="archwiki-template-box archwiki-template-box-warning">
+<strong>Warning:</strong> Only do this on a journaling filesystem such as ext3/4. This may or may not work on other journaling filesystems such as ReiserFS or XFS, but has not been tested. Doing so may damage or otherwise corrupt other filesystems. You do this <b>at your own risk</b>.</div>
+<p>It seems that our ext3 filesystems are still being checked every 30 mounts or so. This is a good default for many because it helps prevent filesystem corruption when you have hardware issues, such as bad IDE/SATA/SCSI cabling, power supply failures, etc. One of the driving forces for creating journaling filesystems was that the filesystem could easily be returned to a consistent state by recovering and replaying the needed journaled transactions. Therefore, we can safely disable these mount-count and time-dependent checks if we are certain the filesystem will be quickly checked to recover the journal if needed to restore filesystem and data consistency. Before you do this please make sure your filesystem entry in <code>/etc/fstab</code> has a positive integer in its 6th field (pass) so that it is checked at boot time automatically. You may do so using the following command:
+</p>
+<pre># tune2fs -c 0 -i 0 /dev/sd<i>XY</i>
+</pre>
+<p>If you just want to limit the checks to happen less often without totally disabling them (for peace of mind).  A great method is to change from a number of count's check to a time frame check. See <span class="plainlinks archwiki-template-man" title="$ man 8 tune2fs"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/tune2fs.8">tune2fs(8)</a></span>. Here is once every month:
+</p>
+<pre># tune2fs -c 0 -i 1m /dev/sd<i>XY</i>
+</pre>
+<h2><span class="mw-headline" id="Reclaim_reserved_filesystem_space">Reclaim reserved filesystem space</span></h2>
+<p>Ext3 partition contain a used space of 5% for special reasons by default.  The main reason is to help with less fragmentation on the filesystem.  The other reason for such space is so root can log in even when the filesystem becomes 100% used.  Without this option, the root user might not be able to log in to "clean up" because the system could become unstable, trying to write logs to a 100% full system for example.  
+</p>
+<p>The issue with this is that hard drives are getting so big the 5% can add up to be quite a large amount of wasted space. (eg. 100 GB = 5 GB reserved).  Now if you separate your filesystems to like /home for example it might be a good idea to adjust these and reclaim that wasted space on long-term archive partitions (see <a rel="nofollow" class="external text" href="https://www.redhat.com/archives/ext3-users/2009-January/msg00026.html">this email</a> for more info).  It is a safe bet to leave your / filesystem at 5% reserved just in case.  Leave reserved space for filesystems containing /var and /tmp also or else you will end up with problems.
+</p>
+<p>Now to change your reserved space to 1% of the drive, which is fair for non-root filesystems.
+</p>
+<pre># tune2fs -m 1 /dev/sdXY
+</pre>
+<h2><span class="mw-headline" id="Assigning_a_label">Assigning a label</span></h2>
+<p>Once you have created and formated a partition, you can assign it a label using the e2label command. This allows you to add the partition to <code>/etc/fstab</code> using a label instead of using a device path (useful for an USB drive). To add a label to a partition, type the following command as root: 
+</p>
+<pre># e2label /dev/sdXY <i>new-label</i>
+</pre>
+<p>If the optional argument <i>new-label</i> is not present, e2label will simply display the current filesystem label. If the optional argument <i>new-label</i> is present, then e2label will set the filesystem label to be <i>new-label</i>q. Ext2 and ext3 filesystem labels can be at most 16 characters long; if new-label  is longer than 16 characters, e2label will truncate it and print a warning message.
+</p>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="../en/Category:File_systems.html" title="Category:File systems">File systems</a></li></ul>
+</div></div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=Ext3&amp;oldid=775155">https://wiki.archlinux.org/index.php?title=Ext3&amp;oldid=775155</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 9 April 2023, at 15:42.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

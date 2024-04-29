@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>greetd - ArchWiki</title>
+<link rel="stylesheet" href="../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Greetd rootpage-Greetd skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Installation" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Installation">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Installation</div>
+			</a>
+			
+				<button aria-controls="toc-Installation-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Installation subsection
+				</button>
+			
+			<ul id="toc-Installation-sublist" class="sidebar-toc-list">
+				<li id="toc-Greeters" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Greeters">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.1</span>Greeters</div>
+			</a>
+			
+			<ul id="toc-Greeters-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Starting_greetd" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Starting_greetd">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Starting greetd</div>
+			</a>
+			
+			<ul id="toc-Starting_greetd-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Greeter_configuration" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Greeter_configuration">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>Greeter configuration</div>
+			</a>
+			
+				<button aria-controls="toc-Greeter_configuration-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Greeter configuration subsection
+				</button>
+			
+			<ul id="toc-Greeter_configuration-sublist" class="sidebar-toc-list">
+				<li id="toc-agreety" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#agreety">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.1</span>agreety</div>
+			</a>
+			
+			<ul id="toc-agreety-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-gtkgreet" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#gtkgreet">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.2</span>gtkgreet</div>
+			</a>
+			
+			<ul id="toc-gtkgreet-sublist" class="sidebar-toc-list">
+				<li id="toc-Using_cage" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Using_cage">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.2.1</span>Using cage</div>
+			</a>
+			
+			<ul id="toc-Using_cage-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Using_sway" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Using_sway">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.2.2</span>Using sway</div>
+			</a>
+			
+			<ul id="toc-Using_sway-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-ReGreet" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#ReGreet">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.3</span>ReGreet</div>
+			</a>
+			
+			<ul id="toc-ReGreet-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-wlgreet" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#wlgreet">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.4</span>wlgreet</div>
+			</a>
+			
+			<ul id="toc-wlgreet-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-tuigreet" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#tuigreet">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.5</span>tuigreet</div>
+			</a>
+			
+			<ul id="toc-tuigreet-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-ddlm" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#ddlm">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.6</span>ddlm</div>
+			</a>
+			
+			<ul id="toc-ddlm-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-qtgreet" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#qtgreet">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.7</span>qtgreet</div>
+			</a>
+			
+			<ul id="toc-qtgreet-sublist" class="sidebar-toc-list">
+				<li id="toc-Using_Wayfire" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Using_Wayfire">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.7.1</span>Using Wayfire</div>
+			</a>
+			
+			<ul id="toc-Using_Wayfire-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Tips_and_tricks" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Tips_and_tricks">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4</span>Tips and tricks</div>
+			</a>
+			
+				<button aria-controls="toc-Tips_and_tricks-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Tips and tricks subsection
+				</button>
+			
+			<ul id="toc-Tips_and_tricks-sublist" class="sidebar-toc-list">
+				<li id="toc-Enabling_autologin" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Enabling_autologin">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.1</span>Enabling autologin</div>
+			</a>
+			
+			<ul id="toc-Enabling_autologin-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Run_local_programs" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Run_local_programs">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.2</span>Run local programs</div>
+			</a>
+			
+			<ul id="toc-Run_local_programs-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-See_also" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#See_also">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5</span>See also</div>
+			</a>
+			
+			<ul id="toc-See_also-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../en/Greetd.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="mw-list-item"><a href="../en/Talk:Greetd.html" rel="discussion" title="Discussion about the content page [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">English</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../en/Greetd.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=Greetd&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=Greetd&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../en/Greetd.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Greetd&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Greetd&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output">
+<p><span>
+</span>
+</p>
+<div class="archwiki-template-meta-related-articles-start">
+<p class="mw-no-invert">Related articles</p>
+<ul>
+<li><a href="../en/Display_manager.html" title="Display manager">Display manager</a></li>
+<li><a href="../en/Wayland.html" title="Wayland">Wayland</a></li>
+<li><a href="../en/Sway.html" title="Sway">Sway</a></li>
+</ul>
+</div>
+<p><a rel="nofollow" class="external text" href="https://git.sr.ht/~kennylevinsen/greetd">greetd</a> is a minimal, agnostic and flexible <a href="../en/Display_manager.html" class="mw-redirect" title="Login manager">login manager</a> daemon which does not make assumptions about what the user wants to launch, should it be console-based or graphical. Any script or program which can be started from the console may be launched by greetd, which makes it particularly suitable for <a href="../en/Wayland.html#Compositors" title="Wayland">Wayland compositors</a>.  It can also launch a <a href="#Greeters">greeter</a> to start user sessions, like any other display manager.
+</p>
+<mw:tocplace></mw:tocplace>
+<h2><span class="mw-headline" id="Installation">Installation</span></h2>
+<p><a href="../en/Help:Reading.html#Installation_of_packages" class="mw-redirect" title="Install">Install</a> the <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=greetd">greetd</a></span> or <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/greetd-git/">greetd-git</a></span><sup><small>AUR</small></sup> packages.
+</p>
+<p>The default greetd configuration file is located at <code>/etc/greetd/config.toml</code>.
+<a href="../en/PAM.html" title="PAM">PAM</a>-specific configuration is set in <code>/etc/pam.d/greetd</code>.
+</p>
+<p><br>
+</p>
+<h3><span class="mw-headline" id="Greeters">Greeters</span></h3>
+<div class="noprint archwiki-template-message">
+<p><a href="../File:Tango-edit-clear.png" class="image"><img alt="Tango-edit-clear.png" src="../File:Tango-edit-clear.png" decoding="async" width="48" height="48"></a><b>This article or section needs language, wiki syntax or style improvements. See <a href="../en/Help:Style.html" title="Help:Style">Help:Style</a> for reference.</b><a href="../File:Tango-edit-clear.png" class="image"><img alt="Tango-edit-clear.png" src="../File:Tango-edit-clear.png" decoding="async" width="48" height="48"></a></p>
+<div>
+<b>Reason:</b> This list would benefit of a conversion to <a href="../en/Template:App.html" title="Template:App">Template:App</a>. (Discuss in <a rel="nofollow" class="external text" href="https://wiki.archlinux.org/title/Talk:Greetd">Talk:Greetd</a>)</div>
+</div>
+<p>In order to allow user sessions to be started, greetd requires a greeter to be installed, as there is none bundled by default. Several greeters are available:
+</p>
+<ul>
+<li>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=greetd-agreety">greetd-agreety</a></span> (the default, a text-based greeter similar to <a href="../en/Getty.html" class="mw-redirect" title="Agetty">agetty</a>.</li>
+<li>
+<a rel="nofollow" class="external text" href="https://git.sr.ht/~kennylevinsen/dlm">dlm</a> (provided by <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/greetd-dlm-git/">greetd-dlm-git</a></span><sup><small>AUR</small></sup>), an fbdev greeter.</li>
+<li>
+<a rel="nofollow" class="external text" href="https://github.com/deathowl/ddlm">ddlm</a> (provided by <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/greetd-ddlm-git/">greetd-ddlm-git</a></span><sup><small>AUR</small></sup>), an fbdev greeter. Enhanced/extended version of <code>dlm</code>.</li>
+<li>
+<a rel="nofollow" class="external text" href="https://git.sr.ht/~kennylevinsen/gtkgreet">gtkgreet</a> (provided by <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=greetd-gtkgreet">greetd-gtkgreet</a></span>/<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/greetd-gtkgreet-git/">greetd-gtkgreet-git</a></span><sup><small>AUR</small></sup>), a <a href="../en/GTK.html" title="GTK">GTK</a> greeter.</li>
+<li>
+<a rel="nofollow" class="external text" href="https://github.com/rharish101/ReGreet">ReGreet</a> (provided by <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=greetd-regreet">greetd-regreet</a></span>/<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/greetd-regreet-git/">greetd-regreet-git</a></span><sup><small>AUR</small></sup>), a <a href="../en/GTK.html" title="GTK">GTK</a> greeter. Supports various customization options.</li>
+<li>
+<a rel="nofollow" class="external text" href="https://git.sr.ht/~kennylevinsen/wlgreet">wlgreet</a> (provided by by <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/greetd-wlgreet/">greetd-wlgreet</a></span><sup><small>AUR</small></sup>/<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/greetd-wlgreet-git/">greetd-wlgreet-git</a></span><sup><small>AUR</small></sup>), a <a href="../en/Wayland.html" title="Wayland">Wayland</a> greeter.</li>
+<li>
+<a rel="nofollow" class="external text" href="https://github.com/apognu/tuigreet">tuigreet</a> (provided by <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=greetd-tuigreet">greetd-tuigreet</a></span>), a console UI greeter.</li>
+<li>
+<a rel="nofollow" class="external text" href="https://gitlab.com/marcusbritanicus/QtGreet">qtgreet</a> (provided by <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/greetd-qtgreet/">greetd-qtgreet</a></span><sup><small>AUR</small></sup>), a <a href="../en/Qt.html" title="Qt">Qt</a> greeter.</li>
+</ul>
+<h2><span class="mw-headline" id="Starting_greetd">Starting greetd</span></h2>
+<p><a href="../en/Help:Reading.html#Control_of_systemd_units" class="mw-redirect" title="Enable">Enable</a> <code>greetd.service</code> so greetd will be started at boot.
+</p>
+<p>See also <a href="../en/Display_manager.html#Loading_the_display_manager" title="Display manager">Display manager#Loading the display manager</a>.
+</p>
+<h2><span class="mw-headline" id="Greeter_configuration">Greeter configuration</span></h2>
+<p>Configuring the greeter run by greetd is done using the <code>command</code> option in the <code>default_session</code> section in <code>/etc/greetd/config.toml</code>.
+The included <code>agreety</code> greeter will be used if no changes are made. Also see <a href="#agreety">#agreety</a>.
+</p>
+<p>By default, greeters are run as the <code>greeter</code> user. This can be changed by editing the <code>user</code> option in the <code>default_session</code> section of the configuration file and replacing <i>another_user</i> with the chosen user:
+</p>
+<pre>...
+[default_session]
+user = "another_user"
+...
+</pre>
+<p>Make sure the <a href="../en/File_permissions_and_attributes.html#Changing_ownership" class="mw-redirect" title="Ownership">ownership</a> of the <code>/etc/greetd</code> directory is set accordingly.
+</p>
+<h3><span class="mw-headline" id="agreety">agreety</span></h3>
+<p>This is the default greeter. It is launched by greetd with the configuration file set as follows:
+</p>
+<pre>...
+[default_session]
+command = "agreety --cmd $SHELL"
+...
+</pre>
+<p>agreety can launch any arbitrary command once a user logs in. For example, in order to start <a href="../en/Sway.html" title="Sway">Sway</a>, replace <code>$SHELL</code> in the example above with <code>sway</code>.
+</p>
+<h3><span class="mw-headline" id="gtkgreet">gtkgreet</span></h3>
+<p>In order to run, gtkgreet needs a compositor. For the full experience, a compositor with <code>wlr-layer-shell-unstable</code> support is required but others can work. As such, it is recommended to use <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=sway">sway</a></span>, but something like <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=cage">cage</a></span> can also be used. Examples for both cage and sway are provided below.
+</p>
+<p>In order to specify which login environments can be started by gtkgreet, list them in <code>/etc/greetd/environments</code>.
+For example:
+</p>
+<pre>sway
+bash
+</pre>
+<p>You can also invoke gtkgreet with the <code>-c <i>mycommand</i></code> parameter, replacing <i>mycommand</i> with the desired program (for example, <code>gtkgreet -c bash</code> or <code>gtkgreet -c sway</code>). Do so in the below compositor examples as desired.
+</p>
+<h4><span class="mw-headline" id="Using_cage">Using cage</span></h4>
+<p><a href="../en/Help:Reading.html#Installation_of_packages" class="mw-redirect" title="Install">Install</a> <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=cage">cage</a></span> and set the <code>command</code> option as follows:
+</p>
+<pre>...
+[default_session]
+command = "cage gtkgreet"
+...
+</pre>
+<h4><span class="mw-headline" id="Using_sway">Using sway</span></h4>
+<p><a href="../en/Help:Reading.html#Installation_of_packages" class="mw-redirect" title="Install">Install</a> <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=sway">sway</a></span>. When using <a href="../en/Sway.html" title="Sway">Sway</a>, it must be terminated once the user logs in. For that purpose, a specific configuration file must be created, for example in <code>/etc/greetd/sway-config</code>, with the following content:
+</p>
+<pre># `-l` activates layer-shell mode. Notice that `swaymsg exit` will run after gtkgreet.
+exec "gtkgreet -l; swaymsg exit"
+
+bindsym Mod4+shift+e exec swaynag \
+-t warning \
+-m 'What do you want to do?' \
+-b 'Poweroff' 'systemctl poweroff' \
+-b 'Reboot' 'systemctl reboot'
+
+include /etc/sway/config.d/*
+</pre>
+<p>Then, greetd must be set to start <a href="../en/Sway.html" title="Sway">Sway</a> with the configuration file above. Set the <code>command</code> option as follows:
+</p>
+<pre>...
+[default_session]
+command = "sway --config /etc/greetd/sway-config"
+...
+</pre>
+<h3><span class="mw-headline" id="ReGreet">ReGreet</span></h3>
+<p>Similar to gtkgreet, ReGreet needs a compositor. For example, both Cage and Sway can be used just like they're used for gtkgreet, replacing the <i>gtkgreet</i> command with <i>regreet</i>. The config for Sway would thus look like:
+</p>
+<pre># Notice that `swaymsg exit` will run after gtkgreet.
+exec "regreet; swaymsg exit"
+
+bindsym Mod4+shift+e exec swaynag \
+-t warning \
+-m 'What do you want to do?' \
+-b 'Poweroff' 'systemctl poweroff' \
+-b 'Reboot' 'systemctl reboot'
+
+include /etc/sway/config.d/*
+</pre>
+<p>ReGreet picks up available sessions from <code>/usr/share/xsession</code> (for X11 sessions) and <code>/usr/share/wayland-sessions</code> (for Wayland sessions). Thus, there is no need to list sessions in <code>/etc/greetd/environments</code>.
+</p>
+<p>ReGreet can be configured through a TOML file in <code>/etc/greetd/regreet.toml</code>. A sample file is provided in <code>/usr/share/doc/greetd-regreet/regreet.sample.toml</code> with all available options. Copy this to <code>/etc/greetd/regreet.toml</code> and make the changes you want, commenting out or deleting the lines you don't need. Any invalid options are ignored.
+</p>
+<h3><span class="mw-headline" id="wlgreet">wlgreet</span></h3>
+<p>In order to start wlgreet, a compositor with <code>wlr-layer-shell-unstable</code> is required. Follow the steps required to set up gtkgreet with Sway as <a href="#Using_sway">described above</a> but use the following for <code>/etc/greetd/sway-config</code> instead:
+</p>
+<pre>exec "wlgreet --command sway; swaymsg exit"
+
+bindsym Mod4+shift+e exec swaynag \
+-t warning \
+-m 'What do you want to do?' \
+-b 'Poweroff' 'systemctl poweroff' \
+-b 'Reboot' 'systemctl reboot'
+ 
+include /etc/sway/config.d/*
+</pre>
+<h3><span class="mw-headline" id="tuigreet">tuigreet</span></h3>
+<p>tuigreet does not require any special setup, just set the <code>command</code> option as follows:
+</p>
+<pre>...
+[default_session]
+command = "tuigreet --cmd sway"
+...
+</pre>
+<p><code>tuigreet --help</code> will display customization options.
+</p>
+<h3><span class="mw-headline" id="ddlm">ddlm</span></h3>
+<p>ddlm does not require any special setup, just set the <code>command</code> option as follows:
+</p>
+<pre>...
+[default_session]
+command = "ddlm --target sway"
+...
+</pre>
+<h3><span class="mw-headline" id="qtgreet">qtgreet</span></h3>
+<p>In order to use qtgreet, you need a WLR based compositor (e.g. <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/wayfire/">wayfire</a></span><sup><small>AUR</small></sup>, <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=sway">sway</a></span>).
+</p>
+<h4><span class="mw-headline" id="Using_Wayfire">Using Wayfire</span></h4>
+<p><a href="../en/Help:Reading.html#Installation_of_packages" class="mw-redirect" title="Install">Install</a> <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/wayfire/">wayfire</a></span><sup><small>AUR</small></sup> and set the <code>command</code> option as follows:
+</p>
+<pre>...
+[default_session]
+command = "wayfire --config /etc/qtgreet/wayfire.ini"
+...
+</pre>
+<p>The Wayfire configuration file referred to is included with qtgreet.
+</p>
+<h2><span class="mw-headline" id="Tips_and_tricks">Tips and tricks</span></h2>
+<h3><span class="mw-headline" id="Enabling_autologin">Enabling autologin</span></h3>
+<p>If you want a user to be logged in automatically, an <code>initial_session</code> section must be defined in <code>/etc/greetd/config.toml</code>:
+</p>
+<pre>...
+[initial_session]
+command = "sway"
+user = "<i>myuser</i>"
+...
+</pre>
+<p>The <code>command</code> option may contain the name of any executable file. In the example above, Sway will be started by <code><i>myuser</i></code> at boot and <i>gtkgreet</i> will be launched after the user logs out.
+</p>
+<p>If you do not want to use <i>greetd</i> and always want autologin to be enabled, see <a rel="nofollow" class="external text" href="https://git.sr.ht/~kennylevinsen/autologin">autologin</a>.
+</p>
+<h3><span class="mw-headline" id="Run_local_programs">Run local programs</span></h3>
+<p>Add your PATH to <code>~/.profile</code>, or the DE called by greetd will not be able to run local programs. Greetd will not have access to <code>.bashrc</code> or <code>.zshrc</code>, so do not define the PATH there.
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">~/.profile</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">export PATH="$HOME/.local/bin:$PATH"</pre>
+<h2><span class="mw-headline" id="See_also">See also</span></h2>
+<ul>
+<li><a rel="nofollow" class="external text" href="https://sr.ht/~kennylevinsen/greetd/">greetd project page</a></li>
+<li><a rel="nofollow" class="external text" href="https://git.sr.ht/~kennylevinsen/greetd/">greetd source code</a></li>
+<li><a rel="nofollow" class="external text" href="https://man.sr.ht/%7Ekennylevinsen/greetd/">greetd wiki</a></li>
+</ul>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface">
+<div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="../en/Category:Display_managers.html" title="Category:Display managers">Display managers</a></li></ul>
+</div>
+<div id="mw-hidden-catlinks" class="mw-hidden-catlinks mw-hidden-cats-hidden">Hidden category: <ul><li><a href="../en/Category:Pages_or_sections_flagged_with_Template:Style.html" title="Category:Pages or sections flagged with Template:Style">Pages or sections flagged with Template:Style</a></li></ul>
+</div>
+</div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=Greetd&amp;oldid=784626">https://wiki.archlinux.org/index.php?title=Greetd&amp;oldid=784626</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 6 August 2023, at 10:10.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

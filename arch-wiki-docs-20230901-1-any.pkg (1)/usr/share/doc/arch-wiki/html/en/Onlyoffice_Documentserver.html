@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>Onlyoffice Documentserver - ArchWiki</title>
+<link rel="stylesheet" href="../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Onlyoffice_Documentserver rootpage-Onlyoffice_Documentserver skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Installation" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Installation">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Installation</div>
+			</a>
+			
+			<ul id="toc-Installation-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Configuration" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Configuration">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Configuration</div>
+			</a>
+			
+				<button aria-controls="toc-Configuration-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Configuration subsection
+				</button>
+			
+			<ul id="toc-Configuration-sublist" class="sidebar-toc-list">
+				<li id="toc-local.json" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#local.json">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.1</span>local.json</div>
+			</a>
+			
+			<ul id="toc-local.json-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-RabbitMQ" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#RabbitMQ">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.2</span>RabbitMQ</div>
+			</a>
+			
+			<ul id="toc-RabbitMQ-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Database" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Database">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.3</span>Database</div>
+			</a>
+			
+			<ul id="toc-Database-sublist" class="sidebar-toc-list">
+				<li id="toc-PostgreSQL" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#PostgreSQL">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.3.1</span>PostgreSQL</div>
+			</a>
+			
+			<ul id="toc-PostgreSQL-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-MariaDB" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#MariaDB">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.3.2</span>MariaDB</div>
+			</a>
+			
+			<ul id="toc-MariaDB-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Restrict_access" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Restrict_access">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.4</span>Restrict access</div>
+			</a>
+			
+			<ul id="toc-Restrict_access-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Webserver" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Webserver">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.5</span>Webserver</div>
+			</a>
+			
+			<ul id="toc-Webserver-sublist" class="sidebar-toc-list">
+				<li id="toc-Nginx_/_no_SSL" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Nginx_/_no_SSL">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.5.1</span>Nginx / no SSL</div>
+			</a>
+			
+			<ul id="toc-Nginx_/_no_SSL-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Nginx_/_reverse_proxy_with_SSL" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Nginx_/_reverse_proxy_with_SSL">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.5.2</span>Nginx / reverse proxy with SSL</div>
+			</a>
+			
+			<ul id="toc-Nginx_/_reverse_proxy_with_SSL-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Starting" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Starting">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>Starting</div>
+			</a>
+			
+			<ul id="toc-Starting-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Nextcloud_app" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Nextcloud_app">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4</span>Nextcloud app</div>
+			</a>
+			
+			<ul id="toc-Nextcloud_app-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Troubleshooting" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Troubleshooting">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5</span>Troubleshooting</div>
+			</a>
+			
+				<button aria-controls="toc-Troubleshooting-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Troubleshooting subsection
+				</button>
+			
+			<ul id="toc-Troubleshooting-sublist" class="sidebar-toc-list">
+				<li id="toc-Onlyoffice_Docker_container_on_ZFS" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Onlyoffice_Docker_container_on_ZFS">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5.1</span>Onlyoffice Docker container on ZFS</div>
+			</a>
+			
+			<ul id="toc-Onlyoffice_Docker_container_on_ZFS-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../en/Onlyoffice_Documentserver.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="new mw-list-item"><a href="/index.php?title=Talk:Onlyoffice_Documentserver&amp;action=edit&amp;redlink=1" rel="discussion" title="Discussion about the content page (page does not exist) [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">English</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../en/Onlyoffice_Documentserver.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=Onlyoffice_Documentserver&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=Onlyoffice_Documentserver&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../en/Onlyoffice_Documentserver.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Onlyoffice_Documentserver&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Onlyoffice_Documentserver&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output">
+<p><a rel="nofollow" class="external text" href="https://www.onlyoffice.com/">Onlyoffice Documentserver</a> is a full-featured backend for editing different office documents like Open Document, Word, Excel, etc. online in your browser. The software is open source and can be easily deployed and integrated into existing server software. Available frontends are <a href="../en/Nextcloud.html" title="Nextcloud">Nextcloud</a> or the Onlyoffice CommunityServer. It can be also used in own software, see <a rel="nofollow" class="external text" href="https://github.com/ONLYOFFICE/document-server-integration">following examples</a> for PHP, Nodejs, etc.
+</p>
+<mw:tocplace></mw:tocplace>
+<h2><span class="mw-headline" id="Installation">Installation</span></h2>
+<p><a href="../en/Help:Reading.html#Installation_of_packages" class="mw-redirect" title="Install">Install</a> the <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/onlyoffice-documentserver-bin/">onlyoffice-documentserver-bin</a></span><sup><small>AUR</small></sup> package. Further you will need <a href="../en/PostgreSQL.html" title="PostgreSQL">PostgreSQL</a> or <a href="../en/MariaDB.html" title="MariaDB">MariaDB</a> as a database backend and the <a href="../en/Redis.html" title="Redis">Redis</a> and <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=rabbitmq">rabbitmq</a></span> services installed.
+</p>
+<p>Alternatively, install via docker and run:
+</p>
+<pre>$ docker pull onlyoffice/documentserver
+$ docker run -i -t -d -p PORT:80 --restart=always onlyoffice/documentserver
+</pre>
+<p>Where PORT can be either 80, if not already in use by another web server, or different, e.g. 9980.
+</p>
+<h2><span class="mw-headline" id="Configuration">Configuration</span></h2>
+<h3><span class="mw-headline" id="local.json">local.json</span></h3>
+<p>You can create local.json in /etc/webapps/onlyoffice/documentserver, where are possible to overwrite any parts of config (below full local.json with rabbitmq, mariadb, redis and accesskey configuration:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/webapps/onlyoffice/documentserver/local.json</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">{
+        "queue": {
+                "type": "rabbitmq"
+        },
+        "rabbitmq": {
+                "url": "amqp://onlyoffice:onlyoffice@127.0.0.1:5672/onlyoffice"
+        },
+        "services": {
+                "CoAuthoring": {
+                        "sql": {
+                                "type": "mariadb",
+                                "dbHost": "127.0.0.1",
+                                "dbPort": 3306,
+                                "dbName": "onlyoffice",
+                                "dbUser": "onlyoffice",
+                                "dbPass": "ONLYOFFICE_DB_PASSWD"
+                        },
+                        "redis": {
+                                "name": "redis",
+                                "host": "127.0.0.1",
+                                "port": 6379,
+                                "db": "10"
+                        },
+                        "server": {
+                                "port": 8000,
+                                "workerpercpu": 1,
+                                "mode": "production"
+                        },
+                        "secret": {
+                                "browser": {"string": "YOUR SECRET IN NEXTCLOUD"},
+                                "inbox": {"string": "YOUR SECRET IN NEXTCLOUD"},
+                                "outbox": {"string": "YOUR SECRET IN NEXTCLOUD"},
+                                "session": {"string": "YOUR SECRET IN NEXTCLOUD"}
+                        },
+                        "token": {
+                                "enable": {
+                                        "browser": true,
+                                        "request": {
+                                                "inbox": true,
+                                                "outbox": true
+                                        }
+                                 }
+                        }
+}
+}
+}
+</pre>
+<p>You should NOT edit the default.json config file.
+</p>
+<h3><span class="mw-headline" id="RabbitMQ">RabbitMQ</span></h3>
+<p>You may create vhost in your RabbitMQ for onlyoffice and select it in local.json:
+</p>
+<pre>$ rabbitmqctl add_vhost onlyoffice
+$ rabbitmqctl add_user onlyoffice onlyoffice
+$ rabbitmqctl set_permissions -p onlyoffice onlyoffice ".*" ".*" ".*"
+</pre>
+<h3><span class="mw-headline" id="Database">Database</span></h3>
+<h4><span class="mw-headline" id="PostgreSQL">PostgreSQL</span></h4>
+<p>The PostgreSQL database backend needs to be configured. Here is an example database setup:
+</p>
+<pre>$ sudo -i -u postgres psql -c "CREATE DATABASE onlyoffice;"
+$ sudo -i -u postgres psql -c "CREATE USER onlyoffice WITH password 'onlyoffice';"
+$ sudo -i -u postgres psql -c "GRANT ALL privileges ON DATABASE onlyoffice TO onlyoffice;"
+</pre>
+<p>As of PostgreSQL 15, it's required to give <b>admin</b> privileges to the <b>onlyoffice</b> user in psql so that the database schema migration command successfully executes:
+</p>
+<pre>$ sudo -i -u postgres psql -c "ALTER DATABASE onlyoffice OWNER TO onlyoffice;"
+</pre>
+<p>To migrate the documentserver database schema, run following command:
+</p>
+<pre>$ psql -hlocalhost -Uonlyoffice -d onlyoffice -f /usr/share/webapps/onlyoffice/documentserver/server/schema/postgresql/createdb.sql
+</pre>
+<h4><span class="mw-headline" id="MariaDB">MariaDB</span></h4>
+<p>Login to mariadb and create a database and a user:
+</p>
+<pre>$ create database onlyoffice;
+$ create user 'onlyoffice'@'localhost' identified by '<i>ONLYOFFICE_DB_PASSWD</i>';
+$ grant all on onlyoffice.* to 'onlyoffice'@'localhost';
+$ flush privileges;
+</pre>
+<p>Then import schemadb:
+</p>
+<pre>$ mysql -uonlyoffice -p onlyoffice &lt; /usr/share/webapps/onlyoffice/documentserver/server/schema/mysql/createdb.sql
+</pre>
+<p>Change the <code>sql</code> section in your <code>local.json</code>:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/webapps/onlyoffice/documentserver/local.json</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">"sql": {
+    "type": "mariadb",
+    "dbHost": "localhost",
+    "dbPort": "3306",
+    "dbName": "onlyoffice",
+    "dbUser": "onlyoffice",
+    "dbPass": "<i>ONLYOFFICE_DB_PASSWD</i>"
+},
+</pre>
+<h3><span class="mw-headline" id="Restrict_access">Restrict access</span></h3>
+<p>Restrict access to your documentserver.
+</p>
+<p>Enable security token:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/webapps/onlyoffice/documentserver/local.json</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">"token": {
+    "enable": {
+        "browser": true,
+        "request": {
+            "inbox": true,
+            "outbox":true
+        }
+    },
+    ...
+},
+</pre>
+<p>Set a secret key:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/webapps/onlyoffice/documentserver/local.json</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">"secret": {
+    "browser": {"string": "<i>DOC_SERVER_PASSWD</i>", "file": ""},
+    "inbox": {"string": "<i>DOC_SERVER_PASSWD</i>", "file": ""},
+    "outbox": {"string": "<i>DOC_SERVER_PASSWD</i>", "file": ""},
+    "session": {"string": "<i>DOC_SERVER_PASSWD</i>", "file": ""}
+},
+</pre>
+<p>Finally, set the <b>same</b> secret key in <i>Nextcloud &gt; Administration Settings &gt; ONLYOFFICE</i>.
+</p>
+<h3><span class="mw-headline" id="Webserver">Webserver</span></h3>
+<h4>
+<span id="Nginx_.2F_no_SSL"></span><span class="mw-headline" id="Nginx_/_no_SSL">Nginx / no SSL</span>
+</h4>
+<p>Here is an example for the <a href="../en/Nginx.html" title="Nginx">Nginx</a> webserver:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/nginx/sites-available/onlyoffice-documentserver</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">map $http_host $this_host {
+  "" $host;
+  default $http_host;
+}
+map $http_x_forwarded_proto $the_scheme {
+  default $http_x_forwarded_proto;
+  "" $scheme;
+}
+map $http_x_forwarded_host $the_host {
+  default $http_x_forwarded_host;
+  "" $this_host;
+}
+map $http_upgrade $proxy_connection {
+  default upgrade;
+  "" close;
+}
+proxy_set_header Host $http_host;
+proxy_set_header Upgrade $http_upgrade;
+proxy_set_header Connection $proxy_connection;
+proxy_set_header X-Forwarded-Host $the_host;
+proxy_set_header X-Forwarded-Proto $the_scheme;
+server {
+  listen 0.0.0.0:80;
+  listen [::]:80 default_server;
+  server_tokens off;
+  rewrite ^\/OfficeWeb(\/apps\/.*)$ /web-apps$1 redirect;
+  location / {
+    proxy_pass http://localhost:8000;
+    proxy_buffers 4 256k; 
+    proxy_max_temp_file_size 0;
+  }
+  location /spellchecker/ {
+    proxy_pass http://localhost:8080/;
+  }
+}
+</pre>
+<h4>
+<span id="Nginx_.2F_reverse_proxy_with_SSL"></span><span class="mw-headline" id="Nginx_/_reverse_proxy_with_SSL">Nginx / reverse proxy with SSL</span>
+</h4>
+<p>Create a Nginx configuration file like the following:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/nginx/conf.d/onlyoffice.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">upstream docservice {
+  server 127.0.0.1:PORT;
+}
+
+map $http_host $this_host {
+    "" $host;
+    default $http_host;
+}
+
+map $http_x_forwarded_proto $the_scheme {
+     default $http_x_forwarded_proto;
+     "" $scheme;
+}
+
+map $http_x_forwarded_host $the_host {
+    default $http_x_forwarded_host;
+    "" $this_host;
+}
+
+map $http_upgrade $proxy_connection {
+  default upgrade;
+  "" close;
+}
+
+proxy_set_header Upgrade $http_upgrade;
+proxy_set_header Connection $proxy_connection;
+proxy_set_header X-Forwarded-Host $the_host;
+proxy_set_header X-Forwarded-Proto $the_scheme;
+proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+
+server {
+    listen 0.0.0.0:443 ssl;
+    listen [::]:443 ssl default_server;
+    server_name SERVER_NAME
+    server_tokens off;
+    root /usr/share/nginx/html;
+
+    ssl_certificate SSL_CERT;
+    ssl_certificate_key SSL_KEY;
+    ssl_verify_client off;
+    ssl_ciphers "EECDH+AESGCM:EDH+AESGCM:AES256+EECDH:AES256+EDH";
+    ssl_protocols  TLSv1 TLSv1.1 TLSv1.2;
+    ssl_session_cache  builtin:1000  shared:SSL:10m;
+    ssl_prefer_server_ciphers   on;
+
+    add_header X-Content-Type-Options nosniff;
+    location / {
+      proxy_pass http://docservice;
+      proxy_http_version 1.1;
+  }
+}
+</pre>
+<p>Fill in PORT (default 8000), SERVER_NAME, SSL_CERT and SSL_KEY. This was taken from the <a rel="nofollow" class="external text" href="https://github.com/ONLYOFFICE/document-server-proxy/blob/master/nginx/proxy-https-to-http.conf">nginx reference config</a>.
+</p>
+<p>Reload Nginx:
+</p>
+<pre>$ nginx -t
+$ nginx -s reload
+</pre>
+<h2><span class="mw-headline" id="Starting">Starting</span></h2>
+<p><a href="../en/Help:Reading.html#Control_of_systemd_units" class="mw-redirect" title="Enable/start">Enable/start</a> the following services if you wish to use them locally on the same machine:
+</p>
+<ul>
+<li><code>rabbitmq.service</code></li>
+<li><code>redis.service</code></li>
+<li><code>postgresql.service</code></li>
+</ul>
+<p>Finally, start the <i>documentserver</i> services:
+</p>
+<ul>
+<li><code>onlyoffice-fileconverter.service</code></li>
+<li><code>onlyoffice-docservice.service</code></li>
+</ul>
+<h2><span class="mw-headline" id="Nextcloud_app">Nextcloud app</span></h2>
+<p>Install the ONLYOFFICE app within Nextcloud. Enter <i>Nextcloud &gt; Settings &gt; ONLYOFFICE</i> and fill in <i>Onlyoffice Docs address</i> with <i>https://SERVER_NAME</i>.
+</p>
+<h2><span class="mw-headline" id="Troubleshooting">Troubleshooting</span></h2>
+<h3><span class="mw-headline" id="Onlyoffice_Docker_container_on_ZFS">Onlyoffice Docker container on ZFS</span></h3>
+<p>When running onlyoffice/documentserver as a Docker container with the <code>data-root</code> pointing to a <a href="../en/ZFS.html" title="ZFS">ZFS</a> device, e.g. when <code>/var</code> is mounted as a ZFS pool, <code>docker run</code> might fail with <code>Error: Daemon failed to copy files</code>. 
+</p>
+<p>In this case, let Docker have its <code>data-root</code> on an ext4 partition, for instance <code>/var_ext4/lib/docker</code>:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/docker/daemon.json</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">{
+    "data-root": "/var_ext4/lib/docker"
+}
+</pre>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="../en/Category:Office.html" title="Category:Office">Office</a></li></ul>
+</div></div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=Onlyoffice_Documentserver&amp;oldid=782441">https://wiki.archlinux.org/index.php?title=Onlyoffice_Documentserver&amp;oldid=782441</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 3 July 2023, at 20:11.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

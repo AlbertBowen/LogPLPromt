@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>Display Power Management Signaling - ArchWiki</title>
+<link rel="stylesheet" href="../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Display_Power_Management_Signaling rootpage-Display_Power_Management_Signaling skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Setting_up_DPMS_in_X" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Setting_up_DPMS_in_X">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Setting up DPMS in X</div>
+			</a>
+			
+			<ul id="toc-Setting_up_DPMS_in_X-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Modify_DPMS_and_screensaver_settings_with_a_command" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Modify_DPMS_and_screensaver_settings_with_a_command">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Modify DPMS and screensaver settings with a command</div>
+			</a>
+			
+			<ul id="toc-Modify_DPMS_and_screensaver_settings_with_a_command-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-DPMS_interaction_in_a_Linux_console_with_setterm" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#DPMS_interaction_in_a_Linux_console_with_setterm">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>DPMS interaction in a Linux console with setterm</div>
+			</a>
+			
+				<button aria-controls="toc-DPMS_interaction_in_a_Linux_console_with_setterm-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle DPMS interaction in a Linux console with setterm subsection
+				</button>
+			
+			<ul id="toc-DPMS_interaction_in_a_Linux_console_with_setterm-sublist" class="sidebar-toc-list">
+				<li id="toc-Pipe_the_output_to_a_cat_to_see_the_escapes" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Pipe_the_output_to_a_cat_to_see_the_escapes">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.1</span>Pipe the output to a cat to see the escapes</div>
+			</a>
+			
+			<ul id="toc-Pipe_the_output_to_a_cat_to_see_the_escapes-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Pipe_the_escapes_to_any_tty_(with_write/append_perms)_to_modify_that_terminal" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Pipe_the_escapes_to_any_tty_(with_write/append_perms)_to_modify_that_terminal">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.2</span>Pipe the escapes to any tty (with write/append perms) to modify that terminal</div>
+			</a>
+			
+			<ul id="toc-Pipe_the_escapes_to_any_tty_(with_write/append_perms)_to_modify_that_terminal-sublist" class="sidebar-toc-list">
+				<li id="toc-Bash_loop_to_set_ttys_0-256" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Bash_loop_to_set_ttys_0-256">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.2.1</span>Bash loop to set ttys 0-256</div>
+			</a>
+			
+			<ul id="toc-Bash_loop_to_set_ttys_0-256-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-See_also" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#See_also">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4</span>See also</div>
+			</a>
+			
+			<ul id="toc-See_also-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../en/Display_Power_Management_Signaling.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="mw-list-item"><a href="../en/Talk:Display_Power_Management_Signaling.html" rel="discussion" title="Discussion about the content page [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">English</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../en/Display_Power_Management_Signaling.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=Display_Power_Management_Signaling&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=Display_Power_Management_Signaling&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../en/Display_Power_Management_Signaling.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Display_Power_Management_Signaling&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Display_Power_Management_Signaling&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output">
+<p><b><a href="https://en.wikipedia.org/wiki/VESA_Display_Power_Management_Signaling" class="extiw" title="wikipedia:VESA Display Power Management Signaling">DPMS</a></b> (Display Power Management Signaling) enables power saving behaviour of monitors when the computer is not in use. The time of inactivity before the monitor enters into a given saving power level, standby, suspend or off, can be set as described in <span class="plainlinks archwiki-template-man" title="$ man 3 DPMSSetTimeouts"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/DPMSSetTimeouts.3">DPMSSetTimeouts(3)</a></span>.
+Note that DPMS was developed for CRT monitors, and on LCD displays, there is normally no difference between the standby, suspend and off modes.
+</p>
+<mw:tocplace></mw:tocplace>
+<h2><span class="mw-headline" id="Setting_up_DPMS_in_X">Setting up DPMS in X</span></h2>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> As of Xorg 1.8 DPMS is auto detected and enabled if ACPI is also enabled at kernel runtime.</div>
+<p>Add the following to a file in <code>/etc/X11/xorg.conf.d/</code> in the <code>Monitor</code> section:
+</p>
+<pre>Option "DPMS" "true"
+</pre>
+<p>Add the following to the <code>ServerFlags</code> section, change the times (in minutes) as necessary:
+</p>
+<pre>Option "StandbyTime" "10"
+Option "SuspendTime" "20"
+Option "OffTime" "30"
+</pre>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> If the <code>"OffTime"</code> option does not work, use screen blanking instead, which will keep the monitor turned on with a black image. Alternatively, change <code>"blanktime"</code> to <code>"0"</code> to disable screen blanking
+<pre>Option         "BlankTime" "30"
+</pre>
+</div>
+<p>To disable DPMS, change <code>/etc/X11/xorg.conf.d/10-monitor.conf</code> as below:
+</p>
+<pre>Section "Monitor"
+    Identifier "LVDS0"
+    Option "DPMS" "false"
+EndSection
+
+Section "ServerFlags"
+    Option "StandbyTime" "0"
+    Option "SuspendTime" "0"
+    Option "OffTime" "0"
+    Option "BlankTime" "0"
+EndSection
+
+Section "ServerLayout"
+    Identifier "ServerLayout0"
+EndSection
+</pre>
+<h2><span class="mw-headline" id="Modify_DPMS_and_screensaver_settings_with_a_command">Modify DPMS and screensaver settings with a command</span></h2>
+<p>It is possible to turn off your monitor with the <i>xset</i> command which is provided by the <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=xorg-xset">xorg-xset</a></span> package.
+</p>
+<p>Examples:
+</p>
+<table class="wikitable">
+<tbody>
+<tr>
+<th>Command
+</th>
+<th>Description
+</th>
+</tr>
+<tr>
+<td>
+<code>xset s off</code>
+</td>
+<td>Disable screen saver blanking
+</td>
+</tr>
+<tr>
+<td>
+<code>xset s 3600 3600</code>
+</td>
+<td>Change blank time to 1 hour
+</td>
+</tr>
+<tr>
+<td>
+<code>xset -dpms</code>
+</td>
+<td>Turn off DPMS
+</td>
+</tr>
+<tr>
+<td>
+<code>xset s off -dpms</code>
+</td>
+<td>Disable DPMS and prevent screen from blanking
+</td>
+</tr>
+<tr>
+<td>
+<code>xset dpms force off</code>
+</td>
+<td>Turn off screen immediately
+</td>
+</tr>
+<tr>
+<td>
+<code>xset dpms force standby</code>
+</td>
+<td>Standby screen
+</td>
+</tr>
+<tr>
+<td>
+<code>xset dpms force suspend</code>
+</td>
+<td>Suspend screen
+</td>
+</tr>
+</tbody>
+</table>
+<p>To query the current settings:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">$ xset q</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">...
+Screen Saver:
+  prefer blanking:  yes    allow exposures:  yes
+  timeout:  600    cycle:  600
+DPMS (Energy Star):
+  Standby: 600    Suspend: 600    Off: 600
+  DPMS is Enabled
+  Monitor is On
+</pre>
+<p>See <span class="plainlinks archwiki-template-man" title="$ man 1 xset"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/xset.1">xset(1)</a></span> for all available commands.
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> 
+<ul>
+<li>
+<a href="../en/XScreenSaver.html" title="XScreenSaver">XScreenSaver</a> and <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=xfce4-power-manager">xfce4-power-manager</a></span> use their own DPMS settings and override <i>xset</i> configuration. See <a href="../en/XScreenSaver.html#DPMS_and_blanking_settings" title="XScreenSaver">XScreenSaver#DPMS and blanking settings</a> and <a href="../en/Xfce.html#Display_blanking" title="Xfce">Xfce#Display blanking</a> for more information.</li>
+<li>If using the command manually in a shell you may need to prefix it with <code>sleep 1;</code> for it to work correctly, for example <code>sleep 1; xset dpms force off</code>
+</li>
+<li>
+<code>xset dpms 0 0 0</code>, which sets all the DPMS timeouts to zero, could be a better way to "disable" DPMS, since the effect of <code>-dpms</code> would be reverted when, for example, turning off the screen with <code>xset dpms force off</code>.</li>
+<li>If using <code>xset</code> in <a href="../en/Xinit.html#xinitrc" class="mw-redirect" title="Xinitrc">xinitrc</a> does not work, specify settings within a file in <code>/etc/X11/xorg.conf.d/</code>. See <a href="#Setting_up_DPMS_in_X">#Setting up DPMS in X</a> for details.</li>
+</ul>
+</div>
+<h2><span class="mw-headline" id="DPMS_interaction_in_a_Linux_console_with_setterm">DPMS interaction in a Linux console with setterm</span></h2>
+<p>The <i>setterm</i> utility issues terminal recognized escape codes to alter the terminal. Essentially it just writes/echos the terminal sequences to the current terminal device, whether that be in screen, a remote ssh terminal, console mode, serial consoles, etc. 
+</p>
+<p>setterm Syntax: (0 disables)
+</p>
+<pre>$ setterm --blank [0-60|force|poke]
+$ setterm --powersave [on|vsync|hsync|powerdown|off]
+$ setterm --powerdown [0-60]
+</pre>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> 
+<ul>
+<li>Console blanking alone does not enable DPMS power saving. Console blanking is disabled by default. <a rel="nofollow" class="external autonumber" href="https://github.com/torvalds/linux/commit/a4199f5eb8096d63828f7333fa45650a7b0a99ed">[1]</a>
+</li>
+<li>
+<code>setterm --powerdown</code> does not seem to have any effect when the <code>APM_DISPLAY_BLANK</code> kernel configuration option is not enabled. <a rel="nofollow" class="external autonumber" href="https://superuser.com/a/154388">[2]</a>
+</li>
+<li>Console blanking can also be enabled by the <code>consoleblank</code> <a href="../en/Kernel_parameters.html" class="mw-redirect" title="Kernel parameter">kernel parameter</a>. See the <a rel="nofollow" class="external text" href="https://docs.kernel.org/admin-guide/kernel-parameters.html">kernel documentation</a> for details.</li>
+</ul>
+</div>
+<h3><span class="mw-headline" id="Pipe_the_output_to_a_cat_to_see_the_escapes">Pipe the output to a cat to see the escapes</span></h3>
+<pre>$ setterm --powerdown 2&gt;&amp;1 | exec cat -v 2&gt;&amp;1 | sed "s/\\^\\[/\\\\033/g"
+</pre>
+<h3>
+<span id="Pipe_the_escapes_to_any_tty_.28with_write.2Fappend_perms.29_to_modify_that_terminal"></span><span class="mw-headline" id="Pipe_the_escapes_to_any_tty_(with_write/append_perms)_to_modify_that_terminal">Pipe the escapes to any tty (with write/append perms) to modify that terminal</span>
+</h3>
+<pre>$ setterm --powerdown 0 &gt;&gt; /dev/tty3
+</pre>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> <code>&gt;&gt;</code> is used instead of <code>&gt;</code>. For permission issues using <i>sudo</i> in a script or something, you can use the <b>tee</b> program to append the output of setterm to the tty device, which tty's let appending sometimes but not writing.</div>
+<h4><span class="mw-headline" id="Bash_loop_to_set_ttys_0-256">Bash loop to set ttys 0-256</span></h4>
+<pre>$ for i in {0..256}; do setterm --powerdown 0 &gt;&gt; /dev/tty$i; done; unset I;
+</pre>
+<h2><span class="mw-headline" id="See_also">See also</span></h2>
+<ul>
+<li><a rel="nofollow" class="external text" href="https://web.archive.org/web/20180129095655/http://webpages.charter.net/dperr/dpms.htm">PC Monitor DPMS specification explanation</a></li>
+<li><a rel="nofollow" class="external text" href="https://ptspts.blogspot.be/2009/10/screen-blanking-dpms-screen-saver.html">DPMS control in X</a></li>
+</ul>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../Special:Categories.html" title="Special:Categories">Categories</a>: <ul>
+<li><a href="../en/Category:X_server.html" title="Category:X server">X server</a></li>
+<li><a href="../en/Category:Power_management.html" title="Category:Power management">Power management</a></li>
+</ul>
+</div></div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=Display_Power_Management_Signaling&amp;oldid=758679">https://wiki.archlinux.org/index.php?title=Display_Power_Management_Signaling&amp;oldid=758679</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 3 December 2022, at 02:15.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

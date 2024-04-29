@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>EFI system partition (Русский) - ArchWiki</title>
+<link rel="stylesheet" href="../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-EFI_system_partition_Русский rootpage-EFI_system_partition_Русский skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Проверка_существования_раздела" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#%D0%9F%D1%80%D0%BE%D0%B2%D0%B5%D1%80%D0%BA%D0%B0_%D1%81%D1%83%D1%89%D0%B5%D1%81%D1%82%D0%B2%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F_%D1%80%D0%B0%D0%B7%D0%B4%D0%B5%D0%BB%D0%B0">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Проверка существования раздела</div>
+			</a>
+			
+			<ul id="toc-Проверка_существования_раздела-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Создание_раздела" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#%D0%A1%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5_%D1%80%D0%B0%D0%B7%D0%B4%D0%B5%D0%BB%D0%B0">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Создание раздела</div>
+			</a>
+			
+				<button aria-controls="toc-Создание_раздела-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Создание раздела subsection
+				</button>
+			
+			<ul id="toc-Создание_раздела-sublist" class="sidebar-toc-list">
+				<li id="toc-Разметка_дисков_GPT" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#%D0%A0%D0%B0%D0%B7%D0%BC%D0%B5%D1%82%D0%BA%D0%B0_%D0%B4%D0%B8%D1%81%D0%BA%D0%BE%D0%B2_GPT">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.1</span>Разметка дисков GPT</div>
+			</a>
+			
+			<ul id="toc-Разметка_дисков_GPT-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Разметка_дисков_MBR" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#%D0%A0%D0%B0%D0%B7%D0%BC%D0%B5%D1%82%D0%BA%D0%B0_%D0%B4%D0%B8%D1%81%D0%BA%D0%BE%D0%B2_MBR">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.2</span>Разметка дисков MBR</div>
+			</a>
+			
+			<ul id="toc-Разметка_дисков_MBR-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Форматирование_раздела" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#%D0%A4%D0%BE%D1%80%D0%BC%D0%B0%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5_%D1%80%D0%B0%D0%B7%D0%B4%D0%B5%D0%BB%D0%B0">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>Форматирование раздела</div>
+			</a>
+			
+			<ul id="toc-Форматирование_раздела-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Монтирование_раздела" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#%D0%9C%D0%BE%D0%BD%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5_%D1%80%D0%B0%D0%B7%D0%B4%D0%B5%D0%BB%D0%B0">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4</span>Монтирование раздела</div>
+			</a>
+			
+				<button aria-controls="toc-Монтирование_раздела-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Монтирование раздела subsection
+				</button>
+			
+			<ul id="toc-Монтирование_раздела-sublist" class="sidebar-toc-list">
+				<li id="toc-Типичные_точки_монтирования" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#%D0%A2%D0%B8%D0%BF%D0%B8%D1%87%D0%BD%D1%8B%D0%B5_%D1%82%D0%BE%D1%87%D0%BA%D0%B8_%D0%BC%D0%BE%D0%BD%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.1</span>Типичные точки монтирования</div>
+			</a>
+			
+			<ul id="toc-Типичные_точки_монтирования-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Альтернативные_точки_монтирования" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#%D0%90%D0%BB%D1%8C%D1%82%D0%B5%D1%80%D0%BD%D0%B0%D1%82%D0%B8%D0%B2%D0%BD%D1%8B%D0%B5_%D1%82%D0%BE%D1%87%D0%BA%D0%B8_%D0%BC%D0%BE%D0%BD%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.2</span>Альтернативные точки монтирования</div>
+			</a>
+			
+			<ul id="toc-Альтернативные_точки_монтирования-sublist" class="sidebar-toc-list">
+				<li id="toc-Использование_bind_монтирования" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#%D0%98%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5_bind_%D0%BC%D0%BE%D0%BD%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.2.1</span>Использование bind монтирования</div>
+			</a>
+			
+			<ul id="toc-Использование_bind_монтирования-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Использование_systemd" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#%D0%98%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5_systemd">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.2.2</span>Использование systemd</div>
+			</a>
+			
+			<ul id="toc-Использование_systemd-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Использование_событий_файловой_системы" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#%D0%98%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5_%D1%81%D0%BE%D0%B1%D1%8B%D1%82%D0%B8%D0%B9_%D1%84%D0%B0%D0%B9%D0%BB%D0%BE%D0%B2%D0%BE%D0%B9_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D1%8B">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.2.3</span>Использование событий файловой системы</div>
+			</a>
+			
+			<ul id="toc-Использование_событий_файловой_системы-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Использование_хука_mkinitcpio" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#%D0%98%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5_%D1%85%D1%83%D0%BA%D0%B0_mkinitcpio">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.2.4</span>Использование хука mkinitcpio</div>
+			</a>
+			
+			<ul id="toc-Использование_хука_mkinitcpio-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Использование_предустановки_mkinitcpio" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#%D0%98%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5_%D0%BF%D1%80%D0%B5%D0%B4%D1%83%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B8_mkinitcpio">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.2.5</span>Использование предустановки mkinitcpio</div>
+			</a>
+			
+			<ul id="toc-Использование_предустановки_mkinitcpio-sublist" class="sidebar-toc-list">
+				<li id="toc-Замена_хука_mkinitcpio" class="sidebar-toc-list-item sidebar-toc-level-4">
+			<a class="sidebar-toc-link" href="#%D0%97%D0%B0%D0%BC%D0%B5%D0%BD%D0%B0_%D1%85%D1%83%D0%BA%D0%B0_mkinitcpio">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.2.5.1</span>Замена хука mkinitcpio</div>
+			</a>
+			
+			<ul id="toc-Замена_хука_mkinitcpio-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Другой_пример" class="sidebar-toc-list-item sidebar-toc-level-4">
+			<a class="sidebar-toc-link" href="#%D0%94%D1%80%D1%83%D0%B3%D0%BE%D0%B9_%D0%BF%D1%80%D0%B8%D0%BC%D0%B5%D1%80">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.2.5.2</span>Другой пример</div>
+			</a>
+			
+			<ul id="toc-Другой_пример-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Использование_хука_pacman" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#%D0%98%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5_%D1%85%D1%83%D0%BA%D0%B0_pacman">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.2.6</span>Использование хука pacman</div>
+			</a>
+			
+			<ul id="toc-Использование_хука_pacman-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Решение_проблем" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#%D0%A0%D0%B5%D1%88%D0%B5%D0%BD%D0%B8%D0%B5_%D0%BF%D1%80%D0%BE%D0%B1%D0%BB%D0%B5%D0%BC">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5</span>Решение проблем</div>
+			</a>
+			
+				<button aria-controls="toc-Решение_проблем-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Решение проблем subsection
+				</button>
+			
+			<ul id="toc-Решение_проблем-sublist" class="sidebar-toc-list">
+				<li id="toc-ESP_в_программном_RAID1" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#ESP_%D0%B2_%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%BD%D0%BE%D0%BC_RAID1">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5.1</span>ESP в программном RAID1</div>
+			</a>
+			
+			<ul id="toc-ESP_в_программном_RAID1-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Прошивка_не_видит_каталог_EFI" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#%D0%9F%D1%80%D0%BE%D1%88%D0%B8%D0%B2%D0%BA%D0%B0_%D0%BD%D0%B5_%D0%B2%D0%B8%D0%B4%D0%B8%D1%82_%D0%BA%D0%B0%D1%82%D0%B0%D0%BB%D0%BE%D0%B3_EFI">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5.2</span>Прошивка не видит каталог EFI</div>
+			</a>
+			
+			<ul id="toc-Прошивка_не_видит_каталог_EFI-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Смотрите_также" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#%D0%A1%D0%BC%D0%BE%D1%82%D1%80%D0%B8%D1%82%D0%B5_%D1%82%D0%B0%D0%BA%D0%B6%D0%B5">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6</span>Смотрите также</div>
+			</a>
+			
+			<ul id="toc-Смотрите_также-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../ru/EFI_system_partition.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="new mw-list-item"><a href="/index.php?title=Talk:EFI_system_partition_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)&amp;action=edit&amp;redlink=1" rel="discussion" title="Discussion about the content page (page does not exist) [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">русский</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../ru/EFI_system_partition.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=EFI_system_partition_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=EFI_system_partition_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../ru/EFI_system_partition.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=EFI_system_partition_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=EFI_system_partition_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="ru" dir="ltr">
+<div class="mw-parser-output">
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Состояние перевода:</strong> На этой странице представлен перевод статьи <a href="../en/EFI_system_partition.html" title="EFI system partition">EFI system partition</a>. Дата последней синхронизации: 4 февраля 2022. Вы можете <a href="../ru/ArchWiki:Translation_Team.html" title="ArchWiki:Translation Team (Русский)">помочь</a> синхронизировать перевод, если в английской версии произошли <a rel="nofollow" class="external text" href="https://wiki.archlinux.org/index.php?title=EFI_system_partition&amp;diff=0&amp;oldid=703293">изменения</a>.</div>
+<div class="archwiki-template-meta-related-articles-start">
+<p class="mw-no-invert">Ссылки по теме</p>
+<ul>
+<li><a href="../ru/Unified_Extensible_Firmware_Interface.html" title="Unified Extensible Firmware Interface (Русский)">Unified Extensible Firmware Interface (Русский)</a></li>
+<li><a href="../ru/Arch_boot_process.html#%D0%97%D0%B0%D0%B3%D1%80%D1%83%D0%B7%D1%87%D0%B8%D0%BA" class="mw-redirect" title="Загрузчик">Загрузчик</a></li>
+</ul>
+</div>
+<p><a href="https://en.wikipedia.org/wiki/EFI_System_partition" class="extiw" title="w:EFI System partition">Системный раздел EFI</a> (также называемый ESP или EFISYS) представляет собой физический раздел в формате FAT32 (в основной таблице разделов диска, а не под LVM или программным RAID и т.д.), откуда прошивка <a href="../ru/Unified_Extensible_Firmware_Interface.html" title="Unified Extensible Firmware Interface (Русский)">UEFI</a> запускает загрузчик и приложение UEFI.
+</p>
+<p>Это независимый от ОС раздел, который служит местом хранения загрузочных устройств EFI и приложений, которые будут запускаться с помощью прошивки EFI. Это необходимо для загрузки UEFI.
+</p>
+<mw:tocplace></mw:tocplace>
+<h2>
+<span id=".D0.9F.D1.80.D0.BE.D0.B2.D0.B5.D1.80.D0.BA.D0.B0_.D1.81.D1.83.D1.89.D0.B5.D1.81.D1.82.D0.B2.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D1.8F_.D1.80.D0.B0.D0.B7.D0.B4.D0.B5.D0.BB.D0.B0"></span><span class="mw-headline" id="Проверка_существования_раздела">Проверка существования раздела</span>
+</h2>
+<p>Если вы устанавливаете Arch Linux на компьютер с поддержкой UEFI и предустановленной ОС, например, <a href="../en/Dual_boot_with_Windows.html" class="mw-redirect" title="Dual boot with Windows (Русский)">Windows</a> 10, то вполне вероятно, что у вас уже есть системный раздел EFI.
+</p>
+<p>Чтобы посмотреть схему разделов диска и системный раздел, запустите <a href="../ru/Fdisk.html" title="Fdisk (Русский)">fdisk</a> от имени root, указав диск, с которого вы хотите загрузиться:
+</p>
+<pre># fdisk -l /dev/sd<i>x</i>
+</pre>
+<p>Эта команда выведет:
+</p>
+<ul>
+<li>Таблицу разделов диска: <a href="../ru/Partitioning.html#%D0%A2%D0%B0%D0%B1%D0%BB%D0%B8%D1%86%D0%B0_%D1%80%D0%B0%D0%B7%D0%B4%D0%B5%D0%BB%D0%BE%D0%B2_GUID" title="Partitioning (Русский)">GPT</a> будет обозначен как <code>Тип метки диска: gpt</code>, а <a href="../ru/Partitioning.html#%D0%93%D0%BB%D0%B0%D0%B2%D0%BD%D0%B0%D1%8F_%D0%B7%D0%B0%D0%B3%D1%80%D1%83%D0%B7%D0%BE%D1%87%D0%BD%D0%B0%D1%8F_%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D1%8C_(MBR)" title="Partitioning (Русский)">MBR</a> — как <code>Тип метки диска: dos</code>.</li>
+<li>Список разделов на диске: поищите в списке системный раздел EFI, он обычно имеет размер не менее 100 МиБ и тип <code>EFI System</code> или <code>EFI (FAT-12/16/32)</code>. Чтобы убедиться, что это ESP, <a href="../ru/File_systems.html#%D0%9C%D0%BE%D0%BD%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5_%D1%84%D0%B0%D0%B9%D0%BB%D0%BE%D0%B2%D0%BE%D0%B9_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D1%8B" class="mw-redirect" title="Смонтируйте">смонтируйте</a> его и проверьте, содержит ли он каталог с именем <code>EFI</code>; если да, то это точно ESP.</li>
+</ul>
+<div class="archwiki-template-box archwiki-template-box-tip">
+<strong>Совет:</strong> Чтобы узнать, является ли файловая система FAT12, FAT16 или FAT32, смотрите <a href="../ru/FAT.html#%D0%9E%D0%BF%D1%80%D0%B5%D0%B4%D0%B5%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5_%D1%82%D0%B8%D0%BF%D0%B0_FAT" title="FAT (Русский)">FAT (Русский)#Определение типа FAT</a>.</div>
+<div class="archwiki-template-box archwiki-template-box-warning">
+<strong>Важно:</strong> Если вы выполняете <a href="../en/Dual_boot_with_Windows.html" class="mw-redirect" title="Dual boot with Windows (Русский)">двойную загрузку</a> с существующей установкой Windows в системе UEFI/GPT, не форматируйте раздел UEFI, так как это включает в себя файл Windows <i>.efi</i>, необходимый для ее загрузки. Другими словами, используйте существующий раздел как есть и просто <a href="#%D0%9C%D0%BE%D0%BD%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5_%D1%80%D0%B0%D0%B7%D0%B4%D0%B5%D0%BB%D0%B0">монтируйте его</a>.</div>
+<p>Если вы нашли существующий системный раздел EFI, просто переходите к разделу <a href="#%D0%9C%D0%BE%D0%BD%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5_%D1%80%D0%B0%D0%B7%D0%B4%D0%B5%D0%BB%D0%B0">#Монтирование раздела</a>. Если раздел не нашёлся, его нужно создать: <a href="#%D0%A1%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5_%D1%80%D0%B0%D0%B7%D0%B4%D0%B5%D0%BB%D0%B0">#Создание раздела</a>.
+</p>
+<h2>
+<span id=".D0.A1.D0.BE.D0.B7.D0.B4.D0.B0.D0.BD.D0.B8.D0.B5_.D1.80.D0.B0.D0.B7.D0.B4.D0.B5.D0.BB.D0.B0"></span><span class="mw-headline" id="Создание_раздела">Создание раздела</span>
+</h2>
+<p>В следующих двух разделах показано, как создать системный раздел EFI (ESP).
+</p>
+<div class="archwiki-template-box archwiki-template-box-warning">
+<strong>Важно:</strong> Системный раздел EFI должен быть физическим разделом в основной таблице разделов диска, не под LVM или программным RAID и т.д.</div>
+<p>Размер раздела должен давать достаточно места для хранения загрузчиков и других файлов, необходимых для загрузки.
+</p>
+<p>Для предотвращения проблем совместимости с другими операционными системами<a rel="nofollow" class="external autonumber" href="https://docs.microsoft.com/en-us/windows-hardware/manufacture/desktop/configure-uefigpt-based-hard-drive-partitions#diskpartitionrules">[1]</a><a rel="nofollow" class="external autonumber" href="https://superuser.com/questions/1310927/what-is-the-absolute-minimum-size-a-uefi-partition-can-be/1310938">[2]</a> рекомендуется делать его не менее 300 МиБ. Для ранних и/или несовершенных реализаций UEFI может потребоваться размер не менее 512 МиБ.<a rel="nofollow" class="external autonumber" href="https://www.rodsbooks.com/efi-bootloaders/principles.html">[3]</a> Если ни одна из этих проблем не актуальна, размер раздела может составлять всего 2 МиБ, хотя тогда в него не поместится ничего кроме загрузчика.
+</p>
+<h3>
+<span id=".D0.A0.D0.B0.D0.B7.D0.BC.D0.B5.D1.82.D0.BA.D0.B0_.D0.B4.D0.B8.D1.81.D0.BA.D0.BE.D0.B2_GPT"></span><span class="mw-headline" id="Разметка_дисков_GPT">Разметка дисков GPT</span>
+</h3>
+<p>Системный раздел EFI в <a href="../ru/Partitioning.html#%D0%A2%D0%B0%D0%B1%D0%BB%D0%B8%D1%86%D0%B0_%D1%80%D0%B0%D0%B7%D0%B4%D0%B5%D0%BB%D0%BE%D0%B2_GUID" title="Partitioning (Русский)">таблице разделов GUID</a> идентифицируется с помощью <a href="https://en.wikipedia.org/wiki/ru:%D0%A2%D0%B0%D0%B1%D0%BB%D0%B8%D1%86%D0%B0_%D1%80%D0%B0%D0%B7%D0%B4%D0%B5%D0%BB%D0%BE%D0%B2_GUID#.D0.98.D0.B4.D0.B5.D0.BD.D1.82.D0.B8.D1.84.D0.B8.D0.BA.D0.B0.D1.82.D0.BE.D1.80.D1.8B_.28GUID.29_.D1.80.D0.B0.D0.B7.D0.BB.D0.B8.D1.87.D0.BD.D1.8B.D1.85_.D1.82.D0.B8.D0.BF.D0.BE.D0.B2_.D1.80.D0.B0.D0.B7.D0.B4.D0.B5.D0.BB.D0.BE.D0.B2" class="extiw" title="wikipedia:ru:Таблица разделов GUID">GUID типа раздела</a> <code>C12A7328-F81F-11D2-BA4B-00A0C93EC93B</code>.
+</p>
+<p><b>Выберите один</b> из следующих способов создания ESP для диска GPT с разделами:
+</p>
+<ul>
+<li>
+<a href="../ru/Fdisk.html" title="Fdisk (Русский)">fdisk</a>: Создайте раздел с типом раздела <code>EFI System</code>.</li>
+<li>
+<a href="../ru/GPT_fdisk.html" title="GPT fdisk (Русский)">gdisk</a>: Создайте раздел с типом раздела <code>EF00</code>.</li>
+<li>
+<a href="../ru/Parted.html" title="Parted (Русский)">GNU Parted</a>: Создайте раздел <code>fat32</code> и в Parted установите/активируйте флаг <code>esp</code>.</li>
+</ul>
+<p>После создания раздел нужно отформатировать; переходите к разделу <a href="#%D0%A4%D0%BE%D1%80%D0%BC%D0%B0%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5_%D1%80%D0%B0%D0%B7%D0%B4%D0%B5%D0%BB%D0%B0">#Форматирование раздела</a>.
+</p>
+<h3>
+<span id=".D0.A0.D0.B0.D0.B7.D0.BC.D0.B5.D1.82.D0.BA.D0.B0_.D0.B4.D0.B8.D1.81.D0.BA.D0.BE.D0.B2_MBR"></span><span class="mw-headline" id="Разметка_дисков_MBR">Разметка дисков MBR</span>
+</h3>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Примечание:</strong> 
+<ul>
+<li>Рекомендуется использовать <a href="../ru/Partitioning.html#%D0%A2%D0%B0%D0%B1%D0%BB%D0%B8%D1%86%D0%B0_%D1%80%D0%B0%D0%B7%D0%B4%D0%B5%D0%BB%D0%BE%D0%B2_GUID" title="Partitioning (Русский)">GPT</a>, так как некоторые прошивки могут не поддерживать загрузку UEFI/MBR из-за того, что она не поддерживается <a href="../en/Dual_boot_with_Windows.html" class="mw-redirect" title="Dual boot with Windows (Русский)">установкой Windows</a>.</li>
+<li>
+<i>bootctl</i> не поддерживает установку <a href="../ru/Systemd-boot.html" title="Systemd-boot (Русский)">systemd-boot</a> на MBR-диск. <a rel="nofollow" class="external autonumber" href="https://github.com/systemd/systemd/issues/1125">[4]</a>
+</li>
+</ul>
+<p>Смотрите также <a href="../ru/Partitioning.html#%D0%92%D1%8B%D0%B1%D0%BE%D1%80_%D0%BC%D0%B5%D0%B6%D0%B4%D1%83_GPT_%D0%B8_MBR" class="mw-redirect" title="Разметка дисков">Разметка дисков#Выбор между GPT и MBR</a>.
+</p>
+</div>
+<p>Системный раздел EFI в <a href="../ru/Partitioning.html#%D0%93%D0%BB%D0%B0%D0%B2%D0%BD%D0%B0%D1%8F_%D0%B7%D0%B0%D0%B3%D1%80%D1%83%D0%B7%D0%BE%D1%87%D0%BD%D0%B0%D1%8F_%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D1%8C_(MBR)" title="Partitioning (Русский)">главной загрузочной записи</a> идентифицируется с помощью <a href="https://en.wikipedia.org/wiki/Partition_type" class="extiw" title="wikipedia:Partition type">partition ID</a> <code>EF</code>.
+</p>
+<p><b>Выберите один</b> из следующих способов создания ESP для диска MBR с разделами:
+</p>
+<ul>
+<li>
+<a href="../ru/Fdisk.html" title="Fdisk (Русский)">fdisk</a>: Создайте первичный раздел с типом раздела (<code>EFI (FAT-12/16/32)</code>.</li>
+<li>
+<a href="../ru/Parted.html" title="Parted (Русский)">GNU Parted</a>: Создайте первичный раздел <code>fat32</code> и в Parted установите/активируйте флаг <code>esp</code>.</li>
+</ul>
+<p>После создания раздел нужно отформатировать; переходите к разделу <a href="#%D0%A4%D0%BE%D1%80%D0%BC%D0%B0%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5_%D1%80%D0%B0%D0%B7%D0%B4%D0%B5%D0%BB%D0%B0">#Форматирование раздела</a>.
+</p>
+<h2>
+<span id=".D0.A4.D0.BE.D1.80.D0.BC.D0.B0.D1.82.D0.B8.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_.D1.80.D0.B0.D0.B7.D0.B4.D0.B5.D0.BB.D0.B0"></span><span class="mw-headline" id="Форматирование_раздела">Форматирование раздела</span>
+</h2>
+<p>Спецификация UEFI предусматривает поддержку файловых систем FAT12, FAT16 и FAT32 (<a rel="nofollow" class="external text" href="https://uefi.org/sites/default/files/resources/UEFI_Spec_2_9_2021_03_18.pdf#G17.1019485">UEFI specification version 2.9, section 13.3.1.1</a>), но производители могут по желанию добавить поддержку дополнительных файловых систем; например, прошивки компьютеров Apple <a href="../en/Mac.html" title="Mac">Mac</a> поддерживают файловую систему HFS+.
+</p>
+<p>Для предотвращения возможных проблем с другими операционными системами и поскольку в спецификации UEFI говорится, что UEFI "включает использование FAT32 для системного раздела и FAT12 или FAT16 для съемных носителей"<a rel="nofollow" class="external autonumber" href="https://uefi.org/sites/default/files/resources/UEFI_Spec_2_9_2021_03_18.pdf#G17.1345080">[5]</a>, рекомендуется использовать <a href="../ru/FAT.html" title="FAT (Русский)">FAT32</a>. Используйте утилиту <span class="plainlinks archwiki-template-man" title="$ man 8 mkfs.fat"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/mkfs.fat.8">mkfs.fat(8)</a></span> из пакета <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=dosfstools">dosfstools</a></span>:
+</p>
+<pre># mkfs.fat -F32 /dev/sd<i>xY</i>
+</pre>
+<p>Если вы получили сообщение <code>WARNING: Not enough clusters for a 32 bit FAT!</code>, уменьшите размер кластера с помощью команды <code>mkfs.fat -s2 -F32 ...</code> или <code>-s1</code>; иначе раздел может быть нечитаемым UEFI.
+Поддерживаемые размеры кластера можно посмотреть в <span class="plainlinks archwiki-template-man" title="$ man 8 mkfs.fat"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/mkfs.fat.8">mkfs.fat(8)</a></span>.
+</p>
+<p>Для разделов размером менее 32 МиБ использовать FAT32 не получится. В этом случае отформатируйте его в FAT16 или даже FAT12. Например, ESP размером 2 МиБ будет поддерживать только FAT12:
+</p>
+<pre># mkfs.fat -F 12 /dev/sd<i>xY</i>
+</pre>
+<h2>
+<span id=".D0.9C.D0.BE.D0.BD.D1.82.D0.B8.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_.D1.80.D0.B0.D0.B7.D0.B4.D0.B5.D0.BB.D0.B0"></span><span class="mw-headline" id="Монтирование_раздела">Монтирование раздела</span>
+</h2>
+<p>Ядра, файлы initramfs и, в большинстве случаев, <a href="../ru/Microcode.html" class="mw-redirect" title="Микрокод">микрокод</a> процессора должны быть доступны <a href="../ru/Arch_boot_process.html#%D0%97%D0%B0%D0%B3%D1%80%D1%83%D0%B7%D1%87%D0%B8%D0%BA" title="Arch boot process (Русский)">загрузчику</a> или самому UEFI для успешной загрузки системы. Таким образом, если вы хотите сохранить простоту установки, выбор загрузчика ограничивает варианты выбора точки монтирования для системного раздела EFI.
+</p>
+<h3>
+<span id=".D0.A2.D0.B8.D0.BF.D0.B8.D1.87.D0.BD.D1.8B.D0.B5_.D1.82.D0.BE.D1.87.D0.BA.D0.B8_.D0.BC.D0.BE.D0.BD.D1.82.D0.B8.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D1.8F"></span><span class="mw-headline" id="Типичные_точки_монтирования">Типичные точки монтирования</span>
+</h3>
+<p>Самыми простыми вариантами системного раздела EFI являются:
+</p>
+<ul>
+<li>
+<a href="../ru/File_systems.html#%D0%9C%D0%BE%D0%BD%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5_%D1%84%D0%B0%D0%B9%D0%BB%D0%BE%D0%B2%D0%BE%D0%B9_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D1%8B" class="mw-redirect" title="Монтирование">Монтирование</a> ESP в <code>/efi</code> и использование такого <a href="../ru/Arch_boot_process.html#%D0%97%D0%B0%D0%B3%D1%80%D1%83%D0%B7%D1%87%D0%B8%D0%BA" title="Arch boot process (Русский)">загрузчика</a>, который способен прочитать файл ядра и initramfs откуда-то ещё (обычно из <code>/boot</code>). Информацию о требованиях и возможностях загрузчиков можно почитать в статье <a href="../ru/Arch_boot_process.html#%D0%97%D0%B0%D0%B3%D1%80%D1%83%D0%B7%D1%87%D0%B8%D0%BA" class="mw-redirect" title="Процесс загрузки Arch">Процесс загрузки Arch#Загрузчик</a>.</li>
+<li>
+<a href="../ru/File_systems.html#%D0%9C%D0%BE%D0%BD%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5_%D1%84%D0%B0%D0%B9%D0%BB%D0%BE%D0%B2%D0%BE%D0%B9_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D1%8B" class="mw-redirect" title="Монтирование">Монтирование</a> ESP в <code>/boot</code>. Это предпочтительный метод при загрузке <a href="../en/EFISTUB.html" class="mw-redirect" title="EFISTUB (Русский)">EFISTUB</a> ядра напрямую из UEFI или загрузке через менеджер загрузки вроде <a href="../ru/Systemd-boot.html" title="Systemd-boot (Русский)">systemd-boot</a>.</li>
+<li>
+<a href="../ru/File_systems.html#%D0%9C%D0%BE%D0%BD%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5_%D1%84%D0%B0%D0%B9%D0%BB%D0%BE%D0%B2%D0%BE%D0%B9_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D1%8B" class="mw-redirect" title="Монтирование">Монтирование</a> ESP в <code>/efi</code> и дополнительно монтирование "Extended Boot Loader Partition" (XBOOTLDR) в <code>/boot</code>. Это может быть полезно, когда ранее созданный ESP слишком мал для размещения нескольких загрузчиков и/или ядер, но увеличить размер ESP проблематично (например, при установке Linux после Windows для <a href="../en/Dual_boot_with_Windows.html" class="mw-redirect" title="Dual boot with Windows (Русский)">двойной загрузки</a>). Этот метод поддерживает как минимум <a href="../ru/Systemd-boot.html" title="Systemd-boot (Русский)">systemd-boot</a>.</li>
+</ul>
+<div class="archwiki-template-box archwiki-template-box-tip">
+<strong>Совет:</strong> 
+<ul>
+<li>Монтирование в <code>/efi</code> является заменой<a rel="nofollow" class="external autonumber" href="https://github.com/systemd/systemd/pull/3757#issuecomment-234290236">[6]</a> для ранее распространённой (и до сих пор используемой в некоторых дистрибутивах) точки монтирования <code>/boot/efi</code>.</li>
+<li>Каталог <code>/efi</code> изначально отсутствует; его нужно предварительно создать командой <span class="plainlinks archwiki-template-man" title="$ man 1 mkdir"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/mkdir.1">mkdir(1)</a></span>.</li>
+</ul>
+</div>
+<h3>
+<span id=".D0.90.D0.BB.D1.8C.D1.82.D0.B5.D1.80.D0.BD.D0.B0.D1.82.D0.B8.D0.B2.D0.BD.D1.8B.D0.B5_.D1.82.D0.BE.D1.87.D0.BA.D0.B8_.D0.BC.D0.BE.D0.BD.D1.82.D0.B8.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D1.8F"></span><span class="mw-headline" id="Альтернативные_точки_монтирования">Альтернативные точки монтирования</span>
+</h3>
+<p>Если вы не используете <a href="#%D0%A2%D0%B8%D0%BF%D0%B8%D1%87%D0%BD%D1%8B%D0%B5_%D1%82%D0%BE%D1%87%D0%BA%D0%B8_%D0%BC%D0%BE%D0%BD%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F">#Типичные точки монтирования</a>, вам нужно скопировать файлы загрузки в ESP (далее обозначается как <code><i>esp</i></code>).
+</p>
+<pre># mkdir -p <i>esp</i>/EFI/arch
+# cp -a /boot/vmlinuz-linux <i>esp</i>/EFI/arch/
+# cp -a /boot/initramfs-linux.img <i>esp</i>/EFI/arch/
+# cp -a /boot/initramfs-linux-fallback.img <i>esp</i>/EFI/arch/
+</pre>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Примечание:</strong> Вам также может понадобиться скопировать <a href="../ru/Microcode.html" class="mw-redirect" title="Микрокод">микрокод</a>.</div>
+<p>Кроме того, вам нужно будет поддерживать файлы на ESP в актуальном состоянии при последующих обновлениях ядра. Несоблюдение этого требования может привести к незагружаемой системе. В следующих разделах обсуждаются несколько механизмов для автоматизации этого процесса.
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Примечание:</strong> Если ESP не смонтирован в <code>/boot</code>, не полагайтесь на <a href="../ru/Fstab.html#%D0%90%D0%B2%D1%82%D0%BE%D0%BC%D0%B0%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%B5_%D0%BC%D0%BE%D0%BD%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5_%D1%81_systemd" title="Fstab (Русский)">механизм автоматического монтирования systemd</a> (в том числе <span class="plainlinks archwiki-template-man" title="$ man 8 systemd-gpt-auto-generator"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/systemd-gpt-auto-generator.8">systemd-gpt-auto-generator(8)</a></span>). Всегда монтируйте его вручную перед любым обновлением системы или ядра, иначе вы не сможете смонтировать его после обновления, что приведёт к блокировке текущего ядра и невозможности обновить копию ядра на ESP.
+<p>В качестве альтернативы <a href="../ru/Kernel_module.html#%D0%90%D0%B2%D1%82%D0%BE%D0%BC%D0%B0%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B0%D1%8F_%D0%B7%D0%B0%D0%B3%D1%80%D1%83%D0%B7%D0%BA%D0%B0_%D0%BC%D0%BE%D0%B4%D1%83%D0%BB%D0%B5%D0%B9_%D1%81_%D0%BF%D0%BE%D0%BC%D0%BE%D1%89%D1%8C%D1%8E_systemd" title="Kernel module (Русский)">предварительно загрузите необходимые модули ядра при загрузке</a>, например:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/modules-load.d/vfat.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">vfat
+nls_cp437
+nls_ascii
+</pre>
+</div>
+<h4>
+<span id=".D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_bind_.D0.BC.D0.BE.D0.BD.D1.82.D0.B8.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D1.8F"></span><span class="mw-headline" id="Использование_bind_монтирования">Использование bind монтирования</span>
+</h4>
+<p>Вместо того, чтобы устанавливать ESP на <code>/boot</code>, вы можете подключить каталог ESP к <code>/boot</code> с помощью bind <a href="../ru/File_systems.html#%D0%9C%D0%BE%D0%BD%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5_%D1%84%D0%B0%D0%B9%D0%BB%D0%BE%D0%B2%D0%BE%D0%B9_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D1%8B" class="mw-redirect" title="Монтирова">монтирова</a>ния (смотрите <span class="plainlinks archwiki-template-man" title="$ man 8 mount"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/mount.8">mount(8)</a></span>). Это позволяет <a href="../ru/Pacman.html" title="Pacman (Русский)">pacman</a> обновлять ядро напрямую, сохраняя при этом организацию ESP по своему вкусу.
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Примечание:</strong> Для этого требуется, чтобы <a href="../ru/FAT.html#%D0%9A%D0%BE%D0%BD%D1%84%D0%B8%D0%B3%D1%83%D1%80%D0%B0%D1%86%D0%B8%D1%8F_%D1%8F%D0%B4%D1%80%D0%B0" title="FAT (Русский)">ядро</a> и <a href="../ru/Arch_boot_process.html#%D0%97%D0%B0%D0%B3%D1%80%D1%83%D0%B7%D1%87%D0%B8%D0%BA" class="mw-redirect" title="Загрузчик">загрузчик</a> были совместимы с FAT32. Это не является проблемой для обычной установки Arch, но может быть проблематичным для других дистрибутивов (а именно тех, которые требуют символических ссылок в <code>/boot/</code>). Смотрите сообщение на форуме <a rel="nofollow" class="external autonumber" href="https://bbs.archlinux.org/viewtopic.php?pid=1331867#p1331867">[7]</a>.</div>
+<p>Как описано в <a href="#%D0%90%D0%BB%D1%8C%D1%82%D0%B5%D1%80%D0%BD%D0%B0%D1%82%D0%B8%D0%B2%D0%BD%D1%8B%D0%B5_%D1%82%D0%BE%D1%87%D0%BA%D0%B8_%D0%BC%D0%BE%D0%BD%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F">начале раздела</a>, скопируйте все загрузочные файлы в каталог вашего ESP, но смонтируйте ESP <b>вне</b> <code>/boot</code>. Затем привяжите смонтированный раздел к каталогу:
+</p>
+<pre># mount --bind <i>esp</i>/EFI/arch/ /boot
+</pre>
+<p>После проверки успеха отредактируйте свой <a href="../ru/Fstab.html" title="Fstab (Русский)">Fstab</a>, чтобы изменения были постоянными:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/fstab</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;"><i>esp</i>/EFI/arch /boot none defaults,bind 0 0
+</pre>
+<h4>
+<span id=".D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_systemd"></span><span class="mw-headline" id="Использование_systemd">Использование systemd</span>
+</h4>
+<p><a href="../ru/Systemd.html" title="Systemd (Русский)">Systemd</a> поддерживает задачи, запускаемые по событию. В данном конкретном случае возможность обнаружения изменения пути используется для синхронизации файлов ядра EFISTUB и initramfs, когда они обновляются в <code>/boot/</code>. Файл, который проверяется на изменения, это <code>initramfs-linux-fallback.img</code>, так как это последний файл, который собирает mkinitcpio, что позволяет убедиться, что все нужные файлы были собраны перед началом копирования. Файлы path и service, которые должны быть созданы, следующие:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/systemd/system/efistub-update.path</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">[Unit]
+Description=Copy EFISTUB Kernel to EFI system partition
+
+[Path]
+PathChanged=/boot/initramfs-linux-fallback.img
+
+[Install]
+WantedBy=multi-user.target
+WantedBy=system-update.target</pre>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/systemd/system/efistub-update.service</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">[Unit]
+Description=Copy EFISTUB Kernel to EFI system partition
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/cp -af /boot/vmlinuz-linux <i>esp</i>/EFI/arch/
+ExecStart=/usr/bin/cp -af /boot/initramfs-linux.img <i>esp</i>/EFI/arch/
+ExecStart=/usr/bin/cp -af /boot/initramfs-linux-fallback.img <i>esp</i>/EFI/arch/</pre>
+<p>Затем <a href="../ru/Systemd.html#%D0%98%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5_%D1%8E%D0%BD%D0%B8%D1%82%D0%BE%D0%B2" class="mw-redirect" title="Запустите">запустите</a> и <a href="../ru/Systemd.html#%D0%98%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5_%D1%8E%D0%BD%D0%B8%D1%82%D0%BE%D0%B2" class="mw-redirect" title="Включите">включите</a> <code>efistub-update.path</code>.
+</p>
+<div class="archwiki-template-box archwiki-template-box-tip">
+<strong>Совет:</strong> При использовании <a href="../en/Unified_Extensible_Firmware_Interface/Secure_Boot.html" class="mw-redirect" title="Secure Boot">Secure Boot</a> с собственными ключами можно настроить службу на подпись образов с помощью <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=sbsigntools">sbsigntools</a></span>:
+<pre>ExecStart=/usr/bin/sbsign --key <i>/путь/к/db.key</i> --cert <i>/путь/к/db.crt</i> --output <i>esp</i>/EFI/arch/vmlinuz-linux /boot/vmlinuz-linux</pre>
+</div>
+<h4>
+<span id=".D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_.D1.81.D0.BE.D0.B1.D1.8B.D1.82.D0.B8.D0.B9_.D1.84.D0.B0.D0.B9.D0.BB.D0.BE.D0.B2.D0.BE.D0.B9_.D1.81.D0.B8.D1.81.D1.82.D0.B5.D0.BC.D1.8B"></span><span class="mw-headline" id="Использование_событий_файловой_системы">Использование событий файловой системы</span>
+</h4>
+<p><a href="../ru/Autostarting.html#%D0%A1%D0%BE%D0%B1%D1%8B%D1%82%D0%B8%D1%8F_%D1%84%D0%B0%D0%B9%D0%BB%D0%BE%D0%B2%D0%BE%D0%B9_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D1%8B" title="Autostarting (Русский)">События файловой системы</a> можно использовать для запуска скрипта, синхронизирующего ядро EFISTUB после обновления ядра. Ниже приведён пример с использованием <a href="../en/Incron.html" title="Incron">incron</a>.
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/usr/local/bin/efistub-update</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">#!/bin/sh
+cp -af /boot/vmlinuz-linux <i>esp</i>/EFI/arch/
+cp -af /boot/initramfs-linux.img <i>esp</i>/EFI/arch/
+cp -af /boot/initramfs-linux-fallback.img <i>esp</i>/EFI/arch/
+</pre>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Примечание:</strong> Первый параметр <code>/boot/initramfs-linux-fallback.img</code> — файл, за которым ведётся наблюдение. Второй параметр <code>IN_CLOSE_WRITE</code> — отслеживаемое действие. Третий параметр <code>/usr/local/bin/efistub-update</code> скрипт для выполнения.</div>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/incron.d/efistub-update.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">/boot/initramfs-linux-fallback.img IN_CLOSE_WRITE /usr/local/bin/efistub-update
+</pre>
+<p><a href="../ru/Systemd.html#%D0%98%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5_%D1%8E%D0%BD%D0%B8%D1%82%D0%BE%D0%B2" class="mw-redirect" title="Включите">Включите</a> службу <code>incrond.service</code>.
+</p>
+<h4>
+<span id=".D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_.D1.85.D1.83.D0.BA.D0.B0_mkinitcpio"></span><span class="mw-headline" id="Использование_хука_mkinitcpio">Использование хука mkinitcpio</span>
+</h4>
+<p><a href="../ru/Mkinitcpio.html" title="Mkinitcpio (Русский)">Mkinitcpio</a> может генерировать хук, для работы которого не нужен демон системного уровня. Он порождает фоновый процесс, который ожидает генерации  <code>vmlinuz</code>, <code>initramfs-linux.img</code> и <code>initramfs-linux-fallback.img</code> перед копированием файлов.
+</p>
+<p>Добавьте <code>efistub-update</code> в список хуков в <code>/etc/mkinitcpio.conf</code>.
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/initcpio/install/efistub-update</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">#!/usr/bin/env bash
+build() {
+	/usr/local/bin/efistub-copy $$ &amp;
+}
+
+help() {
+	cat &lt;&lt;HELPEOF
+This hook waits for mkinitcpio to finish and copies the finished ramdisk and kernel to the ESP
+HELPEOF
+}
+</pre>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/usr/local/bin/efistub-copy</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">#!/usr/bin/env bash
+
+if [[ $1 -gt 0 ]]
+then
+	while [ -e /proc/$1 ]
+	do
+		sleep .5
+	done
+fi
+
+rsync -a /boot/ <i>esp</i>/
+
+echo "Synced /boot with ESP"
+</pre>
+<h4>
+<span id=".D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_.D0.BF.D1.80.D0.B5.D0.B4.D1.83.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B8_mkinitcpio"></span><span class="mw-headline" id="Использование_предустановки_mkinitcpio">Использование предустановки mkinitcpio</span>
+</h4>
+<p>Поскольку предустановки в <code>/etc/mkinitcpio.d/</code> поддерживают shell-скрипты, ядро и initramfs могут быть скопированы простым редактированием предустановок.
+</p>
+<h5>
+<span id=".D0.97.D0.B0.D0.BC.D0.B5.D0.BD.D0.B0_.D1.85.D1.83.D0.BA.D0.B0_mkinitcpio"></span><span class="mw-headline" id="Замена_хука_mkinitcpio">Замена хука mkinitcpio</span>
+</h5>
+<p>Измените файл <code>/etc/mkinitcpio.d/linux.preset</code>:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/mkinitcpio.d/linux.preset</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;"># mkinitcpio preset file for the 'linux' package
+
+# Directory to copy the kernel, the initramfs...
+ESP_DIR="<i>esp</i>/EFI/arch"
+
+ALL_config="/etc/mkinitcpio.conf"
+ALL_kver="${ESP_DIR}/vmlinuz-linux"
+cp -af /boot/vmlinuz-linux "${ESP_DIR}/"
+[[ -e /boot/intel-ucode.img ]] &amp;&amp; cp -af /boot/intel-ucode.img "${ESP_DIR}/"
+[[ -e /boot/amd-ucode.img ]] &amp;&amp; cp -af /boot/amd-ucode.img "${ESP_DIR}/"
+
+PRESETS=('default' 'fallback')
+
+#default_config="/etc/mkinitcpio.conf"
+default_image="${ESP_DIR}/initramfs-linux.img"
+default_options=""
+
+#fallback_config="/etc/mkinitcpio.conf"
+fallback_image="${ESP_DIR}/initramfs-linux-fallback.img"
+fallback_options="-S autodetect"</pre>
+<p>Для тестирования выполните:
+</p>
+<pre># rm /boot/initramfs-linux-fallback.img /boot/initramfs-linux.img
+# mkinitcpio -p linux
+</pre>
+<h5>
+<span id=".D0.94.D1.80.D1.83.D0.B3.D0.BE.D0.B9_.D0.BF.D1.80.D0.B8.D0.BC.D0.B5.D1.80"></span><span class="mw-headline" id="Другой_пример">Другой пример</span>
+</h5>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/mkinitcpio.d/linux.preset</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">ESP_DIR="<i>esp</i>/EFI/arch"
+cp -f "/boot/vmlinuz-linux$suffix" "$ESP_DIR/"
+ALL_config="/etc/mkinitcpio.conf"
+ALL_kver="$ESP_DIR/vmlinuz-linux$suffix"
+PRESETS=('default')
+default_config="/etc/mkinitcpio.conf"
+default_image="$ESP_DIR/initramfs-linux$suffix.img"</pre>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/mkinitcpio.d/linux-zen.preset</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">suffix='-zen'
+source /etc/mkinitcpio.d/linux.preset</pre>
+<h4>
+<span id=".D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_.D1.85.D1.83.D0.BA.D0.B0_pacman"></span><span class="mw-headline" id="Использование_хука_pacman">Использование хука pacman</span>
+</h4>
+<p>Последний вариант полагается на <a href="../ru/Pacman.html#%D0%A5%D1%83%D0%BA%D0%B8" title="Pacman (Русский)">хуки pacman</a>, которые запускаются в конце транзакции.
+</p>
+<p>Первый файл — это хук, который отслеживает соответствующие файлы, и запускается, если они были изменены в прошедшей транзакции.
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/pacman.d/hooks/999-kernel-efi-copy.hook</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">[Trigger]
+Type = Path
+Operation = Install
+Operation = Upgrade
+Target = usr/lib/modules/*/vmlinuz
+Target = usr/lib/initcpio/*
+Target = boot/*-ucode.img
+
+[Action]
+Description = Copying linux and initramfs to EFI directory...
+When = PostTransaction
+Exec = /usr/local/bin/kernel-efi-copy.sh
+</pre>
+<p>Второй файл — собственно копирующий скрипт. Создайте его и сделайте <a href="../ru/Help:Reading.html#%D0%A1%D0%B4%D0%B5%D0%BB%D0%B0%D1%82%D1%8C_%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D0%BD%D1%8F%D0%B5%D0%BC%D1%8B%D0%BC" title="Help:Reading (Русский)">исполняемым</a>:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/usr/local/bin/kernel-efi-copy.sh</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">#!/usr/bin/env bash
+#
+# Copy kernel and initramfs images to EFI directory
+#
+
+ESP_DIR="<i>esp</i>/EFI/arch"
+
+for file in /boot/vmlinuz*
+do
+        cp -af "$file" "$ESP_DIR/$(basename "$file").efi"
+        [[ $? -ne 0 ]] &amp;&amp; exit 1
+done
+
+for file in /boot/initramfs*
+do
+        cp -af "$file" "$ESP_DIR/"
+        [[ $? -ne 0 ]] &amp;&amp; exit 1
+done
+
+[[ -e /boot/intel-ucode.img ]] &amp;&amp; cp -af /boot/intel-ucode.img "$ESP_DIR/"
+[[ -e /boot/amd-ucode.img ]] &amp;&amp; cp -af /boot/amd-ucode.img "$ESP_DIR/"
+
+exit 0
+</pre>
+<h2>
+<span id=".D0.A0.D0.B5.D1.88.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BF.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC"></span><span class="mw-headline" id="Решение_проблем">Решение проблем</span>
+</h2>
+<h3>
+<span id="ESP_.D0.B2_.D0.BF.D1.80.D0.BE.D0.B3.D1.80.D0.B0.D0.BC.D0.BC.D0.BD.D0.BE.D0.BC_RAID1"></span><span class="mw-headline" id="ESP_в_программном_RAID1">ESP в программном RAID1</span>
+</h3>
+<p>Можно сделать ESP частью массива RAID1, но при этом возникает риск повреждения данных, и при создании ESP необходимо принять дополнительные меры. Смотрите <a rel="nofollow" class="external autonumber" href="https://bbs.archlinux.org/viewtopic.php?pid=1398710#p1398710">[8]</a>, <a rel="nofollow" class="external autonumber" href="https://bbs.archlinux.org/viewtopic.php?pid=1390741#p1390741">[9]</a> и <a rel="nofollow" class="external text" href="https://outflux.net/blog/archives/2018/04/19/uefi-booting-and-raid1/">UEFI booting and RAID1</a> для подробностей.
+</p>
+<p>Ключевым моментом является использование параметра <code>--metadata 1.0</code>, чтобы сохранить метаданные RAID в конце раздела, иначе прошивка не сможет получить к ним доступ:
+</p>
+<pre># mdadm --create --verbose --level=1 <b>--metadata=1.0</b> --raid-devices=2 /dev/md/ESP /dev/sda<i>X</i> /dev/sdb<i>Y</i>
+</pre>
+<h3>
+<span id=".D0.9F.D1.80.D0.BE.D1.88.D0.B8.D0.B2.D0.BA.D0.B0_.D0.BD.D0.B5_.D0.B2.D0.B8.D0.B4.D0.B8.D1.82_.D0.BA.D0.B0.D1.82.D0.B0.D0.BB.D0.BE.D0.B3_EFI"></span><span class="mw-headline" id="Прошивка_не_видит_каталог_EFI">Прошивка не видит каталог EFI</span>
+</h3>
+<p>Если вы задаёте файловой системе FAT <a href="../ru/Persistent_block_device_naming.html#by-label" title="Persistent block device naming (Русский)">имя тома (то есть метку файловой системы)</a>, убедитесь, что оно не совпадает с именем <code>EFI</code>. Это может вызвать ошибку в некоторых прошивках (из-за совпадения имени тома с именем каталога EFI), которая заставит прошивку вести себя так, как будто каталог EFI не существует.
+</p>
+<h2>
+<span id=".D0.A1.D0.BC.D0.BE.D1.82.D1.80.D0.B8.D1.82.D0.B5_.D1.82.D0.B0.D0.BA.D0.B6.D0.B5"></span><span class="mw-headline" id="Смотрите_также">Смотрите также</span>
+</h2>
+<ul>
+<li><a rel="nofollow" class="external text" href="https://blog.uncooperative.org/uefi/linux/shim/efi%20system%20partition/2014/02/06/the-efi-system-partition.html">Системный раздел EFI и поведение загрузки по умолчанию</a></li>
+<li><a rel="nofollow" class="external text" href="https://ramsdenj.com/2016/04/15/multi-boot-linux-with-one-boot-partition.html">Multi Boot Linux With One Boot Partition | John Ramsden</a></li>
+</ul>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="../ru/Category:Boot_process.html" title="Category:Boot process (Русский)">Boot process (Русский)</a></li></ul>
+</div></div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=EFI_system_partition_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)&amp;oldid=715476">https://wiki.archlinux.org/index.php?title=EFI_system_partition_(Русский)&amp;oldid=715476</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 4 February 2022, at 14:50.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

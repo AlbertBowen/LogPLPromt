@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>Arch build system (Português) - ArchWiki</title>
+<link rel="stylesheet" href="../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Arch_build_system_Português rootpage-Arch_build_system_Português skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Conjunto_de_ferramentas" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Conjunto_de_ferramentas">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Conjunto de ferramentas</div>
+			</a>
+			
+				<button aria-controls="toc-Conjunto_de_ferramentas-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Conjunto de ferramentas subsection
+				</button>
+			
+			<ul id="toc-Conjunto_de_ferramentas-sublist" class="sidebar-toc-list">
+				<li id="toc-Estrutura_de_repositórios" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Estrutura_de_reposit%C3%B3rios">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.1</span>Estrutura de repositórios</div>
+			</a>
+			
+			<ul id="toc-Estrutura_de_repositórios-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Casos_de_uso" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Casos_de_uso">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Casos de uso</div>
+			</a>
+			
+			<ul id="toc-Casos_de_uso-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Uso" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Uso">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>Uso</div>
+			</a>
+			
+				<button aria-controls="toc-Uso-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Uso subsection
+				</button>
+			
+			<ul id="toc-Uso-sublist" class="sidebar-toc-list">
+				<li id="toc-Obtendo_fonte_de_PKGBUILD" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Obtendo_fonte_de_PKGBUILD">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.1</span>Obtendo fonte de PKGBUILD</div>
+			</a>
+			
+			<ul id="toc-Obtendo_fonte_de_PKGBUILD-sublist" class="sidebar-toc-list">
+				<li id="toc-Usando_a_ferramenta_pkgctl" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Usando_a_ferramenta_pkgctl">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.1.1</span>Usando a ferramenta pkgctl</div>
+			</a>
+			
+			<ul id="toc-Usando_a_ferramenta_pkgctl-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Usando_o_git_diretamente" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Usando_o_git_diretamente">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.1.2</span>Usando o git diretamente</div>
+			</a>
+			
+			<ul id="toc-Usando_o_git_diretamente-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Compilar_pacote" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Compilar_pacote">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.2</span>Compilar pacote</div>
+			</a>
+			
+			<ul id="toc-Compilar_pacote-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Dicas_e_truques" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Dicas_e_truques">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4</span>Dicas e truques</div>
+			</a>
+			
+				<button aria-controls="toc-Dicas_e_truques-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Dicas e truques subsection
+				</button>
+			
+			<ul id="toc-Dicas_e_truques-sublist" class="sidebar-toc-list">
+				<li id="toc-Preserve_pacotes_modificados" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Preserve_pacotes_modificados">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.1</span>Preserve pacotes modificados</div>
+			</a>
+			
+			<ul id="toc-Preserve_pacotes_modificados-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Outras_ferramentas" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Outras_ferramentas">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5</span>Outras ferramentas</div>
+			</a>
+			
+			<ul id="toc-Outras_ferramentas-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../pt/Arch_build_system.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="new mw-list-item"><a href="/index.php?title=Talk:Arch_build_system_(Portugu%C3%AAs)&amp;action=edit&amp;redlink=1" rel="discussion" title="Discussion about the content page (page does not exist) [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">português</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../pt/Arch_build_system.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=Arch_build_system_(Portugu%C3%AAs)&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=Arch_build_system_(Portugu%C3%AAs)&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../pt/Arch_build_system.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Arch_build_system_(Portugu%C3%AAs)&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Arch_build_system_(Portugu%C3%AAs)&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="pt" dir="ltr">
+<div class="mw-parser-output">
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Status de tradução:</strong> Esse artigo é uma tradução de <a href="../en/Arch_build_system.html" title="Arch build system">Arch build system</a>. Data da última tradução: 2023-08-11. Você pode ajudar a sincronizar a tradução, se houver <a rel="nofollow" class="external text" href="https://wiki.archlinux.org/index.php?title=Arch_build_system&amp;diff=0&amp;oldid=781442">alterações</a> na versão em inglês.</div>
+<div class="archwiki-template-meta-related-articles-start">
+<p class="mw-no-invert">Artigos relacionados</p>
+<ul>
+<li><a href="../pt/Arch_package_guidelines.html" class="mw-redirect" title="Padrões de empacotamento do Arch">Padrões de empacotamento do Arch</a></li>
+<li><a href="../pt/Arch_User_Repository.html" title="Arch User Repository (Português)">Arch User Repository</a></li>
+<li><a href="../pt/Creating_packages.html" class="mw-redirect" title="Criando pacotes">Criando pacotes</a></li>
+<li><a href="../en/Kernel/Arch_build_system.html" title="Kernel/Arch build system">Kernel/Arch build system</a></li>
+<li><a href="../pt/Makepkg.html" title="Makepkg (Português)">makepkg</a></li>
+<li><a href="../pt/Official_repositories.html" class="mw-redirect" title="Repositórios oficiais">Repositórios oficiais</a></li>
+<li><a href="../pt/Pacman.html" title="Pacman (Português)">pacman</a></li>
+<li><a href="../pt/PKGBUILD.html" title="PKGBUILD (Português)">PKGBUILD</a></li>
+<li><a href="../pt/Patching_packages.html" class="mw-redirect" title="Aplicação de patch em pacotes">Aplicação de patch em pacotes</a></li>
+</ul>
+</div>
+<p>O sistema de compilação do Arch (em inglês, Arch build system – ABS) é um sistema <i>tipo portação</i> para compilar e empacotar software a partir do código-fonte. Enquanto o <a href="../pt/Pacman.html" title="Pacman (Português)">pacman</a> é a ferramenta especializada do Arch para gerenciamento de pacote binário, o sistema de compilação do Arch é uma coleção de ferramentas para compilar o fonte em pacotes <i>.pkg.tar.zst</i> instaláveis.
+</p>
+<p><i>Ports</i> é um sistema usado por *BSD para automatizar o processo de compilação de software a partir do código-fonte. O sistema usa um <i>port</i> para baixar, descompactar, patch, compilar e instalar o software dado. Um <i>port</i> é meramente um pequeno diretório no computador do usuário, nomeado pelo software correspondente para ser instalado, que contém uns poucos arquivos com as instruções para compilar e instalar o software a partir dos fontes. Isso torna a instalação de softwares tão simples quanto digitar <code>make</code> ou <code>make install clean</code> dentro de diretório de portação.
+</p>
+<p>O sistema de compilação do Arch é baseado um conceito similar. Ele compreende uma coleção de repositórios git para cada pacote disponível no Arch Linux. Cada repositório contém um arquivo <a href="../pt/PKGBUILD.html" title="PKGBUILD (Português)">PKGBUILD</a> (e às vezes outros arquivos) e não contém a fonte do software nem o binário. Ao executar o <a href="../pt/Makepkg.html" title="Makepkg (Português)">makepkg</a> dentro de um diretório, as fontes do software são baixadas, o software é compilado e empacotado no diretório de compilação. Então, você pode usar <a href="../pt/Pacman.html" title="Pacman (Português)">pacman</a> para instalar o pacote.
+</p>
+<mw:tocplace></mw:tocplace>
+<h2><span class="mw-headline" id="Conjunto_de_ferramentas">Conjunto de ferramentas</span></h2>
+<div class="noprint archwiki-template-message">
+<p><a href="../File:Tango-view-fullscreen.png" class="image"><img alt="Tango-view-fullscreen.png" src="../File:Tango-view-fullscreen.png" decoding="async" width="48" height="48"></a><b>This article or section needs expansion.</b><a href="../File:Tango-view-fullscreen.png" class="image"><img alt="Tango-view-fullscreen.png" src="../File:Tango-view-fullscreen.png" decoding="async" width="48" height="48"></a></p>
+<div>
+<b>Reason:</b> Adicionar <i>pkgctl</i>/<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=devtools">devtools</a></span> à lista. (Discuss in <a href="../en/Talk:Arch_build_system.html" title="Talk:Arch build system">Talk:Arch build system</a>)</div>
+</div>
+<p>O sistema de compilação do Arch inclui e depende de vários outros componentes e ferramentas que são usadas no processo de compilação de pacotes a partir da fonte:
+</p>
+<dl>
+<dt>Repositório</dt>
+<dd>A estrutura de diretório contendo arquivos necessários para compilar todos os pacotes oficiais, mas não os pacotes em si nem os arquivos-fonte do software. Ele está disponível na forma de repositórios <a href="../en/Git.html" title="Git">Git</a> hospedados em <a rel="nofollow" class="external text" href="https://gitlab.archlinux.org/archlinux/packaging/packages">gitlab.archlinux.org</a>. Consulte a seção <a href="#Estrutura_de_reposit%C3%B3rios">#Estrutura de repositórios</a> para mais informações.</dd>
+</dl>
+<dl>
+<dt><a href="../pt/PKGBUILD.html" title="PKGBUILD (Português)">PKGBUILD</a></dt>
+<dd>Um script <a href="../en/Bash.html" title="Bash">Bash</a> que contém a URL do código-fonte junto com as instruções de compilação e empacotamento.</dd>
+</dl>
+<dl>
+<dt><a href="../pt/Makepkg.html" title="Makepkg (Português)">makepkg</a></dt>
+<dd>Uma ferramenta de comando shell que lê os PKGBUILDs, baixa automaticamente e compila os fontes e cria um <i>.pkg.tar*</i> de acordo com o vetor <code>PKGEXT</code> no <code>makepkg.conf</code>. Você também pode usar makepkg para fazer seus próprios pacotes personalizados do <a href="../pt/Arch_User_Repository.html" class="mw-redirect" title="AUR (Português)">AUR</a> ou fontes de terceiros. Veja <a href="../pt/Creating_packages.html" class="mw-redirect" title="Criando pacotes">Criando pacotes</a> para mais informações.</dd>
+</dl>
+<dl>
+<dt><a href="../pt/Pacman.html" title="Pacman (Português)">pacman</a></dt>
+<dd>pacman é completamente separado, mas é necessariamente invocado pelo makepkg ou manualmente, para instalar e remover os pacotes compilados e para obter dependências.</dd>
+</dl>
+<dl>
+<dt><a href="../pt/Arch_User_Repository.html" class="mw-redirect" title="AUR (Português)">AUR</a></dt>
+<dd>O Arch User Repository está separado do repositório oficial de PKGBUILDs, mas os pacotes do AUR podem ser compilados usando as mesmas ferramentas. Ele contém muitos milhares de PKGBUILDs contribuídos por usuários para software que está indisponível como um pacote oficial do Arch. Se você precisar compilar um pacote fora da árvore oficial do Arch, as chances são de que esteja no AUR.</dd>
+</dl>
+<div class="archwiki-template-box archwiki-template-box-warning">
+<strong>Atenção:</strong> PKGBUILDs oficiais presumem que pacotes são <a href="../DeveloperWiki:Building_in_a_clean_chroot.html" title="DeveloperWiki:Building in a clean chroot">compilados em um <i>chroot</i> limpo</a>. Compilação de software em um sistema de compilação <i>sujo</i> pode falhar ou causar comportamentos inesperados em tempo de execução, porque se o sistema de compilação detecta dependências dinamicamente, o resultado depende de quais pacotes estão disponíveis no sistema de compilação.</div>
+<h3>
+<span id="Estrutura_de_reposit.C3.B3rios"></span><span class="mw-headline" id="Estrutura_de_repositórios">Estrutura de repositórios</span>
+</h3>
+<p>Os <a href="../pt/Official_repositories.html" class="mw-redirect" title="Repositórios oficiais">repositórios oficiais</a> <i>core</i>, <i>extra</i>, <i>core-testing</i> e <i>extra-testing</i> estão hospedados na <a rel="nofollow" class="external text" href="https://gitlab.archlinux.org/">instância GitLab do Arch Linux</a>.
+</p>
+<p>Cada pacote tem seu próprio repositório no espaço de nomes <a rel="nofollow" class="external text" href="https://gitlab.archlinux.org/archlinux/packaging/packages">archlinux/packaging/packages</a>. Cada repositório contém o PKGBUILD e os arquivos usados nas compilações oficiais. Além disso, alguns arquivos que são usados pelos desenvolvedores para o processo de compilação podem ser encontrados lá.
+</p>
+<p>Por exemplo, a árvore para <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=acl">acl</a></span> se parece com isso:
+</p>
+<pre>acl
+├── keys
+│   └── pgp
+│       ├── 259B3792B3D6D319212CC4DCD5BF9FEB0313653A.asc
+│       ├── 600CD204FBCEA418BD2CA74F154343260542DF34.asc
+│       └── B902B5271325F892AC251AD441633B9FE837F581.asc
+└── PKGBUILD
+</pre>
+<p>O código-fonte do pacote não está presente no diretório ABS. Em vez disso, o <code>PKGBUILD</code> contém uma URL que vai baixar o código-fonte quando o pacote é compilado.
+</p>
+<h2><span class="mw-headline" id="Casos_de_uso">Casos de uso</span></h2>
+<p>O sistema de compilação do Arch automatiza certas tarefas relacionadas à compilação a partir do código-fonte. Seus casos de uso são:
+</p>
+<div class="noprint archwiki-template-message">
+<p><a href="../File:Tango-view-fullscreen.png" class="image"><img alt="Tango-view-fullscreen.png" src="../File:Tango-view-fullscreen.png" decoding="async" width="48" height="48"></a><b>This article or section needs expansion.</b><a href="../File:Tango-view-fullscreen.png" class="image"><img alt="Tango-view-fullscreen.png" src="../File:Tango-view-fullscreen.png" decoding="async" width="48" height="48"></a></p>
+<div>
+<b>Reason:</b> O principal caso de uso é obviamente compilar pacotes binários oficiais para o Arch Linux por desenvolvedores e empacotadores. As personalizações do usuário e as compilações não oficiais são secundárias. (Discuss in <a href="../en/Talk:Arch_build_system.html" title="Talk:Arch build system">Talk:Arch build system</a>)</div>
+</div>
+<ul>
+<li>Em qualquer caso que você queria compilar ou recompilar um pacote</li>
+<li>
+<i>Make</i> e instalar novos pacotes de fontes de software para os quais nenhum pacote está instalado ainda (veja <a href="../pt/Creating_packages.html" class="mw-redirect" title="Criando pacotes">Criando pacotes</a>)</li>
+<li>Personalizar pacotes existentes para atender suas necessidades (por exemplo, habilitar ou desabilitar opções, <i>patching</i>)</li>
+<li>Recompilar todo o seu sistema usando suas <i>flags</i> de compilador, "à la FreeBSD"</li>
+<li>Compilar e instalar, sem interferências, seu próprio kernel personalizado (veja <a href="../pt/Kernel.html#Compila%C3%A7%C3%A3o" class="mw-redirect" title="Kernels (Português)">Compilação de kernel</a>)</li>
+<li>Fazer com que módulos de kernel funcionem com um kernel personalizado</li>
+<li>Compilar e instalar facilmente uma versão mais nova, antiga, beta ou de desenvolvimento de um pacote do Arch editando o número de versão no PKGBUILD</li>
+</ul>
+<p>O ABS automatiza determinadas tarefas relacionadas à compilação a partir do código-fonte. Como alternativa ao uso do ABS, você pode executar essas tarefas manualmente.
+</p>
+<h2><span class="mw-headline" id="Uso">Uso</span></h2>
+<h3><span class="mw-headline" id="Obtendo_fonte_de_PKGBUILD">Obtendo fonte de PKGBUILD</span></h3>
+<p>Para obter o arquivo <a href="../pt/PKGBUILD.html" title="PKGBUILD (Português)">PKGBUILD</a> necessário para compilar um certo pacote a partir do fonte, você pode usar a ferramenta <i>pkgctl</i> ou usar diretamente o <a href="../en/Git.html" title="Git">Git</a>.
+</p>
+<h4><span class="mw-headline" id="Usando_a_ferramenta_pkgctl">Usando a ferramenta pkgctl</span></h4>
+<p>Como pré-condição, <a href="../pt/Help:Reading.html#Instala%C3%A7%C3%A3o_de_pacotes" class="mw-redirect" title="Instale">instale</a> o pacote <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=devtools">devtools</a></span>. <i>pkgctl</i> é uma ferramenta que trabalha com arquivos-fonte de compilação para pacotes do Arch Linux usando Git.
+</p>
+<p>Para clonar o repositório <a href="../en/Git.html" title="Git">git</a> com os arquivos de compilação mais recentes usando <i>pkgctl</i>, o seguinte comando é usado:
+</p>
+<pre>$ pkgctl repo clone <i>pkgname</i>
+</pre>
+<div class="archwiki-template-box archwiki-template-box-tip">
+<strong>Dica:</strong> Isso clona por SSH por padrão, portanto, se você não definiu uma chave SSH em sua conta GitLab do Arch, você precisa clonar por HTTPS: <code>pkgctl repo clone --protocol=https <i>pkgname</i></code>.</div>
+<p>Observe que aqui, os arquivos-fonte de compilação referem-se a <a href="../pt/PKGBUILD.html" title="PKGBUILD (Português)">PKGBUILD</a>, possivelmente com alguns outros arquivos necessários, como chaves. Ou seja, os arquivos essenciais são necessários para o sistema de compilação do Arch Linux. Ele não se refere aos arquivos-fonte do pacote que foram escritos pela equipe que criou o pacote, como arquivos C ou Python.
+</p>
+<p>Isso fornecerá a você não apenas os arquivos de compilação dos fontes atuais, mas também suas versões anteriores. Além disso, você pode usar todos os outros comandos <a href="../en/Git.html" title="Git">git</a> para verificar uma versão mais antiga do pacote ou rastrear alterações personalizadas.
+</p>
+<p>Se você deseja obter uma versão específica de um pacote, pode usar algo como o seguinte:
+</p>
+<pre>$ pkgctl repo clone --switch="2:1.19.5-1" go
+</pre>
+<p>Leia <span class="plainlinks archwiki-template-man" title="$ man 1 pkgctl-repo-clone"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/pkgctl-repo-clone.1">pkgctl-repo-clone(1)</a></span> para mais informações e para os outros comandos disponíveis.
+</p>
+<h4><span class="mw-headline" id="Usando_o_git_diretamente">Usando o git diretamente</span></h4>
+<p>Use o seguinte comando git para clonar um pacote:
+</p>
+<pre>$ git clone https://gitlab.archlinux.org/archlinux/packaging/packages/<i>pkgname</i>.git
+</pre>
+<p>Por exemplo, para copiar os arquivos de compilação do Apache:
+</p>
+<pre>$ git clone https://gitlab.archlinux.org/archlinux/packaging/packages/apache.git
+</pre>
+<h3><span class="mw-headline" id="Compilar_pacote">Compilar pacote</span></h3>
+<p>Configure o <i>makepkg</i> para compilar pacotes dos <a href="../pt/PKGBUILD.html" title="PKGBUILD (Português)">PKGBUILDs</a> que você fez <i>checkout</i>, como explicado em <a href="../pt/Makepkg.html#Configura%C3%A7%C3%A3o" title="Makepkg (Português)">makepkg (Português)#Configuração</a>.
+</p>
+<p>Em seguida, copie o diretório contendo o <a href="../pt/PKGBUILD.html" title="PKGBUILD (Português)">PKGBUILD</a> que você deseja modificar para uma nova localização. Faça as modificações desejadas lá e use <i>makepkg</i>, como descrito em <a href="../pt/Makepkg.html#Uso" title="Makepkg (Português)">makepkg (Português)#Uso</a>, para criar e instalar o novo pacote.
+</p>
+<h2><span class="mw-headline" id="Dicas_e_truques">Dicas e truques</span></h2>
+<h3><span class="mw-headline" id="Preserve_pacotes_modificados">Preserve pacotes modificados</span></h3>
+<p>Atualizar o sistema com o <a href="../pt/Pacman.html" title="Pacman (Português)">pacman</a> vai substituir um pacote modificado com o pacote de menos nome dos repositórios oficiais. Veja as instruções a seguir para como evitar isso.
+</p>
+<p>Insira um vetor de grupo no <a href="../pt/PKGBUILD.html" title="PKGBUILD (Português)">PKGBUILD</a>, e adicione o pacote para um grupo chamado <code>modified</code>.
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">PKGBUILD</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">groups=('modified')</pre>
+<p>Adicione esse grupo à seção <code>IgnoreGroup</code> no <code>/etc/pacman.conf</code>.
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/pacman.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">IgnoreGroup = modified</pre>
+<p>Se novas versões estiverem disponíveis nos repositórios oficiais durante uma atualização de sistema, pacman emite uma nota de que ele está ignorando essa atualização porque ele está na seção IgnoreGroup. Neste ponto, o pacote modificado deve ser recompilado para evitar atualizações parciais.
+</p>
+<h2><span class="mw-headline" id="Outras_ferramentas">Outras ferramentas</span></h2>
+<ul><li>
+<a rel="nofollow" class="external text" href="https://xyne.dev/projects/pbget/">pbget</a> - obtém PKGBUILDs de pacotes individuais diretamente da interface web. Inclui suporte ao AUR.</li></ul>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface">
+<div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../Special:Categories.html" title="Special:Categories">Categories</a>: <ul>
+<li><a href="../pt/Category:About_Arch.html" title="Category:About Arch (Português)">About Arch (Português)</a></li>
+<li><a href="../pt/Category:Package_development.html" title="Category:Package development (Português)">Package development (Português)</a></li>
+<li><a href="../pt/Category:Package_management.html" title="Category:Package management (Português)">Package management (Português)</a></li>
+</ul>
+</div>
+<div id="mw-hidden-catlinks" class="mw-hidden-catlinks mw-hidden-cats-hidden">Hidden category: <ul><li><a href="../en/Category:Pages_or_sections_flagged_with_Template:Expansion.html" title="Category:Pages or sections flagged with Template:Expansion">Pages or sections flagged with Template:Expansion</a></li></ul>
+</div>
+</div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=Arch_build_system_(Portugu%C3%AAs)&amp;oldid=785209">https://wiki.archlinux.org/index.php?title=Arch_build_system_(Português)&amp;oldid=785209</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 11 August 2023, at 14:23.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

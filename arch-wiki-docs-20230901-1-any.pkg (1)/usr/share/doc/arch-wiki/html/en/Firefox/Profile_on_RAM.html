@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>Firefox/Profile on RAM - ArchWiki</title>
+<link rel="stylesheet" href="../../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Firefox_Profile_on_RAM rootpage-Firefox skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Relocate_cache_to_RAM_only" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Relocate_cache_to_RAM_only">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Relocate cache to RAM only</div>
+			</a>
+			
+			<ul id="toc-Relocate_cache_to_RAM_only-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Place_profile_in_RAM_using_tools" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Place_profile_in_RAM_using_tools">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Place profile in RAM using tools</div>
+			</a>
+			
+			<ul id="toc-Place_profile_in_RAM_using_tools-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Place_profile_in_RAM_manually" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Place_profile_in_RAM_manually">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>Place profile in RAM manually</div>
+			</a>
+			
+				<button aria-controls="toc-Place_profile_in_RAM_manually-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Place profile in RAM manually subsection
+				</button>
+			
+			<ul id="toc-Place_profile_in_RAM_manually-sublist" class="sidebar-toc-list">
+				<li id="toc-Before_you_start" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Before_you_start">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.1</span>Before you start</div>
+			</a>
+			
+			<ul id="toc-Before_you_start-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-The_script" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#The_script">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.2</span>The script</div>
+			</a>
+			
+			<ul id="toc-The_script-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Automation" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Automation">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.3</span>Automation</div>
+			</a>
+			
+			<ul id="toc-Automation-sublist" class="sidebar-toc-list">
+				<li id="toc-systemd" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#systemd">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.3.1</span>systemd</div>
+			</a>
+			
+			<ul id="toc-systemd-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-cron_job" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#cron_job">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.3.2</span>cron job</div>
+			</a>
+			
+			<ul id="toc-cron_job-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Sync_at_login/logout" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Sync_at_login/logout">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.3.3</span>Sync at login/logout</div>
+			</a>
+			
+			<ul id="toc-Sync_at_login/logout-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-See_also" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#See_also">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4</span>See also</div>
+			</a>
+			
+			<ul id="toc-See_also-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../../en/Firefox/Profile_on_RAM.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="mw-list-item"><a href="../../en/Talk:Firefox/Profile_on_RAM.html" rel="discussion" title="Discussion about the content page [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">English</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../../en/Firefox/Profile_on_RAM.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=Firefox/Profile_on_RAM&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=Firefox/Profile_on_RAM&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../../en/Firefox/Profile_on_RAM.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Firefox/Profile_on_RAM&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Firefox/Profile_on_RAM&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					<div id="contentSub"><span class="subpages">&lt; <a href="../../en/Firefox.html" title="Firefox">Firefox</a></span></div>
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output">
+<p>Assuming that there is memory to spare, placing <a href="../../en/Firefox.html" title="Firefox">Firefox</a>'s cache or complete profile to RAM offers significant advantages. Even though opting for the partial route is an improvement by itself, the latter can make Firefox even more responsive compared to its stock configuration. Benefits include, among others:
+</p>
+<ul>
+<li>reduced drive read/writes;</li>
+<li>heightened responsive feel;</li>
+<li>many operations within Firefox, such as quick search and history queries, are nearly instantaneous.</li>
+</ul>
+<p>To do so we can make use of a <a href="../../en/Tmpfs.html" title="Tmpfs">tmpfs</a>.
+</p>
+<p>Because data placed therein cannot survive a shutdown, a script responsible for syncing back to drive prior to system shutdown is necessary if persistence is desired (which is likely in the case of profile relocation). On the other hand, only relocating the cache is a quick, less inclusive solution that will slightly speed up user experience while emptying Firefox cache on every reboot.
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> Cache is stored <b>separately</b> from Firefox default profiles' folder (<code>/home/$USER/.mozilla/firefox/</code>): it is found by default in <code>/home/$USER/.cache/mozilla/firefox/&lt;profile&gt;</code>. This is similar to what Chromium and other browsers do. Therefore, sections <a href="#Place_profile_in_RAM_using_tools">#Place profile in RAM using tools</a> and <a href="#Place_profile_in_RAM_manually">#Place profile in RAM manually</a> <b>do not deal</b> with cache relocating and syncing but only with profile adjustments. See the first note of <a href="../../en/Profile-sync-daemon.html" title="Profile-sync-daemon">Profile-sync-daemon</a> for more details. <a href="../../en/Anything-sync-daemon.html" title="Anything-sync-daemon">Anything-sync-daemon</a> may be used to achieve the same thing as Option 2 for cache folders.</div>
+<mw:tocplace></mw:tocplace>
+<h2><span class="mw-headline" id="Relocate_cache_to_RAM_only">Relocate cache to RAM only</span></h2>
+<p>See <a href="../../en/Firefox/Tweaks.html#Turn_off_the_disk_cache" title="Firefox/Tweaks">Firefox/Tweaks#Turn off the disk cache</a>.
+</p>
+<h2><span class="mw-headline" id="Place_profile_in_RAM_using_tools">Place profile in RAM using tools</span></h2>
+<p>Relocate the browser profile to <a href="../../en/Tmpfs.html" title="Tmpfs">tmpfs</a> so as to globally improve browser's responsiveness. Another benefit is a reduction in drive I/O operations, of which <a href="../../en/Improving_performance.html#Show_disk_writes" title="Improving performance">SSDs benefit the most</a>.
+</p>
+<p>Use an active management script for maximal reliability and ease of use. Several are available from the AUR.
+</p>
+<ul>
+<li>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=profile-sync-daemon">profile-sync-daemon</a></span> - refer to the <a href="../../en/Profile-sync-daemon.html" title="Profile-sync-daemon">Profile-sync-daemon</a> wiki article for additional info on it;</li>
+<li>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/firefox-sync/">firefox-sync</a></span><sup><small>AUR</small></sup> - sufficient for a user with a single profile; uses a script and systemd service similar to those below.</li>
+</ul>
+<h2><span class="mw-headline" id="Place_profile_in_RAM_manually">Place profile in RAM manually</span></h2>
+<h3><span class="mw-headline" id="Before_you_start">Before you start</span></h3>
+<p>Before potentially compromising Firefox's profile, be sure to make a backup for quick restoration. First, find out the active profile name by visiting <code>about:profiles</code> and checking which profile is in use. Replace <b><code>xyz.default</code></b> as appropriate and use <code>tar</code> to make a backup:
+</p>
+<pre>$ tar zcvfp ~/firefox_profile_backup.tar.gz ~/.mozilla/firefox/<b>xyz.default</b>
+</pre>
+<h3><span class="mw-headline" id="The_script">The script</span></h3>
+<p><small><i>Adapted from <a rel="nofollow" class="external text" href="https://www.verot.net/firefox_tmpfs.htm">verot.net's Speed up Firefox with tmpfs</a></i></small>
+</p>
+<p>The script will first move Firefox's profile to a new static location, make a sub-directory in <code>/dev/shm</code>, softlink to it and later populate it with the contents of the profile. As before, and until the end of this article, replace the bold <b><code>xyz.default</code></b> strings with the name of your your Firefox profile folder. The only value that absolutely needs to be altered is, again, <b><code>xyz.default</code></b>.
+</p>
+<p>Be sure that <a href="../../en/Rsync.html" title="Rsync">rsync</a> is installed, <a href="../../en/Help:Reading.html#Append,_add,_create,_edit" class="mw-redirect" title="Create">create</a>:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">~/.local/bin/firefox-sync.sh</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">#!/bin/sh
+
+static=<i>static-$1</i>
+link=<i>$1</i>
+volatile=<i>/dev/shm/firefox-$1-$USER</i>
+
+IFS=
+set -efu
+
+cd ~/.mozilla/firefox
+
+if [ ! -r $volatile ]; then
+	mkdir -m0700 $volatile
+fi
+
+if [ "$(readlink $link)" != "$volatile" ]; then
+	mv $link $static
+	ln -s $volatile $link
+fi
+
+if [ -e $link/.unpacked ]; then
+	rsync -av --delete --exclude .unpacked ./$link/ ./$static/
+else
+	rsync -av ./$static/ ./$link/
+	touch $link/.unpacked
+fi</pre>
+<p>Make the script <a href="../../en/Help:Reading.html#Make_executable" class="mw-redirect" title="Executable">executable</a>, then run the following to close Firefox and test it:
+</p>
+<pre>$ killall firefox firefox-bin
+$ ls ~/.mozilla/firefox/
+$ ~/.local/bin/firefox-sync.sh <b>xyz.default</b>
+</pre>
+<p>Run Firefox again to gauge the results. The second time the script runs, it will then preserve the RAM profile by copying it back to disk.
+</p>
+<h3><span class="mw-headline" id="Automation">Automation</span></h3>
+<p>Seeing that forgetting to sync the profile can lead to disastrous results, automating the process seems like a logical course of action.
+</p>
+<h4><span class="mw-headline" id="systemd">systemd</span></h4>
+<p><a href="../../en/Help:Reading.html#Append,_add,_create,_edit" class="mw-redirect" title="Create">Create</a> the following script:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">~/.config/systemd/user/firefox-profile@.service</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">[Unit]
+Description=Firefox profile memory cache
+
+[Install]
+WantedBy=default.target
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=%h/.local/bin/firefox-sync.sh %i
+ExecStop=%h/.local/bin/firefox-sync.sh %i</pre>
+<p>then, do a <a href="../../en/Help:Reading.html#Control_of_systemd_units" class="mw-redirect" title="Daemon-reload">daemon-reload</a> and <a href="../../en/Help:Reading.html#Control_of_systemd_units" class="mw-redirect" title="Enable/start">enable/start</a> the <code>firefox-profile@<b>xyz.default</b>.service</code> <a href="../../en/Systemd/User.html" class="mw-redirect" title="User unit">user unit</a>.
+</p>
+<h4><span class="mw-headline" id="cron_job">cron job</span></h4>
+<p>Manipulate the user's <a href="../../en/Cron.html" title="Cron">cron</a> table using <code>crontab</code>:
+</p>
+<pre>$ crontab -e
+</pre>
+<p>Add a line to start the script every 30 minutes,
+</p>
+<pre>*/30 * * * * ~/.local/bin/firefox-sync.sh <b>xyz.default</b>
+</pre>
+<p>or add the following to do so every 2 hours:
+</p>
+<pre>0 */2 * * * ~/.local/bin/firefox-sync.sh <b>xyz.default</b>
+</pre>
+<h4>
+<span id="Sync_at_login.2Flogout"></span><span class="mw-headline" id="Sync_at_login/logout">Sync at login/logout</span>
+</h4>
+<p>Assuming <a href="../../en/Bash.html" title="Bash">bash</a> is being used, add the script to the login/logout files:
+</p>
+<pre>$ echo 'bash -c "~/.local/bin/firefox-sync.sh <b>xyz.default</b> &gt; /dev/null &amp;"' | tee -a ~/.bash_logout ~/.bash_login
+</pre>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> You may wish to use <code>~/.bash_profile</code> instead of <code>~/.bash_login</code> as bash will only read the first of these if both exist and are readable.</div>
+<p>For <a href="../../en/Zsh.html" title="Zsh">zsh</a>, use <code>~/.zlogin</code> and <code>~/.zlogout</code> instead:
+</p>
+<pre>$ echo 'bash -c "~/.local/bin/firefox-sync.sh <b>xyz.default</b> &gt; /dev/null &amp;"' | tee -a ~/.zlog{in,out}
+</pre>
+<h2><span class="mw-headline" id="See_also">See also</span></h2>
+<ul><li><a href="../../en/Tmpfs.html" title="Tmpfs">tmpfs</a></li></ul>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../../Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="../../en/Category:Web_browser.html" title="Category:Web browser">Web browser</a></li></ul>
+</div></div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=Firefox/Profile_on_RAM&amp;oldid=784460">https://wiki.archlinux.org/index.php?title=Firefox/Profile_on_RAM&amp;oldid=784460</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 4 August 2023, at 12:32.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>Improving performance (Français)/Boot process (Français) - ArchWiki</title>
+<link rel="stylesheet" href="../../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Improving_performance_Français_Boot_process_Français rootpage-Improving_performance_Français skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Analyser_le_processus_de_démarrage" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Analyser_le_processus_de_d%C3%A9marrage">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Analyser le processus de démarrage</div>
+			</a>
+			
+				<button aria-controls="toc-Analyser_le_processus_de_démarrage-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Analyser le processus de démarrage subsection
+				</button>
+			
+			<ul id="toc-Analyser_le_processus_de_démarrage-sublist" class="sidebar-toc-list">
+				<li id="toc-Utilisation_de_systemd-analyze" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Utilisation_de_systemd-analyze">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.1</span>Utilisation de systemd-analyze</div>
+			</a>
+			
+			<ul id="toc-Utilisation_de_systemd-analyze-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Utilisation_de_bootchart2" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Utilisation_de_bootchart2">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.2</span>Utilisation de bootchart2</div>
+			</a>
+			
+			<ul id="toc-Utilisation_de_bootchart2-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Utiliser_systemd_au_lieu_de_busybox_lors_de_l'init_précoce" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Utiliser_systemd_au_lieu_de_busybox_lors_de_l'init_pr%C3%A9coce">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Utiliser systemd au lieu de busybox lors de l'init précoce</div>
+			</a>
+			
+			<ul id="toc-Utiliser_systemd_au_lieu_de_busybox_lors_de_l'init_précoce-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Compilation_d'un_noyau_personnalisé" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Compilation_d'un_noyau_personnalis%C3%A9">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>Compilation d'un noyau personnalisé</div>
+			</a>
+			
+			<ul id="toc-Compilation_d'un_noyau_personnalisé-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Initramfs" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Initramfs">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4</span>Initramfs</div>
+			</a>
+			
+			<ul id="toc-Initramfs-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Choisir_la_manière_adéquate_de_démarrer_pour_les_services" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Choisir_la_mani%C3%A8re_ad%C3%A9quate_de_d%C3%A9marrer_pour_les_services">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5</span>Choisir la manière adéquate de démarrer pour les services</div>
+			</a>
+			
+			<ul id="toc-Choisir_la_manière_adéquate_de_démarrer_pour_les_services-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Démarrage_échelonné_des_disques" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#D%C3%A9marrage_%C3%A9chelonn%C3%A9_des_disques">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6</span>Démarrage échelonné des disques</div>
+			</a>
+			
+			<ul id="toc-Démarrage_échelonné_des_disques-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Montages_de_systèmes_de_fichiers" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Montages_de_syst%C3%A8mes_de_fichiers">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">7</span>Montages de systèmes de fichiers</div>
+			</a>
+			
+			<ul id="toc-Montages_de_systèmes_de_fichiers-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Moins_de_sortie_au_démarrage" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Moins_de_sortie_au_d%C3%A9marrage">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">8</span>Moins de sortie au démarrage</div>
+			</a>
+			
+			<ul id="toc-Moins_de_sortie_au_démarrage-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Changer_le_chargeur_d'amorçage" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Changer_le_chargeur_d'amor%C3%A7age">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">9</span>Changer le chargeur d'amorçage</div>
+			</a>
+			
+			<ul id="toc-Changer_le_chargeur_d'amorçage-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Suspendre_en_RAM" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Suspendre_en_RAM">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">10</span>Suspendre en RAM</div>
+			</a>
+			
+			<ul id="toc-Suspendre_en_RAM-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../../fr/Improving_performance/Boot_process.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="new mw-list-item"><a href="/index.php?title=Talk:Improving_performance_(Fran%C3%A7ais)/Boot_process_(Fran%C3%A7ais)&amp;action=edit&amp;redlink=1" rel="discussion" title="Discussion about the content page (page does not exist) [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">français</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../../fr/Improving_performance/Boot_process.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=Improving_performance_(Fran%C3%A7ais)/Boot_process_(Fran%C3%A7ais)&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=Improving_performance_(Fran%C3%A7ais)/Boot_process_(Fran%C3%A7ais)&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../../fr/Improving_performance/Boot_process.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Improving_performance_(Fran%C3%A7ais)/Boot_process_(Fran%C3%A7ais)&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Improving_performance_(Fran%C3%A7ais)/Boot_process_(Fran%C3%A7ais)&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					<div id="contentSub"><span class="subpages">&lt; <a href="../../fr/Improving_performance.html" title="Improving performance (Français)">Improving performance (Français)</a></span></div>
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="fr" dir="ltr">
+<div class="mw-parser-output">
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>État de la traduction:</strong> Cet article est la version francophone de <a href="../../en/Improving_performance/Boot_process.html" title="Improving performance/Boot process">Improving performance/Boot process</a>. Date de la dernière traduction: 2022-10-03. Vous pouvez aider à synchroniser la traduction s'il y a eu des <a rel="nofollow" class="external text" href="https://wiki.archlinux.org/index.php?title=Improving_performance/Boot_process&amp;diff=0&amp;oldid=751020">changements</a> dans la version anglaise.</div>
+<div class="archwiki-template-meta-related-articles-start">
+<p class="mw-no-invert">Related articles</p>
+<ul>
+<li><a href="../../fr/Improving_performance.html" title="Improving performance (Français)">Improving performance (Français)</a></li>
+<li><a href="../../en/Silent_boot.html" title="Silent boot">Silent boot</a></li>
+<li><a href="../../fr/Systemd.html" class="mw-redirect" title="Daemons (Français)">Daemons (Français)</a></li>
+<li><a href="../../en/E4rat.html" title="E4rat">e4rat</a></li>
+<li><a href="../../en/Kexec.html" title="Kexec">Kexec</a></li>
+</ul>
+</div>
+<p>Améliorer les performances de démarrage d'un système peut permettre de réduire les temps d'attente au démarrage et sert de moyen d'en apprendre davantage sur la façon dont certains fichiers et scripts système interagissent les uns avec les autres. Cet article tente de regrouper les méthodes permettant d'améliorer les performances de démarrage d'un système Arch Linux.
+</p>
+<mw:tocplace></mw:tocplace>
+<h2>
+<span id="Analyser_le_processus_de_d.C3.A9marrage"></span><span class="mw-headline" id="Analyser_le_processus_de_démarrage">Analyser le processus de démarrage</span>
+</h2>
+<h3><span class="mw-headline" id="Utilisation_de_systemd-analyze">Utilisation de systemd-analyze</span></h3>
+<p><a href="../../fr/Systemd.html" title="Systemd (Français)">systemd</a> fournit un outil appelé <code>systemd-analyze</code> qui peut être utilisé pour afficher les détails temporels du processus de démarrage, y compris un graphique svg montrant les unités en attente de leurs dépendances. Vous pouvez consulter les fichiers d'unités qui ralentissent votre processus de démarrage. Vous pouvez alors optimiser votre système en conséquence.
+</p>
+<p>Pour consulter le temps passé dans l'espace noyau et l'espace utilisateur lors du démarrage, il suffit d'utiliser :
+</p>
+<pre>$ systemd-analyze
+</pre>
+<div class="archwiki-template-box archwiki-template-box-tip">
+<strong>Astuce:</strong> Si vous démarrez via <a href="../../en/Unified_Extensible_Firmware_Interface.html" class="mw-redirect" title="UEFI">UEFI</a> et utilisez un chargeur d'amorçage qui implémente l'interface de chargeur d'amorçage de systemd <a rel="nofollow" class="external text" href="https://www.freedesktop.org/wiki/Software/systemd/BootLoaderInterface">Boot Loader Interface</a> (ce que font actuellement <a href="../../en/Systemd-boot.html" title="Systemd-boot">systemd-boot</a> et <a href="../../en/GRUB.html" class="mw-redirect" title="GRUB (Français)">GRUB</a>), <i>systemd-analyze</i> peut également vous montrer le temps passé dans le firmware EFI et le chargeur d'amorçage lui-même.</div>
+<p>Pour lister les fichiers d’unités démarrés, triés par le temps que chacun d'entre eux a pris pour démarrer :
+</p>
+<pre>$ systemd-analyze blame
+</pre>
+<p>À certains moments du processus de démarrage, les choses ne peuvent pas continuer tant qu'une unité donnée ne réussit pas. Pour consulter les unités qui se trouvent à ces points critiques de la chaîne de démarrage, faites :
+</p>
+<pre>$ systemd-analyze critical-chain
+</pre>
+<p>Vous pouvez également créer un fichier SVG qui décrit graphiquement votre processus de démarrage, de manière similaire à <a href="../../en/Bootchart.html" title="Bootchart">Bootchart</a> :
+</p>
+<pre>$ systemd-analyze plot &gt; plot.svg
+</pre>
+<p>Consultez <span class="plainlinks archwiki-template-man" title="$ man 1 systemd-analyze"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/systemd-analyze.1">systemd-analyze(1)</a></span> pour plus de détails.
+</p>
+<h3><span class="mw-headline" id="Utilisation_de_bootchart2">Utilisation de bootchart2</span></h3>
+<p>Vous pouvez également utiliser <a href="../../en/Bootchart.html#Bootchart2" title="Bootchart">Bootchart2</a> pour visualiser la séquence de démarrage.
+</p>
+<h2>
+<span id="Utiliser_systemd_au_lieu_de_busybox_lors_de_l.27init_pr.C3.A9coce"></span><span class="mw-headline" id="Utiliser_systemd_au_lieu_de_busybox_lors_de_l'init_précoce">Utiliser systemd au lieu de busybox lors de l'init précoce</span>
+</h2>
+<p>Par défaut, la configuration <a href="../../fr/Mkinitcpio.html" title="Mkinitcpio (Français)">Mkinitcpio</a> utilise les hooks <code>base</code> et <code>udev</code> pour construire les initramfs. Des temps de démarrage plus rapides peuvent être obtenus en les remplaçant par <code>systemd</code>. 
+</p>
+<p>Consultez <a href="../../fr/Mkinitcpio.html#Hooks_communs" title="Mkinitcpio (Français)">Mkinitcpio (Français)#Hooks communs</a> pour plus de détails. Consultez également <a href="../../fr/Fsck.html#V%C3%A9rification_au_d%C3%A9marrage" title="Fsck (Français)">Fsck (Français)#Vérification au démarrage</a> si vous remplacez le hook <code>fsck</code>. 
+</p>
+<h2>
+<span id="Compilation_d.27un_noyau_personnalis.C3.A9"></span><span class="mw-headline" id="Compilation_d'un_noyau_personnalisé">Compilation d'un noyau personnalisé</span>
+</h2>
+<p>La compilation d'un noyau personnalisé peut réduire le temps de démarrage et l'utilisation de la mémoire. Cependant, avec la standardisation de l'architecture 64 bits et la nature modulaire du noyau Linux, ces avantages peuvent ne pas être aussi importants que prévu. Consultez <a href="../../fr/Kernel.html#Compilation" title="Kernel (Français)">Kernel (Français)#Compilation</a> pour plus d'informations.
+</p>
+<h2><span class="mw-headline" id="Initramfs">Initramfs</span></h2>
+<p>Dans une approche similaire à <a href="#Compilation_d'un_noyau_personnalis%C3%A9">#Compilation d'un noyau personnalisé</a>, l'initramfs peut être allégé. Une manière simple est d'inclure le «hook» <code>autodetect</code> de <a href="../../fr/Mkinitcpio.html" title="Mkinitcpio (Français)">mkinitcpio</a>. 
+Si vous voulez aller plus loin, consultez <a href="../../en/Mkinitcpio/Minimal_initramfs.html" class="mw-redirect" title="Minimal initramfs">Minimal initramfs</a>.
+</p>
+<p>Selon votre matériel (processeur et vitesse de stockage), utiliser <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=lz4">lz4</a></span> au lieu de l'option de compression par défaut <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=zstd">zstd</a></span> peut être plus rapide puisque la vitesse de décompression plus rapide lors du démarrage compense généralement la taille légèrement plus grande de l'initramfs qui doit être lu depuis le disque. Consultez <a href="../../fr/Mkinitcpio.html#COMPRESSION" title="Mkinitcpio (Français)">Mkinitcpio (Français)#COMPRESSION</a>.
+</p>
+<h2>
+<span id="Choisir_la_mani.C3.A8re_ad.C3.A9quate_de_d.C3.A9marrer_pour_les_services"></span><span class="mw-headline" id="Choisir_la_manière_adéquate_de_démarrer_pour_les_services">Choisir la manière adéquate de démarrer pour les services</span>
+</h2>
+<p>Une fonctionnalité centrale de systemd est l'activation par <a href="../../en/D-Bus.html" title="D-Bus">D-Bus</a> et les sockets. Cette fonctionnalité devrait être préférée dans la plupart des cas, car elle permet aux services de n'être démarrés que lors de leur premier accès, ce qui est généralement une bonne chose (par exemple, avoir <code>cups.service</code> activé au démarrage n'est généralement pas utile pour une utilisation sur un ordinateur de bureau, activez plutôt <code>cups.socket</code> qui ne démarrera le service que lors de l'impression). 
+</p>
+<p>Cependant, si vous savez qu'un service (comme <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=upower">upower</a></span>) sera toujours démarré au démarrage, alors le temps de démarrage global peut être réduit en le démarrant le plus tôt possible. <a href="../../fr/Systemd.html#Utilisation_des_unit%C3%A9s" class="mw-redirect" title="Activez">Activez</a> <code>upower.service</code> pour ce faire (si le fichier de service est configuré pour cela, ce qui est le cas dans la plupart des cas). 
+</p>
+<p>Ceci fera en sorte que systemd démarre UPower dès que possible, sans causer de concurrences avec l'activation par socket ou D-Bus.
+</p>
+<h2>
+<span id="D.C3.A9marrage_.C3.A9chelonn.C3.A9_des_disques"></span><span class="mw-headline" id="Démarrage_échelonné_des_disques">Démarrage échelonné des disques</span>
+</h2>
+<p>Certains matériels implémentent <a href="https://en.wikipedia.org/wiki/Spin-up#Staggered_spin-up" class="extiw" title="wikipedia:Spin-up">staggered spin-up</a>, ce qui amène le système d'exploitation à sonder les interfaces ATA en série, ce qui permet de faire tourner les disques un par un et de réduire la consommation de pointe. Cela ralentit la vitesse de démarrage et, sur la plupart des matériels grand public, n'apporte aucun avantage puisque les disques démarrent déjà immédiatement à la mise sous tension. Pour vérifier si SSS est utilisé :
+</p>
+<pre># dmesg | grep SSS
+</pre>
+<p>S'il n'a pas été utilisé pendant le démarrage, il n'y aura pas de résultat.
+</p>
+<p>Pour le désactiver, ajoutez <code>libahci.ignore_sss=1</code> <a href="../../en/Kernel_parameters.html" title="Kernel parameters">paramètre du noyau</a>.
+</p>
+<h2>
+<span id="Montages_de_syst.C3.A8mes_de_fichiers"></span><span class="mw-headline" id="Montages_de_systèmes_de_fichiers">Montages de systèmes de fichiers</span>
+</h2>
+<p>Grâce au hook <code>fsck</code> de <a href="../../fr/Mkinitcpio.html" title="Mkinitcpio (Français)">mkinitcpio</a>, vous pouvez éviter un remontage éventuellement coûteux de la partition racine en remplaçant <code>ro</code> par <code>rw</code> sur la ligne du noyau : les options peuvent être définies avec <code>rootflags='<i>rw</i>,<i>other_mount_options</i></code>. L'entrée doit être supprimée du fichier <code>/etc/fstab</code>, sinon le <code>systemd-remount-fs.service</code> continuera à essayer d'appliquer ces paramètres. On peut aussi essayer de masquer cette unité.
+</p>
+<p>Si <a href="../../en/Btrfs.html" class="mw-redirect" title="Btrfs (Français)">Btrfs</a> est utilisé pour le système de fichiers racine, il n'y a pas besoin d'un fsck à chaque démarrage comme pour les autres systèmes de fichiers. Si c'est le cas, le hook <code>fsck</code> de <a href="../../fr/Mkinitcpio.html" title="Mkinitcpio (Français)">mkinitcpio</a> peut être supprimé. Vous pouvez aussi vouloir masquer le <code>systemd-fsck-root.service</code>, ou lui dire de ne pas vérifier le système de fichiers racine à partir de la ligne de commande du noyau en utilisant <code>fsck.mode=skip</code>. Sans le hook <code>fsck</code> de <a href="../../fr/Mkinitcpio.html" title="Mkinitcpio (Français)">mkinitcpio</a>, systemd vérifiera tout système de fichiers pertinent avec le <code>systemd-fsck@.service</code>.
+</p>
+<p>Vous pouvez également supprimer les systèmes de fichiers API de <code>/etc/fstab</code>, car systemd les montera lui-même (consultez <code>pacman -Ql systemd | grep '\.mount$'</code> pour une liste). Il n'est pas rare que les utilisateurs aient une entrée <code>/tmp</code> reportée de sysvinit, mais vous avez peut-être remarqué dans la commande ci-dessus que systemd s'en occupe déjà. Par conséquent, elle peut être supprimée en toute sécurité.
+</p>
+<p>D'autres systèmes de fichiers, comme <code>/home</code> ou <a href="../../fr/EFI_system_partition.html" title="EFI system partition (Français)">partition système EFI</a>, peuvent être montés avec des unités de montage personnalisées. L'ajout de <code>noauto,x-systemd.automount</code> aux options de montage mettra en mémoire tampon tous les accès à cette partition, et la fsckera et la montera lors du premier accès, réduisant ainsi le nombre de systèmes de fichiers qu'elle doit fscker/monter pendant le processus de démarrage.
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> 
+<ul>
+<li>Ceci rendra votre système de fichiers <code>/home</code> de type <code>autofs</code>, ce qui est ignoré par <a href="../../en/Locate.html" class="mw-redirect" title="Mlocate">mlocate</a> par défaut. L'accélération de l'automontage de <code>/home</code> peut ne pas dépasser une seconde ou deux, selon votre système, donc cette astuce peut ne pas en valoir la peine.</li>
+<li>Si le système est installé dans un sous-volume <i>btrfs</i> (plus précisément, le répertoire racine <code>/</code> est lui-même un sous-volume) et que <code>/home</code> est un système de fichiers distinct, vous pouvez également empêcher la création d'un sous-volume <code>/home</code>. Masquez le fichier tmp de <code>home.conf</code> : <code>ln -s /dev/null /etc/tmpfiles.d/home.conf</code>.</li>
+</ul>
+</div>
+<h2>
+<span id="Moins_de_sortie_au_d.C3.A9marrage"></span><span class="mw-headline" id="Moins_de_sortie_au_démarrage">Moins de sortie au démarrage</span>
+</h2>
+<p>Pour certains systèmes, particulièrement ceux avec un SSD, la lenteur des performances du TTY est en fait un goulot d'étranglement, et donc moins de sortie signifie un démarrage plus rapide. Consultez l'article <a href="../../en/Silent_boot.html" title="Silent boot">Silent boot</a> pour des suggestions.
+</p>
+<h2>
+<span id="Changer_le_chargeur_d.27amor.C3.A7age"></span><span class="mw-headline" id="Changer_le_chargeur_d'amorçage">Changer le chargeur d'amorçage</span>
+</h2>
+<p>Changer votre <a href="../../fr/Arch_boot_process.html#Chargeur_d'amor%C3%A7age" class="mw-redirect" title="Chargeur d'amorçage">chargeur d'amorçage</a> (par exemple, un bootloader plus simple tel que <a href="../../en/Systemd-boot.html" title="Systemd-boot">systemd-boot</a>) peut réduire le temps de démarrage de quelques secondes.
+</p>
+<p>Si votre configuration le permet, essayez d'utiliser uniquement <a href="../../fr/EFISTUB.html" title="EFISTUB (Français)">EFISTUB</a> pour des temps de démarrage encore plus courts.
+</p>
+<h2><span class="mw-headline" id="Suspendre_en_RAM">Suspendre en RAM</span></h2>
+<p>La meilleure façon de réduire le temps de démarrage est de ne pas démarrer du tout. Privilégiez plutôt la <a href="../../en/Power_management/Suspend_and_hibernate.html" title="Power management/Suspend and hibernate">suspension de votre système en RAM</a>.
+</p>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../../Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="../../fr/Category:Boot_process.html" title="Category:Boot process (Français)">Boot process (Français)</a></li></ul>
+</div></div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=Improving_performance_(Fran%C3%A7ais)/Boot_process_(Fran%C3%A7ais)&amp;oldid=779930">https://wiki.archlinux.org/index.php?title=Improving_performance_(Français)/Boot_process_(Français)&amp;oldid=779930</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 30 May 2023, at 17:30.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>ImageMagick - ArchWiki</title>
+<link rel="stylesheet" href="../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-ImageMagick rootpage-ImageMagick skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Installation" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Installation">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Installation</div>
+			</a>
+			
+			<ul id="toc-Installation-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Usage" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Usage">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Usage</div>
+			</a>
+			
+				<button aria-controls="toc-Usage-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Usage subsection
+				</button>
+			
+			<ul id="toc-Usage-sublist" class="sidebar-toc-list">
+				<li id="toc-Common_operations" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Common_operations">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.1</span>Common operations</div>
+			</a>
+			
+			<ul id="toc-Common_operations-sublist" class="sidebar-toc-list">
+				<li id="toc-Convert_between_image_formats" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Convert_between_image_formats">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.1.1</span>Convert between image formats</div>
+			</a>
+			
+			<ul id="toc-Convert_between_image_formats-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Append" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Append">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.1.2</span>Append</div>
+			</a>
+			
+			<ul id="toc-Append-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Crop,_chop" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Crop,_chop">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.1.3</span>Crop, chop</div>
+			</a>
+			
+			<ul id="toc-Crop,_chop-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Limit_the_storage_size" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Limit_the_storage_size">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.1.4</span>Limit the storage size</div>
+			</a>
+			
+			<ul id="toc-Limit_the_storage_size-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Screenshot_taking" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Screenshot_taking">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.2</span>Screenshot taking</div>
+			</a>
+			
+			<ul id="toc-Screenshot_taking-sublist" class="sidebar-toc-list">
+				<li id="toc-Screenshot_of_multiple_X_screens" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Screenshot_of_multiple_X_screens">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.2.1</span>Screenshot of multiple X screens</div>
+			</a>
+			
+			<ul id="toc-Screenshot_of_multiple_X_screens-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Screenshot_of_individual_Xinerama_heads" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Screenshot_of_individual_Xinerama_heads">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.2.2</span>Screenshot of individual Xinerama heads</div>
+			</a>
+			
+			<ul id="toc-Screenshot_of_individual_Xinerama_heads-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Screenshot_of_the_active/focused_window" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Screenshot_of_the_active/focused_window">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.2.3</span>Screenshot of the active/focused window</div>
+			</a>
+			
+			<ul id="toc-Screenshot_of_the_active/focused_window-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Encryption_of_image_data" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Encryption_of_image_data">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.3</span>Encryption of image data</div>
+			</a>
+			
+			<ul id="toc-Encryption_of_image_data-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-See_also" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#See_also">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>See also</div>
+			</a>
+			
+			<ul id="toc-See_also-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../en/ImageMagick.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="mw-list-item"><a href="../en/Talk:ImageMagick.html" rel="discussion" title="Discussion about the content page [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">English</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../en/ImageMagick.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=ImageMagick&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=ImageMagick&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../en/ImageMagick.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=ImageMagick&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=ImageMagick&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output">
+<p>According to <a href="https://en.wikipedia.org/wiki/ImageMagick" class="extiw" title="wikipedia:ImageMagick">Wikipedia</a>:
+</p>
+<dl><dd>ImageMagick is a free and open-source software suite for displaying, converting, and editing raster image and vector image files. It can read and write over 200 image file formats.</dd></dl>
+<mw:tocplace></mw:tocplace>
+<h2><span class="mw-headline" id="Installation">Installation</span></h2>
+<p><a href="../en/Help:Reading.html#Installation_of_packages" class="mw-redirect" title="Install">Install</a> the <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=imagemagick">imagemagick</a></span> package. Alternatively install <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=graphicsmagick">graphicsmagick</a></span> for <a href="https://en.wikipedia.org/wiki/GraphicsMagick" class="extiw" title="wikipedia:GraphicsMagick">GraphicsMagick</a>, a fork of ImageMagick, emphasizing stability of the API and command-line interface.
+</p>
+<h2><span class="mw-headline" id="Usage">Usage</span></h2>
+<p>See <span class="plainlinks archwiki-template-man" title="$ man 1 ImageMagick"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/ImageMagick.1">ImageMagick(1)</a></span>, or <span class="plainlinks archwiki-template-man" title="$ man 1 gm"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/gm.1">gm(1)</a></span> for GraphicsMagick.
+</p>
+<div class="archwiki-template-box archwiki-template-box-tip">
+<strong>Tip:</strong> The official HTML documentation is available locally when the packages are installed:
+<ul>
+<li>ImageMagick at <code>/usr/share/doc/ImageMagick-7/www/index.html</code>
+</li>
+<li>GraphicsMagick at <code>/usr/share/doc/GraphicsMagick/www/index.html</code>
+</li>
+</ul>
+</div>
+<h3><span class="mw-headline" id="Common_operations">Common operations</span></h3>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> The sign before an option is important. Opposite operations can be performed by using a <i>plus</i> instead of a <i>minus</i>.</div>
+<h4><span class="mw-headline" id="Convert_between_image_formats">Convert between image formats</span></h4>
+<p>The basic usage of this facility is to specify the existing, and desired, image formats as the filename extension. For example, to get the <i>.jpg</i> representation of a given <i>.png</i> image, use: 
+</p>
+<pre>$ convert image.png image.jpg
+</pre>
+<h4><span class="mw-headline" id="Append">Append</span></h4>
+<p>Combining multiple pictures into one:
+</p>
+<pre>$ convert -append <i>input.pngs</i> <i>output.png</i>
+</pre>
+<h4>
+<span id="Crop.2C_chop"></span><span class="mw-headline" id="Crop,_chop">Crop, chop</span>
+</h4>
+<p>To crop part of multiple images and convert them to another format:
+</p>
+<pre>$ mogrify -crop <i>WIDTH</i>x<i>HEIGHT</i>+<i>X</i>+<i>Y</i> -format jpg *.png
+</pre>
+<p>Where <i>WIDTH</i> and <i>HEIGHT</i> is the cropped output image size, and <i>X</i> and <i>Y</i> is the offset from the input image size.
+</p>
+<p>One can also <code>-chop</code> to cut of a single edge from an image, using gravity to select that edge. Which is easier as less numbers, or trial and error, is involved.
+</p>
+<pre>$ magick frame_red.gif -gravity South -chop 0x10 chop_bottom.gif
+</pre>
+<h4><span class="mw-headline" id="Limit_the_storage_size">Limit the storage size</span></h4>
+<p>To achieve reasonable quality for a given storage size:
+</p>
+<pre>$ convert image.jpg -define jpeg:extent=3000KB image_small.jpg
+</pre>
+<p>Hopefully, this will shorten the transmission time. Note that <code>-quality</code>, as in 
+</p>
+<pre>$ convert image.jpg -quality 85% image_small.jpg
+</pre>
+<p>is harder to use when the correlation between quality and storage size is not clear.
+</p>
+<h3><span class="mw-headline" id="Screenshot_taking">Screenshot taking</span></h3>
+<p>An easy way to take a screenshot of your current system is using the <span class="plainlinks archwiki-template-man" title="$ man 1 import"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/import.1">import(1)</a></span> command:
+</p>
+<pre>$ import -window root screenshot.jpg
+</pre>
+<p>Running <code>import</code> without the <code>-window</code> option allows selecting a window or an arbitrary region interactively. With <code>-pause</code> you can specify a delay in which you can, for example, lower some windows. 
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> If you prefer <b>graphicsmagick</b> alternative, just prepend "gm", e.g. <code>$ gm import -window root screenshot.jpg</code>.</div>
+<h4><span class="mw-headline" id="Screenshot_of_multiple_X_screens">Screenshot of multiple X screens</span></h4>
+<p>If you run twinview or dualhead, simply take the screenshot twice and use <code>imagemagick</code> to paste them together:
+</p>
+<pre>$ import -window root -display :0.0 -screen /tmp/0.png
+$ import -window root -display :0.1 -screen /tmp/1.png
+$ convert +append /tmp/0.png /tmp/1.png screenshot.png
+$ rm /tmp/{0,1}.png
+</pre>
+<h4><span class="mw-headline" id="Screenshot_of_individual_Xinerama_heads">Screenshot of individual Xinerama heads</span></h4>
+<p>Xinerama-based multi-head setups have only one virtual screen. If the physical screens are different in height, you will find dead space in the screenshot. In this case, you may want to take screenshot of each physical screen individually. As long as Xinerama information is available from the X server, the following will work:
+</p>
+<pre>#!/bin/sh
+xdpyinfo -ext XINERAMA | sed '/^  head #/!d;s///' |
+while IFS=' :x@,' read i w h x y; do
+        import -window root -crop ${w}x$h+$x+$y head_$i.png
+done
+</pre>
+<h4>
+<span id="Screenshot_of_the_active.2Ffocused_window"></span><span class="mw-headline" id="Screenshot_of_the_active/focused_window">Screenshot of the active/focused window</span>
+</h4>
+<p>The following script takes a screenshot of the currently focused window. It works with EWMH/NetWM compatible X Window Managers. To avoid overwriting previous screenshots, the current date is used as the filename.
+</p>
+<pre>#!/bin/sh
+activeWinLine=$(xprop -root | grep "_NET_ACTIVE_WINDOW(WINDOW)")
+activeWinId=${activeWinLine:40}
+import -window "$activeWinId" /tmp/$(date +%F_%H%M%S_%N).png
+</pre>
+<p>Alternatively, the following should work regardless of EWMH support:
+</p>
+<pre>$ import -window "$(xdotool getwindowfocus -f)" /tmp/$(date +%F_%H%M%S_%N).png
+</pre>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> If screenshots of some programs (e.g. <a href="../en/Zathura.html" title="Zathura">zathura</a>) appear blank, try appending <code>-frame</code> or removing <code>-f</code> from the <code>xdotool</code> command.</div>
+<h3><span class="mw-headline" id="Encryption_of_image_data">Encryption of image data</span></h3>
+<p>To encrypt:
+</p>
+<pre>$ echo <i>pass_phrase</i> | magick <i>image.jpg</i> -encipher - -depth 8 png24:<i>image.png</i>
+</pre>
+<p>This can be decrypted by:
+</p>
+<pre>$ echo <i>pass_phrase</i> | magick <i>image.png</i> -decipher - <i>image.jpg</i>
+</pre>
+<p>It is highly advised to read the discussion at <a rel="nofollow" class="external text" href="https://imagemagick.org/Usage/transform/#encipher">Encrypting Images</a> for all sorts of issues, and suggestions, for such commands.
+</p>
+<p>Metadata of image formats that have the <code>cipher</code> tag can be used to test for encryption. However, it could be removed or spoofed by an EXIF editing program.
+</p>
+<pre>$ identify -verbose image.png
+</pre>
+<p>In general, testing if a raster image was encrypted can be done by checking the distribution of the pixel components. If it exceeds a certain threshold, the data could be considered random and a possible candidate for encryption. However, an example for false positives are images created with the  <a href="https://en.wikipedia.org/wiki/Diamond-square_algorithm" class="extiw" title="wikipedia:Diamond-square algorithm">Diamond-square algorithm</a>.
+</p>
+<h2><span class="mw-headline" id="See_also">See also</span></h2>
+<ul>
+<li>
+<a rel="nofollow" class="external text" href="https://www.imagemagick.org/">ImageMagick website</a> for an extensive list of options, <a rel="nofollow" class="external text" href="https://imagemagick.org/Usage/">examples</a> and <a rel="nofollow" class="external text" href="https://imagemagick.org/script/examples.php">showcase</a>.</li>
+<li><a href="../en/List_of_applications/Multimedia.html#Image_processing" title="List of applications/Multimedia">List of applications/Multimedia#Image processing</a></li>
+<li>
+<a rel="nofollow" class="external text" href="http://www.fmwconcepts.com/imagemagick/index.php">Fred's ImageMagick Scripts</a> for large collection of ImageMagic scripts</li>
+</ul>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="../en/Category:Multimedia.html" title="Category:Multimedia">Multimedia</a></li></ul>
+</div></div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=ImageMagick&amp;oldid=771130">https://wiki.archlinux.org/index.php?title=ImageMagick&amp;oldid=771130</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 4 March 2023, at 18:39.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

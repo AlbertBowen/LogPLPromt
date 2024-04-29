@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>pacman (Français)/Pacnew and Pacsave (Français) - ArchWiki</title>
+<link rel="stylesheet" href="../../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Pacman_Français_Pacnew_and_Pacsave_Français rootpage-Pacman_Français skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Pourquoi_ces_fichiers_sont_créés" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Pourquoi_ces_fichiers_sont_cr%C3%A9%C3%A9s">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Pourquoi ces fichiers sont créés</div>
+			</a>
+			
+			<ul id="toc-Pourquoi_ces_fichiers_sont_créés-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Fichiers_de_sauvegarde_des_paquets" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Fichiers_de_sauvegarde_des_paquets">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Fichiers de sauvegarde des paquets</div>
+			</a>
+			
+			<ul id="toc-Fichiers_de_sauvegarde_des_paquets-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Types_expliqués" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Types_expliqu%C3%A9s">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>Types expliqués</div>
+			</a>
+			
+				<button aria-controls="toc-Types_expliqués-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Types expliqués subsection
+				</button>
+			
+			<ul id="toc-Types_expliqués-sublist" class="sidebar-toc-list">
+				<li id="toc-.pacnew" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#.pacnew">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.1</span>.pacnew</div>
+			</a>
+			
+			<ul id="toc-.pacnew-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-.pacsave" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#.pacsave">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.2</span>.pacsave</div>
+			</a>
+			
+			<ul id="toc-.pacsave-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Localiser_les_fichiers_.pac*" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Localiser_les_fichiers_.pac*">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4</span>Localiser les fichiers .pac*</div>
+			</a>
+			
+			<ul id="toc-Localiser_les_fichiers_.pac*-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Gestion_des_fichiers_.pac*" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Gestion_des_fichiers_.pac*">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5</span>Gestion des fichiers .pac*</div>
+			</a>
+			
+				<button aria-controls="toc-Gestion_des_fichiers_.pac*-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Gestion des fichiers .pac* subsection
+				</button>
+			
+			<ul id="toc-Gestion_des_fichiers_.pac*-sublist" class="sidebar-toc-list">
+				<li id="toc-pacdiff" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#pacdiff">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5.1</span>pacdiff</div>
+			</a>
+			
+			<ul id="toc-pacdiff-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Utilitaires_tiers" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Utilitaires_tiers">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5.2</span>Utilitaires tiers</div>
+			</a>
+			
+			<ul id="toc-Utilitaires_tiers-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Voir_aussi" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Voir_aussi">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6</span>Voir aussi</div>
+			</a>
+			
+			<ul id="toc-Voir_aussi-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../../fr/Pacman/Pacnew_and_Pacsave.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="new mw-list-item"><a href="/index.php?title=Talk:Pacman_(Fran%C3%A7ais)/Pacnew_and_Pacsave_(Fran%C3%A7ais)&amp;action=edit&amp;redlink=1" rel="discussion" title="Discussion about the content page (page does not exist) [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">français</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../../fr/Pacman/Pacnew_and_Pacsave.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=Pacman_(Fran%C3%A7ais)/Pacnew_and_Pacsave_(Fran%C3%A7ais)&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=Pacman_(Fran%C3%A7ais)/Pacnew_and_Pacsave_(Fran%C3%A7ais)&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../../fr/Pacman/Pacnew_and_Pacsave.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Pacman_(Fran%C3%A7ais)/Pacnew_and_Pacsave_(Fran%C3%A7ais)&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Pacman_(Fran%C3%A7ais)/Pacnew_and_Pacsave_(Fran%C3%A7ais)&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					<div id="contentSub"><span class="subpages">&lt; <a href="../../fr/Pacman.html" title="Pacman (Français)">Pacman (Français)</a></span></div>
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="fr" dir="ltr">
+<div class="mw-parser-output">
+<p><span>
+</span>
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>État de la traduction:</strong> Cet article est la version francophone de <a href="../../en/Pacman/Pacnew_and_Pacsave.html" title="Pacman/Pacnew and Pacsave">pacman/Pacnew and Pacsave</a>. Date de la dernière traduction: 2023-02-07. Vous pouvez aider à synchroniser la traduction s'il y a eu des <a rel="nofollow" class="external text" href="https://wiki.archlinux.org/index.php?title=Pacman/Pacnew_and_Pacsave&amp;diff=0&amp;oldid=766909">changements</a> dans la version anglaise.</div>
+<p>Quand <i>pacman</i> supprime un paquet qui a un fichier de configuration, il crée normalement une copie de sauvegarde de ce fichier de configuration et ajoute <i>.pacsave</i> au nom du fichier. De même, lorsque <i>pacman</i> met à jour un paquet qui inclut un nouveau fichier de configuration créé par le mainteneur, différent du fichier actuellement installé, il enregistre un fichier <i>.pacnew</i> avec la nouvelle configuration. <i>pacman</i> fournit une notification lorsque ces fichiers sont écrits.
+</p>
+<mw:tocplace></mw:tocplace>
+<h2>
+<span id="Pourquoi_ces_fichiers_sont_cr.C3.A9.C3.A9s"></span><span class="mw-headline" id="Pourquoi_ces_fichiers_sont_créés">Pourquoi ces fichiers sont créés</span>
+</h2>
+<p>Un fichier <i>.pacnew</i> peut être créé lors d'une mise à jour de paquet (<code>pacman -Syu</code>, <code>pacman -Su</code> ou <code>pacman -U</code>) pour éviter d'écraser un fichier qui existe déjà et qui a été précédemment modifié par l'utilisateur. Lorsque cela se produit, un message comme le suivant apparaîtra dans la sortie de <i>pacman</i> :
+</p>
+<pre>warning: /etc/pam.d/usermod installed as /etc/pam.d/usermod.pacnew
+</pre>
+<p>Un fichier <i>.pacsave</i> peut être créé lors de la suppression d'un paquet (<code>pacman -R</code>), ou par une mise à jour d'un paquet (le paquet doit d'abord être supprimé). Lorsque la base de données de pacman a un enregistrement indiquant qu'un certain fichier appartenant au paquet doit être sauvegardé, elle crée un fichier <i>.pacsave</i>. Lorsque cela se produit, pacman affiche un message comme le suivant :
+</p>
+<pre>warning: /etc/pam.d/usermod saved as /etc/pam.d/usermod.pacsave
+</pre>
+<p>Ces fichiers nécessitent une intervention manuelle de l'utilisateur et il est bon de les traiter juste après chaque mise à jour ou suppression de paquet. Si elles ne sont pas gérées, les configurations incorrectes peuvent entraîner un mauvais fonctionnement du logiciel ou l'impossibilité totale de le faire fonctionner.
+</p>
+<h2><span class="mw-headline" id="Fichiers_de_sauvegarde_des_paquets">Fichiers de sauvegarde des paquets</span></h2>
+<p>Le fichier <a href="../../fr/PKGBUILD.html" title="PKGBUILD (Français)">PKGBUILD</a> d'un paquet spécifie quels fichiers doivent être préservés ou sauvegardés lorsque le paquet est mis à jour ou supprimé. Par exemple, le PKGBUILD de <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=pulseaudio">pulseaudio</a></span> contient la ligne suivante :
+</p>
+<pre>backup=(etc/pulse/{daemon.conf,default.pa,system.pa})
+</pre>
+<p>Après l'installation, cette liste peut être interrogée à partir de la base de données pacman en utilisant <code>pacman -Qii <i>package_name</i></code>.
+</p>
+<p>Pour empêcher un paquet d'écraser un certain fichier, consultez <a href="../../fr/Pacman.html#Ignorer_la_mise_%C3%A0_jour_d'un_fichier" title="Pacman (Français)">Pacman (Français)#Ignorer la mise à jour d'un fichier</a>.
+</p>
+<h2>
+<span id="Types_expliqu.C3.A9s"></span><span class="mw-headline" id="Types_expliqués">Types expliqués</span>
+</h2>
+<h3><span class="mw-headline" id=".pacnew">.pacnew</span></h3>
+<p>Pour chacun des <a href="#Fichiers_de_sauvegarde_des_paquets">#Fichiers de sauvegarde des paquets</a> mis à jour, pacman effectue une comparaison croisée de trois <a href="https://en.wikipedia.org/wiki/Md5sum" class="extiw" title="wikipedia:Md5sum">md5sums</a> générés à partir du contenu du fichier : une somme pour la version installée à l'origine par le paquet, une pour la version actuellement dans le système de fichiers, et une pour la version dans le nouveau paquet. Si la version du fichier actuellement dans le système de fichiers a été modifiée par rapport à la version initialement installée par le paquet, pacman ne peut pas savoir comment fusionner ces changements avec la nouvelle version du fichier. Par conséquent, au lieu d'écraser le fichier modifié lors de la mise à jour, pacman enregistre la nouvelle version avec une extension <i>.pacnew</i> et laisse la version modifiée intacte.
+</p>
+<p>Pour aller plus loin dans le détail, la comparaison de la somme MD5 à 3 voies aboutit à l'un des résultats suivants :
+</p>
+<dl>
+<dt>original = <i>X</i>, actuel = <i>X</i>, nouveau = <i>X</i>
+</dt>
+<dd>Les trois versions du fichier ont un contenu identique, l'écrasement ne pose donc pas de problème. Écraser la version actuelle avec la nouvelle version et ne pas en informer l'utilisateur (bien que le contenu du fichier soit le même, cet écrasement mettra à jour les informations du système de fichiers concernant les heures d'installation, de modification et d'accès au fichier, et s'assurera que tout changement de permission du fichier est appliqué).</dd>
+</dl>
+<dl>
+<dt>original = <i>X</i>, actuel = <i>X</i>, nouveau = <i>Y</i>
+</dt>
+<dd>Le contenu de la version actuelle est identique à celui de l'original, mais la nouvelle version est différente. Puisque l'utilisateur n'a pas modifié la version courante et que la nouvelle version peut contenir des améliorations ou des corrections de bogues, écrasez la version courante avec la nouvelle version et ne prévenez pas l'utilisateur. C'est la seule fusion automatique des nouvelles modifications que pacman est capable d'effectuer.</dd>
+</dl>
+<dl>
+<dt>original = <i>X</i>, current = <i>Y</i>, new = <i>X</i>
+</dt>
+<dd>Le paquet original et le nouveau paquet contiennent tous deux exactement la même version du fichier, mais la version actuellement dans le système de fichiers a été modifiée. Laissez la version actuelle en place et jetez la nouvelle version sans en informer l'utilisateur.</dd>
+</dl>
+<dl>
+<dt>original = <i>X</i>, actuel = <i>Y</i>, nouveau = <i>Y</i>
+</dt>
+<dd>La nouvelle version est identique à la version actuelle. Écraser la version actuelle avec la nouvelle version et ne pas en informer l'utilisateur (bien que le contenu du fichier soit le même, cet écrasement mettra à jour les informations du système de fichiers concernant les heures d'installation, de modification et d'accès du fichier, et s'assurera que tout changement de permission du fichier est appliqué).</dd>
+</dl>
+<dl>
+<dt>original = <i>X</i>, actuel = <i>Y</i>, nouveau = <i>Z</i>
+</dt>
+<dd>les trois versions sont différentes, laissez donc la version actuelle en place, installez la nouvelle version avec une extension <i>.pacnew</i> et prévenez l'utilisateur de la nouvelle version. L'utilisateur devra fusionner manuellement tous les changements nécessaires de la nouvelle version dans la version actuelle.</dd>
+</dl>
+<p>Rarement, lorsqu'un paquet mis à jour inclut un fichier de sauvegarde que la version précédente n'avait pas, la situation est correctement gérée comme X/Y/Y ou X/Y/Z, X étant une valeur inexistante.
+</p>
+<h3><span class="mw-headline" id=".pacsave">.pacsave</span></h3>
+<p>Si l'utilisateur a modifié l'un des fichiers spécifiés dans <code>backup</code>, ce fichier sera renommé avec une extension <i>.pacsave</i> et restera dans le système de fichiers après la suppression du reste du paquet.
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong>  L'utilisation de l'option <code>-n</code> avec <code>pacman -R</code> entraînera la suppression complète de <i>tous</i> les fichiers du paquet spécifié, donc aucun fichier <i>pacsave</i> ne sera créé.</div>
+<h2>
+<span id="Localiser_les_fichiers_.pac.2A"></span><span class="mw-headline" id="Localiser_les_fichiers_.pac*">Localiser les fichiers .pac*</span>
+</h2>
+<p>Pacman ne gère pas les fichiers <i>.pacnew</i> automatiquement : vous devez les maintenir vous-même. Quelques outils sont présentés dans la section suivante. Pour faire cela manuellement, vous aurez d'abord besoin de les localiser. Lors de la mise à jour ou de la suppression d'un grand nombre de paquets, les fichiers <i>.pac*</i> mis à jour peuvent être manqués. Pour découvrir si des fichiers <i>.pac*</i> ont été installés, utilisez l'une des méthodes suivantes :
+</p>
+<ul>
+<li>Pour rechercher dans <code>/etc</code> où sont stockées la plupart des configurations globales : <pre>$ find /etc -regextype posix-extended -regex ".+\.pac(new|save)" 2&gt; /dev/null</pre> ou pour effectuer une recherche sur l'ensemble du disque en remplaçant <code>/etc</code> par <code>/</code> dans la commande ci-dessus (auquel cas vous pouvez vouloir <a rel="nofollow" class="external text" href="https://stackoverflow.com/a/4210072">sauter sélectivement certains répertoires</a> pour accélérer la recherche).</li>
+<li>Si elle est installée, <a href="../../en/Locate.html" title="Locate">locate</a> peut également être utilisée. Réindexez d'abord la base de données : <pre># updatedb</pre> Puis exécutez : <pre>$ locate --existing --regex "\.pac(new|save)$"</pre>
+</li>
+<li>Utilisez le journal de pacman pour les trouver : <pre>$ grep --extended-regexp "\.pac(new|save)" /var/log/pacman.log</pre> Notez que le journal ne garde pas trace des fichiers actuellement dans le système de fichiers ni de ceux qui ont déjà été supprimés ; la commande ci-dessus listera tous les fichiers <i>.pac*</i> qui ont déjà existé sur votre système. Pour obtenir uniquement les 10 fichiers <i>.pac*</i> les plus récents, envoyez le résultat à <code>tail</code>.</li>
+</ul>
+<h2>
+<span id="Gestion_des_fichiers_.pac.2A"></span><span class="mw-headline" id="Gestion_des_fichiers_.pac*">Gestion des fichiers .pac*</span>
+</h2>
+<div class="archwiki-template-box archwiki-template-box-warning">
+<strong>Attention:</strong> L'installation de paquets va effectuer des changements de fichiers en cas de besoin. Si nécessaire, cela incluera des changements de fichiers appartenant à d'autres paquets. Faites également attention même lorsque vous n'avez pas édité un fichier manuellement et n'écrasez jamais aveuglément un fichier existant par un <i>.pacnew</i>. Fusionnez et utilisez <a href="../../en/Core_utilities.html#Essentials" class="mw-redirect" title="Diff">diff</a> manuellement ou auditez les outils automatisés que vous utilisez. Par exemple, consultez <a rel="nofollow" class="external text" href="https://bugs.archlinux.org/task/77404">FS#77404</a>.</div>
+<h3><span class="mw-headline" id="pacdiff">pacdiff</span></h3>
+<p><span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=pacman-contrib">pacman-contrib</a></span> fournit l'outil simple <span class="plainlinks archwiki-template-man" title="$ man 8 pacdiff"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/pacdiff.8">pacdiff(8)</a></span> pour gérer les fichiers <i>pac*</i>. Il recherchera tous les fichiers <i>.pacnew</i> et <i>.pacsave</i> et demandera des actions sur eux. Il utilise <a href="../../en/Vim.html#Merging_files" title="Vim">vimdiff</a> par défaut, mais vous pouvez spécifier un outil différent avec <code>DIFFPROG=<i>your_editor</i> pacdiff</code>. Consultez <a href="../../en/List_of_applications/Utilities.html#Comparison,_diff,_merge" title="List of applications/Utilities">List of applications/Utilities#Comparison, diff, merge</a> pour d'autres outils de comparaison courants.
+</p>
+<h3><span class="mw-headline" id="Utilitaires_tiers">Utilitaires tiers</span></h3>
+<p>Quelques utilitaires tiers offrant différents niveaux d'automatisation de ces tâches sont disponibles :
+</p>
+<ul><li>
+<b>dotpac</b> — Script interactif de base avec une interface texte basée sur ncurses et un guide pratique. Pas de fonctionnalités de fusion ou de fusion automatique.</li></ul>
+<dl><dd>
+<a rel="nofollow" class="external free" href="https://github.com/AladW/dotpac">https://github.com/AladW/dotpac</a> || <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/dotpac/">dotpac</a></span><sup><small>AUR</small></sup>
+</dd></dl>
+<ul><li>
+<b>etc-update</b> — Utilitaire de <i>Gentoo</i>, compatible avec d'autres distributions dont Arch. Il fournit une CLI simple pour visualiser, fusionner et modifier interactivement les modifications. Les modifications triviales, comme les commentaires, peuvent être fusionnées automatiquement.</li></ul>
+<dl><dd>
+<a href="https://wiki.gentoo.org/wiki/Handbook:Parts/Portage/Tools#etc-update" class="extiw" title="gentoo:Handbook:Parts/Portage/Tools">Gentoo:Handbook:Parts/Portage/Tools#etc-update</a> || <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=etc-update">etc-update</a></span>
+</dd></dl>
+<ul><li>
+<b>p3wm</b> — Fusion à trois voies des fichiers <i>.pacnew</i>. Elle peut fusionner automatiquement les changements triviaux. Si des conflits surviennent, il lancera vimdiff, meld ou kdiff3 pour les résoudre.</li></ul>
+<dl><dd>
+<a rel="nofollow" class="external free" href="https://github.com/5long/p3wm">https://github.com/5long/p3wm</a> || <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/p3wm/">p3wm</a></span><sup><small>AUR</small></sup>
+</dd></dl>
+<ul><li>
+<b>pacnews-git</b> — Un script simple visant à trouver tous les fichiers <i>.pacnew</i>, puis à les éditer avec <a href="../../en/Vim.html#Merging_files" title="Vim">vimdiff</a>.</li></ul>
+<dl><dd>
+<a rel="nofollow" class="external free" href="https://github.com/pbrisbin/scripts/blob/master/pacnews">https://github.com/pbrisbin/scripts/blob/master/pacnews</a> || <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/pacnews-git/">pacnews-git</a></span><sup><small>AUR</small></sup>
+</dd></dl>
+<ul><li>
+<b>pacfiles-mode</b> — Un paquet pour <a href="../../en/Emacs.html" title="Emacs">Emacs</a> pour gérer et fusionner les fichiers <i>.pacnew</i>.</li></ul>
+<dl><dd>
+<a rel="nofollow" class="external free" href="https://github.com/UndeadKernel/pacfiles-mode">https://github.com/UndeadKernel/pacfiles-mode</a> || disponible sur <a rel="nofollow" class="external text" href="https://melpa.org/#/pacfiles-mode">melpa</a>
+</dd></dl>
+<ul><li>
+<b>pacdiff-pacman-hook-git</b> — Un hook Pacman pour lancer pacdiff automatiquement.</li></ul>
+<dl><dd>
+<a rel="nofollow" class="external free" href="https://github.com/desbma/pacman-hooks">https://github.com/desbma/pacman-hooks</a> || <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/pacdiff-pacman-hook-git/">pacdiff-pacman-hook-git</a></span><sup><small>AUR</small></sup>
+</dd></dl>
+<h2><span class="mw-headline" id="Voir_aussi">Voir aussi</span></h2>
+<ul><li>Fil de discussion du forum : <a rel="nofollow" class="external text" href="https://bbs.archlinux.org/viewtopic.php?id=53532">Traiter les fichiers .pacnew</a>
+</li></ul>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../../Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="../../fr/Category:Package_manager.html" title="Category:Package manager (Français)">Package manager (Français)</a></li></ul>
+</div></div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=Pacman_(Fran%C3%A7ais)/Pacnew_and_Pacsave_(Fran%C3%A7ais)&amp;oldid=768295">https://wiki.archlinux.org/index.php?title=Pacman_(Français)/Pacnew_and_Pacsave_(Français)&amp;oldid=768295</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 21 February 2023, at 17:11.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

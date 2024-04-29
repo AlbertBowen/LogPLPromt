@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>Anbox - ArchWiki</title>
+<link rel="stylesheet" href="../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Anbox rootpage-Anbox skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Prerequisite" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#Prerequisite">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Prerequisite</div>
+			</a>
+			
+				<button aria-controls="toc-Prerequisite-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Prerequisite subsection
+				</button>
+			
+			<ul id="toc-Prerequisite-sublist" class="sidebar-toc-list">
+				<li id="toc-Module_installation_options" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Module_installation_options">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.1</span>Module installation options</div>
+			</a>
+			
+			<ul id="toc-Module_installation_options-sublist" class="sidebar-toc-list">
+				<li id="toc-Using_Linux-Zen" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Using_Linux-Zen">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.1.1</span>Using Linux-Zen</div>
+			</a>
+			
+			<ul id="toc-Using_Linux-Zen-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Installing_anbox-modules-dkms" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Installing_anbox-modules-dkms">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.1.2</span>Installing anbox-modules-dkms</div>
+			</a>
+			
+			<ul id="toc-Installing_anbox-modules-dkms-sublist" class="sidebar-toc-list">
+				<li id="toc-Security" class="sidebar-toc-list-item sidebar-toc-level-4">
+			<a class="sidebar-toc-link" href="#Security">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.1.2.1</span>Security</div>
+			</a>
+			
+			<ul id="toc-Security-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Building_a_kernel" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Building_a_kernel">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.1.3</span>Building a kernel</div>
+			</a>
+			
+			<ul id="toc-Building_a_kernel-sublist" class="sidebar-toc-list">
+				<li id="toc-Using_binder" class="sidebar-toc-list-item sidebar-toc-level-4">
+			<a class="sidebar-toc-link" href="#Using_binder">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.1.3.1</span>Using binder</div>
+			</a>
+			
+			<ul id="toc-Using_binder-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Using_binderfs" class="sidebar-toc-list-item sidebar-toc-level-4">
+			<a class="sidebar-toc-link" href="#Using_binderfs">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.1.3.2</span>Using binderfs</div>
+			</a>
+			
+			<ul id="toc-Using_binderfs-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Loading_the_kernel_modules" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Loading_the_kernel_modules">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.2</span>Loading the kernel modules</div>
+			</a>
+			
+			<ul id="toc-Loading_the_kernel_modules-sublist" class="sidebar-toc-list">
+				<li id="toc-Load_binder" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Load_binder">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.2.1</span>Load binder</div>
+			</a>
+			
+			<ul id="toc-Load_binder-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Mounting_binderfs" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Mounting_binderfs">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.2.2</span>Mounting binderfs</div>
+			</a>
+			
+			<ul id="toc-Mounting_binderfs-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Installation" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#Installation">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Installation</div>
+			</a>
+			
+				<button aria-controls="toc-Installation-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Installation subsection
+				</button>
+			
+			<ul id="toc-Installation-sublist" class="sidebar-toc-list">
+				<li id="toc-Install_an_Android_Image" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Install_an_Android_Image">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.1</span>Install an Android Image</div>
+			</a>
+			
+			<ul id="toc-Install_an_Android_Image-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Install_Anbox" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Install_Anbox">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.2</span>Install Anbox</div>
+			</a>
+			
+			<ul id="toc-Install_Anbox-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Network" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#Network">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>Network</div>
+			</a>
+			
+				<button aria-controls="toc-Network-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Network subsection
+				</button>
+			
+			<ul id="toc-Network-sublist" class="sidebar-toc-list">
+				<li id="toc-Via_NetworkManager" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Via_NetworkManager">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.1</span>Via NetworkManager</div>
+			</a>
+			
+			<ul id="toc-Via_NetworkManager-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Via_systemd-networkd" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Via_systemd-networkd">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.2</span>Via systemd-networkd</div>
+			</a>
+			
+			<ul id="toc-Via_systemd-networkd-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Via_anbox-bridge_script" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Via_anbox-bridge_script">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.3</span>Via anbox-bridge script</div>
+			</a>
+			
+			<ul id="toc-Via_anbox-bridge_script-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Usage" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#Usage">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4</span>Usage</div>
+			</a>
+			
+				<button aria-controls="toc-Usage-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Usage subsection
+				</button>
+			
+			<ul id="toc-Usage-sublist" class="sidebar-toc-list">
+				<li id="toc-Installing_apps" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Installing_apps">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.1</span>Installing apps</div>
+			</a>
+			
+			<ul id="toc-Installing_apps-sublist" class="sidebar-toc-list">
+				<li id="toc-Through_adb" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Through_adb">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.1.1</span>Through adb</div>
+			</a>
+			
+			<ul id="toc-Through_adb-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Through_apps_stores" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Through_apps_stores">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.1.2</span>Through apps stores</div>
+			</a>
+			
+			<ul id="toc-Through_apps_stores-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Sensor_data" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Sensor_data">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.2</span>Sensor data</div>
+			</a>
+			
+			<ul id="toc-Sensor_data-sublist" class="sidebar-toc-list">
+				<li id="toc-Temperature_data" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Temperature_data">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.2.1</span>Temperature data</div>
+			</a>
+			
+			<ul id="toc-Temperature_data-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-GPS_data" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#GPS_data">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.2.2</span>GPS data</div>
+			</a>
+			
+			<ul id="toc-GPS_data-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Root_shell" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Root_shell">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.3</span>Root shell</div>
+			</a>
+			
+			<ul id="toc-Root_shell-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Tips_and_tricks" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#Tips_and_tricks">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5</span>Tips and tricks</div>
+			</a>
+			
+				<button aria-controls="toc-Tips_and_tricks-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Tips and tricks subsection
+				</button>
+			
+			<ul id="toc-Tips_and_tricks-sublist" class="sidebar-toc-list">
+				<li id="toc-Android_developer_options" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Android_developer_options">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5.1</span>Android developer options</div>
+			</a>
+			
+			<ul id="toc-Android_developer_options-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Getting_debugging_information" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Getting_debugging_information">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5.2</span>Getting debugging information</div>
+			</a>
+			
+			<ul id="toc-Getting_debugging_information-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Troubleshooting" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#Troubleshooting">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6</span>Troubleshooting</div>
+			</a>
+			
+				<button aria-controls="toc-Troubleshooting-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Troubleshooting subsection
+				</button>
+			
+			<ul id="toc-Troubleshooting-sublist" class="sidebar-toc-list">
+				<li id="toc-Old_CPUs" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Old_CPUs">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6.1</span>Old CPUs</div>
+			</a>
+			
+			<ul id="toc-Old_CPUs-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Secure_Boot_error" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Secure_Boot_error">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6.2</span>Secure Boot error</div>
+			</a>
+			
+			<ul id="toc-Secure_Boot_error-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-See_also" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#See_also">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">7</span>See also</div>
+			</a>
+			
+			<ul id="toc-See_also-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../en/Anbox.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="mw-list-item"><a href="../en/Talk:Anbox.html" rel="discussion" title="Discussion about the content page [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">English</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../en/Anbox.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=Anbox&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=Anbox&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../en/Anbox.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Anbox&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Anbox&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output">
+<div class="archwiki-template-meta-related-articles-start">
+<p class="mw-no-invert">Related articles</p>
+<ul>
+<li><a href="../en/Linux_Containers.html" title="Linux Containers">Linux Containers</a></li>
+<li><a href="../en/Waydroid.html" title="Waydroid">Waydroid</a></li>
+</ul>
+</div>
+<p>Anbox is a <a href="../en/Linux_Containers.html" title="Linux Containers">container-based</a> software for running Android on GNU/Linux distributions.
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> As of February 2023, <a rel="nofollow" class="external text" href="https://github.com/anbox/anbox/blob/2102e1be999984dbfb25d1ddeaf42179de071020/README.md">Anbox is no longer actively developed.</a> The developer recommended <a href="../en/Waydroid.html" title="Waydroid">Waydroid</a> as an alternative.</div>
+<mw:tocplace></mw:tocplace>
+<h2><span class="mw-headline" id="Prerequisite">Prerequisite</span></h2>
+<p>To use anbox-style packages you need two <a href="../en/Kernel_module.html" title="Kernel module">kernel modules</a>: <code>binder</code> and <code>ashmem</code>.
+</p>
+<p>They are not included in the default <a href="../en/Kernel.html" title="Kernel">kernel</a>, thus you need to either install a kernel which ships these modules or (re)build a kernel, or use <a href="../en/Dynamic_Kernel_Module_Support.html" class="mw-redirect" title="DKMS">DKMS</a> to install the kernel modules seperately.
+</p>
+<div class="noprint archwiki-template-message">
+<p><a href="../File:Tango-inaccurate.png" class="image"><img alt="Tango-inaccurate.png" src="../File:Tango-inaccurate.png" decoding="async" width="48" height="48"></a><b>The factual accuracy of this article or section is disputed.</b><a href="../File:Tango-inaccurate.png" class="image"><img alt="Tango-inaccurate.png" src="../File:Tango-inaccurate.png" decoding="async" width="48" height="48"></a></p>
+<div>
+<b>Reason:</b>  The following sections are a bit messed up, so some things including below topics should be discussed and changed (if necessary):
+<p>1. Which installation methods are still working? 
+2. Distinction between binder and binderfs.
+3. Which loading procedures are necessary?
+</p>
+4. Duplication of information should be avoided.  (Discuss in <a rel="nofollow" class="external text" href="https://wiki.archlinux.org/title/Talk:Anbox">Talk:Anbox</a>)</div>
+</div>
+<h3><span class="mw-headline" id="Module_installation_options">Module installation options</span></h3>
+<p>To get a compatible kernel, you have the following options:
+</p>
+<h4><span class="mw-headline" id="Using_Linux-Zen">Using Linux-Zen</span></h4>
+<p>The <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=linux-zen">linux-zen</a></span> kernel includes the necessary modules out of the box. However, because <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=linux-zen">linux-zen</a></span> now uses binderfs instead of binder, you will need to <a href="#Mounting_binderfs">mount binderfs</a> before launching Anbox.
+</p>
+<div class="archwiki-template-box archwiki-template-box-warning">
+<strong>Warning:</strong> According to this <a rel="nofollow" class="external text" href="https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=721412ed3d819e767cac2b06646bf03aa158aaec">commit</a>  in linux kernel there are no ashmem any longer in versions from 5.18 but memfd is here instead. However, anbox developers didn't fix their software to use memfd so there is high probability that anbox will not work with <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=linux-zen">linux-zen</a></span> kernel at all for some time.</div>
+<h4><span class="mw-headline" id="Installing_anbox-modules-dkms">Installing anbox-modules-dkms</span></h4>
+<p>The <a rel="nofollow" class="external text" href="https://github.com/choff/anbox-modules">anbox dkms modules</a> have been forked and updated to work for kernels up to and including version 5.15. Please note, that using <i>KProbes</i> may have security implications and you should be aware of certain risks involved with this software, see <a href="#Security">Security</a>.
+</p>
+<p>If you wish to use anbox related projects, <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/anbox-modules-dkms/">anbox-modules-dkms</a></span><sup><small>AUR</small></sup> is an actively maintained fork and works on latest kernels.
+</p>
+<p>The <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/anbox-modules-dkms/">anbox-modules-dkms</a></span><sup><small>AUR</small></sup> package will install both binder &amp; ashmem as <b>kernel modules</b>.
+</p>
+<p>Run the following commands as root to activate binder and ashmem:
+</p>
+<pre># modprobe binder_linux devices=binder,hwbinder,vndbinder,anbox-binder,anbox-hwbinder,anbox-vndbinder
+# modprobe ashmem_linux
+</pre>
+<p>After loading the modules, you may also need to mount binder:
+</p>
+<pre># mount --mkdir -t binder binder /dev/binderfs
+</pre>
+<h5><span class="mw-headline" id="Security">Security</span></h5>
+<p>In an LWN news post, Jonathan Corbet noted that <code>kallsyms_lookup_name()</code> was to be unexported. See <a rel="nofollow" class="external free" href="https://lwn.net/Articles/813350/">https://lwn.net/Articles/813350/</a>.
+</p>
+<dl><dd>One of the basic rules of kernel-module development is that modules can only access symbols (functions and data structures) that have been explicitly exported. Even then, many symbols are restricted so that only modules with a GPL-compatible license can access them.</dd></dl>
+<p>This caused anbox-modules to no longer build, as this was an out-of-tree user of <code>kallsyms_lookup_name()</code>.
+</p>
+<p>Therefore, to use anbox related software with <b>kernel modules</b>, there is a <a rel="nofollow" class="external text" href="https://github.com/choff/anbox-modules/commit/4af9d5d591f33a0d8d7fb0735e280fa51ccef53e">maintained fork of anbox-modules by C. Hoff</a> which explains the issue, with anbox in mind:
+</p>
+<dl>
+<dd>On kernel 5.7 and later, <code>kallsyms_lookup_name()</code> can no longer be called from a kernel module for reasons described here: <a rel="nofollow" class="external free" href="https://lwn.net/Articles/813350/">https://lwn.net/Articles/813350/</a>
+</dd>
+<dd>As <code>binder</code> really needs to use <code>kallsysms_lookup_name()</code> to access some kernel functions that otherwise would not be accessible, KProbes are used on later kernels to get the address of <code>kallsysms_lookup_name()</code>. The function is afterwards used just as before. This is a very dirty hack though and the much better solution would be if all the functions that are currently resolved with <code>kallsysms_lookup_name()</code> would get an <code>EXPORT_SYMBOL()</code> annotation to make them directly accessible to kernel modules.</dd>
+</dl>
+<p>See also <a rel="nofollow" class="external free" href="https://github.com/anbox/anbox-modules/pull/76">https://github.com/anbox/anbox-modules/pull/76</a>.
+</p>
+<h4><span class="mw-headline" id="Building_a_kernel">Building a kernel</span></h4>
+<p>The necessary modules are included in the source code of most regular kernels, but need to be activated in the kernel <code>config</code> file.
+After that you need to (re)build the kernel, see <a href="../en/Kernel.html#Compilation" title="Kernel">Kernel#Compilation</a>. 
+</p>
+<p>Add or modify the following options in the kernel <code>config</code> file:
+</p>
+<pre>CONFIG_ASHMEM=y
+CONFIG_ANDROID=y
+CONFIG_ANDROID_BINDER_IPC=y
+CONFIG_ANDROID_BINDERFS=y
+CONFIG_ANDROID_BINDER_DEVICES="binder,hwbinder,vndbinder"
+CONFIG_SW_SYNC=y
+CONFIG_UHID=m
+</pre>
+<p>With your new kernel, you will need to append the following to your boot arguments:
+</p>
+<p><code>binder.devices=binder,hwbinder,vndbinder,anbox-binder,anbox-hwbinder,anbox-vndbinder</code>
+</p>
+<p>When setting compilation options, you have 2 options available: binder and binderfs. Instructions for both are provided below:
+</p>
+<h5><span class="mw-headline" id="Using_binder">Using binder</span></h5>
+<p>The modules can either be compiled into the kernel (<code>y</code>), into modules (<code>m</code>), or not at all (<code>n</code>). Also, not all combinations in the configuration are possible, and some options will require other options.
+</p>
+<p>The configuration options below will compile ashmem and binder into the kernel, while the last option specifies that there will be three devices created in the <code>/dev/</code> directory, when the binder module is loaded.
+</p>
+<pre>CONFIG_ASHMEM=y
+CONFIG_ANDROID=y
+CONFIG_ANDROID_BINDER_IPC=y
+CONFIG_ANDROID_BINDERFS=y
+CONFIG_ANDROID_BINDER_DEVICES="binder,hwbinder,vndbinder"
+CONFIG_SW_SYNC=y
+CONFIG_UHID=m</pre>
+<p>When building a kernel from the AUR, one can update the configuration with the following steps:
+</p>
+<ol>
+<li>run <code>makepkg --nobuild</code>, which will download the sources, verify and extract them and run the <code>prepare()</code> function.</li>
+<li>edit the <code>.config</code> file (with the dot in the filename), which is located at the base of the kernel directory.</li>
+<li>at the end of the <code>prepare()</code> function was probably a command which regenerates the makefiles with information from the configuration, possibly <code>make olddefconfig</code>. Move that to the <code>build()</code> function, or execute it yourself.</li>
+<li>run <code>makepkg --noextract</code>, which will continue from the place where <code>makepkg --nobuild</code> stopped.</li>
+</ol>
+<h5><span class="mw-headline" id="Using_binderfs">Using binderfs</span></h5>
+<p>Not everybody was happy with the binder module in Linux. To address the issues, binderfs was created. One has to choose between the old and the new way when compiling the kernel. With the options below, one will use binderfs instead.
+</p>
+<p>With the kernel sources comes also a simple script to set configuration options. It will not do dependency checks, just like when editing the configuration by hand. When being in the same directory where the <code>.config</code> file lies, one can execute the following commands:
+</p>
+<pre>scripts/config --module  CONFIG_ASHMEM
+scripts/config --enable  CONFIG_ANDROID
+scripts/config --enable  CONFIG_ANDROID_BINDER_IPC
+scripts/config --enable  CONFIG_ANDROID_BINDERFS
+scripts/config --set-str CONFIG_ANDROID_BINDER_DEVICES ""
+</pre>
+<p>When building a kernel from the AUR, it is enough to insert these lines at the right place in the <a href="../en/PKGBUILD.html" title="PKGBUILD">PKGBUILD</a>, usually in <code>prepare()</code>.
+</p>
+<h3><span class="mw-headline" id="Loading_the_kernel_modules">Loading the kernel modules</span></h3>
+<h4><span class="mw-headline" id="Load_binder">Load binder</span></h4>
+<p>When a kernel provides them as build-in, you do not need to manually load them. The <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=linux-zen">linux-zen</a></span> kernel is one of those and loading is not required. 
+If the used kernel has them build as modules, they need to be explicitly loaded as Anbox does not load them on demand; starting an app will fail if they are not loaded.
+</p>
+<p>To load the kernel modules, see above: <a href="#Installing_anbox-modules-dkms">#Installing anbox-modules-dkms</a>
+</p>
+<p>To automatically load them at boot, one can load them via the <code>systemd-modules-load.service</code>. To do so, create a file inside <code>/etc/modules-load.d/</code>, which contains the lines:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/modules-load.d/anbox.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">ashmem_linux
+binder_linux
+</pre>
+<h4><span class="mw-headline" id="Mounting_binderfs">Mounting binderfs</span></h4>
+<p>If your kernel uses binderfs, there is one more step to do: Mounting a binder filesystem.
+</p>
+<p>Firstly, you will need a mountpoint. By default, Anbox will look at <code>/dev/binderfs</code>. You can create that directory now, but it will be removed at boot time.
+</p>
+<p>You can use <a href="../en/Systemd.html#systemd-tmpfiles_-_temporary_files" class="mw-redirect" title="Systemd-tmpfiles">systemd-tmpfiles</a> to create this directory at boot time. For that, create a file in <code>/etc/tmpfiles.d/</code> with the content:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/tmpfiles.d/anbox.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">d! /dev/binderfs 0755 root root
+</pre>
+<p>Secondly, you need to mount the binder filesystem. This can be done by
+</p>
+<pre># mount -t binder none /dev/binderfs
+</pre>
+<p>To mount it always at boot, add a line in the <a href="../en/Fstab.html" title="Fstab">fstab</a>. Using the option <code>nofail</code> here will not greet you with a recovery shell when you are booting a kernel without binderfs support (such as the standard kernel).
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/fstab</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">none                         /dev/binderfs binder   nofail  0      0
+</pre>
+<h2><span class="mw-headline" id="Installation">Installation</span></h2>
+<h3><span class="mw-headline" id="Install_an_Android_Image">Install an Android Image</span></h3>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> The images are outdated (based on Android 7.1). For now there are no newer images available from upstream. See also <a href="../en/Talk:Anbox.html#Anbox-Images_outdated" title="Talk:Anbox">Talk:Anbox#Anbox-Images outdated</a>.</div>
+<p><a href="../en/Help:Reading.html#Installation_of_packages" class="mw-redirect" title="Install">Install</a> one of these images:
+</p>
+<ul>
+<li>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/anbox-image/">anbox-image</a></span><sup><small>AUR</small></sup><sup>[<a href="../en/Help:Procedures.html#Fix_broken_package_links" title="Help:Procedures">broken link</a>: package not found]</sup> (official Anbox image)</li>
+<li>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/anbox-image-houdini/">anbox-image-houdini</a></span><sup><small>AUR</small></sup><sup>[<a href="../en/Help:Procedures.html#Fix_broken_package_links" title="Help:Procedures">broken link</a>: package not found]</sup> (includes Houdini)</li>
+<li>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/anbox-image-houdini-rooted/">anbox-image-houdini-rooted</a></span><sup><small>AUR</small></sup><sup>[<a href="../en/Help:Procedures.html#Fix_broken_package_links" title="Help:Procedures">broken link</a>: package not found]</sup> (includes Houdini and SuperSU)</li>
+<li>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/anbox-image-gapps/">anbox-image-gapps</a></span><sup><small>AUR</small></sup><sup>[<a href="../en/Help:Procedures.html#Fix_broken_package_links" title="Help:Procedures">broken link</a>: package not found]</sup> (includes Houdini and OpenGApps)</li>
+<li>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/anbox-image-gapps-rooted/">anbox-image-gapps-rooted</a></span><sup><small>AUR</small></sup><sup>[<a href="../en/Help:Procedures.html#Fix_broken_package_links" title="Help:Procedures">broken link</a>: package not found]</sup> (includes Houdini, OpenGApps and SuperSU)</li>
+<li>You can find more images in the <a href="../en/Arch_User_Repository.html" class="mw-redirect" title="AUR">AUR</a>, search for <a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/?K=anbox-image">anbox-image</a>.</li>
+</ul>
+<div class="archwiki-template-box archwiki-template-box-tip">
+<strong>Tip:</strong> 
+<ul>
+<li>To run arm-only apps on anbox style projects, you will need either Houdini <b>or</b> libndk translations which allows all of x86_64, arm64-v8a, x86, armeabi-v7a, or armeabi applications to run on x86_64. See <a href="#Installing_apps">Installing apps</a>.</li>
+<li>If you want Google apps, you will most likely need a "Play Services" alternative, which is exactly what the The Open GApps Project provides <a rel="nofollow" class="external text" href="https://opengapps.org/">OpenGApps</a>. </li>
+</ul>
+</div>
+<h3><span class="mw-headline" id="Install_Anbox">Install Anbox</span></h3>
+<p><a href="../en/Help:Reading.html#Installation_of_packages" class="mw-redirect" title="Install">Install</a> the <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/anbox-git/">anbox-git</a></span><sup><small>AUR</small></sup> package.
+</p>
+<p>Afterwards, <a href="../en/Help:Reading.html#Control_of_systemd_units" class="mw-redirect" title="Start/enable">start/enable</a> <code>anbox-container-manager.service</code>.
+</p>
+<p>You have now all the required steps done to use Anbox! In the menu of your desktop environment, you should find several entries in the categories <i>Others</i> or <i>Anbox</i>, which can now be launched.
+</p>
+<p>The first call will take longer. Behind the scenes, <code>anbox session-manager</code> will be launched. For testing purposes, you can also execute <code>anbox session-manager</code> manually in a terminal. That is <b>very</b> useful if anbox crashes and you want to report or fix the bug. Just launch it, and wait until it crashes (if ever).
+</p>
+<p>There is also a <i>systemd</i> unit for users, which can be used to start the session-manager on bootup; <a href="../en/Help:Reading.html#Control_of_systemd_units" class="mw-redirect" title="Start/enable">start/enable</a> the <code>anbox-session-manager.service</code> user unit. An advantage of this unit is that logs can be found in the event of a crash:
+</p>
+<pre>$ journalctl --user -b -u anbox-session-manager
+</pre>
+<p>Keep in mind though, that when it crashes and you start a new app, it will also start the session-manager, but it will be run independently from <i>systemd</i>.
+</p>
+<h2><span class="mw-headline" id="Network">Network</span></h2>
+<h3><span class="mw-headline" id="Via_NetworkManager">Via NetworkManager</span></h3>
+<p>If you are using <a href="../en/NetworkManager.html" title="NetworkManager">NetworkManager</a> you can use it to configure the networking.
+</p>
+<p>Execute the following command to create the bridge connection:
+</p>
+<pre>$ nmcli con add type bridge ifname anbox0 -- connection.id anbox-net ipv4.method shared ipv4.addresses 192.168.250.1/24
+</pre>
+<ul>
+<li>
+<code>ifname anbox0</code> specifies the bridge interface name, in this case <code>anbox0</code>. Do not change this as Anbox will only detect the bridge interface if it is named <code>anbox0</code>.</li>
+<li>
+<code>connection.id anbox-net</code> specifies the name of the connection to be <code>anbox-net</code> when it appears in <a href="../en/NetworkManager.html" title="NetworkManager">NetworkManager</a>. You can change this if you wish.</li>
+<li>
+<code>ipv4.method shared</code> instructs <a href="../en/NetworkManager.html" title="NetworkManager">NetworkManager</a> to create a NAT network and route outgoing packets according to the system routing rules. For that, the <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=dnsmasq">dnsmasq</a></span> package is required. <a href="../en/Dnsmasq.html" title="Dnsmasq">dnsmasq</a> does not needs to be configured or be started as systemd service, it will be used behind the scenes by NetworkManager — if it is not available, this step will fail silently. You can leave this and the <code>ipv4.addresses</code> parameter out if you wish to attach the Anbox container directly to a specific network, see <a href="../en/Network_bridge.html#With_NetworkManager" title="Network bridge">Network bridge#With NetworkManager</a>. If you choose this option, you must also change the network configuration of the container in <code>anbox-container-manager.service</code>, see the next bullet point.</li>
+<li>
+<code>ipv4.addresses 192.168.250.1/24</code> specifies the default gateway and subnet of the NAT network. If you wish to change this (e.g. to <code>192.168.42.1/24</code>) you must also indicate the new subnet to anbox in the <code>anbox-container-manager.service</code> using: <code>--container-network-address=192.168.42.2/24 --container-network-gateway=192.168.42.1</code>
+</li>
+</ul>
+<p><a href="../en/NetworkManager.html" title="NetworkManager">NetworkManager</a> will automatically setup the bridge every reboot so you only need to execute the command once.
+</p>
+<h3><span class="mw-headline" id="Via_systemd-networkd">Via systemd-networkd</span></h3>
+<p>The package <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/anbox-git/">anbox-git</a></span><sup><small>AUR</small></sup> provides configuration files for <code>systemd-networkd</code> in <code>/usr/lib/systemd/network/</code> to enable networking in anbox.
+</p>
+<p>Therefore, you can <a href="../en/Help:Reading.html#Control_of_systemd_units" class="mw-redirect" title="Start/enable">start/enable</a> <code>systemd-networkd</code> before starting <code>anbox-container-manager.service</code>.
+</p>
+<h3><span class="mw-headline" id="Via_anbox-bridge_script">Via anbox-bridge script</span></h3>
+<p>Alternatively you can use the anbox-bridge script <a rel="nofollow" class="external text" href="https://raw.githubusercontent.com/anbox/anbox/master/scripts/anbox-bridge.sh">used by the project</a>.
+</p>
+<p>You must execute <code>anbox-bridge</code> every time before starting <code>anbox-container-manager.service</code> in order to get network working in Anbox. The easiest solution for that is to create a drop-in file for the service.
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/systemd/system/anbox-container-manager.service.d/enable-anbox-bridge.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">[Service]
+ExecStartPre=/usr/bin/anbox-bridge start
+ExecStopPost=/usr/bin/anbox-bridge stop</pre>
+<h2><span class="mw-headline" id="Usage">Usage</span></h2>
+<p>To start a GUI, run:
+</p>
+<pre>$ anbox launch --package=org.anbox.appmgr --component=org.anbox.appmgr.AppViewActivity
+</pre>
+<p>Alternatively, run the Android applications on your desktop's launcher on <b>Other</b> category.
+</p>
+<p>If you want to use <a href="../en/Android_Debug_Bridge.html" class="mw-redirect" title="Adb">adb</a> to debug, install <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=android-tools">android-tools</a></span>. The <code>anbox session-manager</code> must already be running when launching it.
+</p>
+<pre>$ adb shell
+</pre>
+<h3><span class="mw-headline" id="Installing_apps">Installing apps</span></h3>
+<p>Unless you picked an image with Houdini, Anbox does not have support for ARM applications. So apps must have a x86_64 architecture.
+</p>
+<p>You can also add support for x86_64, arm64-v8a, x86, armeabi-v7a, armeabi apps by extracting the nativebridge ndk translations from the Android Emulator.
+</p>
+<p>Example tools include:
+</p>
+<ul>
+<li><a rel="nofollow" class="external text" href="https://github.com/casualsnek/waydroid_script">Waydroid scripts to automate the installation of OpenGapps, Magisk, libhoudini, translation library and libndk translation library to waydroid</a></li>
+<li><a rel="nofollow" class="external text" href="https://github.com/sickcodes/Droid-NDK-Extractor">Generic libndk translation extractor from Google's android_vendor_google_emu-x86</a></li>
+</ul>
+<h4><span class="mw-headline" id="Through_adb">Through adb</span></h4>
+<p>To install <code><i>/path/to/app.apk</i></code>
+</p>
+<pre>$ adb install <i>/path/to/app.apk</i>
+</pre>
+<p>To get the list of installed applications
+</p>
+<pre>$ adb shell pm list packages
+</pre>
+<p>Note that output will be similar to <code><i>package:app.name</i></code>, where <code><i>app.name</i></code> is different from the one displayed in the Anbox container.
+</p>
+<p>To uninstall <code><i>app.name</i></code>
+</p>
+<pre>$ adb uninstall <i>app.name</i>
+</pre>
+<p>If <code><i>app.name</i></code> is a system app
+</p>
+<pre>$ adb uninstall --user 0 <i>app.name</i>
+</pre>
+<h4><span class="mw-headline" id="Through_apps_stores">Through apps stores</span></h4>
+<p>Apps can be easily installed through apps stores. In <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/anbox-image-gapps/">anbox-image-gapps</a></span><sup><small>AUR</small></sup><sup>[<a href="../en/Help:Procedures.html#Fix_broken_package_links" title="Help:Procedures">broken link</a>: package not found]</sup> PlayStore is included.
+</p>
+<h3><span class="mw-headline" id="Sensor_data">Sensor data</span></h3>
+<p>Via dbus different sensors can be set. Documentation on that can be found at
+<a rel="nofollow" class="external text" href="https://github.com/anbox/anbox/blob/master/docs/dbus.md">dbus.md</a>.
+</p>
+<h4><span class="mw-headline" id="Temperature_data">Temperature data</span></h4>
+<p>That is the example from the author (PRs <a rel="nofollow" class="external text" href="https://github.com/anbox/anbox/pull/1522">#1522</a> &amp; <a rel="nofollow" class="external text" href="https://github.com/anbox/anbox/pull/1522">#1540</a>):
+</p>
+<pre>$ dbus-send --session --dest=org.anbox --print-reply /org/anbox org.freedesktop.DBus.Properties.Set string:org.anbox.Sensors string:Temperature variant:double:25.1
+</pre>
+<h4><span class="mw-headline" id="GPS_data">GPS data</span></h4>
+<p>(introduced by PR <a rel="nofollow" class="external text" href="https://github.com/anbox/anbox/pull/1606">#1606</a>)
+</p>
+<p>GPS sensor data can also be manipulated. 
+</p>
+<p>If your PC has a WWAN card, you can use <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=gpsd">gpsd</a></span> and the code from the PR to feed Anbox with GPS data. You do not need to have a SIM-Card for GPS.
+</p>
+<p>Otherwise, you can also look at the PR to learn how to feed it fake data with the help of <a rel="nofollow" class="external autonumber" href="https://www.nmeagen.org">[1]</a>.
+</p>
+<h3><span class="mw-headline" id="Root_shell">Root shell</span></h3>
+<p>With this <a rel="nofollow" class="external text" href="https://github.com/anbox/anbox/blob/master/scripts/anbox-shell.sh">script</a> from the Anbox project one can get a root shell inside the Android container.
+</p>
+<p>It is not part of the <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/anbox-git/">anbox-git</a></span><sup><small>AUR</small></sup> package, and it also does not use <a href="../en/Android_Debug_Bridge.html" class="mw-redirect" title="Adb">adb</a>.
+</p>
+<h2><span class="mw-headline" id="Tips_and_tricks">Tips and tricks</span></h2>
+<h3><span class="mw-headline" id="Android_developer_options">Android developer options</span></h3>
+<p>Some extra steps need to be done besides unlocking them the same way you do on an android phone.
+When installing the <a href="#Install_an_Android_Image">android image</a>, some modifications to <code>products/anbox.xml</code> are required:
+</p>
+<ul>
+<li>
+<code>&lt;unavailable-feature name="android.hardware.usb.host" /&gt;</code> is the reason why they are not available.</li>
+<li>
+<code>&lt;feature name="android.software.backup" /&gt;</code> will be needed too, to avoid a NullPointerException.</li>
+</ul>
+<p>(reference: <a rel="nofollow" class="external text" href="https://github.com/anbox/anbox/issues/444">Github issue #444</a>)
+</p>
+<h3><span class="mw-headline" id="Getting_debugging_information">Getting debugging information</span></h3>
+<p>Obviously, it is helpful to have debugging symbols in the Anbox build. For that, when <a href="#Install_Anbox">compiling Anbox</a>, add <code>options=('!strip')</code> to the PKGBUILD, as by default they are removed. And, use either <code>-DCMAKE_BUILD_TYPE=RelWithDebInfo</code> or <code>-DCMAKE_BUILD_TYPE=Debug</code> in the cmake call.
+</p>
+<p>But there is more to it! Anbox uses <a rel="nofollow" class="external text" href="https://github.com/anbox/anbox/tree/master/external/backward-cpp">backward-cpp</a>. If you do not delete the build files for Anbox, it will print pretty stack traces when crashing, which point out the places in the source code.
+</p>
+<p>Also see the remarks in <a href="#Install_Anbox">Install Anbox</a>.
+</p>
+<h2><span class="mw-headline" id="Troubleshooting">Troubleshooting</span></h2>
+<p>If you run into issues, take a look at the official Issue Tracker: <a rel="nofollow" class="external autonumber" href="https://github.com/anbox/anbox/issues">[2]</a>
+</p>
+<h3><span class="mw-headline" id="Old_CPUs">Old CPUs</span></h3>
+<p>Anbox requires support for SSE 4.1/4.2 and SSSE 3, because Android wants that too.
+Some older CPUs do not provide that, so you probably cannot use Anbox, see:
+<a rel="nofollow" class="external text" href="https://github.com/anbox/anbox/issues/499#issuecomment-399118684">Anbox Github Issue 499</a>.
+</p>
+<h3><span class="mw-headline" id="Secure_Boot_error">Secure Boot error</span></h3>
+<p>If you get this error message:
+</p>
+<pre>modprobe: ERROR: could not insert 'ashmem_linux': Operation not permitted
+</pre>
+<p><a href="../en/Unified_Extensible_Firmware_Interface/Secure_Boot.html" class="mw-redirect" title="Secure Boot">Secure Boot</a> is likely blocking the module.
+You can either disable Secure Boot or sign the ashmem module yourself.
+</p>
+<p>More info can be found in the <a rel="nofollow" class="external text" href="https://github.com/anbox/anbox/blob/master/docs/install.md#on-ubuntu-1904-and-later">Anbox Github Docs</a>.
+</p>
+<h2><span class="mw-headline" id="See_also">See also</span></h2>
+<ul>
+<li><a rel="nofollow" class="external text" href="https://github.com/anbox/anbox">Official Anbox Github Repo</a></li>
+<li><a rel="nofollow" class="external text" href="https://anbox.io/">Anbox Website</a></li>
+<li><a rel="nofollow" class="external text" href="https://web.archive.org/web/20201107094826/https://mm.gravedo.de/blog/posts/2020-01-21-taking-the-anbox-journey-to-the-next-level/">Blog post by the main Anbox developer</a></li>
+<li><a rel="nofollow" class="external text" href="https://brauner.github.io/2019/01/09/android-binderfs.html">Explanation about binderfs</a></li>
+</ul>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface">
+<div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../Special:Categories.html" title="Special:Categories">Categories</a>: <ul>
+<li><a href="../en/Category:Virtualization.html" title="Category:Virtualization">Virtualization</a></li>
+<li><a href="../en/Category:Android.html" title="Category:Android">Android</a></li>
+</ul>
+</div>
+<div id="mw-hidden-catlinks" class="mw-hidden-catlinks mw-hidden-cats-hidden">Hidden categories: <ul>
+<li><a href="../en/Category:Pages_or_sections_flagged_with_Template:Accuracy.html" title="Category:Pages or sections flagged with Template:Accuracy">Pages or sections flagged with Template:Accuracy</a></li>
+<li><a href="../en/Category:Pages_with_broken_package_links.html" title="Category:Pages with broken package links">Pages with broken package links</a></li>
+</ul>
+</div>
+</div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=Anbox&amp;oldid=783249">https://wiki.archlinux.org/index.php?title=Anbox&amp;oldid=783249</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 16 July 2023, at 05:43.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

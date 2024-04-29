@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>Python celery - ArchWiki</title>
+<link rel="stylesheet" href="../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Python_celery rootpage-Python_celery skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Installation" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Installation">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Installation</div>
+			</a>
+			
+			<ul id="toc-Installation-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Configuration" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Configuration">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Configuration</div>
+			</a>
+			
+				<button aria-controls="toc-Configuration-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Configuration subsection
+				</button>
+			
+			<ul id="toc-Configuration-sublist" class="sidebar-toc-list">
+				<li id="toc-Celery" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Celery">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.1</span>Celery</div>
+			</a>
+			
+			<ul id="toc-Celery-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-RabbitMQ" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#RabbitMQ">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.2</span>RabbitMQ</div>
+			</a>
+			
+			<ul id="toc-RabbitMQ-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Security" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Security">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.3</span>Security</div>
+			</a>
+			
+			<ul id="toc-Security-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Example_task" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Example_task">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>Example task</div>
+			</a>
+			
+				<button aria-controls="toc-Example_task-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Example task subsection
+				</button>
+			
+			<ul id="toc-Example_task-sublist" class="sidebar-toc-list">
+				<li id="toc-Celery_application" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Celery_application">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.1</span>Celery application</div>
+			</a>
+			
+			<ul id="toc-Celery_application-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Test_run" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Test_run">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.2</span>Test run</div>
+			</a>
+			
+			<ul id="toc-Test_run-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Prepare_module_for_Celery_service" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Prepare_module_for_Celery_service">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.3</span>Prepare module for Celery service</div>
+			</a>
+			
+			<ul id="toc-Prepare_module_for_Celery_service-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Run_tasks_periodically" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Run_tasks_periodically">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.4</span>Run tasks periodically</div>
+			</a>
+			
+			<ul id="toc-Run_tasks_periodically-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../en/Python_celery.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="new mw-list-item"><a href="/index.php?title=Talk:Python_celery&amp;action=edit&amp;redlink=1" rel="discussion" title="Discussion about the content page (page does not exist) [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">English</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../en/Python_celery.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=Python_celery&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=Python_celery&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../en/Python_celery.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Python_celery&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Python_celery&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output">
+<p>Quoting authors of the <a rel="nofollow" class="external text" href="https://www.celeryproject.org/">project</a>: 
+</p>
+<dl><dd>Celery is "an asynchronous task queue/job queue based on distributed message passing. It is focused on real-time operation, but supports scheduling as well. (...) Tasks can execute asynchronously (in the background) or synchronously (wait until ready)."</dd></dl>
+<mw:tocplace></mw:tocplace>
+<h2><span class="mw-headline" id="Installation">Installation</span></h2>
+<p><a href="../en/Help:Reading.html#Installation_of_packages" class="mw-redirect" title="Install">Install</a> the package <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=python-celery">python-celery</a></span>. As with most python-based packages you get a package compatible with Python 3.x.
+</p>
+<p>Quoting <a rel="nofollow" class="external text" href="https://docs.celeryproject.org/en/latest/getting-started/first-steps-with-celery.html">Celery documentation</a>: "Celery requires a solution to send and receive messages" - one of the options is <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=rabbitmq">rabbitmq</a></span> which also can be installed from official repositories.
+</p>
+<h2><span class="mw-headline" id="Configuration">Configuration</span></h2>
+<h3><span class="mw-headline" id="Celery">Celery</span></h3>
+<p>For configuration files, the directory <code>/etc/celery/</code> needs to be created with a configuration file named <code><i>app</i>.conf</code> where <i>app</i> is the name of your application. An example configuration file is provided within <a rel="nofollow" class="external text" href="https://docs.celeryproject.org/en/latest/userguide/daemonizing.html#example-configuration">Celery documentation</a>.
+</p>
+<p><a href="../en/Help:Reading.html#Control_of_systemd_units" class="mw-redirect" title="Start/enable">Start/enable</a> the <code>celery@<i>app</i>.service</code>.
+</p>
+<p>To run celery in a virtualenv, make a copy of <code>celery@.service</code> in <code>/etc/systemd/system</code> so you can customize it, and change the paths of the celery binary to the copy in your virtualenv.
+</p>
+<h3><span class="mw-headline" id="RabbitMQ">RabbitMQ</span></h3>
+<p>RabbitMQ stores its configuration within <code>/etc/rabbitmq/rabbitmq-env.conf</code>
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/rabbitmq/rabbitmq-env.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">NODENAME=rabbit@rakieta
+NODE_IP_ADDRESS=0.0.0.0
+NODE_PORT=5672
+    
+LOG_BASE=/var/log/rabbitmq
+MNESIA_BASE=/var/lib/rabbitmq/mnesia</pre>
+<p>You probably want to replace <code>0.0.0.0</code> with <code>127.0.0.1</code>, RabbitMQ does not support Unix sockets. 
+</p>
+<p>For simple configurations, you may also want to add <code>HOME=/var/lib/rabbitmq</code>. Read more about environmental variables within <a rel="nofollow" class="external text" href="https://www.rabbitmq.com/configure.html">RabbitMQ docs</a>
+</p>
+<p><a href="../en/Help:Reading.html#Control_of_systemd_units" class="mw-redirect" title="Start/enable">Start/enable</a> <code>rabbitmq.service</code>. 
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> <code>rabbitmq-service</code> is being started as rabbitmq user with home folder stored within <code>/var/lib/rabbitmq</code> - you may want to make sure rabbitmq user owns this folder and all subfolders</div>
+<p>Follow <a rel="nofollow" class="external text" href="https://www.rabbitmq.com/access-control.html">RabbitMQ documentation</a> and add your user and virtual host:
+</p>
+<pre>$ cd /var/lib/rabbitmq
+$ su rabbitmq -c 'rabbitmqctl add_user myuser mypassword'
+$ su rabbitmq -c 'rabbitmqctl add_vhost myvhost'
+$ su rabbitmq -c 'rabbitmqctl set_user_tags myuser mytag'
+$ su rabbitmq -c 'rabbitmqctl set_permissions -p myvhost myuser ".*" ".*" ".*"'
+</pre>
+<p>Read the <a rel="nofollow" class="external text" href="https://www.rabbitmq.com/admin-guide.html#access-control">RabbitMQ admin guide</a> to understand the above.
+</p>
+<p>If issuing <code>su rabbitmq -c "rabbitmqctl status"</code> results in <code>badrpc,nodedown</code> visit <a rel="nofollow" class="external text" href="http://www.somic.org/2009/02/19/on-rabbitmqctl-and-badrpcnodedown/">this blog post</a> for more information how to fix the problem.
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> You may also want to run <code>su rabbitmq -c "erl"</code> and as a result you should get an erlang prompt with no errors</div>
+<h3><span class="mw-headline" id="Security">Security</span></h3>
+<p>You may want to read a security section from <a rel="nofollow" class="external text" href="https://docs.celeryproject.org/en/latest/userguide/security.html">relevant Celery documentation</a>
+</p>
+<h2><span class="mw-headline" id="Example_task">Example task</span></h2>
+<h3><span class="mw-headline" id="Celery_application">Celery application</span></h3>
+<p>Follow <a rel="nofollow" class="external text" href="https://docs.celeryproject.org/en/latest/getting-started/first-steps-with-celery.html#application">Celery documentation</a> to <a href="../en/Help:Reading.html#Append,_add,_create,_edit" class="mw-redirect" title="Create">create</a> a python sample task:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">test.py</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">from celery import Celery
+    
+    app = Celery('tasks', backend='amqp', broker='amqp://myuser:mypassword@localhost:5672/myvhost')
+    
+    @app.task
+    def add(x, y):
+        return x + y</pre>
+<p><code>amqp://myuser:mypassword@localhost:5672/myvhost
+</code>
+</p>
+<p>Use the same credentials/vhost you have created when configuring RabbitMQ
+</p>
+<p><code>backend='amqp'</code> - this parameter is optional since RabbitMQ is the default broker utilised by celery.
+</p>
+<h3><span class="mw-headline" id="Test_run">Test run</span></h3>
+<p>While in the same directory as your <code>test.py</code> you can run: 
+</p>
+<pre>$ celery -A task worker --loglevel=info
+</pre>
+<p>Then from another console (but within same directory) <a href="../en/Help:Reading.html#Append,_add,_create,_edit" class="mw-redirect" title="Create">create</a>: 
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">call.py</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">from test import add
+    
+    add.delay(4, 4)</pre>
+<p>Run it:
+</p>
+<pre>$ python call.py
+</pre>
+<p>First, the console should log some information suggesting worker was called:
+</p>
+<pre>Received task: task.add[f4aff99a-7477-44db-9f6e-7e0f9342cd4e]
+Task task.add[f4aff99a-7477-44db-9f6e-7e0f9342cd4e] succeeded in 0.0007182330009527504s: 8
+</pre>
+<h3><span class="mw-headline" id="Prepare_module_for_Celery_service">Prepare module for Celery service</span></h3>
+<p>Procedure below is slightly different than what you will find within <a rel="nofollow" class="external text" href="https://docs.celeryproject.org/en/latest/getting-started/next-steps.html#our-project">Celery documentation</a>
+</p>
+<p>To make the <code>test_task</code> module as root, <a href="../en/Help:Reading.html#Append,_add,_create,_edit" class="mw-redirect" title="Create">create</a> first the <code>/lib/python3.5/site-packages/test_task</code> directory, a blank <code>/lib/python3.5/site-packages/test_task/__init__.py</code> and the following files should be <a href="../en/Help:Reading.html#Append,_add,_create,_edit" class="mw-redirect" title="Create">created</a> inside of it: 
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/lib/python3.5/site-packages/test_task/celery.py</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">from __future__ import absolute_import
+
+from celery import Celery
+
+app = Celery('tasks', backend='amqp', broker='amqp://myuser:mypassword@localhost:5672/myvhost')
+
+if __name__ == '__main__':
+ app.start()</pre>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/lib/python3.5/site-packages/test_task/test_task.py</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">from __future__ import absolute_import
+
+from test_task.celery import app
+
+@app.task
+def add(x, y):
+ return x + y</pre>
+<p>At this point if you issue <code>python</code> in your console you should be able to issue following without any error:
+</p>
+<pre>&gt;&gt;&gt; from test_task import celery
+</pre>
+<p>In <code>/etc/celery/celery.conf</code> replace:
+</p>
+<pre>CELERY_APP="proj"
+</pre>
+<p>with the following line:
+</p>
+<pre>CELERY_APP="test_task"
+</pre>
+<p><a href="../en/Help:Reading.html#Control_of_systemd_units" class="mw-redirect" title="Restart">Restart</a> the <code>celery@<i>celery</i>.service</code>.
+</p>
+<h3><span class="mw-headline" id="Run_tasks_periodically">Run tasks periodically</span></h3>
+<p>Tasks can be ran periodicaly through Celery Beat, basic setup is described within relevant <a rel="nofollow" class="external text" href="https://docs.celeryproject.org/en/latest/userguide/periodic-tasks.html">Celery documentation pages</a>. An example: 
+</p>
+<p>If you want to specify <code>CELERYBEAT_SCHEDULE</code> within your <code>celery.py</code>, then you need to add the <code>app.conf</code> prefix to make celery recognise your scheduled tasks. After that you need to add the <code>--beat --schedule=/var/lib/celery/celerybeat-schedule</code> parameters when you start the celery daemon. Further, the <code>/var/lib/celery</code> directory must exist within the celery-relevant environment and be owned by the user that runs celery.
+</p>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="../en/Category:Development.html" title="Category:Development">Development</a></li></ul>
+</div></div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=Python_celery&amp;oldid=729864">https://wiki.archlinux.org/index.php?title=Python_celery&amp;oldid=729864</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 16 May 2022, at 12:37.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

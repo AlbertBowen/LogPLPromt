@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>Podman - ArchWiki</title>
+<link rel="stylesheet" href="../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Podman rootpage-Podman skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Installation" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#Installation">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Installation</div>
+			</a>
+			
+			<ul id="toc-Installation-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Configuration" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#Configuration">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Configuration</div>
+			</a>
+			
+				<button aria-controls="toc-Configuration-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Configuration subsection
+				</button>
+			
+			<ul id="toc-Configuration-sublist" class="sidebar-toc-list">
+				<li id="toc-Rootless_Podman" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Rootless_Podman">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.1</span>Rootless Podman</div>
+			</a>
+			
+			<ul id="toc-Rootless_Podman-sublist" class="sidebar-toc-list">
+				<li id="toc-Additional_dependencies" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Additional_dependencies">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.1.1</span>Additional dependencies</div>
+			</a>
+			
+			<ul id="toc-Additional_dependencies-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Enable_native_rootless_overlays" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Enable_native_rootless_overlays">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.1.2</span>Enable native rootless overlays</div>
+			</a>
+			
+			<ul id="toc-Enable_native_rootless_overlays-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Enable_kernel.unprivileged_userns_clone" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Enable_kernel.unprivileged_userns_clone">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.1.3</span>Enable kernel.unprivileged_userns_clone</div>
+			</a>
+			
+			<ul id="toc-Enable_kernel.unprivileged_userns_clone-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Set_subuid_and_subgid" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Set_subuid_and_subgid">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.1.4</span>Set subuid and subgid</div>
+			</a>
+			
+			<ul id="toc-Set_subuid_and_subgid-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Propagate_changes_to_subuid_and_subgid" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Propagate_changes_to_subuid_and_subgid">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.1.5</span>Propagate changes to subuid and subgid</div>
+			</a>
+			
+			<ul id="toc-Propagate_changes_to_subuid_and_subgid-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Add_SYS_CHROOT_capabilities_(Optional)" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Add_SYS_CHROOT_capabilities_(Optional)">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.1.6</span>Add SYS_CHROOT capabilities (Optional)</div>
+			</a>
+			
+			<ul id="toc-Add_SYS_CHROOT_capabilities_(Optional)-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Storage" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Storage">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.2</span>Storage</div>
+			</a>
+			
+			<ul id="toc-Storage-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Foreign_architectures" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Foreign_architectures">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.3</span>Foreign architectures</div>
+			</a>
+			
+			<ul id="toc-Foreign_architectures-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Docker_Compose" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Docker_Compose">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.4</span>Docker Compose</div>
+			</a>
+			
+			<ul id="toc-Docker_Compose-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-NVIDIA_GPUs" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#NVIDIA_GPUs">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.5</span>NVIDIA GPUs</div>
+			</a>
+			
+			<ul id="toc-NVIDIA_GPUs-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Images" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#Images">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>Images</div>
+			</a>
+			
+				<button aria-controls="toc-Images-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Images subsection
+				</button>
+			
+			<ul id="toc-Images-sublist" class="sidebar-toc-list">
+				<li id="toc-Arch_Linux" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Arch_Linux">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.1</span>Arch Linux</div>
+			</a>
+			
+			<ul id="toc-Arch_Linux-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Alpine_Linux" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Alpine_Linux">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.2</span>Alpine Linux</div>
+			</a>
+			
+			<ul id="toc-Alpine_Linux-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-CentOS" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#CentOS">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.3</span>CentOS</div>
+			</a>
+			
+			<ul id="toc-CentOS-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Debian" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Debian">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.4</span>Debian</div>
+			</a>
+			
+			<ul id="toc-Debian-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Troubleshooting" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#Troubleshooting">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4</span>Troubleshooting</div>
+			</a>
+			
+				<button aria-controls="toc-Troubleshooting-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Troubleshooting subsection
+				</button>
+			
+			<ul id="toc-Troubleshooting-sublist" class="sidebar-toc-list">
+				<li id="toc-Add_pause_to_process" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Add_pause_to_process">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.1</span>Add pause to process</div>
+			</a>
+			
+			<ul id="toc-Add_pause_to_process-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Container_DNS_will_not_be_enabled" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Container_DNS_will_not_be_enabled">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.2</span>Container DNS will not be enabled</div>
+			</a>
+			
+			<ul id="toc-Container_DNS_will_not_be_enabled-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Containers_terminate_on_shell_logout" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Containers_terminate_on_shell_logout">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.3</span>Containers terminate on shell logout</div>
+			</a>
+			
+			<ul id="toc-Containers_terminate_on_shell_logout-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Failed_to_move_rootless_netns" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Failed_to_move_rootless_netns">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.4</span>Failed to move rootless netns</div>
+			</a>
+			
+			<ul id="toc-Failed_to_move_rootless_netns-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Error_building_pause_image_after_Podman_upgrade_3.x_to_4.0" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Error_building_pause_image_after_Podman_upgrade_3.x_to_4.0">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.5</span>Error building pause image after Podman upgrade 3.x to 4.0</div>
+			</a>
+			
+			<ul id="toc-Error_building_pause_image_after_Podman_upgrade_3.x_to_4.0-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Error_on_commit_in_rootless_mode" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Error_on_commit_in_rootless_mode">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.6</span>Error on commit in rootless mode</div>
+			</a>
+			
+			<ul id="toc-Error_on_commit_in_rootless_mode-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Error_when_creating_a_container_with_bridge_network_in_rootless_mode" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Error_when_creating_a_container_with_bridge_network_in_rootless_mode">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.7</span>Error when creating a container with bridge network in rootless mode</div>
+			</a>
+			
+			<ul id="toc-Error_when_creating_a_container_with_bridge_network_in_rootless_mode-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-No_image_found" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#No_image_found">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.8</span>No image found</div>
+			</a>
+			
+			<ul id="toc-No_image_found-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Permission_denied:_OCI_permission_denied" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Permission_denied:_OCI_permission_denied">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.9</span>Permission denied: OCI permission denied</div>
+			</a>
+			
+			<ul id="toc-Permission_denied:_OCI_permission_denied-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Pushing_images_to_Docker_Hub:_access_denied/authentication_required" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Pushing_images_to_Docker_Hub:_access_denied/authentication_required">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.10</span>Pushing images to Docker Hub: access denied/authentication required</div>
+			</a>
+			
+			<ul id="toc-Pushing_images_to_Docker_Hub:_access_denied/authentication_required-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id='toc-WARN[0000]_"/"_is_not_a_shared_mount,_this_could_cause_issues_or_missing_mounts_with_rootless_containers' class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href='#WARN[0000]_"/"_is_not_a_shared_mount,_this_could_cause_issues_or_missing_mounts_with_rootless_containers'>
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.11</span>WARN[0000] "/" is not a shared mount, this could cause issues or missing mounts with rootless containers</div>
+			</a>
+			
+			<ul id='toc-WARN[0000]_"/"_is_not_a_shared_mount,_this_could_cause_issues_or_missing_mounts_with_rootless_containers-sublist' class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Containers_with_restart_policy_do_not_start_automatically" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Containers_with_restart_policy_do_not_start_automatically">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.12</span>Containers with restart policy do not start automatically</div>
+			</a>
+			
+			<ul id="toc-Containers_with_restart_policy_do_not_start_automatically-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-See_also" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#See_also">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5</span>See also</div>
+			</a>
+			
+			<ul id="toc-See_also-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../en/Podman.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="mw-list-item"><a href="../en/Talk:Podman.html" rel="discussion" title="Discussion about the content page [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">English</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../en/Podman.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=Podman&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=Podman&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../en/Podman.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Podman&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Podman&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output">
+<div class="archwiki-template-meta-related-articles-start">
+<p class="mw-no-invert">Related articles</p>
+<ul>
+<li><a href="../en/Systemd-nspawn.html" title="Systemd-nspawn">systemd-nspawn</a></li>
+<li><a href="../en/Linux_Containers.html" title="Linux Containers">Linux Containers</a></li>
+<li><a href="../en/Docker.html" title="Docker">Docker</a></li>
+<li><a href="../en/Buildah.html" title="Buildah">Buildah</a></li>
+<li><a href="../en/Vagrant.html" title="Vagrant">Vagrant</a></li>
+</ul>
+</div>
+<p>Podman is an alternative to <a href="../en/Docker.html" title="Docker">Docker</a>, providing a similar interface. It supports rootless containers and a shim service for <i>docker-compose</i>.
+</p>
+<mw:tocplace></mw:tocplace>
+<h2><span class="mw-headline" id="Installation">Installation</span></h2>
+<p><a href="../en/Help:Reading.html#Installation_of_packages" class="mw-redirect" title="Install">Install</a> the <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=podman">podman</a></span> package. Additionally if you want to build container images look at <a href="../en/Buildah.html" title="Buildah">Buildah</a>.
+</p>
+<p>For container networking, install <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=cni-plugins">cni-plugins</a></span> or <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=netavark">netavark</a></span> since v4.0.
+</p>
+<p>If you want to replace <a href="../en/Docker.html" title="Docker">Docker</a>, one can install <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=podman-docker">podman-docker</a></span> to mimic the docker binary along with man pages. 
+</p>
+<p>Unlike <a href="../en/Docker.html" title="Docker">Docker</a>, Podman does not require a daemon, but there is one providing an API for services like <a href="../en/Cockpit.html" title="Cockpit">cockpit</a> via <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=cockpit-podman">cockpit-podman</a></span>.
+</p>
+<p>By default, it is only possible to run Podman containers as root. See <a href="#Rootless_Podman">#Rootless Podman</a> to set up running containers as a non-root user.
+</p>
+<h2><span class="mw-headline" id="Configuration">Configuration</span></h2>
+<p>Configuration files for configuring how containers behave are located at <code>/usr/share/containers/</code>. You must copy necessary files to <code>/etc/containers</code> before editing. To configure the network bridge interface used by Podman, see <code>/etc/cni/net.d/87-podman.conflist</code>.
+</p>
+<h3><span class="mw-headline" id="Rootless_Podman">Rootless Podman</span></h3>
+<div class="archwiki-template-box archwiki-template-box-warning">
+<strong>Warning:</strong> Rootless Podman relies on the unprivileged user namespace usage (<code>CONFIG_USER_NS_UNPRIVILEGED</code>) which has some serious security implications, see <a href="../en/Security.html#Sandboxing_applications" title="Security">Security#Sandboxing applications</a> for details.</div>
+<p>By default, only <code>root</code> is allowed to run containers (or namespaces in kernelspeak). Running rootless Podman improves security as an attacker will not have root privileges over your system, and also allows multiple unprivileged users to run containers on the same machine. See also <span class="plainlinks archwiki-template-man" title="$ man 1 podman"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/podman.1#Rootless_mode">podman(1) § Rootless mode</a></span>.
+</p>
+<h4><span class="mw-headline" id="Additional_dependencies">Additional dependencies</span></h4>
+<p>The <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=slirp4netns">slirp4netns</a></span> package is installed as a dependency to run Podman in a <a rel="nofollow" class="external text" href="https://github.com/containers/podman/blob/main/docs/tutorials/rootless_tutorial.md">rootless environment</a>.
+</p>
+<p>If Podman uses the <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=netavark">netavark</a></span> network backend (see <span class="plainlinks archwiki-template-man" title="$ man 5 containers.conf"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/containers.conf.5">containers.conf(5)</a></span>) then it is required to install <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=aardvark-dns">aardvark-dns</a></span> to have name resolution in rootless containers.
+</p>
+<h4><span class="mw-headline" id="Enable_native_rootless_overlays">Enable native rootless overlays</span></h4>
+<p>Previously, it was necessary to use the <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=fuse-overlayfs">fuse-overlayfs</a></span> package for <a href="../en/FUSE.html" title="FUSE">FUSE</a> overlay mounts in a rootless environment. However, modern versions of Podman and Linux kernel <a rel="nofollow" class="external text" href="https://www.redhat.com/sysadmin/podman-rootless-overlay">support</a> <i>native</i> rootless overlays, which yields better performance. To migrate from <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=fuse-overlayfs">fuse-overlayfs</a></span>, run
+</p>
+<pre>$ podman system reset
+</pre>
+<p>This command will unfortunately delete all pulled containers. Also make sure that Podman uses <code>overlay</code> driver and that the <code>mount_program</code> parameter is not defined in <span class="plainlinks archwiki-template-man" title="$ man 5 containers-storage.conf"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/containers-storage.conf.5">containers-storage.conf(5)</a></span>. It might also be required to follow instructions from <a href="../en/Docker.html#Enable_native_overlay_diff_engine" title="Docker">Docker#Enable native overlay diff engine</a>.
+</p>
+<p>To verify that native rootless overlays are enabled, run 
+</p>
+<pre>$ podman info
+</pre>
+<p>It should show <code>graphDriverName: overlay</code> and <code>Native Overlay Diff: "true"</code>.
+</p>
+<h4><span class="mw-headline" id="Enable_kernel.unprivileged_userns_clone">Enable kernel.unprivileged_userns_clone</span></h4>
+<p>First, check the value of <code>kernel.unprivileged_userns_clone</code> by running:
+</p>
+<pre>$ sysctl kernel.unprivileged_userns_clone
+</pre>
+<p>If it is currently set to <code>0</code>, enable it by setting <code>1</code> via <a href="../en/Sysctl.html" title="Sysctl">sysctl</a> or a <a href="../en/Kernel_parameters.html" class="mw-redirect" title="Kernel parameter">kernel parameter</a>.
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=linux-hardened">linux-hardened</a></span> has <code>kernel.unprivileged_userns_clone</code> set to <code>0</code> by default.</div>
+<h4><span class="mw-headline" id="Set_subuid_and_subgid">Set subuid and subgid</span></h4>
+<p>In order for users to run rootless Podman, a <span class="plainlinks archwiki-template-man" title="$ man 5 subuid"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/subuid.5">subuid(5)</a></span> and <span class="plainlinks archwiki-template-man" title="$ man 5 subgid"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/subgid.5">subgid(5)</a></span> configuration entry must exist for each user that wants to use it. New <a href="../en/Users_and_groups.html" class="mw-redirect" title="Users">users</a> created using <span class="plainlinks archwiki-template-man" title="$ man 8 useradd"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/useradd.8">useradd(8)</a></span> have these entries by default.
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> 
+<ul><li>Users created prior to <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=shadow">shadow</a></span> <code>4.11.1-3</code> do not have entries in <code>/etc/subuid</code> and <code>/etc/subgid</code> by default. An entry can be created for them using the <span class="plainlinks archwiki-template-man" title="$ man 8 usermod"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/usermod.8">usermod(8)</a></span> command or by manually modifying the files.</li></ul>
+<dl>
+<dd>The following command enables the <code><i>username</i></code> user and group to run Podman containers (or other types of containers in that case). It allocates a given range of UIDs and GIDs to the given user and group.</dd>
+<dd><pre># usermod --add-subuids 100000-165535 --add-subgids 100000-165535 <i>username</i></pre></dd>
+<dd>The above range for the user <code><i>username</i></code> may already be taken by another user as it defines the default range for the first user on the system. If in doubt, first consult the <code>/etc/subuid</code> and <code>/etc/subgid</code> files to find the already reserved ranges.</dd>
+</dl>
+<ul>
+<li>Many images require 65536 uids / gids for mapping (notably the base busybox and alpine images). It is recommended that you allocate at least that many uids / gids for each user to maximize compatibility with docker.</li>
+<li>If you are using <a href="../en/Systemd-homed.html" title="Systemd-homed">systemd-homed</a>, the minimum UID and GID for containers must be at least 524288 (check the "begin container users" value in the output of <code>userdbctl</code>). <a rel="nofollow" class="external autonumber" href="https://www.reddit.com/r/podman/comments/uwgkb1/tip_systemdhomed_with_rootless_subuidsubgid/">[1]</a>
+</li>
+</ul>
+</div>
+<h4><span class="mw-headline" id="Propagate_changes_to_subuid_and_subgid">Propagate changes to subuid and subgid</span></h4>
+<p>Rootless Podman uses a pause process to keep the unprivileged namespaces alive. This prevents any change to the <code>/etc/subuid</code> and <code>/etc/subgid</code> files from being propagated to the rootless containers while the pause process is running. For these changes to be propagated it is necessary to run:
+</p>
+<pre>$ podman system migrate
+</pre>
+<p>After this, the user/group specified in the above files is able to start and run Podman containers.
+</p>
+<h4>
+<span id="Add_SYS_CHROOT_capabilities_.28Optional.29"></span><span class="mw-headline" id="Add_SYS_CHROOT_capabilities_(Optional)">Add SYS_CHROOT capabilities (Optional)</span>
+</h4>
+<p>Starting at the 4.4 release, some previously default capabilities were dropped, including <code>SYS_CHROOT</code> (explained in an <a rel="nofollow" class="external text" href="https://blog.podman.io/2022/12/dropping-capabilities-making-containers-more-secure/">official blog post</a>). This affects containers which use chroot (like <i>archlinux:base</i>) and thus pacman operations fail within the container (i.e. installing packages which execute post-install scripts). You can identify such issues if when building with podman you get errors like below during build: 
+</p>
+<pre>...
+could not change the root directory (Operation not permitted)
+error: command failed to execute correctly
+...
+</pre>
+<p>To resolve this, edit <code>/etc/containers/containers.conf</code> and add the <code>SYS_CHROOT</code> to the list: 
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/containers/containers.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">default_capabilities = [
+  "CHOWN",
+  "DAC_OVERRIDE",
+  "FOWNER",
+  "FSETID",
+  "KILL",
+  "NET_BIND_SERVICE",
+  "SETFCAP",
+  "SETGID",
+  "SETPCAP",
+  "SETUID",
+  "SYS_CHROOT",
+]</pre>
+<p>You can also do it from the command line temporarily with <code>--cap-add sys_chroot</code> when you execute <span class="plainlinks archwiki-template-man" title="$ man 1 podman-build"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/podman-build.1">podman-build(1)</a></span>.
+</p>
+<h3><span class="mw-headline" id="Storage">Storage</span></h3>
+<p>The configuration for how and where container images and instances are stored takes place in <code>/etc/containers/storage.conf</code>.
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> When using <a href="#Rootless_Podman">#Rootless Podman</a> overrides to the storage settings can be added to <code>$XDG_CONFIG_HOME/containers/storage.conf</code> on a per-user basis.</div>
+<p>Set the <code>driver</code> according to the filesystem in use for the storage location (see <span class="plainlinks archwiki-template-man" title="$ man 5 containers-storage.conf"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/containers-storage.conf.5#STORAGE_TABLE">containers-storage.conf(5) § STORAGE_TABLE</a></span>).
+</p>
+<h3><span class="mw-headline" id="Foreign_architectures">Foreign architectures</span></h3>
+<p>Podman is able to run images built for different CPU architecture than the host using the <a href="https://en.wikipedia.org/wiki/binfmt_misc" class="extiw" title="wikipedia:binfmt misc">Wikipedia:binfmt_misc</a> system.
+</p>
+<p>To enable it, install <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=qemu-user-static">qemu-user-static</a></span> and <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=qemu-user-static-binfmt">qemu-user-static-binfmt</a></span>.
+</p>
+<p><a href="../en/Systemd.html" title="Systemd">systemd</a> comes with the <code>systemd-binfmt.service</code> service which should enable new rules.
+</p>
+<p>Verify that binfmt rules have been added:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">$ ls /proc/sys/fs/binfmt_misc</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">DOSWin        qemu-cris        qemu-ppc      qemu-sh4eb        status
+qemu-aarch64  qemu-m68k        qemu-ppc64    qemu-sparc        
+qemu-alpha    qemu-microblaze  qemu-riscv64  qemu-sparc32plus  
+qemu-arm      qemu-mips        qemu-s390x    qemu-sparc64      
+qemu-armeb    qemu-mipsel      qemu-sh4      register
+</pre>
+<p>Podman should now be able to run foreign architecture images. Most commands use the foreign architecture when <code>--arch</code> option is passed.
+</p>
+<p>Example:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;"># podman run --arch arm64 'docker.io/alpine:latest' arch</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">aarch64
+</pre>
+<h3><span class="mw-headline" id="Docker_Compose">Docker Compose</span></h3>
+<p>Podman 3.0.0 introduces <i>docker-compose</i> support. This requires enabling a Podman socket which pretends to be docker; <a href="../en/Help:Reading.html#Control_of_systemd_units" class="mw-redirect" title="Start">start</a> the <code>podman.service</code> unit. For rootless containers, this requires you to <a href="../en/Help:Reading.html#Control_of_systemd_units" class="mw-redirect" title="Start">start</a> the <code>podman.service</code> <a href="../en/Systemd/User.html" class="mw-redirect" title="User unit">user unit</a> instead and set the <code>DOCKER_HOST</code> variable:
+</p>
+<pre>$ export DOCKER_HOST="unix://$XDG_RUNTIME_DIR/podman/podman.sock"
+</pre>
+<p>To get hostname resolution between containers running install <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=podman-dnsname">podman-dnsname</a></span>.
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> If you have enabled buildkit in docker, the integration will not work. You need to disable buildkit:
+ $ export DOCKER_BUILDKIT=0</div>
+<h3><span class="mw-headline" id="NVIDIA_GPUs">NVIDIA GPUs</span></h3>
+<p><a rel="nofollow" class="external text" href="https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html#podman">NVIDIA Container Toolkit</a> provides container runtime for NVIDIA GPUs. Install the <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/nvidia-container-toolkit/">nvidia-container-toolkit</a></span><sup><small>AUR</small></sup> package.
+</p>
+<p>Test the setup:
+</p>
+<pre>$ podman run --rm nvidia/cuda:12.0.0-runtime-ubuntu20.04 nvidia-smi
+</pre>
+<p>To be able to run rootless containers with podman, the <code>no-cgroups</code> setting must be set to <code>true</code> in <code>/etc/nvidia-container-runtime/config.toml</code>.
+</p>
+<h2><span class="mw-headline" id="Images">Images</span></h2>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> You may omit the registry prefix from the images, as Podman will automatically search for the image in all registries defined in <code>/etc/containers/registries.conf</code> at <code>unqualified-search-registries</code> in the defined order. The following images will always contain the prefix, to allow for configurations without <code>docker.io</code> in the configuration.</div>
+<h3><span class="mw-headline" id="Arch_Linux">Arch Linux</span></h3>
+<p>The following command pulls the <a rel="nofollow" class="external text" href="https://hub.docker.com/_/archlinux/">Arch Linux</a> x86_64 image from <a rel="nofollow" class="external text" href="https://hub.docker.com/">Docker Hub</a>.
+</p>
+<pre># podman pull docker.io/archlinux
+</pre>
+<p>See the Docker Hub page for a full list of available tags, including versions with and without build tools.
+</p>
+<p>See also <a rel="nofollow" class="external text" href="https://gitlab.archlinux.org/archlinux/archlinux-docker/blob/master/README.md">README.md</a>.
+</p>
+<h3><span class="mw-headline" id="Alpine_Linux">Alpine Linux</span></h3>
+<p><a rel="nofollow" class="external text" href="https://www.alpinelinux.org/">Alpine Linux</a> is a popular choice for small container images, especially for software compiled as static binaries. The following command pulls the latest Alpine Linux image from <a rel="nofollow" class="external text" href="https://hub.docker.com/">Docker Hub</a>:
+</p>
+<pre># podman pull docker.io/alpine
+</pre>
+<p>Alpine Linux uses the <a rel="nofollow" class="external text" href="https://musl.libc.org/">musl</a> libc implementation instead of the <a rel="nofollow" class="external text" href="https://www.gnu.org/software/libc/">glibc</a> libc implementation used by most Linux distributions. Because Arch Linux uses glibc, there are a number of functional differences between an Arch Linux host and an Alpine Linux container that can impact the performance and correctness of software. A list of these differences is documented in <a rel="nofollow" class="external free" href="https://wiki.musl-libc.org/functional-differences-from-glibc.html">https://wiki.musl-libc.org/functional-differences-from-glibc.html</a>.
+</p>
+<p>Note that dynamically linked software built on Arch Linux (or any other system using glibc) may have bugs and performance problems when run on Alpine Linux (or any other system using a different libc). See <a rel="nofollow" class="external autonumber" href="https://bugs.python.org/issue32307">[2]</a>, <a rel="nofollow" class="external autonumber" href="https://superuser.com/questions/1219609/why-is-the-alpine-docker-image-over-50-slower-than-the-ubuntu-image">[3]</a> and <a rel="nofollow" class="external autonumber" href="https://pythonspeed.com/articles/alpine-docker-python">[4]</a> for examples.
+</p>
+<h3><span class="mw-headline" id="CentOS">CentOS</span></h3>
+<p>The following command pulls the latest <a rel="nofollow" class="external text" href="https://hub.docker.com/_/centos">CentOS</a> image from <a rel="nofollow" class="external text" href="https://hub.docker.com/">Docker Hub</a>:
+</p>
+<pre># podman pull docker.io/centos
+</pre>
+<p>See the Docker Hub page for a full list of available tags for each CentOS release.
+</p>
+<h3><span class="mw-headline" id="Debian">Debian</span></h3>
+<p>The following command pulls the latest <a rel="nofollow" class="external text" href="https://hub.docker.com/_/debian">Debian</a> image from <a rel="nofollow" class="external text" href="https://hub.docker.com/">Docker Hub</a>:
+</p>
+<pre># podman pull docker.io/debian
+</pre>
+<p>See the Docker Hub page for a full list of available tags, including both standard and slim versions for each Debian release.
+</p>
+<h2><span class="mw-headline" id="Troubleshooting">Troubleshooting</span></h2>
+<h3><span class="mw-headline" id="Add_pause_to_process">Add pause to process</span></h3>
+<pre>WARN[0000] Failed to add pause process to systemd sandbox cgroup: Process org.freedesktop.systemd1 exited with status 1 
+</pre>
+<p>Can be solved using: <a rel="nofollow" class="external free" href="https://github.com/containers/crun/issues/704">https://github.com/containers/crun/issues/704</a>
+</p>
+<pre># echo +cpu +cpuset +io +memory +pids &gt; /sys/fs/cgroup/cgroup.subtree_control
+</pre>
+<h3><span class="mw-headline" id="Container_DNS_will_not_be_enabled">Container DNS will not be enabled</span></h3>
+<pre>WARN[0000]  binary not found, container DNS will not be enabled
+</pre>
+<p>When using <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=netavark">netavark</a></span> as the podman network backend, you need to install <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=aardvark-dns">aardvark-dns</a></span>.
+</p>
+<h3><span class="mw-headline" id="Containers_terminate_on_shell_logout">Containers terminate on shell logout</span></h3>
+<p>After logging out from machine, Podman containers are stopped for some users. To prevent that, <a href="../en/Systemd/User.html#Automatic_start-up_of_systemd_user_instances" title="Systemd/User">enable lingering</a> for users running containers.
+</p>
+<p>You can also create user systemd unit as described in <span class="plainlinks archwiki-template-man" title="$ man 1 podman-auto-update"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/podman-auto-update.1#EXAMPLES">podman-auto-update(1) § EXAMPLES</a></span>.
+</p>
+<h3><span class="mw-headline" id="Failed_to_move_rootless_netns">Failed to move rootless netns</span></h3>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">$ docker-compose up</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">ERRO[0000] failed to move the rootless netns slirp4netns process to the systemd user.slice: Process org.freedesktop.systemd1 exited with status 1
+</pre>
+<p>Can be solved by <a href="../en/Help:Reading.html#Control_of_systemd_units" class="mw-redirect" title="Starting/enabling">starting/enabling</a> <code>podman.service</code>.
+</p>
+<h3><span class="mw-headline" id="Error_building_pause_image_after_Podman_upgrade_3.x_to_4.0">Error building pause image after Podman upgrade 3.x to 4.0</span></h3>
+<pre>Error: building local pause image: finding pause binary: exec: "catatonit": executable file not found in $PATH
+</pre>
+<p><a href="../en/Help:Reading.html#Installation_of_packages" class="mw-redirect" title="Install">Install</a> the <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=catatonit">catatonit</a></span> package to fix the error.
+</p>
+<p>For details on upgrading from 3.x to 4.0, see the official <a rel="nofollow" class="external text" href="https://podman.io/blogs/2022/02/04/network-usage.html">blog article</a><sup title="Last check status: 404">[<a href="https://en.wikipedia.org/wiki/Wikipedia:Link_rot" class="extiw" title="wikipedia:Wikipedia:Link rot">dead link</a> 2023-05-06 ⓘ]</sup>. 
+</p>
+<h3><span class="mw-headline" id="Error_on_commit_in_rootless_mode">Error on commit in rootless mode</span></h3>
+<pre>Error committing the finished image: error adding layer with blob "sha256:02823fca9b5444c196f1f406aa235213254af9909fca270f462e32793e2260d8": Error processing tar file(exit status 1) permitted operation
+</pre>
+<p>Check that the storage driver is overlay in the <a href="#Storage">storage configuration</a>.
+</p>
+<h3><span class="mw-headline" id="Error_when_creating_a_container_with_bridge_network_in_rootless_mode">Error when creating a container with bridge network in rootless mode</span></h3>
+<p>If you are using <a href="../en/AppArmor.html" title="AppArmor">AppArmor</a> you might end up with problems when creating container using a bridge network with the <code>dnsname</code> plugin enabled:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">$ podman network create foo</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">/home/<i>user</i>/.config/cni/net.d/foo.conflist
+</pre>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">$ podman run --rm -it --network=foo docker.io/library/alpine:latest ip addr</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">Error: command rootless-cni-infra [alloc 89398a9315256cb1938075c377275d29c2b6ebdd75a96b5c26051a89541eb928 foo festive_hofstadter    ] in container 1f4344bbd1087c892a18bacc35f4fdafbb61106c146952426488bc940a751efe failed with status 1, stdout="", stderr="exit status 3\n"</pre>
+<p>This can be solved by adding the following lines to <code>/etc/apparmor.d/local/usr.sbin.dnsmasq</code>:
+</p>
+<pre>owner /run/user/[0-9]*/containers/cni/dnsname/*/dnsmasq.conf r,
+owner /run/user/[0-9]*/containers/cni/dnsname/*/addnhosts r,
+owner /run/user/[0-9]*/containers/cni/dnsname/*/pidfile rw,
+</pre>
+<p>And then reloading the AppArmor profile:
+</p>
+<pre># apparmor_parser -R /etc/apparmor.d/usr.sbin.dnsmasq
+# apparmor_parser /etc/apparmor.d/usr.sbin.dnsmasq
+</pre>
+<h3><span class="mw-headline" id="No_image_found">No image found</span></h3>
+<p>By default, the registry list is not populated as the files in the package come from upstream. This means that by default, trying to pull any image without specifying the registry will result in an error similar to the following:
+</p>
+<pre>Error: short-name "archlinux" did not resolve to an alias and no unqualified-search registries are defined in "/etc/containers/registries.conf"
+</pre>
+<p>A starting configuration could be the following:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/containers/registries.conf.d/00-unqualified-search-registries.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">unqualified-search-registries = ["docker.io"]</pre>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/containers/registries.conf.d/01-registries.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">[[registry]]
+location = "docker.io"
+</pre>
+<p>This is equivalent to the default docker configuration.
+</p>
+<p>A less convenient alternative, but having a higher compatibility with systems without configured shortnames, use the full registry path in the <code>Containerfile</code> or <code>Dockerfile</code>.
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">Containerfile</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">FROM docker.io/archlinux/archlinux
+</pre>
+<h3><span class="mw-headline" id="Permission_denied:_OCI_permission_denied">Permission denied: OCI permission denied</span></h3>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">$ podman exec openvas_openvas_1 bash</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">Error: crun: writing file `/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/user.slice/libpod-b3e8048a9b91e43c214b4d850ac7132155a684d6502e12e22ceb6f73848d117a.scope/container/cgroup.procs`: Permission denied: OCI permission denied
+</pre>
+<p>Can be solved: <a rel="nofollow" class="external text" href="https://bbs.archlinux.org/viewtopic.php?id=253966">BBS#253966</a>
+</p>
+<pre>$ env DBUS_SESSION_BUS_ADDRESS= podman ...
+$ env DBUS_SESSION_BUS_ADDRESS= podman-compose ...
+</pre>
+<h3>
+<span id="Pushing_images_to_Docker_Hub:_access_denied.2Fauthentication_required"></span><span class="mw-headline" id="Pushing_images_to_Docker_Hub:_access_denied/authentication_required">Pushing images to Docker Hub: access denied/authentication required</span>
+</h3>
+<p>When using <code>podman push</code> to push container images to Docker Hub, the following errors could occur: <code>Requested access to the resource is denied</code> or <code>Authentication required</code>. The following hints can help to fix potential issues: 
+</p>
+<ul>
+<li>Tag the local image: <pre># podman tag &lt;localImage&gt; docker.io/&lt;dockerHubUsername&gt;/&lt;dockerHubRepository&gt;:&lt;Tag&gt;</pre>
+</li>
+<li>Push the tagged image: <pre># podman push docker.io/&lt;dockerHubUsername&gt;/&lt;dockerHubRepository&gt;:&lt;Tag&gt; docker://docker.io/&lt;dockerHubUsername&gt;/&lt;dockerHubRepository&gt;:&lt;Tag&gt;</pre>
+</li>
+<li>Login to docker.io, the Docker Hub repository and Docker Hub Registry server:</li>
+</ul>
+<dl><dd><pre># podman login -u &lt;DockerHubUsername&gt; -p &lt;DockerHubPassword&gt; registry-1.docker.io
+# podman login -u &lt;DockerHubUsername&gt; -p &lt;DockerHubPassword&gt; docker.io/&lt;dockerHubUsername&gt;/&lt;dockerHubRepository&gt;
+# podman login -u &lt;DockerHubUsername&gt; -p &lt;DockerHubPassword&gt; docker.io
+</pre></dd></dl>
+<ul>
+<li>Logout from all registries before the login, e.g., <pre># podman logout --all</pre>
+</li>
+<li>Add <code>&lt;dockerHubUsername&gt;</code> as collaborator in the Docker Hub Collaborators tab of the repository</li>
+</ul>
+<h3>
+<span id="WARN.5B0000.5D_.22.2F.22_is_not_a_shared_mount.2C_this_could_cause_issues_or_missing_mounts_with_rootless_containers"></span><span class="mw-headline" id='WARN[0000]_"/"_is_not_a_shared_mount,_this_could_cause_issues_or_missing_mounts_with_rootless_containers'>WARN[0000] "/" is not a shared mount, this could cause issues or missing mounts with rootless containers</span>
+</h3>
+<p>Buildah/Podman running as rootless expects the bind mount to be shared, check if it is set to private:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">$ findmnt -o PROPAGATION /</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">PROPAGATION
+private
+</pre>
+<p>In this case see <span class="plainlinks archwiki-template-man" title="$ man 8 mount"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/mount.8#Shared_subtree_operations">mount(8) § Shared_subtree_operations</a></span> and set <b>temporarily</b> the mount as shared with:
+</p>
+<pre># mount --make-shared /
+</pre>
+<p>To set it <b>permanently</b> edit <a href="../en/Fstab.html#Usage" title="Fstab">/etc/fstab</a> and add the <i>shared</i> option to the desired mount and reboot. It will result in a entry like:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/fstab</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;"># &lt;device&gt;                                &lt;dir&gt; &lt;type&gt; &lt;options&gt; &lt;dump&gt; &lt;fsck&gt;
+UUID=0a3407de-014b-458b-b5c1-848e92a327a3 /     ext4   defaults,shared   0      1</pre>
+<h3><span class="mw-headline" id="Containers_with_restart_policy_do_not_start_automatically">Containers with restart policy do not start automatically</span></h3>
+<p><a href="../en/Help:Reading.html#Control_of_systemd_units" class="mw-redirect" title="Start/enable">Start/enable</a> <code>podman-restart.service</code>.
+</p>
+<h2><span class="mw-headline" id="See_also">See also</span></h2>
+<ul><li><a rel="nofollow" class="external text" href="https://podman.io/">Official website</a></li></ul>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface">
+<div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../Special:Categories.html" title="Special:Categories">Categories</a>: <ul>
+<li><a href="../en/Category:Virtualization.html" title="Category:Virtualization">Virtualization</a></li>
+<li><a href="../en/Category:Sandboxing.html" title="Category:Sandboxing">Sandboxing</a></li>
+</ul>
+</div>
+<div id="mw-hidden-catlinks" class="mw-hidden-catlinks mw-hidden-cats-hidden">Hidden category: <ul><li><a href="../en/Category:Pages_with_dead_links.html" title="Category:Pages with dead links">Pages with dead links</a></li></ul>
+</div>
+</div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=Podman&amp;oldid=781980">https://wiki.archlinux.org/index.php?title=Podman&amp;oldid=781980</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 26 June 2023, at 06:40.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

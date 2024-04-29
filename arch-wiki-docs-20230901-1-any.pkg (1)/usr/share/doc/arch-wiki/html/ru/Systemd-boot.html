@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>systemd-boot (Русский) - ArchWiki</title>
+<link rel="stylesheet" href="../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Systemd-boot_Русский rootpage-Systemd-boot_Русский skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Установка" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Установка</div>
+			</a>
+			
+				<button aria-controls="toc-Установка-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Установка subsection
+				</button>
+			
+			<ul id="toc-Установка-sublist" class="sidebar-toc-list">
+				<li id="toc-Загрузка_в_режиме_EFI" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#%D0%97%D0%B0%D0%B3%D1%80%D1%83%D0%B7%D0%BA%D0%B0_%D0%B2_%D1%80%D0%B5%D0%B6%D0%B8%D0%BC%D0%B5_EFI">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.1</span>Загрузка в режиме EFI</div>
+			</a>
+			
+			<ul id="toc-Загрузка_в_режиме_EFI-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Загрузка_в_режиме_BIOS" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#%D0%97%D0%B0%D0%B3%D1%80%D1%83%D0%B7%D0%BA%D0%B0_%D0%B2_%D1%80%D0%B5%D0%B6%D0%B8%D0%BC%D0%B5_BIOS">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.2</span>Загрузка в режиме BIOS</div>
+			</a>
+			
+			<ul id="toc-Загрузка_в_режиме_BIOS-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Обновлениe" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#%D0%9E%D0%B1%D0%BD%D0%BE%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8e">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.3</span>Обновлениe</div>
+			</a>
+			
+			<ul id="toc-Обновлениe-sublist" class="sidebar-toc-list">
+				<li id="toc-Вручную" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#%D0%92%D1%80%D1%83%D1%87%D0%BD%D1%83%D1%8E">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.3.1</span>Вручную</div>
+			</a>
+			
+			<ul id="toc-Вручную-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Автоматически" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#%D0%90%D0%B2%D1%82%D0%BE%D0%BC%D0%B0%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.3.2</span>Автоматически</div>
+			</a>
+			
+			<ul id="toc-Автоматически-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Настройка" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#%D0%9D%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Настройка</div>
+			</a>
+			
+				<button aria-controls="toc-Настройка-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Настройка subsection
+				</button>
+			
+			<ul id="toc-Настройка-sublist" class="sidebar-toc-list">
+				<li id="toc-Базовая_настройка" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#%D0%91%D0%B0%D0%B7%D0%BE%D0%B2%D0%B0%D1%8F_%D0%BD%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.1</span>Базовая настройка</div>
+			</a>
+			
+			<ul id="toc-Базовая_настройка-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Добавление_загрузочных_записей" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#%D0%94%D0%BE%D0%B1%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5_%D0%B7%D0%B0%D0%B3%D1%80%D1%83%D0%B7%D0%BE%D1%87%D0%BD%D1%8B%D1%85_%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D0%B5%D0%B9">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.2</span>Добавление загрузочных записей</div>
+			</a>
+			
+			<ul id="toc-Добавление_загрузочных_записей-sublist" class="sidebar-toc-list">
+				<li id="toc-Установки_со_стандартной_корневой_директорией" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B8_%D1%81%D0%BE_%D1%81%D1%82%D0%B0%D0%BD%D0%B4%D0%B0%D1%80%D1%82%D0%BD%D0%BE%D0%B9_%D0%BA%D0%BE%D1%80%D0%BD%D0%B5%D0%B2%D0%BE%D0%B9_%D0%B4%D0%B8%D1%80%D0%B5%D0%BA%D1%82%D0%BE%D1%80%D0%B8%D0%B5%D0%B9">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.2.1</span>Установки со стандартной корневой директорией</div>
+			</a>
+			
+			<ul id="toc-Установки_со_стандартной_корневой_директорией-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Установки_с_LVM_корневой_директорией" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B8_%D1%81_LVM_%D0%BA%D0%BE%D1%80%D0%BD%D0%B5%D0%B2%D0%BE%D0%B9_%D0%B4%D0%B8%D1%80%D0%B5%D0%BA%D1%82%D0%BE%D1%80%D0%B8%D0%B5%D0%B9">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.2.2</span>Установки с LVM корневой директорией</div>
+			</a>
+			
+			<ul id="toc-Установки_с_LVM_корневой_директорией-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Установки_с_зашифрованной_корневой_директорией" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B8_%D1%81_%D0%B7%D0%B0%D1%88%D0%B8%D1%84%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D0%BE%D0%B9_%D0%BA%D0%BE%D1%80%D0%BD%D0%B5%D0%B2%D0%BE%D0%B9_%D0%B4%D0%B8%D1%80%D0%B5%D0%BA%D1%82%D0%BE%D1%80%D0%B8%D0%B5%D0%B9">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.2.3</span>Установки с зашифрованной корневой директорией</div>
+			</a>
+			
+			<ul id="toc-Установки_с_зашифрованной_корневой_директорией-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Установка_корневого_подраздела_btrfs" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0_%D0%BA%D0%BE%D1%80%D0%BD%D0%B5%D0%B2%D0%BE%D0%B3%D0%BE_%D0%BF%D0%BE%D0%B4%D1%80%D0%B0%D0%B7%D0%B4%D0%B5%D0%BB%D0%B0_btrfs">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.2.4</span>Установка корневого подраздела btrfs</div>
+			</a>
+			
+			<ul id="toc-Установка_корневого_подраздела_btrfs-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Установки_с_ZFS_корневой_директорией" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B8_%D1%81_ZFS_%D0%BA%D0%BE%D1%80%D0%BD%D0%B5%D0%B2%D0%BE%D0%B9_%D0%B4%D0%B8%D1%80%D0%B5%D0%BA%D1%82%D0%BE%D1%80%D0%B8%D0%B5%D0%B9">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.2.5</span>Установки с ZFS корневой директорией</div>
+			</a>
+			
+			<ul id="toc-Установки_с_ZFS_корневой_директорией-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-EFI_Shells_или_другие_EFI_приложения" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#EFI_Shells_%D0%B8%D0%BB%D0%B8_%D0%B4%D1%80%D1%83%D0%B3%D0%B8%D0%B5_EFI_%D0%BF%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.2.6</span>EFI Shells или другие EFI приложения</div>
+			</a>
+			
+			<ul id="toc-EFI_Shells_или_другие_EFI_приложения-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Поддержка_гибернации" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#%D0%9F%D0%BE%D0%B4%D0%B4%D0%B5%D1%80%D0%B6%D0%BA%D0%B0_%D0%B3%D0%B8%D0%B1%D0%B5%D1%80%D0%BD%D0%B0%D1%86%D0%B8%D0%B8">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.3</span>Поддержка гибернации</div>
+			</a>
+			
+			<ul id="toc-Поддержка_гибернации-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Редактор_параметров_ядра_с_защитой_паролем" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#%D0%A0%D0%B5%D0%B4%D0%B0%D0%BA%D1%82%D0%BE%D1%80_%D0%BF%D0%B0%D1%80%D0%B0%D0%BC%D0%B5%D1%82%D1%80%D0%BE%D0%B2_%D1%8F%D0%B4%D1%80%D0%B0_%D1%81_%D0%B7%D0%B0%D1%89%D0%B8%D1%82%D0%BE%D0%B9_%D0%BF%D0%B0%D1%80%D0%BE%D0%BB%D0%B5%D0%BC">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.4</span>Редактор параметров ядра с защитой паролем</div>
+			</a>
+			
+			<ul id="toc-Редактор_параметров_ядра_с_защитой_паролем-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Клавиши_в_загрузочном_меню" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#%D0%9A%D0%BB%D0%B0%D0%B2%D0%B8%D1%88%D0%B8_%D0%B2_%D0%B7%D0%B0%D0%B3%D1%80%D1%83%D0%B7%D0%BE%D1%87%D0%BD%D0%BE%D0%BC_%D0%BC%D0%B5%D0%BD%D1%8E">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>Клавиши в загрузочном меню</div>
+			</a>
+			
+			<ul id="toc-Клавиши_в_загрузочном_меню-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Решение_проблем" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#%D0%A0%D0%B5%D1%88%D0%B5%D0%BD%D0%B8%D0%B5_%D0%BF%D1%80%D0%BE%D0%B1%D0%BB%D0%B5%D0%BC">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4</span>Решение проблем</div>
+			</a>
+			
+				<button aria-controls="toc-Решение_проблем-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Решение проблем subsection
+				</button>
+			
+			<ul id="toc-Решение_проблем-sublist" class="sidebar-toc-list">
+				<li id="toc-Создание_записи_вручную_с_помощью_efibootmgr" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#%D0%A1%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5_%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D0%B8_%D0%B2%D1%80%D1%83%D1%87%D0%BD%D1%83%D1%8E_%D1%81_%D0%BF%D0%BE%D0%BC%D0%BE%D1%89%D1%8C%D1%8E_efibootmgr">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.1</span>Создание записи вручную с помощью efibootmgr</div>
+			</a>
+			
+			<ul id="toc-Создание_записи_вручную_с_помощью_efibootmgr-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Меню_не_отображается_после_обновления_Windows" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#%D0%9C%D0%B5%D0%BD%D1%8E_%D0%BD%D0%B5_%D0%BE%D1%82%D0%BE%D0%B1%D1%80%D0%B0%D0%B6%D0%B0%D0%B5%D1%82%D1%81%D1%8F_%D0%BF%D0%BE%D1%81%D0%BB%D0%B5_%D0%BE%D0%B1%D0%BD%D0%BE%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F_Windows">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.2</span>Меню не отображается после обновления Windows</div>
+			</a>
+			
+			<ul id="toc-Меню_не_отображается_после_обновления_Windows-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Смотрите_также" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#%D0%A1%D0%BC%D0%BE%D1%82%D1%80%D0%B8%D1%82%D0%B5_%D1%82%D0%B0%D0%BA%D0%B6%D0%B5">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5</span>Смотрите также</div>
+			</a>
+			
+			<ul id="toc-Смотрите_также-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../ru/Systemd-boot.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="new mw-list-item"><a href="/index.php?title=Talk:Systemd-boot_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)&amp;action=edit&amp;redlink=1" rel="discussion" title="Discussion about the content page (page does not exist) [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">русский</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../ru/Systemd-boot.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=Systemd-boot_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=Systemd-boot_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../ru/Systemd-boot.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Systemd-boot_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Systemd-boot_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="ru" dir="ltr">
+<div class="mw-parser-output">
+<p><span>
+</span>
+</p>
+<div class="archwiki-template-meta-related-articles-start">
+<p class="mw-no-invert">Ссылки по теме</p>
+<ul>
+<li><a href="../ru/Arch_boot_process.html" class="mw-redirect" title="Процесс загрузки Arch">Процесс загрузки Arch</a></li>
+<li><a href="../ru/Arch_boot_process.html#%D0%97%D0%B0%D0%B3%D1%80%D1%83%D0%B7%D1%87%D0%B8%D0%BA" class="mw-redirect" title="Загрузчики">Загрузчики</a></li>
+<li><a href="../en/Unified_Extensible_Firmware_Interface.html" title="Unified Extensible Firmware Interface">Unified Extensible Firmware Interface</a></li>
+</ul>
+</div>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Состояние перевода:</strong> На этой странице представлен перевод статьи <a href="../en/Systemd-boot.html" title="Systemd-boot">systemd-boot</a>. Дата последней синхронизации: 2017-12-14. Вы можете <a href="../ru/ArchWiki:Translation_Team.html" title="ArchWiki:Translation Team (Русский)">помочь</a> синхронизировать перевод, если в английской версии произошли <a rel="nofollow" class="external text" href="https://wiki.archlinux.org/index.php?title=Systemd-boot&amp;diff=0&amp;oldid=502616">изменения</a>.</div>
+<p><b>systemd-boot</b>, ранее известный как <b>gummiboot</b> -  это простой UEFI менеджер загрузки, который исполняет настроенные EFI образы. Запись по умолчанию выбирается с помощью настроенного шаблона (glob) или меню на экране. Включен в пакет <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=systemd">systemd</a></span>, который устанавливается на системе Arch по умолчанию.
+</p>
+<p>Прост в настройке, но способен только на запуск исполняемых EFI файлов, таких как ядро Linux <a href="../en/EFISTUB.html" class="mw-redirect" title="EFISTUB (Русский)">EFISTUB</a>, UEFI Shell, GRUB, Windows Boot Manager.
+</p>
+<mw:tocplace></mw:tocplace>
+<h2>
+<span id=".D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0"></span><span class="mw-headline" id="Установка">Установка</span>
+</h2>
+<h3>
+<span id=".D0.97.D0.B0.D0.B3.D1.80.D1.83.D0.B7.D0.BA.D0.B0_.D0.B2_.D1.80.D0.B5.D0.B6.D0.B8.D0.BC.D0.B5_EFI"></span><span class="mw-headline" id="Загрузка_в_режиме_EFI">Загрузка в режиме EFI</span>
+</h3>
+<ol>
+<li>Убедитесь, что вы загружены в режиме UEFI.</li>
+<li>Проверьте <a href="../en/Unified_Extensible_Firmware_Interface.html#Requirements_for_UEFI_variable_support" title="Unified Extensible Firmware Interface">доступны ли EFI переменные</a>.</li>
+<li>Корректно примонтируйте <a href="../ru/EFI_system_partition.html" title="EFI system partition (Русский)">Системный Раздел EFI</a> (ESP). В этой статье <code><i>esp</i></code> используется для обозначения точки монтирования. <div class="archwiki-template-box archwiki-template-box-note">
+<strong>Примечание:</strong> <i>systemd-boot</i> EFI не может загружать бинарные файлы из других разделов. По этой причине, рекомендуется монтировать ваш ESP в <code>/boot</code>. В случае, если вы хотите разделить <code>/boot</code> с ESP, обратитесь к <a href="#%D0%9E%D0%B1%D0%BD%D0%BE%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8e">#Обновлениe</a> для большей информации.</div>
+</li>
+<li>Если ESP <b>не</b> примонтирован к <code>/boot</code>, копируйте ваше ядро и initramfs в ESP. <div class="archwiki-template-box archwiki-template-box-note">
+<strong>Примечание:</strong> Чтобы сохранить автоматическое обновление ядра в ESP, взгляните на <a href="../en/EFI_system_partition.html#Using_systemd" title="EFI system partition">EFI system partition#Using systemd</a> для адаптации некоторых юнитов systemd. Если ваш Системный Раздел EFI монтируется автоматически, вам, вероятно, потребуется добавить <code>vfat</code> в файл внутри <code>/etc/modules-load.d/</code>. Тогда в текущем запущенном ядре во время загрузки будет установлен модуль <code>vfat</code>, до того, как произойдет обновление ядра, которое может заменить модуль для текущей версии, что сделает невозможным монтирование <code>/boot/efi</code> до перезагрузки.</div>
+</li>
+<li>Введите следующую команду для установки <i>systemd-boot</i>: <pre># bootctl --path=<i>esp</i> install</pre> Она скопирует двоичный файл <i>systemd-boot</i> на Системный Раздел EFI (<code><i>esp</i>/EFI/systemd/systemd-bootx64.efi</code> и <code><i>esp</i>/EFI/Boot/BOOTX64.EFI</code> - оба идентичны на x86-64 системах) и добавит <i>systemd-boot</i> как EFI приложение по умолчанию (загрузочная запись по умолчанию), загружаемое с помощью EFI Boot Manager.</li>
+<li>Наконец, для правильного функционирования вы должны <a href="#%D0%9D%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0">настроить</a> загрузчик.</li>
+</ol>
+<h3>
+<span id=".D0.97.D0.B0.D0.B3.D1.80.D1.83.D0.B7.D0.BA.D0.B0_.D0.B2_.D1.80.D0.B5.D0.B6.D0.B8.D0.BC.D0.B5_BIOS"></span><span class="mw-headline" id="Загрузка_в_режиме_BIOS">Загрузка в режиме BIOS</span>
+</h3>
+<div class="archwiki-template-box archwiki-template-box-warning">
+<strong>Важно:</strong> Это нерекомендованный процесс</div>
+<p>Вы с таким же успехом можете установить systemd-boot, если загружаетесь в режиме BIOS. Тем не менее, от вас всё равно требуется сообщить прошивке запускать EFI файл <i>systemd-boot</i> при загрузке:
+</p>
+<ul>
+<li>у вас есть работающий EFI shell где-нибудь.</li>
+<li>ваш интерфейс прошивки предоставляет вам соответствующий способ настройки EFI файла, который будет загружен во время загрузки.</li>
+</ul>
+<p>Если вы имеете такую возможность, процесс установки будет проще: перейдите в ваш EFI shell или интерфейс настройки вашей прошивки и измените EFI файл по умолчанию вашей машины на <code>esp/EFI/systemd/systemd-bootx64.efi</code> ( или <code>systemd-bootia32.efi</code> если у вас 32 битная системная прошивка).
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Примечание:</strong> интерфейс прошивки в Dell Latitude сериях предоставляет все необходимое, чтобы установить EFI загрузку, но EFI Shell не сможет осуществить запись в ПЗУ компьютера.</div>
+<h3>
+<span id=".D0.9E.D0.B1.D0.BD.D0.BE.D0.B2.D0.BB.D0.B5.D0.BD.D0.B8e"></span><span class="mw-headline" id="Обновлениe">Обновлениe</span>
+</h3>
+<p>В отличие от предыдущего отдельного пакета <i>gummiboot</i>, который автоматически обновляется с помощью <code>post_install</code> скрипта, обновления systemd-boot теперь должны производиться пользователем вручную. Однако, эта процедура может быть автоматизирована с использованием pacman hooks.
+</p>
+<h4>
+<span id=".D0.92.D1.80.D1.83.D1.87.D0.BD.D1.83.D1.8E"></span><span class="mw-headline" id="Вручную">Вручную</span>
+</h4>
+<p><i>systemd-boot</i> (bootctl(1)) предполагает, что ваш Системный Раздел EFI примонтирован в <code>/boot</code>.
+</p>
+<pre># bootctl update
+</pre>
+<p>Если ESP не примонтирован в <code>/boot</code>, опцией <code>--path=</code> можно явно указать точку монтирования, например:
+</p>
+<pre># bootctl --path=<i>esp</i> update
+</pre>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Примечание:</strong>  Также эту команду следует использовать при переходе с <i>gummiboot</i>, перед удалением этого пакета. Однако, если этот пакет уже был удален, выполните <code>bootctl --path=<i>esp</i> install</code>.</div>
+<h4>
+<span id=".D0.90.D0.B2.D1.82.D0.BE.D0.BC.D0.B0.D1.82.D0.B8.D1.87.D0.B5.D1.81.D0.BA.D0.B8"></span><span class="mw-headline" id="Автоматически">Автоматически</span>
+</h4>
+<p><a href="../ru/Arch_User_Repository.html" class="mw-redirect" title="AUR (Русский)">AUR (Русский)</a> пакет <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/systemd-boot-pacman-hook/">systemd-boot-pacman-hook</a></span><sup><small>AUR</small></sup> предоставляет <a href="../ru/Pacman.html#%D0%A5%D1%83%D0%BA%D0%B8" title="Pacman (Русский)">хук Pacman</a> для автоматизации процесса обновления. <a href="../en/Help:Reading.html#Installation_of_packages" class="mw-redirect" title="Install">Установка</a> этого пакета добавит hook, который будет выполняться при каждом обновлении пакета <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=systemd">systemd</a></span>.
+</p>
+<p>В качестве альтернативы, вы можете разместить следующий pacman hook в каталоге /etc/pacman.d/hooks/:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/pacman.d/hooks/systemd-boot.hook</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">[Trigger]
+Type = Package
+Operation = Upgrade
+Target = systemd
+
+[Action]
+Description = Updating systemd-boot...
+When = PostTransaction
+Exec = /usr/bin/bootctl update</pre>
+<h2>
+<span id=".D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0"></span><span class="mw-headline" id="Настройка">Настройка</span>
+</h2>
+<h3>
+<span id=".D0.91.D0.B0.D0.B7.D0.BE.D0.B2.D0.B0.D1.8F_.D0.BD.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0"></span><span class="mw-headline" id="Базовая_настройка">Базовая настройка</span>
+</h3>
+<p>Базовая конфигурация хранится в файле <code><i>esp</i>/loader/loader.conf</code>. Полный список опций описан в <span class="plainlinks archwiki-template-man" title="$ man 5 loader.conf"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/loader.conf.5#OPTIONS">loader.conf(5) § OPTIONS</a></span>. Некоторые важные опции:
+</p>
+<ul><li>
+<code>default</code> – выбираемая по умолчанию запись; можно использовать подстановку, например <code>arch-*</code>
+</li></ul>
+<ul><li>
+<code>timeout</code> – задержка меню в секундах. Если таймаут не задан, то меню будет отображаться, только если удерживать клавишу <code>Space</code> (другие клавиши тоже могут работать) при загрузке.</li></ul>
+<ul><li>
+<code>console-mode</code> — разрешение экрана в консоли. Значение <code>keep</code> (по умолчанию) оставляет то разрешение, которое было выбрано прошивкой. Значение <code>max</code> выбирает максимальный доступный режим.</li></ul>
+<ul><li>
+<code>editor</code> - следует ли включить редактор параметров ядра. <code>yes</code> (по умолчанию) - включить, <code>no</code> - отключить; Поскольку пользователь может добавить <code>init=/bin/bash</code> для обхода пароля администратора и получить полный доступ, настоятельно рекомендуется установить эту опцию в <code>no</code>.</li></ul>
+<p>Пример:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;"><i>esp</i>/loader/loader.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">default  arch.conf
+timeout  4
+console-mode max
+editor   no
+</pre>
+<div class="archwiki-template-box archwiki-template-box-tip">
+<strong>Совет:</strong> 
+<ul>
+<li>Используйте пробелы; systemd-boot не поддерживает символы табуляции.</li>
+<li>Опции <code>default</code> и <code>timeout</code> могут быть изменены в самом меню загрузки, эти изменения будут храниться как переменные EFI <code>LoaderEntryDefault</code> и <code>LoaderConfigTimeout</code>, переопределяя настройки из файла конфигурации.</li>
+<li>Можно использовать <code>bootctl set-default ""</code> для сброса переменной EFI, переопределяющей опцию <code>default</code>.</li>
+<li>Пример базового конфигурационного файла расположен как <code>/usr/share/systemd/bootctl/loader.conf</code>.</li>
+</ul>
+</div>
+<h3>
+<span id=".D0.94.D0.BE.D0.B1.D0.B0.D0.B2.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5_.D0.B7.D0.B0.D0.B3.D1.80.D1.83.D0.B7.D0.BE.D1.87.D0.BD.D1.8B.D1.85_.D0.B7.D0.B0.D0.BF.D0.B8.D1.81.D0.B5.D0.B9"></span><span class="mw-headline" id="Добавление_загрузочных_записей">Добавление загрузочных записей</span>
+</h3>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Примечание:</strong> 
+<ul>
+<li>
+<i>bootctl</i> будет автоматически проверять наличие "<b>Windows Boot Manager</b>" (<code>\EFI\Microsoft\Boot\Bootmgfw.efi</code>), "<b>EFI Shell</b>" (<code>\shellx64.efi</code>) и "<b>EFI Default Loader</b>" (<code>\EFI\Boot\bootx64.efi</code>) во время загрузки, так же как специально подготовленные файлы ядра, найденные в <code>\EFI\Linux</code>. После обнаружения соответствующие записи с заголовками <code>auto-windows</code>, <code>auto-efi-shell</code> и <code>auto-efi-default</code> будут автоматически сгенерированы. Эти записи не требуют ручной настройки загрузчика. Однако, другие EFI приложения не будут обнаружены автоматически (не в случае с <a href="../ru/REFInd.html" title="REFInd (Русский)">rEFInd (Русский)</a>), поэтому для зарузки ядра Linux, записи должны быть созданы вручную.</li>
+<li>Если вы используете двойную загрузку с Windows, настоятельно рекомендуется отключить <a href="../en/Dual_boot_with_Windows.html#Fast_Startup_and_hibernation" title="Dual boot with Windows">Быстрый запуск</a>
+</li>
+<li>Не забудте загрузить intel <a href="../en/Microcode.html" title="Microcode">microcode</a> с <code>initrd</code> если это применимо в вашем случае.</li>
+<li>Вы можете узнать PARTUUID вашего корневого раздела с помощью команды <code>blkid -s PARTUUID -o value /dev/sd<i>xY</i></code>, где <code><i>x</i></code> - это буква устройства, а <code><i>Y</i></code> - это номер раздела. Это нужно только для вашего корневого раздела, не для <code><i>esp</i></code>.</li>
+</ul>
+</div>
+<p><i>bootctl</i> ищет элементы для загрузочного меню в <code><i>esp</i>/loader/entries/*.conf</code> – каждый найденный файл должен содержать точно одну загрузочную запись. Возможными опциями являются:
+</p>
+<ul><li>
+<code>title</code> – название операционной системы. <b>Обязательная.</b>
+</li></ul>
+<ul><li>
+<code>version</code> – версия ядра, отображаемая только если существуют несколько записей с одинаковым названием. Не обязательная.</li></ul>
+<ul><li>
+<code>machine-id</code> – идентификатор машины из <code>/etc/machine-id</code>, отображаемый только если существуют несколько записей с одинаковым названием и одинаковой версией. Не обязательная.</li></ul>
+<ul><li>
+<code>efi</code> – EFI программа для запуска, относительно вашего ESP (<code>$esp</code>); например, <code>/vmlinuz-linux</code>. Либо это, либо <code>linux</code> (смотрите ниже) является <b>обязательным.</b>
+</li></ul>
+<ul><li>
+<code>options</code> – опции командной строки для передачи EFI приложению. Не обязательная, но вам нужно будет передать как минимум <code>initrd=<i>efipath</i></code> и <code>root=<i>dev</i></code> если загружаете Linux.</li></ul>
+<p>Для Linux вы можете задать <code>linux <i>path-to-vmlinuz</i></code> и <code>initrd <i>path-to-initramfs</i></code>; это автоматически преобразуется в <code>efi <i>path</i></code> и <code>options initrd=<i>path</i></code> – этот синтаксис поддерживается только для удобства и не имеет различий по функциональности.
+</p>
+<h4>
+<span id=".D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B8_.D1.81.D0.BE_.D1.81.D1.82.D0.B0.D0.BD.D0.B4.D0.B0.D1.80.D1.82.D0.BD.D0.BE.D0.B9_.D0.BA.D0.BE.D1.80.D0.BD.D0.B5.D0.B2.D0.BE.D0.B9_.D0.B4.D0.B8.D1.80.D0.B5.D0.BA.D1.82.D0.BE.D1.80.D0.B8.D0.B5.D0.B9"></span><span class="mw-headline" id="Установки_со_стандартной_корневой_директорией">Установки со стандартной корневой директорией</span>
+</h4>
+<p>Вот пример записи для корневого раздела без LVM или LUKS:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;"><i>esp</i>/loader/entries/arch.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">title          Arch Linux
+linux          /vmlinuz-linux
+initrd         /initramfs-linux.img
+options        root=PARTUUID=14420948-2cea-4de7-b042-40f67c618660 rw</pre>
+<p>Пожалуйста, обратите внимание, что в вышеприведённом примере <code>PARTUUID</code>/<code>PARTLABEL</code> идентифицируют GPT раздел, а это не то же самое, что <code>UUID</code>/<code>LABEL</code>, которые идентифицируют файловую систему. Использование <code>PARTUUID</code>/<code>PARTLABEL</code> бывает полезным, потому что они инвариантны (то есть неизменяемы), если вы переформатируете раздел в другую файловую систему или если по какой-то причине изменятся обозначения /dev/sd*. Также оно может быть полезно, если у вас нет файловой системы на разделе (или вы используете LUKS, который не поддерживает метки <code>LABEL</code>).
+</p>
+<div class="archwiki-template-box archwiki-template-box-tip">
+<strong>Совет:</strong> Пример файла записи расположен как <code>/usr/share/systemd/bootctl</code>.</div>
+<h4>
+<span id=".D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B8_.D1.81_LVM_.D0.BA.D0.BE.D1.80.D0.BD.D0.B5.D0.B2.D0.BE.D0.B9_.D0.B4.D0.B8.D1.80.D0.B5.D0.BA.D1.82.D0.BE.D1.80.D0.B8.D0.B5.D0.B9"></span><span class="mw-headline" id="Установки_с_LVM_корневой_директорией">Установки с LVM корневой директорией</span>
+</h4>
+<div class="archwiki-template-box archwiki-template-box-warning">
+<strong>Важно:</strong> <i>systemd-boot</i> не может использоваться без отдельной файловой системы <code>/boot</code> вне LVM.</div>
+<p>Следующий пример для корневой директории с использованием <a href="../en/LVM.html" class="mw-redirect" title="LVM (Русский)">логического менеджера разделов</a>:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;"><i>esp</i>/loader/entries/arch-lvm.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">title          Arch Linux (LVM)
+linux          /vmlinuz-linux
+initrd         /initramfs-linux.img
+options        root=/dev/mapper/&lt;VolumeGroup-LogicalVolume&gt; rw</pre>
+<p>Замените <code>&lt;VolumeGroup-LogicalVolume&gt;</code> на актуальные названия VG и LV (например, <code>root=/dev/mapper/volgroup00-lvolroot</code>). Кроме того, вместо них можно использовать UUID:
+</p>
+<pre>....
+options  root=UUID=&lt;UUID identifier&gt; rw
+</pre>
+<p>Обратите внимание, что <code>root=<b>UUID</b>=</code> используется вместо <code>root=<b>PARTUUID</b>=</code>, который используется для корневых разделов без LVM или LUKS.
+</p>
+<h4>
+<span id=".D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B8_.D1.81_.D0.B7.D0.B0.D1.88.D0.B8.D1.84.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.BD.D0.BE.D0.B9_.D0.BA.D0.BE.D1.80.D0.BD.D0.B5.D0.B2.D0.BE.D0.B9_.D0.B4.D0.B8.D1.80.D0.B5.D0.BA.D1.82.D0.BE.D1.80.D0.B8.D0.B5.D0.B9"></span><span class="mw-headline" id="Установки_с_зашифрованной_корневой_директорией">Установки с зашифрованной корневой директорией</span>
+</h4>
+<p>Ниже приведен пример конфигурационного файла для зашифрованного корневого раздела (<a href="../ru/Dm-crypt.html" title="Dm-crypt (Русский)">DM-Crypt / LUKS</a>) с использованием <code>encrypt</code> <a href="../ru/Mkinitcpio.html" title="Mkinitcpio (Русский)">mkinitcpio (Русский)</a> hook:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;"><i>esp</i>/loader/entries/arch-encrypted.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">title Arch Linux Encrypted
+linux /vmlinuz-linux
+initrd /initramfs-linux.img
+options cryptdevice=UUID=&lt;UUID&gt;:&lt;mapped-name&gt; root=/dev/mapper/&lt;mapped-name&gt; quiet rw</pre>
+<p>В этом примере используется UUID; если хотите, можете заменить UUID на <code>PARTUUID</code>. Вы можете также заменить <code>/dev</code> путь на регулярный UUID. <code>mapped-name</code> - название, которое вы желаете использовать. Смотрите <a href="../en/Dm-crypt/System_configuration.html#Boot_loader" title="Dm-crypt/System configuration">Dm-crypt/System configuration#Boot loader</a><sup>[<a href="../en/Help:Procedures.html#Fix_broken_section_links" title="Help:Procedures">ссылка недействительна</a>: раздел не найден]</sup>.
+</p>
+<p>Если вы используете LVM, ваша опция cryptdevice будет выглядеть следующим образом:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;"><i>esp</i>/loader/entries/arch-encrypted-lvm.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">title Arch Linux Encrypted LVM
+linux /vmlinuz-linux
+initrd /initramfs-linux.img
+options cryptdevice=UUID=&lt;UUID&gt;:MyVolGroup root=/dev/mapper/MyVolGroup-MyVolRoot quiet rw</pre>
+<p>Вы также можете добавить другие EFI приложения, такие как <code>\EFI\arch\grub.efi</code>.
+</p>
+<h4>
+<span id=".D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0_.D0.BA.D0.BE.D1.80.D0.BD.D0.B5.D0.B2.D0.BE.D0.B3.D0.BE_.D0.BF.D0.BE.D0.B4.D1.80.D0.B0.D0.B7.D0.B4.D0.B5.D0.BB.D0.B0_btrfs"></span><span class="mw-headline" id="Установка_корневого_подраздела_btrfs">Установка корневого подраздела btrfs</span>
+</h4>
+<p>При загрузке с подраздела <a href="../ru/Btrfs.html" title="Btrfs (Русский)">Btrfs (Русский)</a> в роли корневого, добавьте к строке <code>options</code> <code>rootflags=subvol=&lt;root subvolume&gt;</code>. В примере ниже, корневой раздел монтируется как btrfs подраздел с именем 'ROOT' (например, <code>mount -o subvol=ROOT /dev/sdxY /mnt</code>):
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;"><i>esp</i>/loader/entries/arch-btrfs-subvol.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">title          Arch Linux
+linux          /vmlinuz-linux
+initrd         /initramfs-linux.img
+options        root=PARTUUID=14420948-2cea-4de7-b042-40f67c618660 rw rootflags=subvol=ROOT</pre>
+<p>Если это невозможно сделать, то это приведет к ошибке: <code>ERROR: Root device mounted successfully, but /sbin/init does not exist.</code>
+</p>
+<h4>
+<span id=".D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B8_.D1.81_ZFS_.D0.BA.D0.BE.D1.80.D0.BD.D0.B5.D0.B2.D0.BE.D0.B9_.D0.B4.D0.B8.D1.80.D0.B5.D0.BA.D1.82.D0.BE.D1.80.D0.B8.D0.B5.D0.B9"></span><span class="mw-headline" id="Установки_с_ZFS_корневой_директорией">Установки с ZFS корневой директорией</span>
+</h4>
+<p>В случае загрузки из <a href="../en/ZFS.html" title="ZFS">ZFS</a> dataset, добавьте <code>zfs=&lt;root dataset&gt;</code> к строке <code>options</code>. Здесь в корневом dataset установлено значение 'zroot/ROOT/default':
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;"><i>esp</i>/loader/entries/arch-zfs.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">title          Arch Linux ZFS
+linux          /vmlinuz-linux
+initrd         /initramfs-linux.img
+options        zfs=zroot/ROOT/default rw</pre>
+<p>When booting off of a ZFS dataset ensure that it has had the <code>bootfs</code> property set with <code> zpool set bootfs=&lt;root dataset&gt; &lt;zpool&gt;</code>.
+</p>
+<h4>
+<span id="EFI_Shells_.D0.B8.D0.BB.D0.B8_.D0.B4.D1.80.D1.83.D0.B3.D0.B8.D0.B5_EFI_.D0.BF.D1.80.D0.B8.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.B8.D1.8F"></span><span class="mw-headline" id="EFI_Shells_или_другие_EFI_приложения">EFI Shells или другие EFI приложения</span>
+</h4>
+<p>В случае, если вы установили EFI Shells или другие EFI приложения в ESP, вы можете использовать следующие фрагменты:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;"><i>esp</i>/loader/entries/uefi-shell-v1-x86_64.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">title  UEFI Shell x86_64 v1
+efi    /EFI/shellx64_v1.efi</pre>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;"><i>esp</i>/loader/entries/uefi-shell-v2-x86_64.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">title  UEFI Shell x86_64 v2
+efi    /EFI/shellx64_v2.efi</pre>
+<h3>
+<span id=".D0.9F.D0.BE.D0.B4.D0.B4.D0.B5.D1.80.D0.B6.D0.BA.D0.B0_.D0.B3.D0.B8.D0.B1.D0.B5.D1.80.D0.BD.D0.B0.D1.86.D0.B8.D0.B8"></span><span class="mw-headline" id="Поддержка_гибернации">Поддержка гибернации</span>
+</h3>
+<p>Пожалуйста, прочтите статью <a href="../ru/Power_management/Suspend_and_hibernate.html" class="mw-redirect" title="Power management/Suspend and hibernate (Русский)">Power management/Suspend and hibernate (Русский)</a>.
+</p>
+<h3>
+<span id=".D0.A0.D0.B5.D0.B4.D0.B0.D0.BA.D1.82.D0.BE.D1.80_.D0.BF.D0.B0.D1.80.D0.B0.D0.BC.D0.B5.D1.82.D1.80.D0.BE.D0.B2_.D1.8F.D0.B4.D1.80.D0.B0_.D1.81_.D0.B7.D0.B0.D1.89.D0.B8.D1.82.D0.BE.D0.B9_.D0.BF.D0.B0.D1.80.D0.BE.D0.BB.D0.B5.D0.BC"></span><span class="mw-headline" id="Редактор_параметров_ядра_с_защитой_паролем">Редактор параметров ядра с защитой паролем</span>
+</h3>
+<p>В качестве альтернативы можете установить <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/systemd-boot-password/">systemd-boot-password</a></span><sup><small>AUR</small></sup> который поддерживает <code>password</code> опцию базовой конфигурации. Используйте <code>sbpctl generate</code> для генерации значения для этой опции.
+</p>
+<p>Установка <i>systemd-boot-password</i> следующей командой:
+</p>
+<pre># sbpctl install <i>esp</i></pre>
+<p>С включенным редактором будет запрошен ваш пароль, перед тем как вы сможете редактировать параметры ядра.
+</p>
+<h2>
+<span id=".D0.9A.D0.BB.D0.B0.D0.B2.D0.B8.D1.88.D0.B8_.D0.B2_.D0.B7.D0.B0.D0.B3.D1.80.D1.83.D0.B7.D0.BE.D1.87.D0.BD.D0.BE.D0.BC_.D0.BC.D0.B5.D0.BD.D1.8E"></span><span class="mw-headline" id="Клавиши_в_загрузочном_меню">Клавиши в загрузочном меню</span>
+</h2>
+<p>В меню используются следующие клавиши:
+</p>
+<ul>
+<li>
+<code>Вверх/Вниз</code> - выбор записи</li>
+<li>
+<code>Enter</code> - загрузить выбранную запись</li>
+<li>
+<code>d</code> - выбрать загрузочную запись по умолчанию (хранится в энергонезависимой EFI переменной)</li>
+<li>
+<code>-/T</code> - уменьшить таймаут (хранится в энергонезависимой EFI переменной)</li>
+<li>
+<code>+/t</code> - увеличить таймаут (хранится в энергонезависимой EFI переменной)</li>
+<li>
+<code>e</code> - редактировать командную строку ядра. Не имеет эффекта, если опция конфигурации <code>editor</code> установлена в <code>0</code>.</li>
+<li>
+<code>v</code> - показать версию gummiboot и UEFI</li>
+<li>
+<code>Q</code> - выйти</li>
+<li>
+<code>P</code> - отобразить текущую конфигурацию</li>
+<li>
+<code>h/?</code> - помощь</li>
+</ul>
+<p>А эти клавиши, нажатые в меню в процессе загрузки, сразу загрузят определённую запись:
+</p>
+<ul>
+<li>
+<code>l</code> - Linux</li>
+<li>
+<code>w</code> - Windows</li>
+<li>
+<code>a</code> - OS X</li>
+<li>
+<code>s</code> - EFI Shell</li>
+<li>
+<code>1-9</code> - порядковый номер записи</li>
+</ul>
+<h2>
+<span id=".D0.A0.D0.B5.D1.88.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BF.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC"></span><span class="mw-headline" id="Решение_проблем">Решение проблем</span>
+</h2>
+<h3>
+<span id=".D0.A1.D0.BE.D0.B7.D0.B4.D0.B0.D0.BD.D0.B8.D0.B5_.D0.B7.D0.B0.D0.BF.D0.B8.D1.81.D0.B8_.D0.B2.D1.80.D1.83.D1.87.D0.BD.D1.83.D1.8E_.D1.81_.D0.BF.D0.BE.D0.BC.D0.BE.D1.89.D1.8C.D1.8E_efibootmgr"></span><span class="mw-headline" id="Создание_записи_вручную_с_помощью_efibootmgr">Создание записи вручную с помощью efibootmgr</span>
+</h3>
+<p>Если команда <code>bootctl install</code> не сработала, вы можете создать загрузочную EFI запись самостоятельно с помощью утилиты <code>efibootmgr</code>:
+</p>
+<pre># efibootmgr -c -d /dev/sdX -p Y -l /EFI/systemd/systemd-bootx64.efi -L "Linux Boot Manager"
+</pre>
+<p>где <code>/dev/sdXY</code> - это ваш EFISYS раздел.
+</p>
+<h3>
+<span id=".D0.9C.D0.B5.D0.BD.D1.8E_.D0.BD.D0.B5_.D0.BE.D1.82.D0.BE.D0.B1.D1.80.D0.B0.D0.B6.D0.B0.D0.B5.D1.82.D1.81.D1.8F_.D0.BF.D0.BE.D1.81.D0.BB.D0.B5_.D0.BE.D0.B1.D0.BD.D0.BE.D0.B2.D0.BB.D0.B5.D0.BD.D0.B8.D1.8F_Windows"></span><span class="mw-headline" id="Меню_не_отображается_после_обновления_Windows">Меню не отображается после обновления Windows</span>
+</h3>
+<p>Обратитесь к разделу соответствующей статьи: <a href="../en/Unified_Extensible_Firmware_Interface.html#Windows_changes_boot_order" title="Unified Extensible Firmware Interface">Unified Extensible Firmware Interface#Windows changes boot order</a>.
+</p>
+<h2>
+<span id=".D0.A1.D0.BC.D0.BE.D1.82.D1.80.D0.B8.D1.82.D0.B5_.D1.82.D0.B0.D0.BA.D0.B6.D0.B5"></span><span class="mw-headline" id="Смотрите_также">Смотрите также</span>
+</h2>
+<ul><li><a rel="nofollow" class="external free" href="https://www.freedesktop.org/wiki/Software/systemd/systemd-boot/">https://www.freedesktop.org/wiki/Software/systemd/systemd-boot/</a></li></ul>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface">
+<div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="../ru/Category:Boot_loaders.html" title="Category:Boot loaders (Русский)">Boot loaders (Русский)</a></li></ul>
+</div>
+<div id="mw-hidden-catlinks" class="mw-hidden-catlinks mw-hidden-cats-hidden">Hidden category: <ul><li><a href="../en/Category:Pages_with_broken_section_links.html" title="Category:Pages with broken section links">Pages with broken section links</a></li></ul>
+</div>
+</div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=Systemd-boot_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)&amp;oldid=737135">https://wiki.archlinux.org/index.php?title=Systemd-boot_(Русский)&amp;oldid=737135</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 10 July 2022, at 10:10.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

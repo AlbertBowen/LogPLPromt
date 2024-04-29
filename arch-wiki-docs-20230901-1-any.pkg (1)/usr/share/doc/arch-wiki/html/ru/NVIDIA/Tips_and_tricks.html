@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>NVIDIA (Русский)/Tips and tricks (Русский) - ArchWiki</title>
+<link rel="stylesheet" href="../../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-NVIDIA_Русский_Tips_and_tricks_Русский rootpage-NVIDIA_Русский skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Исправление_разрешения_терминала" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#%D0%98%D1%81%D0%BF%D1%80%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5_%D1%80%D0%B0%D0%B7%D1%80%D0%B5%D1%88%D0%B5%D0%BD%D0%B8%D1%8F_%D1%82%D0%B5%D1%80%D0%BC%D0%B8%D0%BD%D0%B0%D0%BB%D0%B0">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Исправление разрешения терминала</div>
+			</a>
+			
+			<ul id="toc-Исправление_разрешения_терминала-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Использование_ТВ-выхода" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#%D0%98%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5_%D0%A2%D0%92-%D0%B2%D1%8B%D1%85%D0%BE%D0%B4%D0%B0">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Использование ТВ-выхода</div>
+			</a>
+			
+			<ul id="toc-Использование_ТВ-выхода-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-X_with_a_TV_(DFP)_as_the_only_display" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#X_with_a_TV_(DFP)_as_the_only_display">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>X with a TV (DFP) as the only display</div>
+			</a>
+			
+			<ul id="toc-X_with_a_TV_(DFP)_as_the_only_display-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Разрешение_без_подключенных_мониторов" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#%D0%A0%D0%B0%D0%B7%D1%80%D0%B5%D1%88%D0%B5%D0%BD%D0%B8%D0%B5_%D0%B1%D0%B5%D0%B7_%D0%BF%D0%BE%D0%B4%D0%BA%D0%BB%D1%8E%D1%87%D0%B5%D0%BD%D0%BD%D1%8B%D1%85_%D0%BC%D0%BE%D0%BD%D0%B8%D1%82%D0%BE%D1%80%D0%BE%D0%B2">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4</span>Разрешение без подключенных мониторов</div>
+			</a>
+			
+			<ul id="toc-Разрешение_без_подключенных_мониторов-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Проверьте_источник_питания" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#%D0%9F%D1%80%D0%BE%D0%B2%D0%B5%D1%80%D1%8C%D1%82%D0%B5_%D0%B8%D1%81%D1%82%D0%BE%D1%87%D0%BD%D0%B8%D0%BA_%D0%BF%D0%B8%D1%82%D0%B0%D0%BD%D0%B8%D1%8F">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5</span>Проверьте источник питания</div>
+			</a>
+			
+			<ul id="toc-Проверьте_источник_питания-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Прослушивание_ACPI-событий" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#%D0%9F%D1%80%D0%BE%D1%81%D0%BB%D1%83%D1%88%D0%B8%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5_ACPI-%D1%81%D0%BE%D0%B1%D1%8B%D1%82%D0%B8%D0%B9">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6</span>Прослушивание ACPI-событий</div>
+			</a>
+			
+			<ul id="toc-Прослушивание_ACPI-событий-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Отображение_температуры_графического_процессора_в_оболочке" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#%D0%9E%D1%82%D0%BE%D0%B1%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5_%D1%82%D0%B5%D0%BC%D0%BF%D0%B5%D1%80%D0%B0%D1%82%D1%83%D1%80%D1%8B_%D0%B3%D1%80%D0%B0%D1%84%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%B3%D0%BE_%D0%BF%D1%80%D0%BE%D1%86%D0%B5%D1%81%D1%81%D0%BE%D1%80%D0%B0_%D0%B2_%D0%BE%D0%B1%D0%BE%D0%BB%D0%BE%D1%87%D0%BA%D0%B5">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">7</span>Отображение температуры графического процессора в оболочке</div>
+			</a>
+			
+				<button aria-controls="toc-Отображение_температуры_графического_процессора_в_оболочке-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Отображение температуры графического процессора в оболочке subsection
+				</button>
+			
+			<ul id="toc-Отображение_температуры_графического_процессора_в_оболочке-sublist" class="sidebar-toc-list">
+				<li id="toc-nvidia-settings" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#nvidia-settings">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">7.1</span>nvidia-settings</div>
+			</a>
+			
+			<ul id="toc-nvidia-settings-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-nvidia-smi" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#nvidia-smi">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">7.2</span>nvidia-smi</div>
+			</a>
+			
+			<ul id="toc-nvidia-smi-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-nvclock" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#nvclock">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">7.3</span>nvclock</div>
+			</a>
+			
+			<ul id="toc-nvclock-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Разгон_и_охлаждение" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#%D0%A0%D0%B0%D0%B7%D0%B3%D0%BE%D0%BD_%D0%B8_%D0%BE%D1%85%D0%BB%D0%B0%D0%B6%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">8</span>Разгон и охлаждение</div>
+			</a>
+			
+				<button aria-controls="toc-Разгон_и_охлаждение-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Разгон и охлаждение subsection
+				</button>
+			
+			<ul id="toc-Разгон_и_охлаждение-sublist" class="sidebar-toc-list">
+				<li id="toc-Включение_разгона" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#%D0%92%D0%BA%D0%BB%D1%8E%D1%87%D0%B5%D0%BD%D0%B8%D0%B5_%D1%80%D0%B0%D0%B7%D0%B3%D0%BE%D0%BD%D0%B0">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">8.1</span>Включение разгона</div>
+			</a>
+			
+			<ul id="toc-Включение_разгона-sublist" class="sidebar-toc-list">
+				<li id="toc-Настройка_статического_2D/3D_разгона" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#%D0%9D%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0_%D1%81%D1%82%D0%B0%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%B3%D0%BE_2D/3D_%D1%80%D0%B0%D0%B7%D0%B3%D0%BE%D0%BD%D0%B0">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">8.1.1</span>Настройка статического 2D/3D разгона</div>
+			</a>
+			
+			<ul id="toc-Настройка_статического_2D/3D_разгона-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Сохранение_настроек_разгона" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#%D0%A1%D0%BE%D1%85%D1%80%D0%B0%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5_%D0%BD%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B5%D0%BA_%D1%80%D0%B0%D0%B7%D0%B3%D0%BE%D0%BD%D0%B0">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">8.1.2</span>Сохранение настроек разгона</div>
+			</a>
+			
+			<ul id="toc-Сохранение_настроек_разгона-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Изменение_лимита_TDP" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#%D0%98%D0%B7%D0%BC%D0%B5%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5_%D0%BB%D0%B8%D0%BC%D0%B8%D1%82%D0%B0_TDP">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">8.2</span>Изменение лимита TDP</div>
+			</a>
+			
+			<ul id="toc-Изменение_лимита_TDP-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Установка_скорости_вентилятора_при_входе" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0_%D1%81%D0%BA%D0%BE%D1%80%D0%BE%D1%81%D1%82%D0%B8_%D0%B2%D0%B5%D0%BD%D1%82%D0%B8%D0%BB%D1%8F%D1%82%D0%BE%D1%80%D0%B0_%D0%BF%D1%80%D0%B8_%D0%B2%D1%85%D0%BE%D0%B4%D0%B5">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">8.3</span>Установка скорости вентилятора при входе</div>
+			</a>
+			
+			<ul id="toc-Установка_скорости_вентилятора_при_входе-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Параметры_модуля_ядра" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#%D0%9F%D0%B0%D1%80%D0%B0%D0%BC%D0%B5%D1%82%D1%80%D1%8B_%D0%BC%D0%BE%D0%B4%D1%83%D0%BB%D1%8F_%D1%8F%D0%B4%D1%80%D0%B0">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">9</span>Параметры модуля ядра</div>
+			</a>
+			
+			<ul id="toc-Параметры_модуля_ядра-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Сохранение_видеопамяти_в_ждущем_режиме" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#%D0%A1%D0%BE%D1%85%D1%80%D0%B0%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5_%D0%B2%D0%B8%D0%B4%D0%B5%D0%BE%D0%BF%D0%B0%D0%BC%D1%8F%D1%82%D0%B8_%D0%B2_%D0%B6%D0%B4%D1%83%D1%89%D0%B5%D0%BC_%D1%80%D0%B5%D0%B6%D0%B8%D0%BC%D0%B5">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">10</span>Сохранение видеопамяти в ждущем режиме</div>
+			</a>
+			
+			<ul id="toc-Сохранение_видеопамяти_в_ждущем_режиме-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Драйвер_persistence" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#%D0%94%D1%80%D0%B0%D0%B9%D0%B2%D0%B5%D1%80_persistence">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">11</span>Драйвер persistence</div>
+			</a>
+			
+			<ul id="toc-Драйвер_persistence-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../../ru/NVIDIA/Tips_and_tricks.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="new mw-list-item"><a href="/index.php?title=Talk:NVIDIA_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)/Tips_and_tricks_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)&amp;action=edit&amp;redlink=1" rel="discussion" title="Discussion about the content page (page does not exist) [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">русский</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../../ru/NVIDIA/Tips_and_tricks.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=NVIDIA_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)/Tips_and_tricks_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=NVIDIA_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)/Tips_and_tricks_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../../ru/NVIDIA/Tips_and_tricks.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=NVIDIA_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)/Tips_and_tricks_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=NVIDIA_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)/Tips_and_tricks_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					<div id="contentSub"><span class="subpages">&lt; <a href="../../ru/NVIDIA.html" title="NVIDIA (Русский)">NVIDIA (Русский)</a></span></div>
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="ru" dir="ltr">
+<div class="mw-parser-output">
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Состояние перевода:</strong> На этой странице представлен перевод статьи <a href="../../en/NVIDIA/Tips_and_tricks.html" title="NVIDIA/Tips and tricks">NVIDIA/Tips and tricks</a>. Дата последней синхронизации: 8 февраля 2022. Вы можете <a href="../../ru/ArchWiki:Translation_Team.html" title="ArchWiki:Translation Team (Русский)">помочь</a> синхронизировать перевод, если в английской версии произошли <a rel="nofollow" class="external text" href="https://wiki.archlinux.org/index.php?title=NVIDIA/Tips_and_tricks&amp;diff=0&amp;oldid=714941">изменения</a>.</div>
+<mw:tocplace></mw:tocplace>
+<h2>
+<span id=".D0.98.D1.81.D0.BF.D1.80.D0.B0.D0.B2.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5_.D1.80.D0.B0.D0.B7.D1.80.D0.B5.D1.88.D0.B5.D0.BD.D0.B8.D1.8F_.D1.82.D0.B5.D1.80.D0.BC.D0.B8.D0.BD.D0.B0.D0.BB.D0.B0"></span><span class="mw-headline" id="Исправление_разрешения_терминала">Исправление разрешения терминала</span>
+</h2>
+<p>Переход с драйвера nouveau будет сопровождаться низким разрешением экрана терминала при загрузке.
+</p>
+<p>Для загрузчика GRUB, обратитесь к <a href="../../en/GRUB/Tips_and_tricks.html#Setting_the_framebuffer_resolution" title="GRUB/Tips and tricks">GRUB/Tips and tricks#Setting the framebuffer resolution</a>, чтобы увеличить разрешение.
+</p>
+<p>Для <a href="../../ru/Systemd-boot.html" title="Systemd-boot (Русский)">systemd-boot</a> установите <code>console-mode</code> в <code><i>esp</i>/EFI/loader/loader.conf</code>, смотрите <a href="../../ru/Systemd-boot.html#%D0%9D%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0" title="Systemd-boot (Русский)">systemd-boot (Русский)#Настройка</a>.
+</p>
+<p>Для <a href="../../ru/REFInd.html" title="REFInd (Русский)">rEFInd</a> добавьте <code><i>esp</i>/EFI/refind/refind.conf</code> и <code>/etc/refind.d/refind.conf</code> (последний опционален, но рекомендуется):
+</p>
+<pre>use_graphics_for linux
+</pre>
+<p>Небольшая оговорка заключается в том, что это скроет отображение параметров ядра во время загрузки.
+</p>
+<h2>
+<span id=".D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_.D0.A2.D0.92-.D0.B2.D1.8B.D1.85.D0.BE.D0.B4.D0.B0"></span><span class="mw-headline" id="Использование_ТВ-выхода">Использование ТВ-выхода</span>
+</h2>
+<p>Смотрите <a href="https://en.wikibooks.org/wiki/nVidia/TV-OUT" class="extiw" title="wikibooks:nVidia/TV-OUT">Wikibooks:nVidia/TV-OUT</a>.
+</p>
+<h2>
+<span id="X_with_a_TV_.28DFP.29_as_the_only_display"></span><span class="mw-headline" id="X_with_a_TV_(DFP)_as_the_only_display">X with a TV (DFP) as the only display</span>
+</h2>
+<p>Сервер X откатывается к CRT-0, если нет автоматически определённого монитора. Это может стать проблемой при использовании подключения ТВ через DVI как основной монитор, и сервер X был запущен при выключенном ТВ или он был не подключен.
+</p>
+<p>Для принудительного использования DFP драйвером NVIDIA, сохраните копию EDID в файловой системе там, где его сможет прочитать сервер X, вместо чтения EDID с ТВ/DFP.
+</p>
+<p>Для получения EDID запустите nvidia-settings. Появится различная информация в древовидном формате, игнорируя все настройки выберите графический процессор (соответствующее поле должно называться "GPU-0" или быть похожим на него), щелкните по <code>DFP</code> секции (также возможно <code>DFP-0</code> или что-то похожее), нажмите на кнопку <code>Acquire Edid</code> и сохраните куда-нибудь, например в <code>/etc/X11/dfp0.edid</code>.
+</p>
+<p>Если у вас не подключена мышь и клавиатура, EDID может быть получен из командной строки. Запустите сервер X с нужным логированием для вывода блока EDID:
+</p>
+<pre>$ startx -- -logverbose 6
+</pre>
+<p>После окончания иницализации сервера X закройте его, ваш лог файл сохранится в <code>/var/log/Xorg.0.log</code>. Извлеките блок EDID используя nvidia-xconfig:
+</p>
+<pre>$ nvidia-xconfig --extract-edids-from-file=/var/log/Xorg.0.log --extract-edids-output-file=/etc/X11/dfp0.bin
+</pre>
+<p>Отредактируйте <code>xorg.conf</code> добавив в секцию <code>Device</code> строки:
+</p>
+<pre>Option "ConnectedMonitor" "DFP"
+Option "CustomEDID" "DFP-0:/etc/X11/dfp0.edid"
+</pre>
+<p>Опция <code>ConnectedMonitor</code> принуждает драйвер распознавать DFP так, как буд-то он подключен. <code>CustomEDID</code> предоставляет данные EDID для устройства и говорит, что при загрузке ТВ/DFP как бы был подключен во время процесса запуска X.
+</p>
+<p>Таким образом, можно автоматически запускать менеджер экрана при загрузке, иметь рабочий и настроенный экран для X до включения питания ТВ.
+</p>
+<p>Если вышеуказанные изменения не работают, в <code>xorg.conf</code> в секции <code>Device</code> вы можете попробовать удалить строку <code>Option "ConnectedMonitor" "DFP"</code> и добавить следующие строки:
+</p>
+<pre>Option "ModeValidation" "NoDFPNativeResolutionCheck"
+Option "ConnectedMonitor" "DFP-0"
+</pre>
+<p>Опция драйвера NVIDIA <code>NoDFPNativeResolutionCheck</code> предотвращает отключение всех режимов, которые не подходят к основному разрешению.
+</p>
+<h2>
+<span id=".D0.A0.D0.B0.D0.B7.D1.80.D0.B5.D1.88.D0.B5.D0.BD.D0.B8.D0.B5_.D0.B1.D0.B5.D0.B7_.D0.BF.D0.BE.D0.B4.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.BD.D1.8B.D1.85_.D0.BC.D0.BE.D0.BD.D0.B8.D1.82.D0.BE.D1.80.D0.BE.D0.B2"></span><span class="mw-headline" id="Разрешение_без_подключенных_мониторов">Разрешение без подключенных мониторов</span>
+</h2>
+<p>В headless-режиме выставляется разрешение 640x480, которое будет использоваться в VNC или Steam Link. Чтобы выставить разрешение побольше, например 1920x1080, пропишите <code>Virtual</code> в подсекции <code>Screen</code>:
+</p>
+<pre>Section "Screen"
+   [...]
+   SubSection     "Display"
+       Depth       24
+       Virtual     1920 1080
+   EndSubSection
+EndSection
+</pre>
+<div class="archwiki-template-box archwiki-template-box-tip">
+<strong>Совет:</strong> Headless-режим может быть сложным и чреватым ошибками. Например, среды рабочего стола и <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=nvidia-utils">nvidia-utils</a></span> не предоставляют графического способа изменения разрешения. Для облегчения настройки разрешения можно использовать фиктивный адаптер DP или HDMI, который имитирует наличие монитора, подключенного к этому порту. Тогда разрешение можно будет изменить обычными способами с помощью удалённого сеанса, такого как VNC или Steam Link.</div>
+<h2>
+<span id=".D0.9F.D1.80.D0.BE.D0.B2.D0.B5.D1.80.D1.8C.D1.82.D0.B5_.D0.B8.D1.81.D1.82.D0.BE.D1.87.D0.BD.D0.B8.D0.BA_.D0.BF.D0.B8.D1.82.D0.B0.D0.BD.D0.B8.D1.8F"></span><span class="mw-headline" id="Проверьте_источник_питания">Проверьте источник питания</span>
+</h2>
+<p>С помощью драйвера NVIDIA можно выяснить текущий источник питания видеокарты. Для этого нужно получить значение параметра 'GPUPowerSource' с помощью утилиты <code>nvidia-settings</code> (0 - питание от сети переменного напряжения, 1 - питание от батареи):
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">$ nvidia-settings -q GPUPowerSource -t</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">1</pre>
+<h2>
+<span id=".D0.9F.D1.80.D0.BE.D1.81.D0.BB.D1.83.D1.88.D0.B8.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_ACPI-.D1.81.D0.BE.D0.B1.D1.8B.D1.82.D0.B8.D0.B9"></span><span class="mw-headline" id="Прослушивание_ACPI-событий">Прослушивание ACPI-событий</span>
+</h2>
+<p>Драйверы NVIDIA автоматически пытаются подключиться к демону <a href="../../ru/Acpid.html" title="Acpid (Русский)">acpid</a> и получать уведомления о ACPI событиях (подключение/отключение источника питания, некоторые горячие клавиши и т.д.).
+Если соединение завершается неудачей, то X сервер выведет следующее предупреждение:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">~/.local/share/xorg/Xorg.0.log</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">NVIDIA(0): ACPI: failed to connect to the ACPI event daemon; the daemon
+NVIDIA(0):     may not be running or the "AcpidSocketPath" X
+NVIDIA(0):     configuration option may not be set correctly.  When the
+NVIDIA(0):     ACPI event daemon is available, the NVIDIA X driver will
+NVIDIA(0):     try to use it to receive ACPI event notifications.  For
+NVIDIA(0):     details, please see the "ConnectToAcpid" and
+NVIDIA(0):     "AcpidSocketPath" X configuration options in Appendix B: X
+NVIDIA(0):     Config Options in the README.
+</pre>
+<p>Вы можете запретить вывод этого сообщения, отключив опцию <code>ConnectToAcpid</code> в вашем конфигурационном файле:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/X11/xorg.conf.d/20-nvidia.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;"> Section "Device"
+   ...
+   Driver "nvidia"
+   Option "ConnectToAcpid" "0"
+   ...
+ EndSection
+</pre>
+<p>Однако если вы пользователь ноутбука, возможно более грамотным решением проблемы станет установка и запуск демона <a href="../../ru/Acpid.html" title="Acpid (Русский)">acpid</a>.
+</p>
+<h2>
+<span id=".D0.9E.D1.82.D0.BE.D0.B1.D1.80.D0.B0.D0.B6.D0.B5.D0.BD.D0.B8.D0.B5_.D1.82.D0.B5.D0.BC.D0.BF.D0.B5.D1.80.D0.B0.D1.82.D1.83.D1.80.D1.8B_.D0.B3.D1.80.D0.B0.D1.84.D0.B8.D1.87.D0.B5.D1.81.D0.BA.D0.BE.D0.B3.D0.BE_.D0.BF.D1.80.D0.BE.D1.86.D0.B5.D1.81.D1.81.D0.BE.D1.80.D0.B0_.D0.B2_.D0.BE.D0.B1.D0.BE.D0.BB.D0.BE.D1.87.D0.BA.D0.B5"></span><span class="mw-headline" id="Отображение_температуры_графического_процессора_в_оболочке">Отображение температуры графического процессора в оболочке</span>
+</h2>
+<p>Существует три метода запроса температуры видеокарты. <i>nvidia-settings</i> требует использования X, nvidia-smi или nvclock — не требуют. Также обратите внимание, что <i>nvclock</i> в настоящее время не работает с новыми картами NVIDIA, такими как карты серии GeForce 200, а также интегрированными графическими решениями, такими как Zotac IONITX's 8800GS.
+</p>
+<h3><span class="mw-headline" id="nvidia-settings">nvidia-settings</span></h3>
+<p>Для отображения температуры графического ядра в оболочке используйте <code>nvidia-settings</code> как указано ниже:
+</p>
+<pre>$ nvidia-settings -q gpucoretemp
+</pre>
+<p>Вывод должен быть примерно такой:
+</p>
+<pre>Attribute 'GPUCoreTemp' (hostname:0.0): 41.
+'GPUCoreTemp' is an integer attribute.
+'GPUCoreTemp' is a read-only attribute.
+'GPUCoreTemp' can use the following target types: X Screen, GPU.
+</pre>
+<p>Температура графического процессора этой платы 41 °C.
+</p>
+<p>Пример того, как получить значение температуры для использования в утилитах <code>rrdtool</code> или <code>conky</code> и др.:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">$ nvidia-settings -q gpucoretemp -t</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">41</pre>
+<h3><span class="mw-headline" id="nvidia-smi">nvidia-smi</span></h3>
+<p><code>nvidia-smi</code> может читать температуру прямо с графического процессора без использования сервера X. Это важно для небольшой группы пользователей, которые не имеют запущенного сервера X, те, кто используют ОС для серверных приложений.
+Отображение температуры графического процессора с использованием nvidia-smi:
+</p>
+<pre>$ nvidia-smi
+</pre>
+<p>Пример вывода результата работы программы:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">$ nvidia-smi</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">Fri Jan  6 18:53:54 2012       
++------------------------------------------------------+                       
+| NVIDIA-SMI 2.290.10   Driver Version: 290.10         |                       
+|-------------------------------+----------------------+----------------------+
+| Nb.  Name                     | Bus Id        Disp.  | Volatile ECC SB / DB |
+| Fan   Temp   Power Usage /Cap | Memory Usage         | GPU Util. Compute M. |
+|===============================+======================+======================|
+| 0.  GeForce 8500 GT           | 0000:01:00.0  N/A    |       N/A        N/A |
+|  30%   62 C  N/A   N/A /  N/A |  17%   42MB /  255MB |  N/A      Default    |
+|-------------------------------+----------------------+----------------------|
+| Compute processes:                                               GPU Memory |
+|  GPU  PID     Process name                                       Usage      |
+|=============================================================================|
+|  0.           ERROR: Not Supported                                          |
++-----------------------------------------------------------------------------+
+</pre>
+<p>Только температура:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">$ nvidia-smi -q -d TEMPERATURE</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">
+
+==============NVSMI LOG==============
+
+Timestamp                           : Sun Apr 12 08:49:10 2015
+Driver Version                      : 346.59
+
+Attached GPUs                       : 1
+GPU 0000:01:00.0
+    Temperature
+        GPU Current Temp            : 52 C
+        GPU Shutdown Temp           : N/A
+        GPU Slowdown Temp           : N/A
+
+</pre>
+<p>Пример того, как получить значение температуры для использования в утилитах <code>rrdtool</code> или <code>conky</code> и др.:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">$ nvidia-smi --query-gpu=temperature.gpu --format=csv,noheader,nounits</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">52</pre>
+<p>Ссылка на руководство: <a rel="nofollow" class="external free" href="https://www.question-defense.com/2010/03/22/gpu-linux-shell-temp-get-nvidia-gpu-temperatures-via-linux-cli">https://www.question-defense.com/2010/03/22/gpu-linux-shell-temp-get-nvidia-gpu-temperatures-via-linux-cli</a><sup title="Статус последней проверки: domain name not resolved">[<a href="https://en.wikipedia.org/wiki/ru:%D0%92%D0%B8%D0%BA%D0%B8%D0%BF%D0%B5%D0%B4%D0%B8%D1%8F:%D0%9C%D1%91%D1%80%D1%82%D0%B2%D1%8B%D0%B5_%D1%81%D1%81%D1%8B%D0%BB%D0%BA%D0%B8" class="extiw" title="wikipedia:ru:Википедия:Мёртвые ссылки">устаревшая ссылка</a> 2023-05-07 ⓘ]</sup>.
+</p>
+<h3><span class="mw-headline" id="nvclock">nvclock</span></h3>
+<p>Используйте <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/nvclock/">nvclock</a></span><sup><small>AUR</small></sup>.
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Примечание:</strong> <code>nvclock</code> не может получить доступ к тепловому сенсору на картах NVIDIA новее Geforce 200 series.</div>
+<p>Могут быть расхождения значений температуры между nvclock и nvidia-settings/nv-control. В соответствии с <a rel="nofollow" class="external text" href="https://sourceforge.net/projects/nvclock/forums/forum/67426/topic/1906899">этим сообщением</a> от автора (thunderbird) nvclock, значения выдаваемые nvclock более точные.
+</p>
+<h2>
+<span id=".D0.A0.D0.B0.D0.B7.D0.B3.D0.BE.D0.BD_.D0.B8_.D0.BE.D1.85.D0.BB.D0.B0.D0.B6.D0.B4.D0.B5.D0.BD.D0.B8.D0.B5"></span><span class="mw-headline" id="Разгон_и_охлаждение">Разгон и охлаждение</span>
+</h2>
+<h3>
+<span id=".D0.92.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_.D1.80.D0.B0.D0.B7.D0.B3.D0.BE.D0.BD.D0.B0"></span><span class="mw-headline" id="Включение_разгона">Включение разгона</span>
+</h3>
+<div class="archwiki-template-box archwiki-template-box-warning">
+<strong>Важно:</strong> Помните, что разгон может привести к повреждению оборудования и авторы этой страницы снимают с себя любую ответственность за повреждение оборудования, вся информация, в том числе и возможность разгона, указывается изготовителем в спецификации к оборудованию.</div>
+<p>Разгон контролируется через опцию <i>Coolbits</i> в секции <code>Device</code>, позволяя использовать различные неподдерживаемые свойства:
+</p>
+<pre>Option "Coolbits" "<i>value</i>"
+</pre>
+<div class="archwiki-template-box archwiki-template-box-tip">
+<strong>Совет:</strong> Опция <i>Coolbits</i> легко контролируется через <i>nvidia-xconfig</i>, которая может управлять файлами конфигурации Xorg: <pre># nvidia-xconfig --cool-bits=<i>value</i></pre>
+</div>
+<p>Значение <i>Coolbits</i> - сумма его составляющих битов в двоичной системе исчисления. Типы битов:
+</p>
+<ul>
+<li>
+<code>1</code> (bit 0) - Включает возможность разгона для старых (до архитектуры Fermi) ядер, вкладка <i>Clock Frequencies</i> в <i>nvidia-settings</i>.</li>
+<li>
+<code>2</code> (bit 1) - Когда бит установлен, драйвер "будет пытаться инициализировать режим SLI, когда используются два графических процессора с разным количеством видеопамяти".</li>
+<li>
+<code>4</code> (bit 2) - Включает ручное управление охлаждением графического процессора вкладка <i>Thermal Monitor</i> в <i>nvidia-settings</i>.</li>
+<li>
+<code>8</code> (bit 3) - Включает возможность разгона на вкладке <i>PowerMizer</i> в <i>nvidia-settings</i>. Доступна с версии 337.12 для архитектур Fermi и новее. <a rel="nofollow" class="external autonumber" href="https://www.phoronix.com/scan.php?px=MTY1OTM&amp;page=news_item">[1]</a>
+</li>
+<li>
+<code>16</code> (bit 4) - Включает возможность повышения напряжения через параметры командной строки <i>nvidia-settings</i>. Доступна с версии 346.16 для архитектур Fermi и новее.<a rel="nofollow" class="external autonumber" href="https://www.phoronix.com/scan.php?page=news_item&amp;px=MTg0MDI">[2]</a>
+</li>
+</ul>
+<p>Чтобы включить несколько свойств, сложите значения <i>Coolbits</i>. Например, чтобы включить возможности разгона и повышения напряжения для архитектуры Fermi, установите значение <code>Option "Coolbits" "24"</code>.
+</p>
+<p>Документация по <i>Coolbits</i> находится в <code>/usr/share/doc/nvidia/html/xconfigoptions.html</code> и <a rel="nofollow" class="external text" href="https://download.nvidia.com/XFree86/Linux-x86_64/430.14/README/xconfigoptions.html#Coolbits">здесь</a>.
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Примечание:</strong> Также можно отредактировать и перепрошить BIOS видеокарты через DOS (предпочтительнее) или с использованием Win32 окружения с помощью <a rel="nofollow" class="external text" href="https://www.techpowerup.com/download/nvidia-nvflash/">nvflash</a> и <a rel="nofollow" class="external text" href="https://www.guru3d.com/files-details/nvidia-bios-editor-download-nibitor.html">NiBiTor 6.0</a>. Преимущество данного способа в том, что вы можете поднять не только напряжение, но и повысить стабильность программных методов разгона, такие как Coolbits. <a rel="nofollow" class="external text" href="https://ivanvojtko.blogspot.sk/2014/03/how-to-overclock-geforce-460gtx-fermi.html">Руководство по модификации BIOS архитектуры Fermi (англ.)</a>
+</div>
+<h4>
+<span id=".D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0_.D1.81.D1.82.D0.B0.D1.82.D0.B8.D1.87.D0.B5.D1.81.D0.BA.D0.BE.D0.B3.D0.BE_2D.2F3D_.D1.80.D0.B0.D0.B7.D0.B3.D0.BE.D0.BD.D0.B0"></span><span class="mw-headline" id="Настройка_статического_2D/3D_разгона">Настройка статического 2D/3D разгона</span>
+</h4>
+<p>Установите следующую строку в секции <code>Device</code> для включения PowerMizer на максимальную производительность (VSync не будет работать без этой строки):
+</p>
+<pre>Option "RegistryDwords" "PerfLevelSrc=0x2222"
+</pre>
+<h4>
+<span id=".D0.A1.D0.BE.D1.85.D1.80.D0.B0.D0.BD.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BD.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B5.D0.BA_.D1.80.D0.B0.D0.B7.D0.B3.D0.BE.D0.BD.D0.B0"></span><span class="mw-headline" id="Сохранение_настроек_разгона">Сохранение настроек разгона</span>
+</h4>
+<p>Как правило, изменения частоты и напряжения, сделанные через интерфейс <i>nvidia-settings</i>, не сохраняются, теряясь после перезагрузки.
+К счастью, существуют инструменты, предлагающие интерфейс для разгона под проприетарным драйвером, способные сохранять настройки разгона пользователя и автоматически применять их при загрузке.
+Вот некоторые из них:
+</p>
+<ul>
+<li>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/gwe/">gwe</a></span><sup><small>AUR</small></sup> — графический, применяет настройки при запуске сеанса рабочего стола</li>
+<li>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/nvclock/">nvclock</a></span><sup><small>AUR</small></sup> и <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/systemd-nvclock-unit/">systemd-nvclock-unit</a></span><sup><small>AUR</small></sup> — графический, применяет настройки при загрузке системы</li>
+<li>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/nvoc/">nvoc</a></span><sup><small>AUR</small></sup> — текстовый, профили представляют собой конфигурационные файлы в <code>/etc/nvoc.d/</code>, применяет настройки при запуске сеанса рабочего стола</li>
+</ul>
+<h3>
+<span id=".D0.98.D0.B7.D0.BC.D0.B5.D0.BD.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BB.D0.B8.D0.BC.D0.B8.D1.82.D0.B0_TDP"></span><span class="mw-headline" id="Изменение_лимита_TDP">Изменение лимита TDP</span>
+</h3>
+<p>Современные видеокарты Nvidia сбрасывают частоту, чтобы оставаться в пределах своего TDP и температуры. Для повышения производительности можно изменить предел TDP, что привёдет к повышению температуры и увеличению энергопотребления.
+</p>
+<p>Например, чтобы установить предел энергопотребления на 160,30 Вт
+</p>
+<pre># nvidia-smi -pl 160.30
+</pre>
+<p>Чтобы установить предел во время загрузки системы:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/systemd/system/nvidia-tdp.timer</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">[Unit]
+Description=Set NVIDIA power limit on boot
+
+[Timer]
+OnBootSec=5
+
+[Install]
+WantedBy=timers.target</pre>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/systemd/system/nvidia-tdp.service</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">[Unit]
+Description=Set NVIDIA power limit
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/nvidia-smi -pl 160.30</pre>
+<h3>
+<span id=".D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0_.D1.81.D0.BA.D0.BE.D1.80.D0.BE.D1.81.D1.82.D0.B8_.D0.B2.D0.B5.D0.BD.D1.82.D0.B8.D0.BB.D1.8F.D1.82.D0.BE.D1.80.D0.B0_.D0.BF.D1.80.D0.B8_.D0.B2.D1.85.D0.BE.D0.B4.D0.B5"></span><span class="mw-headline" id="Установка_скорости_вентилятора_при_входе">Установка скорости вентилятора при входе</span>
+</h3>
+<p>Вы можете выставить скорость вентилятора вашей графической карты с помощью консольного интерфейса <i>nvidia-settings</i>. Сначала убедитесь в том, что в вашем конфигурационом файле Xorg для опции <a href="#%D0%92%D0%BA%D0%BB%D1%8E%D1%87%D0%B5%D0%BD%D0%B8%D0%B5_%D1%80%D0%B0%D0%B7%D0%B3%D0%BE%D0%BD%D0%B0">Coolbits</a> установлен бит 2.
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Примечание:</strong> Для карт GeForce 400/500 series, на текущий момент, этот метод при входе не устанавливает скорость вентилятора. Также, этот метод только позволяет настраивать скорость вентилятора только для текущей сессии X через nvidia-settings.</div>
+<p>Поместите следующую строку в ваш файл <a href="../../ru/Xinit.html" title="Xinit (Русский)">xinitrc</a> для управления вентилятором при запуске Xorg. Замените <code><i>n</i></code> на значение скорости вентилятора нужное вам в процентах.
+</p>
+<pre>nvidia-settings -a "[gpu:0]/GPUFanControlState=1" -a "[fan:0]/GPUTargetFanSpeed=<i>n</i>"
+</pre>
+<p>Также вы можете указать и второй графический процессор, путем увеличения счетчика графического процесора и вентилятора.
+</p>
+<pre>nvidia-settings -a "[gpu:0]/GPUFanControlState=1" -a "[fan:0]/GPUTargetFanSpeed=<i>n</i>" \
+                -a "[gpu:1]/GPUFanControlState=1" -a  [fan:1]/GPUTargetFanSpeed=<i>n</i>" &amp;
+</pre>
+<p>Если вы ипользуете менеджер входа такой как GDM или SDDM, вы можете создать файл настроек. Создайте <code>~/.config/autostart/nvidia-fan-speed.desktop</code> и вставьте следующий текст.Снова измените <code><i>n</i></code> на значение скорости вентилятора нужное вам в процентах.
+</p>
+<pre>[Desktop Entry]
+Type=Application
+Exec=nvidia-settings -a "[gpu:0]/GPUFanControlState=1" -a "[fan:0]/GPUTargetFanSpeed=<i>n</i>"
+X-GNOME-Autostart-enabled=true
+Name=nvidia-fan-speed
+</pre>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Примечание:</strong> До версии драйвера 349.16 вместо опции <code>GPUTargetFanSpeed</code> использовалась опция <code>GPUCurrentFanSpeed</code>. <a rel="nofollow" class="external autonumber" href="https://devtalk.nvidia.com/default/topic/821563/linux/can-t-control-fan-speed-with-beta-driver-349-12/post/4526208/#4526208">[3]</a>
+</div>
+<p>Чтобы можно было регулировать скорость вращения вентиляторов более чем одной видеокарты, выполните команду:
+</p>
+<pre>$ nvidia-xconfig --enable-all-gpus
+$ nvidia-xconfig --cool-bits=4
+</pre>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Примечание:</strong> На некоторых ноутбуках (например, <a rel="nofollow" class="external text" href="https://devtalk.nvidia.com/default/topic/1052110/linux/can-t-control-gtx-1050-ti-max-q-fan-on-thinkpad-x1-extreme-laptop/post/5340658/#5340658">X1 Extreme</a> и <a rel="nofollow" class="external text" href="https://devtalk.nvidia.com/default/topic/1048624/linux/how-to-set-gpu-fan-speed/post/5321818/#5321818">P51/P52</a>) есть два вентилятора, но nvidia их не контролирует.</div>
+<h2>
+<span id=".D0.9F.D0.B0.D1.80.D0.B0.D0.BC.D0.B5.D1.82.D1.80.D1.8B_.D0.BC.D0.BE.D0.B4.D1.83.D0.BB.D1.8F_.D1.8F.D0.B4.D1.80.D0.B0"></span><span class="mw-headline" id="Параметры_модуля_ядра">Параметры модуля ядра</span>
+</h2>
+<p>Некоторые параметры могут быть установлены как параметры модуля ядра, полный список можно получить, выполнив <code>modinfo nvidia</code> или посмотрев <code>nv-reg.h</code>. Смотрите также <a href="https://wiki.gentoo.org/wiki/NVidia/nvidia-drivers#Kernel_module_parameters" class="extiw" title="gentoo:NVidia/nvidia-drivers">Gentoo:NVidia/nvidia-drivers#Kernel module parameters</a>.
+</p>
+<p>Например, включение следующих параметров включит kernel mode settings и PAT <a rel="nofollow" class="external autonumber" href="https://docs.kernel.org/arch/x86/pat.html">[4]</a>, что влияет на то, как выделяется память. PAT была впервые представлена в Pentium III <a rel="nofollow" class="external autonumber" href="https://www.kernel.org/doc/ols/2008/ols2008v2-pages-135-144.pdf">[5]</a> и поддерживается большинством более новых процессоров (<a href="https://en.wikipedia.org/wiki/Page_attribute_table#Processors" class="extiw" title="wikipedia:Page attribute table">wikipedia:Page attribute table#Processors</a>). Если ваша система может поддерживать эту функцию, это должно повысить производительность. 
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/modprobe.d/nvidia.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">options nvidia-drm modeset=1 
+options nvidia NVreg_UsePageAttributeTable=1</pre>
+<p>На некоторых ноутбуках, чтобы разрешить изменения через nvidia-settings, необходимо включить этот параметр, иначе он будет отвечать "Setting applications clocks is not supported" и т.д.
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/modprobe.d/nvidia.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">options nvidia NVreg_RegistryDwords="OverrideMaxPerf=0x1"</pre>
+<h2>
+<span id=".D0.A1.D0.BE.D1.85.D1.80.D0.B0.D0.BD.D0.B5.D0.BD.D0.B8.D0.B5_.D0.B2.D0.B8.D0.B4.D0.B5.D0.BE.D0.BF.D0.B0.D0.BC.D1.8F.D1.82.D0.B8_.D0.B2_.D0.B6.D0.B4.D1.83.D1.89.D0.B5.D0.BC_.D1.80.D0.B5.D0.B6.D0.B8.D0.BC.D0.B5"></span><span class="mw-headline" id="Сохранение_видеопамяти_в_ждущем_режиме">Сохранение видеопамяти в ждущем режиме</span>
+</h2>
+<p>По умолчанию драйверы NVIDIA Linux сохраняют и восстанавливают в ждущем режиме только основные распределения видеопамяти. Цитируя NVIDIA (<a rel="nofollow" class="external autonumber" href="https://download.nvidia.com/XFree86/Linux-x86_64/460.56/README/powermanagement.html">[6]</a>, также доступно с пакетом <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=nvidia-utils">nvidia-utils</a></span> в <code>/usr/share/doc/nvidia/html/powermanagement.html</code>): <i>Потеря содержимого видеопамяти частично компенсируется драйверами NVIDIA и некоторыми приложениями, но может привести к таким сбоям, как повреждение рендеринга и сбои приложений при выходе из циклов управления питанием.</i>
+</p>
+<p>Пока ещё <b>экспериментальная</b> система позволяет сохранять всю видеопамять (при наличии достаточного места на диске или в оперативной памяти). Интерфейс доступен через файл <code>/proc/driver/nvidia/suspend</code> и работает следующим образом: запишите "suspend" (или "hibernate") в <code>/proc/driver/nvidia/suspend</code> непосредственно перед записью в обычный файл <code>/sys/power/state</code>, запись "resume" в <code>/proc/driver/nvidia/suspend</code> сразу после пробуждения или после неудачной попытки ухода в ждущий или спящий режим.
+</p>
+<p>Драйверы NVIDIA полагаются на определённую пользователем файловую систему для хранения данных. Выбранная файловая система должна поддерживать безымянные временные файлы (ext4 подходит) и иметь достаточный объём для хранения распределения видеопамяти (например, как минимум <code>(сумма объёма памяти всех видеокарт NVIDIA) * 1.02</code>). Используйте команду <code>nvidia-smi -q -d MEMORY</code> для получения списка объёмов памяти всех GPU в системе.
+</p>
+<p>Чтобы выбрать файловую систему, используемую для хранения видеопамяти во время сна системы (и изменить стратегию сохранения/восстановления видеопамяти по умолчанию на сохранение и восстановление всех распределений видеопамяти), необходимо передать две опции модулю ядра "nvidia". Например, запишите следующую строку в <code>/etc/modprobe.d/nvidia-power-management.conf</code> и перезагрузитесь: 
+</p>
+<pre>options nvidia NVreg_PreserveVideoMemoryAllocations=1 NVreg_TemporaryFilePath=/tmp-nvidia
+</pre>
+<p>Можно заменить <code>/tmp-nvidia</code> а другой желаемый вами путь.
+</p>
+<p>Взаимодействие с <code>/proc/driver/nvidia/suspend</code> обрабатывается простым скриптом <code>/usr/bin/nvidia-sleep.sh</code>, который сам будет вызван таким инструментом вроде <a href="../../ru/Systemd.html" title="Systemd (Русский)">systemd</a>. Пакет <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=nvidia-utils">nvidia-utils</a></span> поставляется с соответствующими службами systemd (которые, по сути, просто вызывают <code>nvidia-sleep.sh</code>): <code>nvidia-suspend</code>, <code>nvidia-hibernate</code>, <code>nvidia-resume</code>. Вопреки инструкциям NVIDIA, в настоящее время нет необходимости включать <code>nvidia-resume</code> (и на самом деле, возможно, это не очень хорошая идея), потому что скрипт <code>/usr/lib/systemd/system-sleep/nvidia</code> делает то же самое, что и эта служба (но немного раньше) и включен по умолчанию (systemd вызывает его после пробуждения). Включите <code>nvidia-suspend</code> и/или <code>nvidia-hibernate</code>.
+</p>
+<h2>
+<span id=".D0.94.D1.80.D0.B0.D0.B9.D0.B2.D0.B5.D1.80_persistence"></span><span class="mw-headline" id="Драйвер_persistence">Драйвер persistence</span>
+</h2>
+<p>Есть демон, который можно запускать при загрузке. В стандартной настольной среде с одной видеокартой демон не нужен и может создавать проблемы <a rel="nofollow" class="external autonumber" href="https://devtalk.nvidia.com/default/topic/1044421/linux/nvidia-persistenced-causing-60-second-reboot-delays">[7]</a>. Смотрите раздел <a rel="nofollow" class="external text" href="https://docs.nvidia.com/deploy/driver-persistence/index.html#persistence-daemon">Driver Persistence</a> документации Nvidia для получения подробной информации.
+</p>
+<p>Для запуска демона persistence <a href="../../ru/Systemd.html#%D0%98%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5_%D1%8E%D0%BD%D0%B8%D1%82%D0%BE%D0%B2" class="mw-redirect" title="Включите">включите</a> службу <code>nvidia-persistenced.service</code>. Для использования вручную смотрите <a rel="nofollow" class="external text" href="https://docs.nvidia.com/deploy/driver-persistence/index.html#usage">документацию разработчика</a>.
+</p>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface">
+<div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../../Special:Categories.html" title="Special:Categories">Categories</a>: <ul>
+<li><a href="../../ru/Category:Graphics.html" title="Category:Graphics (Русский)">Graphics (Русский)</a></li>
+<li><a href="../../ru/Category:X_server.html" title="Category:X server (Русский)">X server (Русский)</a></li>
+</ul>
+</div>
+<div id="mw-hidden-catlinks" class="mw-hidden-catlinks mw-hidden-cats-hidden">Hidden category: <ul><li><a href="../../en/Category:Pages_with_dead_links.html" title="Category:Pages with dead links">Pages with dead links</a></li></ul>
+</div>
+</div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=NVIDIA_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)/Tips_and_tricks_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)&amp;oldid=783461">https://wiki.archlinux.org/index.php?title=NVIDIA_(Русский)/Tips_and_tricks_(Русский)&amp;oldid=783461</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 20 July 2023, at 07:12.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

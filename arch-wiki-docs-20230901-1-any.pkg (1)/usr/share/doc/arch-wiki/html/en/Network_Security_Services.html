@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>Network Security Services - ArchWiki</title>
+<link rel="stylesheet" href="../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Network_Security_Services rootpage-Network_Security_Services skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Installation" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Installation">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Installation</div>
+			</a>
+			
+			<ul id="toc-Installation-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Usage" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Usage">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Usage</div>
+			</a>
+			
+				<button aria-controls="toc-Usage-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Usage subsection
+				</button>
+			
+			<ul id="toc-Usage-sublist" class="sidebar-toc-list">
+				<li id="toc-List_certificate_DB" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#List_certificate_DB">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.1</span>List certificate DB</div>
+			</a>
+			
+			<ul id="toc-List_certificate_DB-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Generate_an_RSA_private_key" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Generate_an_RSA_private_key">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.2</span>Generate an RSA private key</div>
+			</a>
+			
+			<ul id="toc-Generate_an_RSA_private_key-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Generate_a_certificate_signing_request" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Generate_a_certificate_signing_request">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.3</span>Generate a certificate signing request</div>
+			</a>
+			
+			<ul id="toc-Generate_a_certificate_signing_request-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Generate_a_self-signed_certificate" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Generate_a_self-signed_certificate">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.4</span>Generate a self-signed certificate</div>
+			</a>
+			
+			<ul id="toc-Generate_a_self-signed_certificate-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Import_certificate" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Import_certificate">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.5</span>Import certificate</div>
+			</a>
+			
+			<ul id="toc-Import_certificate-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Edit_certificate" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Edit_certificate">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.6</span>Edit certificate</div>
+			</a>
+			
+			<ul id="toc-Edit_certificate-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Delete_certificate" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Delete_certificate">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.7</span>Delete certificate</div>
+			</a>
+			
+			<ul id="toc-Delete_certificate-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Adding_a_trusted_CA_certificate" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Adding_a_trusted_CA_certificate">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.8</span>Adding a trusted CA certificate</div>
+			</a>
+			
+			<ul id="toc-Adding_a_trusted_CA_certificate-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-See_also" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#See_also">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>See also</div>
+			</a>
+			
+			<ul id="toc-See_also-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../en/Network_Security_Services.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="mw-list-item"><a href="../en/Talk:Network_Security_Services.html" rel="discussion" title="Discussion about the content page [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">English</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../en/Network_Security_Services.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=Network_Security_Services&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=Network_Security_Services&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../en/Network_Security_Services.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Network_Security_Services&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Network_Security_Services&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output">
+<p><a href="https://en.wikipedia.org/wiki/Network_Security_Services" class="extiw" title="wikipedia:Network Security Services">Network Security Services</a> (<b>NSS</b>) is a set of libraries designed to support cross-platform development of security-enabled client and server applications.
+</p>
+<p>Applications built with NSS can support <a href="https://en.wikipedia.org/wiki/SSL" class="extiw" title="wikipedia:SSL">SSL</a> v2 and v3, <a href="../en/Transport_Layer_Security.html" class="mw-redirect" title="TLS">TLS</a>, PKCS #5, <a href="https://en.wikipedia.org/wiki/PKCS_7" class="extiw" title="wikipedia:PKCS 7">PKCS #7</a>, <a href="https://en.wikipedia.org/wiki/PKCS_11" class="extiw" title="wikipedia:PKCS 11">PKCS #11</a>, <a href="https://en.wikipedia.org/wiki/PKCS_12" class="extiw" title="wikipedia:PKCS 12">PKCS #12</a>, <a href="https://en.wikipedia.org/wiki/S/MIME" class="extiw" title="wikipedia:S/MIME">S/MIME</a>, <a href="https://en.wikipedia.org/wiki/X.509" class="extiw" title="wikipedia:X.509">X.509</a> v3 certificates, and other security standards.
+</p>
+<p>NSS is required by many packages, including, for example, <a href="../en/Chromium.html" title="Chromium">Chromium</a> and <a href="../en/Firefox.html" title="Firefox">Firefox</a>.
+</p>
+<mw:tocplace></mw:tocplace>
+<h2><span class="mw-headline" id="Installation">Installation</span></h2>
+<p><a href="../en/Help:Reading.html#Installation_of_packages" class="mw-redirect" title="Install">Install</a> the <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=nss">nss</a></span> package.
+</p>
+<h2><span class="mw-headline" id="Usage">Usage</span></h2>
+<p>NSS is implemented in terms of operations on a dynamically configured list of <a href="https://en.wikipedia.org/wiki/PKCS_11" class="extiw" title="wikipedia:PKCS 11">PKCS #11</a> modules. Each module can execute cryptographic operations and store cryptographic objects. The configured list of modules is usually stored in an arbitrary directory, provided by a user at initialization of NSS, in the file <code>pkcs11.txt</code>. The list always contains a built-in module "NSS Internal PKCS #11 Module" with tokens "NSS Generic Crypto Services" and "NSS Certificate DB". The first token provides cryptographic mechanisms such as RSA, SHA256, TLS etc. The second token stores certificates and private keys in the same user-provided directory in the files <code>cert9.db</code> and <code>key4.db</code>. The files <code>pkcs11.txt</code>, <code>cert9.db</code> and <code>key4.db</code> are also called "NSS databases". Paths to NSS databases for some applications are listed in the table below. You should provide some path for each operation. Examples below will use <code>~/.pki/nssdb/</code>.
+</p>
+<table class="wikitable">
+<tbody>
+<tr>
+<th>Application</th>
+<th>Path to NSS databases
+</th>
+</tr>
+<tr>
+<td>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=chromium">chromium</a></span>, <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=evolution">evolution</a></span>
+</td>
+<td>
+<code>~/.pki/nssdb/</code>
+</td>
+</tr>
+<tr>
+<td>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=firefox">firefox</a></span>
+</td>
+<td>
+<code>~/.mozilla/firefox/&lt;profile&gt;/</code>
+</td>
+</tr>
+<tr>
+<td>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=thunderbird">thunderbird</a></span>
+</td>
+<td>
+<code>~/.thunderbird/&lt;profile&gt;/</code>
+</td>
+</tr>
+<tr>
+<td>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=libreoffice-fresh">libreoffice-fresh</a></span>
+</td>
+<td>configurable via Options <a rel="nofollow" class="external autonumber" href="https://help.libreoffice.org/latest/en-US/text/shared/guide/digitalsign_send.html">[1]</a>
+</td>
+</tr>
+</tbody>
+</table>
+<p>For managing <a href="https://en.wikipedia.org/wiki/PKCS_11" class="extiw" title="wikipedia:PKCS 11">PKCS #11</a> modules NSS provides the <span class="plainlinks archwiki-template-man" title="$ man 1 modutil"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/modutil.1">modutil(1)</a></span> utility, for managing certificates and private keys — the <span class="plainlinks archwiki-template-man" title="$ man 1 certutil"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/certutil.1">certutil(1)</a></span> utility.
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> NSS can automatically add <code>/usr/lib/libnssckbi.so</code> to the list of <a href="https://en.wikipedia.org/wiki/PKCS_11" class="extiw" title="wikipedia:PKCS 11">PKCS #11</a> modules depending on initialization flags.</div>
+<h3><span class="mw-headline" id="List_certificate_DB">List certificate DB</span></h3>
+<p>To get list of all certificates:
+</p>
+<pre>$ certutil -d ~/.pki/nssdb/ -L
+</pre>
+<p>To get details about certificate:
+</p>
+<pre>$ certutil -d ~/.pki/nssdb/ -L -n <i>certificate_nickname</i>
+</pre>
+<h3><span class="mw-headline" id="Generate_an_RSA_private_key">Generate an RSA private key</span></h3>
+<pre>$ certutil -d ~/.pki/nssdb/ -G -g <i>keysize</i> -n <i>nickname</i>
+</pre>
+<h3><span class="mw-headline" id="Generate_a_certificate_signing_request">Generate a certificate signing request</span></h3>
+<pre>$ certutil -d ~/.pki/nssdb/ -R -k <i>key-id</i> -s <i>subject</i> -o <i>file</i>
+</pre>
+<h3><span class="mw-headline" id="Generate_a_self-signed_certificate">Generate a self-signed certificate</span></h3>
+<pre>$ certutil -d ~/.pki/nssdb/ -S -s <i>subject</i> -n <i>nickname</i> -x -t C,C,C -o <i>file</i>
+</pre>
+<h3><span class="mw-headline" id="Import_certificate">Import certificate</span></h3>
+<p>To add a certificate specify the <code>-A</code> option:
+</p>
+<pre>$ certutil -d ~/.pki/nssdb/ -A -t "<i>TRUSTARGS</i>" -n <i>certificate_nickname</i> -i <i>/path/to/cert/filename</i>
+</pre>
+<p>The <code>TRUSTARGS</code> are three strings of zero or more alphabetic characters, separated by commas, for example: <code>"TCu,Cu,Tuw"</code>. They define how the certificate should be trusted for SSL, email, and object signing, and are explained in the <a rel="nofollow" class="external text" href="https://developer.mozilla.org/en-US/docs/Mozilla/Projects/NSS/Tools/certutil">certutil documentation</a><sup title="Last check status: 404">[<a href="https://en.wikipedia.org/wiki/Wikipedia:Link_rot" class="extiw" title="wikipedia:Wikipedia:Link rot">dead link</a> 2023-05-06 ⓘ]</sup> or <a rel="nofollow" class="external text" href="https://meenavyas.medium.com/about-trust-flags-of-certificates-in-nss-database-that-can-be-modified-by-certutil-67e4f33a6d0f">Meena's blog post</a> on trust flags.
+</p>
+<p>To add a personal certificate and private key for SSL client authentication use the command:
+</p>
+<pre>$ pk12util -d ~/.pki/nssdb/ -i <i>/path/to/PKCS12/cert/filename.p12</i>
+</pre>
+<p>This will import a personal certificate and private key stored in a PKCS #12 file. The <code>TRUSTARGS</code> of the personal certificate will be set to <code>"u,u,u"</code>.
+</p>
+<h3><span class="mw-headline" id="Edit_certificate">Edit certificate</span></h3>
+<p>Call <i>certutil</i> with <code>-M</code> option to edit the certificate. For example, to edit the <code>TRUSTARGS</code>:
+</p>
+<pre>$ certutil -d ~/.pki/nssdb/ -M -t "<i>TRUSTARGS</i>" -n <i>certificate_nickname</i>
+</pre>
+<h3><span class="mw-headline" id="Delete_certificate">Delete certificate</span></h3>
+<p>Use <code>-D</code> option to remove the certificate:
+</p>
+<pre>$ certutil -d ~/.pki/nssdb/ -D -n <i>certificate_nickname</i>
+</pre>
+<h3><span class="mw-headline" id="Adding_a_trusted_CA_certificate">Adding a trusted CA certificate</span></h3>
+<p>A system-wide trust store <code>/usr/lib/pkcs11/p11-kit-trust.so</code> is usually automatically added to the list of <a href="https://en.wikipedia.org/wiki/PKCS_11" class="extiw" title="wikipedia:PKCS 11">PKCS #11</a> modules. See <a href="../en/Transport_Layer_Security.html#Trust_management" title="Transport Layer Security">Transport Layer Security#Trust management</a> for system-wide configuration. For application-specific configuration use such a command to add a CA certificate:
+</p>
+<pre>certutil -d ~/.pki/nssdb/ -A -i <i>/path/to/certificate</i> -n <i>certificate nickname</i> -t C,,
+</pre>
+<h2><span class="mw-headline" id="See_also">See also</span></h2>
+<ul>
+<li><a rel="nofollow" class="external text" href="https://developer.mozilla.org/en-US/docs/Mozilla/Projects/NSS">Network Security Services - Mozilla</a></li>
+<li><a rel="nofollow" class="external text" href="https://blogs.oracle.com/meena/about-trust-flags-of-certificates-in-nss-database-that-can-be-modified-by-certutil">Managing Certificate Trust flags in NSS Database - Meena Vyas, Oracle</a></li>
+</ul>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface">
+<div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../Special:Categories.html" title="Special:Categories">Categories</a>: <ul>
+<li><a href="../en/Category:Transport_Layer_Security.html" title="Category:Transport Layer Security">Transport Layer Security</a></li>
+<li><a href="../en/Category:Mozilla.html" title="Category:Mozilla">Mozilla</a></li>
+</ul>
+</div>
+<div id="mw-hidden-catlinks" class="mw-hidden-catlinks mw-hidden-cats-hidden">Hidden category: <ul><li><a href="../en/Category:Pages_with_dead_links.html" title="Category:Pages with dead links">Pages with dead links</a></li></ul>
+</div>
+</div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=Network_Security_Services&amp;oldid=781740">https://wiki.archlinux.org/index.php?title=Network_Security_Services&amp;oldid=781740</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 23 June 2023, at 09:22.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

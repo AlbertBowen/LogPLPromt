@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>yt-dlp - ArchWiki</title>
+<link rel="stylesheet" href="../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Yt-dlp rootpage-Yt-dlp skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Installation" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Installation">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Installation</div>
+			</a>
+			
+			<ul id="toc-Installation-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Configuration" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Configuration">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Configuration</div>
+			</a>
+			
+			<ul id="toc-Configuration-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Usage" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Usage">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>Usage</div>
+			</a>
+			
+				<button aria-controls="toc-Usage-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Usage subsection
+				</button>
+			
+			<ul id="toc-Usage-sublist" class="sidebar-toc-list">
+				<li id="toc-Format_selection" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Format_selection">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.1</span>Format selection</div>
+			</a>
+			
+			<ul id="toc-Format_selection-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Extract_audio" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Extract_audio">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.2</span>Extract audio</div>
+			</a>
+			
+			<ul id="toc-Extract_audio-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Subtitles" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Subtitles">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.3</span>Subtitles</div>
+			</a>
+			
+			<ul id="toc-Subtitles-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Cookies" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Cookies">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.4</span>Cookies</div>
+			</a>
+			
+			<ul id="toc-Cookies-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Tips_and_tricks" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Tips_and_tricks">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4</span>Tips and tricks</div>
+			</a>
+			
+				<button aria-controls="toc-Tips_and_tricks-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Tips and tricks subsection
+				</button>
+			
+			<ul id="toc-Tips_and_tricks-sublist" class="sidebar-toc-list">
+				<li id="toc-Faster_downloads" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Faster_downloads">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.1</span>Faster downloads</div>
+			</a>
+			
+			<ul id="toc-Faster_downloads-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Playlist" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Playlist">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.2</span>Playlist</div>
+			</a>
+			
+			<ul id="toc-Playlist-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Trim_(partial_download)" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Trim_(partial_download)">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.3</span>Trim (partial download)</div>
+			</a>
+			
+			<ul id="toc-Trim_(partial_download)-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-URL_from_clipboard" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#URL_from_clipboard">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.4</span>URL from clipboard</div>
+			</a>
+			
+			<ul id="toc-URL_from_clipboard-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-See_also" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#See_also">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5</span>See also</div>
+			</a>
+			
+			<ul id="toc-See_also-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../en/Yt-dlp.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="mw-list-item"><a href="../en/Talk:Yt-dlp.html" rel="discussion" title="Discussion about the content page [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">English</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../en/Yt-dlp.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=Yt-dlp&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=Yt-dlp&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../en/Yt-dlp.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Yt-dlp&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Yt-dlp&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output">
+<p><span>
+</span>
+</p>
+<div class="archwiki-template-meta-related-articles-start">
+<p class="mw-no-invert">Related articles</p>
+<ul>
+<li><a href="../en/Mpv.html" title="Mpv">mpv</a></li>
+<li><a href="../en/FFmpeg.html" title="FFmpeg">FFmpeg</a></li>
+</ul>
+</div>
+<p><b>yt-dlp</b> is a command-line program that lets you easily download videos and audio from more than a thousand websites. See the <a rel="nofollow" class="external text" href="https://github.com/yt-dlp/yt-dlp/blob/master/supportedsites.md">list of supported sites</a>. 
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> yt-dlp is a fork of <a href="../en/Yt-dlp.html" class="mw-redirect" title="Youtube-dl">youtube-dl</a> that was created after the parent project became stagnant. The upstream <a rel="nofollow" class="external text" href="https://youtube-dl.org/">youtube-dl</a> can still be <a href="../en/Help:Reading.html#Installation_of_packages" class="mw-redirect" title="Install">installed</a> as <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=youtube-dl">youtube-dl</a></span>; commands on this page should still work, but check the <a rel="nofollow" class="external text" href="https://github.com/yt-dlp/yt-dlp#differences-in-default-behavior">list of differences</a>.</div>
+<mw:tocplace></mw:tocplace>
+<h2><span class="mw-headline" id="Installation">Installation</span></h2>
+<p><a href="../en/Help:Reading.html#Installation_of_packages" class="mw-redirect" title="Install">Install</a> the <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=yt-dlp">yt-dlp</a></span> package, or <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/yt-dlp-git/">yt-dlp-git</a></span><sup><small>AUR</small></sup> for the development version. It is recommended to also install <a href="../en/FFmpeg.html" title="FFmpeg">FFmpeg</a> as it is used for muxing for some sites. See the optional dependencies. 
+</p>
+<p>There are also various <a rel="nofollow" class="external text" href="https://www.reddit.com/r/youtubedl/wiki/info-guis">graphical frontends</a> to yt-dlp, such as <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/parabolic/">parabolic</a></span><sup><small>AUR</small></sup>, <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/tartube/">tartube</a></span><sup><small>AUR</small></sup> and <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/yt-dlg-git/">yt-dlg-git</a></span><sup><small>AUR</small></sup>. You can also install <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/yt-dlp-drop-in/">yt-dlp-drop-in</a></span><sup><small>AUR</small></sup> which provides a fake <code>/usr/bin/youtube-dl</code> executable (that just redirects to yt-dlp) for outdated programs that still look for a youtube-dl executable.
+</p>
+<h2><span class="mw-headline" id="Configuration">Configuration</span></h2>
+<p>The system-wide configuration file is <code>/etc/yt-dlp.conf</code> and the user-specific configuration file is <code>~/.config/yt-dlp/config</code>. The syntax is simply one command-line option per line. Example configuration:
+</p>
+<pre>--ignore-errors
+# --no-playlist
+
+# Save in ~/Videos
+-o ~/Videos/%(title)s.%(ext)s
+
+# Prefer 1080p or lower resolutions
+-f bestvideo[ext=mp4][width&lt;2000][height&lt;=1200]+bestaudio[ext=m4a]/bestvideo[ext=webm][width&lt;2000][height&lt;=1200]+bestaudio[ext=webm]/bestvideo[width&lt;2000][height&lt;=1200]+bestaudio/best[width&lt;2000][height&lt;=1200]/best
+</pre>
+<p>See <a rel="nofollow" class="external autonumber" href="https://github.com/yt-dlp/yt-dlp/blob/master/README.md#configuration">[1]</a> for more information.
+</p>
+<h2><span class="mw-headline" id="Usage">Usage</span></h2>
+<p>See <span class="plainlinks archwiki-template-man" title="$ man 1 yt-dlp"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/yt-dlp.1">yt-dlp(1)</a></span> for the manual.
+</p>
+<pre>$ yt-dlp [OPTIONS] <i>URL</i>
+</pre>
+<div class="archwiki-template-box archwiki-template-box-tip">
+<strong>Tip:</strong> In some cases (like YouTube) <code><i>URL</i></code> can be substituted with the video ID.</div>
+<h3><span class="mw-headline" id="Format_selection">Format selection</span></h3>
+<p>When multiple formats of a video are available, <i>youtube-dl</i> will download the best ones by default.
+</p>
+<p>To select a specific one to download:
+</p>
+<pre>$ yt-dlp -f <i>format</i> <i>URL</i>
+</pre>
+<p>To get a list of the available formats:
+</p>
+<pre>$ yt-dlp -F <i>URL</i>
+</pre>
+<h3><span class="mw-headline" id="Extract_audio">Extract audio</span></h3>
+<p>Use <code>-x</code> for audio-only downloads (requires <a href="../en/FFmpeg.html" title="FFmpeg">FFmpeg</a>):
+</p>
+<pre>$ yt-dlp -x -f bestaudio <i>URL</i>
+</pre>
+<p>Depending on the available source streams, this will often correct the audio-only container. If an audio-only stream is not available, exclude <code>-f bestaudio</code> from the example above. This will download the video and copy its audio as post process. By default this will remove the downloaded video, include <code>-k</code> to keep it.
+</p>
+<p>To also include album art (requires <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=atomicparsley">atomicparsley</a></span>):
+</p>
+<pre>$ yt-dlp -x -f bestaudio[ext=m4a] --add-metadata --embed-thumbnail <i>URL</i>
+</pre>
+<h3><span class="mw-headline" id="Subtitles">Subtitles</span></h3>
+<p>To see which languages are available:
+</p>
+<pre>$ yt-dlp --list-subs <i>URL</i>
+</pre>
+<p>To download a video with selected subtitles (comma separated):
+</p>
+<pre>$ yt-dlp --write-sub --sub-lang <i>LANG</i> <i>URL</i>
+</pre>
+<p>For auto-generated subtitles:
+</p>
+<pre>$ yt-dlp --write-auto-sub --sub-lang <i>LANG</i> <i>URL</i>
+</pre>
+<p>Add <code>--skip-download</code> to get only subtitles.
+</p>
+<h3><span class="mw-headline" id="Cookies">Cookies</span></h3>
+<p>To import cookies add the <code>--cookies-from-browser &lt;browser&gt;</code>
+</p>
+<p>Example of importing cookies from chromium
+</p>
+<pre>$ yt-dlp --cookies-from-browser chromium <i>URL</i>
+</pre>
+<h2><span class="mw-headline" id="Tips_and_tricks">Tips and tricks</span></h2>
+<h3><span class="mw-headline" id="Faster_downloads">Faster downloads</span></h3>
+<p>Some websites throttle transfer speeds. You can often get around this by choosing non DASH streams or by using <a href="../en/Aria2.html" title="Aria2">aria2</a>, an external downloader which supports multi-connection downloads. For example:
+</p>
+<pre>$ yt-dlp --external-downloader aria2c --external-downloader-args '-c -j 3 -x 3 -s 3 -k 1M' <i>URL</i>
+</pre>
+<h3><span class="mw-headline" id="Playlist">Playlist</span></h3>
+<p>Using youtube-dl for a playlist usually boils down to the following options:
+</p>
+<pre>$ yt-dlp --ignore-errors --continue --no-overwrites --download-archive progress.txt <i>usual options</i> <i>URL</i>
+</pre>
+<p>This set of options allow for the download to effectively continue even after interruption. If you are archiving, add the usual <code>--write-xxx</code> and <code>--embed-xxx</code> options you may have.
+</p>
+<h3>
+<span id="Trim_.28partial_download.29"></span><span class="mw-headline" id="Trim_(partial_download)">Trim (partial download)</span>
+</h3>
+<p>Parts of videos can be downloaded by using the output of <code>yt-dlp -g -f <i>format</i> <i>URL</i></code> as <i>ffmpeg</i> input with the <code>-ss</code> (for input), <code>-t</code> and <code>-c copy</code> <a rel="nofollow" class="external text" href="https://ffmpeg.org/ffmpeg.html#Main-options">options</a>.
+</p>
+<h3><span class="mw-headline" id="URL_from_clipboard">URL from clipboard</span></h3>
+<p>A shell <a href="../en/Bash.html#Aliases" class="mw-redirect" title="Alias">alias</a>, a <a href="../en/Desktop_entries.html" class="mw-redirect" title="Desktop launcher">desktop launcher</a> or a keyboard shortcut can be set to download a video (or audio) of a selected (or copied) URL by outputting it from the <a href="https://en.wikipedia.org/wiki/X_Window_selection" class="extiw" title="wikipedia:X Window selection">X selection</a>. See <a href="../en/Clipboard.html#Tools" title="Clipboard">Clipboard#Tools</a>.
+</p>
+<h2><span class="mw-headline" id="See_also">See also</span></h2>
+<ul><li>
+<a rel="nofollow" class="external text" href="https://github.com/yt-dlp/yt-dlp">GitHub repository</a> for documentation.</li></ul>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../Special:Categories.html" title="Special:Categories">Categories</a>: <ul>
+<li><a href="../en/Category:Download_utilities.html" title="Category:Download utilities">Download utilities</a></li>
+<li><a href="../en/Category:Streaming.html" title="Category:Streaming">Streaming</a></li>
+</ul>
+</div></div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=Yt-dlp&amp;oldid=785869">https://wiki.archlinux.org/index.php?title=Yt-dlp&amp;oldid=785869</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 21 August 2023, at 12:02.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

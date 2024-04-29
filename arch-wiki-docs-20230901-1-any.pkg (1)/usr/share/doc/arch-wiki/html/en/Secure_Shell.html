@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>Secure Shell - ArchWiki</title>
+<link rel="stylesheet" href="../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Secure_Shell rootpage-Secure_Shell skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Software" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Software">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Software</div>
+			</a>
+			
+				<button aria-controls="toc-Software-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Software subsection
+				</button>
+			
+			<ul id="toc-Software-sublist" class="sidebar-toc-list">
+				<li id="toc-Server_only" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Server_only">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.1</span>Server only</div>
+			</a>
+			
+			<ul id="toc-Server_only-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Client_only" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Client_only">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.2</span>Client only</div>
+			</a>
+			
+			<ul id="toc-Client_only-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Securing" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Securing">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Securing</div>
+			</a>
+			
+			<ul id="toc-Securing-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-See_also" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#See_also">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>See also</div>
+			</a>
+			
+			<ul id="toc-See_also-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../en/Secure_Shell.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="mw-list-item"><a href="../en/Talk:Secure_Shell.html" rel="discussion" title="Discussion about the content page [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">English</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../en/Secure_Shell.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=Secure_Shell&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=Secure_Shell&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../en/Secure_Shell.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Secure_Shell&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Secure_Shell&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output">
+<div class="archwiki-template-meta-related-articles-start">
+<p class="mw-no-invert">Related articles</p>
+<ul>
+<li><a href="../en/SSHFS.html" title="SSHFS">SSHFS</a></li>
+<li><a href="../en/Mosh.html" title="Mosh">Mosh</a></li>
+<li><a href="../en/VPN_over_SSH.html" title="VPN over SSH">VPN over SSH</a></li>
+</ul>
+</div>
+<div class="noprint archwiki-template-message">
+<p><a href="../File:Merge-arrows-2.png" class="image"><img alt="Merge-arrows-2.png" src="../File:Merge-arrows-2.png" decoding="async" width="48" height="48"></a><b>This article or section is a candidate for merging with <a href="../en/OpenSSH.html" title="OpenSSH">OpenSSH</a>.</b><a href="../File:Merge-arrows-2.png" class="image"><img alt="Merge-arrows-2.png" src="../File:Merge-arrows-2.png" decoding="async" width="48" height="48"></a></p>
+<div>
+<b>Notes:</b> Ambiguation of questionable value (Discuss in <a href="../en/Talk:Secure_Shell.html#Remove_ambiguation" title="Talk:Secure Shell">Talk:Secure_Shell#Remove ambiguation</a>)</div>
+</div>
+<p>According to <a href="https://en.wikipedia.org/wiki/Secure_Shell" class="extiw" title="wikipedia:Secure Shell">Wikipedia</a>:
+</p>
+<dl><dd>Secure Shell (SSH) is a cryptographic network protocol for operating network services securely over an unsecured network. Its most notable applications are remote login and command-line execution.</dd></dl>
+<p>Examples of services that can use SSH are <a href="../en/Git.html" title="Git">Git</a>, <a href="../en/Rsync.html" title="Rsync">rsync</a> and <a href="../en/OpenSSH.html#X11_forwarding" class="mw-redirect" title="X11 forwarding">X11 forwarding</a>. Services that always use SSH are <a href="../en/SCP_and_SFTP.html" title="SCP and SFTP">SCP and SFTP</a>.
+</p>
+<p>An SSH server, by default, listens on the standard TCP port 22. An SSH client program is typically used for establishing connections to an <i>sshd</i> daemon accepting remote connections. Both are commonly present on most modern operating systems, including macOS, GNU/Linux, Solaris and OpenVMS. Proprietary, freeware and open source versions of various levels of complexity and completeness exist.
+</p>
+<mw:tocplace></mw:tocplace>
+<h2><span class="mw-headline" id="Software">Software</span></h2>
+<ul><li>
+<b><a href="https://en.wikipedia.org/wiki/Dropbear_(software)" class="extiw" title="wikipedia:Dropbear (software)">Dropbear</a></b> — Lightweight SSH server. The command-line ssh client is named <span class="plainlinks archwiki-template-man" title="$ man 1 dbclient"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/dbclient.1">dbclient(1)</a></span>.</li></ul>
+<dl><dd>
+<a rel="nofollow" class="external free" href="https://matt.ucc.asn.au/dropbear/dropbear.html">https://matt.ucc.asn.au/dropbear/dropbear.html</a> || <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=dropbear">dropbear</a></span>
+</dd></dl>
+<ul><li>
+<b><a href="../en/OpenSSH.html" title="OpenSSH">OpenSSH</a></b> — Premier connectivity tool for remote login with the SSH protocol</li></ul>
+<dl><dd>
+<a rel="nofollow" class="external free" href="https://www.openssh.com/portable.html">https://www.openssh.com/portable.html</a> || <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=openssh">openssh</a></span>
+</dd></dl>
+<h3><span class="mw-headline" id="Server_only">Server only</span></h3>
+<ul><li>
+<b>TinySSH</b> — A minimalistic SSH server which implements only a subset of SSHv2 features; glibc as its single dependency.</li></ul>
+<dl><dd>
+<a rel="nofollow" class="external free" href="https://tinyssh.org/">https://tinyssh.org/</a> || <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=tinyssh">tinyssh</a></span>
+</dd></dl>
+<h3><span class="mw-headline" id="Client_only">Client only</span></h3>
+<ul><li>
+<b><a href="../en/PuTTY.html" title="PuTTY">PuTTY</a></b> — A terminal integrated SSH/Telnet client</li></ul>
+<dl><dd>
+<a rel="nofollow" class="external free" href="https://www.chiark.greenend.org.uk/~sgtatham/putty/">https://www.chiark.greenend.org.uk/~sgtatham/putty/</a> || <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=putty">putty</a></span>
+</dd></dl>
+<h2><span class="mw-headline" id="Securing">Securing</span></h2>
+<p>See <a href="../en/Security.html#SSH" title="Security">Security#SSH</a>.
+</p>
+<h2><span class="mw-headline" id="See_also">See also</span></h2>
+<ul>
+<li>
+<a href="../en/Category:Terminal_multiplexers.html" class="mw-redirect" title="Terminal multiplexer">Terminal multiplexers</a> (often used over SSH)</li>
+<li><a href="https://en.wikipedia.org/wiki/Comparison_of_SSH_clients" class="extiw" title="wikipedia:Comparison of SSH clients">Wikipedia:Comparison of SSH clients</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Comparison_of_SSH_servers" class="extiw" title="wikipedia:Comparison of SSH servers">Wikipedia:Comparison of SSH servers</a></li>
+<li><a rel="nofollow" class="external text" href="https://blog.webernetz.net/ssh-key-fingerprints/">SSH Key Fingerprint formats</a></li>
+</ul>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface">
+<div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="../en/Category:Secure_Shell.html" title="Category:Secure Shell">Secure Shell</a></li></ul>
+</div>
+<div id="mw-hidden-catlinks" class="mw-hidden-catlinks mw-hidden-cats-hidden">Hidden category: <ul><li><a href="../en/Category:Pages_or_sections_flagged_with_Template:Merge.html" title="Category:Pages or sections flagged with Template:Merge">Pages or sections flagged with Template:Merge</a></li></ul>
+</div>
+</div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=Secure_Shell&amp;oldid=777782">https://wiki.archlinux.org/index.php?title=Secure_Shell&amp;oldid=777782</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 11 May 2023, at 13:31.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

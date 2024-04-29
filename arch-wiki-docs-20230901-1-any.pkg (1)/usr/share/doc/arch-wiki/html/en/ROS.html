@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>ROS - ArchWiki</title>
+<link rel="stylesheet" href="../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-ROS rootpage-ROS skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Installation_Instructions" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Installation_Instructions">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Installation Instructions</div>
+			</a>
+			
+			<ul id="toc-Installation_Instructions-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-catkin_make_in_Melodic" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#catkin_make_in_Melodic">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>catkin_make in Melodic</div>
+			</a>
+			
+				<button aria-controls="toc-catkin_make_in_Melodic-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle catkin_make in Melodic subsection
+				</button>
+			
+			<ul id="toc-catkin_make_in_Melodic-sublist" class="sidebar-toc-list">
+				<li id="toc-Using_Catkin/ROS_with_an_IDE" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Using_Catkin/ROS_with_an_IDE">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.1</span>Using Catkin/ROS with an IDE</div>
+			</a>
+			
+			<ul id="toc-Using_Catkin/ROS_with_an_IDE-sublist" class="sidebar-toc-list">
+				<li id="toc-CLion" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#CLion">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.1.1</span>CLion</div>
+			</a>
+			
+			<ul id="toc-CLion-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-catkin_build_in_Melodic" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#catkin_build_in_Melodic">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>catkin build in Melodic</div>
+			</a>
+			
+			<ul id="toc-catkin_build_in_Melodic-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Rebuild_when_shared_libraries_are_updated" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Rebuild_when_shared_libraries_are_updated">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4</span>Rebuild when shared libraries are updated</div>
+			</a>
+			
+			<ul id="toc-Rebuild_when_shared_libraries_are_updated-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-ROS_2" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#ROS_2">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5</span>ROS 2</div>
+			</a>
+			
+				<button aria-controls="toc-ROS_2-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle ROS 2 subsection
+				</button>
+			
+			<ul id="toc-ROS_2-sublist" class="sidebar-toc-list">
+				<li id="toc-Building_using_AUR" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Building_using_AUR">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5.1</span>Building using AUR</div>
+			</a>
+			
+			<ul id="toc-Building_using_AUR-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Usage_Examples" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Usage_Examples">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5.2</span>Usage Examples</div>
+			</a>
+			
+			<ul id="toc-Usage_Examples-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../en/ROS.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="mw-list-item"><a href="../en/Talk:ROS.html" rel="discussion" title="Discussion about the content page [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">English</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../en/ROS.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=ROS&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=ROS&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../en/ROS.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=ROS&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=ROS&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output">
+<div class="noprint archwiki-template-message">
+<p><a href="../File:Tango-view-refresh-red.png" class="image"><img alt="Tango-view-refresh-red.png" src="../File:Tango-view-refresh-red.png" decoding="async" width="48" height="48"></a><b>This article or section is out of date.</b><a href="../File:Tango-view-refresh-red.png" class="image"><img alt="Tango-view-refresh-red.png" src="../File:Tango-view-refresh-red.png" decoding="async" width="48" height="48"></a></p>
+<div>
+<b>Reason:</b> Implies python2 compatibility. Instructions need to be checked if any of the flags have changed (Discuss in <a rel="nofollow" class="external text" href="https://wiki.archlinux.org/title/Talk:ROS">Talk:ROS</a>)</div>
+</div>
+<p><a rel="nofollow" class="external text" href="https://www.ros.org">ROS</a> is an open-source, meta-operating system for your robot. It provides the services you would expect from an operating system, including hardware abstraction, low-level device control, implementation of commonly-used functionality, message-passing between processes, and package management.
+</p>
+<mw:tocplace></mw:tocplace>
+<h2><span class="mw-headline" id="Installation_Instructions">Installation Instructions</span></h2>
+<p>You can install any of the ROS distributions below since they are fully released on AUR.
+</p>
+<p>Noetic <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/ros-noetic-desktop-full/">ros-noetic-desktop-full</a></span><sup><small>AUR</small></sup>
+</p>
+<p>Noetic is also available through an unofficial user repo: <a href="../en/Unofficial_user_repositories.html#arch4edu" title="Unofficial user repositories">Unofficial user repositories#arch4edu</a>
+</p>
+<p>Melodic <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/ros-melodic-desktop-full/">ros-melodic-desktop-full</a></span><sup><small>AUR</small></sup>
+</p>
+<h2><span class="mw-headline" id="catkin_make_in_Melodic">catkin_make in Melodic</span></h2>
+<p>As specified by the <a rel="nofollow" class="external text" href="https://wiki.ros.org/ROS/Tutorials/InstallingandConfiguringROSEnvironment">ROS wiki</a>, the first catkin_make command in a clean workspace should be:
+</p>
+<pre>$ catkin_make -DPYTHON_EXECUTABLE=/usr/bin/python3 -DBOOST_ROOT=/opt/boost1.69 -DBoost_NO_SYSTEM_PATHS=TRUE
+</pre>
+<p>Subsequent builds should be done with just
+</p>
+<pre>$ catkin_make
+</pre>
+<h3>
+<span id="Using_Catkin.2FROS_with_an_IDE"></span><span class="mw-headline" id="Using_Catkin/ROS_with_an_IDE">Using Catkin/ROS with an IDE</span>
+</h3>
+<h4><span class="mw-headline" id="CLion">CLion</span></h4>
+<p>To make <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/CLion/">CLion</a></span><sup><small>AUR</small></sup> support ROS packages, you can change the <code>Exec</code> parameter of its desktop file as follows.
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">~/.local/share/applications/jetbrains-clion.desktop</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">Exec=bash -i -c "source /home/<i>user</i>/catkin_ws/devel/setup.sh;/opt/clion/bin/clion.sh" %f</pre>
+<p>However, <code>/home/<i>user</i>/catkin_ws</code> must be exchanged with your Catkin workspace. You can now open a Catkin project without <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=cmake">cmake</a></span> complaining about missing packages, hopefully.
+If desired or needed you can use Python 3 by adding <code>-DPYTHON_EXECUTABLE=/usr/bin/python3</code> to the CMake options which can be found in the settings.
+</p>
+<h2><span class="mw-headline" id="catkin_build_in_Melodic">catkin build in Melodic</span></h2>
+<p>For configuring the systems using the <code>catkin build</code> environment, one have to configure the catkin workspace as usual and run:
+</p>
+<pre>$ catkin config -DPYTHON_EXECUTABLE=/usr/bin/python3 -DBOOST_ROOT=/opt/boost1.69 -DBoost_NO_SYSTEM_PATHS=TRUE
+</pre>
+<p>Afterwards, use <code>catkin build</code> as normal. Please remember to reconfigure your catkin whenever you delete the configuration files (i.e. the <code>catkin_ws</code> directory)
+</p>
+<h2><span class="mw-headline" id="Rebuild_when_shared_libraries_are_updated">Rebuild when shared libraries are updated</span></h2>
+<p>When you update a library that ROS depends on (e.g. Boost), all packages that link to it must be rebuilt. Most AUR helpers will not detect this situation. The following script will generate a list of all packages that are linked to missing so files:
+</p>
+<p><a rel="nofollow" class="external free" href="https://seangreenslade.com/h/snippets/ros-find-outofdate.py">https://seangreenslade.com/h/snippets/ros-find-outofdate.py</a>
+</p>
+<p>(Note that the script requires <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=pyalpm">pyalpm</a></span> to be installed.)
+</p>
+<h2><span class="mw-headline" id="ROS_2">ROS 2</span></h2>
+<h3><span class="mw-headline" id="Building_using_AUR">Building using AUR</span></h3>
+<p><span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/ros2-galactic/">ros2-galactic</a></span><sup><small>AUR</small></sup> package aims to provide an easy way to install ROS 2 on Arch Linux. After installing the package, you need to configure your environment (i.e. <i>source</i>) in order to use ROS 2 — See <a href="#Usage_Examples">#Usage Examples</a>.
+</p>
+<h3><span class="mw-headline" id="Usage_Examples">Usage Examples</span></h3>
+<p>First source the workspace, or change the directory to where you installed as before.
+</p>
+<p>If you are using zsh, change <b>source /opt/ros2/foxy/setup.bash</b> to <b>source /opt/ros2/foxy/setup.zsh</b>
+</p>
+<pre>$ source /opt/ros2/foxy/setup.bash
+</pre>
+<p>A tip to source workspace is adding a function like this your shell startup file, like .bashrc, .zshrc.
+</p>
+<pre>ros2_on(){
+     export ROS_DOMAIN_ID=42
+     export ROS_VERSION=2
+     export ROS_PYTHON_VERSION=3
+     export ROS_DISTRO=foxy
+     source /opt/ros2/foxy/setup.bash
+}
+</pre>
+<p><i>Remember to make any applicable changes, namely changing the ROS_DISTRO variable to the distrobution you've installed.</i>
+</p>
+<p>You can change ROS_DOMAIN_ID to your favourite number, or the number you're actually using.
+</p>
+<p><br>
+</p>
+<p>Functionality comparable to <code>roscore</code>, <code>rosnode</code>, <code>rostopic</code>, <code>rosmsg</code>, <code>rospack</code>, <code>rosrun</code> and <code>rosservice</code> is available via <code>ros2</code>:
+</p>
+<pre>$ ros2 -h
+usage: ros2 [-h] Call `ros2 &lt;command&gt; -h` for more detailed usage. ... 
+
+ros2 is an extensible command-line tool for ROS 2.
+
+optional arguments:
+  -h, --help            show this help message and exit
+
+Commands:
+  daemon    Various daemon related sub-commands
+  msg       Various msg related sub-commands
+  node      Various node related sub-commands
+  pkg       Various package related sub-commands
+  run       Run a package specific executable
+  security  Various security related sub-commands
+  service   Various service related sub-commands
+  srv       Various srv related sub-commands
+  topic     Various topic related sub-commands
+
+  Call `ros2 &lt;command&gt; -h` for more detailed usage.
+</pre>
+<p>A typical "Hello World" example starts with running a publisher node:
+</p>
+<pre>$ ros2 topic pub /chatter 'std_msgs/String' "data: 'Hello World'"
+</pre>
+<p>Then, in another terminal, you can run a subscriber (Do not forget to source the workspace in every new terminal):
+</p>
+<pre>$ ros2 topic echo /chatter
+</pre>
+<p>List existing nodes:
+</p>
+<pre>$ ros2 node list
+publisher_std_msgs_String
+</pre>
+<p>List topics:
+</p>
+<pre>$ ros2 topic list
+/chatter
+</pre>
+<p>ROS 2's version of rviz is 
+</p>
+<pre>$ rviz2
+</pre>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface">
+<div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="../en/Category:Science.html" title="Category:Science">Science</a></li></ul>
+</div>
+<div id="mw-hidden-catlinks" class="mw-hidden-catlinks mw-hidden-cats-hidden">Hidden category: <ul><li><a href="../en/Category:Pages_or_sections_flagged_with_Template:Out_of_date.html" title="Category:Pages or sections flagged with Template:Out of date">Pages or sections flagged with Template:Out of date</a></li></ul>
+</div>
+</div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=ROS&amp;oldid=780556">https://wiki.archlinux.org/index.php?title=ROS&amp;oldid=780556</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 7 June 2023, at 11:11.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

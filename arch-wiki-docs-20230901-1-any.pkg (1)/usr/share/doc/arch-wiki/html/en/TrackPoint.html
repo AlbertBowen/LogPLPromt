@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>TrackPoint - ArchWiki</title>
+<link rel="stylesheet" href="../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-TrackPoint rootpage-TrackPoint skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-GUI_configuration" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#GUI_configuration">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>GUI configuration</div>
+			</a>
+			
+			<ul id="toc-GUI_configuration-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Middle_button_scroll" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Middle_button_scroll">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Middle button scroll</div>
+			</a>
+			
+				<button aria-controls="toc-Middle_button_scroll-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Middle button scroll subsection
+				</button>
+			
+			<ul id="toc-Middle_button_scroll-sublist" class="sidebar-toc-list">
+				<li id="toc-Xorg_configuration" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Xorg_configuration">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.1</span>Xorg configuration</div>
+			</a>
+			
+			<ul id="toc-Xorg_configuration-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Two-button_trackpoints" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Two-button_trackpoints">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.2</span>Two-button trackpoints</div>
+			</a>
+			
+			<ul id="toc-Two-button_trackpoints-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Sysfs_attributes" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Sysfs_attributes">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>Sysfs attributes</div>
+			</a>
+			
+				<button aria-controls="toc-Sysfs_attributes-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Sysfs attributes subsection
+				</button>
+			
+			<ul id="toc-Sysfs_attributes-sublist" class="sidebar-toc-list">
+				<li id="toc-Configuration_at_boot" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Configuration_at_boot">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.1</span>Configuration at boot</div>
+			</a>
+			
+			<ul id="toc-Configuration_at_boot-sublist" class="sidebar-toc-list">
+				<li id="toc-udev_rule" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#udev_rule">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.1.1</span>udev rule</div>
+			</a>
+			
+			<ul id="toc-udev_rule-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-systemd.path_unit" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#systemd.path_unit">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.1.2</span>systemd.path unit</div>
+			</a>
+			
+			<ul id="toc-systemd.path_unit-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-udev_hwdb_entry" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#udev_hwdb_entry">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.1.3</span>udev hwdb entry</div>
+			</a>
+			
+			<ul id="toc-udev_hwdb_entry-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-device-quirks" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#device-quirks">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.1.4</span>device-quirks</div>
+			</a>
+			
+			<ul id="toc-device-quirks-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Troubleshooting" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Troubleshooting">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4</span>Troubleshooting</div>
+			</a>
+			
+				<button aria-controls="toc-Troubleshooting-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Troubleshooting subsection
+				</button>
+			
+			<ul id="toc-Troubleshooting-sublist" class="sidebar-toc-list">
+				<li id="toc-Trackpoint_is_not_detected_or_is_detected_after_X_minutes" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Trackpoint_is_not_detected_or_is_detected_after_X_minutes">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.1</span>Trackpoint is not detected or is detected after X minutes</div>
+			</a>
+			
+			<ul id="toc-Trackpoint_is_not_detected_or_is_detected_after_X_minutes-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Trackpoint_buttons_do_not_always_work" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Trackpoint_buttons_do_not_always_work">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.2</span>Trackpoint buttons do not always work</div>
+			</a>
+			
+			<ul id="toc-Trackpoint_buttons_do_not_always_work-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Two-finger_scroll_ceases_to_work_after_suspending" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Two-finger_scroll_ceases_to_work_after_suspending">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.3</span>Two-finger scroll ceases to work after suspending</div>
+			</a>
+			
+			<ul id="toc-Two-finger_scroll_ceases_to_work_after_suspending-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Trackpoint_moves_on_its_own" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Trackpoint_moves_on_its_own">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.4</span>Trackpoint moves on its own</div>
+			</a>
+			
+			<ul id="toc-Trackpoint_moves_on_its_own-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-See_also" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#See_also">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5</span>See also</div>
+			</a>
+			
+			<ul id="toc-See_also-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../en/TrackPoint.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="mw-list-item"><a href="../en/Talk:TrackPoint.html" rel="discussion" title="Discussion about the content page [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">English</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../en/TrackPoint.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=TrackPoint&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=TrackPoint&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../en/TrackPoint.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=TrackPoint&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=TrackPoint&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output">
+<p>The TrackPoint is Lenovo's trademark for the pointing-stick in the middle of the keyboard. It is supported by <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=xf86-input-evdev">xf86-input-evdev</a></span> and <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=xf86-input-libinput">xf86-input-libinput</a></span>.  
+</p>
+<p>Default <a href="../en/Xorg.html" title="Xorg">Xorg</a> behavior supports click and point. For the <code>evdev</code> driver middle-click and scrolling requires extra configuration.
+</p>
+<mw:tocplace></mw:tocplace>
+<h2><span class="mw-headline" id="GUI_configuration">GUI configuration</span></h2>
+<p><a href="../en/Help:Reading.html#Installation_of_packages" class="mw-redirect" title="Install">Install</a> the <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/gpointing-device-settings/">gpointing-device-settings</a></span><sup><small>AUR</small></sup> package.
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> This software is not maintained anymore (last release in 2013).
+It may not allow deep configuration when <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=xf86-input-libinput">xf86-input-libinput</a></span> is used. </div>
+<h2><span class="mw-headline" id="Middle_button_scroll">Middle button scroll</span></h2>
+<p>When using <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=xf86-input-libinput">xf86-input-libinput</a></span>, middle-button scrolling is enabled by default. 
+</p>
+<p>When using <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=xf86-input-evdev">xf86-input-evdev</a></span>, middle-button scrolling is supported via <i>xinput</i> from the <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=xorg-xinput">xorg-xinput</a></span> package. For example:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">~/.xinitrc</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">xinput set-prop "<i>TPPS/2 IBM TrackPoint</i>" "Evdev Wheel Emulation" 1
+xinput set-prop "<i>TPPS/2 IBM TrackPoint</i>" "Evdev Wheel Emulation Button" 2
+xinput set-prop "<i>TPPS/2 IBM TrackPoint</i>" "Evdev Wheel Emulation Timeout" 200
+xinput set-prop "<i>TPPS/2 IBM TrackPoint</i>" "Evdev Wheel Emulation Axes" 6 7 4 5
+</pre>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> 
+<ul>
+<li>Devices names can be listed with <code>xinput --list</code> or <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=hwinfo">hwinfo</a></span>.</li>
+<li>The <code>"Device Accel Constant Deceleration"</code> line configures the sensitivity of the trackpoint.</li>
+</ul>
+</div>
+<h3><span class="mw-headline" id="Xorg_configuration">Xorg configuration</span></h3>
+<p>Alternative to an <code>~/.xinitrc</code> configuration, you can also create an <a href="../en/Xorg.html#Configuration" title="Xorg">Xorg#Configuration</a> for the <span class="plainlinks archwiki-template-man" title="$ man 4 evdev"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/evdev.4">evdev(4)</a></span>driver. For example, as <code>/etc/X11/xorg.conf.d/20-thinkpad.conf</code>, replacing <code>TPPS/2 IBM TrackPoint</code> with the device name from <i>xinput</i>:
+</p>
+<pre>Section "InputClass"
+    Identifier	"Trackpoint Wheel Emulation"
+    Driver "evdev"
+    MatchProduct	"<i>TPPS/2 IBM TrackPoint</i>"
+    MatchDevicePath	"/dev/input/event*"
+    Option		"EmulateWheel"		"true"
+    Option		"EmulateWheelButton"	"2"
+    Option		"Emulate3Buttons"	"false"
+    Option		"XAxisMapping"		"6 7"
+    Option		"YAxisMapping"		"4 5"
+EndSection
+</pre>
+<h3><span class="mw-headline" id="Two-button_trackpoints">Two-button trackpoints</span></h3>
+<p>On two-button trackpoints, using <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=xf86-input-libinput">xf86-input-libinput</a></span>, the scroll button can be set to right-click button without removing functionality. 
+</p>
+<p>Replacing <i>device</i> with the device name from <code>xinput</code>:
+</p>
+<pre>$ xinput set-prop "<i>device</i>" "libinput Button Scrolling Button" 3
+</pre>
+<h2><span class="mw-headline" id="Sysfs_attributes">Sysfs attributes</span></h2>
+<p>TrackPoints expose their attributes as files in <code>/sys/devices/platform/i8042/serio1/</code>. For example, to manually enable the tap-to-click functionality:
+</p>
+<pre># echo -n 1 &gt; /sys/devices/platform/i8042/serio1/press_to_select
+</pre>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> The location of the attribute files may be different depending on the device you are using. Systems with both a TrackPoint and a touchpad device will use either <code>/sys/devices/platform/i8042/serio1/serio2/</code> or <code>/sys/devices/platform/i8042/serio1/serio3/</code> for the path, whereas systems with only a TrackPoint device will use the <code>/sys/devices/platform/i8042/serio1/</code> path.</div>
+<h3><span class="mw-headline" id="Configuration_at_boot">Configuration at boot</span></h3>
+<h4><span class="mw-headline" id="udev_rule">udev rule</span></h4>
+<p>This rule increases the trackpoint <b>speed</b> and enables <b>tap to select</b> (see above) on boot.
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/udev/rules.d/10-trackpoint.rules</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">ACTION=="add", SUBSYSTEM=="input", ATTR{name}=="TPPS/2 IBM TrackPoint", ATTR{device/sensitivity}="240", ATTR{device/press_to_select}="1"</pre>
+<h4><span class="mw-headline" id="systemd.path_unit">systemd.path unit</span></h4>
+<p>There have been <a rel="nofollow" class="external text" href="https://bbs.archlinux.org/viewtopic.php?id=199998">reports on the forums</a> that the attributes/files under <code>/sys/devices/platform/i8042/serio1/serio2/</code> appear too late in the boot process for the above (or similar) udev rule(s) to have an effect on them. Instead, a <i>systemd.path</i> unit can be used to configure attributes of the TrackPoint.
+</p>
+<p>First create an executable script named e.g. <code>/usr/local/bin/trackpoint_configuration.sh</code> that sets the TrackPoint attributes as shown in the <a href="#Sysfs_attributes">#Sysfs attributes</a> section.
+</p>
+<p>The following example disables the trackpoint in some laptops, leaving the trackpoint left and right buttons (the ones over the touchpad) keep working just fine (however, if one disables the TrackPoint directly from the UEFI/BIOS settings, right and left trackpoint buttons will necessarily be disabled).
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/usr/local/bin/trackpoint_configuration.sh</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">#!/bin/bash
+echo -n 0 &gt; /sys/devices/platform/i8042/serio1/serio2/sensitivity
+echo -n 0 &gt; /sys/devices/platform/i8042/serio1/serio2/speed</pre>
+<p>Afterwards, create the following systemd units. Make sure that all attributes modified by the script are listed with <code>PathExists</code>.
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/systemd/system/trackpoint_parameters.path</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">[Unit]
+Description=Watch for, and modify, Trackpoint attributes
+
+[Path]
+PathExists=/sys/devices/platform/i8042/serio1/press_to_select
+
+[Install]
+WantedBy=default.target</pre>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/systemd/system/trackpoint_parameters.service</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">[Unit]
+Description=Set TrackPoint attributes
+
+[Service]
+ExecStart=/usr/local/bin/trackpoint_configuration.sh</pre>
+<p>Finally, <a href="../en/Help:Reading.html#Control_of_systemd_units" class="mw-redirect" title="Enable">enable</a> and <a href="../en/Help:Reading.html#Control_of_systemd_units" class="mw-redirect" title="Start">start</a> the <code>trackpoint_parameters.path</code> systemd unit.
+</p>
+<h4><span class="mw-headline" id="udev_hwdb_entry">udev hwdb entry</span></h4>
+<div class="noprint archwiki-template-message">
+<p><a href="../File:Tango-view-refresh-red.png" class="image"><img alt="Tango-view-refresh-red.png" src="../File:Tango-view-refresh-red.png" decoding="async" width="48" height="48"></a><b>This article or section is out of date.</b><a href="../File:Tango-view-refresh-red.png" class="image"><img alt="Tango-view-refresh-red.png" src="../File:Tango-view-refresh-red.png" decoding="async" width="48" height="48"></a></p>
+<div>
+<b>Reason:</b> Since around <a rel="nofollow" class="external text" href="https://who-t.blogspot.com/2018/06/libinput-and-its-device-quirks-files.html">version 1.12</a> libinput stopped using udev hwdb for device-specific overrides and moved to ini-style files independent of hwdb (see <a href="#device-quirks">#device-quirks</a>). (Discuss in <a rel="nofollow" class="external text" href="https://wiki.archlinux.org/title/Talk:TrackPoint">Talk:TrackPoint</a>)</div>
+</div>
+<p>Libinput applies its own parameters to sysfs based on entries in the <a rel="nofollow" class="external text" href="https://github.com/systemd/systemd/blob/master/hwdb.d/70-pointingstick.hwdb">udev hardware database</a>. This is the behavior on systems running a Wayland compositor, as libinput is the only supported input interface in that environment. Changes made prior to the start of a Wayland compositor or X session will be overwritten.
+</p>
+<p>To override libinput's default settings, add a local hwdb entry:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/udev/hwdb.d/99-trackpoint.hwdb</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">evdev:name:TPPS/2 IBM TrackPoint:dmi:bvn*:bvr*:bd*:svnLENOVO:pn*:pvrThinkPad??60?:*
+  POINTINGSTICK_SENSITIVITY=250</pre>
+<p>You can find various vendor/model keys in the <a rel="nofollow" class="external text" href="https://github.com/systemd/systemd/blob/master/hwdb.d/70-pointingstick.hwdb">udev hardware database</a>. Note that since <a rel="nofollow" class="external text" href="https://gitlab.freedesktop.org/libinput/libinput/-/commit/3669fa10dff95371658647272ef7ac7a3ef29a61">this commit</a> libinput ignores the POINTINGSTICK_CONST_ACCEL parameter and uses POINTINGSTICK_SENSITIVITY. The range is 0-255.
+</p>
+<p><a href="../en/Map_scancodes_to_keycodes.html#Updating_the_Hardware_Database_Index" title="Map scancodes to keycodes">Update the hardware database index</a>, then to test the changes prior to restarting your compositor or X session, first find your device input node <code>/dev/input/eventX</code> using:
+</p>
+<pre># libinput list-devices
+</pre>
+<p>Run the following to generate some debug output:
+</p>
+<pre># udevadm trigger /sys/class/input/eventX
+# udevadm test /sys/class/input/eventX
+</pre>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> This will not actually apply the parameters from hwdb, but you can verify the changes in the output of the <code>udevadm test</code> command.</div>
+<p>Finally, restart your Wayland compositor or X session to apply the changes.
+</p>
+<h4><span class="mw-headline" id="device-quirks">device-quirks</span></h4>
+<p>With the <code>libinput</code> switch to the new device-quirks <code>.ini</code>-style configuration files, you can adjust trackpoint parameters via local overrides in <code>/etc/libinput/</code>.
+</p>
+<p>For example, to override the pointing speed, create the following file:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/libinput/local-overrides.quirks</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">[Trackpoint Override]
+MatchUdevType=pointingstick
+AttrTrackpointMultiplier=0.75</pre>
+<p>For more information, see <a rel="nofollow" class="external text" href="https://wayland.freedesktop.org/libinput/doc/latest/device-quirks.html#installing-temporary-local-device-quirks">libinput: Installing temporary local device quirks</a>
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> Model quirks are internal API and may change at any time. No backwards-compatibility is guaranteed. Local overrides should only be used until the distribution updates the libinput packages.</div>
+<h2><span class="mw-headline" id="Troubleshooting">Troubleshooting</span></h2>
+<h3><span class="mw-headline" id="Trackpoint_is_not_detected_or_is_detected_after_X_minutes">Trackpoint is not detected or is detected after X minutes</span></h3>
+<p>This appears to be a kernel bug. See: <a rel="nofollow" class="external free" href="https://bugzilla.kernel.org/show_bug.cgi?id=33292">https://bugzilla.kernel.org/show_bug.cgi?id=33292</a>
+</p>
+<p>A workaround is passing <code>proto=bare</code> to the <code>psmouse</code> module. However, this disables scrolling with the clickpad and the two-finger middle click:
+</p>
+<pre># modprobe psmouse proto=bare
+</pre>
+<p>For some ThinkPad models with Elantech touchpad the Trackpoint and the corresponding hardware buttons do not get recognized. The above mentioned command does work but disables the two finger scrolling on the touchpad. To keeps two finger interactions possible, <a href="../en/Help:Reading.html#Append,_add,_create,_edit" class="mw-redirect" title="Create">create</a>: 
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/modprobe.d/elan.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">options psmouse elantech_smbus=0</pre>
+<p>and restart.
+</p>
+<h3><span class="mw-headline" id="Trackpoint_buttons_do_not_always_work">Trackpoint buttons do not always work</span></h3>
+<p>If you discover that disabling the touchpad in the BIOS disables the wrong buttons and/or that the trackpoint buttons work very unreliable a workaround is to pass <code>proto=imps</code> to the <code>psmouse</code> module.
+</p>
+<pre># rmmod psmouse; modprobe psmouse proto=imps
+</pre>
+<h3><span class="mw-headline" id="Two-finger_scroll_ceases_to_work_after_suspending">Two-finger scroll ceases to work after suspending</span></h3>
+<p>On some laptops, psmouse seems to fail on start up, or after suspend:
+</p>
+<pre>psmouse serio1: synaptics: Unable to initialize device
+</pre>
+<p>One workaround is to use add <code>psmouse.synaptics_intertouch=0</code> to your kernel commandline.
+</p>
+<h3><span class="mw-headline" id="Trackpoint_moves_on_its_own">Trackpoint moves on its own</span></h3>
+<p>On some ThinkPads the TrackPoint cursor moves spontaneously after release and it does not stop. This happens because of a low value of the <code>drift_time</code> parameter (e.g. 5), you need to change it to 25 or 30 to fix the problem. This can be done with a <a href="../en/Udev.html" title="Udev">udev</a> rule:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/udev/rules.d/10-trackpoint.rules</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">ACTION=="add", SUBSYSTEM=="input", ATTR{name}=="TPPS/2 IBM TrackPoint", ATTR{device/drift_time}="25"</pre>
+<div class="noprint archwiki-template-message">
+<p><a href="../File:Tango-edit-clear.png" class="image"><img alt="Tango-edit-clear.png" src="../File:Tango-edit-clear.png" decoding="async" width="48" height="48"></a><b>This article or section needs language, wiki syntax or style improvements. See <a href="../en/Help:Style.html" title="Help:Style">Help:Style</a> for reference.</b><a href="../File:Tango-edit-clear.png" class="image"><img alt="Tango-edit-clear.png" src="../File:Tango-edit-clear.png" decoding="async" width="48" height="48"></a></p>
+<div>
+<b>Reason:</b> The above reads as the problem was definitely identified and fixed, which contradicts the the following paragraph (which may also not always work?) (Discuss in <a rel="nofollow" class="external text" href="https://wiki.archlinux.org/title/Talk:TrackPoint">Talk:TrackPoint</a>)</div>
+</div>
+<p>But, this method not always work. So, as last chance changing the psmouse protocol to "bare", will fix the problem. This way the trackpoint will be identified as a "PS/2 Generic Mouse" and not controlled by the original kernel driver anymore.
+</p>
+<p>So, add <code>psmouse.proto=bare</code> to your <a href="../en/Kernel_parameters.html" title="Kernel parameters">kernel parameters</a>.
+</p>
+<h2><span class="mw-headline" id="See_also">See also</span></h2>
+<ul>
+<li><a rel="nofollow" class="external text" href="https://www.thinkwiki.org/wiki/How_to_configure_the_TrackPoint">How to configure the TrackPoint - ThinkWiki</a></li>
+<li><a rel="nofollow" class="external text" href="https://gist.githubusercontent.com/noromanba/11261595/raw/478cf4c4d9b63f1e59364a6f427ffccd63db5e1e/thinkpad-trackpoint-speed.mkd">Trackpoint speed</a></li>
+<li><a rel="nofollow" class="external text" href="https://askubuntu.com/questions/37824/what-is-the-best-way-to-configure-a-thinkpads-trackpoint/553926">What is the best way to configure a Thinkpad's TrackPoint?</a></li>
+</ul>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface">
+<div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../Special:Categories.html" title="Special:Categories">Categories</a>: <ul>
+<li><a href="../en/Category:Input_devices.html" title="Category:Input devices">Input devices</a></li>
+<li><a href="../en/Category:Lenovo.html" title="Category:Lenovo">Lenovo</a></li>
+</ul>
+</div>
+<div id="mw-hidden-catlinks" class="mw-hidden-catlinks mw-hidden-cats-hidden">Hidden categories: <ul>
+<li><a href="../en/Category:Pages_or_sections_flagged_with_Template:Out_of_date.html" title="Category:Pages or sections flagged with Template:Out of date">Pages or sections flagged with Template:Out of date</a></li>
+<li><a href="../en/Category:Pages_or_sections_flagged_with_Template:Style.html" title="Category:Pages or sections flagged with Template:Style">Pages or sections flagged with Template:Style</a></li>
+</ul>
+</div>
+</div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=TrackPoint&amp;oldid=779717">https://wiki.archlinux.org/index.php?title=TrackPoint&amp;oldid=779717</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 28 May 2023, at 03:00.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

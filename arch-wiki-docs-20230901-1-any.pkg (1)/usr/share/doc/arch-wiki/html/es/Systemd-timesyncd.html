@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>systemd-timesyncd (Español) - ArchWiki</title>
+<link rel="stylesheet" href="../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Systemd-timesyncd_Español rootpage-Systemd-timesyncd_Español skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Configuración" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Configuraci%C3%B3n">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Configuración</div>
+			</a>
+			
+			<ul id="toc-Configuración-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Utilización" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Utilizaci%C3%B3n">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Utilización</div>
+			</a>
+			
+			<ul id="toc-Utilización-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Solución_de_problemas" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Soluci%C3%B3n_de_problemas">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>Solución de problemas</div>
+			</a>
+			
+				<button aria-controls="toc-Solución_de_problemas-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Solución de problemas subsection
+				</button>
+			
+			<ul id="toc-Solución_de_problemas-sublist" class="sidebar-toc-list">
+				<li id="toc-systemd-timesyncd_no_puede_iniciarse_después_de_la_actualización_242.0-1_update" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#systemd-timesyncd_no_puede_iniciarse_despu%C3%A9s_de_la_actualizaci%C3%B3n_242.0-1_update">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.1</span>systemd-timesyncd no puede iniciarse después de la actualización 242.0-1 update</div>
+			</a>
+			
+			<ul id="toc-systemd-timesyncd_no_puede_iniciarse_después_de_la_actualización_242.0-1_update-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Véase_también" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#V%C3%A9ase_tambi%C3%A9n">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4</span>Véase también</div>
+			</a>
+			
+			<ul id="toc-Véase_también-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../es/Systemd-timesyncd.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="new mw-list-item"><a href="/index.php?title=Talk:Systemd-timesyncd_(Espa%C3%B1ol)&amp;action=edit&amp;redlink=1" rel="discussion" title="Discussion about the content page (page does not exist) [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">español</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../es/Systemd-timesyncd.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=Systemd-timesyncd_(Espa%C3%B1ol)&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=Systemd-timesyncd_(Espa%C3%B1ol)&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../es/Systemd-timesyncd.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Systemd-timesyncd_(Espa%C3%B1ol)&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Systemd-timesyncd_(Espa%C3%B1ol)&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="es" dir="ltr">
+<div class="mw-parser-output">
+<p><span>
+</span>
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">Esta traducción de <a href="../en/Systemd-timesyncd.html" title="Systemd-timesyncd">systemd-timesyncd</a> fue revisada el <b>2019-10-16</b>. Si existen <a rel="nofollow" class="external text" href="https://wiki.archlinux.org/index.php?title=Systemd-timesyncd&amp;diff=0&amp;oldid=586260">cambios</a> puede <a href="../es/ArchWiki:Translation_Team/Contributing.html" title="ArchWiki:Translation Team (Español)/Contributing (Español)">actualizarla</a> o avisar al <a href="../es/ArchWiki:Translation_Team.html" title="ArchWiki:Translation Team (Español)">equipo de traducción</a>.</div>
+<div class="archwiki-template-meta-related-articles-start">
+<p class="mw-no-invert">Artículos relacionados</p>
+<ul>
+<li><a href="../es/Systemd-networkd.html" title="Systemd-networkd (Español)">systemd-networkd</a></li>
+<li><a href="../es/Systemd.html" title="Systemd (Español)">systemd</a></li>
+</ul>
+</div>
+<p>De la <a rel="nofollow" class="external text" href="https://lists.freedesktop.org/archives/systemd-devel/2014-May/019537.html">lista de correo de systemd</a>:
+</p>
+<dl><dd>
+<i>systemd-timesyncd</i> es un demonio que se ha añadido para sincronizar el reloj del sistema a través de la red. Implementa un cliente SNTP. A diferencia de las implementaciones de NTP como <a href="../en/Chrony.html" title="Chrony">chrony</a> o el servidor de referencia NTP, este solo implementa un lado del cliente y no molesta con la complejidad completa de NTP, centrándose solo en consultar el tiempo de un servidor remoto y sincronizar el reloj local con él. A menos que tenga la intención de servir NTP a clientes en red o desee conectarse a relojes de hardware locales, este simple cliente NTP debería ser más que apropiado para la mayoría de las instalaciones. El demonio se ejecuta con privilegios mínimos y se conecta a networkd para operar solo cuando la conectividad de red esté disponible. El demonio guarda el reloj actual en el disco cada vez que se adquiere una nueva sincronización NTP, y utiliza esto para corregir, si es posible, el reloj del sistema antes del arranque, a fin de acomodar los sistemas que carecen de un RTC como el Raspberry Pi y los dispositivos integrados, y asegurarse de que el tiempo progrese de forma monotónica en estos sistemas, incluso si no siempre es correcto. Para hacer uso de este demonio, es necesario crear un nuevo usuario y grupo del sistema «systemd-timesync» en la instalación de systemd.</dd></dl>
+<mw:tocplace></mw:tocplace>
+<h2>
+<span id="Configuraci.C3.B3n"></span><span class="mw-headline" id="Configuración">Configuración</span>
+</h2>
+<p><a href="../es/Systemd.html#Utilizar_las_unidades" class="mw-redirect" title="Start/enable (Español)">Inicie/active</a> <code>systemd-timesyncd.service</code> que está disponible con <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=systemd">systemd</a></span>.
+</p>
+<p>Al comenzar, <i>systemd-timesyncd</i> leerá el archivo de configuración de <code>/etc/systemd/timesyncd.conf</code>, que se ve así:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/systemd/timesyncd.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">[Time]
+#NTP=
+#FallbackNTP=0.arch.pool.ntp.org 1.arch.pool.ntp.org 2.arch.pool.ntp.org 3.arch.pool.ntp.org
+#RootDistanceMaxSec=5
+#PollIntervalMinSec=32
+#PollIntervalMaxSec=2048</pre>
+<p>Para añadir <a href="../en/Network_Time_Protocol_daemon.html#Connection_to_NTP_servers" title="Network Time Protocol daemon">servidores de horas</a> o cambiar los proporcionados, elimine el comentario de la línea correspondiente y enumere sus nombres de equipo o IP separados por un espacio. Por ejemplo, puede usar cualquier servidor proporcionado por <a rel="nofollow" class="external text" href="https://www.pool.ntp.org/">the NTP pool project</a> o utilizar <a rel="nofollow" class="external text" href="https://gitlab.archlinux.org/archlinux/packaging/packages/ntp/-/commit/343310b9ddd996220de27a2a35a5c1277a0bec9b">uno de los predefinidos de Arch</a> (también proporcionado por el proyecto de agrupación NTP):
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/systemd/timesyncd.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">[Time]
+NTP=0.arch.pool.ntp.org 1.arch.pool.ntp.org 2.arch.pool.ntp.org 3.arch.pool.ntp.org
+FallbackNTP=0.pool.ntp.org 1.pool.ntp.org 0.fr.pool.ntp.org</pre>
+<p>Para verificar su configuración, utilice <code>timedatectl show-timesync --all</code>:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">$ timedatectl show-timesync --all</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">LinkNTPServers=
+SystemNTPServers=
+FallbackNTPServers=0.arch.pool.ntp.org 1.arch.pool.ntp.org 2.arch.pool.ntp.org 3.arch.pool.ntp.org
+ServerName=0.arch.pool.ntp.org
+ServerAddress=103.47.76.177
+RootDistanceMaxUSec=5s
+PollIntervalMinUSec=32s
+PollIntervalMaxUSec=34min 8s
+PollIntervalUSec=1min 4s
+NTPMessage={ Leap=0, Version=4, Mode=4, Stratum=2, Precision=-21, RootDelay=177.398ms, RootDispersion=142.196ms, Reference=C342F10A, OriginateTimestamp=Mon 2018-07-16 13:53:43 +08, ReceiveTimestamp=Mon 2018-07-16 13:53:43 +08, TransmitTimestamp=Mon 2018-07-16 13:53:43 +08, DestinationTimestamp=Mon 2018-07-16 13:53:43 +08, Ignored=no PacketCount=1, Jitter=0 }
+Frequency=22520548</pre>
+<p>Además de la configuración del demonio, los servidores NTP también se pueden proporcionar a través de una configuración <a href="../en/Systemd-networkd.html#[NetDev]_section" title="Systemd-networkd">systemd-networkd</a> con la opción <code>NTP=</code> o, dinámicamente, a través de un servidor DHCP.
+</p>
+<p>El servidor que NTP utilizará se determinará utilizando las siguientes reglas:
+</p>
+<ul>
+<li>Cualquier servidor NTP por interfaz obtenido de la configuración de <code>systemd-networkd.service(8)</code> o mediante DHCP, tendrán prioridad.</li>
+<li>Los servidores NTP definidos en <code>/etc/systemd/timesyncd.conf</code> se añadirán a la lista por interfaz en tiempo de ejecución y el demonio se pondrá en contacto con dichos servidores sucesivamente hasta que se encuentre uno que responda.</li>
+<li>Si no se obtiene información del servidor NTP después de completar los pasos anteriores, se utilizarán los nombres de equipos de servidor NTP o las direcciones IP definidas en <code>FallbackNTP=</code>.</li>
+</ul>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Nota:</strong> El servicio escribe en un archivo local <code>/var/lib/systemd/timesync/clock</code> con cada sincronización. Esta ubicación está codificada y no se puede cambiar. Esto puede ser problemático para ejecutarlo en una partición raíz de solo lectura o tratar de minimizar las escrituras en una tarjeta SD.</div>
+<h2>
+<span id="Utilizaci.C3.B3n"></span><span class="mw-headline" id="Utilización">Utilización</span>
+</h2>
+<p>Para activarlo e iniciarlo, simplemente ejecute:
+</p>
+<pre># timedatectl set-ntp true 
+</pre>
+<p>El proceso de sincronización puede ser notablemente lento. Esto se debe presumir, por lo que debe esperar un poco antes de considerar que hay un problema. Para verificar el estado del servicio, utilice <code>timedatectl status</code>:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">$ timedatectl status</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">               Local time: Thu 2015-07-09 18:21:33 CEST
+           Universal time: Thu 2015-07-09 16:21:33 UTC
+                 RTC time: Thu 2015-07-09 16:21:33
+                Time zone: Europe/Amsterdam (CEST, +0200)
+System clock synchronized: yes
+              NTP service: active
+          RTC in local TZ: no
+</pre>
+<p>Para ver información detallada del servicio, utilice <code>timedatectl timesync-status</code>:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">$ timedatectl timesync-status</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">       Server: 103.47.76.177 (0.arch.pool.ntp.org)
+Poll interval: 2min 8s (min: 32s; max 34min 8s)
+         Leap: normal
+      Version: 4
+      Stratum: 2
+    Reference: C342F10A
+    Precision: 1us (-21)
+Root distance: 231.856ms (max: 5s)
+       Offset: -19.428ms
+        Delay: 36.717ms
+       Jitter: 7.343ms
+ Packet count: 2
+    Frequency: +267.747ppm
+</pre>
+<h2>
+<span id="Soluci.C3.B3n_de_problemas"></span><span class="mw-headline" id="Solución_de_problemas">Solución de problemas</span>
+</h2>
+<h3>
+<span id="systemd-timesyncd_no_puede_iniciarse_despu.C3.A9s_de_la_actualizaci.C3.B3n_242.0-1_update"></span><span class="mw-headline" id="systemd-timesyncd_no_puede_iniciarse_después_de_la_actualización_242.0-1_update">systemd-timesyncd no puede iniciarse después de la actualización 242.0-1 update</span>
+</h3>
+<p>Si el registro muestra este error:
+</p>
+<pre>ExecStart=/usr/lib/systemd/systemd-timesyncd (code=exited, status=238/STATE_DIRECTORY)
+</pre>
+<p>Ejecute las siguientes órdenes para solucionar el problema:
+</p>
+<pre># rm -rf /var/lib/systemd/timesync
+# rm -rf /var/lib/private/systemd/timesync
+</pre>
+<h2>
+<span id="V.C3.A9ase_tambi.C3.A9n"></span><span class="mw-headline" id="Véase_también">Véase también</span>
+</h2>
+<ul>
+<li><a rel="nofollow" class="external text" href="https://bbs.archlinux.org/viewtopic.php?id=182600">Forum: systemd-timesyncd is not syncing time</a></li>
+<li><a rel="nofollow" class="external text" href="https://bbs.archlinux.org/viewtopic.php?id=182172">Forum: Using systemd-timesync instead of NTP</a></li>
+<li><a rel="nofollow" class="external text" href="https://github.com/systemd/systemd/blob/master/src/timesync/timesyncd.c">Git Sourcecode of timesyncd</a></li>
+</ul>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="../es/Category:Network_Time_Protocol.html" title="Category:Network Time Protocol (Español)">Network Time Protocol (Español)</a></li></ul>
+</div></div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=Systemd-timesyncd_(Espa%C3%B1ol)&amp;oldid=779407">https://wiki.archlinux.org/index.php?title=Systemd-timesyncd_(Español)&amp;oldid=779407</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 23 May 2023, at 04:49.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

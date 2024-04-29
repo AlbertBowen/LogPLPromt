@@ -1,0 +1,1131 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>Partitioning (Русский) - ArchWiki</title>
+<link rel="stylesheet" href="../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Partitioning_Русский rootpage-Partitioning_Русский skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Таблица_разделов" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#%D0%A2%D0%B0%D0%B1%D0%BB%D0%B8%D1%86%D0%B0_%D1%80%D0%B0%D0%B7%D0%B4%D0%B5%D0%BB%D0%BE%D0%B2">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Таблица разделов</div>
+			</a>
+			
+				<button aria-controls="toc-Таблица_разделов-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Таблица разделов subsection
+				</button>
+			
+			<ul id="toc-Таблица_разделов-sublist" class="sidebar-toc-list">
+				<li id="toc-Главная_загрузочная_запись_(MBR)" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#%D0%93%D0%BB%D0%B0%D0%B2%D0%BD%D0%B0%D1%8F_%D0%B7%D0%B0%D0%B3%D1%80%D1%83%D0%B7%D0%BE%D1%87%D0%BD%D0%B0%D1%8F_%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D1%8C_(MBR)">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.1</span>Главная загрузочная запись (MBR)</div>
+			</a>
+			
+			<ul id="toc-Главная_загрузочная_запись_(MBR)-sublist" class="sidebar-toc-list">
+				<li id="toc-Главная_загрузочная_запись_(MBR)_(загрузочный_код)" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#%D0%93%D0%BB%D0%B0%D0%B2%D0%BD%D0%B0%D1%8F_%D0%B7%D0%B0%D0%B3%D1%80%D1%83%D0%B7%D0%BE%D1%87%D0%BD%D0%B0%D1%8F_%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D1%8C_(MBR)_(%D0%B7%D0%B0%D0%B3%D1%80%D1%83%D0%B7%D0%BE%D1%87%D0%BD%D1%8B%D0%B9_%D0%BA%D0%BE%D0%B4)">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.1.1</span>Главная загрузочная запись (MBR) (загрузочный код)</div>
+			</a>
+			
+			<ul id="toc-Главная_загрузочная_запись_(MBR)_(загрузочный_код)-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Главная_загрузочная_запись_(MBR)_(таблица_разделов)" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#%D0%93%D0%BB%D0%B0%D0%B2%D0%BD%D0%B0%D1%8F_%D0%B7%D0%B0%D0%B3%D1%80%D1%83%D0%B7%D0%BE%D1%87%D0%BD%D0%B0%D1%8F_%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D1%8C_(MBR)_(%D1%82%D0%B0%D0%B1%D0%BB%D0%B8%D1%86%D0%B0_%D1%80%D0%B0%D0%B7%D0%B4%D0%B5%D0%BB%D0%BE%D0%B2)">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.1.2</span>Главная загрузочная запись (MBR) (таблица разделов)</div>
+			</a>
+			
+			<ul id="toc-Главная_загрузочная_запись_(MBR)_(таблица_разделов)-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Таблица_разделов_GUID" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#%D0%A2%D0%B0%D0%B1%D0%BB%D0%B8%D1%86%D0%B0_%D1%80%D0%B0%D0%B7%D0%B4%D0%B5%D0%BB%D0%BE%D0%B2_GUID">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.2</span>Таблица разделов GUID</div>
+			</a>
+			
+			<ul id="toc-Таблица_разделов_GUID-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Выбор_между_GPT_и_MBR" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#%D0%92%D1%8B%D0%B1%D0%BE%D1%80_%D0%BC%D0%B5%D0%B6%D0%B4%D1%83_GPT_%D0%B8_MBR">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.3</span>Выбор между GPT и MBR</div>
+			</a>
+			
+			<ul id="toc-Выбор_между_GPT_и_MBR-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Неразмеченный_диск" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#%D0%9D%D0%B5%D1%80%D0%B0%D0%B7%D0%BC%D0%B5%D1%87%D0%B5%D0%BD%D0%BD%D1%8B%D0%B9_%D0%B4%D0%B8%D1%81%D0%BA">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.4</span>Неразмеченный диск</div>
+			</a>
+			
+			<ul id="toc-Неразмеченный_диск-sublist" class="sidebar-toc-list">
+				<li id="toc-Разметка_Btrfs" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#%D0%A0%D0%B0%D0%B7%D0%BC%D0%B5%D1%82%D0%BA%D0%B0_Btrfs">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.4.1</span>Разметка Btrfs</div>
+			</a>
+			
+			<ul id="toc-Разметка_Btrfs-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Схема_разметки" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#%D0%A1%D1%85%D0%B5%D0%BC%D0%B0_%D1%80%D0%B0%D0%B7%D0%BC%D0%B5%D1%82%D0%BA%D0%B8">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Схема разметки</div>
+			</a>
+			
+				<button aria-controls="toc-Схема_разметки-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Схема разметки subsection
+				</button>
+			
+			<ul id="toc-Схема_разметки-sublist" class="sidebar-toc-list">
+				<li id="toc-Один_корневой_раздел" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#%D0%9E%D0%B4%D0%B8%D0%BD_%D0%BA%D0%BE%D1%80%D0%BD%D0%B5%D0%B2%D0%BE%D0%B9_%D1%80%D0%B0%D0%B7%D0%B4%D0%B5%D0%BB">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.1</span>Один корневой раздел</div>
+			</a>
+			
+			<ul id="toc-Один_корневой_раздел-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Отдельные_разделы" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#%D0%9E%D1%82%D0%B4%D0%B5%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5_%D1%80%D0%B0%D0%B7%D0%B4%D0%B5%D0%BB%D1%8B">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.2</span>Отдельные разделы</div>
+			</a>
+			
+			<ul id="toc-Отдельные_разделы-sublist" class="sidebar-toc-list">
+				<li id="toc-/" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#/">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.2.1</span>/</div>
+			</a>
+			
+			<ul id="toc-/-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-/boot" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#/boot">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.2.2</span>/boot</div>
+			</a>
+			
+			<ul id="toc-/boot-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-/home" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#/home">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.2.3</span>/home</div>
+			</a>
+			
+			<ul id="toc-/home-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-/var" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#/var">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.2.4</span>/var</div>
+			</a>
+			
+			<ul id="toc-/var-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-/data" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#/data">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.2.5</span>/data</div>
+			</a>
+			
+			<ul id="toc-/data-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Swap" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Swap">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.2.6</span>Swap</div>
+			</a>
+			
+			<ul id="toc-Swap-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Примеры_схем" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#%D0%9F%D1%80%D0%B8%D0%BC%D0%B5%D1%80%D1%8B_%D1%81%D1%85%D0%B5%D0%BC">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.3</span>Примеры схем</div>
+			</a>
+			
+			<ul id="toc-Примеры_схем-sublist" class="sidebar-toc-list">
+				<li id="toc-Примеры_схем_UEFI/GPT" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#%D0%9F%D1%80%D0%B8%D0%BC%D0%B5%D1%80%D1%8B_%D1%81%D1%85%D0%B5%D0%BC_UEFI/GPT">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.3.1</span>Примеры схем UEFI/GPT</div>
+			</a>
+			
+			<ul id="toc-Примеры_схем_UEFI/GPT-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Примеры_схем_BIOS/MBR" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#%D0%9F%D1%80%D0%B8%D0%BC%D0%B5%D1%80%D1%8B_%D1%81%D1%85%D0%B5%D0%BC_BIOS/MBR">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.3.2</span>Примеры схем BIOS/MBR</div>
+			</a>
+			
+			<ul id="toc-Примеры_схем_BIOS/MBR-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Примеры_схем_BIOS/GPT" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#%D0%9F%D1%80%D0%B8%D0%BC%D0%B5%D1%80%D1%8B_%D1%81%D1%85%D0%B5%D0%BC_BIOS/GPT">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.3.3</span>Примеры схем BIOS/GPT</div>
+			</a>
+			
+			<ul id="toc-Примеры_схем_BIOS/GPT-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Инструменты" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#%D0%98%D0%BD%D1%81%D1%82%D1%80%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D1%8B">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>Инструменты</div>
+			</a>
+			
+				<button aria-controls="toc-Инструменты-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Инструменты subsection
+				</button>
+			
+			<ul id="toc-Инструменты-sublist" class="sidebar-toc-list">
+				<li id="toc-Инструменты_разметки" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#%D0%98%D0%BD%D1%81%D1%82%D1%80%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D1%8B_%D1%80%D0%B0%D0%B7%D0%BC%D0%B5%D1%82%D0%BA%D0%B8">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.1</span>Инструменты разметки</div>
+			</a>
+			
+			<ul id="toc-Инструменты_разметки-sublist" class="sidebar-toc-list">
+				<li id="toc-fdisk" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#fdisk">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.1.1</span>fdisk</div>
+			</a>
+			
+			<ul id="toc-fdisk-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-GPT_fdisk" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#GPT_fdisk">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.1.2</span>GPT fdisk</div>
+			</a>
+			
+			<ul id="toc-GPT_fdisk-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-GNU_Parted" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#GNU_Parted">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.1.3</span>GNU Parted</div>
+			</a>
+			
+			<ul id="toc-GNU_Parted-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Резервное_копирование" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#%D0%A0%D0%B5%D0%B7%D0%B5%D1%80%D0%B2%D0%BD%D0%BE%D0%B5_%D0%BA%D0%BE%D0%BF%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.2</span>Резервное копирование</div>
+			</a>
+			
+			<ul id="toc-Резервное_копирование-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Восстановление" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#%D0%92%D0%BE%D1%81%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.3</span>Восстановление</div>
+			</a>
+			
+			<ul id="toc-Восстановление-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Выравнивание_разделов" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#%D0%92%D1%8B%D1%80%D0%B0%D0%B2%D0%BD%D0%B8%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5_%D1%80%D0%B0%D0%B7%D0%B4%D0%B5%D0%BB%D0%BE%D0%B2">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4</span>Выравнивание разделов</div>
+			</a>
+			
+			<ul id="toc-Выравнивание_разделов-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Поддержка_GPT_ядром" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#%D0%9F%D0%BE%D0%B4%D0%B4%D0%B5%D1%80%D0%B6%D0%BA%D0%B0_GPT_%D1%8F%D0%B4%D1%80%D0%BE%D0%BC">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5</span>Поддержка GPT ядром</div>
+			</a>
+			
+			<ul id="toc-Поддержка_GPT_ядром-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Решение_проблем" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#%D0%A0%D0%B5%D1%88%D0%B5%D0%BD%D0%B8%D0%B5_%D0%BF%D1%80%D0%BE%D0%B1%D0%BB%D0%B5%D0%BC">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6</span>Решение проблем</div>
+			</a>
+			
+				<button aria-controls="toc-Решение_проблем-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Решение проблем subsection
+				</button>
+			
+			<ul id="toc-Решение_проблем-sublist" class="sidebar-toc-list">
+				<li id="toc-Обман_старого_BIOS_для_загрузки_с_GPT" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#%D0%9E%D0%B1%D0%BC%D0%B0%D0%BD_%D1%81%D1%82%D0%B0%D1%80%D0%BE%D0%B3%D0%BE_BIOS_%D0%B4%D0%BB%D1%8F_%D0%B7%D0%B0%D0%B3%D1%80%D1%83%D0%B7%D0%BA%D0%B8_%D1%81_GPT">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6.1</span>Обман старого BIOS для загрузки с GPT</div>
+			</a>
+			
+			<ul id="toc-Обман_старого_BIOS_для_загрузки_с_GPT-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Диски_не_видны,_когда_включен_встроенный_RAID" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#%D0%94%D0%B8%D1%81%D0%BA%D0%B8_%D0%BD%D0%B5_%D0%B2%D0%B8%D0%B4%D0%BD%D1%8B,_%D0%BA%D0%BE%D0%B3%D0%B4%D0%B0_%D0%B2%D0%BA%D0%BB%D1%8E%D1%87%D0%B5%D0%BD_%D0%B2%D1%81%D1%82%D1%80%D0%BE%D0%B5%D0%BD%D0%BD%D1%8B%D0%B9_RAID">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6.2</span>Диски не видны, когда включен встроенный RAID</div>
+			</a>
+			
+			<ul id="toc-Диски_не_видны,_когда_включен_встроенный_RAID-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Смотрите_также" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#%D0%A1%D0%BC%D0%BE%D1%82%D1%80%D0%B8%D1%82%D0%B5_%D1%82%D0%B0%D0%BA%D0%B6%D0%B5">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">7</span>Смотрите также</div>
+			</a>
+			
+			<ul id="toc-Смотрите_также-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../ru/Partitioning.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="new mw-list-item"><a href="/index.php?title=Talk:Partitioning_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)&amp;action=edit&amp;redlink=1" rel="discussion" title="Discussion about the content page (page does not exist) [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">русский</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../ru/Partitioning.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=Partitioning_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=Partitioning_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../ru/Partitioning.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Partitioning_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Partitioning_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="ru" dir="ltr">
+<div class="mw-parser-output">
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Состояние перевода:</strong> На этой странице представлен перевод статьи <a href="../en/Partitioning.html" title="Partitioning">Partitioning</a>. Дата последней синхронизации: 5 февраля 2022. Вы можете <a href="../ru/ArchWiki:Translation_Team.html" title="ArchWiki:Translation Team (Русский)">помочь</a> синхронизировать перевод, если в английской версии произошли <a rel="nofollow" class="external text" href="https://wiki.archlinux.org/index.php?title=Partitioning&amp;diff=0&amp;oldid=713718">изменения</a>.</div>
+<div class="archwiki-template-meta-related-articles-start">
+<p class="mw-no-invert">Ссылки по теме</p>
+<ul>
+<li><a href="../ru/File_systems.html" class="mw-redirect" title="Файловые системы">Файловые системы</a></li>
+<li><a href="../ru/Fdisk.html" title="Fdisk (Русский)">fdisk (Русский)</a></li>
+<li><a href="../ru/GPT_fdisk.html" title="GPT fdisk (Русский)">GPT fdisk (Русский)</a></li>
+<li><a href="../ru/Parted.html" title="Parted (Русский)">Parted (Русский)</a></li>
+<li><a href="../ru/Fstab.html" title="Fstab (Русский)">fstab (Русский)</a></li>
+<li><a href="../en/LVM.html" class="mw-redirect" title="LVM (Русский)">LVM (Русский)</a></li>
+<li><a href="../ru/Swap.html" class="mw-redirect" title="Раздел подкачки">Раздел подкачки</a></li>
+<li><a href="../ru/Arch_boot_process.html" class="mw-redirect" title="Процесс загрузки Arch">Процесс загрузки Arch</a></li>
+<li><a href="../ru/Unified_Extensible_Firmware_Interface.html" class="mw-redirect" title="UEFI (Русский)">UEFI (Русский)</a></li>
+</ul>
+</div>
+<p>При <a href="https://en.wikipedia.org/wiki/ru:%D0%A0%D0%B0%D0%B7%D0%B4%D0%B5%D0%BB_%D0%B4%D0%B8%D1%81%D0%BA%D0%B0" class="extiw" title="wikipedia:ru:Раздел диска">разметке</a> память жесткого диска разбивается на разделы, с которыми можно работать независимо. Их может быть несколько или только один. Количество зависит от вас, например, если вы хотите установить на диск несколько ОС, логически разделить данные или нужен <a href="../ru/Swap.html" class="mw-redirect" title="Раздел подкачки">раздел подкачки</a>, то необходимо иметь несколько разделов. 
+</p>
+<p>Информация о размещении разделов на жёстком диске хранится в <a href="#%D0%A2%D0%B0%D0%B1%D0%BB%D0%B8%D1%86%D0%B0_%D1%80%D0%B0%D0%B7%D0%B4%D0%B5%D0%BB%D0%BE%D0%B2">таблице разделов</a>, такой как MBR или GPT.
+</p>
+<p>Создать или изменить таблицу разделов можно с помощью одного из многих <a href="https://en.wikipedia.org/wiki/ru:%D0%9F%D1%80%D0%BE%D0%B5%D0%BA%D1%82:%D0%98%D0%BD%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%86%D0%B8%D0%BE%D0%BD%D0%BD%D1%8B%D0%B5_%D1%82%D0%B5%D1%85%D0%BD%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D0%B8/%D0%A1%D0%BF%D0%B8%D1%81%D0%BA%D0%B8/%D0%A1%D0%BF%D0%B8%D1%81%D0%BE%D0%BA_%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%BD%D0%BE%D0%B3%D0%BE_%D0%BE%D0%B1%D0%B5%D1%81%D0%BF%D0%B5%D1%87%D0%B5%D0%BD%D0%B8%D1%8F_%D0%B4%D0%BB%D1%8F_%D1%80%D0%B0%D0%B7%D0%BC%D0%B5%D1%82%D0%BA%D0%B8_%D0%B4%D0%B8%D1%81%D0%BA%D0%B0" class="extiw" title="wikipedia:ru:Проект:Информационные технологии/Списки/Список программного обеспечения для разметки диска">инструментов разметки</a>. Инструменты, доступные в Arch Linux, перечислены в разделе <a href="#%D0%98%D0%BD%D1%81%D1%82%D1%80%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D1%8B_%D1%80%D0%B0%D0%B7%D0%BC%D0%B5%D1%82%D0%BA%D0%B8">#Инструменты разметки</a>.
+</p>
+<p>Разделы обычно содержат в себе <a href="../ru/File_systems.html" title="File systems (Русский)">файловую систему</a>, что достигается путём создания файловой системы на разделе (то есть <a href="../ru/File_systems.html#%D0%A1%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5_%D1%84%D0%B0%D0%B9%D0%BB%D0%BE%D0%B2%D0%BE%D0%B9_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D1%8B" title="File systems (Русский)">форматированием</a>). Помимо файловой системы, разделы могут содержать <a href="../en/LVM.html" class="mw-redirect" title="LVM (Русский)">LVM</a>, <a href="../en/Data-at-rest_encryption.html#Block_device_encryption" title="Data-at-rest encryption">зашифрованные данные</a> или <a href="../en/RAID.html" class="mw-redirect" title="RAID (Русский)">RAID</a>, которые в конечном итоге предоставляют файлы устройств, на которых может быть размещена файловая система (или устройства могут быть и дальше вложены друг в друга).
+</p>
+<p>Любое <a href="../ru/Device_file.html#%D0%91%D0%BB%D0%BE%D1%87%D0%BD%D1%8B%D0%B5_%D1%83%D1%81%D1%82%D1%80%D0%BE%D0%B9%D1%81%D1%82%D0%B2%D0%B0" class="mw-redirect" title="Блочное устройство">блочное устройство</a> (например, диск, раздел, устройство LUKS, логический том LVM или RAID-массив), которое непосредственно содержит монтируемую файловую систему, называется <a href="https://en.wikipedia.org/wiki/ru:%D0%A2%D0%BE%D0%BC_(%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D1%8B_%D1%85%D1%80%D0%B0%D0%BD%D0%B5%D0%BD%D0%B8%D1%8F)" class="extiw" title="wikipedia:ru:Том (системы хранения)">том</a>.
+</p>
+<mw:tocplace></mw:tocplace>
+<h2>
+<span id=".D0.A2.D0.B0.D0.B1.D0.BB.D0.B8.D1.86.D0.B0_.D1.80.D0.B0.D0.B7.D0.B4.D0.B5.D0.BB.D0.BE.D0.B2"></span><span class="mw-headline" id="Таблица_разделов">Таблица разделов</span>
+</h2>
+<p>Имеется два основных формата таблицы разделов. Они описаны далее в секциях <a href="#%D0%93%D0%BB%D0%B0%D0%B2%D0%BD%D0%B0%D1%8F_%D0%B7%D0%B0%D0%B3%D1%80%D1%83%D0%B7%D0%BE%D1%87%D0%BD%D0%B0%D1%8F_%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D1%8C_(MBR)">#Главная загрузочная запись (MBR)</a> и <a href="#%D0%A2%D0%B0%D0%B1%D0%BB%D0%B8%D1%86%D0%B0_%D1%80%D0%B0%D0%B7%D0%B4%D0%B5%D0%BB%D0%BE%D0%B2_GUID">#Таблица разделов GUID</a> (GPT). Ниже описаны их особенности и как выбирать между ними. Третьей, менее распространенной альтернативой, является использование неразмеченного диска, которая также обсуждается ниже.
+</p>
+<p>Используйте какой-нибудь <a href="#%D0%98%D0%BD%D1%81%D1%82%D1%80%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D1%8B_%D1%80%D0%B0%D0%B7%D0%BC%D0%B5%D1%82%D0%BA%D0%B8">инструмент разметки</a>, чтобы посмотреть таблицу разделов <a href="../ru/Device_file.html#%D0%91%D0%BB%D0%BE%D1%87%D0%BD%D1%8B%D0%B5_%D1%83%D1%81%D1%82%D1%80%D0%BE%D0%B9%D1%81%D1%82%D0%B2%D0%B0" title="Device file (Русский)">блочного устройства</a>.
+</p>
+<div class="archwiki-template-box archwiki-template-box-tip">
+<strong>Совет:</strong> Чтобы вывести информацию из таблицы разделов определенного устройства, выполните <code>parted <i>/dev/sda</i> print</code> или <code>fdisk -l <i>/dev/sda</i></code>, где <code><i>/dev/sda</i></code> — имя <a href="../ru/Device_file.html#%D0%91%D0%BB%D0%BE%D1%87%D0%BD%D1%8B%D0%B5_%D1%83%D1%81%D1%82%D1%80%D0%BE%D0%B9%D1%81%D1%82%D0%B2%D0%B0" class="mw-redirect" title="Блочное устройство">блочного устройства</a>.</div>
+<h3>
+<span id=".D0.93.D0.BB.D0.B0.D0.B2.D0.BD.D0.B0.D1.8F_.D0.B7.D0.B0.D0.B3.D1.80.D1.83.D0.B7.D0.BE.D1.87.D0.BD.D0.B0.D1.8F_.D0.B7.D0.B0.D0.BF.D0.B8.D1.81.D1.8C_.28MBR.29"></span><span class="mw-headline" id="Главная_загрузочная_запись_(MBR)">Главная загрузочная запись (MBR)</span>
+</h3>
+<p><a href="https://en.wikipedia.org/wiki/ru:%D0%93%D0%BB%D0%B0%D0%B2%D0%BD%D0%B0%D1%8F_%D0%B7%D0%B0%D0%B3%D1%80%D1%83%D0%B7%D0%BE%D1%87%D0%BD%D0%B0%D1%8F_%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D1%8C" class="extiw" title="wikipedia:ru:Главная загрузочная запись">Главная загрузочная запись</a> (MBR) — это первые 512 байт запоминающего устройства. В них находится загрузчик операционной системы и таблица разделов устройства хранения. Главная загрузочная запись играет важную роль в <a href="../ru/Arch_boot_process.html" class="mw-redirect" title="Процесс загрузки Arch">процессе загрузки Arch</a> в системах с <a href="https://en.wikipedia.org/wiki/ru:BIOS" class="extiw" title="wikipedia:ru:BIOS">BIOS</a>. Для получения информации о структуре смотрите <a href="https://en.wikipedia.org/wiki/ru:%D0%93%D0%BB%D0%B0%D0%B2%D0%BD%D0%B0%D1%8F_%D0%B7%D0%B0%D0%B3%D1%80%D1%83%D0%B7%D0%BE%D1%87%D0%BD%D0%B0%D1%8F_%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D1%8C#.D0.A1.D1.82.D1.80.D1.83.D0.BA.D1.82.D1.83.D1.80.D0.B0_MBR" class="extiw" title="wikipedia:ru:Главная загрузочная запись">Wikipedia:ru:Главная загрузочная запись#Структура MBR</a>.
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Примечание:</strong> 
+<ul>
+<li>Главная загрузочная запись (MBR) находится не в разделе; она расположена в первом секторе устройства (физическое смещение 0) перед первым разделом.</li>
+<li>Загрузочный сектор, находящийся на неразмеченном устройстве или в отдельном разделе, вместо этого называется <a href="https://en.wikipedia.org/wiki/Volume_boot_record" class="extiw" title="wikipedia:Volume boot record">volume boot record (VBR)</a>.)</li>
+</ul>
+</div>
+<h4>
+<span id=".D0.93.D0.BB.D0.B0.D0.B2.D0.BD.D0.B0.D1.8F_.D0.B7.D0.B0.D0.B3.D1.80.D1.83.D0.B7.D0.BE.D1.87.D0.BD.D0.B0.D1.8F_.D0.B7.D0.B0.D0.BF.D0.B8.D1.81.D1.8C_.28MBR.29_.28.D0.B7.D0.B0.D0.B3.D1.80.D1.83.D0.B7.D0.BE.D1.87.D0.BD.D1.8B.D0.B9_.D0.BA.D0.BE.D0.B4.29"></span><span class="mw-headline" id="Главная_загрузочная_запись_(MBR)_(загрузочный_код)">Главная загрузочная запись (MBR) (загрузочный код)</span>
+</h4>
+<p>Первые 440 байт MBR — это <b>область загрузочного кода</b>. В системах с BIOS она обычно содержит первый этап загрузчика. Загрузочный код может быть восстановлен из резервной копии или удалён <a href="../ru/Dd.html#%D0%A0%D0%B5%D0%B7%D0%B5%D1%80%D0%B2%D0%BD%D0%BE%D0%B5_%D0%BA%D0%BE%D0%BF%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5_%D0%B8_%D0%B2%D0%BE%D1%81%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5_MBR" title="Dd (Русский)">с помощью dd</a>.
+</p>
+<h4>
+<span id=".D0.93.D0.BB.D0.B0.D0.B2.D0.BD.D0.B0.D1.8F_.D0.B7.D0.B0.D0.B3.D1.80.D1.83.D0.B7.D0.BE.D1.87.D0.BD.D0.B0.D1.8F_.D0.B7.D0.B0.D0.BF.D0.B8.D1.81.D1.8C_.28MBR.29_.28.D1.82.D0.B0.D0.B1.D0.BB.D0.B8.D1.86.D0.B0_.D1.80.D0.B0.D0.B7.D0.B4.D0.B5.D0.BB.D0.BE.D0.B2.29"></span><span class="mw-headline" id="Главная_загрузочная_запись_(MBR)_(таблица_разделов)">Главная загрузочная запись (MBR) (таблица разделов)</span>
+</h4>
+<p>В таблице разделов MBR (она же таблица разделов DOS или MS-DOS) есть 3 типа разделов:
+</p>
+<ul>
+<li>Первичный</li>
+<li>Расширенный
+<ul><li>Логический</li></ul>
+</li>
+</ul>
+<p><b>Первичные</b> разделы могут быть загрузочными, но их может быть всего четыре на диске или в томе RAID. Если нужно более четырех, то один из них нужно заменить на <b>расширенный</b>, который содержит в себе множество <b>логических</b> разделов. 
+</p>
+<p>Расширенные разделы можно рассматривать как контейнеры для логических разделов. Жесткий диск может иметь только один такой раздел. Расширенный раздел считается первичным, поэтому, если на диске имеется расширенный раздел, еще возможны только три первичных (т.е. три первичных раздела и один расширенный). Количество логических разделов, находящихся в расширенном разделе, неограниченно. Для системы с несколькими ОС, одна из которых Windows, необходимо, чтобы Windows находилась в первичном разделе.
+</p>
+<p>Обычная схема нумерации заключается в именовании первичных разделов от <i>sda1</i> до <i>sda3</i>, за которыми следует расширенный раздел <i>sda4</i>. Логические разделы, находящихся в расширенном разделе <i>sda4</i>, нумеруются как <i>sda5</i>, <i>sda6</i> и так далее.
+</p>
+<div class="archwiki-template-box archwiki-template-box-tip">
+<strong>Совет:</strong> При разметке диска MBR оставьте неразмеченными как минимум 33 512-байтовых сектора (16.5 КиБ) в конце диска на случай, если вам понадобится <a href="../ru/GPT_fdisk.html#%D0%9F%D1%80%D0%B5%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5_%D0%BC%D0%B5%D0%B6%D0%B4%D1%83_MBR_%D0%B8_GPT" title="GPT fdisk (Русский)">преобразовать MBR в GPT</a>. Это место потребуется для резервного заголовка GPT.</div>
+<h3>
+<span id=".D0.A2.D0.B0.D0.B1.D0.BB.D0.B8.D1.86.D0.B0_.D1.80.D0.B0.D0.B7.D0.B4.D0.B5.D0.BB.D0.BE.D0.B2_GUID"></span><span class="mw-headline" id="Таблица_разделов_GUID">Таблица разделов GUID</span>
+</h3>
+<p><a href="https://en.wikipedia.org/wiki/ru:%D0%A2%D0%B0%D0%B1%D0%BB%D0%B8%D1%86%D0%B0_%D1%80%D0%B0%D0%B7%D0%B4%D0%B5%D0%BB%D0%BE%D0%B2_GUID" class="extiw" title="wikipedia:ru:Таблица разделов GUID">Таблица разделов GUID</a> (GPT) — таблица разделов, которая является частью спецификации <a href="../ru/Unified_Extensible_Firmware_Interface.html" title="Unified Extensible Firmware Interface (Русский)">Unified Extensible Firmware Interface</a>; в ней используются <a href="https://en.wikipedia.org/wiki/ru:GUID" class="extiw" title="wikipedia:ru:GUID">глобально-уникальные идентификаторы</a>, GUID (или UUID в мире Linux), для определения разделов и <a href="https://en.wikipedia.org/wiki/ru:%D0%A2%D0%B0%D0%B1%D0%BB%D0%B8%D1%86%D0%B0_%D1%80%D0%B0%D0%B7%D0%B4%D0%B5%D0%BB%D0%BE%D0%B2_GUID#.D0.98.D0.B4.D0.B5.D0.BD.D1.82.D0.B8.D1.84.D0.B8.D0.BA.D0.B0.D1.82.D0.BE.D1.80.D1.8B_.28GUID.29_.D1.80.D0.B0.D0.B7.D0.BB.D0.B8.D1.87.D0.BD.D1.8B.D1.85_.D1.82.D0.B8.D0.BF.D0.BE.D0.B2_.D1.80.D0.B0.D0.B7.D0.B4.D0.B5.D0.BB.D0.BE.D0.B2" class="extiw" title="wikipedia:ru:Таблица разделов GUID">их типов</a>. Она призвана заменить MBR и разработана с учётом недостатков последней.
+</p>
+<p>В начале таблицы разделов GUID на диске есть <a href="https://en.wikipedia.org/wiki/ru:%D0%A2%D0%B0%D0%B1%D0%BB%D0%B8%D1%86%D0%B0_%D1%80%D0%B0%D0%B7%D0%B4%D0%B5%D0%BB%D0%BE%D0%B2_GUID#.D0.9D.D0.B0.D1.81.D0.BB.D0.B5.D0.B4.D1.81.D1.82.D0.B2.D0.B5.D0.BD.D0.BD.D1.8B.D0.B9_MBR_.28LBA_0.29" class="extiw" title="wikipedia:ru:Таблица разделов GUID">наследственная главная загрузочная запись</a> (защитная MBR, PMBR) для защиты от ПО, не поддерживающего GPT. Наследственная MBR, как и обычная MBR, имеет <a href="#%D0%93%D0%BB%D0%B0%D0%B2%D0%BD%D0%B0%D1%8F_%D0%B7%D0%B0%D0%B3%D1%80%D1%83%D0%B7%D0%BE%D1%87%D0%BD%D0%B0%D1%8F_%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D1%8C_(MBR)_(%D0%B7%D0%B0%D0%B3%D1%80%D1%83%D0%B7%D0%BE%D1%87%D0%BD%D1%8B%D0%B9_%D0%BA%D0%BE%D0%B4)">область загрузочного кода</a>, которую можно использовать для загрузки на системах BIOS/GPT с загрузчиками, которые её поддерживают.
+</p>
+<h3>
+<span id=".D0.92.D1.8B.D0.B1.D0.BE.D1.80_.D0.BC.D0.B5.D0.B6.D0.B4.D1.83_GPT_.D0.B8_MBR"></span><span class="mw-headline" id="Выбор_между_GPT_и_MBR">Выбор между GPT и MBR</span>
+</h3>
+<p>Таблица разделов GUID (GPT) — альтернативный, современный способ разметки; он предназначен для замены старого MBR. У GPT есть несколько преимуществ по сравнению с MBR, которая имеет проблемы, произрастающие из времён MS-DOS. Благодаря недавним изменениям в инструментах форматирования одинаково легко получить хорошую надёжность и производительность для GPT и MBR.
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Примечание:</strong> Чтобы GRUB загружался с диска с разделом GPT в BIOS-системе, необходим <a href="../ru/GRUB.html#%D0%97%D0%B0%D0%B3%D1%80%D1%83%D0%B7%D1%87%D0%B8%D0%BA_%D0%B2_BIOS" class="mw-redirect" title="Раздел загрузки BIOS">раздел загрузки BIOS</a>.</div>
+<p>Некоторые моменты, которые следует учитывать при выборе:
+</p>
+<ul>
+<li>Для двойной загрузки с Windows (как 32-разрядной, так и 64-разрядной) с использованием Legacy BIOS требуется таблица MBR.</li>
+<li>Для двойной загрузки с 64-разрядной Windows, которая запускается в режиме <a href="../ru/Unified_Extensible_Firmware_Interface.html" class="mw-redirect" title="UEFI (Русский)">UEFI</a> вместо BIOS, требуется таблица GPT.</li>
+<li>Если вы устанавливаете на устаревшее оборудование, особенно на старые ноутбуки, подумайте о выборе MBR, потому что их BIOS может не поддерживать GPT (но <a href="#%D0%9E%D0%B1%D0%BC%D0%B0%D0%BD_%D1%81%D1%82%D0%B0%D1%80%D0%BE%D0%B3%D0%BE_BIOS_%D0%B4%D0%BB%D1%8F_%D0%B7%D0%B0%D0%B3%D1%80%D1%83%D0%B7%D0%BA%D0%B8_%D1%81_GPT">смотрите ниже</a> для получения информации об исправлении данной проблемы).</li>
+<li>Если вы разбиваете диск больше 2 ТиБ, вам нужно использовать GPT.</li>
+<li>Для загрузки в режиме <a href="../ru/Unified_Extensible_Firmware_Interface.html" class="mw-redirect" title="UEFI (Русский)">UEFI</a> лучше всегда использовать GPT, так как некоторые реализации UEFI не поддерживают загрузку с MBR.</li>
+<li>Если ни один из вышеперечисленных пунктов вас не касается, вы можете выбирать свободно между GPT и MBR. Лучше выбрать GPT, поскольку он более современный.</li>
+</ul>
+<p>Некоторые преимущества таблицы GPT над MBR:
+</p>
+<ul>
+<li>Предоставляет уникальный GUID диска и уникальный GUID для каждого раздела (<a href="../ru/Persistent_block_device_naming.html#by-partuuid" title="Persistent block device naming (Русский)">PARTUUID</a>) — хороший и независимый от файловой системы способ обращения к разделам и дискам. GUID нужны для <a rel="nofollow" class="external text" href="https://uapi-group.org/specifications/specs/discoverable_partitions_specification/">Discoverable Partitions Specification</a>, который может использоваться в initramfs с включенным systemd.</li>
+<li>Предоставляет имя раздела (<a href="../ru/Persistent_block_device_naming.html#by-partlabel" title="Persistent block device naming (Русский)">PARTLABEL</a>), не зависящее от файловой системы.</li>
+<li>Произвольное количество разделов — зависит от места, выделенного для таблицы разделов. Нет необходимости в расширенных и логических разделах. По умолчанию таблица GPT содержит пространство для определения 128 разделов. Однако, если вы хотите определить больше, вы можете выделить больше пространства для таблицы разделов (в настоящее время только <i>gdisk</i> поддерживают эту функцию).</li>
+<li>Использует 64-разрядный LBA для хранения номеров секторов — максимальный размер адресации диска 2 ЗиБ. MBR ограничивается адресацией только 2 ТиБ на диск. <a rel="nofollow" class="external autonumber" href="https://superuser.com/a/1028994">[1]</a>
+</li>
+<li>Хранит резервный заголовок и таблицу разделов в конце диска, что помогает <a href="../ru/GPT_fdisk.html#%D0%92%D0%BE%D1%81%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5_%D0%B7%D0%B0%D0%B3%D0%BE%D0%BB%D0%BE%D0%B2%D0%BA%D0%B0_GPT" title="GPT fdisk (Русский)">восстановить</a> их, если основной заголовок повреждён.</li>
+<li>Контрольные суммы CRC32 для обнаружения ошибок и повреждения таблицы заголовков и разделов.</li>
+</ul>
+<p>В разделе <a href="#%D0%98%D0%BD%D1%81%D1%82%D1%80%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D1%8B_%D1%80%D0%B0%D0%B7%D0%BC%D0%B5%D1%82%D0%BA%D0%B8">#Инструменты разметки</a> содержится таблица, показывающая, какие инструменты доступны для создания и изменения таблиц GPT и MBR.
+</p>
+<div class="archwiki-template-box archwiki-template-box-tip">
+<strong>Совет:</strong> Возможно преобразовывать MBR в GPT и обратно, смотрите <a href="../ru/GPT_fdisk.html#%D0%9F%D1%80%D0%B5%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5_%D0%BC%D0%B5%D0%B6%D0%B4%D1%83_MBR_%D0%B8_GPT" title="GPT fdisk (Русский)">GPT fdisk (Русский)#Преобразование между MBR и GPT</a>.</div>
+<h3>
+<span id=".D0.9D.D0.B5.D1.80.D0.B0.D0.B7.D0.BC.D0.B5.D1.87.D0.B5.D0.BD.D0.BD.D1.8B.D0.B9_.D0.B4.D0.B8.D1.81.D0.BA"></span><span class="mw-headline" id="Неразмеченный_диск">Неразмеченный диск</span>
+</h3>
+<div class="noprint archwiki-template-message">
+<p><a href="../File:Tango-view-fullscreen.png" class="image"><img alt="Tango-view-fullscreen.png" src="../File:Tango-view-fullscreen.png" decoding="async" width="48" height="48"></a><b>This article or section needs expansion.</b><a href="../File:Tango-view-fullscreen.png" class="image"><img alt="Tango-view-fullscreen.png" src="../File:Tango-view-fullscreen.png" decoding="async" width="48" height="48"></a></p>
+<div>
+<b>Reason:</b> Необходимо объяснить когда стоит и не стоит использовать данное решение, а также почему. (Discuss in <a rel="nofollow" class="external text" href="https://wiki.archlinux.org/title/Talk:Partitioning_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)">Talk:Partitioning (Русский)</a>)</div>
+</div>
+<p>Неразмеченный (безраздельный, partitionless) диск, также известный как <a rel="nofollow" class="external text" href="https://docs.microsoft.com/en-us/windows-hardware/manufacture/desktop/windows-and-gpt-faq#what-is-a-superfloppy">superfloppy</a>, — устройство хранения, не имеющее таблицы разделов. Вместо неё он содержит одну файловую систему, занимающую все запоминающее устройство. Загрузочный сектор, находящийся на безраздельном устройстве, называется <a href="https://en.wikipedia.org/wiki/Volume_boot_record" class="extiw" title="wikipedia:Volume boot record">volume boot record (VBR)</a>.
+</p>
+<h4>
+<span id=".D0.A0.D0.B0.D0.B7.D0.BC.D0.B5.D1.82.D0.BA.D0.B0_Btrfs"></span><span class="mw-headline" id="Разметка_Btrfs">Разметка Btrfs</span>
+</h4>
+<p><a href="../ru/Btrfs.html" title="Btrfs (Русский)">Btrfs</a> может занимать все устройство хранения данных и заменять таблицы разметки <a href="#%D0%93%D0%BB%D0%B0%D0%B2%D0%BD%D0%B0%D1%8F_%D0%B7%D0%B0%D0%B3%D1%80%D1%83%D0%B7%D0%BE%D1%87%D0%BD%D0%B0%D1%8F_%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D1%8C_(MBR)">MBR</a> или <a href="#%D0%A2%D0%B0%D0%B1%D0%BB%D0%B8%D1%86%D0%B0_%D1%80%D0%B0%D0%B7%D0%B4%D0%B5%D0%BB%D0%BE%D0%B2_GUID">GPT</a>. Для получения дополнительной информации смотрите статью <a href="../en/Btrfs.html#Partitionless_Btrfs_disk" title="Btrfs">Btrfs#Partitionless Btrfs disk</a>.
+</p>
+<h2>
+<span id=".D0.A1.D1.85.D0.B5.D0.BC.D0.B0_.D1.80.D0.B0.D0.B7.D0.BC.D0.B5.D1.82.D0.BA.D0.B8"></span><span class="mw-headline" id="Схема_разметки">Схема разметки</span>
+</h2>
+<p>Не существует строгих правил разметки жёсткого диска, хотя можно следовать общим рекомендациям, приведённым ниже. Схема разметки диска определяется различными вопросами, такими как требуемая гибкость, скорость, безопасность, а также ограничения, налагаемые доступным дисковым пространством. Это, по сути, личное предпочтение. Если вы хотите сделать двойную загрузку Arch Linux и Windows, смотрите <a href="../en/Dual_boot_with_Windows.html" class="mw-redirect" title="Двойная загрузка: Windows и Arch">Двойная загрузка: Windows и Arch</a>.
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Примечание:</strong> 
+<ul>
+<li>Для систем с <a href="../ru/Unified_Extensible_Firmware_Interface.html" class="mw-redirect" title="UEFI (Русский)">UEFI</a> обычно нужен <a href="../ru/EFI_system_partition.html" class="mw-redirect" title="Системный раздел EFI">системный раздел EFI</a>.</li>
+<li>Для систем с BIOS, размеченных с <a href="#%D0%A2%D0%B0%D0%B1%D0%BB%D0%B8%D1%86%D0%B0_%D1%80%D0%B0%D0%B7%D0%B4%D0%B5%D0%BB%D0%BE%D0%B2_GUID">GPT</a>, требуется <a href="../ru/GRUB.html#%D0%97%D0%B0%D0%B3%D1%80%D1%83%D0%B7%D1%87%D0%B8%D0%BA_%D0%B2_BIOS" class="mw-redirect" title="Раздел загрузки BIOS">раздел загрузки BIOS</a>, если в качестве загрузчика используется <a href="../ru/GRUB.html" title="GRUB (Русский)">GRUB</a>.</li>
+</ul>
+</div>
+<div class="archwiki-template-box archwiki-template-box-tip">
+<strong>Совет:</strong> При использовании <a href="../ru/Btrfs.html" title="Btrfs (Русский)">Btrfs</a> подтома можно рассматривать как разделы. Для получения дополнительной информации смотрите раздел <a href="../en/Btrfs.html#Mounting_subvolumes" title="Btrfs">Btrfs#Mounting subvolumes</a>.</div>
+<h3>
+<span id=".D0.9E.D0.B4.D0.B8.D0.BD_.D0.BA.D0.BE.D1.80.D0.BD.D0.B5.D0.B2.D0.BE.D0.B9_.D1.80.D0.B0.D0.B7.D0.B4.D0.B5.D0.BB"></span><span class="mw-headline" id="Один_корневой_раздел">Один корневой раздел</span>
+</h3>
+<p>Эта схема — самая простая и её достаточно для большинства случаев использования. <a href="../ru/Swap.html#%D0%A4%D0%B0%D0%B9%D0%BB_%D0%BF%D0%BE%D0%B4%D0%BA%D0%B0%D1%87%D0%BA%D0%B8" class="mw-redirect" title="Файл подкачки">Файл подкачки</a> может быть создан и легко изменён по мере необходимости. Обычно имеет смысл начать с использования одного раздела <code>/</code>, а затем создавать другие для частных случаев, таких как RAID, шифрование, общий раздел мультимедиа и т.д.
+</p>
+<h3>
+<span id=".D0.9E.D1.82.D0.B4.D0.B5.D0.BB.D1.8C.D0.BD.D1.8B.D0.B5_.D1.80.D0.B0.D0.B7.D0.B4.D0.B5.D0.BB.D1.8B"></span><span class="mw-headline" id="Отдельные_разделы">Отдельные разделы</span>
+</h3>
+<p>Перемещение пути на отдельный раздел позволяет выбрать для него другую файловую систему и параметры монтирования. В некоторых случаях, таких как раздел мультимедиа, они могут использоваться совместно с другими операционными системами.
+</p>
+<p>Ниже приведены некоторые примеры схем, которые можно использовать при разделении, а в следующих подразделах подробно описаны некоторые из каталогов, которые могут быть размещены отдельно, а затем <a href="../ru/File_systems.html#%D0%9C%D0%BE%D0%BD%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5_%D1%84%D0%B0%D0%B9%D0%BB%D0%BE%D0%B2%D0%BE%D0%B9_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D1%8B" title="File systems (Русский)">смонтированы</a> в точках монтирования внутри <code>/</code>. Для получения полного описания содержимого этих каталогов смотрите <span class="plainlinks archwiki-template-man" title="$ man 7 file-hierarchy"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/file-hierarchy.7">file-hierarchy(7)</a></span>.
+</p>
+<h4>
+<span id=".2F"></span><span class="mw-headline" id="/">/</span>
+</h4>
+<p>Корневой каталог — вершина иерархии, точка, в которой монтируется основная файловая система, к которой присоединяются все другие файловые системы. Все файлы и каталоги отображаются в корневом каталоге <code>/</code>, даже если они хранятся на разных физических устройствах. Корневая файловая система должна содержать в себе файлы, необходимые для загрузки, отката, исправления и/или восстановления системы, без подключения дополнительных разделов. Поэтому некоторые каталоги из <code>/</code> нельзя располагать на отдельных разделах.
+</p>
+<p>Раздел <code>/</code> или корневой раздел необходим, и он наиболее важен. Остальные разделы могут быть заменены им.
+</p>
+<div class="archwiki-template-box archwiki-template-box-warning">
+<strong>Важно:</strong> Каталоги, необходимые для загрузки (кроме <code>/boot</code>) <b>должны</b> находится в том же разделе, что и <code>/</code>, или смонтированы в раннем пользовательском пространстве <a href="../ru/Arch_boot_process.html#initramfs" class="mw-redirect" title="Initramfs (Русский)">initramfs</a>. Основные каталоги: <code>/etc</code> и <code>/usr</code> <a rel="nofollow" class="external autonumber" href="https://freedesktop.org/wiki/Software/systemd/separate-usr-is-broken">[2]</a>.</div>
+<p><code>/</code> традиционно содержит каталог <code>/usr</code>, который может значительно увеличиться в зависимости от того, сколько ПО установлено. Для большинства пользователей с современными жесткими дисками должно быть достаточно 15-20 ГиБ. Если вы планируете создать здесь файл подкачки, вам может потребоваться больший размер раздела.
+</p>
+<h4>
+<span id=".2Fboot"></span><span class="mw-headline" id="/boot">/boot</span>
+</h4>
+<p>Каталог <code>/boot</code> содержит образы ядра и ramdisk, а также файлы конфигурации загрузчика и этапы загрузчика. В нем хранятся данные, которые используются до того, как ядро начнет выполнение программ пользовательского пространства. <code>/boot</code> не требуется для нормальной работы системы, а необходим только во время загрузки и обновления ядра (при восстановлении исходного ramdisk).
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Примечание:</strong> 
+<ul>
+<li>Отдельный раздел <code>/boot</code> нужен только, если ваш <a href="../ru/Arch_boot_process.html#%D0%97%D0%B0%D0%B3%D1%80%D1%83%D0%B7%D1%87%D0%B8%D0%BA" class="mw-redirect" title="Загрузчик">загрузчик</a> не может получить доступ к корневой файловой системе. Например, если в загрузчике отсутствует драйвер файловой системы или если <code>/</code> используется в <a href="../en/RAID.html" class="mw-redirect" title="RAID (Русский)">RAID</a>, <a href="../ru/Dm-crypt.html" title="Dm-crypt (Русский)">зашифрован</a> или объединён в <a href="../en/LVM.html" class="mw-redirect" title="LVM (Русский)">LVM</a>. Информацию о требованиях и возможностях загрузчиков можно посмотреть в статье <a href="../ru/Arch_boot_process.html#%D0%97%D0%B0%D0%B3%D1%80%D1%83%D0%B7%D1%87%D0%B8%D0%BA" class="mw-redirect" title="Процесс загрузки Arch">Процесс загрузки Arch#Загрузчик</a>.</li>
+<li>Если UEFI-<a href="../ru/Arch_boot_process.html#%D0%97%D0%B0%D0%B3%D1%80%D1%83%D0%B7%D1%87%D0%B8%D0%BA" class="mw-redirect" title="Загрузчик">загрузчик</a> не содержит драйвера других файловых систем, рекомендуется монтировать <a href="../ru/EFI_system_partition.html" class="mw-redirect" title="Системный раздел EFI">системный раздел EFI</a> в <code>/boot</code>. Для получения дополнительной информации смотрите <a href="../ru/EFI_system_partition.html#%D0%9C%D0%BE%D0%BD%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5_%D1%80%D0%B0%D0%B7%D0%B4%D0%B5%D0%BB%D0%B0" class="mw-redirect" title="Системный раздел EFI">Системный раздел EFI#Монтирование раздела</a>.</li>
+</ul>
+</div>
+<p>Рекомендуемый размер для <code>/boot</code> составляет 200 МиБ, если в качестве <code>/boot</code> не используется <a href="../ru/EFI_system_partition.html" class="mw-redirect" title="Системный раздел EFI">системный раздел EFI</a>, иначе лучше выделить не менее 300 МиБ.
+</p>
+<div class="archwiki-template-box archwiki-template-box-warning">
+<strong>Важно:</strong> Файловые системы могут получить новые возможности, ещё не поддерживаемые <a href="../ru/Arch_boot_process.html#%D0%97%D0%B0%D0%B3%D1%80%D1%83%D0%B7%D1%87%D0%B8%D0%BA" title="Arch boot process (Русский)">загрузчиками</a>, что сделает их непригодными для раздела <code>/boot</code>, если несовместимые функции не отключены.</div>
+<h4>
+<span id=".2Fhome"></span><span class="mw-headline" id="/home">/home</span>
+</h4>
+<p>Каталог <code>/home</code> содержит пользовательские файлы конфигурации, кеш, данные приложений и медиафайлы.
+</p>
+<p>Поместив <code>/home</code> в отдельный раздел, вы можете менять разметку <code>/</code> независимо, но обратите внимание, что вы можете переустановить Arch, не затрагивая <code>/home</code>, даже если он не помещён в отдельный раздел: можно просто удалить все остальные каталоги верхнего уровня, а затем запустить pacstrap для установки.
+</p>
+<p>Не следует использовать один и тот же домашний каталог в разных дистрибутивах, потому что они используют несовместимые версии программного обеспечения и исправления. Вместо этого рассмотрите возможность создания раздела мультимедиа или, по крайней мере, использования разных домашних каталогов в том же разделе <code>/home</code>. Размер этого раздела может быть любым в зависимости от того, как много данных вы планируете в нём хранить.
+</p>
+<h4>
+<span id=".2Fvar"></span><span class="mw-headline" id="/var">/var</span>
+</h4>
+<p>В каталоге <code>/var</code> xранятся переменные данные, такие как spool каталоги и файлы, данные администрирования и ведения журнала, кеш <a href="../ru/Pacman.html" title="Pacman (Русский)">pacman</a> и т.д. Он используется, например, для кэширования и ведения журнала и, следовательно, часто читается или записывается. Сохранение его в отдельном разделе позволяет избежать нехватки дискового пространства из-за "flunky-логов" и т.д.
+</p>
+<p>Он существует, чтобы была возможность смонтировать <code>/usr</code> доступным только для чтения. Всё, что исторически входило в <code>/usr</code>, который записывается во время работы системы (в отличие от установки и обслуживания программного обеспечения), должно находиться в <code>/var</code>.
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Примечание:</strong> <code>/var</code> содержит много маленьких файлов. Выбор типа файловой системы должен учитывать этот факт, если используется отдельный раздел.</div>
+<p><code>/var</code> будет содержать, помимо прочего, кеш <a href="../ru/Pacman.html" title="Pacman (Русский)">pacman</a>. Сохранение этих пакетов полезно в случае, если обновление пакета вызывает нестабильность, требуя <a href="../en/Downgrading_packages.html" class="mw-redirect" title="Downgrading packages (Русский)">отката</a> на более старый, архивированный пакет. Кеш pacman, в частности, будет увеличиваться по мере расширения и обновления системы, но его можно безопасно очистить, если места будет не хватать. 8-12 ГиБ на настольной системе должно быть достаточно для <code>/var</code>, в зависимости от того, сколько программного обеспечения будет установлено.
+</p>
+<h4>
+<span id=".2Fdata"></span><span class="mw-headline" id="/data">/data</span>
+</h4>
+<p>Можно создать раздел "данных" для различных файлов, которые будут общими для всех пользователей. Использование раздела <code>/home</code> для этой цели также прекрасное решение. Размер этого раздела может быть любым.
+</p>
+<h4><span class="mw-headline" id="Swap">Swap</span></h4>
+<p><a href="../ru/Swap.html" title="Swap (Русский)">Подкачка</a> — это файл или раздел, предоставляющий память, которую можно использовать в качестве виртуальной памяти. Производительность файлов и разделов подкачки одинакова, но размер файла подкачки удобнее менять при необходимости. Один раздел подкачки можно <i>потенциально</i> использовать между несколькими ОС, если не используется спящий режим.
+</p>
+<p>Исторически сложившееся правило гласит, что размер раздела подкачки должен быть в два раза больше ОЗУ. Но это правило устарело, поскольку у современных компьютеров оперативная память стала намного больше. Например, на средних настольных компьютерах с оперативной памятью до 512 МиБ достаточно правила вдвое большего раздела, но если объём оперативной памяти более 1024 МиБ, раздел подкачки можно уменьшить.
+</p>
+<p>Для использования гибернации (оно же спящий режим) рекомендуется создать раздел подкачки равный размеру ОЗУ. Хотя ядро и будет пытаться сжать образ сохранённого состояния, чтобы он соответствовал размеру раздела подкачки, нет никакой гарантии, что это удастся, если размер раздела подкачки значительно меньше размера оперативной памяти. Для получения дополнительной информации смотрите <a href="../ru/Power_management/Suspend_and_hibernate.html#%D0%93%D0%B8%D0%B1%D0%B5%D1%80%D0%BD%D0%B0%D1%86%D0%B8%D1%8F" class="mw-redirect" title="Управление питанием/Ждущий и спящий режимы">Управление питанием/Ждущий и спящий режимы#Гибернация</a>.
+</p>
+<h3>
+<span id=".D0.9F.D1.80.D0.B8.D0.BC.D0.B5.D1.80.D1.8B_.D1.81.D1.85.D0.B5.D0.BC"></span><span class="mw-headline" id="Примеры_схем">Примеры схем</span>
+</h3>
+<div class="noprint archwiki-template-message">
+<p><a href="../File:Tango-view-fullscreen.png" class="image"><img alt="Tango-view-fullscreen.png" src="../File:Tango-view-fullscreen.png" decoding="async" width="48" height="48"></a><b>This article or section needs expansion.</b><a href="../File:Tango-view-fullscreen.png" class="image"><img alt="Tango-view-fullscreen.png" src="../File:Tango-view-fullscreen.png" decoding="async" width="48" height="48"></a></p>
+<div>
+<b>Reason:</b> Необходимо улучшить текущие примеры. (Discuss in <a href="../en/Talk:Partitioning.html#Table_draft_2" title="Talk:Partitioning">Talk:Partitioning#Table draft 2</a>)</div>
+</div>
+<p>Примеры ниже используют диск <code>/dev/sda</code> и первый раздел <code>/dev/sda1</code> в качестве примера. Схема наименований блочных устройств будет отличаться при использовании <a href="../en/Solid_state_drive/NVMe.html" class="mw-redirect" title="NVMe">NVMe</a>-диска (например, <code>/dev/nvme0n1</code> с разделами, которые начинаются с <code>/dev/nvme0n1p1</code>), SD-карты или eMMC-диска (например, <code>/dev/mmcblk0</code> с разделами, которые начинаются с <code>/dev/mmcblk0p1</code>). Смотрите <a href="../ru/Device_file.html#%D0%91%D0%BB%D0%BE%D1%87%D0%BD%D1%8B%D0%B5_%D1%83%D1%81%D1%82%D1%80%D0%BE%D0%B9%D1%81%D1%82%D0%B2%D0%B0" class="mw-redirect" title="Файл устройства">Файл устройства#Блочные устройства</a> для получения более подробной информации.
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Примечание:</strong> 
+<ul>
+<li>Загрузка UEFI не использует никаких флагов «загрузки», загрузка зависит только от загрузочных записей в NVRAM. <a href="../ru/Parted.html" title="Parted (Русский)">Parted</a> и его графические оболочки используют флаг «boot» в GPT, чтобы указать, что раздел является системным разделом EFI.</li>
+<li>Необязательно располагать все необходимые/желаемые разделы на одном диске или использовать один и тот же тип таблицы разделов для всех дисков.</li>
+</ul>
+</div>
+<h4>
+<span id=".D0.9F.D1.80.D0.B8.D0.BC.D0.B5.D1.80.D1.8B_.D1.81.D1.85.D0.B5.D0.BC_UEFI.2FGPT"></span><span class="mw-headline" id="Примеры_схем_UEFI/GPT">Примеры схем UEFI/GPT</span>
+</h4>
+<table class="wikitable">
+<tbody>
+<tr>
+<th>Точка монтирования в установленной системе
+</th>
+<th>Раздел
+</th>
+<th>
+<a href="https://en.wikipedia.org/wiki/ru:%D0%A2%D0%B0%D0%B1%D0%BB%D0%B8%D1%86%D0%B0_%D1%80%D0%B0%D0%B7%D0%B4%D0%B5%D0%BB%D0%BE%D0%B2_GUID#.D0.98.D0.B4.D0.B5.D0.BD.D1.82.D0.B8.D1.84.D0.B8.D0.BA.D0.B0.D1.82.D0.BE.D1.80.D1.8B_.28GUID.29_.D1.80.D0.B0.D0.B7.D0.BB.D0.B8.D1.87.D0.BD.D1.8B.D1.85_.D1.82.D0.B8.D0.BF.D0.BE.D0.B2_.D1.80.D0.B0.D0.B7.D0.B4.D0.B5.D0.BB.D0.BE.D0.B2" class="extiw" title="wikipedia:ru:Таблица разделов GUID">Тип раздела (GUID)</a>
+</th>
+<th>
+<a href="https://en.wikipedia.org/wiki/ru:%D0%A2%D0%B0%D0%B1%D0%BB%D0%B8%D1%86%D0%B0_%D1%80%D0%B0%D0%B7%D0%B4%D0%B5%D0%BB%D0%BE%D0%B2_GUID#.D0.97.D0.B0.D0.BF.D0.B8.D1.81.D0.B8_.D0.B4.D0.B0.D0.BD.D0.BD.D1.8B.D1.85_.D0.BE_.D1.80.D0.B0.D0.B7.D0.B4.D0.B5.D0.BB.D0.B0.D1.85_.28LBA_2-33.29" class="extiw" title="wikipedia:ru:Таблица разделов GUID">Атрибуты раздела</a>
+</th>
+<th>Рекомендуемый размер
+</th>
+</tr>
+<tr>
+<td>
+<code>/boot</code> или <code>/efi</code><sup>1</sup>
+</td>
+<td>
+<code>/dev/sda1</code>
+</td>
+<td>
+<code>C12A7328-F81F-11D2-BA4B-00A0C93EC93B</code>:<a href="../ru/EFI_system_partition.html" class="mw-redirect" title="Системный раздел EFI">Системный раздел EFI</a>
+</td>
+<td>
+</td>
+<td>Хотя бы 300 МиБ
+</td>
+</tr>
+<tr>
+<td>
+<code>[SWAP]</code>
+</td>
+<td>
+<code>/dev/sda2</code>
+</td>
+<td>
+<code>0657FD6D-A4AB-43C4-84E5-0933C84B4F4F</code>: Linux <a href="../ru/Swap.html" title="Swap (Русский)">swap</a>
+</td>
+<td>
+</td>
+<td>Более 512 MиБ
+</td>
+</tr>
+<tr>
+<td>
+<code>/</code>
+</td>
+<td>
+<code>/dev/sda3</code>
+</td>
+<td>
+<code>4F68BCE3-E8CD-4DB1-96E7-FBCAF984B709</code>: Linux x86-64 root (/)
+</td>
+<td>
+</td>
+<td>Остаток
+</td>
+</tr>
+</tbody>
+</table>
+<h4>
+<span id=".D0.9F.D1.80.D0.B8.D0.BC.D0.B5.D1.80.D1.8B_.D1.81.D1.85.D0.B5.D0.BC_BIOS.2FMBR"></span><span class="mw-headline" id="Примеры_схем_BIOS/MBR">Примеры схем BIOS/MBR</span>
+</h4>
+<table class="wikitable">
+<tbody>
+<tr>
+<th>Точка монтирования в установленной системе
+</th>
+<th>Раздел
+</th>
+<th>
+<a href="https://en.wikipedia.org/wiki/Partition_type" class="extiw" title="wikipedia:Partition type">Тип раздела</a>
+</th>
+<th>
+<a href="https://en.wikipedia.org/wiki/Boot_flag" class="extiw" title="wikipedia:Boot flag">Флаг загрузки</a>
+</th>
+<th>Рекомендуемый размер
+</th>
+</tr>
+<tr>
+<td>
+<code>[SWAP]</code>
+</td>
+<td>
+<code>/dev/sda1</code>
+</td>
+<td>
+<code>82</code>: Linux <a href="../ru/Swap.html" title="Swap (Русский)">swap</a>
+</td>
+<td data-sort-value="1" style="background: #faa; color: inherit; vertical-align: middle; text-align: center;">Нет
+</td>
+<td>Более 512 МиБ
+</td>
+</tr>
+<tr>
+<td>
+<code>/</code>
+</td>
+<td>
+<code>/dev/sda2</code>
+</td>
+<td>
+<code>83</code>: Linux
+</td>
+<td data-sort-value="5" style="background: #afa; color: inherit; vertical-align: middle; text-align: center;">Да
+</td>
+<td>Остаток
+</td>
+</tr>
+<tr>
+<td style="background: #ddd; color: inherit; vertical-align: middle; text-align: center;">н/д
+</td>
+<td>
+<i>Неразмеченное место</i><sup>2</sup>
+</td>
+<td style="background: #ddd; color: inherit; vertical-align: middle; text-align: center;">н/д
+</td>
+<td style="background: #ddd; color: inherit; vertical-align: middle; text-align: center;">н/д
+</td>
+<td>Хотя бы 16,5 КиБ в конце диска
+</td>
+</tr>
+</tbody>
+</table>
+<h4>
+<span id=".D0.9F.D1.80.D0.B8.D0.BC.D0.B5.D1.80.D1.8B_.D1.81.D1.85.D0.B5.D0.BC_BIOS.2FGPT"></span><span class="mw-headline" id="Примеры_схем_BIOS/GPT">Примеры схем BIOS/GPT</span>
+</h4>
+<table class="wikitable">
+<tbody>
+<tr>
+<th>Точка монтирования в установленной системе
+</th>
+<th>Раздел
+</th>
+<th>
+<a href="https://en.wikipedia.org/wiki/ru:%D0%A2%D0%B0%D0%B1%D0%BB%D0%B8%D1%86%D0%B0_%D1%80%D0%B0%D0%B7%D0%B4%D0%B5%D0%BB%D0%BE%D0%B2_GUID#.D0.98.D0.B4.D0.B5.D0.BD.D1.82.D0.B8.D1.84.D0.B8.D0.BA.D0.B0.D1.82.D0.BE.D1.80.D1.8B_.28GUID.29_.D1.80.D0.B0.D0.B7.D0.BB.D0.B8.D1.87.D0.BD.D1.8B.D1.85_.D1.82.D0.B8.D0.BF.D0.BE.D0.B2_.D1.80.D0.B0.D0.B7.D0.B4.D0.B5.D0.BB.D0.BE.D0.B2" class="extiw" title="wikipedia:ru:Таблица разделов GUID">Тип раздела (GUID)</a>
+</th>
+<th>
+<a href="https://en.wikipedia.org/wiki/ru:%D0%A2%D0%B0%D0%B1%D0%BB%D0%B8%D1%86%D0%B0_%D1%80%D0%B0%D0%B7%D0%B4%D0%B5%D0%BB%D0%BE%D0%B2_GUID#.D0.97.D0.B0.D0.BF.D0.B8.D1.81.D0.B8_.D0.B4.D0.B0.D0.BD.D0.BD.D1.8B.D1.85_.D0.BE_.D1.80.D0.B0.D0.B7.D0.B4.D0.B5.D0.BB.D0.B0.D1.85_.28LBA_2-33.29" class="extiw" title="wikipedia:ru:Таблица разделов GUID">Атрибуты раздела</a>
+</th>
+<th>Рекомендуемый размер
+</th>
+</tr>
+<tr>
+<td style="background: #ddd; color: inherit; vertical-align: middle; text-align: center;">Нет
+</td>
+<td>
+<code>/dev/sda1</code>
+</td>
+<td>
+<code>21686148-6449-6E6F-744E-656564454649</code>: <a href="../ru/GRUB.html#%D0%97%D0%B0%D0%B3%D1%80%D1%83%D0%B7%D1%87%D0%B8%D0%BA_%D0%B2_BIOS" class="mw-redirect" title="Раздел загрузки BIOS">раздел загрузки BIOS</a><sup>3</sup>
+</td>
+<td>
+</td>
+<td>1 МиБ
+</td>
+</tr>
+<tr>
+<td>
+<code>[SWAP]</code>
+</td>
+<td>
+<code>/dev/sda2</code>
+</td>
+<td>
+<code>0657FD6D-A4AB-43C4-84E5-0933C84B4F4F</code>: Linux <a href="../ru/Swap.html" title="Swap (Русский)">swap</a>
+</td>
+<td>
+</td>
+<td>Более 512 МиБ
+</td>
+</tr>
+<tr>
+<td>
+<code>/</code>
+</td>
+<td>
+<code>/dev/sda3</code>
+</td>
+<td>
+<code>4F68BCE3-E8CD-4DB1-96E7-FBCAF984B709</code>: Linux x86-64 root (/)
+</td>
+<td>
+</td>
+<td>Остаток
+</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li>ESP можно примонтировать в <code>/efi</code>, если используемый загрузчик способен получить доступ к файловой системе (и всему, что над ней), на которой расположены образы ядра и initramfs. Подробности смотрите в статьях <a href="../ru/EFI_system_partition.html#%D0%A2%D0%B8%D0%BF%D0%B8%D1%87%D0%BD%D1%8B%D0%B5_%D1%82%D0%BE%D1%87%D0%BA%D0%B8_%D0%BC%D0%BE%D0%BD%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F" class="mw-redirect" title="Системный раздел EFI">Системный раздел EFI#Типичные точки монтирования</a> и <a href="../ru/Arch_boot_process.html#%D0%97%D0%B0%D0%B3%D1%80%D1%83%D0%B7%D1%87%D0%B8%D0%BA" class="mw-redirect" title="Процесс загрузки Arch">Процесс загрузки Arch#Загрузчик</a>.</li>
+<li>Неразмеченное пространство размером хотя бы 33 512-байтовых сектора (16,5 КиБ) в конце диска пригодится на случай, если вам понадобится <a href="../ru/GPT_fdisk.html#%D0%9F%D1%80%D0%B5%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5_%D0%BC%D0%B5%D0%B6%D0%B4%D1%83_MBR_%D0%B8_GPT" title="GPT fdisk (Русский)">преобразовать MBR в GPT</a>. Рекомендация по сохранению неразмеченного пространства относится ко всем дискам с MBR-разметкой.</li>
+<li>Раздел загрузки BIOS требуется только при использовании <a href="../ru/GRUB.html" title="GRUB (Русский)">GRUB</a> для загрузки BIOS с диска GPT. Раздел не имеет ничего общего с <code>/boot</code>, и его нельзя форматировать в файловую систему или монтировать.</li>
+</ol>
+<h2>
+<span id=".D0.98.D0.BD.D1.81.D1.82.D1.80.D1.83.D0.BC.D0.B5.D0.BD.D1.82.D1.8B"></span><span class="mw-headline" id="Инструменты">Инструменты</span>
+</h2>
+<h3>
+<span id=".D0.98.D0.BD.D1.81.D1.82.D1.80.D1.83.D0.BC.D0.B5.D0.BD.D1.82.D1.8B_.D1.80.D0.B0.D0.B7.D0.BC.D0.B5.D1.82.D0.BA.D0.B8"></span><span class="mw-headline" id="Инструменты_разметки">Инструменты разметки</span>
+</h3>
+<p>Следующие программы используются для создания и/или управления таблицами разделов и разделами устройств. Смотрите ссылки по теме для получения инструкций как их использовать.
+</p>
+<p>Эта таблица поможет вам выбрать утилиту для ваших нужд:
+</p>
+<table class="wikitable">
+<tbody>
+<tr>
+<th>
+</th>
+<th>MBR
+</th>
+<th>GPT
+</th>
+</tr>
+<tr>
+<th>Интерактивные (диалоговые)
+</th>
+<td>fdisk <br> parted
+</td>
+<td>fdisk <br> gdisk <br> parted
+</td>
+</tr>
+<tr>
+<th>Псевдо-графические
+</th>
+<td>cfdisk
+</td>
+<td>cfdisk <br> cgdisk
+</td>
+</tr>
+<tr>
+<th>Неинтерактивные
+</th>
+<td>sfdisk <br> parted
+</td>
+<td>sfdisk <br> sgdisk <br> parted
+</td>
+</tr>
+<tr>
+<th>Графические
+</th>
+<td>GParted <br> gnome-disk-utility <br> partitionmanager
+</td>
+<td>GParted <br> gnome-disk-utility <br> partitionmanager
+</td>
+</tr>
+</tbody>
+</table>
+<div class="archwiki-template-box archwiki-template-box-warning">
+<strong>Важно:</strong> Для разбиения устройств хранения используйте инструменты, совместимые с выбранным форматом таблицы разделов. Несовместимые инструменты могут привести к уничтожению таблицы вместе с существующими разделами и данными.</div>
+<h4><span class="mw-headline" id="fdisk">fdisk</span></h4>
+<p><i>fdisk</i> и связанные с ней утилиты описаны в статье <a href="../ru/Fdisk.html" title="Fdisk (Русский)">fdisk</a>.
+</p>
+<ul><li>
+<a href="../ru/Fdisk.html" title="Fdisk (Русский)">fdisk</a> (<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=util-linux">util-linux</a></span>)
+<ul>
+<li>
+<span class="plainlinks archwiki-template-man" title="$ man 8 fdisk"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/fdisk.8">fdisk(8)</a></span> – утилита с интерактивным интерфейсом для создания и обработки таблиц разделов.</li>
+<li>
+<span class="plainlinks archwiki-template-man" title="$ man 8 cfdisk"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/cfdisk.8">cfdisk(8)</a></span> – вариант fdisk на основе библиотеки <a href="https://en.wikipedia.org/wiki/ru:curses" class="extiw" title="wikipedia:ru:curses">Curses</a>.</li>
+<li>
+<span class="plainlinks archwiki-template-man" title="$ man 8 sfdisk"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/sfdisk.8">sfdisk(8)</a></span> – скриптовый вариант fdisk.</li>
+</ul>
+</li></ul>
+<h4><span class="mw-headline" id="GPT_fdisk">GPT fdisk</span></h4>
+<p><i>gdisk</i> и связанные с ней утилиты описаны в статье <a href="../ru/GPT_fdisk.html" title="GPT fdisk (Русский)">gdisk</a>.
+</p>
+<ul><li>
+<a href="../ru/GPT_fdisk.html" title="GPT fdisk (Русский)">GPT fdisk</a> (<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=gptfdisk">gptfdisk</a></span>)
+<ul>
+<li>
+<span class="plainlinks archwiki-template-man" title="$ man 8 gdisk"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/gdisk.8">gdisk(8)</a></span> – Утилита для управления <a href="#%D0%A2%D0%B0%D0%B1%D0%BB%D0%B8%D1%86%D0%B0_%D1%80%D0%B0%D0%B7%D0%B4%D0%B5%D0%BB%D0%BE%D0%B2_GUID">таблицей разделов GUID (GPT)</a> с интерактивным интерфейсом.</li>
+<li>
+<span class="plainlinks archwiki-template-man" title="$ man 8 cgdisk"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/cgdisk.8">cgdisk(8)</a></span> – Вариант gdisk на основе библиотеке curses.</li>
+<li>
+<span class="plainlinks archwiki-template-man" title="$ man 8 sgdisk"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/sgdisk.8">sgdisk(8)</a></span> – Скриптовый вариант gdisk.</li>
+</ul>
+</li></ul>
+<h4><span class="mw-headline" id="GNU_Parted">GNU Parted</span></h4>
+<p>Эта группа инструментов описана в статье <a href="../ru/Parted.html" title="Parted (Русский)">Parted</a>.
+</p>
+<ul><li>
+<b><a href="../ru/Parted.html" title="Parted (Русский)">GNU Parted</a></b> — Консольный инструмент разметки.</li></ul>
+<dl><dd>
+<a rel="nofollow" class="external free" href="https://www.gnu.org/software/parted/parted.html">https://www.gnu.org/software/parted/parted.html</a> || <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=parted">parted</a></span>
+</dd></dl>
+<ul><li>
+<b>GNOME Disks</b> — Утилита управления дисками GNOME.</li></ul>
+<dl><dd>
+<a rel="nofollow" class="external free" href="https://wiki.gnome.org/Apps/Disks">https://wiki.gnome.org/Apps/Disks</a> || <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=gnome-disk-utility">gnome-disk-utility</a></span>
+</dd></dl>
+<ul><li>
+<b><a href="../ru/Parted.html" title="Parted (Русский)">GParted</a></b> — Редактор разделов на основе GTK и с графическим управлением разделами диска.</li></ul>
+<dl><dd>
+<a rel="nofollow" class="external free" href="https://gparted.sourceforge.io/">https://gparted.sourceforge.io/</a> || <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=gparted">gparted</a></span>
+</dd></dl>
+<ul><li>
+<b>KDE Partition Manager</b> — Утилита KDE для управления дисковыми устройствами, разделами и файловыми системами.</li></ul>
+<dl><dd>
+<a rel="nofollow" class="external free" href="https://kde.org/applications/system/org.kde.partitionmanager">https://kde.org/applications/system/org.kde.partitionmanager</a> || <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=partitionmanager">partitionmanager</a></span>
+</dd></dl>
+<h3>
+<span id=".D0.A0.D0.B5.D0.B7.D0.B5.D1.80.D0.B2.D0.BD.D0.BE.D0.B5_.D0.BA.D0.BE.D0.BF.D0.B8.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5"></span><span class="mw-headline" id="Резервное_копирование">Резервное копирование</span>
+</h3>
+<ul>
+<li>
+<a href="../ru/Fdisk.html" title="Fdisk (Русский)">fdisk</a> может создавать резервную копию таблицы разделов. Смотрите <a href="../ru/Fdisk.html#%D0%A0%D0%B5%D0%B7%D0%B5%D1%80%D0%B2%D0%BD%D0%BE%D0%B5_%D0%BA%D0%BE%D0%BF%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5_%D0%B8_%D0%B2%D0%BE%D1%81%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5_%D1%82%D0%B0%D0%B1%D0%BB%D0%B8%D1%86%D1%8B_%D1%80%D0%B0%D0%B7%D0%B4%D0%B5%D0%BB%D0%BE%D0%B2" title="Fdisk (Русский)">fdisk (Русский)#Резервное копирование и восстановление таблицы разделов</a>.</li>
+<li>
+<a href="../ru/GPT_fdisk.html" title="GPT fdisk (Русский)">GPT fdisk</a> может создать бинарную резервную копию, состоящую из защитного MBR, основного заголовка GPT, резервного заголовка GPT и одной копии таблицы разделов. Смотрите <a href="../ru/GPT_fdisk.html#%D0%A0%D0%B5%D0%B7%D0%B5%D1%80%D0%B2%D0%BD%D0%BE%D0%B5_%D0%BA%D0%BE%D0%BF%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5_%D0%B8_%D0%B2%D0%BE%D1%81%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5_%D1%82%D0%B0%D0%B1%D0%BB%D0%B8%D1%86%D1%8B_%D1%80%D0%B0%D0%B7%D0%B4%D0%B5%D0%BB%D0%BE%D0%B2" title="GPT fdisk (Русский)">GPT fdisk (Русский)#Резервное копирование и восстановление таблицы разделов</a>.</li>
+</ul>
+<h3>
+<span id=".D0.92.D0.BE.D1.81.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5"></span><span class="mw-headline" id="Восстановление">Восстановление</span>
+</h3>
+<ul><li>
+<b><a href="https://en.wikipedia.org/wiki/gpart" class="extiw" title="wikipedia:gpart">gpart</a></b> — Инструмент, который пытается угадать содержимое поверждённой таблицы разделов MBR. Для получения инструкций смотрите <span class="plainlinks archwiki-template-man" title="$ man 8 gpart"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/gpart.8">gpart(8)</a></span>.</li></ul>
+<dl><dd>
+<a rel="nofollow" class="external free" href="https://github.com/baruch/gpart">https://github.com/baruch/gpart</a> || <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=gpart">gpart</a></span>
+</dd></dl>
+<ul><li>
+<b><a href="../ru/GPT_fdisk.html#%D0%92%D0%BE%D1%81%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5_%D0%B7%D0%B0%D0%B3%D0%BE%D0%BB%D0%BE%D0%B2%D0%BA%D0%B0_GPT" title="GPT fdisk (Русский)">GPT fdisk</a></b> — Инструмент разметки, который может восстановить основной заголовок GPT (расположенный в начале диска) из резервного заголовка GPT (расположенного в конце диска) или наоборот.</li></ul>
+<dl><dd>
+<a rel="nofollow" class="external free" href="https://www.rodsbooks.com/gdisk/">https://www.rodsbooks.com/gdisk/</a> || <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=gptfdisk">gptfdisk</a></span>
+</dd></dl>
+<ul><li>
+<b><a href="../en/File_recovery.html#TestDisk_and_PhotoRec" title="File recovery">TestDisk</a></b> — Инструмент, поддерживающий восстановление потерянных разделов как MBR, так и GPT.</li></ul>
+<dl><dd>
+<a rel="nofollow" class="external free" href="https://www.cgsecurity.org/index.html?testdisk.html">https://www.cgsecurity.org/index.html?testdisk.html</a> || <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=testdisk">testdisk</a></span>
+</dd></dl>
+<h2>
+<span id=".D0.92.D1.8B.D1.80.D0.B0.D0.B2.D0.BD.D0.B8.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_.D1.80.D0.B0.D0.B7.D0.B4.D0.B5.D0.BB.D0.BE.D0.B2"></span><span class="mw-headline" id="Выравнивание_разделов">Выравнивание разделов</span>
+</h2>
+<p><a href="../ru/Fdisk.html" title="Fdisk (Русский)">fdisk</a>, <a href="../ru/GPT_fdisk.html" title="GPT fdisk (Русский)">gdisk</a> и <a href="../ru/Parted.html#%D0%92%D1%8B%D1%80%D0%B0%D0%B2%D0%BD%D0%B8%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5" title="Parted (Русский)">parted</a> автоматически обрабатывают выравнивание размера разделов. Смотрите <a href="../ru/Parted.html#%D0%9F%D1%80%D0%BE%D0%B2%D0%B5%D1%80%D0%BA%D0%B0_%D0%B2%D1%8B%D1%80%D0%B0%D0%B2%D0%BD%D0%B8%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F" title="Parted (Русский)">Parted (Русский)#Проверка выравнивания</a>, если вы хотите проверить выравнивание после разметки.
+</p>
+<p>Для определенных дисков <a href="../ru/Advanced_Format.html" class="mw-redirect" title="Расширенный формат">расширенный формат</a> может обеспечить более эффективное выравнивание.
+</p>
+<h2>
+<span id=".D0.9F.D0.BE.D0.B4.D0.B4.D0.B5.D1.80.D0.B6.D0.BA.D0.B0_GPT_.D1.8F.D0.B4.D1.80.D0.BE.D0.BC"></span><span class="mw-headline" id="Поддержка_GPT_ядром">Поддержка GPT ядром</span>
+</h2>
+<p>Параметр <code>CONFIG_EFI_PARTITION</code> в конфигурации ядра включает поддержку GPT в ядре (несмотря на название "EFI PARTITION"). Он должен быть встроен в ядро, а не скомпилирован как загружаемый модуль. Этот параметр нужен даже в случае использования GPT-дисков только для хранения данных, а не для загрузки. Он включён по умолчанию во всех <a href="../ru/Kernel.html#%D0%9E%D1%84%D0%B8%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5_%D1%8F%D0%B4%D1%80%D0%B0" title="Kernel (Русский)">официально поддерживаемых ядрах</a> Arch. В случае специализированного ядра включите этот параметр, выполнив <code>CONFIG_EFI_PARTITION=y</code>.
+</p>
+<h2>
+<span id=".D0.A0.D0.B5.D1.88.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BF.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC"></span><span class="mw-headline" id="Решение_проблем">Решение проблем</span>
+</h2>
+<h3>
+<span id=".D0.9E.D0.B1.D0.BC.D0.B0.D0.BD_.D1.81.D1.82.D0.B0.D1.80.D0.BE.D0.B3.D0.BE_BIOS_.D0.B4.D0.BB.D1.8F_.D0.B7.D0.B0.D0.B3.D1.80.D1.83.D0.B7.D0.BA.D0.B8_.D1.81_GPT"></span><span class="mw-headline" id="Обман_старого_BIOS_для_загрузки_с_GPT">Обман старого BIOS для загрузки с GPT</span>
+</h3>
+<p>Некоторые старые BIOS (до 2010 года) пытаются читать загрузочный сектор и отказываются загружать его, если он не содержит загрузочного MBR-раздела. Это проблема, если вы хотите использовать GPT на этом диске, поскольку, с точки зрения BIOS, он содержит только один незагружаемый раздел MBR типа <code>ee</code> (то есть защитный MBR). Можно пометить защитный MBR-раздел как загрузочный с помощью команды <code>fdisk -t mbr /dev/sda</code>, и это будет работать в некоторых BIOS. Однако спецификация UEFI запрещает отмечать защитный раздел MBR как загрузочный, и UEFI-платы проверяют это даже в режиме legacy boot. Таким образом, это имеет значение, если вы хотите создать USB-накопитель на базе GPT, который должен загружаться как на современных платах на базе UEFI, так и на старых BIOS, которые пытаются найти загрузочный раздел MBR. Невозможно решить эту проблему с помощью традиционных инструментов, таких как <a href="../ru/Fdisk.html" title="Fdisk (Русский)">fdisk</a> или <a href="../ru/GPT_fdisk.html" title="GPT fdisk (Русский)">gdisk</a>, но можно создать фальшивую запись раздела MBR, подходящую для обоих типов BIOS, вручную в виде последовательности байтов.
+</p>
+<p>Приведённая ниже команда перезапишет второй слот раздела MBR и добавит туда загрузочный раздел типа 0 (т.е. неиспользуемый), занимающий только первый сектор устройства. Она не будет вмешиваться в GPT или в первый слот раздела MBR, который обычно содержит защитный MBR.
+</p>
+<pre># printf '\200\0\0\0\0\0\0\0\0\0\0\0\001\0\0\0' | dd of=/dev/sda bs=1 seek=462
+</pre>
+<p>Итоговый результат будет выглядеть примерно так:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;"># fdisk -t mbr -l /dev/sda</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">Диск /dev/sda: 232,89 GiB, 250059350016 байт, 488397168 секторов
+Disk model: ST3250820AS
+Единицы: секторов по 1 * 512 = 512 байт
+Размер сектора (логический/физический): 512 байт / 512 байт
+Размер I/O (минимальный/оптимальный): 512 байт / 512 байт
+Тип метки диска: dos
+Идентификатор диска: 0x00000000
+
+Устр-во    Загрузочный начало     Конец   Секторы Размер Идентификатор Тип
+/dev/sda1                   1 488397167 488397167 232,9G            ee GPT
+/dev/sda2  *                0         0         1   512B             0 Пустой
+
+Элементы таблицы разделов упорядочены не так, как на диске.</pre>
+<h3>
+<span id=".D0.94.D0.B8.D1.81.D0.BA.D0.B8_.D0.BD.D0.B5_.D0.B2.D0.B8.D0.B4.D0.BD.D1.8B.2C_.D0.BA.D0.BE.D0.B3.D0.B4.D0.B0_.D0.B2.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD_.D0.B2.D1.81.D1.82.D1.80.D0.BE.D0.B5.D0.BD.D0.BD.D1.8B.D0.B9_RAID"></span><span class="mw-headline" id="Диски_не_видны,_когда_включен_встроенный_RAID">Диски не видны, когда включен встроенный RAID</span>
+</h3>
+<p>Если диск SATA или NVMe виден в настройках прошивки, но не виден в Linux (например, в <code>fdisk -l</code> его нет), возможно, контроллер находится в режиме RAID.
+</p>
+<p>Для NVMe <a href="../ru/Systemd/Journal.html" title="Systemd (Русский)/Journal (Русский)">журнал</a> должен показывать что-то вроде:
+</p>
+<pre>kernel: ahci 0000:00:17.0: Found 1 remapped NVMe devices.
+kernel: ahci 0000:00:17.0: Switch your BIOS from RAID to AHCI mode to use them.
+</pre>
+<p>Решение заключается в том, чтобы войти в настройки прошивки и изменить <a href="https://en.wikipedia.org/wiki/Advanced_Host_Controller_Interface#Operating_modes" class="extiw" title="wikipedia:Advanced Host Controller Interface">режим работы контроллера SATA</a> с <i>RAID</i> на <i>AHCI</i>. Имейте в виду, что настройка может иметь другое название, а также может быть индивидуальной для каждого контроллера или для каждого порта.
+</p>
+<div class="archwiki-template-box archwiki-template-box-warning">
+<strong>Важно:</strong> При <a href="../en/Dual_boot_with_Windows.html" class="mw-redirect" title="Dual boot with Windows (Русский)">двойной загрузке с Windows</a> перед изменением режима контроллера нужно провести подготовительные работы. Смотрите <a rel="nofollow" class="external text" href="https://www.tenforums.com/tutorials/22631-enable-ahci-windows-8-windows-10-after-installation.html">How to Enable AHCI in Windows 8 and Windows 10 after Installation</a>.</div>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Примечание:</strong> Несмотря на то, что эти термины не имеют никакого смысла для NVMe, настройки обычно такие же, как и для SATA. Производители просто интерпретируют «режим работы SATA», установленный на «AHCI» на контроллерах NVMe, как «использование собственного режима работы без встроенного RAID». <a rel="nofollow" class="external autonumber" href="https://forums.anandtech.com/threads/nvme-drive-booting-in-ahci-mode.2500796/post-39852218">[3]</a><a rel="nofollow" class="external autonumber" href="https://lore.kernel.org/linux-pci/20190620061038.GA20564@lst.de/T/">[4]</a><a rel="nofollow" class="external autonumber" href="https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=aecec8b60422118b52e3347430ba9382e57d6d76">[5]</a>
+</div>
+<h2>
+<span id=".D0.A1.D0.BC.D0.BE.D1.82.D1.80.D0.B8.D1.82.D0.B5_.D1.82.D0.B0.D0.BA.D0.B6.D0.B5"></span><span class="mw-headline" id="Смотрите_также">Смотрите также</span>
+</h2>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/ru:%D0%A0%D0%B0%D0%B7%D0%B4%D0%B5%D0%BB_%D0%B4%D0%B8%D1%81%D0%BA%D0%B0" class="extiw" title="wikipedia:ru:Раздел диска">Раздел диска</a></li>
+<li><a href="https://en.wikipedia.org/wiki/ru:%D0%94%D0%B2%D0%BE%D0%B8%D1%87%D0%BD%D1%8B%D0%B5_%D0%BF%D1%80%D0%B8%D1%81%D1%82%D0%B0%D0%B2%D0%BA%D0%B8" class="extiw" title="wikipedia:ru:Двоичные приставки">Двоичные приставки</a></li>
+<li><a rel="nofollow" class="external text" href="https://thestarman.pcministry.com/asm/mbr/DiskTerms.htm">Понимание терминологии дисковой подсистемы (англ.)</a></li>
+<li><a rel="nofollow" class="external text" href="https://kb.iu.edu/d/aijw">Что такое MBR (англ.)</a></li>
+<li>Статьи Рода Смита <a rel="nofollow" class="external text" href="https://www.rodsbooks.com/gdisk/whatsgpt.html">"Что такое GPT?" (англ.)</a> и <a rel="nofollow" class="external text" href="https://rodsbooks.com/gdisk/booting.html">загрузка ОС из GPT (англ.)</a>
+</li>
+<li><a rel="nofollow" class="external text" href="https://developer.ibm.com/tutorials/l-gpt/">Используйте большие диски на максимум с GPT и Linux — IBM Developer Works (англ.)</a></li>
+<li><a rel="nofollow" class="external text" href="https://docs.microsoft.com/en-us/windows-hardware/manufacture/desktop/windows-and-gpt-faq">FAQ Windows и GPT (англ.)</a></li>
+<li>
+<a rel="nofollow" class="external text" href="https://www.thomas-krenn.com/en/wiki/Partition_Alignment">Выравнивание разделов (англ.)</a> (с примерами)</li>
+</ul>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface">
+<div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../Special:Categories.html" title="Special:Categories">Categories</a>: <ul>
+<li><a href="../ru/Category:File_systems.html" title="Category:File systems (Русский)">File systems (Русский)</a></li>
+<li><a href="../ru/Category:Boot_process.html" title="Category:Boot process (Русский)">Boot process (Русский)</a></li>
+<li><a href="../ru/Category:System_recovery.html" title="Category:System recovery (Русский)">System recovery (Русский)</a></li>
+</ul>
+</div>
+<div id="mw-hidden-catlinks" class="mw-hidden-catlinks mw-hidden-cats-hidden">Hidden category: <ul><li><a href="../en/Category:Pages_or_sections_flagged_with_Template:Expansion.html" title="Category:Pages or sections flagged with Template:Expansion">Pages or sections flagged with Template:Expansion</a></li></ul>
+</div>
+</div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=Partitioning_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)&amp;oldid=781329">https://wiki.archlinux.org/index.php?title=Partitioning_(Русский)&amp;oldid=781329</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 17 June 2023, at 18:22.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

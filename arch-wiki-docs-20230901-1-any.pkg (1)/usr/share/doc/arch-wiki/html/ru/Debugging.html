@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>Debugging (Русский) - ArchWiki</title>
+<link rel="stylesheet" href="../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Debugging_Русский rootpage-Debugging_Русский skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Когда_приложение_не_работает" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#%D0%9A%D0%BE%D0%B3%D0%B4%D0%B0_%D0%BF%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5_%D0%BD%D0%B5_%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B0%D0%B5%D1%82">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Когда приложение не работает</div>
+			</a>
+			
+				<button aria-controls="toc-Когда_приложение_не_работает-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Когда приложение не работает subsection
+				</button>
+			
+			<ul id="toc-Когда_приложение_не_работает-sublist" class="sidebar-toc-list">
+				<li id="toc-Запустите_его_через_командную_строку" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#%D0%97%D0%B0%D0%BF%D1%83%D1%81%D1%82%D0%B8%D1%82%D0%B5_%D0%B5%D0%B3%D0%BE_%D1%87%D0%B5%D1%80%D0%B5%D0%B7_%D0%BA%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%D0%BD%D1%83%D1%8E_%D1%81%D1%82%D1%80%D0%BE%D0%BA%D1%83">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.1</span>Запустите его через командную строку</div>
+			</a>
+			
+			<ul id="toc-Запустите_его_через_командную_строку-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Проверьте_наличие_дампа_памяти" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#%D0%9F%D1%80%D0%BE%D0%B2%D0%B5%D1%80%D1%8C%D1%82%D0%B5_%D0%BD%D0%B0%D0%BB%D0%B8%D1%87%D0%B8%D0%B5_%D0%B4%D0%B0%D0%BC%D0%BF%D0%B0_%D0%BF%D0%B0%D0%BC%D1%8F%D1%82%D0%B8">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.2</span>Проверьте наличие дампа памяти</div>
+			</a>
+			
+			<ul id="toc-Проверьте_наличие_дампа_памяти-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Ошибки_сегментирования" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#%D0%9E%D1%88%D0%B8%D0%B1%D0%BA%D0%B8_%D1%81%D0%B5%D0%B3%D0%BC%D0%B5%D0%BD%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Ошибки сегментирования</div>
+			</a>
+			
+				<button aria-controls="toc-Ошибки_сегментирования-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Ошибки сегментирования subsection
+				</button>
+			
+			<ul id="toc-Ошибки_сегментирования-sublist" class="sidebar-toc-list">
+				<li id="toc-Gdb" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Gdb">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.1</span>Gdb</div>
+			</a>
+			
+			<ul id="toc-Gdb-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Valgrind" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Valgrind">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.2</span>Valgrind</div>
+			</a>
+			
+			<ul id="toc-Valgrind-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Отсутствующие_файлы_или_библиотеки" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#%D0%9E%D1%82%D1%81%D1%83%D1%82%D1%81%D1%82%D0%B2%D1%83%D1%8E%D1%89%D0%B8%D0%B5_%D1%84%D0%B0%D0%B9%D0%BB%D1%8B_%D0%B8%D0%BB%D0%B8_%D0%B1%D0%B8%D0%B1%D0%BB%D0%B8%D0%BE%D1%82%D0%B5%D0%BA%D0%B8">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>Отсутствующие файлы или библиотеки</div>
+			</a>
+			
+				<button aria-controls="toc-Отсутствующие_файлы_или_библиотеки-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Отсутствующие файлы или библиотеки subsection
+				</button>
+			
+			<ul id="toc-Отсутствующие_файлы_или_библиотеки-sublist" class="sidebar-toc-list">
+				<li id="toc-Strace" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Strace">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.1</span>Strace</div>
+			</a>
+			
+			<ul id="toc-Strace-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-LD_DEBUG" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#LD_DEBUG">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.2</span>LD_DEBUG</div>
+			</a>
+			
+			<ul id="toc-LD_DEBUG-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Readelf" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Readelf">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.3</span>Readelf</div>
+			</a>
+			
+			<ul id="toc-Readelf-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Если_программа_написана_не_на_C_или_C++,_а_является_скриптом" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#%D0%95%D1%81%D0%BB%D0%B8_%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B0_%D0%BD%D0%B0%D0%BF%D0%B8%D1%81%D0%B0%D0%BD%D0%B0_%D0%BD%D0%B5_%D0%BD%D0%B0_C_%D0%B8%D0%BB%D0%B8_C++,_%D0%B0_%D1%8F%D0%B2%D0%BB%D1%8F%D0%B5%D1%82%D1%81%D1%8F_%D1%81%D0%BA%D1%80%D0%B8%D0%BF%D1%82%D0%BE%D0%BC">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4</span>Если программа написана не на C или C++, а является скриптом</div>
+			</a>
+			
+			<ul id="toc-Если_программа_написана_не_на_C_или_C++,_а_является_скриптом-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Отправка_собщения_об_ошибке" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#%D0%9E%D1%82%D0%BF%D1%80%D0%B0%D0%B2%D0%BA%D0%B0_%D1%81%D0%BE%D0%B1%D1%89%D0%B5%D0%BD%D0%B8%D1%8F_%D0%BE%D0%B1_%D0%BE%D1%88%D0%B8%D0%B1%D0%BA%D0%B5">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5</span>Отправка собщения об ошибке</div>
+			</a>
+			
+			<ul id="toc-Отправка_собщения_об_ошибке-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Смотрите_также" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#%D0%A1%D0%BC%D0%BE%D1%82%D1%80%D0%B8%D1%82%D0%B5_%D1%82%D0%B0%D0%BA%D0%B6%D0%B5">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6</span>Смотрите также</div>
+			</a>
+			
+			<ul id="toc-Смотрите_также-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../ru/Debugging.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="new mw-list-item"><a href="/index.php?title=Talk:Debugging_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)&amp;action=edit&amp;redlink=1" rel="discussion" title="Discussion about the content page (page does not exist) [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">русский</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../ru/Debugging.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=Debugging_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=Debugging_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../ru/Debugging.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Debugging_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Debugging_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="ru" dir="ltr">
+<div class="mw-parser-output">
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Состояние перевода:</strong> На этой странице представлен перевод статьи <a href="../en/Debugging.html" title="Debugging">Debugging</a>. Дата последней синхронизации: 15 февраля 2022. Вы можете <a href="../ru/ArchWiki:Translation_Team.html" title="ArchWiki:Translation Team (Русский)">помочь</a> синхронизировать перевод, если в английской версии произошли <a rel="nofollow" class="external text" href="https://wiki.archlinux.org/index.php?title=Debugging&amp;diff=0&amp;oldid=718459">изменения</a>.</div>
+<div class="archwiki-template-meta-related-articles-start">
+<p class="mw-no-invert">Ссылки по теме</p>
+<ul>
+<li><a href="../ru/General_troubleshooting.html" class="mw-redirect" title="Устранение часто встречающихся неполадок">Устранение часто встречающихся неполадок</a></li>
+<li><a href="../ru/Bug_reporting_guidelines.html" class="mw-redirect" title="Указания по созданию отчета об ошибке">Указания по созданию отчета об ошибке</a></li>
+<li><a href="../ru/Debugging/Getting_traces.html" class="mw-redirect" title="Отладка/Трассировка">Отладка/Трассировка</a></li>
+<li><a href="../ru/General_troubleshooting.html#%D0%9F%D1%80%D0%BE%D0%B1%D0%BB%D0%B5%D0%BC%D1%8B_%D0%B7%D0%B0%D0%B3%D1%80%D1%83%D0%B7%D0%BA%D0%B8" class="mw-redirect" title="Отладка загрузки">Отладка загрузки</a></li>
+</ul>
+</div>
+<p>Эта страница в основном посвящена тому, как собрать побольше информации для сообщений об ошибках. Несмотря на то, что используется слово «отладка», она не предназначена в качестве руководства по отладке программ в процессе их разработки.
+</p>
+<mw:tocplace></mw:tocplace>
+<h2>
+<span id=".D0.9A.D0.BE.D0.B3.D0.B4.D0.B0_.D0.BF.D1.80.D0.B8.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BD.D0.B5_.D1.80.D0.B0.D0.B1.D0.BE.D1.82.D0.B0.D0.B5.D1.82"></span><span class="mw-headline" id="Когда_приложение_не_работает">Когда приложение не работает</span>
+</h2>
+<h3>
+<span id=".D0.97.D0.B0.D0.BF.D1.83.D1.81.D1.82.D0.B8.D1.82.D0.B5_.D0.B5.D0.B3.D0.BE_.D1.87.D0.B5.D1.80.D0.B5.D0.B7_.D0.BA.D0.BE.D0.BC.D0.B0.D0.BD.D0.B4.D0.BD.D1.83.D1.8E_.D1.81.D1.82.D1.80.D0.BE.D0.BA.D1.83"></span><span class="mw-headline" id="Запустите_его_через_командную_строку">Запустите его через командную строку</span>
+</h3>
+<p>Если приложение внезапно падает, попробуйте запустить его через <a href="../en/List_of_applications/Utilities.html#Terminal_emulators" title="List of applications/Utilities">терминал</a>. Введите в нём имя приложения (обычно строчными буквами). Если вы не знаете имя исполняемого файла, а знаете только имя пакета, следующая команда может найти имя исполняемого файла:
+</p>
+<pre>$ pacman -Ql <i>имяпакета</i> | grep ' /usr/bin/.'
+</pre>
+<h3>
+<span id=".D0.9F.D1.80.D0.BE.D0.B2.D0.B5.D1.80.D1.8C.D1.82.D0.B5_.D0.BD.D0.B0.D0.BB.D0.B8.D1.87.D0.B8.D0.B5_.D0.B4.D0.B0.D0.BC.D0.BF.D0.B0_.D0.BF.D0.B0.D0.BC.D1.8F.D1.82.D0.B8"></span><span class="mw-headline" id="Проверьте_наличие_дампа_памяти">Проверьте наличие дампа памяти</span>
+</h3>
+<p>Дамп памяти (core dump) — это файл, в который записывается адресное пространство (память) процесса при его нештатном завершении. Если приложение скомпилировано с поддержкой отладки, этот дамп можно использовать для выяснения того, что и где пошло не так.
+</p>
+<p>Расположение дампов памяти может отличаться в зависимости от настроек операционной системы. Как узнать, включена ли генерация дампов и куда они попадают, описано в статье <a href="../ru/Core_dump.html" class="mw-redirect" title="Дамп памяти">Дамп памяти</a>.
+</p>
+<h2>
+<span id=".D0.9E.D1.88.D0.B8.D0.B1.D0.BA.D0.B8_.D1.81.D0.B5.D0.B3.D0.BC.D0.B5.D0.BD.D1.82.D0.B8.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D1.8F"></span><span class="mw-headline" id="Ошибки_сегментирования">Ошибки сегментирования</span>
+</h2>
+<p>Есть несколько методов, с помощью которых можно выяснить, что пошло не так. Наденьте шляпу детектива.
+</p>
+<h3><span class="mw-headline" id="Gdb">Gdb</span></h3>
+<p><span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=gdb">gdb</a></span> — проверенный временем инструмент отладки приложений. Подробные инструкции по использованию и получению трассировки описаны в статье <a href="../ru/Debugging/Getting_traces.html#%D0%9F%D0%BE%D0%BB%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D0%B5_%D1%82%D1%80%D0%B0%D1%81%D1%81%D0%B8%D1%80%D0%BE%D0%B2%D0%BA%D0%B8" class="mw-redirect" title="Отладка/Трассировка">Отладка/Трассировка#Получение трассировки</a>. После запуска приложения через <code>gdb</code> вам, вероятно, придётся подождать какое-то время, пока не случится ошибка сегментирования. После этого опубликуйте трассировку на <a href="../en/List_of_applications.html#Pastebin_services" title="List of applications">pastebin-сервисе</a> и добавьте полученный URL в сообщение об ошибке.
+</p>
+<p>Если у вас есть дамп памяти, его можно использовать вместе с gdb для получения backtrace:
+</p>
+<pre>$ gdb <i>имяприложения</i> core
+bt full
+</pre>
+<h3><span class="mw-headline" id="Valgrind">Valgrind</span></h3>
+<p>Если у вас есть бинарный файл с отладочными символами и без inline-функций, то обычно хорошей идеей является запуск программы через <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=valgrind">valgrind</a></span>. Это инструмент, который эмулирует процессор и обычно показывает, где что-то идёт не так, или предоставляет дополнительную информацию в дополнение к gdb.
+</p>
+<pre>$ valgrind <i>имяприложения</i>
+</pre>
+<p>Это позволит получить много полезной отладочной информации в случае сбоя. Попробуйте опции <code>-v</code> и <code>--leak-check=full</code>, чтобы собрать ещё больше информации.
+</p>
+<p>Также можно использовать команду:
+</p>
+<pre>$ valgrind --tool=callgrind <i>имяприложения</i>
+</pre>
+<p>и запустить вывод через <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=kcachegrind">kcachegrind</a></span>, чтобы графически исследовать функции, используемые программой. Если программа зависает, это облегчает определение места ошибки.
+</p>
+<h2>
+<span id=".D0.9E.D1.82.D1.81.D1.83.D1.82.D1.81.D1.82.D0.B2.D1.83.D1.8E.D1.89.D0.B8.D0.B5_.D1.84.D0.B0.D0.B9.D0.BB.D1.8B_.D0.B8.D0.BB.D0.B8_.D0.B1.D0.B8.D0.B1.D0.BB.D0.B8.D0.BE.D1.82.D0.B5.D0.BA.D0.B8"></span><span class="mw-headline" id="Отсутствующие_файлы_или_библиотеки">Отсутствующие файлы или библиотеки</span>
+</h2>
+<h3><span class="mw-headline" id="Strace">Strace</span></h3>
+<p><span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=strace">strace</a></span> подробно показывает, что на самом деле делает приложение. Если приложение пытается открыть файл, которого нет, strace это покажет.
+</p>
+<p>Следующая команда покажет файлы, которые приложение пытается открыть:
+</p>
+<pre>$ strace -eopen <i>имяприложения</i>
+</pre>
+<p>Полученный вывод можно опубликовать на <a href="../en/List_of_applications.html#Pastebin_services" title="List of applications">pastebin-сервисе</a>.
+</p>
+<div class="archwiki-template-box archwiki-template-box-tip">
+<strong>Совет:</strong> Если вы хотите передать вывод strace в grep, попробуйте: <code>strace -o /dev/stdout <i>имяприложения</i> | grep <i>строка</i></code>.</div>
+<h3><span class="mw-headline" id="LD_DEBUG">LD_DEBUG</span></h3>
+<p>Установка <code>LD_DEBUG=files</code> дает ещё один обзор того, какие файлы ищет приложение:
+</p>
+<pre>$ LD_DEBUG=files <i>имяприложения</i> &gt; <i>файл</i>.log 2&gt;&amp;1
+</pre>
+<p>Вывод будет записан в <code><i>файл</i>.log</code>.
+</p>
+<p>Подробнее: <span class="plainlinks archwiki-template-man" title="$ man 8 ld-linux"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/ld-linux.8">ld-linux(8)</a></span>.
+</p>
+<h3><span class="mw-headline" id="Readelf">Readelf</span></h3>
+<div class="noprint archwiki-template-message">
+<p><a href="../File:Tango-preferences-desktop-locale.png" class="image"><img alt="Tango-preferences-desktop-locale.png" src="../File:Tango-preferences-desktop-locale.png" decoding="async" width="48" height="48"></a><b>Эта статья или раздел нуждается в <a href="../ru/ArchWiki:Contributing.html#%D0%9F%D0%B5%D1%80%D0%B5%D0%B2%D0%BE%D0%B4" title="ArchWiki:Contributing (Русский)">переводе</a></b><a href="../File:Tango-preferences-desktop-locale.png" class="image"><img alt="Tango-preferences-desktop-locale.png" src="../File:Tango-preferences-desktop-locale.png" decoding="async" width="48" height="48"></a></p>
+<div>
+<b>Примечания:</b> ... (обсуждение: <a rel="nofollow" class="external text" href="https://wiki.archlinux.org/title/Talk:Debugging_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)">Talk:Debugging (Русский)#</a>)</div>
+</div>
+<p>If you get <code>no such file or directory</code> when running an application, try the following command:
+</p>
+<pre>$ readelf -a /usr/bin/<i>appname</i> | grep interp
+</pre>
+<p>(replace <code>/usr/bin/<i>appname</i></code> with the location of your executable)
+</p>
+<p>Make sure the interpreter in question (like <code>/lib/ld-linux-x86-64.so.2</code>) actually exists. Install <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=ld-lsb">ld-lsb</a></span> if need be.
+</p>
+<h2>
+<span id=".D0.95.D1.81.D0.BB.D0.B8_.D0.BF.D1.80.D0.BE.D0.B3.D1.80.D0.B0.D0.BC.D0.BC.D0.B0_.D0.BD.D0.B0.D0.BF.D0.B8.D1.81.D0.B0.D0.BD.D0.B0_.D0.BD.D0.B5_.D0.BD.D0.B0_C_.D0.B8.D0.BB.D0.B8_C.2B.2B.2C_.D0.B0_.D1.8F.D0.B2.D0.BB.D1.8F.D0.B5.D1.82.D1.81.D1.8F_.D1.81.D0.BA.D1.80.D0.B8.D0.BF.D1.82.D0.BE.D0.BC"></span><span class="mw-headline" id="Если_программа_написана_не_на_C_или_C++,_а_является_скриптом">Если программа написана не на C или C++, а является скриптом</span>
+</h2>
+<p>Используйте команду <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=file">file</a></span>, чтобы узнать информацию об исполняемом файле:
+</p>
+<pre>$ file /usr/bin/<i>имяприложения</i>
+</pre>
+<p>Если она выведет <code>ELF</code>, то это бинарный исполняемый файл, который обычно компилируется из кода C или C++. Если она выведет <code>Python script</code>, значит вы имеете дело с приложением, написанным на Python.
+</p>
+<p>Если это шелл-скрипт, откройте его в текстовом редакторе и посмотрите (обычно в конце файла), есть ли в нём имя реальной программы (ELF-файла). Можно временно прописать "gdb" прямо в скрипт перед именем исполняемого файла в целях отладки. Используйте префикс <code>gdb --args</code>, если программе нужно передать аргументы.
+</p>
+<p>Для чистых шелл-скриптов можно использовать <code>bash -x <i>имя_скрипта</i></code> или <code>bash -xv <i>имя_скрипта</i></code>, что выведет подробную информацию о процессе выполнения скрипта.
+</p>
+<p>Тексты ошибок в Python-приложениях часто содержат информацию о том, в каком файле и на какой строке произошел сбой. Если вы знаете Python, вы можете попытаться исправить это и вложить своё исправление в сообщение об ошибке.
+</p>
+<h2>
+<span id=".D0.9E.D1.82.D0.BF.D1.80.D0.B0.D0.B2.D0.BA.D0.B0_.D1.81.D0.BE.D0.B1.D1.89.D0.B5.D0.BD.D0.B8.D1.8F_.D0.BE.D0.B1_.D0.BE.D1.88.D0.B8.D0.B1.D0.BA.D0.B5"></span><span class="mw-headline" id="Отправка_собщения_об_ошибке">Отправка собщения об ошибке</span>
+</h2>
+<p>Сообщите об ошибке на <a rel="nofollow" class="external free" href="https://bugs.archlinux.org">https://bugs.archlinux.org</a> или, возможно, отправьте сообщение непосредственно разработчикам приложения, а затем укажите ссылку на него в сообщении для Arch Linux. Это поможет всем нам.
+</p>
+<p>Однако если вы считаете, что что-то не так с самим приложением, а не с тем, как оно собрано в Arch Linux, то сообщите об ошибке непосредственно разработчикам приложения (в upstream).
+</p>
+<h2>
+<span id=".D0.A1.D0.BC.D0.BE.D1.82.D1.80.D0.B8.D1.82.D0.B5_.D1.82.D0.B0.D0.BA.D0.B6.D0.B5"></span><span class="mw-headline" id="Смотрите_также">Смотрите также</span>
+</h2>
+<ul><li><a href="https://wiki.gentoo.org/wiki/Project:Quality_Assurance/Backtraces" class="extiw" title="gentoo:Project:Quality Assurance/Backtraces">Gentoo:Project:Quality Assurance/Backtraces</a></li></ul>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface">
+<div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../Special:Categories.html" title="Special:Categories">Categories</a>: <ul>
+<li><a href="../ru/Category:Development.html" title="Category:Development (Русский)">Development (Русский)</a></li>
+<li><a href="../ru/Category:System_administration.html" title="Category:System administration (Русский)">System administration (Русский)</a></li>
+</ul>
+</div>
+<div id="mw-hidden-catlinks" class="mw-hidden-catlinks mw-hidden-cats-hidden">Hidden category: <ul><li><a href="../ru/Category:Pages_or_sections_flagged_with_Template:Translateme.html" title="Category:Pages or sections flagged with Template:Translateme (Русский)">Pages or sections flagged with Template:Translateme (Русский)</a></li></ul>
+</div>
+</div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=Debugging_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)&amp;oldid=718465">https://wiki.archlinux.org/index.php?title=Debugging_(Русский)&amp;oldid=718465</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 15 February 2022, at 10:20.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

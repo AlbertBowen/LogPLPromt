@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>AUR submission guidelines (Русский) - ArchWiki</title>
+<link rel="stylesheet" href="../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-AUR_submission_guidelines_Русский rootpage-AUR_submission_guidelines_Русский skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Отправка_пакетов" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#%D0%9E%D1%82%D0%BF%D1%80%D0%B0%D0%B2%D0%BA%D0%B0_%D0%BF%D0%B0%D0%BA%D0%B5%D1%82%D0%BE%D0%B2">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Отправка пакетов</div>
+			</a>
+			
+				<button aria-controls="toc-Отправка_пакетов-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Отправка пакетов subsection
+				</button>
+			
+			<ul id="toc-Отправка_пакетов-sublist" class="sidebar-toc-list">
+				<li id="toc-Правила_отправки_пакетов" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#%D0%9F%D1%80%D0%B0%D0%B2%D0%B8%D0%BB%D0%B0_%D0%BE%D1%82%D0%BF%D1%80%D0%B0%D0%B2%D0%BA%D0%B8_%D0%BF%D0%B0%D0%BA%D0%B5%D1%82%D0%BE%D0%B2">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.1</span>Правила отправки пакетов</div>
+			</a>
+			
+			<ul id="toc-Правила_отправки_пакетов-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Аутентификация" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#%D0%90%D1%83%D1%82%D0%B5%D0%BD%D1%82%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D1%8F">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.2</span>Аутентификация</div>
+			</a>
+			
+			<ul id="toc-Аутентификация-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Создание_репозитория_для_пакета" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#%D0%A1%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5_%D1%80%D0%B5%D0%BF%D0%BE%D0%B7%D0%B8%D1%82%D0%BE%D1%80%D0%B8%D1%8F_%D0%B4%D0%BB%D1%8F_%D0%BF%D0%B0%D0%BA%D0%B5%D1%82%D0%B0">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.3</span>Создание репозитория для пакета</div>
+			</a>
+			
+			<ul id="toc-Создание_репозитория_для_пакета-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Отправка_пакета" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#%D0%9E%D1%82%D0%BF%D1%80%D0%B0%D0%B2%D0%BA%D0%B0_%D0%BF%D0%B0%D0%BA%D0%B5%D1%82%D0%B0">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.4</span>Отправка пакета</div>
+			</a>
+			
+			<ul id="toc-Отправка_пакета-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Поддержка_пакетов" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#%D0%9F%D0%BE%D0%B4%D0%B4%D0%B5%D1%80%D0%B6%D0%BA%D0%B0_%D0%BF%D0%B0%D0%BA%D0%B5%D1%82%D0%BE%D0%B2">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Поддержка пакетов</div>
+			</a>
+			
+			<ul id="toc-Поддержка_пакетов-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Запросы" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#%D0%97%D0%B0%D0%BF%D1%80%D0%BE%D1%81%D1%8B">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>Запросы</div>
+			</a>
+			
+			<ul id="toc-Запросы-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../ru/AUR_submission_guidelines.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="new mw-list-item"><a href="/index.php?title=Talk:AUR_submission_guidelines_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)&amp;action=edit&amp;redlink=1" rel="discussion" title="Discussion about the content page (page does not exist) [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">русский</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../ru/AUR_submission_guidelines.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=AUR_submission_guidelines_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=AUR_submission_guidelines_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../ru/AUR_submission_guidelines.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=AUR_submission_guidelines_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=AUR_submission_guidelines_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="ru" dir="ltr">
+<div class="mw-parser-output">
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Состояние перевода:</strong> На этой странице представлен перевод статьи <a href="../en/AUR_submission_guidelines.html" title="AUR submission guidelines">AUR submission guidelines</a>. Дата последней синхронизации: 2 февраля 2022. Вы можете <a href="../ru/ArchWiki:Translation_Team.html" title="ArchWiki:Translation Team (Русский)">помочь</a> синхронизировать перевод, если в английской версии произошли <a rel="nofollow" class="external text" href="https://wiki.archlinux.org/index.php?title=AUR_submission_guidelines&amp;diff=0&amp;oldid=648050">изменения</a>.</div>
+<div class="archwiki-template-meta-related-articles-start">
+<p class="mw-no-invert">Ссылки по теме</p>
+<ul>
+<li><a href="../ru/Arch_User_Repository.html" title="Arch User Repository (Русский)">Arch User Repository (Русский)</a></li>
+<li><a href="../en/Arch_package_guidelines.html" title="Arch package guidelines">Arch package guidelines</a></li>
+<li><a href="../en/AUR_Trusted_User_guidelines.html" class="mw-redirect" title="AUR Trusted User Guidelines">AUR Trusted User Guidelines</a></li>
+</ul>
+</div>
+<p>Пользователи могут <b>распространять</b> свои файлы PKGBUILD, публикуя их в <a href="../ru/Arch_User_Repository.html" title="Arch User Repository (Русский)">пользовательском репозитории Arch (AUR)</a>. Он не содержит каких-либо бинарных пакетов, но позволяет пользователям загружать PKGBUILD, которые могут быть скачаны другими. Эти PKGBUILD являются полностью неофициальными и не проходят тщательную проверку, поэтому используйте их на свой страх и риск.
+</p>
+<mw:tocplace></mw:tocplace>
+<h2>
+<span id=".D0.9E.D1.82.D0.BF.D1.80.D0.B0.D0.B2.D0.BA.D0.B0_.D0.BF.D0.B0.D0.BA.D0.B5.D1.82.D0.BE.D0.B2"></span><span class="mw-headline" id="Отправка_пакетов">Отправка пакетов</span>
+</h2>
+<div class="archwiki-template-box archwiki-template-box-warning">
+<strong>Важно:</strong> Ожидается, что перед отправкой пакета вы ознакомитесь со <a href="../en/Arch_package_guidelines.html" class="mw-redirect" title="Arch packaging standards (Русский)">стандартами создания пакетов для Arch</a>, а также всеми статьями из блока ссылок по теме. <b>Крайне внимательно</b> проверяйте правильность загружаемых вами пакетов. Пакеты, нарушающие правила, могут быть <b>удалены</b> без предупреждения.</div>
+<p>Если вы дважды прочитали этот раздел и всё равно не уверены в корректности своего пакета и/или процесса сборки, отправьте свой PKGBUILD в <a rel="nofollow" class="external text" href="https://lists.archlinux.org/mailman3/lists/aur-general.lists.archlinux.org/">список рассылки AUR</a>, на <a rel="nofollow" class="external text" href="https://bbs.archlinux.org/viewforum.php?id=4">форум AUR</a> или форумы Arch, или попросите ревью своего пакета в <a href="../en/Arch_IRC_channels.html" title="Arch IRC channels">канале IRC</a>.
+</p>
+<h3>
+<span id=".D0.9F.D1.80.D0.B0.D0.B2.D0.B8.D0.BB.D0.B0_.D0.BE.D1.82.D0.BF.D1.80.D0.B0.D0.B2.D0.BA.D0.B8_.D0.BF.D0.B0.D0.BA.D0.B5.D1.82.D0.BE.D0.B2"></span><span class="mw-headline" id="Правила_отправки_пакетов">Правила отправки пакетов</span>
+</h3>
+<p>При отправке пакетов в AUR придерживайтесь следующих правил:
+</p>
+<ul><li>Отправляемые PKGBUILD'ы не должны собирать приложения, которые <b>уже есть</b> в <b>официальных</b> бинарных <b>репозиториях</b>. Проверьте <a rel="nofollow" class="external text" href="https://archlinux.org/packages/">официальную базу данных пакетов</a> на наличие этого пакета. Если для него существует любая версия, <b>не</b> выкладывайте пакет. Если официальный пакет устарел, пометьте его как устаревший. Если официальный пакет заброшен или не предоставляет какую-либо функцию, создайте <a rel="nofollow" class="external text" href="https://bugs.archlinux.org/">сообщение об ошибке</a>.</li></ul>
+<dl><dd>
+<b>Исключением</b> из этого строгого правила могут быть только пакеты, в которых есть <b>дополнительная функциональность</b> и/или <b>патчи</b>. В таком случае <code>pkgname</code> должно быть другим, чтобы выразить это различие. Например, пакет для GNU screen, содержащий патч sidebar, может быть назван <code>screen-sidebar</code>. Дополнительно следует использовать массив <code>provides=('screen')</code>, чтобы избежать конфликтов с официальным пакетом.</dd></dl>
+<ul><li>
+<b>Проверьте AUR</b> на наличие этого пакета. Если он в настоящее время поддерживается, о необходимых изменениях можно написать в комментариях, чтобы мейнтейнер обратил на это внимание. Если он не поддерживается, вы можете взять сопровождение этого пакета на себя и обновлять его по мере необходимости. Не создавайте дублирующиеся пакеты.</li></ul>
+<ul><li>Убедитесь, что пакет, который вы хотите загрузить, <b>полезен</b>. Захочет ли кто-нибудь ещё использовать этот пакет? Не очень ли он узкоспециализированный? Если он будет полезен более, чем ограниченной группе людей, пакет подходит для AUR.</li></ul>
+<dl><dd>AUR и официальные репозитории предназначены для пакетов, преимущественно устанавливающих программное обеспечение и содержимое, относящееся к нему, и включающих что-либо из следующего: исполняемый(е) или конфигурационный(е) файл(ы), online- или offline-документацию для конкретных программ или дистрибутива Arch Linux в целом; медиафайлы, используемые программным обеспечением напрямую.</dd></dl>
+<ul><li>Не используйте <code>replaces</code> в AUR PKGBUILD, кроме случая, когда пакет переименовывается, например, как <i>Ethereal</i> переименовался в <i>Wireshark</i>. Если пакет является альтернативной версией уже существующего пакета, используйте <code>conflicts</code> (и <code>provides</code>, если этот пакет требуется другим пакетам). Основное различие заключается в следующем: после синхронизации (-Sy) pacman немедленно захочет заменить установленный пакет, если встретит пакет с соответствующим значением <code>replaces</code> где-либо в своих репозиториях; <code>conflicts</code>, с другой стороны, оценивается только при фактической установке пакета, что обычно является желаемым поведением, поскольку оно менее инвазивно.</li></ul>
+<ul><li>Если пакет содержит <b>прекомпилированные</b> файлы (<a href="https://en.wikipedia.org/wiki/Deliverable" class="extiw" title="wikipedia:Deliverable">deliverables</a>), для которых доступен исходный код, название должно иметь суффикс <code>-bin</code>. Исключением является <a href="../en/Java_package_guidelines.html#Java_packaging_on_Arch_Linux" title="Java package guidelines">Java</a>. AUR не должен содержать бинарный tar-файл, созданный с помощью makepkg, а также список файлов.</li></ul>
+<ul><li>Добавьте <b>комментарий</b> в начале файла PKGBUILD, содержащий информацию о текущих <b>сопровождающих</b> и предыдущих контрибьюторах, соблюдая следующий формат. Не забудьте замаскировать свой e-mail для защиты от спама. Дополнительные или ненужные строки являются факультативными.</li></ul>
+<dl>
+<dd>Если вы берёте на себя роль сопроводителя существующего PKGBUILD, добавьте своё имя в начало следующим образом:</dd>
+<dd><pre># Maintainer: Ваше Имя &lt;address at domain dot tld&gt;
+</pre></dd>
+<dd>Если были предыдущие сопровождающие, укажите их как контрибьюторов. То же самое относится к первоначальному автору, если это не вы. Если сопровождающих несколько, добавьте имена других сопровождающих тоже.</dd>
+<dd><pre># Maintainer: Ваше Имя &lt;address at domain dot tld&gt;
+# Maintainer: Имя другого сопровождающего &lt;address at domain dot tld&gt;
+# Contributor: Имя предыдущего сопровождающего &lt;address at domain dot tld&gt;
+# Contributor: Имя оригинального автора пакета &lt;address at domain dot tld&gt;
+</pre></dd>
+</dl>
+<h3>
+<span id=".D0.90.D1.83.D1.82.D0.B5.D0.BD.D1.82.D0.B8.D1.84.D0.B8.D0.BA.D0.B0.D1.86.D0.B8.D1.8F"></span><span class="mw-headline" id="Аутентификация">Аутентификация</span>
+</h3>
+<p>Для получения возможности отправки пакета в AUR необходимо иметь <a href="../en/SSH_keys.html" class="mw-redirect" title="Ключи SSH">ключи SSH</a>. Скопируйте свой открытый ключ в профиль на сайте AUR, а закрытый ключ настройте на использование для хоста <code>aur.archlinux.org</code>. Например:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">~/.ssh/config</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">Host aur.archlinux.org
+  IdentityFile ~/.ssh/aur
+  User aur</pre>
+<p>Следует сгенерировать новую пару ключей специально для AUR вместо использования существующей: это позволит выборочно отзывать ключи, если что-то случится:
+</p>
+<pre>$ ssh-keygen -f ~/.ssh/aur
+</pre>
+<div class="archwiki-template-box archwiki-template-box-tip">
+<strong>Совет:</strong> Можно добавить несколько открытых ключей в свой профиль, по одному на строку.</div>
+<h3>
+<span id=".D0.A1.D0.BE.D0.B7.D0.B4.D0.B0.D0.BD.D0.B8.D0.B5_.D1.80.D0.B5.D0.BF.D0.BE.D0.B7.D0.B8.D1.82.D0.BE.D1.80.D0.B8.D1.8F_.D0.B4.D0.BB.D1.8F_.D0.BF.D0.B0.D0.BA.D0.B5.D1.82.D0.B0"></span><span class="mw-headline" id="Создание_репозитория_для_пакета">Создание репозитория для пакета</span>
+</h3>
+<p>Если вы <a href="../ru/Creating_packages.html" title="Creating packages (Русский)">создаёте новый пакет</a> с нуля, создайте локальный Git-репозиторий и удалённый на AUR путём <a href="../en/Git.html#Getting_a_Git_repository" title="Git">клонирования</a> предполагаемого <a href="../ru/PKGBUILD.html#pkgbase" title="PKGBUILD (Русский)">pkgbase</a>. Если пакет ещё не существует, появится следующее предупреждение:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">$ git clone ssh://aur@aur.archlinux.org/<i>pkgbase</i>.git</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">Клонирование в «<i>pkgbase</i>»…
+warning: Похоже, что вы клонировали пустой репозиторий.</pre>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Примечание:</strong> Если <code><i>pkgbase</i></code> сответствует ранее <a href="#%D0%97%D0%B0%D0%BF%D1%80%D0%BE%D1%81%D1%8B">удалённому</a> пакету, репозиторий не будет пустым.</div>
+<p>Если у вас уже есть пакет, <a href="../en/Git.html#Getting_a_Git_repository" title="Git">инициализируйте его</a> как git-репозиторий (если его ещё нет) и добавьте AUR remote:
+</p>
+<pre>$ git remote add <i>метка</i> ssh://aur@aur.archlinux.org/<i>pkgbase</i>.git
+</pre>
+<p>Затем сделайте <a href="../en/Git.html#Using_remotes" title="Git">fetch</a> для него, чтобы репозиторий инициализировался на стороне AUR.
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Примечание:</strong> Сделайте <a rel="nofollow" class="external text" href="https://git-scm.com/docs/git-pull#git-pull---rebasefalsetruemergespreserveinteractive">pull и rebase</a>, чтобы решить конфликты в случае, если <code><i>pkgbase</i></code> соответствует удалённому пакету.</div>
+<h3>
+<span id=".D0.9E.D1.82.D0.BF.D1.80.D0.B0.D0.B2.D0.BA.D0.B0_.D0.BF.D0.B0.D0.BA.D0.B5.D1.82.D0.B0"></span><span class="mw-headline" id="Отправка_пакета">Отправка пакета</span>
+</h3>
+<div class="archwiki-template-box archwiki-template-box-warning">
+<strong>Важно:</strong> Если вы не хотите публиковать ваши персональные данные, не забудьте установить локальное имя пользователя и электронную почту с помощью <code>git config user.name [...]</code> и <code>git config user.email [...]</code>! Изменить опубликованные коммиты крайне трудно (<a rel="nofollow" class="external text" href="https://bugs.archlinux.org/task/45425">FS#45425</a>). Проверяйте ваши коммиты до их отправки!</div>
+<p>При отправки новой версии пакета обновите переменные <a href="../ru/PKGBUILD.html#pkgver" title="PKGBUILD (Русский)">pkgver</a> или <a href="../ru/PKGBUILD.html#pkgrel" title="PKGBUILD (Русский)">pkgrel</a>, чтобы уведомить пользователей о необходимости обновления. Не обновляйте их при незначительных изменениях в <a href="../ru/PKGBUILD.html" title="PKGBUILD (Русский)">PKGBUILD</a> вроде исправления несущественных опечаток.
+</p>
+<p>Не забудьте сгенерировать новый <a href="../en/.SRCINFO.html" title=".SRCINFO">.SRCINFO</a> при обновлении метаданных в <code>PKGBUILD</code>, например при изменении <code>pkgver()</code>; в противном случае AUR не отобразит обновлённый номер версии.
+</p>
+<p>Для публикации пакета добавьте <i>как минимум</i> <code>PKGBUILD</code> и <code>.SRCINFO</code>, а затем любые вспомогательные файлы (например, файлы <a href="../ru/PKGBUILD.html#install" title="PKGBUILD (Русский)">.install</a> или <a href="../ru/PKGBUILD.html#source" title="PKGBUILD (Русский)">локальные файлы source</a>, такие как <a href="../en/Patching_packages.html" title="Patching packages">патчи</a>), создайте <a href="../en/Git.html#Committing_changes" title="Git">коммит</a> с информативным комментарием и отправьте изменения в AUR с помощью <a href="../en/Git.html#Push_to_a_repository" title="Git">push</a>.
+</p>
+<p>Пример:
+</p>
+<pre>$ makepkg --printsrcinfo &gt; .SRCINFO
+$ git add PKGBUILD .SRCINFO
+$ git commit -m "<i>информативное сообщение коммита</i>"
+$ git push
+</pre>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Примечание:</strong> Если вы забыли добавить в коммит файл <code>.SRCINFO</code>, и добавили его в последующем коммите, AUR откажет в записи пакета, потому что <code>.SRCINFO</code> должен присутствовать в <i>каждом</i> изменении. Чтобы решить эту проблему, можно использовать <a rel="nofollow" class="external text" href="https://git-scm.com/docs/git-rebase#git-rebase---root">git rebase</a> с параметром <code>--root</code> или <a rel="nofollow" class="external text" href="https://git-scm.com/docs/git-filter-branch#git-filter-branch---tree-filterltcommandgt">git filter-branch</a> с параметром <code>--tree-filter</code>.</div>
+<div class="archwiki-template-box archwiki-template-box-tip">
+<strong>Совет:</strong> Чтобы содержать рабочий каталог и коммиты в чистоте, создайте <span class="plainlinks archwiki-template-man" title="$ man 5 gitignore"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/gitignore.5">gitignore(5)</a></span>, исключающий все файлы, и принудительно добавляйте файлы по мере необходимости.</div>
+<h2>
+<span id=".D0.9F.D0.BE.D0.B4.D0.B4.D0.B5.D1.80.D0.B6.D0.BA.D0.B0_.D0.BF.D0.B0.D0.BA.D0.B5.D1.82.D0.BE.D0.B2"></span><span class="mw-headline" id="Поддержка_пакетов">Поддержка пакетов</span>
+</h2>
+<ul>
+<li>Поддерживайте обратную связь: следите за комментариями других пользователей и вносите улучшения, которые они предлагают. Относитесь к этому, как к процессу обучения!</li>
+<li>Пожалуйста, не пишите комментариев, содержащих номер версии при каждом обновлении пакета. Благодаря этому раздел комментариев будет удобен для полезного содержимого, о котором упомянуто выше.</li>
+<li>Не забрасывайте свои пакеты! Именно создатель пакета должен его сопровождать, проверять обновления и улучшать <code>PKGBUILD</code>.</li>
+<li>Если вы по каким-то причинам больше не хотите продолжать поддерживать пакет, откажитесь от него (<code>disown</code>) в веб-интерфейсе AUR и/или отправьте сообщение в почтовую рассылку AUR. Если все сопровождающие откажутся от пакета, пакет будет отмечен как заброшенный (<a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/?SB=n&amp;do_Orphans=Orphans">"orphaned"</a>).</li>
+</ul>
+<h2>
+<span id=".D0.97.D0.B0.D0.BF.D1.80.D0.BE.D1.81.D1.8B"></span><span class="mw-headline" id="Запросы">Запросы</span>
+</h2>
+<p>Запросы на отказ от поддержки пакета или его удаление можно создать, нажав на ссылку "Отправить запрос" в меню "Действия над пакетом" справа. В этом случае автоматически будет отправлено уведомление текущему мэйнтейнеру пакета по электронной почте и в <a rel="nofollow" class="external text" href="https://lists.archlinux.org/mailman3/lists/aur-requests.lists.archlinux.org/">почтовую рассылку aur-requests</a> для обсуждения. После этого <a href="../en/Trusted_Users.html" title="Trusted Users">доверенные пользователи</a> примут или отвергнут запрос.
+</p>
+<ul>
+<li>Запросы на отказ от поддержки пакета будут выполнены после двух недель, если текущий мэйнтейнер не вмешается. Исключением является ситуация, если пакет отмечен как устаревший более 180 дней; в таком случае запрос принимается автоматически.</li>
+<li>Запросы на слияние предназначены для удаления package base и переноса всех его голосов и комментариев в другой package base. Необходимо указать имя package base, в которую нужно слиться. Обратите внимание, что это не имеет ничего общего с 'git merge' или запросами на слияние в GitLab.</li>
+<li>Запросы на удаление должны содержать следующую информацию:
+<ul>
+<li>Краткое описание причины удаления. Имейте в виду, что только лишь комментариев к пакету недостаточно для указания причины его удаления. Чтобы доверенные пользователи предприняли какие-либо действия, единственное место, куда следует отправлять данную информацию — почтовая рассылка aur-requests.</li>
+<li>Информацию по поддержке: например, то, что содержимое пакета предоставляется другим пакетом, или то, что он был переименован с согласия владельца, и т.д.</li>
+</ul>
+</li>
+<li>После удаления пакета его Git-репозиторий остаётся доступен в AUR.</li>
+</ul>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../Special:Categories.html" title="Special:Categories">Categories</a>: <ul>
+<li><a href="../ru/Category:About_Arch.html" title="Category:About Arch (Русский)">About Arch (Русский)</a></li>
+<li><a href="../ru/Category:Package_development.html" title="Category:Package development (Русский)">Package development (Русский)</a></li>
+<li><a href="../ru/Category:Package_management.html" title="Category:Package management (Русский)">Package management (Русский)</a></li>
+</ul>
+</div></div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=AUR_submission_guidelines_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)&amp;oldid=754982">https://wiki.archlinux.org/index.php?title=AUR_submission_guidelines_(Русский)&amp;oldid=754982</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 28 October 2022, at 12:05.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

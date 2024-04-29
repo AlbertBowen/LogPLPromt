@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>Downgrading packages (Français) - ArchWiki</title>
+<link rel="stylesheet" href="../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Downgrading_packages_Français rootpage-Downgrading_packages_Français skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Réinstaller_la_version_précédente_d'un_paquet" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#R%C3%A9installer_la_version_pr%C3%A9c%C3%A9dente_d'un_paquet">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Réinstaller la version précédente d'un paquet</div>
+			</a>
+			
+				<button aria-controls="toc-Réinstaller_la_version_précédente_d'un_paquet-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Réinstaller la version précédente d'un paquet subsection
+				</button>
+			
+			<ul id="toc-Réinstaller_la_version_précédente_d'un_paquet-sublist" class="sidebar-toc-list">
+				<li id="toc-Utiliser_le_cache_de_pacman" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Utiliser_le_cache_de_pacman">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.1</span>Utiliser le cache de pacman</div>
+			</a>
+			
+			<ul id="toc-Utiliser_le_cache_de_pacman-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Rétrograder_le_noyau" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#R%C3%A9trograder_le_noyau">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.2</span>Rétrograder le noyau</div>
+			</a>
+			
+			<ul id="toc-Rétrograder_le_noyau-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Arch_Linux_Archive" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Arch_Linux_Archive">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.3</span>Arch Linux Archive</div>
+			</a>
+			
+			<ul id="toc-Arch_Linux_Archive-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Recompiler_le_paquet" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Recompiler_le_paquet">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.4</span>Recompiler le paquet</div>
+			</a>
+			
+			<ul id="toc-Recompiler_le_paquet-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Automatisation" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Automatisation">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.5</span>Automatisation</div>
+			</a>
+			
+			<ul id="toc-Automatisation-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Revenir_de_[testing]" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Revenir_de_[testing]">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Revenir de [testing]</div>
+			</a>
+			
+			<ul id="toc-Revenir_de_[testing]-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../fr/Downgrading_packages.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="new mw-list-item"><a href="/index.php?title=Talk:Downgrading_packages_(Fran%C3%A7ais)&amp;action=edit&amp;redlink=1" rel="discussion" title="Discussion about the content page (page does not exist) [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">français</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../fr/Downgrading_packages.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=Downgrading_packages_(Fran%C3%A7ais)&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=Downgrading_packages_(Fran%C3%A7ais)&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../fr/Downgrading_packages.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Downgrading_packages_(Fran%C3%A7ais)&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Downgrading_packages_(Fran%C3%A7ais)&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="fr" dir="ltr">
+<div class="mw-parser-output">
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>État de la traduction:</strong> Cet article est la version francophone de <a href="../en/Downgrading_packages.html" title="Downgrading packages">Downgrading packages</a>. Date de la dernière traduction: 2022-10-06. Vous pouvez aider à synchroniser la traduction s'il y a eu des <a rel="nofollow" class="external text" href="https://wiki.archlinux.org/index.php?title=Downgrading_packages&amp;diff=0&amp;oldid=749242">changements</a> dans la version anglaise.</div>
+<div class="archwiki-template-meta-related-articles-start">
+<p class="mw-no-invert">Related articles</p>
+<ul>
+<li><a href="../fr/Arch_build_system.html" class="mw-redirect" title="Arch Build System (Français)">Arch Build System (Français)</a></li>
+<li><a href="../fr/Makepkg.html" title="Makepkg (Français)">makepkg (Français)</a></li>
+<li><a href="../fr/Pacman.html" title="Pacman (Français)">pacman (Français)</a></li>
+<li><a href="../fr/Arch_Linux_Archive.html" title="Arch Linux Archive (Français)">Arch Linux Archive (Français)</a></li>
+</ul>
+</div>
+<p>Avant de rétrograder un paquets (ou plusieurs), demandez-vous «pourquoi» vous souhaitez faire cela. Si c'est en raison d'un bug, vérifiez le <a rel="nofollow" class="external text" href="https://bugs.archlinux.org/">«bug tracker»</a> pour les actions en cours. S'il n'y en a pas, faites un signalement; la meilleure option étant toujours de corriger les bugs, ou, à minimum de prévenir les autres utilisateurs des possibles problèmes.
+</p>
+<div class="archwiki-template-box archwiki-template-box-warning">
+<strong>Attention:</strong> 
+<ul>
+<li>Rétrograder un paquet implique parfois de rétrograder également ses dépendances. Quand le nombre de paquet est important, pensez à utiliser une «snapshot». Voir <a href="../en/Arch_Linux_Archive.html#How_to_restore_all_packages_to_a_specific_date" title="Arch Linux Archive">Arch Linux Archive#How to restore all packages to a specific date</a>.</li>
+<li>Soyez prudent avec changements apportés aux fichiers de configuration et aux scripts. Sachez que pacman gérera cela pour vous aussi longtemps que vous ne désactivez pas ses mécanismes de sécurité.</li>
+<li>Si le retour à une version antérieure implique le changement de nom d'une bibliothèque, Toutes ses dépendances auront besoin d'être rétrogradées également ou  <a href="../fr/Frequently_asked_questions.html#Que_se_passe_t_il_si_une_mise_%C3%A0_jour_pousse_une_nouvelle_version_d'une_biblioth%C3%A8que,_mais_pas_une_application_qui_en_d%C3%A9pend?" title="Frequently asked questions (Français)">d'être reconstruites</a>.</li>
+</ul>
+</div>
+<mw:tocplace></mw:tocplace>
+<h2>
+<span id="R.C3.A9installer_la_version_pr.C3.A9c.C3.A9dente_d.27un_paquet"></span><span class="mw-headline" id="Réinstaller_la_version_précédente_d'un_paquet">Réinstaller la version précédente d'un paquet</span>
+</h2>
+<h3><span class="mw-headline" id="Utiliser_le_cache_de_pacman">Utiliser le cache de pacman</span></h3>
+<p>Si vous avez procéder à l'installation et que vous n'avez pas effacé le <a href="../fr/Pacman.html#Nettoyage_du_cache_des_paquets" title="Pacman (Français)">cache de pacman</a>, le paquet à la version précédente est encore disponible dans <code>/var/cache/pacman/pkg/</code>:
+</p>
+<p>Ceci supprimera le paquet actuel et installera la version plus ancienne à la place. Les changements nécessaires aux dépendances seront gérés, mais <a href="../fr/Pacman.html" title="Pacman (Français)">pacman</a> ne gérera pas les conflits de version. Aussi si une bibliothèque ou un autre paquet doit être rétrogradés conjointement aux paquets, sachez que vous devrez le faire vous-même.
+</p>
+<pre># pacman -U file:///var/cache/pacman/pkg/<i>paquet</i>-<i>vieille_version</i>.pkg.tar.<i>type</i>
+</pre>
+<p>Remarquez que <i><code>type</code></i> sera <code>xz</code> pour les paquets les plus anciens, et <code>zst</code> pour ceux datant d'après <a rel="nofollow" class="external text" href="https://archlinux.org/news/now-using-zstandard-instead-of-xz-for-package-compression/">la modification de 2020</a>.
+</p>
+<p>Une fois le paquet installé, ajoutez-le temporairement à la <a href="../fr/Pacman.html#Ignorer_la_mise_%C3%A0_jour_d'un_paquet" title="Pacman (Français)">section IgnorePkg</a> de <code>pacman.conf</code>, jusqu'à ce que la difficulté liée au paquet mis-à-jour soit résolu.
+</p>
+<h3>
+<span id="R.C3.A9trograder_le_noyau"></span><span class="mw-headline" id="Rétrograder_le_noyau">Rétrograder le noyau</span>
+</h3>
+<p>En cas de problème avec un nouveau noyau, les paquets <i>Linux</i>, ceux-ci peuvent être rétrogradés en pour le dernier fonctionnel en <a href="#Utiliser_le_cache_de_pacman">utilisant le cache de pacman</a>. Ouvrez le répertoire <code>/var/cache/pacman/pkg</code> et rétrogradez au moins les paquets <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=linux">linux</a></span>, <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=linux-headers">linux-headers</a></span> ainsi que les modules du noyau. Par exemple:
+</p>
+<pre># pacman -U file://linux-4.15.8-1-x86_64.pkg.tar.xz linux-headers-4.15.8-1-x86_64.pkg.tar.xz file://virtualbox-host-modules-arch-5.2.8-4-x86_64.pkg.tar.xz
+</pre>
+<div class="archwiki-template-box archwiki-template-box-tip">
+<strong>Astuce:</strong> S'il vous est impossible de démarrer le système après une régression du noyau, vous pouvez rétrograder le noyau en <a href="../en/Chroot.html" class="mw-redirect" title="Change root"><i>chrootant</i></a> dans le système. Démarrer depuis <a href="../en/USB_flash_installation_medium.html" class="mw-redirect" title="USB flash installation media">une image Arch Linux sur un media USB</a> et montez la partition sur laquelle votre système est installé dans <code>/mnt</code>. Si vous avez un <code>/boot</code> ou <code>/var</code> sur une partition séparée, montez les également dans <code>/mnt</code> (par exemple <code>mount /dev/sdc3 /mnt/boot</code>). Ensuite <i>chrootez</i> dans le système avec: <pre># arch-chroot /mnt</pre>
+Ensuite, vous pouvez vous placer dans le répertoire du  <i>cache pacman</i> et restaurer les paquets Linux en utilisant les commandes citées ci-dessus. Une fois fait, sortez du chroot (avec <code>exit</code>) et redémarrez.</div>
+<h3><span class="mw-headline" id="Arch_Linux_Archive">Arch Linux Archive</span></h3>
+<p><a href="../fr/Arch_Linux_Archive.html" title="Arch Linux Archive (Français)">Arch Linux Archive</a> fournit une image quotidienne des <a href="../fr/Official_repositories.html" title="Official repositories (Français)">miroirs officiels</a>, et peut être utilisé pour <a href="../en/Arch_Linux_Archive.html#How_to_downgrade_one_package" title="Arch Linux Archive">installer une version précédente d'un paquet</a>, ou <a href="../en/Arch_Linux_Archive.html#How_to_restore_all_packages_to_a_specific_date" title="Arch Linux Archive">restaurer le système à une date antérieure.</a>.
+</p>
+<h3><span class="mw-headline" id="Recompiler_le_paquet">Recompiler le paquet</span></h3>
+<p>Si le paquet ne se trouve nulle part,  trouvez son <a href="../fr/PKGBUILD.html" title="PKGBUILD (Français)">PKGBUILD</a> et reconstruisez-le avec <a href="../fr/Makepkg.html" title="Makepkg (Français)">Makepkg</a>.
+</p>
+<p>Pour les paquets provenant des <a href="../fr/Official_repositories.html" title="Official repositories (Français)">dépôts officiels</a>, récupérez le PKGBUILD avec <a href="../fr/Arch_build_system.html" title="Arch build system (Français)">ABS</a> et modifiez la version du logiciel. Vous pouvez également trouver le paquet sur le site web <a rel="nofollow" class="external free" href="https://archlinux.org/packages">https://archlinux.org/packages</a>, cliquer sur "View Changes" et naviguer jusqu'à la version souhaitée. Il suffit ensuite de télécharger les fichiers situés dans le répertoire afin de construire le paquet. 
+</p>
+<p>Consultez également <a href="../fr/Arch_build_system.html#T%C3%A9l%C3%A9charger_une_ancienne_version_d'un_paquet" title="Arch build system (Français)">Arch build system (Français)#Télécharger une ancienne version d'un paquet</a><sup>[<a href="../en/Help:Procedures.html#Fix_broken_section_links" title="Help:Procedures">broken link</a>: invalid section]</sup>|Récupérer une version antérieure d'un paquet]].
+</p>
+<p>Les anciens paquets AUR peuvent être construits en récupérant un ancien commit dans le dépôt Git des paquets AUR. Pour les PKGBUILDs AUR3 antérieurs à 2015, consultez <a href="../fr/Arch_User_Repository.html#D%C3%A9p%C3%B4ts_Git_pour_les_paquets_AUR3" title="Arch User Repository (Français)">Arch User Repository (Français)#Dépôts Git pour les paquets AUR3</a>.
+</p>
+<h3><span class="mw-headline" id="Automatisation">Automatisation</span></h3>
+<ul><li>
+<b>downgrade</b> — Un script bash disponible sur <a href="../fr/Arch_User_Repository.html" title="Arch User Repository (Français)">AUR</a> permet de rétrograder un (ou <b>plusieurs</b>) paquets, en utilisant le cache de pacman ou <a href="../fr/Arch_Linux_Archive.html" title="Arch Linux Archive (Français)">Arch Linux Archive</a>. Voir <span class="plainlinks archwiki-template-man" title="$ man 8 downgrade">downgrade(8)</span> pour plus de détails.</li></ul>
+<dl><dd>
+<a rel="nofollow" class="external free" href="https://github.com/pbrisbin/downgrade">https://github.com/pbrisbin/downgrade</a> || <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/downgrade/">downgrade</a></span><sup><small>AUR</small></sup>
+</dd></dl>
+<h2>
+<span id="Revenir_de_.5Btesting.5D"></span><span class="mw-headline" id="Revenir_de_[testing]">Revenir de [testing]</span>
+</h2>
+<p>Consultez <a href="../fr/Official_repositories.html#D%C3%A9sactivation_des_d%C3%A9p%C3%B4ts_de_test" title="Official repositories (Français)">Official repositories (Français)#Désactivation des dépôts de test</a>.
+</p>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface">
+<div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="../fr/Category:Package_management.html" title="Category:Package management (Français)">Package management (Français)</a></li></ul>
+</div>
+<div id="mw-hidden-catlinks" class="mw-hidden-catlinks mw-hidden-cats-hidden">Hidden category: <ul><li><a href="../en/Category:Pages_with_broken_section_links.html" title="Category:Pages with broken section links">Pages with broken section links</a></li></ul>
+</div>
+</div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=Downgrading_packages_(Fran%C3%A7ais)&amp;oldid=784934">https://wiki.archlinux.org/index.php?title=Downgrading_packages_(Français)&amp;oldid=784934</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 10 August 2023, at 06:36.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

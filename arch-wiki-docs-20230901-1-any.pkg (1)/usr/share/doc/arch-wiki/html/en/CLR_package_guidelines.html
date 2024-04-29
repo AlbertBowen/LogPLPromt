@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>CLR package guidelines - ArchWiki</title>
+<link rel="stylesheet" href="../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-CLR_package_guidelines rootpage-CLR_package_guidelines skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Packaging_gotchas" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Packaging_gotchas">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Packaging gotchas</div>
+			</a>
+			
+				<button aria-controls="toc-Packaging_gotchas-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Packaging gotchas subsection
+				</button>
+			
+			<ul id="toc-Packaging_gotchas-sublist" class="sidebar-toc-list">
+				<li id="toc-Signed_assemblies" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Signed_assemblies">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.1</span>Signed assemblies</div>
+			</a>
+			
+			<ul id="toc-Signed_assemblies-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Sample_PKGBUILDs" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Sample_PKGBUILDs">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Sample PKGBUILDs</div>
+			</a>
+			
+				<button aria-controls="toc-Sample_PKGBUILDs-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Sample PKGBUILDs subsection
+				</button>
+			
+			<ul id="toc-Sample_PKGBUILDs-sublist" class="sidebar-toc-list">
+				<li id="toc-xbuild" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#xbuild">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.1</span>xbuild</div>
+			</a>
+			
+			<ul id="toc-xbuild-sublist" class="sidebar-toc-list">
+				<li id="toc-Unsigned_DLL" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Unsigned_DLL">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.1.1</span>Unsigned DLL</div>
+			</a>
+			
+			<ul id="toc-Unsigned_DLL-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+	</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../en/CLR_package_guidelines.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="new mw-list-item"><a href="/index.php?title=Talk:CLR_package_guidelines&amp;action=edit&amp;redlink=1" rel="discussion" title="Discussion about the content page (page does not exist) [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">English</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../en/CLR_package_guidelines.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=CLR_package_guidelines&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=CLR_package_guidelines&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../en/CLR_package_guidelines.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=CLR_package_guidelines&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=CLR_package_guidelines&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output">
+<div class="toc" style="display:block; text-align: center; margin-bottom: 1em;">
+<b><a href="../en/Arch_package_guidelines.html" title="Arch package guidelines">Arch package guidelines</a></b>
+<hr>
+<p><a href="../en/32-bit_package_guidelines.html" title="32-bit package guidelines">32-bit</a> – <a class="mw-selflink selflink">CLR</a> – <a href="../en/CMake_package_guidelines.html" title="CMake package guidelines">CMake</a> – <a href="../en/Cross-compiling_tools_package_guidelines.html" title="Cross-compiling tools package guidelines">Cross</a> – <a href="../en/DKMS_package_guidelines.html" title="DKMS package guidelines">DKMS</a> – <a href="../en/Eclipse_plugin_package_guidelines.html" title="Eclipse plugin package guidelines">Eclipse</a> – <a href="../en/Electron_package_guidelines.html" title="Electron package guidelines">Electron</a> – <a href="../en/Font_package_guidelines.html" title="Font package guidelines">Font</a> – <a href="../en/Free_Pascal_package_guidelines.html" title="Free Pascal package guidelines">Free Pascal</a> – <a href="../en/GNOME_package_guidelines.html" title="GNOME package guidelines">GNOME</a> – <a href="../en/Go_package_guidelines.html" title="Go package guidelines">Go</a> – <a href="../en/Haskell_package_guidelines.html" title="Haskell package guidelines">Haskell</a> – <a href="../en/Java_package_guidelines.html" title="Java package guidelines">Java</a> – <a href="../en/KDE_package_guidelines.html" title="KDE package guidelines">KDE</a> – <a href="../en/Kernel_module_package_guidelines.html" title="Kernel module package guidelines">Kernel</a> – <a href="../en/Lisp_package_guidelines.html" title="Lisp package guidelines">Lisp</a> – <a href="../en/Meson_package_guidelines.html" title="Meson package guidelines">Meson</a> – <a href="../en/MinGW_package_guidelines.html" title="MinGW package guidelines">MinGW</a> – <a href="../en/Node.js_package_guidelines.html" title="Node.js package guidelines">Node.js</a> – <a href="../en/Nonfree_applications_package_guidelines.html" title="Nonfree applications package guidelines">Nonfree</a> – <a href="../en/OCaml_package_guidelines.html" title="OCaml package guidelines">OCaml</a> – <a href="../en/Perl_package_guidelines.html" title="Perl package guidelines">Perl</a> – <a href="../en/PHP_package_guidelines.html" title="PHP package guidelines">PHP</a> – <a href="../en/Python_package_guidelines.html" title="Python package guidelines">Python</a> – <a href="../en/R_package_guidelines.html" title="R package guidelines">R</a> – <a href="../en/Ruby_package_guidelines.html" title="Ruby package guidelines">Ruby</a> – <a href="../en/Rust_package_guidelines.html" title="Rust package guidelines">Rust</a> – <a href="../en/Shell_package_guidelines.html" title="Shell package guidelines">Shell</a> – <a href="../en/VCS_package_guidelines.html" title="VCS package guidelines">VCS</a> – <a href="../en/Web_application_package_guidelines.html" title="Web application package guidelines">Web</a> – <a href="../en/Wine_package_guidelines.html" title="Wine package guidelines">Wine</a>
+</p>
+</div>
+<p>This document defines the standard for packaging Common Language Runtime (.NET) projects under Arch Linux. Currently only <a href="../en/Mono.html" title="Mono">Mono</a> is capable of providing a usable, efficient CLR runtime for multiple systems and this standard will reflect its use. Be aware that a lot of CLR programs were developed with Microsoft .NET in mind and, as such, may or may not run under Mono because of .NET-exclusive factors such as P/Invoke calls and Microsoft digital rights management (DRM) APIs and are thus will not yield a usable package for Arch Linux. However, if combined with <a href="../en/Wine.html" title="Wine">Wine</a> as of version 1.5.6 (?), your package may have a chance to run under it. Please see the <a href="../en/Wine_package_guidelines.html" class="mw-redirect" title="Wine PKGBUILD Guidelines">Wine PKGBUILD Guidelines</a> for more information if such is the case.
+</p>
+<mw:tocplace></mw:tocplace>
+<h2><span class="mw-headline" id="Packaging_gotchas">Packaging gotchas</span></h2>
+<ul>
+<li>Always add <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=mono">mono</a></span> to <code>depends</code>
+</li>
+<li>Always set <code>arch</code> to <code>any</code>. Mono does not yet support compiling (running?) 64-bit assemblies.</li>
+<li>Always add <code>!strip</code> to <code>options</code>
+</li>
+<li>If the package is a library (DLL), consider installing it to Mono's global assembly cache (GAC) if it is to be used as a dependency.</li>
+<li>If the assembly is precompiled and comes with a program debug database file (Foo.dll.pdb), consider converting it as such: <code>pdb2mdb Foo.dll</code>
+</li>
+<li>If the package is meant to be executed (EXE), be sure to install to <code>/usr/bin</code> a shell script to run it, similar to this one:</li>
+</ul>
+<pre>#!/bin/sh
+mono foo.exe "$@"
+</pre>
+<h3><span class="mw-headline" id="Signed_assemblies">Signed assemblies</span></h3>
+<p>If the package is to be installed into the GAC, be sure it has a signed key file. If not, you can generate one like this: <code>sn -k 1024 Foo.snk</code>. Following that, the easiest way to embed the key file into the assembly is to disassemble it like this: <code>monodis Foo.dll --output=Foo.il</code>. Afterwards, reassemble it like so: <code>ilasm /dll /key:Foo.snk Foo.il</code>
+</p>
+<h2><span class="mw-headline" id="Sample_PKGBUILDs">Sample PKGBUILDs</span></h2>
+<p>The following examples will try to cover some of the most common conventions and build systems.
+</p>
+<h3><span class="mw-headline" id="xbuild">xbuild</span></h3>
+<h4><span class="mw-headline" id="Unsigned_DLL">Unsigned DLL</span></h4>
+<pre># Maintainer: yourname &lt;yourmail&gt;
+pkgname=foo
+pkgver=1.0
+pkgrel=1
+pkgdesc="Fantabulous library for .Net"
+arch=('any')
+url="http://www.foo.bar"
+license=('GPL')
+depends=('mono')
+options=('!strip')
+source=("http://www.foo.bar/foobar.tar.gz")
+md5sums=('4736ac4f34fd9a41fa0197eac23bbc24')
+
+build() {
+  cd "${srcdir}/foobar"
+
+  xbuild Foo.sln
+
+  # if the package is unsigned, do the following:
+  cd "/bin/x86/Debug"
+  monodis Foo.dll --output=Foo.il
+  sn -k 1024 Foo.snk
+  ilasm /dll /key:Foo.snk Foo.il
+}
+
+package() {
+  cd "${srcdir}/foobar/bin/x86/Debug"
+
+  install -Dm644 Foo.dll "$pkgdir/usr/lib/foobar/Foo.dll"
+  install -Dm644 Foo.dll.mdb "$pkgdir/usr/lib/foobar/Foo.dll.mdb"
+  
+  # Register assembly into Mono's GAC
+  gacutil -i Foo.dll -root "$pkgdir/usr/lib"
+}
+</pre>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="../en/Category:Arch_package_guidelines.html" title="Category:Arch package guidelines">Arch package guidelines</a></li></ul>
+</div></div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=CLR_package_guidelines&amp;oldid=661958">https://wiki.archlinux.org/index.php?title=CLR_package_guidelines&amp;oldid=661958</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 18 April 2021, at 18:26.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

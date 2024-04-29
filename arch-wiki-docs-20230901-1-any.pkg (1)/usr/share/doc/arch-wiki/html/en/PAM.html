@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>PAM - ArchWiki</title>
+<link rel="stylesheet" href="../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-PAM rootpage-PAM skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Installation" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Installation">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Installation</div>
+			</a>
+			
+			<ul id="toc-Installation-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Configuration" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Configuration">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Configuration</div>
+			</a>
+			
+				<button aria-controls="toc-Configuration-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Configuration subsection
+				</button>
+			
+			<ul id="toc-Configuration-sublist" class="sidebar-toc-list">
+				<li id="toc-Security_parameters" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Security_parameters">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.1</span>Security parameters</div>
+			</a>
+			
+			<ul id="toc-Security_parameters-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-PAM_base-stack" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#PAM_base-stack">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.2</span>PAM base-stack</div>
+			</a>
+			
+			<ul id="toc-PAM_base-stack-sublist" class="sidebar-toc-list">
+				<li id="toc-Examples" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Examples">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.2.1</span>Examples</div>
+			</a>
+			
+			<ul id="toc-Examples-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Configuration_How-Tos" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Configuration_How-Tos">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>Configuration How-Tos</div>
+			</a>
+			
+				<button aria-controls="toc-Configuration_How-Tos-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Configuration How-Tos subsection
+				</button>
+			
+			<ul id="toc-Configuration_How-Tos-sublist" class="sidebar-toc-list">
+				<li id="toc-Security_parameter_configuration" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Security_parameter_configuration">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.1</span>Security parameter configuration</div>
+			</a>
+			
+			<ul id="toc-Security_parameter_configuration-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-PAM_stack_and_module_configuration" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#PAM_stack_and_module_configuration">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.2</span>PAM stack and module configuration</div>
+			</a>
+			
+			<ul id="toc-PAM_stack_and_module_configuration-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Further_PAM_packages" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Further_PAM_packages">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4</span>Further PAM packages</div>
+			</a>
+			
+			<ul id="toc-Further_PAM_packages-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-See_also" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#See_also">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5</span>See also</div>
+			</a>
+			
+			<ul id="toc-See_also-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../en/PAM.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="mw-list-item"><a href="../en/Talk:PAM.html" rel="discussion" title="Discussion about the content page [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">English</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../en/PAM.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=PAM&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=PAM&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../en/PAM.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=PAM&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=PAM&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output">
+<div class="archwiki-template-meta-related-articles-start">
+<p class="mw-no-invert">Related articles</p>
+<ul>
+<li><a href="../en/Security.html" title="Security">Security</a></li>
+<li><a href="../en/Pam_mount.html" title="Pam mount">pam_mount</a></li>
+<li><a href="../en/Pam_usb.html" title="Pam usb">pam_usb</a></li>
+<li><a href="../en/Pam_abl.html" title="Pam abl">pam_abl</a></li>
+<li><a href="../en/Pam_oath.html" title="Pam oath">pam_oath</a></li>
+<li><a href="../en/Universal_2nd_Factor.html" title="Universal 2nd Factor">Universal 2nd Factor</a></li>
+</ul>
+</div>
+<p>The <a rel="nofollow" class="external text" href="http://www.linux-pam.org/">Linux Pluggable Authentication Modules</a> (PAM) provides a framework for system-wide user authentication. To quote the <a rel="nofollow" class="external text" href="https://web.archive.org/web/20220402070708/http://linux-pam.org/whatispam.html">project</a>:
+</p>
+<dl><dd>PAM provides a way to develop programs that are independent of authentication scheme. These programs need "authentication modules" to be attached to them at run-time in order to work. Which authentication module is to be attached is dependent upon the local system setup and is at the discretion of the local system administrator.</dd></dl>
+<p>This article explains the Arch Linux base set-up defaults for PAM to authenticate local and remote users. Applying changes to the defaults is subject of crosslinked specialized per topic articles.
+</p>
+<mw:tocplace></mw:tocplace>
+<h2><span class="mw-headline" id="Installation">Installation</span></h2>
+<p>The <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=pam">pam</a></span> package is a dependency of the <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=base">base</a></span> <a href="../en/Meta_package_and_package_group.html#Difference_between_meta_package_and_package_group" class="mw-redirect" title="Meta package">meta package</a> and, thereby, normally installed on an Arch system. The PAM modules are installed into <code>/usr/lib/security</code> exclusively. 
+</p>
+<p>The repositories contain a number of optional PAM packages, the <a href="#Configuration_How-Tos">#Configuration How-Tos</a> show examples.
+</p>
+<h2><span class="mw-headline" id="Configuration">Configuration</span></h2>
+<p>A number of <code>/etc</code> paths are relevant for PAM; execute <code>pacman --query --list pam | grep /etc</code> to see the default configuration files created. They relate to either <a href="#Security_parameters">#Security parameters</a> for the modules, or the <a href="#PAM_base-stack">#PAM base-stack</a> configuration.
+</p>
+<h3><span class="mw-headline" id="Security_parameters">Security parameters</span></h3>
+<p>The path <code>/etc/security</code> contains system-specific configuration for variables the authentication methods offer. The base install populates it with default upstream configuration files. 
+</p>
+<p>Note Arch Linux does not provide distribution-specific configuration for these files. For example, the <code>/etc/security/pwquality.conf</code> file can be used to define system-wide defaults for password quality. Yet, to enable it, the <code>pam_pwquality.so</code> module has to be added to the <a href="#PAM_base-stack">#PAM base-stack</a> of modules, which is not the case per default.
+</p>
+<p>See <a href="#Security_parameter_configuration">#Security parameter configuration</a> for some of the possibilities.
+</p>
+<h3><span class="mw-headline" id="PAM_base-stack">PAM base-stack</span></h3>
+<p>The <code>/etc/pam.d/</code> path is exclusive for the PAM configuration to link the applications to the individual systems' authentication schemes. During installation of the system base, it is populated by:
+</p>
+<ul>
+<li>the <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=pambase">pambase</a></span> package, which contains the base-stack of Arch Linux specific PAM configuration to be used by applications, and</li>
+<li>other base packages. For example, <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=util-linux">util-linux</a></span> adds configuration for the central <i>login</i> and other programs, the <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=shadow">shadow</a></span> package adds the Arch Linux defaults to secure and modify the user database (see <a href="../en/Users_and_groups.html" title="Users and groups">Users and groups</a>).</li>
+</ul>
+<p>The different configuration files of the base installation link together and are stacked during runtime. For example, on a local user logon, the <i>login</i> application sources the <code>system-local-login</code> policy, which in turn sources others: 
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/pam.d/</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">login -&gt; system-local-login -&gt; system-login -&gt; system-auth</pre> 
+<p>For a different application, a different path may apply. For example, <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=openssh">openssh</a></span> installs its <code>sshd</code> PAM policy: 
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/pam.d/</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">sshd -&gt; system-remote-login -&gt; system-login -&gt; system-auth</pre>
+<p>Consequently, the choice of the configuration file in the stack matters. For the above example, a special authentication method could be required for <code>sshd</code> only, or all remote logins by changing <code>system-remote-login</code>; both changes would not affect local logins. Applying the change to <code>system-login</code> or <code>system-auth</code> instead would affect local and remote logins.
+</p>
+<p>Like the example of <code>sshd</code>, any <b>pam-aware</b> application is required to install its policy to <code>/etc/pam.d</code> in order to integrate and rely on the PAM stack appropriately. If an application fails to do it, the <code>/etc/pam.d/other</code> default policy to deny and log a warning is applied.
+</p>
+<div class="archwiki-template-box archwiki-template-box-tip">
+<strong>Tip:</strong> PAM is dynamically linked at runtime. For example: 
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">$ ldd /usr/bin/login | grep pam</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">libpam.so.0 =&gt; /usr/lib/libpam.so.0 (0x000003d8c32d6000)
+libpam_misc.so.0 =&gt; /usr/lib/libpam_misc.so.0 (0x000003d8c30d2000)</pre>
+the <i>login</i> application is pam-aware and <b>must</b>, therefore, have a policy.</div> 
+<p>The PAM package manual pages <span class="plainlinks archwiki-template-man" title="$ man 8 pam"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/pam.8">pam(8)</a></span> and <span class="plainlinks archwiki-template-man" title="$ man 5 pam.d"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/pam.d.5">pam.d(5)</a></span> describe the standardized content of the configuration files. In particular, they explain the four PAM groups: account, authentication, password, and session management, as well as the control values that may be used to configure stacking and behavior of the modules. 
+</p>
+<p>Additionally, extensive documentation is installed to <code>/usr/share/doc/Linux-PAM/index.html</code> which, among various guides, contains browsable man pages for each of the standard modules. 
+</p>
+<div class="archwiki-template-box archwiki-template-box-warning">
+<strong>Warning:</strong> Changes to the PAM configuration fundamentally affect user authentication. Erroneous changes can result in that <b>no user</b> can log in, or <b>all users</b> being able to log in.</div>
+<div class="archwiki-template-box archwiki-template-box-tip">
+<strong>Tip:</strong> Changes are not effective for already authenticated users; a way to work with PAM is to login preferably locally on the testing machine and develop, keeping the session constantly running, while checking the results from another user on another console.</div>
+<h4><span class="mw-headline" id="Examples">Examples</span></h4>
+<div class="noprint archwiki-template-message">
+<p><a href="../File:Tango-inaccurate.png" class="image"><img alt="Tango-inaccurate.png" src="../File:Tango-inaccurate.png" decoding="async" width="48" height="48"></a><b>The factual accuracy of this article or section is disputed.</b><a href="../File:Tango-inaccurate.png" class="image"><img alt="Tango-inaccurate.png" src="../File:Tango-inaccurate.png" decoding="async" width="48" height="48"></a></p>
+<div>
+<b>Reason:</b> (1) the use of nullok (2) the way pam handles optional modules (Discuss in <a href="../en/Talk:PAM.html#Accuracy_of_PAM#Examples" title="Talk:PAM">Talk:PAM#Accuracy of PAM#Examples</a>)</div>
+</div>
+<p>Two short examples to illustrate the above warning. 
+</p>
+<p>First, we take the following two lines:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/pam.d/system-auth</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">auth      required  pam_unix.so     try_first_pass nullok
+auth      optional  pam_permit.so</pre> 
+<p>From <span class="plainlinks archwiki-template-man" title="$ man 8 pam_unix"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/pam_unix.8">pam_unix(8)</a></span>:
+</p>
+<dl><dd>The authentication component <code>pam_unix.so</code> performs the task of checking the users credentials (password). The default action of this module is to not permit the user access to a service if their official password is blank.</dd></dl>
+<p>- the latter being what <code>pam_permit.so</code> is used for. Simply swapping the control values <code>required</code> and <code>optional</code> for both lines is enough to disable password authentication, i.e. any user may logon without providing a password. 
+</p>
+<p>Second, as the contrary example, per default configuration of <code>pam_nologin.so</code> at /etc/pam.d/login, creating the following file: 
+</p>
+<pre># touch /etc/nologin 
+</pre>
+<p>results in that no user other than root may login (if root logins are allowed, another default for Arch Linux). To allow logins again, remove the file. Possibly, from the console you created it with.
+</p>
+<p>With that as background, see <a href="#PAM_stack_and_module_configuration">#PAM stack and module configuration</a> for particular use-case configuration.
+</p>
+<h2><span class="mw-headline" id="Configuration_How-Tos">Configuration How-Tos</span></h2>
+<p>This section provides an overview of content detailing how to apply changes to the PAM configuration and how to integrate special new PAM modules into the PAM stack. Note the man pages for the modules can generally be reached dropping the <code>.so</code> extension.
+</p>
+<h3><span class="mw-headline" id="Security_parameter_configuration">Security parameter configuration</span></h3>
+<p>The following sections describe examples to change the default PAM parameter configuration: 
+</p>
+<ul><li><a href="../en/Security.html#Enforcing_strong_passwords_with_pam_pwquality" title="Security">Security#Enforcing strong passwords with pam_pwquality</a></li></ul>
+<dl><dd>shows how to enforce strong passwords with <code>pam_cracklib.so</code>.</dd></dl>
+<ul><li><a href="../en/Security.html#Lock_out_user_after_three_failed_login_attempts" title="Security">Security#Lock out user after three failed login attempts</a></li></ul>
+<dl><dd>shows how to configure the limits on login attempts with <code>pam_faillock.so</code>.</dd></dl>
+<ul><li><a href="../en/Security.html#Allow_only_certain_users" title="Security">Security#Allow only certain users</a></li></ul>
+<dl><dd>limits user logons with <code>pam_wheel.so</code>.</dd></dl>
+<ul><li>
+<a href="../en/Realtime_process_management.html#Configuring_PAM" title="Realtime process management">Realtime process management#Configuring PAM</a> and <a href="../en/Security.html#Limit_amount_of_processes" title="Security">Security#Limit amount of processes</a>
+</li></ul>
+<dl><dd>detail how to configure system process limits with <code>pam_limits.so</code>.</dd></dl>
+<ul><li><a href="../en/Environment_variables.html#Using_pam_env" title="Environment variables">Environment variables#Using pam_env</a></li></ul>
+<dl><dd>shows examples to set environment variables via <code>pam_env.so</code>.</dd></dl>
+<h3><span class="mw-headline" id="PAM_stack_and_module_configuration">PAM stack and module configuration</span></h3>
+<p>The following articles detail how to change the <a href="#PAM_base-stack">#PAM base-stack</a> for special use-cases.
+</p>
+<dl>
+<dt><a href="../en/Pam_mount.html" title="Pam mount">pam_mount</a></dt>
+<dd>detail examples for using <code>pam_mount.so</code> to automount encrypted directory paths on user login.</dd>
+<dt><a href="../en/ECryptfs.html#Auto-mounting" title="ECryptfs">ECryptfs#Auto-mounting</a></dt>
+<dd>uses <code>pam_ecryptfs.so</code> to automount an encrypted directory.</dd>
+<dt><a href="../en/Dm-crypt/Mounting_at_login.html" title="Dm-crypt/Mounting at login">Dm-crypt/Mounting at login</a></dt>
+<dd>shows how to use <code>pam_exec.so</code> to execute a custom script on a user login.</dd>
+<dt><a href="../en/Active_Directory_integration.html#Configuring_PAM" title="Active Directory integration">Active Directory integration#Configuring PAM</a></dt>
+<dd>uses <code>pam_winbind.so</code> and <code>pam_krb5.so</code> to let users authenticate via Active Directory (<a href="../en/OpenLDAP.html" class="mw-redirect" title="LDAP">LDAP</a>, <a href="../en/Kerberos.html" title="Kerberos">Kerberos</a>) services.</dd>
+<dt>
+<a href="../en/LDAP_authentication.html#NSS_and_PAM" title="LDAP authentication">LDAP authentication#NSS and PAM</a><sup>[<a href="../en/Help:Procedures.html#Fix_broken_section_links" title="Help:Procedures">broken link</a>: invalid section]</sup>
+</dt>
+<dd>is an article about integrating LDAP client or server-side authentication with <code>pam_ldap.so</code>.</dd>
+<dt><a href="../en/YubiKey.html#Linux_user_authentication_with_PAM" title="YubiKey">YubiKey#Linux user authentication with PAM</a></dt>
+<dd>describes how to use U2F (<code>pam_u2f.so</code>) and the proprietary Yubico OTP implementation (<code>pam_yubico.so</code>) provided by the YubiKey with PAM</dd>
+<dt><a href="../en/Pam_oath.html" title="Pam oath">pam_oath</a></dt>
+<dd>shows an example to implement software based two-factor authentication with <code>pam_oath.so</code>.</dd>
+<dt><a href="../en/Fprint.html" title="Fprint">fprint</a></dt>
+<dd>employs <code>pam_fprintd.so</code> to setup fingerprint authentication.</dd>
+<dt><a href="../en/Pam_autologin.html" title="Pam autologin">pam_autologin</a></dt>
+<dd>saves username and password to log in automatically.</dd>
+<dt><a href="../en/Pam_usb.html" title="Pam usb">pam_usb</a></dt>
+<dd>shows how to configure <code>pam_usb.so</code> to use an usb-device for, optionally two-factor, authentication.</dd>
+<dt><a href="../en/SSH_keys.html#pam_ssh" title="SSH keys">SSH keys#pam_ssh</a></dt>
+<dd>uses <code>pam_ssh.so</code> to authenticate as a remote user.</dd>
+<dt><a href="../en/Pam_abl.html" title="Pam abl">pam_abl</a></dt>
+<dd>explains how <code>pam_abl.so</code> can be used to limit brute-forcing attacks via ssh.</dd>
+<dt><a href="../en/EncFS.html#/etc/pam.d/" title="EncFS">EncFS</a></dt>
+<dd>may get automounted via <code>pam_encfs.so</code>.</dd>
+<dt><a href="../en/Google_Authenticator.html" title="Google Authenticator">Google Authenticator</a></dt>
+<dd>shows how to set up two-factor authentication with <code>pam_google_authenticator.so</code>.</dd>
+<dt><a href="../en/Very_Secure_FTP_Daemon.html#PAM_with_virtual_users" title="Very Secure FTP Daemon">Very Secure FTP Daemon#PAM with virtual users</a></dt>
+<dd>explains how to configure a FTP chroot with <code>pam_pwdfile.so</code> to authenticate users without a local system account.</dd>
+</dl>
+<h2><span class="mw-headline" id="Further_PAM_packages">Further PAM packages</span></h2>
+<p>Other than those packages mentioned so far, the <a href="../en/Arch_User_Repository.html" title="Arch User Repository">Arch User Repository</a> contains a number of additional PAM modules and tools.  
+</p>
+<p>A general purpose utility relating to PAM is: 
+</p>
+<ul><li>
+<b><a rel="nofollow" class="external text" href="https://linux.die.net/man/1/pamtester">Pamtester</a></b> — Program to test the pluggable authentication modules (PAM) facility</li></ul>
+<dl><dd>
+<a rel="nofollow" class="external free" href="https://pamtester.sourceforge.net/">https://pamtester.sourceforge.net/</a> || <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/pamtester/">pamtester</a></span><sup><small>AUR</small></sup>
+</dd></dl>
+<p>Note the AUR features a keyword tag for <a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/?SeB=k&amp;K=pam">PAM</a>, but not all available packages are updated to include it. Hence, searching the <a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/?K=pam">package description</a> may be necessary.
+</p>
+<h2><span class="mw-headline" id="See_also">See also</span></h2>
+<ul>
+<li>
+<a rel="nofollow" class="external text" href="http://www.linux-pam.org/">linux-pam.org</a> - The project homepage</li>
+<li>
+<a rel="nofollow" class="external text" href="https://web.archive.org/web/20211124031525/https://developer.ibm.com/tutorials/l-pam/">Understanding and configuring PAM</a> - An introductory article</li>
+</ul>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface">
+<div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../Special:Categories.html" title="Special:Categories">Categories</a>: <ul>
+<li><a href="../en/Category:Kernel.html" title="Category:Kernel">Kernel</a></li>
+<li><a href="../en/Category:Authentication.html" title="Category:Authentication">Authentication</a></li>
+</ul>
+</div>
+<div id="mw-hidden-catlinks" class="mw-hidden-catlinks mw-hidden-cats-hidden">Hidden categories: <ul>
+<li><a href="../en/Category:Pages_or_sections_flagged_with_Template:Accuracy.html" title="Category:Pages or sections flagged with Template:Accuracy">Pages or sections flagged with Template:Accuracy</a></li>
+<li><a href="../en/Category:Pages_with_broken_section_links.html" title="Category:Pages with broken section links">Pages with broken section links</a></li>
+</ul>
+</div>
+</div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=PAM&amp;oldid=785072">https://wiki.archlinux.org/index.php?title=PAM&amp;oldid=785072</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 11 August 2023, at 06:09.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

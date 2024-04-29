@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>Swap - ArchWiki</title>
+<link rel="stylesheet" href="../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Swap rootpage-Swap skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Swap_space" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Swap_space">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Swap space</div>
+			</a>
+			
+			<ul id="toc-Swap_space-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Swap_partition" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Swap_partition">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Swap partition</div>
+			</a>
+			
+				<button aria-controls="toc-Swap_partition-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Swap partition subsection
+				</button>
+			
+			<ul id="toc-Swap_partition-sublist" class="sidebar-toc-list">
+				<li id="toc-Activation_by_systemd" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Activation_by_systemd">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.1</span>Activation by systemd</div>
+			</a>
+			
+			<ul id="toc-Activation_by_systemd-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Disabling_swap" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Disabling_swap">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.2</span>Disabling swap</div>
+			</a>
+			
+			<ul id="toc-Disabling_swap-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Swap_file" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Swap_file">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>Swap file</div>
+			</a>
+			
+				<button aria-controls="toc-Swap_file-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Swap file subsection
+				</button>
+			
+			<ul id="toc-Swap_file-sublist" class="sidebar-toc-list">
+				<li id="toc-Swap_file_creation" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Swap_file_creation">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.1</span>Swap file creation</div>
+			</a>
+			
+			<ul id="toc-Swap_file_creation-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Swap_file_removal" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Swap_file_removal">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.2</span>Swap file removal</div>
+			</a>
+			
+			<ul id="toc-Swap_file_removal-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Compressed_block_device_in_RAM" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Compressed_block_device_in_RAM">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4</span>Compressed block device in RAM</div>
+			</a>
+			
+			<ul id="toc-Compressed_block_device_in_RAM-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Swap_encryption" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Swap_encryption">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5</span>Swap encryption</div>
+			</a>
+			
+			<ul id="toc-Swap_encryption-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Performance" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Performance">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6</span>Performance</div>
+			</a>
+			
+				<button aria-controls="toc-Performance-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Performance subsection
+				</button>
+			
+			<ul id="toc-Performance-sublist" class="sidebar-toc-list">
+				<li id="toc-Swappiness" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Swappiness">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6.1</span>Swappiness</div>
+			</a>
+			
+			<ul id="toc-Swappiness-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-VFS_cache_pressure" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#VFS_cache_pressure">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6.2</span>VFS cache pressure</div>
+			</a>
+			
+			<ul id="toc-VFS_cache_pressure-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Priority" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Priority">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6.3</span>Priority</div>
+			</a>
+			
+			<ul id="toc-Priority-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Striping" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Striping">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6.4</span>Striping</div>
+			</a>
+			
+			<ul id="toc-Striping-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-See_also" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#See_also">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">7</span>See also</div>
+			</a>
+			
+			<ul id="toc-See_also-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../en/Swap.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="mw-list-item"><a href="../en/Talk:Swap.html" rel="discussion" title="Discussion about the content page [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">English</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../en/Swap.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=Swap&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=Swap&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../en/Swap.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Swap&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Swap&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output">
+<div class="archwiki-template-meta-related-articles-start">
+<p class="mw-no-invert">Related articles</p>
+<ul>
+<li><a href="../en/Fstab.html" title="Fstab">fstab</a></li>
+<li><a href="../en/Power_management/Suspend_and_hibernate.html#Hibernation" title="Power management/Suspend and hibernate">Power management/Suspend and hibernate#Hibernation</a></li>
+<li><a href="../en/Zswap.html" title="Zswap">zswap</a></li>
+<li><a href="../en/Zram.html" title="Zram">zram</a></li>
+<li><a href="../en/Swap_on_video_RAM.html" class="mw-redirect" title="Swap on video ram">Swap on video ram</a></li>
+<li><a href="../en/ZFS.html#Swap_volume" title="ZFS">ZFS#Swap volume</a></li>
+<li><a href="../en/Dm-crypt/Swap_encryption.html" title="Dm-crypt/Swap encryption">dm-crypt/Swap encryption</a></li>
+</ul>
+</div>
+<p>This page provides an introduction to <a href="https://en.wikipedia.org/wiki/Paging" class="extiw" title="wikipedia:Paging">swap space and paging</a> on GNU/Linux. It covers creation and activation of swap partitions and swap files.
+</p>
+<p>From <a rel="nofollow" class="external text" href="https://www.linux.com/news/all-about-linux-swap-space/">All about Linux swap space</a>:
+</p>
+<dl><dd>Linux divides its physical RAM (random access memory) into chunks of memory called pages. Swapping is the process whereby a page of memory is copied to the preconfigured space on the hard disk, called swap space, to free up that page of memory. The combined sizes of the physical memory and the swap space is the amount of virtual memory available.</dd></dl>
+<p>Support for swap is provided by the Linux kernel and user-space utilities from the <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=util-linux">util-linux</a></span> package.
+</p>
+<mw:tocplace></mw:tocplace>
+<h2><span class="mw-headline" id="Swap_space">Swap space</span></h2>
+<p>Swap space can take the form of a disk partition or a file. Users may create a swap space during installation or at any later time as desired. Swap space can be used for two purposes, to extend the virtual memory beyond the installed physical memory (RAM), and also for <a href="../en/Power_management/Suspend_and_hibernate.html" title="Power management/Suspend and hibernate">suspend-to-disk</a> support.
+</p>
+<p>If it is beneficial to extend the virtual memory with swap depends on the amount of installed physical memory. If the amount of physical memory is less than the amount of memory required to run all the desired programs, then it <i>may be</i> beneficial to enable swap. This avoids <a href="https://en.wikipedia.org/wiki/Out_of_memory" class="extiw" title="wikipedia:Out of memory">out of memory conditions</a>, where the Linux kernel OOM killer mechanism will automatically attempt to free up memory by killing processes. To increase the amount of virtual memory to the required amount, add the necessary difference (or more) as swap space.
+</p>
+<p>The biggest drawback of enabling swap is its lower performance, see section <a href="#Performance">#Performance</a>. Hence, enabling swap is a matter of personal preference: some prefer programs to be killed over enabling swap and others prefer enabling swap and slower system when the physical memory is exhausted.
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> <div class="noprint archwiki-template-message">
+<p><a href="../File:Tango-inaccurate.png" class="image"><img alt="Tango-inaccurate.png" src="../File:Tango-inaccurate.png" decoding="async" width="48" height="48"></a><b>The factual accuracy of this article or section is disputed.</b><a href="../File:Tango-inaccurate.png" class="image"><img alt="Tango-inaccurate.png" src="../File:Tango-inaccurate.png" decoding="async" width="48" height="48"></a></p>
+<div>
+<b>Reason:</b> <a rel="nofollow" class="external text" href="https://lore.kernel.org/lkml/CAHk-=wjnzdLSP3oDxhf9eMTYo7GF-QjaNLBUH1Zk3c4A7X75YA@mail.gmail.com/">Linus Torvalds says that swap partitions are preferable</a>: "all the normal distributions set things up with swap partitions, not files, because honestly, swapfiles tend to be slower and have various other complexity issues." (Discuss in <a rel="nofollow" class="external text" href="https://wiki.archlinux.org/title/Talk:Swap">Talk:Swap</a>)</div>
+</div> There is no performance difference between using a swap partition and a contiguous swap file.</div>
+<p>To check swap status, use:
+</p>
+<pre>$ swapon --show
+</pre>
+<p>Or to show physical memory as well as swap usage:
+</p>
+<pre>$ free -h
+</pre>
+<h2><span class="mw-headline" id="Swap_partition">Swap partition</span></h2>
+<p>A swap partition can be created with most GNU/Linux <a href="../en/Partitioning.html#Partitioning_tools" class="mw-redirect" title="Partitioning tools">partitioning tools</a>. Swap partitions are designated as type <code>82</code> on MBR and <code>0657FD6D-A4AB-43C4-84E5-0933C84B4F4F</code> on GPT. 
+</p>
+<p>To set up a partition as Linux swap area, the <span class="plainlinks archwiki-template-man" title="$ man 8 mkswap"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/mkswap.8">mkswap(8)</a></span> command is used. For example:
+</p>
+<pre># mkswap /dev/sd<i>xy</i>
+</pre>
+<div class="archwiki-template-box archwiki-template-box-warning">
+<strong>Warning:</strong> All data on the specified partition will be lost.</div>
+<p>To enable the device for paging:
+</p>
+<pre># swapon /dev/sd<i>xy</i>
+</pre>
+<p>To enable this swap partition on boot, add an entry to <code>/etc/fstab</code>:
+</p>
+<pre>UUID=<i>device_UUID</i> none swap defaults 0 0
+</pre>
+<p>where the <code><i>device_UUID</i></code> is  the <a href="../en/Persistent_block_device_naming.html#by-uuid" class="mw-redirect" title="UUID">UUID</a> of the swap space.
+</p>
+<p>See <a href="../en/Fstab.html" title="Fstab">fstab</a> for the file syntax.
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> The fstab-entry is optional if the swap partition is located on a device using GPT. See <a href="#Activation_by_systemd">#Activation by systemd</a>.</div>
+<div class="archwiki-template-box archwiki-template-box-warning">
+<strong>Warning:</strong> Enabling discard on RAID setups using mdadm will cause system lockup on boot and during runtime, if using swapon.</div>
+<h3><span class="mw-headline" id="Activation_by_systemd">Activation by systemd</span></h3>
+<p><a href="../en/Systemd.html" title="Systemd">systemd</a> activates swap partitions based on two different mechanisms. Both are executables in <code>/usr/lib/systemd/system-generators</code>. The generators are run on start-up and create native systemd units for mounts. The first, <code>systemd-fstab-generator</code>, reads the fstab to generate units, including a unit for swap. The second, <code>systemd-gpt-auto-generator</code> inspects the root disk to generate units. It operates on GPT disks only, and can identify swap partitions by their type GUID, see <a href="../en/Systemd.html#GPT_partition_automounting" title="Systemd">systemd#GPT partition automounting</a> for more information.
+</p>
+<h3><span class="mw-headline" id="Disabling_swap">Disabling swap</span></h3>
+<p>To deactivate specific swap space:
+</p>
+<pre># swapoff /dev/sd<i>xy</i>
+</pre>
+<p>Alternatively use the <code>-a</code> switch to deactivate all swap space.
+</p>
+<p>Since swap is managed by systemd, it will be activated again on the next system startup. To disable the automatic activation of detected swap space permanently, run <code>systemctl --type swap</code> to find the responsible <i>.swap</i> unit and <a href="../en/Help:Reading.html#Control_of_systemd_units" class="mw-redirect" title="Mask">mask</a> it.
+</p>
+<h2><span class="mw-headline" id="Swap_file">Swap file</span></h2>
+<p>As an alternative to creating an entire partition, a swap file offers the ability to vary its size on-the-fly, and is more easily removed altogether. This may be especially desirable if disk space is at a premium (e.g. a modestly-sized SSD).
+</p>
+<h3><span class="mw-headline" id="Swap_file_creation">Swap file creation</span></h3>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> For <a href="../en/Btrfs.html" title="Btrfs">Btrfs</a>, follow the procedure described in <a href="../en/Btrfs.html#Swap_file" title="Btrfs">Btrfs#Swap file</a> instead of the steps below.</div>
+<p>Use <a href="../en/Dd.html" title="Dd">dd</a> to create a swap file the size of your choosing. For example, creating an 8 GiB swap file:
+</p>
+<pre># dd if=/dev/zero of=/swapfile bs=1M count=8k status=progress
+</pre>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> Using <i>dd</i> to allocate a swap file is the most portable solution, see <span class="plainlinks archwiki-template-man" title="$ man 8 swapon"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/swapon.8#Files_with_holes">swapon(8) § Files with holes</a></span> for details.</div>
+<p>Set the right <a href="../en/File_permissions_and_attributes.html" class="mw-redirect" title="Permissions">permissions</a> (a world-readable swap file is a huge local vulnerability):
+</p>
+<pre># chmod 0600 /swapfile
+</pre>
+<p>After creating the correctly sized file, format it to swap:
+</p>
+<pre># mkswap -U clear /swapfile
+</pre>
+<p>Activate the swap file:
+</p>
+<pre># swapon /swapfile
+</pre>
+<p>Finally, edit the fstab configuration to add an entry for the swap file:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/fstab</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">/swapfile none swap defaults 0 0
+</pre>
+<p>For additional information, see <a href="../en/Fstab.html#Usage" title="Fstab">fstab#Usage</a>.
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> The swap file must be specified by its location on the file system, not by its UUID or LABEL.
+</div>
+<h3><span class="mw-headline" id="Swap_file_removal">Swap file removal</span></h3>
+<p>To remove a swap file, it must be turned off first and then can be removed:
+</p>
+<pre># swapoff /swapfile
+# rm -f /swapfile
+</pre>
+<p>Finally, remove the relevant entry from <code>/etc/fstab</code>.
+</p>
+<h2><span class="mw-headline" id="Compressed_block_device_in_RAM">Compressed block device in RAM</span></h2>
+<p><a href="../en/Zswap.html" title="Zswap">zswap</a> is available by default if you use a swap file or partition, but you can avoid swap files or partitions altogether by using a compressed block device in RAM, using <a href="../en/Zram.html" title="Zram">zram</a>. See <a href="../en/Improving_performance.html#zram_or_zswap" title="Improving performance">Improving performance#zram or zswap</a> for more information on the differences between using <a href="../en/Zram.html" title="Zram">zram</a> or <a href="../en/Zswap.html" title="Zswap">zswap</a>.
+</p>
+<h2><span class="mw-headline" id="Swap_encryption">Swap encryption</span></h2>
+<p>See <a href="../en/Dm-crypt/Swap_encryption.html" title="Dm-crypt/Swap encryption">dm-crypt/Swap encryption</a>.
+</p>
+<h2><span class="mw-headline" id="Performance">Performance</span></h2>
+<p>Swap operations are usually significantly slower than directly accessing data in RAM. Disabling swap entirely to improve performance can sometimes lead to a degradation, since it decreases the memory available for virtual file system (VFS) caches, causing more frequent and costly disk usage.
+</p>
+<p>Swap values can be adjusted to help performance:
+</p>
+<h3><span class="mw-headline" id="Swappiness">Swappiness</span></h3>
+<p>When memory usage reaches a certain threshold, the kernel starts looking at active memory and seeing what it can free up. File data can be written out to the file system (if changed), unloaded and re-loaded later; other data must be written to swap before it can be unloaded. 
+</p>
+<p>The <i>swappiness</i> <a href="../en/Sysctl.html" title="Sysctl">sysctl</a> parameter represents the kernel's preference for writing to swap instead of files. It can have a value between 0 and 200 (max 100 if Linux &lt; 5.8); the default value is 60. A low value causes the kernel to prefer freeing up open files, a high value causes the kernel to try to use swap space, and a value of 100 means IO cost is assumed to be equal. Using a low value on sufficient memory is known to improve responsiveness on systems running kernels &lt;4.0.
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> There is a common misconception that swappiness affects the memory threshold or prevents using swap space, but it only affects the preference for freeing up file pages over swap. See: <a rel="nofollow" class="external text" href="https://www.howtogeek.com/449691/what-is-swapiness-on-linux-and-how-to-change-it/">this article</a> for a more detailed explanation or the <a rel="nofollow" class="external text" href="https://github.com/torvalds/linux/blob/v6.2/mm/vmscan.c#L3000-L3014">the kernel source code</a> where it is used.</div>
+<p>To check the current swappiness value:
+</p>
+<pre>$ sysctl vm.swappiness
+</pre>
+<p>Alternatively, the files <code>/sys/fs/cgroup/memory/memory.swappiness</code> (cgroup v1-specific) or <code>/proc/sys/vm/swappiness</code> can be read in order to obtain the raw integer value.
+</p>
+<p>To temporarily set the swappiness value:
+</p>
+<pre># sysctl -w vm.swappiness=10
+</pre>
+<p>To set the swappiness value permanently, create a <span class="plainlinks archwiki-template-man" title="$ man 5 sysctl.d"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/sysctl.d.5">sysctl.d(5)</a></span> configuration file. For example:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/sysctl.d/99-swappiness.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">vm.swappiness = 10</pre>
+<p>To have the <a href="../en/Arch_boot_process.html#Boot_loader" class="mw-redirect" title="Boot loader">boot loader</a> set swappiness when loading the kernel, add a <a href="../en/Kernel_parameters.html" class="mw-redirect" title="Kernel parameter">kernel parameter</a>, e.g. <code>sysctl.vm.swappiness=10</code>.
+</p>
+<p>To test and more on why this may work, take a look at <a rel="nofollow" class="external text" href="https://rudd-o.com/en/linux-and-free-software/tales-from-responsivenessland-why-linux-feels-slow-and-how-to-fix-that">this article</a>. For a more recent counter-argument, see <a rel="nofollow" class="external text" href="https://chrisdown.name/2018/01/02/in-defence-of-swap.html">this article</a>.
+</p>
+<h3><span class="mw-headline" id="VFS_cache_pressure">VFS cache pressure</span></h3>
+<p>Another <i>sysctl</i> parameter that affects swap performance is <code>vm.vfs_cache_pressure</code>, which controls the tendency of the kernel to reclaim the memory which is used for caching of VFS caches, versus pagecache and swap. Increasing this value increases the rate at which VFS caches are reclaimed<a rel="nofollow" class="external autonumber" href="https://web.archive.org/web/20171004100853/http://doc.opensuse.org/documentation/leap/tuning/html/book.sle.tuning/cha.tuning.memory.html#cha.tuning.memory.vm.reclaim">[1]</a>. For more information, see the <a rel="nofollow" class="external text" href="https://docs.kernel.org/admin-guide/sysctl/vm.html">Linux kernel documentation</a>.
+</p>
+<h3><span class="mw-headline" id="Priority">Priority</span></h3>
+<p>If you have more than one swap file or swap partition you should consider assigning a priority value (0 to 32767) for each swap area. The system will use swap areas of higher priority before using swap areas of lower priority. For example, if you have a faster disk (<code>/dev/sda</code>) and a slower disk (<code>/dev/sdb</code>), assign a higher priority to the swap area located on the fastest device. Priorities can be assigned in <a href="../en/Fstab.html" title="Fstab">fstab</a> via the <code>pri</code> parameter:
+</p>
+<pre>/dev/sda1 none swap defaults,pri=100 0 0
+/dev/sdb2 none swap defaults,pri=10  0 0
+</pre>
+<p>Or via the <code>--priority</code> parameter of <i>swapon</i>:
+</p>
+<pre># swapon --priority 100 /dev/sda1
+</pre>
+<p>If two or more areas have the same priority, and it is the highest priority available, pages are allocated on a round-robin basis between them.
+</p>
+<h3><span class="mw-headline" id="Striping">Striping</span></h3>
+<p>There is no necessity to use <a href="../en/RAID.html" title="RAID">RAID</a> for swap performance reasons. The kernel itself can stripe swapping on several devices, if you just give them the same priority in the <code>/etc/fstab</code> file. Refer to <a rel="nofollow" class="external text" href="https://unthought.net/Software-RAID.HOWTO/Software-RAID.HOWTO-2.html#ss2.3">The Software-RAID HOWTO</a> for details.
+</p>
+<h2><span class="mw-headline" id="See_also">See also</span></h2>
+<ul><li><a rel="nofollow" class="external text" href="https://chrisdown.name/2018/01/02/in-defence-of-swap.html">In defence of swap: common misconceptions</a></li></ul>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface">
+<div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="../en/Category:File_systems.html" title="Category:File systems">File systems</a></li></ul>
+</div>
+<div id="mw-hidden-catlinks" class="mw-hidden-catlinks mw-hidden-cats-hidden">Hidden category: <ul><li><a href="../en/Category:Pages_or_sections_flagged_with_Template:Accuracy.html" title="Category:Pages or sections flagged with Template:Accuracy">Pages or sections flagged with Template:Accuracy</a></li></ul>
+</div>
+</div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=Swap&amp;oldid=777587">https://wiki.archlinux.org/index.php?title=Swap&amp;oldid=777587</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 9 May 2023, at 05:09.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

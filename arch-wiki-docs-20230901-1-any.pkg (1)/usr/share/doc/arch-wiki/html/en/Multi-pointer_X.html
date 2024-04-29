@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>Multi-pointer X - ArchWiki</title>
+<link rel="stylesheet" href="../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Multi-pointer_X rootpage-Multi-pointer_X skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Basic_concepts" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Basic_concepts">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Basic concepts</div>
+			</a>
+			
+				<button aria-controls="toc-Basic_concepts-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Basic concepts subsection
+				</button>
+			
+			<ul id="toc-Basic_concepts-sublist" class="sidebar-toc-list">
+				<li id="toc-Master_and_slave_devices" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Master_and_slave_devices">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.1</span>Master and slave devices</div>
+			</a>
+			
+			<ul id="toc-Master_and_slave_devices-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Client_pointer" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Client_pointer">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.2</span>Client pointer</div>
+			</a>
+			
+			<ul id="toc-Client_pointer-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Configuration" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Configuration">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Configuration</div>
+			</a>
+			
+				<button aria-controls="toc-Configuration-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Configuration subsection
+				</button>
+			
+			<ul id="toc-Configuration-sublist" class="sidebar-toc-list">
+				<li id="toc-configuration_file" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#configuration_file">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.1</span>configuration file</div>
+			</a>
+			
+			<ul id="toc-configuration_file-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-xinput_utility" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#xinput_utility">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.2</span>xinput utility</div>
+			</a>
+			
+			<ul id="toc-xinput_utility-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Troubleshooting" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Troubleshooting">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>Troubleshooting</div>
+			</a>
+			
+				<button aria-controls="toc-Troubleshooting-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Troubleshooting subsection
+				</button>
+			
+			<ul id="toc-Troubleshooting-sublist" class="sidebar-toc-list">
+				<li id="toc-Flicker" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Flicker">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.1</span>Flicker</div>
+			</a>
+			
+			<ul id="toc-Flicker-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Software_support" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Software_support">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4</span>Software support</div>
+			</a>
+			
+				<button aria-controls="toc-Software_support-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Software support subsection
+				</button>
+			
+			<ul id="toc-Software_support-sublist" class="sidebar-toc-list">
+				<li id="toc-Window_managers" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Window_managers">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.1</span>Window managers</div>
+			</a>
+			
+			<ul id="toc-Window_managers-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Desktop_managers" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Desktop_managers">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.2</span>Desktop managers</div>
+			</a>
+			
+			<ul id="toc-Desktop_managers-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Useful_links" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Useful_links">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5</span>Useful links</div>
+			</a>
+			
+			<ul id="toc-Useful_links-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../en/Multi-pointer_X.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="new mw-list-item"><a href="/index.php?title=Talk:Multi-pointer_X&amp;action=edit&amp;redlink=1" rel="discussion" title="Discussion about the content page (page does not exist) [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">English</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../en/Multi-pointer_X.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=Multi-pointer_X&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=Multi-pointer_X&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../en/Multi-pointer_X.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Multi-pointer_X&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Multi-pointer_X&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output">
+<p>Xorg servers starting from version 1.7 have a feature called "multi-pointer". Basically it allows to have multiple mouse cursors (each with its own keyboard focus) on the screen and control them with separate physical input devices. It can be used as a crude <a href="../en/Xorg_multiseat.html" title="Xorg multiseat">multiseat</a> solution.
+</p>
+<mw:tocplace></mw:tocplace>
+<h2><span class="mw-headline" id="Basic_concepts">Basic concepts</span></h2>
+<h3><span class="mw-headline" id="Master_and_slave_devices">Master and slave devices</span></h3>
+<p>With the introduction of XInput2, input devices are organised in a two-level hierarchy:
+</p>
+<ul>
+<li>Master devices, which correspond to cursors on the screen</li>
+<li>Slave devices, which correspond to physical input devices</li>
+</ul>
+<p>Master devices come in pairs, one for pointer and one for keyboard. Each master device can have a number of slave devices attached, so that cursor of a master device can be controlled by all slave devices attached to it.
+</p>
+<h3><span class="mw-headline" id="Client_pointer">Client pointer</span></h3>
+<p>When an application grabs input (e.g. a fullscreen game), it grabs a master device that is set as its client pointer. By default, the client pointer is set to "Virtual core pointer", but it can be set to a different one with a "xinput" utility.
+</p>
+<h2><span class="mw-headline" id="Configuration">Configuration</span></h2>
+<h3><span class="mw-headline" id="configuration_file">configuration file</span></h3>
+<div class="noprint archwiki-template-message">
+<p><a href="../File:Tango-view-fullscreen.png" class="image"><img alt="Tango-view-fullscreen.png" src="../File:Tango-view-fullscreen.png" decoding="async" width="48" height="48"></a><b>This article or section needs expansion.</b><a href="../File:Tango-view-fullscreen.png" class="image"><img alt="Tango-view-fullscreen.png" src="../File:Tango-view-fullscreen.png" decoding="async" width="48" height="48"></a></p>
+<div>
+<b>Reason:</b> Information how to configure multipointer with <code>xorg.conf</code> should be added (Discuss in <a rel="nofollow" class="external text" href="https://wiki.archlinux.org/title/Talk:Multi-pointer_X">Talk:Multi-pointer X</a>)</div>
+</div>
+<h3><span class="mw-headline" id="xinput_utility">xinput utility</span></h3>
+<p>More pointers can be added with <code>xinput</code> CLI utility. Here is how to do it:
+</p>
+<p>Create a new pair of master devices named "<i>name</i> pointer" and "<i>name</i> keyboard":
+</p>
+<pre>xinput create-master <i>[name]</i>
+</pre>
+<p>Find out names and ids of existing slave devices:
+</p>
+<pre>xinput list
+</pre>
+<p>Reattach slave devices to newly created master devices:
+</p>
+<pre>xinput reattach <i>[slave device name or id]</i> <i>[master device name or id]</i>
+</pre>
+<p>For example, say we create a device called "Auxiliary" (use <code>remove-master</code> to reverse this):
+</p>
+<pre>xinput create-master Auxiliary
+</pre>
+<p>When we list the xinput devices you should see something like this:
+</p>
+<pre>Virtual core pointer
+  &gt;Virtual Core XTEST pointer
+  &gt;[probably your main mouse]
+Virtual core keyboard
+  &gt;Virtual Core XTEST pointer
+  &gt;[probably your main keyboard]
+  &gt;[other function buttons]
+Auxiliary pointer
+  &gt;auxiliary XTEST pointer
+Auxiliary keyboard
+  &gt;auxiliary XTEST keyboard
+</pre>
+<p>What you then want to do is simply attach your secondary mouse and keyboard to the respective auxiliary positions. The XTEST devices are irrelevant here. I found the easiest way to determine whats what was to just unplug stuff and type "xinput list" again.
+</p>
+<p>To attach devices, you type:
+</p>
+<pre>xinput reattach [device id #] "Auxiliary pointer"
+</pre>
+<p>and then do so for your keyboard as well!
+</p>
+<p>If the support from the DE/WM is bad for multi-pointer, it would be a good idea to make use of <code>set-cp</code> if the master devices is added to be used by only one window, window id can be found from <code>xprop</code> or similar tools.
+</p>
+<pre>xinput set-cp <i>[window id]</i> <i>[master device name or id]</i>
+</pre>
+<p>Shamelessly stolen from <a rel="nofollow" class="external text" href="https://ao2.it/en/blog/2010/01/19/poor-mans-multi-touch-using-multiple-mice-xorg">Antonio Ospite at ao2.it</a>
+</p>
+<h2><span class="mw-headline" id="Troubleshooting">Troubleshooting</span></h2>
+<h3><span class="mw-headline" id="Flicker">Flicker</span></h3>
+<p>The <a href="../en/Picom.html" class="mw-redirect" title="Compton">Compton</a> compositor can cause the cursors to flicker and should be disabled.
+</p>
+<h2><span class="mw-headline" id="Software_support">Software support</span></h2>
+<p>It is possible to use multi-pointer with software that does not explicitly support it, but with limited functionality. Applications which do not support it will not distinguish between multiple pointers and will interpret all actions as if done by single master device pair.
+</p>
+<h3><span class="mw-headline" id="Window_managers">Window managers</span></h3>
+<p>In window managers multi-pointer support could mean:
+</p>
+<ul>
+<li>recognizing multiple focuses</li>
+<li>setting the client pointer of a focused window to the pointer that "focused" it</li>
+<li>letting move and resize windows simultaneously</li>
+</ul>
+<p>As of 24 December 2016, only <a rel="nofollow" class="external text" href="http://multicursor-wm.sourceforge.net/">multicursor-wm</a> (development stops around 2011) supports multi-pointer.
+</p>
+<p>As of 2020-06-01, <a href="../en/Dwm.html" title="Dwm">Dwm</a> works but not so well, there are focus issues when auto-focus on hover is set in <code>config.h</code> such that the keyboard focus jumps between application easily. <code>set-cp</code> can be used to aid this behavior.
+</p>
+<h3><span class="mw-headline" id="Desktop_managers">Desktop managers</span></h3>
+<p>Desktop manager should also be able to provide the same support as Window managers.
+</p>
+<p>As of 2021-01-14, <a href="../en/KDE.html#Plasma" class="mw-redirect" title="Plasma">Plasma</a> works quite well such that some applications is able to handle the focus correctly but the tools that it came with such as Application Runner (kickoff) and krunner does not accept input from second master devices.
+</p>
+<h2><span class="mw-headline" id="Useful_links">Useful links</span></h2>
+<ul>
+<li><a rel="nofollow" class="external text" href="https://www.x.org/wiki/Development/Documentation/MPX">Xorg wiki article</a></li>
+<li>
+<a href="../en/Xorg_multiseat.html" title="Xorg multiseat">Xorg multiseat</a>. A how-to for a more complicated multi-user environment. Requires 2 different xorg sessions and graphics cards!!</li>
+<li><a rel="nofollow" class="external text" href="https://dwm.suckless.org/multi-pointer/">Article from Suckless DWM</a></li>
+</ul>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface">
+<div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="../en/Category:X_server.html" title="Category:X server">X server</a></li></ul>
+</div>
+<div id="mw-hidden-catlinks" class="mw-hidden-catlinks mw-hidden-cats-hidden">Hidden category: <ul><li><a href="../en/Category:Pages_or_sections_flagged_with_Template:Expansion.html" title="Category:Pages or sections flagged with Template:Expansion">Pages or sections flagged with Template:Expansion</a></li></ul>
+</div>
+</div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=Multi-pointer_X&amp;oldid=661301">https://wiki.archlinux.org/index.php?title=Multi-pointer_X&amp;oldid=661301</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 17 April 2021, at 15:49.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

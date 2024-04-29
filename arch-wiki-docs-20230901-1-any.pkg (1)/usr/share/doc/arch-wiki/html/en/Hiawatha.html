@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>Hiawatha - ArchWiki</title>
+<link rel="stylesheet" href="../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Hiawatha rootpage-Hiawatha skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Installation" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Installation">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Installation</div>
+			</a>
+			
+			<ul id="toc-Installation-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Configuration" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Configuration">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Configuration</div>
+			</a>
+			
+				<button aria-controls="toc-Configuration-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Configuration subsection
+				</button>
+			
+			<ul id="toc-Configuration-sublist" class="sidebar-toc-list">
+				<li id="toc-Directory_structure" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Directory_structure">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.1</span>Directory structure</div>
+			</a>
+			
+			<ul id="toc-Directory_structure-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Basic_webserver_setup" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Basic_webserver_setup">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.2</span>Basic webserver setup</div>
+			</a>
+			
+			<ul id="toc-Basic_webserver_setup-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-CGI" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#CGI">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.3</span>CGI</div>
+			</a>
+			
+			<ul id="toc-CGI-sublist" class="sidebar-toc-list">
+				<li id="toc-Interpreters_for_CGI_scripts" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Interpreters_for_CGI_scripts">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.3.1</span>Interpreters for CGI scripts</div>
+			</a>
+			
+			<ul id="toc-Interpreters_for_CGI_scripts-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-FastCGI" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#FastCGI">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.4</span>FastCGI</div>
+			</a>
+			
+			<ul id="toc-FastCGI-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Enable_SSL/TLS" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Enable_SSL/TLS">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.5</span>Enable SSL/TLS</div>
+			</a>
+			
+			<ul id="toc-Enable_SSL/TLS-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Reverse_proxy" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Reverse_proxy">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.6</span>Reverse proxy</div>
+			</a>
+			
+			<ul id="toc-Reverse_proxy-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Certificates" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Certificates">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>Certificates</div>
+			</a>
+			
+				<button aria-controls="toc-Certificates-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Certificates subsection
+				</button>
+			
+			<ul id="toc-Certificates-sublist" class="sidebar-toc-list">
+				<li id="toc-Self-signed_certificate" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Self-signed_certificate">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.1</span>Self-signed certificate</div>
+			</a>
+			
+			<ul id="toc-Self-signed_certificate-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Let's_Encrypt_certificate" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Let's_Encrypt_certificate">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.2</span>Let's Encrypt certificate</div>
+			</a>
+			
+			<ul id="toc-Let's_Encrypt_certificate-sublist" class="sidebar-toc-list">
+				<li id="toc-Configure" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Configure">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.2.1</span>Configure</div>
+			</a>
+			
+			<ul id="toc-Configure-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Obtain_a_certificate" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Obtain_a_certificate">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.2.2</span>Obtain a certificate</div>
+			</a>
+			
+			<ul id="toc-Obtain_a_certificate-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Auto_renewal" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Auto_renewal">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.2.3</span>Auto renewal</div>
+			</a>
+			
+			<ul id="toc-Auto_renewal-sublist" class="sidebar-toc-list">
+				<li id="toc-Automation_with_cron" class="sidebar-toc-list-item sidebar-toc-level-4">
+			<a class="sidebar-toc-link" href="#Automation_with_cron">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.2.3.1</span>Automation with cron</div>
+			</a>
+			
+			<ul id="toc-Automation_with_cron-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Automation_with_a_systemd_timer" class="sidebar-toc-list-item sidebar-toc-level-4">
+			<a class="sidebar-toc-link" href="#Automation_with_a_systemd_timer">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.2.3.2</span>Automation with a systemd timer</div>
+			</a>
+			
+			<ul id="toc-Automation_with_a_systemd_timer-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+	</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-See_also" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#See_also">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4</span>See also</div>
+			</a>
+			
+			<ul id="toc-See_also-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../en/Hiawatha.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="mw-list-item"><a href="../en/Talk:Hiawatha.html" rel="discussion" title="Discussion about the content page [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">English</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../en/Hiawatha.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=Hiawatha&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=Hiawatha&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../en/Hiawatha.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Hiawatha&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Hiawatha&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output">
+<p><a rel="nofollow" class="external text" href="https://www.hiawatha-webserver.org/">Hiawatha</a> is an open source <a href="../en/List_of_applications/Internet.html#Web_servers" class="mw-redirect" title="Web server">web server</a> with security, ease of use and lightweight as its three key features. It supports among others <a href="https://en.wikipedia.org/wiki/Common_Gateway_Interface" class="extiw" title="wikipedia:Common Gateway Interface">CGI</a>, <a href="https://en.wikipedia.org/wiki/FastCGI" class="extiw" title="wikipedia:FastCGI">FastCGI</a>, IPv6, URL rewriting and reverse proxy and has security features no other webserver has, like blocking <a href="https://en.wikipedia.org/wiki/SQL_injection" class="extiw" title="wikipedia:SQL injection">SQL injections</a>, <a href="https://en.wikipedia.org/wiki/Cross-site_scripting" class="extiw" title="wikipedia:Cross-site scripting">XSS</a>, <a href="https://en.wikipedia.org/wiki/Cross-site_request_forgery" class="extiw" title="wikipedia:Cross-site request forgery">CSRF</a> and exploit attempts.
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> Hiawatha is no longer actively developed: its creator announced in February 2019 he was <a rel="nofollow" class="external text" href="https://www.hiawatha-webserver.org/weblog/132">scaling down the project</a> started in 2002.</div>
+<mw:tocplace></mw:tocplace>
+<h2><span class="mw-headline" id="Installation">Installation</span></h2>
+<p><a href="../en/Help:Reading.html#Installation_of_packages" class="mw-redirect" title="Install">Install</a> the <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/hiawatha/">hiawatha</a></span><sup><small>AUR</small></sup> package.
+</p>
+<h2><span class="mw-headline" id="Configuration">Configuration</span></h2>
+<h3><span class="mw-headline" id="Directory_structure">Directory structure</span></h3>
+<p>First, to give an overview of the overall directory structure of Hiawatha, the hierarchy suggested by the default configuration is shown below:
+</p>
+<ul>
+<li>
+<code>/etc/hiawatha/</code> - program configuration files</li>
+<li>
+<code>/etc/hiawatha/tls/</code> - website TLS certificate</li>
+<li>
+<code>/srv/http/hiawatha/</code> - root for the default blank website associated with the IP address</li>
+<li>
+<code>/var/lib/hiawatha/</code> - cache for http compression and uploads</li>
+<li>
+<code>/var/log/hiawatha/</code> - log files for the program and the default website</li>
+<li>
+<code>/srv/http/<i>my-domain</i>/public/</code> - website root</li>
+<li>
+<code>/srv/http/<i>my-domain</i>/log/</code> - website log files</li>
+</ul>
+<h3><span class="mw-headline" id="Basic_webserver_setup">Basic webserver setup</span></h3>
+<p>The Hiawatha configuration file is <code>/etc/hiawatha/hiawatha.conf</code>. A configuration file example <code>/etc/hiawatha/hiawatha.conf.sample</code> is provided.
+</p>
+<p>In the sample setup, there is one default website attached to the IP address of the domain, it is a dummy one directing to a blank html page. This is the page IP scanning robots and hackers will face.
+</p>
+<p>Then, the working webservers are defined with <code>VirtualHost</code> sections. Hiawatha can serve more than one webserver and each of these sections describes a different one. For initial testing purpose, you can create one <code>VirtualHost</code> for <i>my-domain</i> and save in its root directory <code>/srv/http/<i>my-domain</i>/public</code> a dummy <code>index.html</code> start file.
+</p>
+<p>Next, <a href="../en/Help:Reading.html#Control_of_systemd_units" class="mw-redirect" title="Enable">enable</a> and <a href="../en/Help:Reading.html#Control_of_systemd_units" class="mw-redirect" title="Start">start</a> <code>hiawatha.service</code> and point your browser to <code>http://<i>my-domain</i></code>. At that stage you should be able to load the website start page.
+</p>
+<p>For further details, see the official <a rel="nofollow" class="external text" href="https://www.hiawatha-webserver.org/howto">how to</a> and the <span class="plainlinks archwiki-template-man" title="$ man 1 hiawatha"><a rel="nofollow" class="external text" href="https://www.hiawatha-webserver.org/manpages/hiawatha">hiawatha(1)</a></span> manual page.
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> Hiawatha supports on-the-fly <a href="https://en.wikipedia.org/wiki/HTTP_compression" class="extiw" title="wikipedia:HTTP compression">gzip content encoding</a>. It will gzip the requested file and cache it on disk in <code>/var/lib/hiawatha/gzipped/</code>. Every time the file is requested again, the already gzipped version from disk will be used. It will notice (timestamp and size) file changes and the cache is cleared upon restart.</div>
+<h3><span class="mw-headline" id="CGI">CGI</span></h3>
+<p><a href="https://en.wikipedia.org/wiki/Common_Gateway_Interface" class="extiw" title="wikipedia:Common Gateway Interface">Common Gateway Interface</a> (<i>CGI</i>) scripts work with Hiawatha out of the box, the CGI module in the <code>VirtualHost</code> section just needs to be enabled as follows:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/hiawatha/hiawatha.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">VirtualHost {
+    ...
+    ExecuteCGI = yes
+}</pre>
+<h4><span class="mw-headline" id="Interpreters_for_CGI_scripts">Interpreters for CGI scripts</span></h4>
+<p>To use CGI scripts in your website, you have to specify the common script file extension and the location of the binary that can run them. This is indicated in the main body of the configuration file:
+</p>
+<pre>CGIhandler = /usr/bin/php-cgi:php
+CGIhandler = /usr/bin/perl:pl
+CGIhandler = /usr/bin/python:py
+</pre>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> The corresponding language interpreters should be installed: for <i>php</i> both <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=php">php</a></span> and <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=php-cgi">php-cgi</a></span> are needed, for <i>python</i> <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=python">python</a></span> is required.</div>
+<p>For further details see the official <a rel="nofollow" class="external text" href="https://www.hiawatha-webserver.org/howto/cgi_and_fastcgi">HowTo</a>.
+</p>
+<h3><span class="mw-headline" id="FastCGI">FastCGI</span></h3>
+<p><a href="../en/Help:Reading.html#Installation_of_packages" class="mw-redirect" title="Install">Install</a> <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=fcgi">fcgi</a></span>.
+</p>
+<p>Hiawatha supports two different methods to send information to the FastCGI process: the webserver can communicate over either a <i>Unix domain socket</i> or a <i>TCP connection</i>. The communication type is defined in the <code>FastCGIServer</code> section via the field <code>ConnectTo</code>.
+</p>
+<h3>
+<span id="Enable_SSL.2FTLS"></span><span class="mw-headline" id="Enable_SSL/TLS">Enable SSL/TLS</span>
+</h3>
+<p>First, a <i>X.509 SSL/TLS</i> certificate is required to use TLS. If you do not have one, you can use a <a href="#Self-signed_certificate">#Self-signed certificate</a> or use one for free from <a href="#Let's_Encrypt_certificate">#Let's Encrypt certificate</a> authority. 
+</p>
+<p>The order of the items in the certificate file must be as follows:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">serverkey.pem</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">-----BEGIN RSA PRIVATE KEY-----
+[webserver private key]
+-----END RSA PRIVATE KEY----- 
+
+-----BEGIN CERTIFICATE-----
+[webserver certificate]
+-----END CERTIFICATE-----
+
+-----BEGIN CERTIFICATE-----
+[optional intermediate CA certificate]
+-----END CERTIFICATE-----
+</pre>
+<p>For SSL/TLS support, the following <code>Binding</code> section that configures Hiawatha to use a certificate for HTTPS connections should be added:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/hiawatha/hiawatha.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">Binding {
+    Port = 443
+    TLScertFile = /etc/hiawatha/tls/serverkey.pem
+}</pre>
+<p>Once it is done, <a href="../en/Help:Reading.html#Control_of_systemd_units" class="mw-redirect" title="Restart">restart</a> <code>hiawatha.service</code>.
+</p>
+<div class="archwiki-template-box archwiki-template-box-tip">
+<strong>Tip:</strong> Hiawatha supports <a href="https://en.wikipedia.org/wiki/Server_Name_Indication" class="extiw" title="wikipedia:Server Name Indication">Server Name Indication</a>, which allows to serve multiple certificates on the same IP address and hence multiple secure websites. To use this functionality, add a <code>TLScertFile</code> setting inside the <code>VirtualHost</code> block for each virtual host that has its own SSL/TLS certificate. The certificate specified in the <code>Binding</code> section is used whenever no virtual host has been defined for a website.
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/hiawatha/hiawatha.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">VirtualHost {
+    Hostname = www.website.org
+    ...
+    TLScertFile = website.pem
+}
+</pre>
+</div>
+<h3><span class="mw-headline" id="Reverse_proxy">Reverse proxy</span></h3>
+<p>Hiawatha's man pages suggest using the following:
+</p>
+<pre>ReverseProxy [!]&lt;pattern&gt; [&lt;skip directories&gt;] http[s]://&lt;hostname&gt;[:&lt;port&gt;][/&lt;path&gt;] [&lt;timeout&gt;] [keep-alive]
+</pre>
+<p><code>&lt;timeout&gt;</code> is the time in seconds Hiawatha tries to connect to the other webservice. Adding <code>keep-alive</code> enables keep-alive connections to the final webserver.
+</p>
+<p>As an example, a webservice reverse proxy configuration which forwards requests from <code>https://service.domain.net</code> to another local running web service on port <code>8181</code> looks like (timout 10s):
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/hiawatha/hiawatha.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">VirtualHost {
+        Hostname = service.domain.net
+        WebsiteRoot = /var/www/domain
+        StartFile = index.html
+        ReverseProxy .* http://127.0.0.1:8181/ 10
+        RequireTLS = yes
+}
+</pre>
+<p>If a UNIX socket is needed instead:
+</p>
+<pre>ReverseProxy .* /unix/socket 10
+</pre>
+<h2><span class="mw-headline" id="Certificates">Certificates</span></h2>
+<h3><span class="mw-headline" id="Self-signed_certificate">Self-signed certificate</span></h3>
+<p>To get a local self-signed certificate for personal use, testing or web development, the procedure in <a href="../en/OpenSSL.html#Generate_a_self-signed_certificate" title="OpenSSL">OpenSSL#Generate a self-signed certificate</a> to create both a private key and a self-signed certificate can be followed.
+</p>
+<p>Make sure you did add the SSL bundle path to your <code>hiawatha.conf</code> as stated in <a href="#Enable_SSL/TLS">#Enable SSL/TLS</a>.
+</p>
+<p>As this solution does not use an official certificate authority (CA), a security exception will need to be added the first time the website is visited.
+</p>
+<h3>
+<span id="Let.27s_Encrypt_certificate"></span><span class="mw-headline" id="Let's_Encrypt_certificate">Let's Encrypt certificate</span>
+</h3>
+<h4><span class="mw-headline" id="Configure">Configure</span></h4>
+<p>Hiawatha provides a script to obtain a <a href="../en/Certbot.html" class="mw-redirect" title="Let’s Encrypt">Let’s Encrypt</a> certificate in an automated fashion using the <a href="https://en.wikipedia.org/wiki/Automated_Certificate_Management_Environment" class="extiw" title="wikipedia:Automated Certificate Management Environment">ACME</a> v2 protocol.
+</p>
+<p>A configuration file example <code>letsencrypt.conf</code> is provided in the directory <code>/usr/lib/hiawatha/letsencrypt</code>. Two steps are needed to setup <i>lefh</i>:
+</p>
+<ol>
+<li>Copy the sample configuration file to the user's area <code>~/.letsencrypt/</code>, typically <code>/root/.letsencrypt/</code> if hiawatha is run as a system service.</li>
+<li>Edit the settings, in particular replace the value of <code>ACCOUNT_EMAIL_ADDRESS</code> by the chosen email address, <i>lefh</i> will not run with the initial example email address.</li>
+</ol>
+<h4><span class="mw-headline" id="Obtain_a_certificate">Obtain a certificate</span></h4>
+<p>The detailed instructions are described in <span class="plainlinks archwiki-template-man" title="$ man 1 lefh"><a rel="nofollow" class="external text" href="https://www.hiawatha-webserver.org/manpages/lefh">lefh(1)</a></span> and the tool's configuration is defined in <code>letsencrypt.conf</code>. In short, there are two steps to get a certificate:
+</p>
+<ol>
+<li>Register an account with the Let's Encrypt certificate authority (CA). An account key file will be created. <pre># lefh register</pre>
+</li>
+<li>Request a website certificate: <i>www.my-domain.org</i> must be the first hostname of a <code>VirtualHost</code>. Any following webserver's hostname will be used as an alternative hostname for the certificate. Note that wildcards can not be used in the hostname: even if Let's Encrypt accept this functionality, it can only be obtained via DNS challenge and this method is not supported by lefh.</li>
+</ol>
+<p>
+The file <code><i>www.my-domain.org</i>.pem</code> will be created. </p>
+<pre># lefh request <i>www.my-domain.org</i></pre>
+<p>If the above succeeds, you can switch from the <i><b>testing</b></i> to the <i><b>production</b></i> CA by changing the <code>LE_CA_HOSTNAME</code> setting in the configuration file and go through the <b>two steps</b> above again. Do not rush into production before making sure the test was successful: letsencrypt enforces rate limit for failed attempts and one may get temporarily banned.
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> Let's Encrypt CA requests a file via HTTP during the challenge operation. This file must be accessible in a location like <code>http://<i>www.my-domain.org</i>/.well-known/acme-challenge/<i>Cl887Wpvc297mfkdNZRuAl48h_FTLnA_ZbhJo3FdExY</i></code>. Therefore your website must be reachable via HTTP: the external port <code>80</code> must be forwarded to your server and a binding to port <code>80</code> must be configured in hiawatha so that Let's Encrypt CA can fetch the challenge.</div>
+<h4><span class="mw-headline" id="Auto_renewal">Auto renewal</span></h4>
+<p>The following command can be used to renew the certificate and restart the server upon renewal:
+</p>
+<pre># lefh renew restart
+</pre>
+<p>By default, the certificate will be renewed whenever it has less than 7 days to go and it will be written in the directory indicated in <code>HIAWATHA_CERT_DIR</code>. The number of days before renewal can be controlled via the <code>RENEWAL_EXPIRE_THRESHOLD</code> setting.
+</p>
+<p>A daily schedule of this script is appropriate as no action will be taken anyway before the threshold is reached.
+This daily automation can be achieved using either <a href="../en/Cron.html" title="Cron">cron</a> or <a href="../en/Systemd/Timers.html" title="Systemd/Timers">systemd/Timers</a>:
+</p>
+<h5><span class="mw-headline" id="Automation_with_cron">Automation with cron</span></h5>
+<p>In order to automate the renewal of the certificate, schedule a cronjob for the root user to run the command line above.
+</p>
+<h5><span class="mw-headline" id="Automation_with_a_systemd_timer">Automation with a systemd timer</span></h5>
+<p>A <a href="../en/Systemd/Timers.html" class="mw-redirect" title="Systemd timer">systemd timer</a> can be used for the repetition of the renewal process:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/systemd/system/lefh-renew.service</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">[Unit]
+Description=Renew Let's Encrypt certificates for Hiawatha
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+User=root
+WorkingDirectory=/tmp
+Type=oneshot
+ExecStart=/usr/bin/lefh renew restart</pre>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/systemd/system/lefh-renew.timer</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">[Unit]
+Description=Daily renewal of Let's Encrypt's certificates for Hiawatha
+
+[Timer]
+OnCalendar=daily
+# Be kind to the Let's Encrypt servers: add a random delay of 12 hours
+RandomizedDelaySec=12h
+Persistent=true
+
+[Install]
+WantedBy=timers.target</pre>
+<p><a href="../en/Help:Reading.html#Control_of_systemd_units" class="mw-redirect" title="Start">Start</a> and <a href="../en/Help:Reading.html#Control_of_systemd_units" class="mw-redirect" title="Enable">enable</a> <code>lefh-renew.timer</code>.
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> The service waits for the network to be up and online, for more information on the implementation of the network dependency, see <a href="../en/Systemd.html#Running_services_after_the_network_is_up" title="Systemd">systemd#Running services after the network is up</a>.</div>
+<h2><span class="mw-headline" id="See_also">See also</span></h2>
+<ul>
+<li><a rel="nofollow" class="external text" href="https://www.hiawatha-webserver.org/support">Hiawatha Support page</a></li>
+<li><a rel="nofollow" class="external text" href="https://gitlab.com/hsleisink/hiawatha">Hiawatha on GitLab</a></li>
+</ul>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="../en/Category:Web_server.html" title="Category:Web server">Web server</a></li></ul>
+</div></div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=Hiawatha&amp;oldid=776060">https://wiki.archlinux.org/index.php?title=Hiawatha&amp;oldid=776060</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 22 April 2023, at 18:52.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

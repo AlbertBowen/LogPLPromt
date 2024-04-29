@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>ThinkPad mobile Internet - ArchWiki</title>
+<link rel="stylesheet" href="../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-ThinkPad_mobile_Internet rootpage-ThinkPad_mobile_Internet skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-ModemManager-handled_devices" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#ModemManager-handled_devices">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>ModemManager-handled devices</div>
+			</a>
+			
+			<ul id="toc-ModemManager-handled_devices-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-QMI_protocol_modems" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#QMI_protocol_modems">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>QMI protocol modems</div>
+			</a>
+			
+				<button aria-controls="toc-QMI_protocol_modems-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle QMI protocol modems subsection
+				</button>
+			
+			<ul id="toc-QMI_protocol_modems-sublist" class="sidebar-toc-list">
+				<li id="toc-Requirements" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Requirements">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.1</span>Requirements</div>
+			</a>
+			
+			<ul id="toc-Requirements-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Procedure" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Procedure">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.2</span>Procedure</div>
+			</a>
+			
+			<ul id="toc-Procedure-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Gobi_modems" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Gobi_modems">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>Gobi modems</div>
+			</a>
+			
+			<ul id="toc-Gobi_modems-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Getting_around_BIOS-level_whitelist_restrictions" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Getting_around_BIOS-level_whitelist_restrictions">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4</span>Getting around BIOS-level whitelist restrictions</div>
+			</a>
+			
+				<button aria-controls="toc-Getting_around_BIOS-level_whitelist_restrictions-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Getting around BIOS-level whitelist restrictions subsection
+				</button>
+			
+			<ul id="toc-Getting_around_BIOS-level_whitelist_restrictions-sublist" class="sidebar-toc-list">
+				<li id="toc-Settings_for_Sierra_Wireless_EM7455" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Settings_for_Sierra_Wireless_EM7455">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.1</span>Settings for Sierra Wireless EM7455</div>
+			</a>
+			
+			<ul id="toc-Settings_for_Sierra_Wireless_EM7455-sublist" class="sidebar-toc-list">
+				<li id="toc-General_description" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#General_description">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.1.1</span>General description</div>
+			</a>
+			
+			<ul id="toc-General_description-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Step-by-step" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Step-by-step">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.1.2</span>Step-by-step</div>
+			</a>
+			
+			<ul id="toc-Step-by-step-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Remarks" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Remarks">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.1.3</span>Remarks</div>
+			</a>
+			
+			<ul id="toc-Remarks-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Troubleshooting" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Troubleshooting">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5</span>Troubleshooting</div>
+			</a>
+			
+				<button aria-controls="toc-Troubleshooting-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Troubleshooting subsection
+				</button>
+			
+			<ul id="toc-Troubleshooting-sublist" class="sidebar-toc-list">
+				<li id="toc-WWAN/LTE_GUI" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#WWAN/LTE_GUI">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5.1</span>WWAN/LTE GUI</div>
+			</a>
+			
+			<ul id="toc-WWAN/LTE_GUI-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Invalid_Transition" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Invalid_Transition">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5.2</span>Invalid Transition</div>
+			</a>
+			
+			<ul id="toc-Invalid_Transition-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-See_also" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#See_also">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6</span>See also</div>
+			</a>
+			
+			<ul id="toc-See_also-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../en/ThinkPad_mobile_Internet.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="mw-list-item"><a href="../en/Talk:ThinkPad_mobile_Internet.html" rel="discussion" title="Discussion about the content page [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">English</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../en/ThinkPad_mobile_Internet.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=ThinkPad_mobile_Internet&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=ThinkPad_mobile_Internet&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../en/ThinkPad_mobile_Internet.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=ThinkPad_mobile_Internet&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=ThinkPad_mobile_Internet&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output">
+<p>Many Lenovo ThinkPads come with a mobile broadband modem. By inserting a SIM card into the modem, it is possible to use a cellular network to connect to the internet.
+</p>
+<mw:tocplace></mw:tocplace>
+<h2><span class="mw-headline" id="ModemManager-handled_devices">ModemManager-handled devices</span></h2>
+<p>Newer Quectel modems (for example, the Quectel EM120R-GL on X13 Gen2 and X1C Gen9) can be set by <a href="../en/Mobile_broadband_modem.html#ModemManager" class="mw-redirect" title="ModemManager">ModemManager</a>.
+</p>
+<p><a href="../en/Help:Reading.html#Installation_of_packages" class="mw-redirect" title="Install">Install</a> <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=modemmanager">modemmanager</a></span>, then <a href="../en/Help:Reading.html#Control_of_systemd_units" class="mw-redirect" title="Start">start</a> and <a href="../en/Help:Reading.html#Control_of_systemd_units" class="mw-redirect" title="Enable">enable</a> <code>ModemManager.service</code>.
+</p>
+<p>Then it can be set via CLI or GUI interface.
+</p>
+<p>For example, on KDE Plasma:
+</p>
+<p>In <i>System Settings &gt; Connections</i>, click the plus sign in the lower right corner to create a new link, select <i>Mobile Broadband &gt; Create</i>, follow the steps below:
+</p>
+<p><i>Set up mobile broadband connection &gt; any GSM device</i>
+</p>
+<p><i>Country &gt; country_code</i>
+</p>
+<p><i>Provider &gt; provider_name</i>
+</p>
+<p><i>Select your plan &gt; My plan is not listed</i>
+</p>
+<p><i>APN &gt; apn.number</i>
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> The provider and APN can be found in Windows under <i>Settings &gt; Network and Internet &gt; Cellular Network &gt; Carrier Settings</i>: provider can be found in <i>Active Network</i>, and the APN can be found in <i>Internet APN &gt; Default Access Point &gt; Views</i>
+</div>
+<h2><span class="mw-headline" id="QMI_protocol_modems">QMI protocol modems</span></h2>
+<h3><span class="mw-headline" id="Requirements">Requirements</span></h3>
+<p>The broadband modems in older ThinkPads use the QMI modem protocol — see <a rel="nofollow" class="external text" href="https://sigquit.wordpress.com/2012/08/20/an-introduction-to-libqmi/">"an introduction to libqmi"</a> by a ModemManager developer for more information. These modems will show up as <code>/dev/cdc-wdm</code> on the filesystem.
+</p>
+<p>It is not possible to initialize a QMI modem for use on Linux. Use Windows to activate the modem using <a rel="nofollow" class="external text" href="https://support.lenovo.com/us/en/downloads/migr-68495">Lenovo's activation app</a> (or web search for "Lenovo mobile broadband" for the correct app for your modem). The modem will not work until it has been correctly initialized using the app.
+</p>
+<h3><span class="mw-headline" id="Procedure">Procedure</span></h3>
+<p><a href="../en/Help:Reading.html#Installation_of_packages" class="mw-redirect" title="Install">Install</a> the <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=libqmi">libqmi</a></span> package, which provides the <code>qmicli</code> and <code>qmi-network</code> programs. Also install <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=net-tools">net-tools</a></span> for the helper script, which uses the <code>ifconfig</code> command.
+</p>
+<p>Said <a rel="nofollow" class="external text" href="https://github.com/penguin2716/qmi_setup/blob/master/qmi_setup.sh">helper script</a> for <code>qmi-network</code> is available on GitHub. Save the script to somewhere in your <code>$PATH</code>, then review the script and make it <a href="../en/Help:Reading.html#Make_executable" class="mw-redirect" title="Executable">executable</a>. The values of some of the variables might need to be changed, especially <code>WWAN_DEV</code> which can be found via <code>ip a</code> (device name start with <code>ww</code>).
+</p>
+<p>Load the kernel modules <code>qmi_wwan</code> and <code>qcserial</code>:
+</p>
+<pre># modprobe qmi_wwan
+# modprobe qcserial
+</pre>
+<p>Also read the README on the <a rel="nofollow" class="external text" href="https://github.com/penguin2716/qmi_setup">GitHub page of the QMI helper</a> for any further prerequisites. In particular, you may need to set the APN provided by your cellular internet provider in <code>/etc/qmi-network.conf</code>.
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/qmi-network.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">APN=foo.bar.net</pre>
+<p>Finally, running <code>qmi_setup.sh start</code> should start the cellular internet connection.
+</p>
+<h2><span class="mw-headline" id="Gobi_modems">Gobi modems</span></h2>
+<p>This method is an alternative for some <a href="#QMI_protocol_modems">QMI modems</a>. 
+</p>
+<p>First of all you need to make sure what model your modem is. Open your ThinkPad's backplate and look for an IC or FCC ID. For this example we are going to use GOBI2000 (IC: 2723A-GOBI2000, FCC ID: J9CGOBI2000-L)
+</p>
+<p>Enable your modem device from you BIOS I/O settings.
+</p>
+<p>Download the driver installer executable from <a rel="nofollow" class="external free" href="https://support.lenovo.com/us/en/downloads/ds001302">https://support.lenovo.com/us/en/downloads/ds001302</a> and extract it with Wine. It will unpack the drivers to <code>~/.wine/drive_c/DRIVERS/WWANQL</code>. The unpacker will prompt you to install the drivers automatically after unpacking, but if you need the installer again it is <code>GobiInstaller.msi</code> in previously mentioned folder. The installer will in turn unpack the firmware images to <code>~/.wine/drive_c/Program\ Files\ \(x86\)/QUALCOMM/Images/Lenovo</code>. 
+</p>
+<p>Now refer to the reference information on what firmware you want/need. Generally you are good to go with the Generic UMTS and Default Firmware (Forlders 6 an UMTS). 
+</p>
+<p><a href="../en/Help:Reading.html#Installation_of_packages" class="mw-redirect" title="Install">Install</a> <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/gobi-loader/">gobi-loader</a></span><sup><small>AUR</small></sup>. Now copy the 3 previous firmware files to <code>/lib/firmware/gobi</code> (if the folder does not exist, create it). Insert your sim card to the port found under your battery pack and restart. Your modem should now show up in your network manager.
+</p>
+<div class="archwiki-template-box archwiki-template-box-tip">
+<strong>Tip:</strong> Some firmwares are provided by the <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/gobi-firmware/">gobi-firmware</a></span><sup><small>AUR</small></sup> package.</div>
+<p>See: <a rel="nofollow" class="external free" href="https://www.thinkwiki.org/wiki/Qualcomm_Gobi_2000">https://www.thinkwiki.org/wiki/Qualcomm_Gobi_2000</a>
+</p>
+<h2><span class="mw-headline" id="Getting_around_BIOS-level_whitelist_restrictions">Getting around BIOS-level whitelist restrictions</span></h2>
+<p>In newer ThinkPad models, it is normally impossible to swap the LTE modem for a supported one due to BIOS-level restrictions ("whitelists" of allowed M.2 expansion cards) implemented in all modern Lenovo laptops. However, a method has been found to configure any Sierra Wireless EM73xx/EM74xx modem to "evade" the whitelist checks, so these modems can be used normally.
+</p>
+<p>We will assume the model to be <code>Sierra Wireless EM7455</code> here.
+</p>
+<h3><span class="mw-headline" id="Settings_for_Sierra_Wireless_EM7455">Settings for Sierra Wireless EM7455</span></h3>
+<h4><span class="mw-headline" id="General_description">General description</span></h4>
+<p>Use <code>AT!CUSTOM="FASTENUMEN",0</code> AT command to disable the modem's <i>USB fast enumeration</i> feature. The modem will take a significantly longer time to appear on the USB bus and the firmware will "miss" the modem at boot time.
+</p>
+<p>Alternatively, use <code>AT!CUSTOM="FASTENUMEN",2</code> to selectively enable <i>USB fast enumeration</i> for warm boots only. The modem will reappear faster on S3 resume but still evade the whitelist checks on regular boots <i>and</i> reboots (the mechanism of this effect is not fully clear to the author).
+</p>
+<p>This comes with a downside: because the firmware does not "see" the modem, it will not export the <a href="../en/Network_configuration/Wireless.html#Rfkill_caveat" class="mw-redirect" title="Wireless network configuration">WWAN rfkill</a> but instead it will unconditionally assert the <code>W_DISABLE</code> pin of the M.2 slot, forcing the modem into "airplane mode".
+Use <code>AT!PCOFFEN=2</code> AT command to configure the modem to ignore this pin.
+</p>
+<h4><span class="mw-headline" id="Step-by-step">Step-by-step</span></h4>
+<p>Boot the laptop with the stock modem in place and WWAN card access enabled in BIOS setup.
+</p>
+<p>Suspend the laptop (make sure it is configured to use S3).
+</p>
+<p>Hot-swap the stock Fibocom modem with the Sierra Wireless one, then resume. Whitelists are not consulted at S3 resume.
+</p>
+<p>Check that the modem is present on the USB bus:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;"># lsusb</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">&lt;...&gt;
+Bus 001 Device 004: ID 1199:9071 Sierra Wireless, Inc.
+&lt;...&gt;
+</pre>
+<p>Remember the VID (vendor ID) of the modem (<code>1199</code> in this example).
+</p>
+<p><a href="../en/Help:Reading.html#Control_of_systemd_units" class="mw-redirect" title="Stop">Stop</a> <code>ModemManager.service</code> if it is running.
+</p>
+<p>Optionally, update the modem firmware with the <code>qmi-firmware-update</code> tool:
+</p>
+<pre># cd /path/to/extracted/firmware
+# qmi-firmware-update -d 1199 -u *.cwe *.nvu
+</pre>
+<p>Change the modem's USB composition to enable AT command ports:
+</p>
+<pre># qmicli -d /dev/cdc-wdm1 --dms-swi-set-usb-composition=8
+</pre>
+<p>Power-cycle the modem as advised by <code>qmicli</code>:
+</p>
+<pre># qmicli -d /dev/cdc-wdm1 --dms-set-operating-mode=offline
+# qmicli -d /dev/cdc-wdm1 --dms-set-operating-mode=reset
+</pre>
+<p>Wait for the modem to reappear, then verify:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;"># qmicli -d /dev/cdc-wdm1 --dms-swi-get-usb-composition</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">[/dev/cdc-wdm1] Successfully retrieved USB compositions:
+            USB composition 6: DM, NMEA, AT, QMI
+        [*] USB composition 8: DM, NMEA, AT, MBIM
+            USB composition 9: MBIM
+</pre>
+<p>Verify that the three serial ports <code>/dev/ttyUSB0</code>, <code>/dev/ttyUSB1</code> and <code>/dev/ttyUSB2</code> are now available (assuming you do not have any other USB-serial converters plugged in):
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;"># ls -l /dev/ttyUSB*</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">crw-rw---- 1 root uucp 188, 0 Feb 14 20:11 /dev/ttyUSB0
+crw-rw---- 1 root uucp 188, 1 Feb 14 20:11 /dev/ttyUSB1
+crw-rw---- 1 root uucp 188, 2 Feb 14 20:11 /dev/ttyUSB2
+</pre>
+<p>Attach to <code>/dev/ttyUSB2</code> with a serial terminal emulator of your choice (e. g. <code>screen</code>):
+</p>
+<pre># screen /dev/ttyUSB2 115200
+</pre>
+<p>Enter the AT commands (note that you do not need to type <code>OK</code>, the replies are included here as part of a session transcript):
+</p>
+<p>Enable command echo (if echo is initially disabled, you will not see this command as you type it):
+</p>
+<pre>ATE1
+OK
+</pre>
+<p>Unlock engineering commands:
+</p>
+<pre>AT!ENTERCND="A710"
+OK
+</pre>
+<p>Check customization options (these are the author's options):
+</p>
+<pre>AT!CUSTOM?
+!CUSTOM: 
+             GPSENABLE          0x01
+             GPSSEL             0x01
+             IPV6ENABLE         0x01
+             SIMLPM             0x01
+             SINGLEAPNSWITCH    0x01
+
+
+OK
+</pre>
+<p>Configure <i>USB fast enumeration</i> (swap <code>2</code> for <code>0</code> if you want to play it safe):
+</p>
+<pre>AT!CUSTOM="FASTENUMEN",2
+OK
+</pre>
+<p>Verify, it should now show the <code>FASTENUMEN</code> option alongside others:
+</p>
+<pre>AT!CUSTOM?
+!CUSTOM: 
+             GPSENABLE          0x01
+             GPSSEL             0x01
+             IPV6ENABLE         0x01
+             SIMLPM             0x01
+             FASTENUMEN         0x02
+             SINGLEAPNSWITCH    0x01
+
+
+OK
+</pre>
+<p>Configure the modem to ignore W_DISABLE:
+</p>
+<pre>AT!PCOFFEN=2
+OK
+</pre>
+<p>Verify:
+</p>
+<pre>AT!PCOFFEN?
+2
+   
+OK
+</pre>
+<p>Reset the modem:
+</p>
+<pre>AT!RESET
+OK
+</pre>
+<p>the terminal will disconnect after a while.
+</p>
+<p>Wait for the modem to reappear, then verify configuration by rebooting / powering down / hard resetting the laptop.
+</p>
+<h4><span class="mw-headline" id="Remarks">Remarks</span></h4>
+<p>For more information (including the original thought process that led to this discovery), see these <a rel="nofollow" class="external text" href="https://forums.lenovo.com/t5/Ubuntu/X1C-gen-6-Fibocom-L850-GL-Ubuntu-18-04/m-p/4078413?page=5#4307332">lenovo</a> <a rel="nofollow" class="external text" href="https://forums.lenovo.com/t5/Linux-Discussion/Getting-Sierra-EM7455-and-similar-to-work-on-X1C6/td-p/4326043">threads</a> and this <a rel="nofollow" class="external text" href="https://www.reddit.com/r/thinkpad/comments/a3yd2j/sierra_wireless_em7455_seems_working_with_my/">reddit</a> thread.
+</p>
+<p>You may also apply other useful configuration options described <a rel="nofollow" class="external text" href="https://github.com/danielewood/sierra-wireless-modems">here</a>.
+</p>
+<h2><span class="mw-headline" id="Troubleshooting">Troubleshooting</span></h2>
+<p>Ensure that you have initialized the modem on Windows.
+</p>
+<h3>
+<span id="WWAN.2FLTE_GUI"></span><span class="mw-headline" id="WWAN/LTE_GUI">WWAN/LTE GUI</span>
+</h3>
+<p>Install <a href="../en/NetworkManager.html" title="NetworkManager">NetworkManager</a> and <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=network-manager-applet">network-manager-applet</a></span> to make your life easier finding the correct APN for your SIM card.
+</p>
+<h3><span class="mw-headline" id="Invalid_Transition">Invalid Transition</span></h3>
+<p>If you get an error <code>Invalid Transition</code> when running <code>mmcli -m 0 -e</code>, you have not yet activated the modem.
+</p>
+<h2><span class="mw-headline" id="See_also">See also</span></h2>
+<ul><li><a rel="nofollow" class="external text" href="https://www.thinkwiki.org">Thinkwiki</a></li></ul>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../Special:Categories.html" title="Special:Categories">Categories</a>: <ul>
+<li><a href="../en/Category:Lenovo.html" title="Category:Lenovo">Lenovo</a></li>
+<li><a href="../en/Category:Modems.html" title="Category:Modems">Modems</a></li>
+</ul>
+</div></div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=ThinkPad_mobile_Internet&amp;oldid=783444">https://wiki.archlinux.org/index.php?title=ThinkPad_mobile_Internet&amp;oldid=783444</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 19 July 2023, at 15:12.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

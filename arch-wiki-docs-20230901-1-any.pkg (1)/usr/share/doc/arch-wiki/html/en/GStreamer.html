@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>GStreamer - ArchWiki</title>
+<link rel="stylesheet" href="../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-GStreamer rootpage-GStreamer skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Installation" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Installation">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Installation</div>
+			</a>
+			
+			<ul id="toc-Installation-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Usage" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Usage">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Usage</div>
+			</a>
+			
+				<button aria-controls="toc-Usage-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Usage subsection
+				</button>
+			
+			<ul id="toc-Usage-sublist" class="sidebar-toc-list">
+				<li id="toc-Using_gst-launch-1.0" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Using_gst-launch-1.0">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.1</span>Using gst-launch-1.0</div>
+			</a>
+			
+			<ul id="toc-Using_gst-launch-1.0-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Using_gst-discoverer-1.0" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Using_gst-discoverer-1.0">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.2</span>Using gst-discoverer-1.0</div>
+			</a>
+			
+			<ul id="toc-Using_gst-discoverer-1.0-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Integration" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Integration">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>Integration</div>
+			</a>
+			
+				<button aria-controls="toc-Integration-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Integration subsection
+				</button>
+			
+			<ul id="toc-Integration-sublist" class="sidebar-toc-list">
+				<li id="toc-PulseAudio" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#PulseAudio">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.1</span>PulseAudio</div>
+			</a>
+			
+			<ul id="toc-PulseAudio-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-PipeWire" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#PipeWire">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.2</span>PipeWire</div>
+			</a>
+			
+			<ul id="toc-PipeWire-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-KDE_/_Phonon_integration" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#KDE_/_Phonon_integration">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.3</span>KDE / Phonon integration</div>
+			</a>
+			
+			<ul id="toc-KDE_/_Phonon_integration-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Hardware_video_acceleration" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Hardware_video_acceleration">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.4</span>Hardware video acceleration</div>
+			</a>
+			
+			<ul id="toc-Hardware_video_acceleration-sublist" class="sidebar-toc-list">
+				<li id="toc-Ignore_driver_whitelist" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Ignore_driver_whitelist">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.4.1</span>Ignore driver whitelist</div>
+			</a>
+			
+			<ul id="toc-Ignore_driver_whitelist-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Verify_VA-API_support" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Verify_VA-API_support">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.4.2</span>Verify VA-API support</div>
+			</a>
+			
+			<ul id="toc-Verify_VA-API_support-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Verify_NVDECODE/NVENCODE_support" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Verify_NVDECODE/NVENCODE_support">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.4.3</span>Verify NVDECODE/NVENCODE support</div>
+			</a>
+			
+			<ul id="toc-Verify_NVDECODE/NVENCODE_support-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Set_decoder_ranks" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Set_decoder_ranks">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.4.4</span>Set decoder ranks</div>
+			</a>
+			
+			<ul id="toc-Set_decoder_ranks-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-See_also" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#See_also">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4</span>See also</div>
+			</a>
+			
+			<ul id="toc-See_also-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../en/GStreamer.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="mw-list-item"><a href="../en/Talk:GStreamer.html" rel="discussion" title="Discussion about the content page [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">English</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../en/GStreamer.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=GStreamer&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=GStreamer&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../en/GStreamer.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=GStreamer&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=GStreamer&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output">
+<p><a href="https://en.wikipedia.org/wiki/GStreamer" class="extiw" title="wikipedia:GStreamer">GStreamer</a> is a pipeline-based multimedia framework written in the C programming language with the type system based on GObject.
+</p>
+<p>GStreamer allows a programmer to create a variety of media-handling components, including simple audio playback, audio and video playback, recording, streaming and editing. The pipeline design serves as a base to create many types of multimedia applications such as video editors, streaming media broadcasters, and media players.
+</p>
+<p>Designed to be cross-platform, it is known to work on Linux (x86, PowerPC and ARM), Solaris (Intel and SPARC), macOS, Microsoft Windows and OS/400. GStreamer has bindings for programming-languages like <a href="../en/Python.html" title="Python">Python</a>, C++, Perl, GNU Guile (<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=guile">guile</a></span>), and <a href="../en/Ruby.html" title="Ruby">Ruby</a>. GStreamer is free software, licensed under the GNU Lesser General Public License.
+</p>
+<mw:tocplace></mw:tocplace>
+<h2><span class="mw-headline" id="Installation">Installation</span></h2>
+<p><a href="../en/Help:Reading.html#Installation_of_packages" class="mw-redirect" title="Install">Install</a> the <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=gstreamer">gstreamer</a></span> package.
+</p>
+<p>To make GStreamer useful, install the plugins packages you require. See <a rel="nofollow" class="external text" href="https://gstreamer.freedesktop.org/documentation/plugins_doc.html">official documentation</a> for list of features in each plugin.
+</p>
+<ul>
+<li>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=gst-libav">gst-libav</a></span> - Libav-based plugin containing many decoders and encoders.</li>
+<li>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=gst-plugins-bad">gst-plugins-bad</a></span> - Plugins that need more quality, testing or documentation.</li>
+<li>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=gst-plugins-base">gst-plugins-base</a></span> - Essential exemplary set of elements.</li>
+<li>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=gst-plugins-good">gst-plugins-good</a></span> - Good-quality plugins under LGPL license.</li>
+<li>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=gst-plugins-ugly">gst-plugins-ugly</a></span> - Good-quality plugins that might pose distribution problems.</li>
+<li>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/gst-plugin-libde265/">gst-plugin-libde265</a></span><sup><small>AUR</small></sup><sup>[<a href="../en/Help:Procedures.html#Fix_broken_package_links" title="Help:Procedures">broken link</a>: package not found]</sup> - <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=libde265">libde265</a></span> plugin (an open h.265 video codec implementation) for gstreamer.</li>
+<li>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/gst-plugin-openh264/">gst-plugin-openh264</a></span><sup><small>AUR</small></sup> - H.264 support.</li>
+</ul>
+<h2><span class="mw-headline" id="Usage">Usage</span></h2>
+<h3><span class="mw-headline" id="Using_gst-launch-1.0">Using gst-launch-1.0</span></h3>
+<p>A helpful tool of GStreamer is the <span class="plainlinks archwiki-template-man" title="$ man 1 gst-launch-1.0"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/gst-launch-1.0.1">gst-launch-1.0(1)</a></span> command. It is an extremely versatile command line tool to create GStreamer pipelines. It is very similar to and can do many of the things the <a href="../en/FFmpeg.html" title="FFmpeg">FFmpeg</a> command can do. Here are some examples:
+</p>
+<p>Convert an MP4 file to MKV:
+</p>
+<pre>$ gst-launch-1.0 filesrc location=source.mp4 ! qtdemux name=demux matroskamux name=mux ! filesink location=dest.mkv  demux.audio_0 ! queue ! aacparse ! queue ! mux.audio_0  demux.video_0 ! queue ! h264parse ! queue ! mux.video_0
+</pre>
+<h3><span class="mw-headline" id="Using_gst-discoverer-1.0">Using gst-discoverer-1.0</span></h3>
+<p>Another helpful tool is <span class="plainlinks archwiki-template-man" title="$ man 1 gst-discoverer-1.0"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/gst-discoverer-1.0.1">gst-discoverer-1.0(1)</a></span>, which is the GStreamer equivalent of FFmpeg's <span class="plainlinks archwiki-template-man" title="$ man 1 ffprobe"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/ffprobe.1">ffprobe(1)</a></span>.
+</p>
+<p>Get info on a video file:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">$ gst-discoverer-1.0 file.mp4</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">Properties:
+  Duration: 0:02:55.613000000
+  Seekable: yes
+  Live: no
+  container: Quicktime
+    audio: MPEG-4 AAC
+      Stream ID: c910ef2fa357f9f4ad365aebc98cfca88d23fdca99d832645f5113efa43b0cd3/002
+      Language: &lt;unknown&gt;
+      Channels: 2 (front-left, front-right)
+      Sample rate: 44100
+      Depth: 16
+      Bitrate: 125588
+      Max bitrate: 125588
+    video: H.264 (Constrained Baseline Profile)
+      Stream ID: c910ef2fa357f9f4ad365aebc98cfca88d23fdca99d832645f5113efa43b0cd3/001
+      Width: 192
+      Height: 144
+      Depth: 24
+      Frame rate: 15000/1001
+      Pixel aspect ratio: 1/1
+      Interlaced: false
+      Bitrate: 107884
+      Max bitrate: 107884</pre>
+<h2><span class="mw-headline" id="Integration">Integration</span></h2>
+<h3><span class="mw-headline" id="PulseAudio">PulseAudio</span></h3>
+<p><a href="../en/PulseAudio.html" title="PulseAudio">PulseAudio</a> support is provided by the <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=gst-plugins-good">gst-plugins-good</a></span> package.
+</p>
+<h3><span class="mw-headline" id="PipeWire">PipeWire</span></h3>
+<p><a href="../en/PipeWire.html" title="PipeWire">PipeWire</a> support is provided by the <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=gst-plugin-pipewire">gst-plugin-pipewire</a></span> package.
+</p>
+<h3>
+<span id="KDE_.2F_Phonon_integration"></span><span class="mw-headline" id="KDE_/_Phonon_integration">KDE / Phonon integration</span>
+</h3>
+<p>See <a href="../en/KDE.html#Phonon" class="mw-redirect" title="Phonon">Phonon</a>.
+</p>
+<h3><span class="mw-headline" id="Hardware_video_acceleration">Hardware video acceleration</span></h3>
+<p>See <a href="../en/Hardware_video_acceleration.html" title="Hardware video acceleration">Hardware video acceleration</a>.
+</p>
+<p>GStreamer will automatically detect and use the correct API <a rel="nofollow" class="external autonumber" href="https://gstreamer.freedesktop.org/documentation/tutorials/playback/hardware-accelerated-video-decoding.html">[1]</a>. Depending on the system <a href="../en/Help:Reading.html#Installation_of_packages" class="mw-redirect" title="Install">install</a>:
+</p>
+<ul>
+<li>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=gstreamer-vaapi">gstreamer-vaapi</a></span> for <a href="../en/Hardware_video_acceleration.html" class="mw-redirect" title="VA-API">VA-API</a> support.</li>
+<li>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=gst-plugins-bad">gst-plugins-bad</a></span> and <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=nvidia-utils">nvidia-utils</a></span> for NVDECODE/NVENCODE support.</li>
+</ul>
+<p>If the new elements do not show up after installing the packages, you may want to delete and rebuild the plugin registry. Usually it suffices to
+</p>
+<pre>$ rm ~/.cache/gstreamer-1.0/registry.*.bin
+</pre>
+<p>Gstreamer will then rebuild the registry on the next invocation, which usually takes a few seconds.
+</p>
+<h4><span class="mw-headline" id="Ignore_driver_whitelist">Ignore driver whitelist</span></h4>
+<p>GStreamer <a rel="nofollow" class="external text" href="https://gitlab.freedesktop.org/gstreamer/gstreamer-vaapi/-/blob/master/gst/vaapi/gstvaapipluginutil.c#L952">uses a whitelist</a> of VA-API drivers. To ignore the whitelist and allow support for other drivers, set <code>GST_VAAPI_ALL_DRIVERS=1</code> as <a href="../en/Environment_variables.html" class="mw-redirect" title="Environment variable">environment variable</a>.
+</p>
+<h4><span class="mw-headline" id="Verify_VA-API_support">Verify VA-API support</span></h4>
+<p>To verify VA-API support:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">$ gst-inspect-1.0 vaapi</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">Plugin Details:
+  Name                     vaapi
+  Description              VA-API based elements
+  Filename                 /usr/lib/gstreamer-1.0/libgstvaapi.so
+  Version                  <i>version</i>
+  License                  LGPL
+  Source module            gstreamer-vaapi
+  Documentation            https://gstreamer.freedesktop.org/documentation/vaapi/
+  Source release date      <i>date</i>
+  Binary package           gstreamer-vaapi
+  Origin URL               https://archlinux.org/
+
+  vaapiav1dec: VA-API AV1 decoder
+  vaapidecodebin: VA-API Decode Bin
+  vaapih264dec: VA-API H264 decoder
+  vaapih264enc: VA-API H264 encoder
+  vaapih265dec: VA-API H265 decoder
+  vaapih265enc: VA-API H265 encoder
+  vaapijpegdec: VA-API JPEG decoder
+  vaapimpeg2dec: VA-API MPEG2 decoder
+  vaapipostproc: VA-API video postprocessing
+  vaapisink: VA-API sink
+  vaapivc1dec: VA-API VC1 decoder
+  vaapivp9dec: VA-API VP9 decoder
+
+  12 features:
+  +-- 12 elements</pre>
+<h4>
+<span id="Verify_NVDECODE.2FNVENCODE_support"></span><span class="mw-headline" id="Verify_NVDECODE/NVENCODE_support">Verify NVDECODE/NVENCODE support</span>
+</h4>
+<p>To verify NVDECODE/NVENCODE support:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">$ gst-inspect-1.0 nvcodec</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">Plugin Details:
+  Name                     nvcodec
+  Description              GStreamer NVCODEC plugin
+  Filename                 /usr/lib/gstreamer-1.0/libgstnvcodec.so
+  Version                  <i>version</i>
+  License                  LGPL
+  Source module            gst-plugins-bad
+  Source release date      <i>date</i>
+  Binary package           GStreamer Bad Plugins (Arch Linux)
+  Origin URL               https://archlinux.org/
+
+  cudadownload: CUDA downloader
+  cudaupload: CUDA uploader
+  nvautogpuh264enc: NVENC H.264 Video Encoder Auto GPU select Mode
+  nvautogpuh265enc: NVENC H.265 Video Encoder Auto GPU select Mode
+  nvav1dec: NVDEC AV1 Decoder
+  nvcudah264enc: NVENC H.264 Video Encoder CUDA Mode
+  nvcudah265enc: NVENC H.265 Video Encoder CUDA Mode
+  nvh264dec: NVDEC h264 Video Decoder
+  nvh264enc: NVENC H.264 Video Encoder
+  nvh264sldec: NVDEC H.264 Stateless Decoder
+  nvh265dec: NVDEC h265 Video Decoder
+  nvh265enc: NVENC HEVC Video Encoder
+  nvh265sldec: NVDEC H.265 Stateless Decoder
+  nvjpegdec: NVDEC jpeg Video Decoder
+  nvmpeg2videodec: NVDEC mpeg2video Video Decoder
+  nvmpeg4videodec: NVDEC mpeg4video Video Decoder
+  nvmpegvideodec: NVDEC mpegvideo Video Decoder
+  nvvp8dec: NVDEC vp8 Video Decoder
+  nvvp8sldec: NVDEC VP8 Stateless Decoder
+  nvvp9dec: NVDEC vp9 Video Decoder
+  nvvp9sldec: NVDEC VP9 Stateless Decoder
+
+  21 features:
+  +-- 21 elements</pre>
+<h4><span class="mw-headline" id="Set_decoder_ranks">Set decoder ranks</span></h4>
+<p>For some <a href="../en/NVIDIA.html" title="NVIDIA">NVIDIA</a> users, <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=gst-libav">gst-libav</a></span> may prioritize the Libav decoder over <a rel="nofollow" class="external text" href="https://gstreamer.freedesktop.org/documentation/nvcodec/index.html">nvcodec</a> decoders which will inhibit hardware acceleration. The <code>GST_PLUGIN_FEATURE_RANK</code> <a href="../en/Environment_variables.html" class="mw-redirect" title="Environment variable">environment variable</a> can be used to rank decoders and thus alleviate this issue. See "GST_PLUGIN_FEATURE_RANK" in the <a rel="nofollow" class="external text" href="https://gstreamer.freedesktop.org/documentation/gstreamer/running.html#environment-variables">documentation</a> for more information. For example:
+</p>
+<pre>GST_PLUGIN_FEATURE_RANK=nvmpegvideodec:MAX,nvmpeg2videodec:MAX,nvmpeg4videodec:MAX,nvh264sldec:MAX,nvh264dec:MAX,nvjpegdec:MAX,nvh265sldec:MAX,nvh265dec:MAX,nvvp9dec:MAX
+</pre>
+<p>Those without AV1 hardware support may also want to disable AV1 decoders (e.g., for YouTube on <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=webkit2gtk">webkit2gtk</a></span>-based browsers) by appending <code>avdec_av1:NONE</code> and <code>av1dec:NONE</code> to the list above.
+</p>
+<h2><span class="mw-headline" id="See_also">See also</span></h2>
+<ul>
+<li><a href="../en/Sound_system.html" title="Sound system">Sound system</a></li>
+<li><a rel="nofollow" class="external text" href="https://gstreamer.freedesktop.org/">website</a></li>
+</ul>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface">
+<div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="../en/Category:Multimedia.html" title="Category:Multimedia">Multimedia</a></li></ul>
+</div>
+<div id="mw-hidden-catlinks" class="mw-hidden-catlinks mw-hidden-cats-hidden">Hidden category: <ul><li><a href="../en/Category:Pages_with_broken_package_links.html" title="Category:Pages with broken package links">Pages with broken package links</a></li></ul>
+</div>
+</div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=GStreamer&amp;oldid=786618">https://wiki.archlinux.org/index.php?title=GStreamer&amp;oldid=786618</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 1 September 2023, at 04:14.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

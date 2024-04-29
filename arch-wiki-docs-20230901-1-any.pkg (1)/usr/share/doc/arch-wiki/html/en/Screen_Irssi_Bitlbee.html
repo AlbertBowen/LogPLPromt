@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>Screen Irssi Bitlbee - ArchWiki</title>
+<link rel="stylesheet" href="../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Screen_Irssi_Bitlbee rootpage-Screen_Irssi_Bitlbee skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Components" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Components">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Components</div>
+			</a>
+			
+				<button aria-controls="toc-Components-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Components subsection
+				</button>
+			
+			<ul id="toc-Components-sublist" class="sidebar-toc-list">
+				<li id="toc-GNU_Screen" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#GNU_Screen">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.1</span>GNU Screen</div>
+			</a>
+			
+			<ul id="toc-GNU_Screen-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Irssi" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Irssi">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.2</span>Irssi</div>
+			</a>
+			
+			<ul id="toc-Irssi-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Bitlbee" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Bitlbee">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.3</span>Bitlbee</div>
+			</a>
+			
+			<ul id="toc-Bitlbee-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-SSH" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#SSH">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.4</span>SSH</div>
+			</a>
+			
+			<ul id="toc-SSH-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Setting_it_up" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Setting_it_up">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Setting it up</div>
+			</a>
+			
+				<button aria-controls="toc-Setting_it_up-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Setting it up subsection
+				</button>
+			
+			<ul id="toc-Setting_it_up-sublist" class="sidebar-toc-list">
+				<li id="toc-Installing" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Installing">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.1</span>Installing</div>
+			</a>
+			
+			<ul id="toc-Installing-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Configuring_SSH" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Configuring_SSH">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.2</span>Configuring SSH</div>
+			</a>
+			
+			<ul id="toc-Configuring_SSH-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Configuring_bitlbee" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Configuring_bitlbee">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.3</span>Configuring bitlbee</div>
+			</a>
+			
+			<ul id="toc-Configuring_bitlbee-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Using_Irssi_in_Screen" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Using_Irssi_in_Screen">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.4</span>Using Irssi in Screen</div>
+			</a>
+			
+			<ul id="toc-Using_Irssi_in_Screen-sublist" class="sidebar-toc-list">
+				<li id="toc-Connecting_to_Bitlbee" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Connecting_to_Bitlbee">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.4.1</span>Connecting to Bitlbee</div>
+			</a>
+			
+			<ul id="toc-Connecting_to_Bitlbee-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Using_It" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Using_It">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>Using It</div>
+			</a>
+			
+				<button aria-controls="toc-Using_It-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Using It subsection
+				</button>
+			
+			<ul id="toc-Using_It-sublist" class="sidebar-toc-list">
+				<li id="toc-Launching_the_Setup" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Launching_the_Setup">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.1</span>Launching the Setup</div>
+			</a>
+			
+			<ul id="toc-Launching_the_Setup-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Doing_More" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Doing_More">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.2</span>Doing More</div>
+			</a>
+			
+			<ul id="toc-Doing_More-sublist" class="sidebar-toc-list">
+				<li id="toc-Auto-away_on_screen_detach" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Auto-away_on_screen_detach">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.2.1</span>Auto-away on screen detach</div>
+			</a>
+			
+			<ul id="toc-Auto-away_on_screen_detach-sublist" class="sidebar-toc-list">
+				<li id="toc-Modifying_screen-away.pl_for_BitLBee" class="sidebar-toc-list-item sidebar-toc-level-4">
+			<a class="sidebar-toc-link" href="#Modifying_screen-away.pl_for_BitLBee">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.2.1.1</span>Modifying screen-away.pl for BitLBee</div>
+			</a>
+			
+			<ul id="toc-Modifying_screen-away.pl_for_BitLBee-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Persisting_the_chat_client_through_suspends_and_connectivity_changes" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Persisting_the_chat_client_through_suspends_and_connectivity_changes">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.2.2</span>Persisting the chat client through suspends and connectivity changes</div>
+			</a>
+			
+			<ul id="toc-Persisting_the_chat_client_through_suspends_and_connectivity_changes-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+	</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../en/Screen_Irssi_Bitlbee.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="mw-list-item"><a href="../en/Talk:Screen_Irssi_Bitlbee.html" rel="discussion" title="Discussion about the content page [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">English</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../en/Screen_Irssi_Bitlbee.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=Screen_Irssi_Bitlbee&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=Screen_Irssi_Bitlbee&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../en/Screen_Irssi_Bitlbee.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Screen_Irssi_Bitlbee&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Screen_Irssi_Bitlbee&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output">
+<div class="archwiki-template-meta-related-articles-start">
+<p class="mw-no-invert">Related articles</p>
+<ul>
+<li><a href="../en/WeeChat.html" title="WeeChat">WeeChat</a></li>
+<li><a href="../en/Tmux.html" title="Tmux">tmux</a></li>
+</ul>
+</div>
+<p>Using <a href="../en/GNU_Screen.html" title="GNU Screen">GNU Screen</a>, <a href="../en/Irssi.html" title="Irssi">Irssi</a>, <a href="../en/Bitlbee.html" title="Bitlbee">Bitlbee</a>, and <a href="../en/Secure_Shell.html" class="mw-redirect" title="SSH">SSH</a> together allows you to have a persistent connection to IRC servers and other chat networks.  Via SSH, you can access this persistent chat suite from anywhere.  Putting the pieces together is not difficult, and this page will guide you through it.
+</p>
+<mw:tocplace></mw:tocplace>
+<h2><span class="mw-headline" id="Components">Components</span></h2>
+<h3><span class="mw-headline" id="GNU_Screen">GNU Screen</span></h3>
+<p>First we will introduce <a href="../en/GNU_Screen.html" title="GNU Screen">GNU Screen</a>. Screen lets you keep shells open, even when you are not actively using them. We will be using it here to keep our IRC session persistent so that we can reconnect to it from anywhere without having to close the IRC client. See <a href="../en/GNU_Screen.html" title="GNU Screen">GNU Screen</a> and <span class="plainlinks archwiki-template-man" title="$ man 1 screen"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/screen.1">screen(1)</a></span>.
+</p>
+<h3><span class="mw-headline" id="Irssi">Irssi</span></h3>
+<p><a href="../en/Irssi.html" title="Irssi">Irssi</a> is a command-line IRC client.  It is very flexible and scriptable.  We will be using it, obviously, as our IRC client.
+</p>
+<h3><span class="mw-headline" id="Bitlbee">Bitlbee</span></h3>
+<p><a href="../en/Bitlbee.html" title="Bitlbee">Bitlbee</a> is an interesting project.  It sets up an IRC server on your local machine, which connects to various instant messenger protocols, and represents logged-in users as IRC users.
+</p>
+<h3><span class="mw-headline" id="SSH">SSH</span></h3>
+<p>Everyone knows what <a href="../en/Secure_Shell.html" class="mw-redirect" title="SSH">SSH</a> is.  This will let us use our persistent chat suite from anywhere with web access.
+</p>
+<h2><span class="mw-headline" id="Setting_it_up">Setting it up</span></h2>
+<h3><span class="mw-headline" id="Installing">Installing</span></h3>
+<p>First, install <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=openssh">openssh</a></span> <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=irssi">irssi</a></span> <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=screen">screen</a></span> <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/bitlbee/">bitlbee</a></span><sup><small>AUR</small></sup>.
+</p>
+<h3><span class="mw-headline" id="Configuring_SSH">Configuring SSH</span></h3>
+<p>Follow the directions on <a href="../en/Secure_Shell.html" class="mw-redirect" title="SSH">SSH's wiki page</a> to set up SSH.  It is far too involved to summarize here.
+</p>
+<h3><span class="mw-headline" id="Configuring_bitlbee">Configuring bitlbee</span></h3>
+<p>The only application which really requires you to configure is Bitlbee.  You can follow the directions on <a href="../en/Bitlbee.html" title="Bitlbee">Bitlbee's wiki page</a> if you like.  All you really need to do is go through /etc/bitlbee/bitlbee.conf and configure it how you like.  Below are some modifications worth pointing out.
+</p>
+<p>This will have Bitlbee run as a daemon, which forks a new process for each user that joins.  This is simpler than running it through xinetd, so I suggest it.
+</p>
+<pre>RunMode = ForkDaemon
+</pre>
+<p>This will have the daemon drop root priveledges after it launches on boot.  Do this for security; there is no reason for Bitlbee to run as root.
+</p>
+<pre>User = bitlbee
+</pre>
+<p>Be sure to change the password here.
+</p>
+<pre>OperPassword =
+</pre>
+<h3><span class="mw-headline" id="Using_Irssi_in_Screen">Using Irssi in Screen</span></h3>
+<p>Open up a terminal and run screen.  After the copyright message (read the wiki to disable that message), you should find yourself at a plain terminal.  Launch irssi in this terminal.
+</p>
+<p>Irssi is a full-fledged IRC client, so we cannot list a complete tutorial here.  Use Google to find more information on what irssi can do for you.  Now's the time to connect to whatever IRC networks you like.
+</p>
+<h4><span class="mw-headline" id="Connecting_to_Bitlbee">Connecting to Bitlbee</span></h4>
+<p>Bitlbee sets up an IRC server on your local machine.  To connect to it, run this in irssi:
+</p>
+<pre>/connect localhost &lt;optional port&gt;
+</pre>
+<p>You should immediately join a channel called &amp;bitlbee.  Here you will see a brief introduction to Bitlbee.  Type help to get started.  Set up Bitlbee to connect to your instant messenger accounts.  You will see your contacts join the channel.
+</p>
+<h2><span class="mw-headline" id="Using_It">Using It</span></h2>
+<p>Now that we have got Irssi, Bitlbee, and Screen all running, what can we do with it?
+</p>
+<p>First, the whole point of this exercise was to create a persistent chat session that can be accessed from anywhere.  From another computer, SSH into your server.  Type in 
+</p>
+<pre>screen -raAd 
+</pre>
+<p>and watch as irssi, with all of your channels and IM connections, pops up.  Any messages left for you while you were away are visible, just as if you were at your server.
+</p>
+<h3><span class="mw-headline" id="Launching_the_Setup">Launching the Setup</span></h3>
+<p>Since it is slow to manually connect to each IRC network, join channels, connect to Bitlbee, and have Bitlbee connect to your messaging accounts every time you you log in, set up some scripts to help you out.
+</p>
+<p>First, create a screen initialization file. Here is an example:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">~/irc_screen</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">source ~/.screenrc
+screen -t IRC 1 irssi
+</pre>
+<p>This will launch irssi in window 1 and title the screen session 'IRC'.
+</p>
+<p>Then set up a short script to launch screen with that configuration file:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">~/bin/irc_start</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">#!/bin/sh
+screen -d -m -c ~/irc_screen
+</pre>
+<p>The command line switches <code>-d -m</code> start screen in detached mode, so that it launches in the background. <code>-c ~/irc_screen</code> uses <code>~/irc_screen</code> as the <i>rc</i> file for this session.
+</p>
+<p>To launch and connect to the Screen session:
+</p>
+<pre>~/bin/irc_start
+screen -raAd
+</pre>
+<h3><span class="mw-headline" id="Doing_More">Doing More</span></h3>
+<p>Look into configuring irssi to behave more like you want:
+<a rel="nofollow" class="external free" href="https://www.quadpoint.org/articles/irssi">https://www.quadpoint.org/articles/irssi</a>
+</p>
+<h4><span class="mw-headline" id="Auto-away_on_screen_detach">Auto-away on screen detach</span></h4>
+<p>Using the screen-away script, you can have yourself marked "away" on BitLBee when you disconnect your screen session. By default the script affects all servers but can easily be modified to only affect BitLBee.
+</p>
+<p>Read more about scripts at the URL in 'Doing More'.
+Find the screen-away.pl script at <a rel="nofollow" class="external free" href="https://scripts.irssi.org/">https://scripts.irssi.org/</a>
+</p>
+<h5><span class="mw-headline" id="Modifying_screen-away.pl_for_BitLBee">Modifying screen-away.pl for BitLBee</span></h5>
+<p>First you need the server tag for BitLBee. You can get this by typing "/server" in irssi. The tag is the first word on the line. For me, the tag is "BitLBee".
+On the line following 
+</p>
+<pre>foreach $server (Irssi::servers()) {
+</pre>
+<p>(which occurs twice) insert the line 
+</p>
+<pre>next unless ( $server-&gt;{chatnet} eq 'TAG' );
+</pre>
+<p>replacing TAG as necessary. In the current version, those occur on lines 181 and 206.
+To use the script you need to load it - unless if if autoloaded, and set it active.
+</p>
+<pre>/script load screen_away
+/set screen_away_active on
+</pre>
+<h4><span class="mw-headline" id="Persisting_the_chat_client_through_suspends_and_connectivity_changes">Persisting the chat client through suspends and connectivity changes</span></h4>
+<p>If you use a laptop, you likely suspend and change wireless networks often, which causes your ssh client to lose connection. This can be annoying for a chat client you expect to always be available.
+</p>
+<p>To fix this, try <a href="../en/Mosh.html" title="Mosh">Mosh</a>, which is a shell that seamlessly deals with reconnection after resuming or changing wireless networks.
+</p>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="../en/Category:Internet_Relay_Chat.html" title="Category:Internet Relay Chat">Internet Relay Chat</a></li></ul>
+</div></div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=Screen_Irssi_Bitlbee&amp;oldid=775153">https://wiki.archlinux.org/index.php?title=Screen_Irssi_Bitlbee&amp;oldid=775153</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 9 April 2023, at 15:38.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

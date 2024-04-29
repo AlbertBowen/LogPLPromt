@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>MantisBT - ArchWiki</title>
+<link rel="stylesheet" href="../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-MantisBT rootpage-MantisBT skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Installation" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Installation">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Installation</div>
+			</a>
+			
+			<ul id="toc-Installation-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Configuration" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Configuration">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Configuration</div>
+			</a>
+			
+				<button aria-controls="toc-Configuration-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Configuration subsection
+				</button>
+			
+			<ul id="toc-Configuration-sublist" class="sidebar-toc-list">
+				<li id="toc-PHP_extensions" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#PHP_extensions">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.1</span>PHP extensions</div>
+			</a>
+			
+			<ul id="toc-PHP_extensions-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-TTF_fonts" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#TTF_fonts">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.2</span>TTF fonts</div>
+			</a>
+			
+			<ul id="toc-TTF_fonts-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Web_server" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Web_server">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.3</span>Web server</div>
+			</a>
+			
+			<ul id="toc-Web_server-sublist" class="sidebar-toc-list">
+				<li id="toc-nginx_+_uwsgi" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#nginx_+_uwsgi">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.3.1</span>nginx + uwsgi</div>
+			</a>
+			
+			<ul id="toc-nginx_+_uwsgi-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Database" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Database">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.4</span>Database</div>
+			</a>
+			
+			<ul id="toc-Database-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Administrator" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Administrator">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.5</span>Administrator</div>
+			</a>
+			
+			<ul id="toc-Administrator-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Usage" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Usage">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>Usage</div>
+			</a>
+			
+			<ul id="toc-Usage-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-See_also" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#See_also">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4</span>See also</div>
+			</a>
+			
+			<ul id="toc-See_also-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../en/MantisBT.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="new mw-list-item"><a href="/index.php?title=Talk:MantisBT&amp;action=edit&amp;redlink=1" rel="discussion" title="Discussion about the content page (page does not exist) [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">English</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../en/MantisBT.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=MantisBT&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=MantisBT&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../en/MantisBT.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=MantisBT&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=MantisBT&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output">
+<p><a rel="nofollow" class="external text" href="https://mantisbt.org">MantisBT</a> (Mantis Bug Tracker) is a bug tracker written in <a href="../en/PHP.html" title="PHP">PHP</a>.
+For a list of features, visit its website.
+</p>
+<mw:tocplace></mw:tocplace>
+<h2><span class="mw-headline" id="Installation">Installation</span></h2>
+<p><a href="../en/Help:Reading.html#Installation_of_packages" class="mw-redirect" title="Install">Install</a> the <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/mantisbt/">mantisbt</a></span><sup><small>AUR</small></sup> package.
+</p>
+<p>Choose your favorite <a href="../en/List_of_applications/Internet.html#Web_servers" class="mw-redirect" title="Web server">web server</a> and/or application server (such as <a href="../en/UWSGI.html" title="UWSGI">UWSGI</a>) for making the application available.
+</p>
+<h2><span class="mw-headline" id="Configuration">Configuration</span></h2>
+<p><i>mantisbt</i> has a decent <a rel="nofollow" class="external text" href="https://mantisbt.org/docs/master/en-US/Admin_Guide/html-desktop/">administration guide</a>, that can be followed for setting it up.
+</p>
+<p>All configuration is exposed in <code>/etc/webapps/mantisbt/config_inc.php</code>.
+</p>
+<ul>
+<li>Setup a compatible <a href="../en/Category:Database_management_systems.html" class="mw-redirect" title="DBMS">DBMS</a> and use the 'Database Configuration' section to connect mantisbt with it.</li>
+<li>The 'Anonymous Access / Signup' section needs special attention, if you are not planning on disabling CAPTCHAs for new signups (see <a href="#PHP_extensions">#PHP extensions</a> and <a href="#TTF_fonts">#TTF fonts</a>).</li>
+<li>If you want to use <a href="https://en.wikipedia.org/wiki/Simple_Mail_Transfer_Protocol" class="extiw" title="wikipedia:Simple Mail Transfer Protocol">SMTP</a> you can set it up in the 'Email Configuration' section. mantisbt defaults to a phpmailer setup, which has the downside of not reaching mail servers that use <a href="../en/Postfix.html#Postgrey" class="mw-redirect" title="Postgrey">grey listing</a>.</li>
+</ul>
+<p>In any case, you will need to meet some requirements for <i>mantisbt</i> to work properly:
+</p>
+<h3><span class="mw-headline" id="PHP_extensions">PHP extensions</span></h3>
+<ul>
+<li>
+<b>mysqli</b> (if you are using <a href="../en/MySQL.html" title="MySQL">MySQL</a>/<a href="../en/MariaDB.html" title="MariaDB">MariaDB</a>)</li>
+<li>
+<b>gd</b> (if you plan on using <a href="https://en.wikipedia.org/wiki/CAPTCHA" class="extiw" title="wikipedia:CAPTCHA">CAPTCHA</a> for user signup)</li>
+</ul>
+<h3><span class="mw-headline" id="TTF_fonts">TTF fonts</span></h3>
+<ul>
+<li>make sure to <a href="../en/Fonts.html#Pacman" title="Fonts">install a TrueTypeFont</a>, that you would like to use for the creation of CAPTCHAs</li>
+<li>setup the paths and names of the fonts, you would like to use:</li>
+</ul>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/webapps/mantisbt/config_inc.php</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;"># trailing slash is important!
+$g_system_font_folder = '/usr/share/fonts/TTF/';
+
+# here DroidSans.ttf from the package <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=ttf-droid">ttf-droid</a></span> is used for illustration
+$g_font_per_captcha = 'DroidSans.ttf';</pre>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong>  Make sure to also include the TTF path (e.g. <code>/usr/share/fonts/TTF</code>) in the <a rel="nofollow" class="external text" href="https://www.php.net/manual/en/ini.core.php#ini.open-basedir">open_basedir</a> of your PHP instance!</div>
+<h3><span class="mw-headline" id="Web_server">Web server</span></h3>
+<h4>
+<span id="nginx_.2B_uwsgi"></span><span class="mw-headline" id="nginx_+_uwsgi">nginx + uwsgi</span>
+</h4>
+<p>This example shows a basic setup using a subdomain for the bug tracker, with some handson redirects.
+The below mentioned file needs of course to be sourced within <code>/etc/nginx/nginx.conf</code>.
+For a subfolder-based setup for <i>mantisbt</i>, some modifications are needed. 
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/nginx/nginx.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">server {
+  listen 80;
+  listen [::]:80;
+  server_name bugs.mydomain.org www.mydomain.org;
+  return 301 https://bugs.mydomain.org$request_uri;
+}
+server {
+  listen 443 ssl;
+  listen [::]:443 ssl;
+  server_name www.bugs.mydomain.org;
+  return 301 https://bugs.mydomain.org$request_uri;
+}
+server {
+  listen 443 ssl;
+  listen [::]:443 ssl;
+  server_name bugs.mydomain.org;
+  include tls.conf;
+  root /usr/share/webapps/mantisbt;
+  access_log /var/log/nginx/access.bugs.mydomain.log;
+  error_log /var/log/nginx/error.bugs.mydomain.log;
+  include letsencrypt-challenge.conf;
+
+  location ~ ^/(admin|core|doc|lang) {
+    deny all;
+  }
+
+  location / {
+    index index.php;
+    try_files $uri $uri/ @mantisbt;
+  }
+
+  location @mantisbt {
+    include uwsgi_params;
+    uwsgi_modifier1 14;
+    uwsgi_pass unix:/run/uwsgi/mantisbt.sock;
+  }
+
+  location ~  \.php?$ {
+    include uwsgi_params;
+    uwsgi_modifier1 14;
+    uwsgi_pass unix:/run/uwsgi/mantisbt.sock;
+  }
+
+  # Deny serving files beginning with a dot, but allow letsencrypt acme-challenge
+  location ~ /\.(?!well-known/acme-challenge) {
+    access_log off;
+    log_not_found off;
+    deny all;
+  }
+}
+
+</pre>
+<p><a href="../en/UWSGI.html" title="UWSGI">UWSGI</a> can be used to achieve a resource preserving setup with dedicated PHP settings.
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/uwsgi/mantisbt.ini</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">[uwsgi]
+procname-master = mantisbt
+plugins = php
+master = true
+socket = /run/uwsgi/%n.sock
+uid = http
+gid = http
+processes = 10
+cheaper = 2
+cheaper-step = 1
+idle = 600
+die-on-idle = true
+
+php-allowed-ext = .php
+php-docroot = /usr/share/webapps/mantisbt
+php-index = index.php
+php-set = date.timezone=Europe/Berlin
+php-set = open_basedir=/tmp/:/usr/share/fonts/TTF:/usr/share/webapps/mantisbt:/usr/share/webapps/mantisbt/core:/etc/webapps/mantisbt
+php-set = session.save_path=/tmp
+php-set = session.gc_maxlifetime  21600
+php-set = session.gc_divisor      500
+php-set = session.gc_probability  1
+php-set = post_max_size=64M
+php-set = upload_max_filesize=64M
+php-set = always_populate_raw_post_data=-1
+php-set = extension=curl
+php-set = extension=gd
+php-set = extension=imagick
+php-set = extension=intl
+php-set = extension=mysqli
+
+</pre>
+<p>If your (modified) versions of these files are in place, you should restart your <a href="../en/Nginx.html" title="Nginx">nginx</a> and start/enable a uwsgi socket for <i>mantisbt</i> <a href="../en/Systemd.html#Using_units" title="Systemd">using systemd</a>.
+</p>
+<h3><span class="mw-headline" id="Database">Database</span></h3>
+<p>After making the application available, go to <code>/admin/install.php</code> with a web browser to setup the database. Follow the instructions on that page and let <i>mantisbt</i> generate the tables.
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong>  You have to modify your <a href="#Web_server">#Web server</a> settings temporarily to be able to visit that page. Here this is shown according to the example of using <a href="#nginx_+_uwsgi">#nginx + uwsgi</a>.
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/nginx/nginx.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">  location ~ ^/(core|doc|lang) {
+    deny all;
+  }
+
+</pre>
+</div>
+<h3><span class="mw-headline" id="Administrator">Administrator</span></h3>
+<p>The initial account generated by <i>mantisbt</i> is called <i>administrator</i> and has the password <i>root</i>.
+</p>
+<div class="archwiki-template-box archwiki-template-box-warning">
+<strong>Warning:</strong>  Make sure to change the password for the <i>administrator</i> user and set it up properly, right after logging in for the first time!</div>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong>  Modify your <a href="#Web_server">#Web server</a> settings again, to make the <i>admin</i> settings unavailable again. The example of using <a href="#nginx_+_uwsgi">#nginx + uwsgi</a> shows you how.</div>
+<h2><span class="mw-headline" id="Usage">Usage</span></h2>
+<p><i>mantisbt</i> should be all setup now. The <i>administrator</i> user is able to create new projects and give user rights to signed up users.
+</p>
+<h2><span class="mw-headline" id="See_also">See also</span></h2>
+<ul>
+<li><a rel="nofollow" class="external text" href="https://mantisbt.org">Official website</a></li>
+<li><a rel="nofollow" class="external text" href="https://mantisbt.org/wiki/doku.php">Official wiki</a></li>
+<li><a rel="nofollow" class="external text" href="https://mantisbt.org/documentation.php">Official documentation</a></li>
+<li><a rel="nofollow" class="external text" href="https://www.mantisbt.org/bugs">Official bug tracker</a></li>
+<li><a rel="nofollow" class="external text" href="https://mantisbt.org/forums/">Official forums</a></li>
+<li><a rel="nofollow" class="external text" href="https://github.com/mantisbt">MantisBT on github</a></li>
+</ul>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../Special:Categories.html" title="Special:Categories">Categories</a>: <ul>
+<li><a href="../en/Category:Issue_tracking_systems.html" title="Category:Issue tracking systems">Issue tracking systems</a></li>
+<li><a href="../en/Category:Web_applications.html" title="Category:Web applications">Web applications</a></li>
+</ul>
+</div></div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=MantisBT&amp;oldid=774573">https://wiki.archlinux.org/index.php?title=MantisBT&amp;oldid=774573</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 3 April 2023, at 09:33.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

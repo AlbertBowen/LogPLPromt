@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>DKMS package guidelines - ArchWiki</title>
+<link rel="stylesheet" href="../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-DKMS_package_guidelines rootpage-DKMS_package_guidelines skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Package_name" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Package_name">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Package name</div>
+			</a>
+			
+			<ul id="toc-Package_name-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Dependencies" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Dependencies">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Dependencies</div>
+			</a>
+			
+			<ul id="toc-Dependencies-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Source_location" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Source_location">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>Source location</div>
+			</a>
+			
+			<ul id="toc-Source_location-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Patching" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Patching">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4</span>Patching</div>
+			</a>
+			
+			<ul id="toc-Patching-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Module_loading_automatically_in_.install" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Module_loading_automatically_in_.install">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5</span>Module loading automatically in .install</div>
+			</a>
+			
+			<ul id="toc-Module_loading_automatically_in_.install-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Example" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Example">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6</span>Example</div>
+			</a>
+			
+				<button aria-controls="toc-Example-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Example subsection
+				</button>
+			
+			<ul id="toc-Example-sublist" class="sidebar-toc-list">
+				<li id="toc-PKGBUILD" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#PKGBUILD">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6.1</span>PKGBUILD</div>
+			</a>
+			
+			<ul id="toc-PKGBUILD-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-dkms.conf" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#dkms.conf">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6.2</span>dkms.conf</div>
+			</a>
+			
+			<ul id="toc-dkms.conf-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-.install" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#.install">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6.3</span>.install</div>
+			</a>
+			
+			<ul id="toc-.install-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Module_blacklist_conf" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Module_blacklist_conf">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6.4</span>Module blacklist conf</div>
+			</a>
+			
+			<ul id="toc-Module_blacklist_conf-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../en/DKMS_package_guidelines.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="new mw-list-item"><a href="/index.php?title=Talk:DKMS_package_guidelines&amp;action=edit&amp;redlink=1" rel="discussion" title="Discussion about the content page (page does not exist) [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">English</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../en/DKMS_package_guidelines.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=DKMS_package_guidelines&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=DKMS_package_guidelines&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../en/DKMS_package_guidelines.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=DKMS_package_guidelines&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=DKMS_package_guidelines&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output">
+<div class="toc" style="display:block; text-align: center; margin-bottom: 1em;">
+<b><a href="../en/Arch_package_guidelines.html" title="Arch package guidelines">Arch package guidelines</a></b>
+<hr>
+<p><a href="../en/32-bit_package_guidelines.html" title="32-bit package guidelines">32-bit</a> – <a href="../en/CLR_package_guidelines.html" title="CLR package guidelines">CLR</a> – <a href="../en/CMake_package_guidelines.html" title="CMake package guidelines">CMake</a> – <a href="../en/Cross-compiling_tools_package_guidelines.html" title="Cross-compiling tools package guidelines">Cross</a> – <a class="mw-selflink selflink">DKMS</a> – <a href="../en/Eclipse_plugin_package_guidelines.html" title="Eclipse plugin package guidelines">Eclipse</a> – <a href="../en/Electron_package_guidelines.html" title="Electron package guidelines">Electron</a> – <a href="../en/Font_package_guidelines.html" title="Font package guidelines">Font</a> – <a href="../en/Free_Pascal_package_guidelines.html" title="Free Pascal package guidelines">Free Pascal</a> – <a href="../en/GNOME_package_guidelines.html" title="GNOME package guidelines">GNOME</a> – <a href="../en/Go_package_guidelines.html" title="Go package guidelines">Go</a> – <a href="../en/Haskell_package_guidelines.html" title="Haskell package guidelines">Haskell</a> – <a href="../en/Java_package_guidelines.html" title="Java package guidelines">Java</a> – <a href="../en/KDE_package_guidelines.html" title="KDE package guidelines">KDE</a> – <a href="../en/Kernel_module_package_guidelines.html" title="Kernel module package guidelines">Kernel</a> – <a href="../en/Lisp_package_guidelines.html" title="Lisp package guidelines">Lisp</a> – <a href="../en/Meson_package_guidelines.html" title="Meson package guidelines">Meson</a> – <a href="../en/MinGW_package_guidelines.html" title="MinGW package guidelines">MinGW</a> – <a href="../en/Node.js_package_guidelines.html" title="Node.js package guidelines">Node.js</a> – <a href="../en/Nonfree_applications_package_guidelines.html" title="Nonfree applications package guidelines">Nonfree</a> – <a href="../en/OCaml_package_guidelines.html" title="OCaml package guidelines">OCaml</a> – <a href="../en/Perl_package_guidelines.html" title="Perl package guidelines">Perl</a> – <a href="../en/PHP_package_guidelines.html" title="PHP package guidelines">PHP</a> – <a href="../en/Python_package_guidelines.html" title="Python package guidelines">Python</a> – <a href="../en/R_package_guidelines.html" title="R package guidelines">R</a> – <a href="../en/Ruby_package_guidelines.html" title="Ruby package guidelines">Ruby</a> – <a href="../en/Rust_package_guidelines.html" title="Rust package guidelines">Rust</a> – <a href="../en/Shell_package_guidelines.html" title="Shell package guidelines">Shell</a> – <a href="../en/VCS_package_guidelines.html" title="VCS package guidelines">VCS</a> – <a href="../en/Web_application_package_guidelines.html" title="Web application package guidelines">Web</a> – <a href="../en/Wine_package_guidelines.html" title="Wine package guidelines">Wine</a>
+</p>
+</div>
+<p>Here are some guidelines to follow when creating a <a href="../en/Dynamic_Kernel_Module_Support.html" class="mw-redirect" title="DKMS">DKMS</a> package.
+</p>
+<mw:tocplace></mw:tocplace>
+<h2><span class="mw-headline" id="Package_name">Package name</span></h2>
+<p>DKMS packages are named by appending "<i>-dkms</i>" to the original package name.
+</p>
+<p>The variable <code>$_pkgname</code> is often used below <code>$pkgname</code> to describe the package name minus the "<i>-dkms</i>" suffix (e.g. <code>_pkgname="${pkgname%-*}"</code>)
+</p>
+<h2><span class="mw-headline" id="Dependencies">Dependencies</span></h2>
+<p>Add <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=dkms">dkms</a></span> to <code>depends</code> array. This is important because this will provide tools and hooks that will rebuild the kernel driver provided by the <i>-dkms</i> package whenever the kernel is updated.
+</p>
+<p>Do not include <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=linux-headers">linux-headers</a></span> – or any other Linux header package – to the PKGBUILD. These headers are already listed as optional dependencies of <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=dkms">dkms</a></span> and each kernel package has its own header package, so including header package dependency in the <i>-dkms</i> package is both unnecessarily redundant and restricting.
+</p>
+<h2><span class="mw-headline" id="Source_location">Source location</span></h2>
+<p>The package should install the kernel module's source files into:
+</p>
+<pre>/usr/src/<i>PACKAGE_NAME</i>-<i>PACKAGE_VERSION</i>
+</pre>
+<p>where <code><i>PACKAGE_NAME</i></code> and <code><i>PACKAGE_VERSION</i></code> are the kernel module's name and version.
+</p>
+<p>It is highly recommended to set <code><i>PACKAGE_NAME</i></code> with the value of <code>$_pkgname</code> (See <a href="#Package_name">#Package name</a>), and <code><i>PACKAGE_VERSION</i></code> with <code>$pkgver</code>.
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> There is no need to build the kernel module's sources file nor install them; this is done automatically whenever the Linux kernel is updated thanks to a <a href="../en/Pacman.html#Hooks" class="mw-redirect" title="Pacman hook">pacman hook</a> in <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=dkms">dkms</a></span>.</div>
+<h2><span class="mw-headline" id="Patching">Patching</span></h2>
+<p>The sources can be patched either directly in the PKGBUILD or through <code>dkms.conf</code>.
+</p>
+<p>If patching through <code>dkms.conf</code>, make sure to install the patches into <code>/usr/src/<i>PACKAGE_NAME</i>-<i>PACKAGE_VERSION</i>/patches/</code> directory and to add a <code>PATCH[<i>number</i>]=<i>patch_filename</i></code> for each patch to be applied, replacing <code><i>number</i></code> with a incremental value starting at <code>0</code>. See <span class="plainlinks archwiki-template-man" title="$ man 8 dkms"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/dkms.8#DKMS.CONF">dkms(8) § DKMS.CONF</a></span> for more information.
+</p>
+<h2><span class="mw-headline" id="Module_loading_automatically_in_.install">Module loading automatically in .install</span></h2>
+<p>Do <b>not</b> use .install file to load or unload modules. Leave it to the user, since there is a possibility a module may crash when loaded.
+</p>
+<p>Also do <b>not</b> call <i>dkms</i> as it is automatically done via <a href="../en/Pacman.html#Hooks" class="mw-redirect" title="Pacman hook">pacman hook</a> provided by <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=dkms">dkms</a></span>. This hook runs <code>dkms install</code> and <code>dkms remove</code> leaving no manual task for the package maintainer.
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> <code>dkms install</code> is making sure <code>depmod</code> is called at the end of its process. <code>dkms install</code> depends on <code>dkms build</code> (to build the source against the current kernel), which itself depends on <code>dkms add</code> (to add a symlink from <code>/var/lib/dkms/<i>PACKAGE_NAME</i>/<i>PACKAGE_VERSION</i>/source</code> to <code>/usr/src/<i>PACKAGE_NAME</i>-<i>PACKAGE_VERSION</i></code>).</div>
+<h2><span class="mw-headline" id="Example">Example</span></h2>
+<p>Here is an example package that edits <code>dkms.conf</code> according to the package name and version, and install module blacklist configuration file.
+</p>
+<p>For other example of (real) packages, search <a rel="nofollow" class="external text" href="https://archlinux.org/packages/?q=-dkms">-dkms in official repositories</a> and <a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages?K=-dkms">-dkms in AUR</a>.
+</p>
+<h3><span class="mw-headline" id="PKGBUILD">PKGBUILD</span></h3>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">PKGBUILD</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;"># Maintainer: foo &lt;foo(at)example(dot)org&gt;
+# Contributor: bar &lt;bar(at)example(dot)org&gt;
+
+_pkgbase=example
+pkgname=example-dkms
+pkgver=1
+pkgrel=1
+pkgdesc="The Example kernel modules (DKMS)"
+arch=('x86_64')
+url="https://www.example.org/"
+license=('GPL2')
+depends=('dkms')
+conflicts=("${_pkgbase}")
+install=${pkgname}.install
+source=("${url}/files/tarball.tar.gz"
+        'dkms.conf'
+        "${pkgname}.conf"
+        'linux-3.14.patch')
+md5sums=(<i>use 'updpkgsums'</i>)
+
+prepare() {
+  cd ${_pkgbase}-${pkgver}
+
+  # Patch
+  patch -p1 -i "${srcdir}"/linux-3.14.patch
+}
+
+package() {
+  # Copy dkms.conf
+  install -Dm644 dkms.conf "${pkgdir}"/usr/src/${_pkgbase}-${pkgver}/dkms.conf
+
+  # Set name and version
+  sed -e "s/@_PKGBASE@/${_pkgbase}/" \
+      -e "s/@PKGVER@/${pkgver}/" \
+      -i "${pkgdir}"/usr/src/${_pkgbase}-${pkgver}/dkms.conf
+
+  # Copy sources (including Makefile)
+  cp -r ${_pkgbase}/* "${pkgdir}"/usr/src/${_pkgbase}-${pkgver}/
+
+  # Blacklists conflicting module
+  install -Dm644 ${pkgname}.conf "${srcdir}/usr/lib/modprobe.d/${pkgname}.conf"
+}</pre>
+<h3><span class="mw-headline" id="dkms.conf">dkms.conf</span></h3>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">dkms.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">PACKAGE_NAME="@_PKGBASE@"
+PACKAGE_VERSION="@PKGVER@"
+MAKE[0]="make --uname_r=$kernelver"
+CLEAN="make clean"
+BUILT_MODULE_NAME[0]="@_PKGBASE@"
+DEST_MODULE_LOCATION[0]="/kernel/drivers/misc"
+AUTOINSTALL="yes"</pre>
+<h3><span class="mw-headline" id=".install">.install</span></h3>
+<p>This example shows a message on post-install and post-upgrade that suggests unloading a conflicting module (<code>example-conflicting-module</code>) and then loading this package's module (<code>example</code>) for immediate use, when the user do not want to reboot the system at this moment.
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">example.install</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">post_install() {
+  cat&lt;&lt;EOF
+
+Unload and load kernel modules:
+
+  rmmod example-conflicting-module
+  modprobe example
+
+EOF
+}
+
+post_upgrade() {
+  post_install
+}
+</pre>
+<h3><span class="mw-headline" id="Module_blacklist_conf">Module blacklist conf</span></h3>
+<p>When it is known that <code>example-conflicting-module</code> conflicts with this package's <code>example</code> module, it should be blacklisted:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">example-dkms.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">blacklist example-conflicting-module
+</pre>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="../en/Category:Arch_package_guidelines.html" title="Category:Arch package guidelines">Arch package guidelines</a></li></ul>
+</div></div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=DKMS_package_guidelines&amp;oldid=757390">https://wiki.archlinux.org/index.php?title=DKMS_package_guidelines&amp;oldid=757390</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 18 November 2022, at 14:31.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>Android Debug Bridge - ArchWiki</title>
+<link rel="stylesheet" href="../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Android_Debug_Bridge rootpage-Android_Debug_Bridge skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Installation" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Installation">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Installation</div>
+			</a>
+			
+			<ul id="toc-Installation-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Usage" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Usage">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Usage</div>
+			</a>
+			
+				<button aria-controls="toc-Usage-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Usage subsection
+				</button>
+			
+			<ul id="toc-Usage-sublist" class="sidebar-toc-list">
+				<li id="toc-Connect_device" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Connect_device">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.1</span>Connect device</div>
+			</a>
+			
+			<ul id="toc-Connect_device-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Figure_out_device_IDs" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Figure_out_device_IDs">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.2</span>Figure out device IDs</div>
+			</a>
+			
+			<ul id="toc-Figure_out_device_IDs-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Adding_udev_rules" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Adding_udev_rules">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.3</span>Adding udev rules</div>
+			</a>
+			
+			<ul id="toc-Adding_udev_rules-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Detect_the_device" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Detect_the_device">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.4</span>Detect the device</div>
+			</a>
+			
+			<ul id="toc-Detect_the_device-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Transferring_files" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Transferring_files">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.5</span>Transferring files</div>
+			</a>
+			
+			<ul id="toc-Transferring_files-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Backup_and_restore" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Backup_and_restore">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.6</span>Backup and restore</div>
+			</a>
+			
+			<ul id="toc-Backup_and_restore-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Tools_building_on_ADB" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Tools_building_on_ADB">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>Tools building on ADB</div>
+			</a>
+			
+			<ul id="toc-Tools_building_on_ADB-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Troubleshooting" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Troubleshooting">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4</span>Troubleshooting</div>
+			</a>
+			
+				<button aria-controls="toc-Troubleshooting-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Troubleshooting subsection
+				</button>
+			
+			<ul id="toc-Troubleshooting-sublist" class="sidebar-toc-list">
+				<li id="toc-Empty_device_list" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Empty_device_list">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.1</span>Empty device list</div>
+			</a>
+			
+			<ul id="toc-Empty_device_list-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-No_permissions_error" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#No_permissions_error">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.2</span>No permissions error</div>
+			</a>
+			
+			<ul id="toc-No_permissions_error-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../en/Android_Debug_Bridge.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="mw-list-item"><a href="../en/Talk:Android_Debug_Bridge.html" rel="discussion" title="Discussion about the content page [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">English</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../en/Android_Debug_Bridge.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=Android_Debug_Bridge&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=Android_Debug_Bridge&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../en/Android_Debug_Bridge.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Android_Debug_Bridge&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Android_Debug_Bridge&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output">
+<p>The <a rel="nofollow" class="external text" href="https://developer.android.com/studio/command-line/adb">Android Debug Bridge</a> (ADB) is a command-line tool that can be used to install, uninstall and debug apps, transfer files and access the device's shell.
+</p>
+<mw:tocplace></mw:tocplace>
+<h2><span class="mw-headline" id="Installation">Installation</span></h2>
+<p>ADB is part of the Platform-Tools <a href="../en/Android.html#SDK_packages" title="Android">SDK package</a> and the <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=android-tools">android-tools</a></span> package.
+</p>
+<h2><span class="mw-headline" id="Usage">Usage</span></h2>
+<h3><span class="mw-headline" id="Connect_device">Connect device</span></h3>
+<div class="archwiki-template-box archwiki-template-box-tip">
+<strong>Tip:</strong> 
+<ul>
+<li>For some devices, you may have to enable <a href="../en/Media_Transfer_Protocol.html" class="mw-redirect" title="MTP">MTP</a> on the device, before ADB will work. Some other devices require enable PTP mode to work.</li>
+<li>Many devices' <a href="../en/Udev.html" title="Udev">udev</a> rules are included in <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=libmtp">libmtp</a></span>, so if you have this installed, the following steps may not be necessary.</li>
+<li>Make sure your USB cable is capable of both charge and data. Many USB cables bundled with mobile devices do not include the USB data pin.</li>
+</ul>
+</div>
+<p>To connect to a real device or phone via ADB under Arch, you must:
+</p>
+<ol>
+<li>You might want to install <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=android-udev">android-udev</a></span> if you wish to connect the device to the proper <code>/dev/</code> entries.</li>
+<li>plug in your android device via USB.</li>
+<li>Enable USB Debugging on your phone or device:
+<ul>
+<li>Jelly Bean (4.2) and newer: Go to <i>Settings &gt; About Phone</i> tap <i>Build Number</i> 7 times until you get a popup that you have become a developer. Build number may be under a menu called <i>Software info</i> on newer Android OS versions. Then go to <i>Settings &gt; Developer &gt; USB debugging</i> and enable it. The device will ask to allow the computer with its fingerprint to connect. Check <i>allowing it permanently</i> option will copy <code>~/.android/adbkey.pub</code> to the target phone's <code>/data/misc/adb/adb_keys</code> location.</li>
+<li>Older versions: This is usually done from <i>Settings &gt; Applications &gt; Development &gt; USB debugging</i>. Reboot the phone after checking this option to make sure USB debugging is enabled.</li>
+</ul>
+</li>
+</ol>
+<p>If <a href="#Detect_the_device">ADB recognizes your device</a> (<code>adb devices</code> shows it as <code>"device" and not as "unauthorized"</code>, or it is visible and accessible in IDE), you are done. Otherwise see the instructions below.
+</p>
+<h3><span class="mw-headline" id="Figure_out_device_IDs">Figure out device IDs</span></h3>
+<p>Each Android device has a USB vendor/product ID. An example for HTC Evo is:
+</p>
+<pre>vendor id: 0bb4
+product id: 0c8d
+</pre>
+<p>Plug in your device and execute:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">$ lsusb</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">...
+Bus 002 Device 006: ID 0bb4:0c8d High Tech Computer Corp.
+...
+</pre>
+<h3><span class="mw-headline" id="Adding_udev_rules">Adding udev rules</span></h3>
+<p>If your device is not included in <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=android-udev">android-udev</a></span> (or <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/android-udev-git/">android-udev-git</a></span><sup><small>AUR</small></sup>), use the following template to create a custom <a href="../en/Udev.html#About_udev_rules" class="mw-redirect" title="Udev rule">udev rule</a> by replacing <code>[VENDOR ID]</code> and <code>[PRODUCT ID]</code> with <a href="#Figure_out_device_IDs">the IDs of your device</a>.
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/udev/rules.d/51-android.rules</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">SUBSYSTEM=="usb", ATTR{idVendor}=="[VENDOR ID]", MODE="0660", GROUP="adbusers", TAG+="uaccess"
+SUBSYSTEM=="usb", ATTR{idVendor}=="[VENDOR ID]", ATTR{idProduct}=="[PRODUCT ID]", SYMLINK+="android_adb"
+SUBSYSTEM=="usb", ATTR{idVendor}=="[VENDOR ID]", ATTR{idProduct}=="[PRODUCT ID]", SYMLINK+="android_fastboot"
+</pre>
+<p>Then <a href="../en/Udev.html#Loading_new_rules" title="Udev">reload the udev rules</a>.
+</p>
+<h3><span class="mw-headline" id="Detect_the_device">Detect the device</span></h3>
+<p>After you have setup the udev rules, unplug your device and replug it.
+</p>
+<p>After running:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">$ adb devices</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">List of devices attached 
+HT07VHL00676    device
+</pre>
+<p>If <i>adb</i> still does not detect the device after plugging your device back in, kill and restart the <i>adb</i> server as root and check devices again:
+</p>
+<pre># adb kill-server
+# adb start-server
+$ adb devices
+</pre>
+<p>If <i>adb devices</i> still shows <i>unauthorized</i> next to your device, make sure that that device has debugging permission allowed on the device itself. A <i>Allow USB Debugging?</i>  dialog should be presented when you physically connect the device. Select <i>Always Allow...</i>, then tap <i>OK</i>. If the dialog was never presented, try <i>Settings</i> &gt; <i>Developer Options</i> &gt; <i>Revoke USB Debugging Authorizations</i>, then tap <i>OK</i>, and repeat the steps in this section. If you still do not see the <i>Allow USB Debugging?</i> dialog, and the device is listed as unauthorized, then enter the <i>Developer Options</i> on the device and first uncheck <i>USB Debugging</i> and then check it again.
+</p>
+<h3><span class="mw-headline" id="Transferring_files">Transferring files</span></h3>
+<p>You can now use adb to transfer files between the device and your computer. To transfer files to the device, use:
+</p>
+<pre>$ adb push <i>what-to-copy</i> <i>where-to-place</i>
+</pre>
+<p>To transfer files from the device, use:
+</p>
+<pre>$ adb pull <i>what-to-pull</i> <i>where-to-place</i>
+</pre>
+<p>Also see <a href="#Tools_building_on_ADB">#Tools building on ADB</a>.
+</p>
+<h3><span class="mw-headline" id="Backup_and_restore">Backup and restore</span></h3>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> adb backup is deprecated and may be removed in a future release.</div>
+<p>You can also backup and restore your device with <i>adb</i>. Moreover, no root is required to follow the process. The commands below led to backup your device to a single file which can also be successively restored.
+</p>
+<p>The command to create a backup is:
+</p>
+<pre>$ adb backup -apk -shared -all -f <i>backupFileName.ab</i>
+</pre>
+<p>The command parameters list is:
+</p>
+<pre>adb backup [-f &lt;file&gt;] [-apk|-noapk] [-shared|-noshared] [-all] [-system|nosystem] [&lt;packages...&gt;]
+</pre>
+<p>Then confirm the process on your device's display and provide a password whether a backup password has been set before.
+</p>
+<p>The command to restore a previous backup is:
+</p>
+<pre>$ adb restore <i>backupFileName.ab</i>
+</pre>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> Remember that restoring operation will replaces your device contents with the backup contents.</div>
+<h2><span class="mw-headline" id="Tools_building_on_ADB">Tools building on ADB</span></h2>
+<ul>
+<li>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/adbfs-rootless-git/">adbfs-rootless-git</a></span><sup><small>AUR</small></sup> – mount an Android device connected via USB.</li>
+<li>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/adb-sync-git/">adb-sync-git</a></span><sup><small>AUR</small></sup> – a tool to synchronize files between a PC and an Android device using the ADB protocol.</li>
+<li>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/androidscreencast-bin/">androidscreencast-bin</a></span><sup><small>AUR</small></sup> – view and control your Android device via ADB from a PC.</li>
+<li>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/logcat-color/">logcat-color</a></span><sup><small>AUR</small></sup> – a colorful and highly configurable alternative to the standard <code>adb logcat</code> command.</li>
+<li>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=scrcpy">scrcpy</a></span> – display and control your Android device.</li>
+<li>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/qtscrcpy/">qtscrcpy</a></span><sup><small>AUR</small></sup> – Android real-time display control software.</li>
+</ul>
+<h2><span class="mw-headline" id="Troubleshooting">Troubleshooting</span></h2>
+<h3><span class="mw-headline" id="Empty_device_list">Empty device list</span></h3>
+<p>A possible cause for your device not showing up is not having enabled USB debugging on your device. See <a href="#Connect_device">enable USB debugging</a>.
+</p>
+<h3><span class="mw-headline" id="No_permissions_error">No permissions error</span></h3>
+<p>If the device shows up with a "no permissions" label, it probably has a different vendor/product ID with respect to the ones collected by <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=android-udev">android-udev</a></span>.
+</p>
+<p>This can happen for instance when the device uses a custom ROM, or when it is switched from MTP to USB tethering mode, sideload and/or fastboot mode. Verify the actual device's ID with <a href="#Figure_out_device_IDs">lsusb</a> and <a href="#Adding_udev_rules">#Adding udev rules</a>.
+</p>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="../en/Category:Android.html" title="Category:Android">Android</a></li></ul>
+</div></div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=Android_Debug_Bridge&amp;oldid=775549">https://wiki.archlinux.org/index.php?title=Android_Debug_Bridge&amp;oldid=775549</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 14 April 2023, at 15:56.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

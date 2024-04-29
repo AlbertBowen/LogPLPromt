@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>System backup (Español) - ArchWiki</title>
+<link rel="stylesheet" href="../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-System_backup_Español rootpage-System_backup_Español skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Utilizar_instantáneas_de_Btrfs" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Utilizar_instant%C3%A1neas_de_Btrfs">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Utilizar instantáneas de Btrfs</div>
+			</a>
+			
+			<ul id="toc-Utilizar_instantáneas_de_Btrfs-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Utilizar_instantáneas_de_LVM" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Utilizar_instant%C3%A1neas_de_LVM">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Utilizar instantáneas de LVM</div>
+			</a>
+			
+			<ul id="toc-Utilizar_instantáneas_de_LVM-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Utilizar_rsync" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Utilizar_rsync">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>Utilizar rsync</div>
+			</a>
+			
+			<ul id="toc-Utilizar_rsync-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Utilizar_tar" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Utilizar_tar">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4</span>Utilizar tar</div>
+			</a>
+			
+			<ul id="toc-Utilizar_tar-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Copia_de_seguridad_arrancable" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Copia_de_seguridad_arrancable">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5</span>Copia de seguridad arrancable</div>
+			</a>
+			
+				<button aria-controls="toc-Copia_de_seguridad_arrancable-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Copia de seguridad arrancable subsection
+				</button>
+			
+			<ul id="toc-Copia_de_seguridad_arrancable-sublist" class="sidebar-toc-list">
+				<li id="toc-Actualizar_el_archivo_fstab" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Actualizar_el_archivo_fstab">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5.1</span>Actualizar el archivo fstab</div>
+			</a>
+			
+			<ul id="toc-Actualizar_el_archivo_fstab-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Actualizar_el_archivo_de_configuración_del_gestor_de_arranque" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Actualizar_el_archivo_de_configuraci%C3%B3n_del_gestor_de_arranque">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5.2</span>Actualizar el archivo de configuración del gestor de arranque</div>
+			</a>
+			
+			<ul id="toc-Actualizar_el_archivo_de_configuración_del_gestor_de_arranque-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Primer_arranque" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Primer_arranque">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5.3</span>Primer arranque</div>
+			</a>
+			
+			<ul id="toc-Primer_arranque-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../es/System_backup.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="new mw-list-item"><a href="/index.php?title=Talk:System_backup_(Espa%C3%B1ol)&amp;action=edit&amp;redlink=1" rel="discussion" title="Discussion about the content page (page does not exist) [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">español</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../es/System_backup.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=System_backup_(Espa%C3%B1ol)&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=System_backup_(Espa%C3%B1ol)&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../es/System_backup.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=System_backup_(Espa%C3%B1ol)&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=System_backup_(Espa%C3%B1ol)&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="es" dir="ltr">
+<div class="mw-parser-output">
+<div class="archwiki-template-box archwiki-template-box-note">Esta traducción de <a href="../en/System_backup.html" title="System backup">System backup</a> fue revisada el <b>2018-12-16</b>. Si existen <a rel="nofollow" class="external text" href="https://wiki.archlinux.org/index.php?title=System_backup&amp;diff=0&amp;oldid=559218">cambios</a> puede <a href="../es/ArchWiki:Translation_Team/Contributing.html" title="ArchWiki:Translation Team (Español)/Contributing (Español)">actualizarla</a> o avisar al <a href="../es/ArchWiki:Translation_Team.html" title="ArchWiki:Translation Team (Español)">equipo de traducción</a>.</div>
+<div class="archwiki-template-meta-related-articles-start">
+<p class="mw-no-invert">Artículos relacionados</p>
+<ul>
+<li><a href="../en/Synchronization_and_backup_programs.html" title="Synchronization and backup programs">Synchronization and backup programs</a></li>
+<li><a href="../en/System_maintenance.html#Backup" title="System maintenance">System maintenance#Backup</a></li>
+<li><a href="../en/Disk_cloning.html" title="Disk cloning">Disk cloning</a></li>
+<li><a href="../en/Migrate_installation_to_new_hardware.html" title="Migrate installation to new hardware">Migrate installation to new hardware</a></li>
+<li><a href="../en/File_recovery.html" title="File recovery">File recovery</a></li>
+</ul>
+</div>
+<p>Es importante hacer regularmente una copia de seguridad de los datos del sistema y del usuario, almacenados, por ejemplo, en <code>/etc</code>, <code>/home</code>, <code>/var</code> y, para las instalaciones del servidor, también en <code>/srv</code>.
+</p>
+<mw:tocplace></mw:tocplace>
+<h2>
+<span id="Utilizar_instant.C3.A1neas_de_Btrfs"></span><span class="mw-headline" id="Utilizar_instantáneas_de_Btrfs">Utilizar instantáneas de Btrfs</span>
+</h2>
+<p>Véanse <a href="../es/Btrfs.html#Instant%C3%A1neas" title="Btrfs (Español)">Btrfs (Español)#Instantáneas</a> y <a href="../en/Snapper.html" title="Snapper">Snapper</a>.
+</p>
+<h2>
+<span id="Utilizar_instant.C3.A1neas_de_LVM"></span><span class="mw-headline" id="Utilizar_instantáneas_de_LVM">Utilizar instantáneas de LVM</span>
+</h2>
+<p>Véanse <a href="../es/LVM.html#Instant%C3%A1neas/Snapshots" title="LVM (Español)">LVM (Español)#Instantáneas/Snapshots</a> y <a href="../en/Create_root_filesystem_snapshots_with_LVM.html" title="Create root filesystem snapshots with LVM">Create root filesystem snapshots with LVM</a>.
+</p>
+<h2><span class="mw-headline" id="Utilizar_rsync">Utilizar rsync</span></h2>
+<p>Véase <a href="../en/Rsync.html#As_a_backup_utility" title="Rsync">rsync#As a backup utility</a>.
+</p>
+<h2><span class="mw-headline" id="Utilizar_tar">Utilizar tar</span></h2>
+<p>Véase <a href="../en/Full_system_backup_with_tar.html" title="Full system backup with tar">Full system backup with tar</a>.
+</p>
+<h2><span class="mw-headline" id="Copia_de_seguridad_arrancable">Copia de seguridad arrancable</span></h2>
+<p>Tener una copia de seguridad arrancable puede ser útil en caso de que el sistema de archivos se corrompa o si una actualización rompe el sistema. La copia de seguridad también se puede usar como un banco de pruebas para realizar actualizaciones, con el repositorio <i>testing</i> activado, etc. Si transfirió el sistema a una partición o unidad diferente y desea iniciarlo, el proceso es tan simple como actualizar el archivo <code>/etc/fstab</code> para la copia de seguridad y el archivo de configuración para el gestor de arranque.
+</p>
+<p>Esta sección asume que realizó una copia de seguridad del sistema en otra unidad o partición, que su gestor de arranque actual funciona bien y que igualmente desea arrancar desde la copia de seguridad.
+</p>
+<h3><span class="mw-headline" id="Actualizar_el_archivo_fstab">Actualizar el archivo fstab</span></h3>
+<p>Sin reiniciar, modifique <a href="../es/Fstab.html" title="Fstab (Español)">fstab</a> para la copia de seguridad comentando o eliminando las entradas existentes. Agregue una entrada para la partición que contiene la copia de seguridad como en el ejemplo que sigue:
+</p>
+<pre>/dev/sda<i>X</i>    /             <i>ext4</i>      defaults                 0   1
+</pre>
+<p>Recuerde utilizar el nombre del dispositivo y el tipo de sistema de archivos adecuados.
+</p>
+<h3>
+<span id="Actualizar_el_archivo_de_configuraci.C3.B3n_del_gestor_de_arranque"></span><span class="mw-headline" id="Actualizar_el_archivo_de_configuración_del_gestor_de_arranque">Actualizar el archivo de configuración del gestor de arranque</span>
+</h3>
+<p>Para <a href="../en/Syslinux.html" class="mw-redirect" title="Syslinux (Español)">Syslinux (Español)</a>, todo lo que necesita hacer es duplicar la entrada actual, con la excepción de que apuntará a una unidad o partición diferente.
+</p>
+<div class="archwiki-template-box archwiki-template-box-tip">
+<strong>Sugerencia:</strong> En lugar de modificar <code>syslinux.cfg</code>, también puede editar provisionalmente el menú durante el arranque. Cuando aparezca el menú, presione la tecla <code>Tab</code> y cambie las entradas que le interesen. Las particiones se cuentan desde uno, las unidades desde cero.</div>
+<p>Para <a href="../es/GRUB.html" title="GRUB (Español)">GRUB (Español)</a>, es recomendable <a href="../es/GRUB.html#Generar_el_archivo_de_configuraci%C3%B3n_principal" title="GRUB (Español)">generar el archivo de configuración principal</a> automáticamente. Si desea instalar todos los archivos de GRUB en otro lugar que no sea <code>/boot</code>, como por ejemplo <code>/mnt/newroot/boot</code>, utilice el parámetro <code>--boot-directory</code>.
+</p>
+<p>Verifique también la nueva entrada del menú en <code>/boot/grub/grub.cfg</code>. Asegúrese de que el UUID coincida con el de la nueva partición, de lo contrario aún podría iniciar el sistema anterior. Encuentre el UUID de una partición con la orden <a href="../es/Device_file.html#lsblk" class="mw-redirect" title="Lsblk (Español)">lsblk</a>:
+</p>
+<pre>$ lsblk -no NAME,UUID /dev/sdb3
+</pre>
+<p>donde debe sustituir «/dev/sdb3» por la partición deseada.  Para listar los UUID de las particiones que GRUB cree que puede iniciar, utilice la orden grep:
+</p>
+<pre># grep UUID= /boot/grub/grub.cfg
+</pre>
+<h3><span class="mw-headline" id="Primer_arranque">Primer arranque</span></h3>
+<p>Reinicie el equipo y seleccione la entrada adecuada en el gestor de arranque. Esto cargará el sistema por primera vez. Deberían detectarse todos los periféricos y rellenarse las carpetas vacías en <code>/</code>.
+</p>
+<p>Ahora puede reeditar  <code>/etc/fstab</code> para agregar las particiones y los puntos de montaje eliminados anteriormente.
+</p>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="../es/Category:Backup.html" title="Category:Backup (Español)">Backup (Español)</a></li></ul>
+</div></div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=System_backup_(Espa%C3%B1ol)&amp;oldid=755361">https://wiki.archlinux.org/index.php?title=System_backup_(Español)&amp;oldid=755361</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 31 October 2022, at 07:28.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

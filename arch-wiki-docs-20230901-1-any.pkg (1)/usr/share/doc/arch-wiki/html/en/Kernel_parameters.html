@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>Kernel parameters - ArchWiki</title>
+<link rel="stylesheet" href="../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Kernel_parameters rootpage-Kernel_parameters skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Configuration" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Configuration">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Configuration</div>
+			</a>
+			
+				<button aria-controls="toc-Configuration-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Configuration subsection
+				</button>
+			
+			<ul id="toc-Configuration-sublist" class="sidebar-toc-list">
+				<li id="toc-Syslinux" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Syslinux">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.1</span>Syslinux</div>
+			</a>
+			
+			<ul id="toc-Syslinux-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-systemd-boot" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#systemd-boot">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.2</span>systemd-boot</div>
+			</a>
+			
+			<ul id="toc-systemd-boot-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-GRUB" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#GRUB">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.3</span>GRUB</div>
+			</a>
+			
+			<ul id="toc-GRUB-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-GRUB_Legacy" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#GRUB_Legacy">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.4</span>GRUB Legacy</div>
+			</a>
+			
+			<ul id="toc-GRUB_Legacy-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-LILO" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#LILO">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.5</span>LILO</div>
+			</a>
+			
+			<ul id="toc-LILO-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-rEFInd" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#rEFInd">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.6</span>rEFInd</div>
+			</a>
+			
+			<ul id="toc-rEFInd-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-EFISTUB" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#EFISTUB">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.7</span>EFISTUB</div>
+			</a>
+			
+			<ul id="toc-EFISTUB-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-dracut" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#dracut">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.8</span>dracut</div>
+			</a>
+			
+			<ul id="toc-dracut-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Hijacking_cmdline" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Hijacking_cmdline">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.9</span>Hijacking cmdline</div>
+			</a>
+			
+			<ul id="toc-Hijacking_cmdline-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Parameter_list" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Parameter_list">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Parameter list</div>
+			</a>
+			
+			<ul id="toc-Parameter_list-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-See_also" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#See_also">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>See also</div>
+			</a>
+			
+			<ul id="toc-See_also-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../en/Kernel_parameters.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="mw-list-item"><a href="../en/Talk:Kernel_parameters.html" rel="discussion" title="Discussion about the content page [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">English</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../en/Kernel_parameters.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=Kernel_parameters&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=Kernel_parameters&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../en/Kernel_parameters.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Kernel_parameters&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Kernel_parameters&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output">
+<p>There are three ways to pass options to the kernel and thus control its behaviour:
+</p>
+<ol>
+<li>When building the kernel—in the kernel's <code>config</code> file. See <a href="../en/Kernel.html#Compilation" title="Kernel">Kernel#Compilation</a> for details.</li>
+<li>When starting the kernel—using command line parameters (usually through a boot loader).</li>
+<li>At runtime—through the files in <code>/proc/sys/</code> (see <a href="../en/Sysctl.html" title="Sysctl">sysctl</a>) and <code>/sys/</code>.</li>
+</ol>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> The options of loadable modules can be set via <i>.conf</i> files in <code>/etc/modprobe.d/</code>. See <a href="../en/Kernel_module.html#Using_files_in_/etc/modprobe.d/" title="Kernel module">Kernel module#Using files in /etc/modprobe.d/</a>.</div>
+<p>Between the three methods, the configurable options differ in availability, their name and the method in which they are specified. This page only explains the second method (kernel command line parameters) and shows a list of the most used kernel parameters in Arch Linux.
+</p>
+<p>Most parameters are associated with subsystems and work only if the kernel is configured with those subsystems built in. They also depend on the presence of the hardware they are associated with.
+</p>
+<p>Kernel command line parameters either have the format <code>parameter</code> or <code>parameter=value</code>.
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> All kernel parameters are case-sensitive.</div>
+<mw:tocplace></mw:tocplace>
+<h2><span class="mw-headline" id="Configuration">Configuration</span></h2>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> 
+<ul>
+<li>You can check the parameters your system was booted up with by running <code>cat /proc/cmdline</code> and see if it includes your changes.</li>
+<li>The Arch Linux <a rel="nofollow" class="external text" href="https://archlinux.org/download/">installation medium</a> uses <a href="../en/Syslinux.html" title="Syslinux">Syslinux</a> for <a href="https://en.wikipedia.org/wiki/BIOS" class="extiw" title="wikipedia:BIOS">BIOS</a> systems, and <a href="../en/GRUB.html" title="GRUB">GRUB</a> for <a href="../en/Unified_Extensible_Firmware_Interface.html" class="mw-redirect" title="UEFI">UEFI</a> systems.</li>
+</ul>
+</div>
+<p>Kernel parameters can be set either temporarily by editing the boot entry in the boot loader's boot selection menu, or permanently by modifying the boot loader's configuration file.
+</p>
+<p>The following examples add the <code>quiet</code> and <code>splash</code> parameters to <a href="../en/Syslinux.html" title="Syslinux">Syslinux</a>, <a href="../en/Systemd-boot.html" title="Systemd-boot">systemd-boot</a>, <a href="../en/GRUB.html" title="GRUB">GRUB</a>, <a href="../en/GRUB_Legacy.html" title="GRUB Legacy">GRUB Legacy</a>, <a href="../en/LILO.html" title="LILO">LILO</a>, and <a href="../en/REFInd.html" title="REFInd">rEFInd</a>.
+</p>
+<h3><span class="mw-headline" id="Syslinux">Syslinux</span></h3>
+<ul><li>Press <code>Tab</code> when the menu shows up and add them at the end of the string:</li></ul>
+<dl><dd><pre>linux /boot/vmlinuz-linux root=UUID=0a3407de-014b-458b-b5c1-848e92a327a3 rw initrd=/boot/initramfs-linux.img <b>quiet splash</b></pre></dd></dl>
+<dl><dd>Press <code>Enter</code> to boot with these parameters.</dd></dl>
+<ul><li>To make the change persistent after reboot, edit <code>/boot/syslinux/syslinux.cfg</code> and add them to the <code>APPEND</code> line:</li></ul>
+<dl><dd><pre>APPEND root=UUID=0a3407de-014b-458b-b5c1-848e92a327a3 rw <b>quiet splash</b></pre></dd></dl>
+<p>For more information on configuring Syslinux, see the <a href="../en/Syslinux.html" title="Syslinux">Syslinux</a> article.
+</p>
+<h3><span class="mw-headline" id="systemd-boot">systemd-boot</span></h3>
+<ul><li>Press <code>e</code> when the menu appears and add the parameters to the end of the string:</li></ul>
+<dl><dd><pre>initrd=\initramfs-linux.img root=UUID=0a3407de-014b-458b-b5c1-848e92a327a3 rw <b>quiet splash</b></pre></dd></dl>
+<dl><dd>Press <code>Enter</code> to boot with these parameters.</dd></dl>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> 
+<ul>
+<li>If you have not set a value for menu timeout, you will need to hold <code>Space</code> while booting for the systemd-boot menu to appear.</li>
+<li>If you cannot edit the parameters from the boot menu, you may need to edit <code>/boot/loader/loader.conf</code> and add <code>editor 1</code> to enable editing.</li>
+</ul>
+</div>
+<ul><li>To make the change persistent after reboot, edit <code>/boot/loader/entries/arch.conf</code> (assuming you set up your <a href="../en/EFI_system_partition.html" title="EFI system partition">EFI system partition</a>) and add them to the <code>options</code> line:</li></ul>
+<dl><dd><pre>options root=UUID=0a3407de-014b-458b-b5c1-848e92a327a3 rw <b>quiet splash</b></pre></dd></dl>
+<p>For more information on configuring systemd-boot, see the <a href="../en/Systemd-boot.html" title="Systemd-boot">systemd-boot</a> article.
+</p>
+<h3><span class="mw-headline" id="GRUB">GRUB</span></h3>
+<ul><li>Press <code>e</code> when the menu shows up and add them on the <code>linux</code> line:</li></ul>
+<dl><dd><pre>linux /boot/vmlinuz-linux root=UUID=0a3407de-014b-458b-b5c1-848e92a327a3 rw <b>quiet splash</b></pre></dd></dl>
+<dl><dd>Press <code>Ctrl+x</code> to boot with these parameters.</dd></dl>
+<ul><li>To make the change persistent after reboot, you could <a href="../en/GRUB.html#Custom_grub.cfg" title="GRUB">manually edit /boot/grub/grub.cfg</a> with the exact line from above, or if using <i>grub-mkconfig</i>:</li></ul>
+<dl><dd>Edit <code>/etc/default/grub</code> and append your kernel options between the quotes in the <code>GRUB_CMDLINE_LINUX_DEFAULT</code> line:</dd></dl>
+<dl><dd><dl><dd><pre>GRUB_CMDLINE_LINUX_DEFAULT="<b>quiet splash</b>"</pre></dd></dl></dd></dl>
+<dl><dd>And then automatically re-generate the <code>grub.cfg</code> file with:</dd></dl>
+<dl><dd><dl><dd><pre># grub-mkconfig -o /boot/grub/grub.cfg</pre></dd></dl></dd></dl>
+<p>For more information on configuring GRUB, see the <a href="../en/GRUB.html" title="GRUB">GRUB</a> article.
+</p>
+<h3><span class="mw-headline" id="GRUB_Legacy">GRUB Legacy</span></h3>
+<ul><li>Press <code>e</code> when the menu shows up and add them on the <code>kernel</code> line:</li></ul>
+<dl><dd><pre>kernel /boot/vmlinuz-linux root=UUID=0a3407de-014b-458b-b5c1-848e92a327a3 rw <b>quiet splash</b></pre></dd></dl>
+<dl><dd>Press <code>b</code> to boot with these parameters.</dd></dl>
+<ul><li>To make the change persistent after reboot, edit <code>/boot/grub/menu.lst</code> and add them to the <code>kernel</code> line, exactly like above.</li></ul>
+<p>For more information on configuring GRUB Legacy, see the <a href="../en/GRUB_Legacy.html" title="GRUB Legacy">GRUB Legacy</a> article.
+</p>
+<h3><span class="mw-headline" id="LILO">LILO</span></h3>
+<ul><li>Add them to <code>/etc/lilo.conf</code>:</li></ul>
+<dl><dd><pre>image=/boot/vmlinuz-linux
+        ...
+        <b>quiet splash</b></pre></dd></dl>
+
+<p>For more information on configuring LILO, see the <a href="../en/LILO.html" title="LILO">LILO</a> article.
+</p>
+<h3><span class="mw-headline" id="rEFInd">rEFInd</span></h3>
+<ul><li>Press <code>+</code>, <code>F2</code>, or <code>Insert</code> on the desired menu entry and press it again on the submenu entry. Add kernel parameters at the end of the string:</li></ul>
+<dl><dd><pre>root=UUID=0a3407de-014b-458b-b5c1-848e92a327a3 rw initrd=\boot\initramfs-linux.img <b>quiet splash</b></pre></dd></dl>
+<dl><dd>Press <code>Enter</code> to boot with these parameters.</dd></dl>
+<ul><li>To make the change persistent after reboot, edit <code>/boot/refind_linux.conf</code> and append them between the quotes in all required lines, for example</li></ul>
+<dl><dd><pre>"Boot using default options"   "root=UUID=0a3407de-014b-458b-b5c1-848e92a327a3 rw <b>quiet splash</b>"</pre></dd></dl>
+<ul><li>If you have disabled auto-detection of OSes in rEFInd and are defining OS stanzas instead in <code><i>esp</i>/EFI/refind/refind.conf</code> to load your OSes, you can edit it like:</li></ul>
+<dl><dd><pre>menuentry "Arch Linux" {
+	...
+	options  "root=UUID=0a3407de-014b-458b-b5c1-848e92a327a3 rw <b>quiet splash</b>"
+	...
+}
+</pre></dd></dl>
+<p>For more information on configuring rEFInd, see the <a href="../en/REFInd.html" title="REFInd">rEFInd</a> article.
+</p>
+<h3><span class="mw-headline" id="EFISTUB">EFISTUB</span></h3>
+<p>See <a href="../en/EFISTUB.html#Using_UEFI_directly" title="EFISTUB">EFISTUB#Using UEFI directly</a>.
+</p>
+<h3><span class="mw-headline" id="dracut">dracut</span></h3>
+<p><a href="../en/Dracut.html" title="Dracut">dracut</a> is capable of embedding the kernel parameters in the initramfs, thus allowing to omit them from the boot loader configuration. See <a href="../en/Dracut.html#Kernel_command_line_options" title="Dracut">dracut#Kernel command line options</a>.
+</p>
+<h3><span class="mw-headline" id="Hijacking_cmdline">Hijacking cmdline</span></h3>
+<p>Even without access to your bootloader it is possible to change your kernel parameters to enable debugging (if you have root access). This can be accomplished by overwriting <code>/proc/cmdline</code> which stores the kernel parameters. However <code>/proc/cmdline</code> is not writable even as root, so this hack is accomplished by using a bind mount to mask the path.
+</p>
+<p>First create a file containing the desired kernel parameters
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/root/cmdline</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">root=UUID=0a3407de-014b-458b-b5c1-848e92a327a3 ro console=tty1 logo.nologo debug</pre>
+<p>Then use a bind mount to overwrite the parameters
+</p>
+<pre># mount -n --bind -o ro /root/cmdline /proc/cmdline
+</pre>
+<p>The <code>-n</code> option skips adding the mount to <code>/etc/mtab</code>, so it will work even if root is mounted read-only. You can <code>cat /proc/cmdline</code> to confirm that your change was successful.
+</p>
+<h2><span class="mw-headline" id="Parameter_list">Parameter list</span></h2>
+<p>This list is not comprehensive. For a complete list of all options, please see the <a rel="nofollow" class="external text" href="https://docs.kernel.org/admin-guide/kernel-parameters.html">kernel documentation</a>.
+</p>
+<table class="wikitable">
+<tbody>
+<tr>
+<th>parameter</th>
+<th>Description
+</th>
+</tr>
+<tr>
+<td>init</td>
+<td>Run specified binary instead of <code>/sbin/init</code> as init process. The <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=systemd-sysvcompat">systemd-sysvcompat</a></span> package symlinks <code>/sbin/init</code> to <code>/usr/lib/systemd/systemd</code> to use <a href="../en/Systemd.html" title="Systemd">systemd</a>. Set it to <code>/bin/sh</code> to boot to the shell.
+</td>
+</tr>
+<tr>
+<td>initrd</td>
+<td>Specify the location of the initial ramdisk. For UEFI <a href="../en/Arch_boot_process.html#Boot_loader" class="mw-redirect" title="Boot manager">boot managers</a> and <a href="../en/EFISTUB.html" title="EFISTUB">EFISTUB</a>, the path must be specified using backslashes (<code>\</code>) as path separators.
+</td>
+</tr>
+<tr>
+<td><a href="../en/Dm-crypt/System_configuration.html#cryptdevice" title="Dm-crypt/System configuration">cryptdevice</a></td>
+<td>Specify the location of a <a href="../en/Dm-crypt.html" title="Dm-crypt">dm-crypt</a>-encrypted partition plus a <a href="https://en.wikipedia.org/wiki/device_mapper" class="extiw" title="wikipedia:device mapper">device mapper</a> name.
+</td>
+</tr>
+<tr>
+<td>debug</td>
+<td>Enable kernel debugging (events log level).
+</td>
+</tr>
+<tr>
+<td>lsm</td>
+<td>Set the initialisation order of the Linux security modules, used to enable <a href="../en/AppArmor.html" title="AppArmor">AppArmor</a>, <a href="../en/SELinux.html" title="SELinux">SELinux</a> or <a href="../en/TOMOYO_Linux.html" class="mw-redirect" title="TOMOYO">TOMOYO</a>.
+</td>
+</tr>
+<tr>
+<td>maxcpus</td>
+<td>Maximum number of processors that an SMP kernel will bring up during bootup.
+</td>
+</tr>
+<tr>
+<td>mem</td>
+<td>Force usage of a specific amount of memory to be used.
+</td>
+</tr>
+<tr>
+<td>netdev</td>
+<td>Network devices parameters.
+</td>
+</tr>
+<tr>
+<td>nomodeset</td>
+<td>Disable <a href="../en/Kernel_mode_setting.html" title="Kernel mode setting">Kernel mode setting</a>.
+</td>
+</tr>
+<tr>
+<td>panic</td>
+<td>Time before automatic reboot on kernel panic.
+</td>
+</tr>
+<tr>
+<td>resume</td>
+<td>Specify a swap device to use when waking from <a href="../en/Power_management/Suspend_and_hibernate.html#Hibernation" class="mw-redirect" title="Hibernation">hibernation</a>.
+</td>
+</tr>
+<tr>
+<td>ro</td>
+<td>Mount root device read-only on boot. This is <a href="../en/Mkinitcpio.html" title="Mkinitcpio">mkinitcpio</a>'s default<sup>1</sup>.
+</td>
+</tr>
+<tr>
+<td>root</td>
+<td>Root filesystem. See <a rel="nofollow" class="external text" href="https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/init/do_mounts.c#n254">init/do_mounts.c</a> for kernel's supported device name formats. Note that an <a href="../en/Arch_boot_process.html#initramfs" class="mw-redirect" title="Initramfs">initramfs</a> with <a href="../en/Udev.html" title="Udev">udev</a> supports <a href="../en/Persistent_block_device_naming.html" title="Persistent block device naming">more name formats</a>.
+</td>
+</tr>
+<tr>
+<td>rootflags</td>
+<td>Root filesystem mount options. Useful for setting options that cannot be applied by remounting (i.e. by <span class="plainlinks archwiki-template-man" title="$ man 8 systemd-remount-fs.service"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/systemd-remount-fs.service.8">systemd-remount-fs.service(8)</a></span>). For example, the <code>discard</code> option of an <a href="../en/XFS.html" title="XFS">XFS</a> root volume or <code>subvol=</code> option of <a href="../en/Btrfs.html#Mounting_subvolume_as_root" title="Btrfs">Btrfs when using a subvolume as root</a>.
+</td>
+</tr>
+<tr>
+<td>rw</td>
+<td>Mount root device read-write on boot. This is the kernel's default<sup>1</sup>.
+</td>
+</tr>
+<tr>
+<td>systemd.unit</td>
+<td>Boot to a <a href="../en/Systemd.html#Targets" title="Systemd">specified target</a>.
+</td>
+</tr>
+<tr>
+<td>video</td>
+<td>Override framebuffer video defaults.
+</td>
+</tr>
+</tbody>
+</table>
+<ol><li>The kernel uses <code>rw</code> if neither <code>ro</code> or <code>rw</code> are explicitly set on kernel command line (see <span class="plainlinks archwiki-template-man" title="$ man 7 bootparam"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/bootparam.7#General_non-device-specific_boot_arguments">bootparam(7) § General non-device-specific boot arguments</a></span>). However, <a href="../en/Mkinitcpio.html" title="Mkinitcpio">mkinitcpio</a> uses <code>ro</code> as the default value overriding the kernel's default (see <span class="plainlinks archwiki-template-man" title="$ man 8 mkinitcpio"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/mkinitcpio.8#EARLY_INIT_ENVIRONMENT">mkinitcpio(8) § EARLY INIT ENVIRONMENT</a></span>). Boot loaders may also have their own configured default, for example, <i>grub-mkconfig</i> uses <code>rw</code> (see <a rel="nofollow" class="external text" href="https://bugs.archlinux.org/task/36275">FS#36275</a> as a reference). <div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> <code>rw</code> is required when using mkinitcpio's <a href="../en/Fsck.html#Boot_time_checking" title="Fsck">fsck hook</a> (see <a rel="nofollow" class="external autonumber" href="https://bbs.archlinux.org/viewtopic.php?pid=1303683#p1303683">[1]</a>) or <a href="../en/F2FS.html#Remounting_impossible_with_some_options" title="F2FS">when using F2FS as the root file system</a>.</div>
+</li></ol>
+<h2><span class="mw-headline" id="See_also">See also</span></h2>
+<ul>
+<li><a rel="nofollow" class="external text" href="https://docs.kernel.org/admin-guide/kernel-parameters.html">"The kernel’s command-line parameters" documentation</a></li>
+<li><a href="../en/Power_management.html#Kernel_parameters" class="mw-redirect" title="Power saving">Power saving#Kernel parameters</a></li>
+<li><a rel="nofollow" class="external text" href="http://files.kroah.com/lkn/lkn_pdf/ch09.pdf">List of kernel parameters with further explanation and grouped by similar options</a></li>
+</ul>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="../en/Category:Kernel.html" title="Category:Kernel">Kernel</a></li></ul>
+</div></div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=Kernel_parameters&amp;oldid=778297">https://wiki.archlinux.org/index.php?title=Kernel_parameters&amp;oldid=778297</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 17 May 2023, at 15:20.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

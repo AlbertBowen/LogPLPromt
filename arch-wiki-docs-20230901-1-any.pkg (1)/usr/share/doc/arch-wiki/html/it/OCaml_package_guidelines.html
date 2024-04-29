@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>OCaml package guidelines (Italiano) - ArchWiki</title>
+<link rel="stylesheet" href="../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-OCaml_package_guidelines_Italiano rootpage-OCaml_package_guidelines_Italiano skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Nominazione_dei_pacchetti" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Nominazione_dei_pacchetti">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Nominazione dei pacchetti</div>
+			</a>
+			
+			<ul id="toc-Nominazione_dei_pacchetti-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Posizionamento_dei_file" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Posizionamento_dei_file">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Posizionamento dei file</div>
+			</a>
+			
+				<button aria-controls="toc-Posizionamento_dei_file-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Posizionamento dei file subsection
+				</button>
+			
+			<ul id="toc-Posizionamento_dei_file-sublist" class="sidebar-toc-list">
+				<li id="toc-Librerie" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Librerie">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.1</span>Librerie</div>
+			</a>
+			
+			<ul id="toc-Librerie-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-OASIS" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#OASIS">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.2</span>OASIS</div>
+			</a>
+			
+			<ul id="toc-OASIS-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Bytecode_e_Livelli_di_OCaml" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Bytecode_e_Livelli_di_OCaml">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>Bytecode e Livelli di OCaml</div>
+			</a>
+			
+			<ul id="toc-Bytecode_e_Livelli_di_OCaml-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Esempio_di_PKGBUILD_usando_Dune" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Esempio_di_PKGBUILD_usando_Dune">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4</span>Esempio di PKGBUILD usando Dune</div>
+			</a>
+			
+			<ul id="toc-Esempio_di_PKGBUILD_usando_Dune-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Esempio_di_PKGBUILD_OCaml_usando_il_semplice_findlib" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Esempio_di_PKGBUILD_OCaml_usando_il_semplice_findlib">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5</span>Esempio di PKGBUILD OCaml usando il semplice findlib</div>
+			</a>
+			
+			<ul id="toc-Esempio_di_PKGBUILD_OCaml_usando_il_semplice_findlib-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../it/OCaml_package_guidelines.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="new mw-list-item"><a href="/index.php?title=Talk:OCaml_package_guidelines_(Italiano)&amp;action=edit&amp;redlink=1" rel="discussion" title="Discussion about the content page (page does not exist) [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">italiano</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../it/OCaml_package_guidelines.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=OCaml_package_guidelines_(Italiano)&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=OCaml_package_guidelines_(Italiano)&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../it/OCaml_package_guidelines.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=OCaml_package_guidelines_(Italiano)&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=OCaml_package_guidelines_(Italiano)&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="it" dir="ltr">
+<div class="mw-parser-output">
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Translation Status:</strong> This article is a localized version of <a href="../en/OCaml_package_guidelines.html" title="OCaml package guidelines">OCaml package guidelines</a>. Last translation date: 2022-02-04. You can help to synchronize the translation, if there were <a rel="nofollow" class="external text" href="https://wiki.archlinux.org/index.php?title=OCaml_package_guidelines&amp;diff=0&amp;oldid=715528">changes</a> in the English version.</div>
+<p>Scrivere <a href="../en/PKGBUILD.html" class="mw-redirect" title="PKGBUILD (Italiano)">PKGBUILD</a> per software scritto in <a href="https://en.wikipedia.org/wiki/it:OCaml" class="extiw" title="wikipedia:it:OCaml">OCaml</a>.
+</p>
+<mw:tocplace></mw:tocplace>
+<h2><span class="mw-headline" id="Nominazione_dei_pacchetti">Nominazione dei pacchetti</span></h2>
+<p>Per le librerie, si usi <code>ocaml-modulename</code>. Per le applicazioni, si usi il nome del programma. In entrambi i casi, il nome del pacchetto dev'essere interamente in caratteri minuscoli.
+</p>
+<h2><span class="mw-headline" id="Posizionamento_dei_file">Posizionamento dei file</span></h2>
+<h3><span class="mw-headline" id="Librerie">Librerie</span></h3>
+<p>Le librerie OCaml devono essere installate sotto <code>/usr/lib/ocaml</code>. Precedentemente, le librerie venivano installate sia sotto <code>/usr/lib/ocaml</code> che sotto <code>/usr/lib/ocaml/site-lib</code>, a seconda del pacchetto. Questa confusione impediva ad alcuni pacchetti di funzionare con altri, ed inoltre frammentava lo sviluppo in OCaml su Arch Linux. Per questo l'uso di <code>/usr/lib/ocaml/site-lib</code> è stato interrotto.
+</p>
+<p>Le librerie OCaml devono essere installate utilizzando <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=ocaml-findlib">ocaml-findlib</a></span>. <code>ocaml-findlib</code> include dei metadata nel pacchetto che facilitano la gestione delle librerie. È uno standard de-facto ed un requisito di gran parte dell'attuale software in OCaml.
+</p>
+<p><code>ocaml-findlib</code> estrae i dati necessari da un file chiamato <code>META</code> che deve essere incluso nell'archivio dei sorgenti. Se questo file non è incluso, è possibile ottenerne uno dal corrispondente pacchetto per Debian, Ubuntu o Fedora, altrimenti deve esserne creato uno apposito dal maintainer del pacchetto. La richiesta di includere tale file potrebbe anche essere fatta direttamente agli sviluppatori originali del pacchetto.
+</p>
+<p>Quando si installano pacchetti con <code>ocaml-findlib</code> è necessario usare la variabile <code>OCAMLFIND_DESTDIR</code>. Vedere il PKGBUILD di esempio riportato sotto per i dettagli.
+</p>
+<h3><span class="mw-headline" id="OASIS">OASIS</span></h3>
+<p>I pacchetti OCaml che installano eseguibili usando OASIS ignorano <code>DESTDIR</code>. Questa è una limitazione conosciuta di OASIS (<a rel="nofollow" class="external text" href="https://github.com/ocaml/oasis/issues/493">issue #493</a>). Una maniera per abilitare funzionalità simili a <code>DESTDIR</code> è lanciare lo script <code>configure</code> con l'argomento <code>--destdir</code>, ad esempio:
+</p>
+<pre>build() {
+    cd "${srcdir}/${srcname}-${pkgver}"
+    ./configure --prefix /usr --destdir "$pkgdir"
+
+    # build commands
+}</pre>
+<h2><span class="mw-headline" id="Bytecode_e_Livelli_di_OCaml">Bytecode e Livelli di OCaml</span></h2>
+<p>OCaml può eseguire il codice su vari "livelli": il livello principale ("top level") interpreta il codice OCaml senza compilarlo, il livello bytecode crea appunto del bytecode indipendente dalla macchina, e il livello nativo crea dei binari con codice macchina (proprio come C/C++).
+</p>
+<p>Quando si compilano pacchetti OCaml è necessario sapere se il processo di build compila codice macchina nativo, bytecode, o, come in molti casi, entrambi. Questo genera svariate situazioni in cui possono crearsi problemi con le opzioni dei pacchetti e le loro corrette dipendenze.
+</p>
+<p>Se viene creato del bytecode, il PKGBUILD deve contenere la seguente linea per proteggerlo:
+</p>
+<pre>options=('!strip')
+</pre>
+<p>Se il pacchetto non contiene bytecode ma distribuisce solamente file binari, <code>ocaml</code> non è richiesto come dipendenza, ma è invece ovviamente necessario come makedepends, dato che il compilatore di OCaml è fornito dal pacchetto <code>ocaml</code>. Se il pacchetto contiene sia codice nativo che bytecode, <code>ocaml</code> deve essere sia una dipendenza che un makedepends.
+</p>
+<p>Il codice OCaml è molto raramente distribuito solo come bytecode, infatti quasi sempre include del codice nativo: l'unico caso in cui è consigliabile usare <i>any</i> come <i>arch</i> è quando viene distribuito solamente codice sorgente non compilato, di solito con una libreria, benché appunto molte librerie distribuiscano anche codice nativo.
+</p>
+<p>Per riassumere, è bene essere sempre coscienti di ciò che si va a distribuire, la probabilità maggiore è che il proprio pacchetto contenga sia codice macchina nativo che bytecode.
+</p>
+<h2><span class="mw-headline" id="Esempio_di_PKGBUILD_usando_Dune">Esempio di PKGBUILD usando Dune</span></h2>
+<p><a rel="nofollow" class="external text" href="https://dune.build/">Dune</a> è un nuovo sistema di compilazione che sta diventando sempre più usato dai progetti OCaml.
+</p>
+<p>Una cosa da sapere è che un singolo progetto può costruire diversi "pacchetti" nel senso di OPAM/findlib, ognuno con la propria directory in <code>/usr/lib/ocaml/</code>. Vedi <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=ocaml-cairo">ocaml-cairo</a></span> per un esempio. Per le build di rilascio, tutti i "pacchetti" devono essere esplicitamente elencati. 
+</p>
+<pre># Contributor: Your Name &lt;youremail@domain.com&gt;
+
+pkgname=ocaml-&lt;package name&gt;
+pkgver=4.2
+pkgrel=1
+license=(<i>)</i>
+arch=('x86_64')
+pkgdesc="An OCaml Package"
+url=""
+depends=('ocaml')
+makedepends=('dune')
+source=()
+options=('!strip')
+sha256sums=()
+
+build() {
+  cd "${srcdir}/${pkgname}-${pkgver}"
+  # The "-p" flag is necessary for release builds, see the Dune manpage. Dune will complain if you forget some packages.
+  dune build -p package1,package1-extension,package2
+}
+
+package() {
+  cd "${srcdir}/${pkgname}-${pkgver}"
+  DESTDIR="${pkgdir}" dune install --prefix "/usr" --libdir "lib/ocaml"
+
+  # Dune installs documentation in /usr/doc, fix that.
+  install -dm755 "${pkgdir}/usr/share/"
+  mv "${pkgdir}/usr/doc" "${pkgdir}/usr/share/"
+}</pre>
+<h2><span class="mw-headline" id="Esempio_di_PKGBUILD_OCaml_usando_il_semplice_findlib">Esempio di PKGBUILD OCaml usando il semplice findlib</span></h2>
+<pre># Contributor: Your Name &lt;youremail@domain.com&gt;
+
+pkgname=ocaml-&lt;package name&gt;
+pkgver=4.2
+pkgrel=1
+license=(<i>)</i>
+arch=('i686' 'x86_64')
+pkgdesc="An OCaml Package"
+url=""
+depends=('ocaml')
+makedepends=('ocaml-findlib')
+source=()
+options=('!strip')
+md5sums=()
+
+OCAMLFIND_DESTDIR="${pkgdir}$(ocamlfind printconf destdir)"
+
+build() {
+  cd "${srcdir}/${pkgname}-${pkgver}"
+  mkdir -p "$OCAMLFIND_DESTDIR"
+  ./configure --prefix=/usr
+  make
+}
+
+package() {
+  cd "${srcdir}/${pkgname}-${pkgver}"
+  env DESTDIR="${pkgdir}" \
+    OCAMLFIND_DESTDIR="$OCAMLFIND_DESTDIR" \
+    make install
+}</pre>
+<p>Tenere sempre presente che molti pacchetti OCaml avranno spesso bisogno che siano passati ulteriori parametri a <code>make</code> e <code>make install</code>. Ricordarsi anche di rimuovere l'opzione <code>!strip</code> e cambiare l'architettura se il pacchetto non fornisce bytecode.
+</p>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="../it/Category:Package_development.html" title="Category:Package development (Italiano)">Package development (Italiano)</a></li></ul>
+</div></div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=OCaml_package_guidelines_(Italiano)&amp;oldid=783360">https://wiki.archlinux.org/index.php?title=OCaml_package_guidelines_(Italiano)&amp;oldid=783360</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 17 July 2023, at 05:46.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

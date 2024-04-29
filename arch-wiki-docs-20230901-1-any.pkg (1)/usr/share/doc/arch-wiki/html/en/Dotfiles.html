@@ -1,0 +1,1519 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>Dotfiles - ArchWiki</title>
+<link rel="stylesheet" href="../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Dotfiles rootpage-Dotfiles skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Tracking_dotfiles_directly_with_Git" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Tracking_dotfiles_directly_with_Git">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Tracking dotfiles directly with Git</div>
+			</a>
+			
+			<ul id="toc-Tracking_dotfiles_directly_with_Git-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Host-specific_configuration" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Host-specific_configuration">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Host-specific configuration</div>
+			</a>
+			
+			<ul id="toc-Host-specific_configuration-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Tools" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Tools">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>Tools</div>
+			</a>
+			
+				<button aria-controls="toc-Tools-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Tools subsection
+				</button>
+			
+			<ul id="toc-Tools-sublist" class="sidebar-toc-list">
+				<li id="toc-Tools_wrapping_Git" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Tools_wrapping_Git">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.1</span>Tools wrapping Git</div>
+			</a>
+			
+			<ul id="toc-Tools_wrapping_Git-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-User_repositories" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#User_repositories">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4</span>User repositories</div>
+			</a>
+			
+			<ul id="toc-User_repositories-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-See_also" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#See_also">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5</span>See also</div>
+			</a>
+			
+			<ul id="toc-See_also-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../en/Dotfiles.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="mw-list-item"><a href="../en/Talk:Dotfiles.html" rel="discussion" title="Discussion about the content page [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">English</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../en/Dotfiles.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=Dotfiles&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=Dotfiles&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../en/Dotfiles.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Dotfiles&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Dotfiles&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output">
+<div class="archwiki-template-meta-related-articles-start">
+<p class="mw-no-invert">Related articles</p>
+<ul>
+<li><a href="../en/XDG_Base_Directory.html" class="mw-redirect" title="XDG Base Directory support">XDG Base Directory support</a></li>
+<li><a href="../en/X_resources.html" title="X resources">X resources</a></li>
+</ul>
+</div>
+<p>User-specific application configuration is traditionally stored in so called <a href="https://en.wikipedia.org/wiki/dotfile" class="extiw" title="wikipedia:dotfile">dotfiles</a> (files whose filename starts with a dot). It is common practice to track dotfiles with a <a href="../en/Category:Version_control_system.html" class="mw-redirect" title="Version control system">version control system</a> such as <a href="../en/Git.html" title="Git">Git</a> to keep track of changes and synchronize dotfiles across various hosts. There are various approaches to managing dotfiles (e.g. directly tracking dotfiles in the home directory v.s. storing them in a subdirectory and symlinking/copying/generating files with a <a href="../en/Command-line_shell.html" class="mw-redirect" title="Shell">shell</a> script or <a href="#Tools">a dedicated tool</a>). Apart from explaining how to manage dotfiles this article also contains <a href="#User_repositories">a list of dotfile repositories</a> from Arch Linux users.
+</p>
+<mw:tocplace></mw:tocplace>
+<h2><span class="mw-headline" id="Tracking_dotfiles_directly_with_Git">Tracking dotfiles directly with Git</span></h2>
+<p>The benefit of tracking dotfiles directly with Git is that it only requires <a href="../en/Git.html" title="Git">Git</a> and does not involve symlinks. The disadvantage is that <a href="#Host-specific_configuration">host-specific configuration</a> generally requires merging changes into multiple <a href="../en/Git.html#Branching" title="Git">branches</a>.
+</p>
+<p>The simplest way to achieve this approach is to initialize a <a href="../en/Git.html" title="Git">Git</a> repository directly in your home directory and ignoring all files by default with a <span class="plainlinks archwiki-template-man" title="$ man 5 gitignore"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/gitignore.5">gitignore(5)</a></span> pattern of <code>*</code>. This method however comes with two drawbacks: it can become confusing when you have other Git repositories in your home directory (e.g. if you forget to initialize a repository you suddenly operate on your dotfile repository) and you can no longer easily see which files in the current directory are untracked (because they are ignored).
+</p>
+<p>An alternative method without these drawbacks is the "bare repository and alias method" popularized on <a rel="nofollow" class="external text" href="https://news.ycombinator.com/item?id=11071754">Ask Hacker News: What do you use to manage your dotfiles?</a>, which just takes three commands to set up:
+</p>
+<div class="noprint archwiki-template-message">
+<p><a href="../File:Tango-inaccurate.png" class="image"><img alt="Tango-inaccurate.png" src="../File:Tango-inaccurate.png" decoding="async" width="48" height="48"></a><b>The factual accuracy of this article or section is disputed.</b><a href="../File:Tango-inaccurate.png" class="image"><img alt="Tango-inaccurate.png" src="../File:Tango-inaccurate.png" decoding="async" width="48" height="48"></a></p>
+<div>
+<b>Reason:</b> This approach may not properly track permissions (Discuss in <a href="../en/Talk:Dotfiles.html#Git_approach_fails_on_permissions_and_ownership" title="Talk:Dotfiles">Talk:Dotfiles#Git approach fails on permissions and ownership</a>)</div>
+</div>
+<pre>$ git init --bare ~/.dotfiles
+$ alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+$ config config status.showUntrackedFiles no
+</pre>
+<p>You can then manage your dotfiles with the created <a href="../en/Bash.html#Aliases" class="mw-redirect" title="Alias">alias</a>. If you are using <a href="../en/Bash.html" title="Bash">Bash</a> and would like bash completion for this alias, simply install <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/bash-complete-alias/">bash-complete-alias</a></span><sup><small>AUR</small></sup>, then add the alias and the following line to your <code>~/.bashrc</code>.
+</p>
+<pre>$ complete -F _complete_alias config
+</pre>
+<p>Another way to get completion in bash is adding the following to your <code>~/.bashrc</code> (taken from <a rel="nofollow" class="external autonumber" href="https://askubuntu.com/a/642778">[1]</a>):
+</p>
+<pre>source /usr/share/bash-completion/completions/git
+__git_complete config __git_main
+</pre>
+<div class="archwiki-template-box archwiki-template-box-tip">
+<strong>Tip:</strong> To avoid accidentally commiting confidential information, see <a href="../en/Git.html#Filtering_confidential_information" title="Git">Git#Filtering confidential information</a>.</div>
+<h2><span class="mw-headline" id="Host-specific_configuration">Host-specific configuration</span></h2>
+<p>A common problem with synchronizing dotfiles across various machines is host-specific configuration.
+</p>
+<p>With <a href="../en/Git.html" title="Git">Git</a> this can be solved by maintaining a master branch for all shared configuration, while each individual machine has a machine-specific branch checked out. Host-specific configuration can be committed to the machine-specific branch; when shared configuration is modified in the master branch, the per-machine branches need to be rebased on top of the updated master.
+</p>
+<p>In configuration scripts like <a href="../en/Command-line_shell.html#Configuration_files" title="Command-line shell">shell configuration files</a> conditional logic can be used. For example, <a href="../en/Bash.html" title="Bash">Bash</a> scripts (i.e. <code>.bashrc</code>) can apply different configuration depending on the machine name (or type, custom variable, etc.):
+</p>
+<pre>if [[ "$(hostname)" == "archlaptop" ]]; then
+    # laptop specific commands here
+else
+    # desktop or server machine commands
+fi
+</pre>
+<p>Similar can also be achieved with <a href="../en/X_resources.html" class="mw-redirect" title=".Xresources">.Xresources</a>.<a rel="nofollow" class="external autonumber" href="https://jnrowe.github.io/articles/tips/Sharing_Xresources_between_systems.html">[2]</a>
+</p>
+<p>If you find rebasing Git branches too cumbersome, you may want to use a <a href="#Tools">tool</a> that supports <i>file grouping</i>, or if even greater flexibility is desired, a tool that does <i>processing</i>.
+</p>
+<h2><span class="mw-headline" id="Tools">Tools</span></h2>
+<dl>
+<dt>File grouping</dt>
+<dd>How configuration files can be grouped to configuration groups (also called profiles or packages).</dd>
+<dt>Processing</dt>
+<dd>Some tools process configuration files to allow them to be customized depending on the host.</dd>
+</dl>
+<table class="wikitable sortable" style="text-align: center;">
+<tbody>
+<tr>
+<th>Name</th>
+<th>Package</th>
+<th>Written in</th>
+<th>File grouping</th>
+<th>Processing
+</th>
+</tr>
+<tr>
+<th>
+<a rel="nofollow" class="external text" href="https://github.com/anishathalye/dotbot">dotbot</a>
+</th>
+<td>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/dotbot/">dotbot</a></span><sup><small>AUR</small></sup>
+</td>
+<td>Python</td>
+<td>configuration file</td>
+<td>No
+</td>
+</tr>
+<tr>
+<th>
+<a rel="nofollow" class="external text" href="https://github.com/twpayne/chezmoi">chezmoi</a>
+</th>
+<td><span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=chezmoi">chezmoi</a></span></td>
+<td>Go</td>
+<td>directory-based</td>
+<td>Go templates
+</td>
+</tr>
+<tr>
+<th>
+<a rel="nofollow" class="external text" href="https://github.com/kesslern/dot-templater">dot-templater</a>
+</th>
+<td>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/dot-templater-git/">dot-templater-git</a></span><sup><small>AUR</small></sup>
+</td>
+<td>Rust</td>
+<td>directory-based</td>
+<td>custom syntax
+</td>
+</tr>
+<tr>
+<th>
+<a rel="nofollow" class="external text" href="https://github.com/oknozor/toml-bombadil">toml-bombadil</a>
+</th>
+<td><span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=toml-bombadil">toml-bombadil</a></span></td>
+<td>Rust</td>
+<td>configuration file</td>
+<td>tera
+</td>
+</tr>
+<tr>
+<th>
+<a rel="nofollow" class="external text" href="https://deadc0de.re/dotdrop/">dotdrop</a>
+</th>
+<td>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/dotdrop/">dotdrop</a></span><sup><small>AUR</small></sup>
+</td>
+<td>Python</td>
+<td>configuration file</td>
+<td>Jinja2
+</td>
+</tr>
+<tr>
+<th>
+<a rel="nofollow" class="external text" href="https://github.com/jbernard/dotfiles">dotfiles</a>
+</th>
+<td>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/dotfiles/">dotfiles</a></span><sup><small>AUR</small></sup>
+</td>
+<td>Python</td>
+<td style="background: #ddd; color: inherit; vertical-align: middle; text-align: center;"><a rel="nofollow" class="external text" href="https://github.com/jbernard/dotfiles/pull/24">No</a></td>
+<td style="background: #ddd; color: inherit; vertical-align: middle; text-align: center;">No
+</td>
+</tr>
+<tr>
+<th>
+<a rel="nofollow" class="external text" href="https://github.com/EvanPurkhiser/dots">Dots</a>
+</th>
+<td>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/dots-manager/">dots-manager</a></span><sup><small>AUR</small></sup>
+</td>
+<td>Python</td>
+<td>directory-based</td>
+<td>custom append points
+</td>
+</tr>
+<tr>
+<th>
+<a rel="nofollow" class="external text" href="https://github.com/SuperCuber/dotter">dotter</a>
+</th>
+<td>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/dotter-rs/">dotter-rs</a></span><sup><small>AUR</small></sup>
+</td>
+<td>Rust</td>
+<td>configuration file</td>
+<td>Handlebars
+</td>
+</tr>
+<tr>
+<th>
+<a rel="nofollow" class="external text" href="https://dt.cli.rs">dt-cli</a>
+</th>
+<td>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/dt-cli/">dt-cli</a></span><sup><small>AUR</small></sup>
+</td>
+<td>Rust</td>
+<td>configuration file</td>
+<td>Handlebars
+</td>
+</tr>
+<tr>
+<th>
+<a rel="nofollow" class="external text" href="https://www.gnu.org/software/stow/">GNU Stow</a>
+</th>
+<td><span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=stow">stow</a></span></td>
+<td>Perl</td>
+<td>directory-based<a rel="nofollow" class="external autonumber" href="http://brandon.invergo.net/news/2012-05-26-using-gnu-stow-to-manage-your-dotfiles.html">[3]</a>
+</td>
+<td style="background: #ddd; color: inherit; vertical-align: middle; text-align: center;">No
+</td>
+</tr>
+<tr>
+<th>
+<a rel="nofollow" class="external text" href="https://github.com/lra/mackup">Mackup</a>
+</th>
+<td>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/mackup/">mackup</a></span><sup><small>AUR</small></sup>
+</td>
+<td>Python</td>
+<td>automatic per application</td>
+<td style="background: #ddd; color: inherit; vertical-align: middle; text-align: center;">No
+</td>
+</tr>
+<tr>
+<th>
+<a rel="nofollow" class="external text" href="https://github.com/darkfeline/mir.qualia">mir.qualia</a>
+</th>
+<td>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/mir.qualia/">mir.qualia</a></span><sup><small>AUR</small></sup>
+</td>
+<td>Python</td>
+<td style="background: #ddd; color: inherit; vertical-align: middle; text-align: center;">No</td>
+<td>custom blocks
+</td>
+</tr>
+<tr>
+<th>
+<a rel="nofollow" class="external text" href="https://github.com/thoughtbot/rcm">rcm</a>
+</th>
+<td>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/rcm/">rcm</a></span><sup><small>AUR</small></sup>
+</td>
+<td>Shell</td>
+<td>directory-based (by host or tag)</td>
+<td style="background: #ddd; color: inherit; vertical-align: middle; text-align: center;">No
+</td>
+</tr>
+</tbody>
+</table>
+<h3><span class="mw-headline" id="Tools_wrapping_Git">Tools wrapping Git</span></h3>
+<p>If you are uncomfortable with <a href="../en/Git.html" title="Git">Git</a>, you may want to use one of these tools, which abstract the version control system away (more or less).
+</p>
+<table class="wikitable sortable" style="text-align:center;">
+<tbody>
+<tr>
+<th>Name</th>
+<th>Package</th>
+<th>Written in</th>
+<th>File grouping</th>
+<th>Processing
+</th>
+</tr>
+<tr>
+<th>
+<a rel="nofollow" class="external text" href="https://github.com/kazhala/dotbare">dotbare</a>
+</th>
+<td>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/dotbare/">dotbare</a></span><sup><small>AUR</small></sup>
+</td>
+<td>Shell (<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=fzf">fzf</a></span>)</td>
+<td>repository-wise</td>
+<td style="background: #ddd; color: inherit; vertical-align: middle; text-align: center;">No
+</td>
+</tr>
+<tr>
+<th>
+<a rel="nofollow" class="external text" href="https://github.com/kobus-v-schoor/dotgit">dotgit</a>
+</th>
+<td>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/dotgit/">dotgit</a></span><sup><small>AUR</small></sup>
+</td>
+<td>Python</td>
+<td>filename-based</td>
+<td style="background: #ddd; color: inherit; vertical-align: middle; text-align: center;">No
+</td>
+</tr>
+<tr>
+<th>
+<a rel="nofollow" class="external text" href="https://github.com/andsens/homeshick">homeshick</a>
+</th>
+<td>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/homeshick-git/">homeshick-git</a></span><sup><small>AUR</small></sup>
+</td>
+<td>Bash</td>
+<td>repository-wise</td>
+<td style="background: #ddd; color: inherit; vertical-align: middle; text-align: center;">No
+</td>
+</tr>
+<tr>
+<th>
+<a rel="nofollow" class="external text" href="https://github.com/technicalpickles/homesick">homesick</a>
+</th>
+<td data-sort-value="5" style="background: inherit; color: inherit; vertical-align: middle; text-align: center;">–</td>
+<td>Ruby</td>
+<td>repository-wise</td>
+<td style="background: #ddd; color: inherit; vertical-align: middle; text-align: center;">No
+</td>
+</tr>
+<tr>
+<th>
+<a rel="nofollow" class="external text" href="https://github.com/pearl-core/pearl">Pearl</a>
+</th>
+<td>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/pearl-git/">pearl-git</a></span><sup><small>AUR</small></sup>
+</td>
+<td>Python</td>
+<td>repository-wise</td>
+<td style="background: #ddd; color: inherit; vertical-align: middle; text-align: center;">No
+</td>
+</tr>
+<tr>
+<th>
+<a rel="nofollow" class="external text" href="https://github.com/RichiH/vcsh">vcsh</a>
+</th>
+<td><span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=vcsh">vcsh</a></span></td>
+<td>Shell</td>
+<td>repository-wise</td>
+<td style="background: #ddd; color: inherit; vertical-align: middle; text-align: center;">No
+</td>
+</tr>
+<tr>
+<th>
+<a rel="nofollow" class="external text" href="https://yadm.io">yadm</a><sup>(1)</sup>
+</th>
+<td><span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=yadm">yadm</a></span></td>
+<td>Shell</td>
+<td>filename-based<br>(by class/OS/distro/hostname/user)<a rel="nofollow" class="external autonumber" href="https://yadm.io/docs/alternates">[4]</a>
+</td>
+<td>Built-in templates/Jinja2/ESH<a rel="nofollow" class="external autonumber" href="https://yadm.io/docs/templates">[5]</a><br>(optional)
+</td>
+</tr>
+<tr>
+<th>
+<a rel="nofollow" class="external text" href="https://github.com/justone/dotfiles">dfm</a>
+</th>
+<td>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/dfm/">dfm</a></span><sup><small>AUR</small></sup>
+</td>
+<td>Perl</td>
+<td>repository-wise</td>
+<td style="background: #ddd; color: inherit; vertical-align: middle; text-align: center;">No
+</td>
+</tr>
+</tbody>
+</table>
+<ol><li>Supports encryption of confidential files with <a href="../en/GnuPG.html" class="mw-redirect" title="GPG">GPG</a> or OpenSSL. <a rel="nofollow" class="external autonumber" href="https://yadm.io/docs/encryption">[6]</a>
+</li></ol>
+<h2><span class="mw-headline" id="User_repositories">User repositories</span></h2>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> This table is used as a reference/examples of dotfiles, if you are submitting your dotfiles to the table, please ensure they are kept clean, commented and up to date.</div>
+<div class="archwiki-template-box archwiki-template-box-warning">
+<strong>Warning:</strong> These dotfiles have not been verified by any of the Arch Linux staff, use at your own risk.</div>
+<table class="wikitable sortable" style="text-align:center">
+<tbody>
+<tr>
+<th>Author</th>
+<th>Shell (Shell framework)</th>
+<th>WM / DE</th>
+<th>Editor</th>
+<th>Terminal</th>
+<th>Multiplexer</th>
+<th>Audio</th>
+<th>Monitor</th>
+<th>Mail</th>
+<th>IRC</th>
+<th>File Manager</th>
+<th>RSS reader
+</th>
+</tr>
+<tr>
+<th>
+<a rel="nofollow" class="external text" href="https://github.com/alfunx/.dotfiles">alfunx</a>
+</th>
+<td><a href="../en/Zsh.html" title="Zsh">Zsh</a></td>
+<td><a href="../en/Awesome.html" title="Awesome">Awesome</a></td>
+<td><a href="../en/Vim.html" title="Vim">Vim</a></td>
+<td><a href="../en/Kitty.html" title="Kitty">Kitty</a></td>
+<td><a href="../en/Tmux.html" title="Tmux">tmux</a></td>
+<td>
+<a href="../en/Ncmpcpp.html" title="Ncmpcpp">Ncmpcpp</a>/<a href="../en/Music_Player_Daemon.html" class="mw-redirect" title="Mpd">Mpd</a>
+</td>
+<td>
+<a href="../en/List_of_applications.html#Task_managers" class="mw-redirect" title="Htop">Htop</a>/lain</td>
+<td><a href="../en/Thunderbird.html" title="Thunderbird">Thunderbird</a></td>
+<td></td>
+<td></td>
+<td>
+</td>
+</tr>
+<tr>
+<th>
+<a rel="nofollow" class="external text" href="https://gitlab.com/Ambrevar/dotfiles">Ambrevar</a>
+</th>
+<td>Eshell</td>
+<td><a href="../en/EXWM.html" title="EXWM">EXWM</a></td>
+<td><a href="../en/Emacs.html" title="Emacs">Emacs</a></td>
+<td>Emacs (Eshell)</td>
+<td>Emacs TRAMP + dtach</td>
+<td>EMMS</td>
+<td>
+<a href="../en/Conky.html" title="Conky">Conky</a>/<a href="../en/Dzen.html" title="Dzen">Dzen</a>
+</td>
+<td>mu4e</td>
+<td>Circe</td>
+<td></td>
+<td>
+</td>
+</tr>
+<tr>
+<th>
+<a rel="nofollow" class="external text" href="https://github.com/ask1234560/dotfiles_bspwm">ananthu</a>
+</th>
+<td><a href="../en/Zsh.html" title="Zsh">Zsh</a></td>
+<td><a href="../en/Bspwm.html" title="Bspwm">Bspwm</a></td>
+<td><a href="../en/Neovim.html" title="Neovim">Neovim</a></td>
+<td><a href="../en/Alacritty.html" title="Alacritty">Alacritty</a></td>
+<td></td>
+<td><a href="../en/Mpv.html" title="Mpv">Mpv</a></td>
+<td>
+<a href="../en/List_of_applications.html#Task_managers" class="mw-redirect" title="Htop">Htop</a>, <a href="../en/Polybar.html" title="Polybar">Polybar</a>
+</td>
+<td><a href="../en/Mutt.html" class="mw-redirect" title="Neomutt">Neomutt</a></td>
+<td><a href="../en/WeeChat.html" title="WeeChat">WeeChat</a></td>
+<td><a href="../en/Ranger.html" title="Ranger">Ranger</a></td>
+<td>
+</td>
+</tr>
+<tr>
+<th>
+<a rel="nofollow" class="external text" href="https://github.com/awalGarg/dotfiles">awal</a>
+</th>
+<td><a href="../en/Fish.html" title="Fish">Fish</a></td>
+<td><a href="../en/I3.html" title="I3">i3</a></td>
+<td><a href="../en/Vim.html" title="Vim">Vim</a></td>
+<td><a href="../en/St.html" title="St">St</a></td>
+<td><a href="../en/Tmux.html" title="Tmux">tmux</a></td>
+<td></td>
+<td>i3status</td>
+<td></td>
+<td>The Lounge</td>
+<td></td>
+<td>
+</td>
+</tr>
+<tr>
+<th>
+<a rel="nofollow" class="external text" href="https://github.com/ayekat/localdir">ayekat</a>
+</th>
+<td><a href="../en/Zsh.html" title="Zsh">Zsh</a></td>
+<td>karuiwm</td>
+<td><a href="../en/Vim.html" title="Vim">Vim</a></td>
+<td><a href="../en/Rxvt-unicode.html" title="Rxvt-unicode">Rxvt-unicode</a></td>
+<td><a href="../en/Tmux.html" title="Tmux">tmux</a></td>
+<td>
+<a href="../en/Ncmpcpp.html" title="Ncmpcpp">Ncmpcpp</a>/<a href="../en/Music_Player_Daemon.html" class="mw-redirect" title="Mpd">Mpd</a>
+</td>
+<td>karuibar</td>
+<td><a href="../en/Mutt.html" title="Mutt">Mutt</a></td>
+<td><a href="../en/Irssi.html" title="Irssi">Irssi</a></td>
+<td></td>
+<td>
+</td>
+</tr>
+<tr>
+<th>
+<a rel="nofollow" class="external text" href="https://github.com/BachoSeven/dotfiles">bachoseven</a>
+</th>
+<td><a href="../en/Zsh.html" title="Zsh">Zsh</a></td>
+<td>
+<a href="../en/Dwm.html" title="Dwm">Dwm</a> <a rel="nofollow" class="external text" href="https://github.com/BachoSeven/dwm">source</a>
+</td>
+<td><a href="../en/Neovim.html" title="Neovim">Neovim</a></td>
+<td>
+<a href="../en/St.html" title="St">St</a> <a rel="nofollow" class="external text" href="https://github.com/BachoSeven/st">source</a>
+</td>
+<td></td>
+<td><a href="../en/Ncmpcpp.html" title="Ncmpcpp">Ncmpcpp</a></td>
+<td>bottom</td>
+<td><a href="../en/Mutt.html" class="mw-redirect" title="Neomutt">Neomutt</a></td>
+<td><a href="../en/WeeChat.html" title="WeeChat">WeeChat</a></td>
+<td><a href="../en/Lf.html" title="Lf">Lf</a></td>
+<td>
+</td>
+</tr>
+<tr>
+<th>
+<a rel="nofollow" class="external text" href="https://github.com/bamos/dotfiles">bamos</a>
+</th>
+<td><a href="../en/Zsh.html" title="Zsh">Zsh</a></td>
+<td>
+<a href="../en/I3.html" title="I3">i3</a>/<a href="../en/Xmonad.html" title="Xmonad">xmonad</a>
+</td>
+<td>vim/emacs</td>
+<td>rxvt-unicode</td>
+<td><a href="../en/Tmux.html" title="Tmux">tmux</a></td>
+<td>mpv/cmus</td>
+<td>conky/xmobar</td>
+<td>mutt</td>
+<td>ERC</td>
+<td></td>
+<td>
+</td>
+</tr>
+<tr>
+<th>
+<a rel="nofollow" class="external text" href="https://github.com/benmezger/dotfiles">benmezger</a>
+</th>
+<td><a rel="nofollow" class="external text" href="https://github.com/benmezger/dotfiles">zsh/bash</a></td>
+<td><a rel="nofollow" class="external text" href="https://github.com/benmezger/dotfiles/tree/main/dot_config/i3">i3-gaps</a></td>
+<td><a rel="nofollow" class="external text" href="https://github.com/benmezger/dotfiles/tree/main/dot_doom.d">emacs</a></td>
+<td>
+<a rel="nofollow" class="external text" href="https://github.com/benmezger/dotfiles/blob/main/dot_Xresources">rxvt-unicode</a>/<a rel="nofollow" class="external text" href="https://github.com/benmezger/dotfiles/blob/main/dot_config/alacritty/">alacritty</a>
+</td>
+<td><a rel="nofollow" class="external text" href="https://github.com/benmezger/dotfiles/blob/main/dot_tmux.conf">tmux</a></td>
+<td>mopidy/ncmpcpp</td>
+<td><a rel="nofollow" class="external text" href="https://github.com/benmezger/dotfiles/blob/main/dot_config/i3/status.toml.tmpl">i3status-rs</a></td>
+<td>
+<a rel="nofollow" class="external text" href="https://github.com/benmezger/dotfiles/blob/main/dot_doom.d/">mu4e</a>/<a rel="nofollow" class="external text" href="https://github.com/benmezger/dotfiles/blob/main/dot_config/neomutt">neomutt</a>/<a rel="nofollow" class="external text" href="https://github.com/benmezger/dotfiles/blob/main/dot_mbsyncrc.tmpl">mbsync</a>
+</td>
+<td><a rel="nofollow" class="external text" href="https://github.com/benmezger/dotfiles/blob/main/dot_weechat/">weechat</a></td>
+<td></td>
+<td>
+</td>
+</tr>
+<tr>
+<th>
+<a rel="nofollow" class="external text" href="https://github.com/pbrisbin/dotfiles">brisbin33</a>
+</th>
+<td><a rel="nofollow" class="external text" href="https://github.com/pbrisbin/oh-my-zsh">zsh</a></td>
+<td><a rel="nofollow" class="external text" href="https://github.com/pbrisbin/xmonad-config">xmonad</a></td>
+<td><a rel="nofollow" class="external text" href="https://github.com/pbrisbin/vim-config">vim</a></td>
+<td>rxvt-unicode</td>
+<td><a href="../en/GNU_Screen.html" title="GNU Screen">GNU Screen</a></td>
+<td></td>
+<td>dzen</td>
+<td><a rel="nofollow" class="external text" href="https://github.com/pbrisbin/mutt-config">mutt</a></td>
+<td><a rel="nofollow" class="external text" href="https://github.com/pbrisbin/irssi-config">irssi</a></td>
+<td></td>
+<td>
+</td>
+</tr>
+<tr>
+<th>
+<a rel="nofollow" class="external text" href="https://gitlab.com/BVollmerhaus/dotfiles">BVollmerhaus</a>
+</th>
+<td><a rel="nofollow" class="external text" href="https://gitlab.com/BVollmerhaus/dotfiles/-/tree/master/config/fish">fish</a></td>
+<td><a rel="nofollow" class="external text" href="https://gitlab.com/BVollmerhaus/dotfiles/blob/master/config/i3/config">i3-gaps</a></td>
+<td><a rel="nofollow" class="external text" href="https://gitlab.com/BVollmerhaus/dotfiles/blob/master/config/kak/kakrc">kakoune</a></td>
+<td><a rel="nofollow" class="external text" href="https://gitlab.com/BVollmerhaus/dotfiles/-/blob/master/config/kitty/kitty.conf">kitty</a></td>
+<td></td>
+<td></td>
+<td><a rel="nofollow" class="external text" href="https://gitlab.com/BVollmerhaus/dotfiles/blob/master/config/polybar/config">polybar</a></td>
+<td></td>
+<td></td>
+<td><a rel="nofollow" class="external text" href="https://gitlab.com/BVollmerhaus/dotfiles/-/tree/master/config/ranger">ranger</a></td>
+<td>
+</td>
+</tr>
+<tr>
+<th>
+<a rel="nofollow" class="external text" href="https://github.com/christian-heusel/dotfiles">christian-heusel</a>
+</th>
+<td><a href="../en/Zsh.html" title="Zsh">Zsh</a></td>
+<td><a href="../en/I3.html" title="I3">i3</a></td>
+<td><a href="../en/Neovim.html" title="Neovim">Neovim</a></td>
+<td>
+<a href="../en/St.html" title="St">st</a> / <a href="../en/Terminator.html" title="Terminator">terminator</a>
+</td>
+<td>byobu / <a href="../en/Tmux.html" title="Tmux">tmux</a>
+</td>
+<td></td>
+<td><a href="../en/List_of_applications.html#Task_managers" class="mw-redirect" title="Htop">htop</a></td>
+<td>
+<a href="../en/Mutt.html" class="mw-redirect" title="Neomutt">neomutt</a>/<a href="../en/Thunderbird.html" title="Thunderbird">thunderbird</a>
+</td>
+<td><a href="../en/WeeChat.html" title="WeeChat">WeeChat</a></td>
+<td>
+<a href="../en/Nemo.html" title="Nemo">nemo</a> / <a href="../en/Ranger.html" title="Ranger">ranger</a>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<th>
+<a rel="nofollow" class="external text" href="https://github.com/cinelli/dotfiles">cinelli</a>
+</th>
+<td><a href="../en/Zsh.html" title="Zsh">Zsh</a></td>
+<td>dwm</td>
+<td><a href="../en/Vim.html" title="Vim">Vim</a></td>
+<td>termite-git</td>
+<td></td>
+<td>pianobar</td>
+<td>htop</td>
+<td>mutt-kz</td>
+<td>weechat</td>
+<td></td>
+<td>
+</td>
+</tr>
+<tr>
+<th>
+<a rel="nofollow" class="external text" href="https://github.com/dikiaap/dotfiles">dikiaap</a>
+</th>
+<td><a href="../en/Zsh.html" title="Zsh">Zsh</a></td>
+<td>
+<a href="../en/I3.html" title="I3">i3</a>-gaps</td>
+<td>neovim</td>
+<td>alacritty</td>
+<td><a href="../en/Tmux.html" title="Tmux">tmux</a></td>
+<td></td>
+<td>i3blocks</td>
+<td></td>
+<td></td>
+<td>nnn</td>
+<td>
+</td>
+</tr>
+<tr>
+<th>
+<a rel="nofollow" class="external text" href="https://github.com/Earnestly/dotfiles">Earnestly</a>
+</th>
+<td><a href="../en/Zsh.html" title="Zsh">Zsh</a></td>
+<td>
+<a href="../en/I3.html" title="I3">i3</a>/orbment</td>
+<td>vim/emacs</td>
+<td>termite</td>
+<td><a href="../en/Tmux.html" title="Tmux">tmux</a></td>
+<td>mpd</td>
+<td>conky</td>
+<td>mutt</td>
+<td>weechat</td>
+<td></td>
+<td>
+</td>
+</tr>
+<tr>
+<th>
+<a rel="nofollow" class="external text" href="https://github.com/ErikBjare/dotfiles">ErikBjare</a>
+</th>
+<td><a href="../en/Zsh.html" title="Zsh">Zsh</a></td>
+<td>
+<a href="../en/Xmonad.html" title="Xmonad">xmonad</a>/<a href="../en/Xfce.html" class="mw-redirect" title="Xfce4">Xfce4</a>
+</td>
+<td><a href="../en/Vim.html" title="Vim">Vim</a></td>
+<td>terminator</td>
+<td><a href="../en/Tmux.html" title="Tmux">tmux</a></td>
+<td></td>
+<td>xfce4-panel</td>
+<td></td>
+<td>weechat
+</td>
+</tr>
+<tr>
+<th>
+<a rel="nofollow" class="external text" href="https://github.com/erikw/dotfiles">erikw</a>
+</th>
+<td>
+<a href="../en/Zsh.html" title="Zsh">Zsh</a>/<a href="../en/Bash.html" title="Bash">Bash</a>
+</td>
+<td>DWM/macOS</td>
+<td>NeoVim</td>
+<td>urxvtc</td>
+<td><a href="../en/Tmux.html" title="Tmux">tmux</a></td>
+<td>mpd</td>
+<td></td>
+<td>mutt</td>
+<td>irssi</td>
+<td></td>
+<td>
+</td>
+</tr>
+<tr>
+<th>
+<a rel="nofollow" class="external text" href="https://github.com/falconindy/dotfiles">falconindy</a>
+</th>
+<td><a href="../en/Bash.html" title="Bash">Bash</a></td>
+<td><a href="../en/I3.html" title="I3">i3</a></td>
+<td><a href="../en/Vim.html" title="Vim">Vim</a></td>
+<td>rxvt-unicode</td>
+<td></td>
+<td>ncmpcpp</td>
+<td>conky</td>
+<td>mutt</td>
+<td></td>
+<td></td>
+<td>
+</td>
+</tr>
+<tr>
+<th>
+<a rel="nofollow" class="external text" href="https://github.com/filiparag/dotfiles">filiparag</a>
+</th>
+<td><a href="../en/Fish.html" title="Fish">fish</a></td>
+<td>bspwm</td>
+<td><a href="../en/Vim.html" title="Vim">Vim</a></td>
+<td>alacritty</td>
+<td><a href="../en/Tmux.html" title="Tmux">tmux</a></td>
+<td>mpv, <a rel="nofollow" class="external text" href="https://github.com/altdesktop/playerctl">playerctl</a>
+</td>
+<td>htop, polybar</td>
+<td><a rel="nofollow" class="external text" href="https://www.nongnu.org/mailnotify/">mail-notification</a></td>
+<td></td>
+<td><a href="../en/PCManFM.html" title="PCManFM">PCManFM</a></td>
+<td>
+</td>
+</tr>
+<tr>
+<th>
+<a rel="nofollow" class="external text" href="https://git.sr.ht/~gardenapple/dotfiles">gardenapple</a>
+</th>
+<td>
+<a href="../en/Zsh.html" title="Zsh">Zsh</a> (<a rel="nofollow" class="external text" href="https://git.sr.ht/~gardenapple/dotfiles/tree/main/item/stow/zsh/.zshrc">fish-like</a>)</td>
+<td><a href="../en/Hyprland.html" title="Hyprland">Hyprland</a></td>
+<td><a href="../en/Neovim.html" title="Neovim">neovim</a></td>
+<td><a href="../en/Kitty.html" title="Kitty">kitty</a></td>
+<td></td>
+<td></td>
+<td><a href="../en/List_of_applications.html#Task_managers" class="mw-redirect" title="Htop">htop</a></td>
+<td><a href="../en/Aerc.html" title="Aerc">aerc</a></td>
+<td></td>
+<td><a href="../en/Vifm.html" title="Vifm">vifm</a></td>
+<td>
+<a href="../en/Newsboat.html" title="Newsboat">Newsboat</a>
+</td>
+</tr>
+<tr>
+<th>
+<a rel="nofollow" class="external text" href="https://github.com/graysky2/configs/tree/master/dotfiles">graysky</a>
+</th>
+<td><a href="../en/Zsh.html" title="Zsh">Zsh</a></td>
+<td>xfce4</td>
+<td><a href="../en/Vim.html" title="Vim">Vim</a></td>
+<td>terminal</td>
+<td></td>
+<td>ncmpcpp</td>
+<td>custom</td>
+<td>thunderbird</td>
+<td></td>
+<td></td>
+<td>
+</td>
+</tr>
+<tr>
+<th>
+<a rel="nofollow" class="external text" href="https://github.com/hugdru/dotfiles">hugdru</a>
+</th>
+<td><a href="../en/Zsh.html" title="Zsh">Zsh</a></td>
+<td>awesome</td>
+<td>neovim</td>
+<td>rxvt-unicode</td>
+<td><a href="../en/Tmux.html" title="Tmux">tmux</a></td>
+<td></td>
+<td></td>
+<td>thunderbird</td>
+<td>weechat</td>
+<td></td>
+<td>
+</td>
+</tr>
+<tr>
+<th>
+<a rel="nofollow" class="external text" href="https://github.com/insanum/dotfiles">insanum</a>
+</th>
+<td><a href="../en/Bash.html" title="Bash">Bash</a></td>
+<td>herbstluftwm</td>
+<td><a href="../en/Vim.html" title="Vim">Vim</a></td>
+<td>evilvte</td>
+<td><a href="../en/Tmux.html" title="Tmux">tmux</a></td>
+<td></td>
+<td>dzen</td>
+<td>mutt-kz</td>
+<td></td>
+<td></td>
+<td>
+</td>
+</tr>
+<tr>
+<th>
+<a rel="nofollow" class="external text" href="https://github.com/isti115/dotfiles">isti115</a>
+</th>
+<td>
+<a rel="nofollow" class="external text" href="https://github.com/Isti115/dotfiles/blob/master/.config/powershell/Microsoft.PowerShell_profile.ps1">pwsh</a>
+</td>
+<td>
+<a rel="nofollow" class="external text" href="https://github.com/Isti115/dotfiles/blob/master/.config/sway/config">sway</a>
+</td>
+<td>
+<a rel="nofollow" class="external text" href="https://github.com/Isti115/dotfiles/tree/master/.config/nvim">neovim</a>
+</td>
+<td>
+<a rel="nofollow" class="external text" href="https://github.com/Isti115/dotfiles/blob/master/.config/alacritty/alacritty.yml">alacritty</a>
+</td>
+<td>
+<a href="../en/Tmux.html" title="Tmux">tmux</a>
+</td>
+<td>
+<a rel="nofollow" class="external text" href="https://github.com/Isti115/dotfiles/tree/master/.config/mpv">mpv</a> / playerctl
+</td>
+<td>
+<a rel="nofollow" class="external text" href="https://github.com/Isti115/dotfiles/tree/master/.config/waybar">waybar</a> / htop / ytop
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+<a rel="nofollow" class="external text" href="https://github.com/Isti115/dotfiles/tree/master/.config/ranger">ranger</a>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<th>
+<a rel="nofollow" class="external text" href="https://hg.sr.ht/~jasonwryan/shiv">jasonwryan</a>
+</th>
+<td>bash/zsh</td>
+<td>dwm</td>
+<td><a href="../en/Vim.html" title="Vim">Vim</a></td>
+<td>rxvt-unicode</td>
+<td><a href="../en/Tmux.html" title="Tmux">tmux</a></td>
+<td>ncmpcpp</td>
+<td>custom</td>
+<td>mutt</td>
+<td>irssi</td>
+<td></td>
+<td>
+</td>
+</tr>
+<tr>
+<th>
+<a rel="nofollow" class="external text" href="https://github.com/JDevlieghere/dotfiles/">jdevlieghere</a>
+</th>
+<td><a href="../en/Zsh.html" title="Zsh">Zsh</a></td>
+<td>xmonad</td>
+<td><a href="../en/Vim.html" title="Vim">Vim</a></td>
+<td>terminal</td>
+<td><a href="../en/Tmux.html" title="Tmux">tmux</a></td>
+<td></td>
+<td>htop</td>
+<td>mutt</td>
+<td>weechat</td>
+<td></td>
+<td>
+</td>
+</tr>
+<tr>
+<th>
+<a rel="nofollow" class="external text" href="https://github.com/jelly/Dotfiles">jelly</a>
+</th>
+<td><a href="../en/Zsh.html" title="Zsh">Zsh</a></td>
+<td><a href="../en/I3.html" title="I3">i3</a></td>
+<td><a href="../en/Vim.html" title="Vim">Vim</a></td>
+<td>termite</td>
+<td><a href="../en/Tmux.html" title="Tmux">tmux</a></td>
+<td>ncmpcpp</td>
+<td></td>
+<td>mutt-kz-git</td>
+<td>weechat</td>
+<td></td>
+<td>
+</td>
+</tr>
+<tr>
+<th>
+<a rel="nofollow" class="external text" href="https://github.com/markuszoppelt/dotfiles">MarkusZoppelt</a>
+</th>
+<td><a href="../en/Zsh.html" title="Zsh">Zsh</a></td>
+<td>gnome</td>
+<td><a href="../en/Vim.html" title="Vim">Vim</a></td>
+<td>terminal</td>
+<td><a href="../en/Tmux.html" title="Tmux">tmux</a></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>
+</td>
+</tr>
+<tr>
+<th>
+<a rel="nofollow" class="external text" href="https://github.com/maximbaz/dotfiles">maximbaz</a>
+</th>
+<td><a href="../en/Zsh.html" title="Zsh">Zsh</a></td>
+<td>sway</td>
+<td>kakoune</td>
+<td>kitty</td>
+<td></td>
+<td></td>
+<td>waybar</td>
+<td>neomutt</td>
+<td></td>
+<td>nnn</td>
+<td>
+</td>
+</tr>
+<tr>
+<th>
+<a rel="nofollow" class="external text" href="https://git.mehalter.com/mehalter/dotfiles">mehalter</a>
+</th>
+<td><a href="../en/Zsh.html" title="Zsh">Zsh</a></td>
+<td>
+<a href="../en/I3.html" title="I3">i3</a>-gaps</td>
+<td>neovim</td>
+<td>termite</td>
+<td><a href="../en/Tmux.html" title="Tmux">tmux</a></td>
+<td>cmus</td>
+<td>gotop</td>
+<td>neomutt</td>
+<td>weechat</td>
+<td>ranger</td>
+<td>
+</td>
+</tr>
+<tr>
+<th>
+<a rel="nofollow" class="external text" href="https://github.com/meskarune/.dotfiles">meskarune</a>
+</th>
+<td><a href="../en/Bash.html" title="Bash">Bash</a></td>
+<td>herbstluftwm</td>
+<td><a href="../en/Vim.html" title="Vim">Vim</a></td>
+<td>rxvt-unicode</td>
+<td><a href="../en/GNU_Screen.html" title="GNU Screen">GNU Screen</a></td>
+<td></td>
+<td>conky</td>
+<td></td>
+<td>weechat</td>
+<td></td>
+<td>
+</td>
+</tr>
+<tr>
+<th>
+<a rel="nofollow" class="external text" href="https://github.com/neersighted/dotfiles">neersighted</a>
+</th>
+<td><a href="../en/Fish.html" title="Fish">fish</a></td>
+<td><a href="../en/I3.html" title="I3">i3</a></td>
+<td>neovim</td>
+<td>alacritty</td>
+<td><a href="../en/Tmux.html" title="Tmux">tmux</a></td>
+<td>ncmpcpp</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>
+</td>
+</tr>
+<tr>
+<th>
+<a rel="nofollow" class="external text" href="https://github.com/nimaipatel/dotfiles">nimaipatel</a>
+</th>
+<td><a href="../en/Fish.html" title="Fish">fish</a></td>
+<td>awesome</td>
+<td>neovim</td>
+<td>alacritty</td>
+<td></td>
+<td>ncmpcpp</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>
+</td>
+</tr>
+<tr>
+<th>
+<a rel="nofollow" class="external text" href="https://github.com/oibind/dotfiles">oibind</a>
+</th>
+<td><a href="../en/Fish.html" title="Fish">fish</a></td>
+<td>awesome</td>
+<td>neovim</td>
+<td>st</td>
+<td><a href="../en/Tmux.html" title="Tmux">tmux</a></td>
+<td></td>
+<td>htop-vim</td>
+<td></td>
+<td>weechat</td>
+<td>lf</td>
+<td>
+</td>
+</tr>
+<tr>
+<th>
+<a rel="nofollow" class="external text" href="https://github.com/ok100/configs">OK100</a>
+</th>
+<td><a href="../en/Bash.html" title="Bash">Bash</a></td>
+<td>dwm</td>
+<td><a href="../en/Vim.html" title="Vim">Vim</a></td>
+<td>rxvt-unicode</td>
+<td></td>
+<td>cmus</td>
+<td>conky, dzen</td>
+<td>mutt</td>
+<td>weechat</td>
+<td></td>
+<td>
+</td>
+</tr>
+<tr>
+<th>
+<a rel="nofollow" class="external text" href="https://github.com/orhun/dotfiles">orhun</a>
+</th>
+<td><a href="../en/Bash.html" title="Bash">Bash</a></td>
+<td>
+<a href="../en/I3.html" title="I3">i3</a>-gaps</td>
+<td>neovim</td>
+<td>alacritty</td>
+<td></td>
+<td></td>
+<td>i3status</td>
+<td></td>
+<td>weechat</td>
+<td>tere</td>
+<td>
+</td>
+</tr>
+<tr>
+<th>
+<a rel="nofollow" class="external text" href="https://github.com/pablox-cl/dotfiles">pablox-cl</a>
+</th>
+<td>zsh (zplug)</td>
+<td><a href="../en/GNOME.html" title="GNOME">GNOME</a></td>
+<td>neovim</td>
+<td>kitty</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>
+</td>
+</tr>
+<tr>
+<th>
+<a rel="nofollow" class="external text" href="https://gitlab.com/peterzuger/dotfiles">peterzuger</a>
+</th>
+<td><a href="../en/Zsh.html" title="Zsh">Zsh</a></td>
+<td>
+<a href="../en/I3.html" title="I3">i3</a>-gaps</td>
+<td>emacs</td>
+<td>rxvt-unicode</td>
+<td><a href="../en/GNU_Screen.html" title="GNU Screen">GNU Screen</a></td>
+<td>moc</td>
+<td>htop</td>
+<td></td>
+<td></td>
+<td></td>
+<td>
+</td>
+</tr>
+<tr>
+<th>
+<a rel="nofollow" class="external text" href="https://gitlab.com/polyzen/dotfiles">polyzen</a>
+</th>
+<td><a href="../en/Zsh.html" title="Zsh">Zsh</a></td>
+<td><a href="../en/I3.html" title="I3">i3</a></td>
+<td>Neovim</td>
+<td>Alacritty</td>
+<td><a href="../en/Tmux.html" title="Tmux">tmux</a></td>
+<td>mpv</td>
+<td>i3status,htop</td>
+<td>himalaya</td>
+<td></td>
+<td>ranger</td>
+<td>Newsboat
+</td>
+</tr>
+<tr>
+<th>
+<a rel="nofollow" class="external text" href="https://github.com/potamides/dotfiles">potamides</a>
+</th>
+<td><a href="../en/Bash.html" title="Bash">Bash</a></td>
+<td>awesome</td>
+<td>neovim</td>
+<td>termite</td>
+<td><a href="../en/Tmux.html" title="Tmux">tmux</a></td>
+<td>ncmpcpp</td>
+<td>conky,htop</td>
+<td>mutt</td>
+<td>weechat</td>
+<td>ranger</td>
+<td>
+</td>
+</tr>
+<tr>
+<th>
+<a rel="nofollow" class="external text" href="https://github.com/reisub0/dot">reisub0</a>
+</th>
+<td><a href="../en/Fish.html" title="Fish">fish</a></td>
+<td>qtile</td>
+<td>neovim</td>
+<td>kitty</td>
+<td></td>
+<td>mpd</td>
+<td>conky</td>
+<td></td>
+<td></td>
+<td></td>
+<td>
+</td>
+</tr>
+<tr>
+<th>
+<a rel="nofollow" class="external text" href="https://github.com/sistematico/majestic">sistematico</a>
+</th>
+<td>zsh/fish/bash</td>
+<td><a rel="nofollow" class="external text" href="https://github.com/Airblader/i3">i3-gaps</a></td>
+<td>vim/nano</td>
+<td>termite</td>
+<td><a href="../en/Tmux.html" title="Tmux">tmux</a></td>
+<td>ncmpcpp</td>
+<td>polybar</td>
+<td>mutt</td>
+<td>weechat</td>
+<td></td>
+<td>
+</td>
+</tr>
+<tr>
+<th>
+<a rel="nofollow" class="external text" href="https://git.sitilge.id.lv/sitilge/dotfiles">sitilge</a>
+</th>
+<td><a href="../en/Zsh.html" title="Zsh">Zsh</a></td>
+<td>sway</td>
+<td>neovim</td>
+<td>alacritty</td>
+<td></td>
+<td></td>
+<td>htop</td>
+<td>thunderbird</td>
+<td></td>
+<td></td>
+<td>
+</td>
+</tr>
+<tr>
+<th>
+<a rel="nofollow" class="external text" href="https://git.sr.ht/~thecashewtrader/dotfiles">thecashewtrader</a>
+</th>
+<td>Eshell</td>
+<td>EXWM</td>
+<td>Emacs</td>
+<td>Emacs (VTerm)</td>
+<td>Emacs</td>
+<td>Bongo</td>
+<td>htop</td>
+<td>mu4e</td>
+<td>ERC</td>
+<td>Dired</td>
+<td>Elfeed
+</td>
+</tr>
+<tr>
+<th>
+<a rel="nofollow" class="external text" href="https://github.com/thiagowfx/.dotfiles">thiagowfx</a>
+</th>
+<td>bash/zsh</td>
+<td><a href="../en/I3.html" title="I3">i3</a></td>
+<td><a href="../en/Vim.html" title="Vim">Vim</a></td>
+<td>alacritty</td>
+<td><a href="../en/Tmux.html" title="Tmux">tmux</a></td>
+<td>playerctl</td>
+<td>i3status</td>
+<td></td>
+<td></td>
+<td>ranger</td>
+<td>
+</td>
+</tr>
+<tr>
+<th>
+<a rel="nofollow" class="external text" href="https://codeberg.org/tplasdio/dotfiles">tplasdio</a>
+</th>
+<td><a rel="nofollow" class="external text" href="https://codeberg.org/tplasdio/bash-config">bash (ble.sh)</a></td>
+<td><a rel="nofollow" class="external text" href="https://codeberg.org/tplasdio/awesomewm-config">awesome</a></td>
+<td><a rel="nofollow" class="external text" href="https://codeberg.org/tplasdio/neovim-config">neovim</a></td>
+<td><a rel="nofollow" class="external text" href="https://codeberg.org/tplasdio/dotfiles/src/branch/main/.config/alacritty/alacritty.yml">alacritty</a></td>
+<td><a rel="nofollow" class="external text" href="https://codeberg.org/tplasdio/dotfiles/src/branch/main/.config/byobu/.tmux.conf">tmux</a></td>
+<td>
+<a rel="nofollow" class="external text" href="https://codeberg.org/tplasdio/mpv-config">mpv</a>, mpvs</td>
+<td>htop</td>
+<td>neomutt</td>
+<td>weechat</td>
+<td><a rel="nofollow" class="external text" href="https://codeberg.org/tplasdio/lf-config">lf</a></td>
+<td>
+</td>
+</tr>
+<tr>
+<th>
+<a rel="nofollow" class="external text" href="https://github.com/tuurep/dotfiles">tuurep</a>
+</th>
+<td><a href="../en/Bash.html" title="Bash">Bash</a></td>
+<td>openbox</td>
+<td>neovim</td>
+<td>alacritty</td>
+<td><a href="../en/Tmux.html" title="Tmux">tmux</a></td>
+<td></td>
+<td>polybar</td>
+<td></td>
+<td></td>
+<td></td>
+<td>
+</td>
+</tr>
+<tr>
+<th>
+<a rel="nofollow" class="external text" href="https://github.com/vodik/dotfiles">vodik</a>
+</th>
+<td><a href="../en/Zsh.html" title="Zsh">Zsh</a></td>
+<td>xmonad</td>
+<td><a href="../en/Vim.html" title="Vim">Vim</a></td>
+<td>termite-git</td>
+<td><a href="../en/Tmux.html" title="Tmux">tmux</a></td>
+<td>ncmpcpp</td>
+<td>custom</td>
+<td>mutt</td>
+<td>weechat</td>
+<td></td>
+<td>
+</td>
+</tr>
+<tr>
+<th>
+<a rel="nofollow" class="external text" href="https://github.com/w0ng/dotfiles">w0ng</a>
+</th>
+<td><a href="../en/Zsh.html" title="Zsh">Zsh</a></td>
+<td>dwm</td>
+<td><a href="../en/Vim.html" title="Vim">Vim</a></td>
+<td>rxvt-unicode</td>
+<td><a href="../en/Tmux.html" title="Tmux">tmux</a></td>
+<td>ncmpcpp</td>
+<td>custom</td>
+<td>mutt</td>
+<td>irssi</td>
+<td></td>
+<td>
+</td>
+</tr>
+<tr>
+<th>
+<a rel="nofollow" class="external text" href="https://github.com/whitelynx/dotfiles">whitelynx</a>
+</th>
+<td><a href="../en/Fish.html" title="Fish">fish</a></td>
+<td><a href="../en/I3.html" title="I3">i3</a></td>
+<td>neovim</td>
+<td>kitty</td>
+<td></td>
+<td></td>
+<td>i3pystatus</td>
+<td></td>
+<td></td>
+<td></td>
+<td>
+</td>
+</tr>
+<tr>
+<th>
+<a rel="nofollow" class="external text" href="https://git.sr.ht/~whynothugo/dotfiles">whynothugo</a>
+</th>
+<td><a href="../en/Zsh.html" title="Zsh">Zsh</a></td>
+<td>sway</td>
+<td>neovim</td>
+<td>alacritty</td>
+<td></td>
+<td>mpv</td>
+<td>waybar, top</td>
+<td>neomutt</td>
+<td></td>
+<td>nemo</td>
+<td>
+</td>
+</tr>
+<tr>
+<th>
+<a rel="nofollow" class="external text" href="https://github.com/wryonik/dotfiles">wryonik</a>
+</th>
+<td><a href="../en/Zsh.html" title="Zsh">Zsh</a></td>
+<td>i3-gaps-rounded</td>
+<td><a href="../en/Vim.html" title="Vim">Vim</a></td>
+<td>terminator</td>
+<td></td>
+<td>cmus</td>
+<td>htop, i3blocks, gotop</td>
+<td></td>
+<td></td>
+<td>ranger, nautilus</td>
+<td>
+</td>
+</tr>
+</tbody>
+</table>
+<h2><span class="mw-headline" id="See_also">See also</span></h2>
+<ul>
+<li><a href="https://mywiki.wooledge.org/DotFiles" class="extiw" title="gregswiki:DotFiles">gregswiki:DotFiles</a></li>
+<li><a rel="nofollow" class="external text" href="https://wiki.haskell.org/Xmonad/Config_archive">XMonad Config Archive</a></li>
+<li><a rel="nofollow" class="external text" href="http://dotshare.it">dotshare.it</a></li>
+<li><a rel="nofollow" class="external text" href="https://dotfiles.github.io/">dotfiles.github.io</a></li>
+<li>
+<a rel="nofollow" class="external text" href="https://terminal.sexy/">terminal.sexy</a> - Terminal color scheme designer</li>
+</ul>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface">
+<div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../Special:Categories.html" title="Special:Categories">Categories</a>: <ul>
+<li><a href="../en/Category:Configuration_files.html" title="Category:Configuration files">Configuration files</a></li>
+<li><a href="../en/Category:Configuration_management.html" title="Category:Configuration management">Configuration management</a></li>
+</ul>
+</div>
+<div id="mw-hidden-catlinks" class="mw-hidden-catlinks mw-hidden-cats-hidden">Hidden category: <ul><li><a href="../en/Category:Pages_or_sections_flagged_with_Template:Accuracy.html" title="Category:Pages or sections flagged with Template:Accuracy">Pages or sections flagged with Template:Accuracy</a></li></ul>
+</div>
+</div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=Dotfiles&amp;oldid=780655">https://wiki.archlinux.org/index.php?title=Dotfiles&amp;oldid=780655</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 8 June 2023, at 18:43.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

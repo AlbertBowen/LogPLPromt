@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>Alacritty - ArchWiki</title>
+<link rel="stylesheet" href="../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Alacritty rootpage-Alacritty skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Installation" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Installation">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Installation</div>
+			</a>
+			
+			<ul id="toc-Installation-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Configuration" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Configuration">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Configuration</div>
+			</a>
+			
+				<button aria-controls="toc-Configuration-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Configuration subsection
+				</button>
+			
+			<ul id="toc-Configuration-sublist" class="sidebar-toc-list">
+				<li id="toc-Colors" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Colors">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.1</span>Colors</div>
+			</a>
+			
+			<ul id="toc-Colors-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Font" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Font">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.2</span>Font</div>
+			</a>
+			
+			<ul id="toc-Font-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Tips_and_tricks" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Tips_and_tricks">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>Tips and tricks</div>
+			</a>
+			
+				<button aria-controls="toc-Tips_and_tricks-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Tips and tricks subsection
+				</button>
+			
+			<ul id="toc-Tips_and_tricks-sublist" class="sidebar-toc-list">
+				<li id="toc-Spawn_new_instance_in_same_directory" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Spawn_new_instance_in_same_directory">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.1</span>Spawn new instance in same directory</div>
+			</a>
+			
+			<ul id="toc-Spawn_new_instance_in_same_directory-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Vi_mode_and_copy/paste" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Vi_mode_and_copy/paste">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.2</span>Vi mode and copy/paste</div>
+			</a>
+			
+			<ul id="toc-Vi_mode_and_copy/paste-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Regex_hints" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Regex_hints">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.3</span>Regex hints</div>
+			</a>
+			
+			<ul id="toc-Regex_hints-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Troubleshooting" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Troubleshooting">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4</span>Troubleshooting</div>
+			</a>
+			
+				<button aria-controls="toc-Troubleshooting-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Troubleshooting subsection
+				</button>
+			
+			<ul id="toc-Troubleshooting-sublist" class="sidebar-toc-list">
+				<li id="toc-Mouse_not_working_properly_in_Vim" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Mouse_not_working_properly_in_Vim">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.1</span>Mouse not working properly in Vim</div>
+			</a>
+			
+			<ul id="toc-Mouse_not_working_properly_in_Vim-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Transparent_border_in_dwm" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Transparent_border_in_dwm">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.2</span>Transparent border in dwm</div>
+			</a>
+			
+			<ul id="toc-Transparent_border_in_dwm-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Terminal_functionality_unavailable_in_remote_shells" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Terminal_functionality_unavailable_in_remote_shells">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.3</span>Terminal functionality unavailable in remote shells</div>
+			</a>
+			
+			<ul id="toc-Terminal_functionality_unavailable_in_remote_shells-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-No_title_bar_on_Wayland_GNOME" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#No_title_bar_on_Wayland_GNOME">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.4</span>No title bar on Wayland GNOME</div>
+			</a>
+			
+			<ul id="toc-No_title_bar_on_Wayland_GNOME-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Different_font_size_on_multiple_monitors" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Different_font_size_on_multiple_monitors">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.5</span>Different font size on multiple monitors</div>
+			</a>
+			
+			<ul id="toc-Different_font_size_on_multiple_monitors-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../en/Alacritty.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="mw-list-item"><a href="../en/Talk:Alacritty.html" rel="discussion" title="Discussion about the content page [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">English</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../en/Alacritty.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=Alacritty&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=Alacritty&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../en/Alacritty.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Alacritty&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Alacritty&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output">
+<p><a rel="nofollow" class="external text" href="https://github.com/alacritty/alacritty">Alacritty</a> is a simple, GPU-accelerated terminal emulator written in <a href="../en/Rust.html" title="Rust">Rust</a>. It supports scrollback, 24-bit colors (<a href="https://en.wikipedia.org/wiki/Color_depth#True_color_.2824-bit.29" class="extiw" title="w:Color depth">w:Color depth#True color (24-bit)</a>, copy/paste, clicking on URLs, and custom key bindings.
+</p>
+<mw:tocplace></mw:tocplace>
+<h2><span class="mw-headline" id="Installation">Installation</span></h2>
+<p><a href="../en/Help:Reading.html#Installation_of_packages" class="mw-redirect" title="Install">Install</a> the <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=alacritty">alacritty</a></span> package or <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/alacritty-git/">alacritty-git</a></span><sup><small>AUR</small></sup> for the development version.
+</p>
+<h2><span class="mw-headline" id="Configuration">Configuration</span></h2>
+<p><i>Alacritty</i> searches for a configuration file at the following places in this order:
+</p>
+<ul>
+<li><code>$XDG_CONFIG_HOME/alacritty/alacritty.yml</code></li>
+<li><code>$XDG_CONFIG_HOME/alacritty.yml</code></li>
+<li><code>$HOME/.config/alacritty/alacritty.yml</code></li>
+<li><code>$HOME/.alacritty.yml</code></li>
+</ul>
+<p>Copy the example configuration file at <code>/usr/share/doc/alacritty/example/alacritty.yml</code> to one of those places and uncomment the settings you want to change. Most settings take effect as soon as you save the file.
+</p>
+<h3><span class="mw-headline" id="Colors">Colors</span></h3>
+<p>See <a rel="nofollow" class="external text" href="https://github.com/alacritty/alacritty/wiki/Color-schemes">the upstream wiki</a> for a list of available color schemes. If your preferred color scheme is on the list, paste the provided code into your configuration file.
+</p>
+<h3><span class="mw-headline" id="Font">Font</span></h3>
+<p>If you do not want to use your system’s default font, you can specify a different font by changing the following lines:
+</p>
+<pre>font:
+  normal:
+    family: monospace
+    style: Regular
+
+  bold:
+    family: monospace
+    style: Bold
+
+  italic:
+    family: monospace
+    style: Italic
+
+  bold_italic:
+    family: monospace
+    style: Bold Italic
+
+  size: 11
+</pre>
+<p>Substitute <code>monospace</code> with a font name from the output of 
+</p>
+<pre>$ fc-list : family style
+</pre>
+<p>Note that some fonts do not provide an <code>Italic</code> style but an <code>Oblique</code> style instead.
+</p>
+<h2><span class="mw-headline" id="Tips_and_tricks">Tips and tricks</span></h2>
+<h3><span class="mw-headline" id="Spawn_new_instance_in_same_directory">Spawn new instance in same directory</span></h3>
+<p>Add the following lines to your configuration file to spawn a new instance of <i>Alacritty</i> in the current working directory by pressing <code>Ctrl+Shift+Enter</code>:
+</p>
+<pre>key_bindings:
+  - { key: Return,   mods: Control|Shift, action: SpawnNewInstance }
+</pre>
+<h3>
+<span id="Vi_mode_and_copy.2Fpaste"></span><span class="mw-headline" id="Vi_mode_and_copy/paste">Vi mode and copy/paste</span>
+</h3>
+<p>The vi mode allows moving around Alacritty's viewport and scrollback using the keyboard. By default, you can toggle it using <code>Ctrl+Shift+Space</code>. To copy, you can either use a mouse to select and press <code>Ctrl+Shift+c</code>, or enter Vi mode, start a selection using <code>v</code>, move around with <code>hjkl</code> like in vim, and copy the selection with <code>y</code>. To paste, press <code>Ctrl+Shift+v</code>. To copy/paste to/from X clipboard, you can use a mouse selection to copy and a middle mouse click to paste.
+</p>
+<h3><span class="mw-headline" id="Regex_hints">Regex hints</span></h3>
+<p>Regex hints can be used to find text in the visible part of the terminal and pipe it to other applications. When activated, the matched texts are highlighted with "hints" according to the configured alphabet and presented to the user for selection via keyboard.
+</p>
+<p>By default, Alacritty provides hinting URLs via the <code>Ctrl+Shift+U</code> shortcut and opens them with <a href="../en/Xdg-utils.html#xdg-open" class="mw-redirect" title="Xdg-open">xdg-open</a>. See the <code>hints:</code> section of <code>alacritty.yml</code> for configuration details.
+</p>
+<h2><span class="mw-headline" id="Troubleshooting">Troubleshooting</span></h2>
+<h3><span class="mw-headline" id="Mouse_not_working_properly_in_Vim">Mouse not working properly in Vim</span></h3>
+<p>Add <code>set ttymouse=sgr</code> and <code>set mouse=a</code> to your <code>.vimrc</code> or switch to <a href="../en/Neovim.html" title="Neovim">Neovim</a>. Also see <a rel="nofollow" class="external text" href="https://github.com/alacritty/alacritty/issues/803">this issue</a>.
+</p>
+<h3><span class="mw-headline" id="Transparent_border_in_dwm">Transparent border in dwm</span></h3>
+<p>With <a href="../en/Dwm.html" title="Dwm">dwm</a>, alacritty's borders become transparent. Adding this line to <code>drw.c</code> in the <a href="../en/Dwm.html" title="Dwm">dwm</a> source directory and recompiling fixes the issue:
+</p>
+<pre>if (!XftColorAllocName(...))
+    die("error, cannot allocate color '%s'", clrname); /* Find this line */
+<b>dest-&gt;pixel |= 0xff &lt;&lt; 24;</b> /* Add this line */
+</pre>
+<h3><span class="mw-headline" id="Terminal_functionality_unavailable_in_remote_shells">Terminal functionality unavailable in remote shells</span></h3>
+<p>When connecting to a remote system from an Alacritty terminal, for instance over <a href="../en/Secure_Shell.html" class="mw-redirect" title="SSH">SSH</a>, it can occur that the system does not have an entry for Alacritty in its terminfo database (<code>/usr/share/terminfo/a/alacritty*</code>). Therefore, all interactive terminal functionality does not work. This can be fixed by copying the terminfo for Alacritty to the remote server, as described in <a href="../en/Termite.html#Terminal_issues_with_SSH" title="Termite">termite#Terminal issues with SSH</a>.
+</p>
+<p>On the local host, using Alacritty:
+</p>
+<pre>$ infocmp &gt; alacritty.terminfo  # export Alacritty's Terminfo
+$ scp alacritty.terminfo user@remote-host:~/  # or any other method to copy to the remote host
+</pre>
+<p>On the remote host, in the directory where you copied <code>alacritty.terminfo</code>:
+</p>
+<pre>$ tic -x alacritty.terminfo  # import Terminfo for current user
+$ rm alacritty.terminfo  # optional: remove Terminfo file
+</pre>
+<p>Here is a one-liner version of the process above:
+</p>
+<pre>$ infocmp | ssh "$user@$host" 'tic -x /dev/stdin'
+</pre>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> After this, you will need to start a new SSH session to have the remote shell load the new Terminfo.</div>
+<p>Alternatively, one can set the value of <code>TERM</code> in the configuration to <code>xterm-256color</code> instead of the default <code>alacritty</code>:
+</p>
+<pre>env:
+  TERM: xterm-256color
+</pre>
+<h3><span class="mw-headline" id="No_title_bar_on_Wayland_GNOME">No title bar on Wayland GNOME</span></h3>
+<p>When using Wayland GNOME, the title bar is empty and has strange icons. See <a rel="nofollow" class="external free" href="https://github.com/alacritty/alacritty/issues/4739">https://github.com/alacritty/alacritty/issues/4739</a> for details.
+</p>
+<p>One workaround is to launch Alacritty with <a href="../en/Wayland.html#Xwayland" class="mw-redirect" title="Xwayland">Xwayland</a> instead of native Wayland by setting an empty <code>WAYLAND_DISPLAY</code> <a href="../en/Environment_variables.html" class="mw-redirect" title="Environment variable">environment variable</a>.
+</p>
+<h3><span class="mw-headline" id="Different_font_size_on_multiple_monitors">Different font size on multiple monitors</span></h3>
+<p>By default, Alacritty attempts to scale fonts to the appropriate point size on each monitor based on the <code>Device pixel ratio</code>. On some setups with multiple displays, this behavior can result in vastly different physical sizes <a rel="nofollow" class="external autonumber" href="https://github.com/alacritty/alacritty/issues/3465">[1]</a>, <a rel="nofollow" class="external autonumber" href="https://github.com/alacritty/alacritty/issues/1339">[2]</a>.
+</p>
+<p>To view the existing device pixel ratio values for each monitor, run <code>alacritty -v</code>, move the child window to each monitor, and pay attention to the reported <code>Device pixel ratio</code> in the parent window.
+</p>
+<p>Forcing a constant device pixel ratio using the <code>WINIT_X11_SCALE_FACTOR</code> environment variable may be sufficient to fix the different font size issue:
+</p>
+<pre>$ WINIT_X11_SCALE_FACTOR=1.66 alacritty
+</pre>
+<p>This can also be achieved by setting the value of <code>WINIT_X11_SCALE_FACTOR</code> in the configuration file:
+</p>
+<pre>env:
+  WINIT_X11_SCALE_FACTOR: "1.66"
+</pre>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="../en/Category:Terminal_emulators.html" title="Category:Terminal emulators">Terminal emulators</a></li></ul>
+</div></div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=Alacritty&amp;oldid=785820">https://wiki.archlinux.org/index.php?title=Alacritty&amp;oldid=785820</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 20 August 2023, at 12:59.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

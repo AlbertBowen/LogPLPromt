@@ -1,0 +1,1028 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>NVIDIA (Русский) - ArchWiki</title>
+<link rel="stylesheet" href="../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-NVIDIA_Русский rootpage-NVIDIA_Русский skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Установка" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Установка</div>
+			</a>
+			
+				<button aria-controls="toc-Установка-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Установка subsection
+				</button>
+			
+			<ul id="toc-Установка-sublist" class="sidebar-toc-list">
+				<li id="toc-Неподдерживаемые_драйвера" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#%D0%9D%D0%B5%D0%BF%D0%BE%D0%B4%D0%B4%D0%B5%D1%80%D0%B6%D0%B8%D0%B2%D0%B0%D0%B5%D0%BC%D1%8B%D0%B5_%D0%B4%D1%80%D0%B0%D0%B9%D0%B2%D0%B5%D1%80%D0%B0">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.1</span>Неподдерживаемые драйвера</div>
+			</a>
+			
+			<ul id="toc-Неподдерживаемые_драйвера-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Собственное_ядро" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#%D0%A1%D0%BE%D0%B1%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D0%BE%D0%B5_%D1%8F%D0%B4%D1%80%D0%BE">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.2</span>Собственное ядро</div>
+			</a>
+			
+			<ul id="toc-Собственное_ядро-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-DRM_kernel_mode_setting" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#DRM_kernel_mode_setting">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.3</span>DRM kernel mode setting</div>
+			</a>
+			
+			<ul id="toc-DRM_kernel_mode_setting-sublist" class="sidebar-toc-list">
+				<li id="toc-Ранняя_загрузка" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#%D0%A0%D0%B0%D0%BD%D0%BD%D1%8F%D1%8F_%D0%B7%D0%B0%D0%B3%D1%80%D1%83%D0%B7%D0%BA%D0%B0">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.3.1</span>Ранняя загрузка</div>
+			</a>
+			
+			<ul id="toc-Ранняя_загрузка-sublist" class="sidebar-toc-list">
+				<li id="toc-mkinitcpio" class="sidebar-toc-list-item sidebar-toc-level-4">
+			<a class="sidebar-toc-link" href="#mkinitcpio">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.3.1.1</span>mkinitcpio</div>
+			</a>
+			
+			<ul id="toc-mkinitcpio-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Booster" class="sidebar-toc-list-item sidebar-toc-level-4">
+			<a class="sidebar-toc-link" href="#Booster">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.3.1.2</span>Booster</div>
+			</a>
+			
+			<ul id="toc-Booster-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-pacman_hook" class="sidebar-toc-list-item sidebar-toc-level-4">
+			<a class="sidebar-toc-link" href="#pacman_hook">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.3.1.3</span>pacman hook</div>
+			</a>
+			
+			<ul id="toc-pacman_hook-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Аппаратное_декодирование_видео" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#%D0%90%D0%BF%D0%BF%D0%B0%D1%80%D0%B0%D1%82%D0%BD%D0%BE%D0%B5_%D0%B4%D0%B5%D0%BA%D0%BE%D0%B4%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5_%D0%B2%D0%B8%D0%B4%D0%B5%D0%BE">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.4</span>Аппаратное декодирование видео</div>
+			</a>
+			
+			<ul id="toc-Аппаратное_декодирование_видео-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Аппаратное_кодирование_видео_с_помощью_NVENC" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#%D0%90%D0%BF%D0%BF%D0%B0%D1%80%D0%B0%D1%82%D0%BD%D0%BE%D0%B5_%D0%BA%D0%BE%D0%B4%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5_%D0%B2%D0%B8%D0%B4%D0%B5%D0%BE_%D1%81_%D0%BF%D0%BE%D0%BC%D0%BE%D1%89%D1%8C%D1%8E_NVENC">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.5</span>Аппаратное кодирование видео с помощью NVENC</div>
+			</a>
+			
+			<ul id="toc-Аппаратное_кодирование_видео_с_помощью_NVENC-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Настройка_Xorg" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#%D0%9D%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0_Xorg">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Настройка Xorg</div>
+			</a>
+			
+				<button aria-controls="toc-Настройка_Xorg-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Настройка Xorg subsection
+				</button>
+			
+			<ul id="toc-Настройка_Xorg-sublist" class="sidebar-toc-list">
+				<li id="toc-Автоматическая_настройка" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#%D0%90%D0%B2%D1%82%D0%BE%D0%BC%D0%B0%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B0%D1%8F_%D0%BD%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.1</span>Автоматическая настройка</div>
+			</a>
+			
+			<ul id="toc-Автоматическая_настройка-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-nvidia-settings" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#nvidia-settings">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.2</span>nvidia-settings</div>
+			</a>
+			
+			<ul id="toc-nvidia-settings-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Ручная_настройка" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#%D0%A0%D1%83%D1%87%D0%BD%D0%B0%D1%8F_%D0%BD%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.3</span>Ручная настройка</div>
+			</a>
+			
+			<ul id="toc-Ручная_настройка-sublist" class="sidebar-toc-list">
+				<li id="toc-Минимальная_настройка" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#%D0%9C%D0%B8%D0%BD%D0%B8%D0%BC%D0%B0%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F_%D0%BD%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.3.1</span>Минимальная настройка</div>
+			</a>
+			
+			<ul id="toc-Минимальная_настройка-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Отключение_лого_при_запуске" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#%D0%9E%D1%82%D0%BA%D0%BB%D1%8E%D1%87%D0%B5%D0%BD%D0%B8%D0%B5_%D0%BB%D0%BE%D0%B3%D0%BE_%D0%BF%D1%80%D0%B8_%D0%B7%D0%B0%D0%BF%D1%83%D1%81%D0%BA%D0%B5">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.3.2</span>Отключение лого при запуске</div>
+			</a>
+			
+			<ul id="toc-Отключение_лого_при_запуске-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Переопределение_обнаружения_монитора" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#%D0%9F%D0%B5%D1%80%D0%B5%D0%BE%D0%BF%D1%80%D0%B5%D0%B4%D0%B5%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5_%D0%BE%D0%B1%D0%BD%D0%B0%D1%80%D1%83%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F_%D0%BC%D0%BE%D0%BD%D0%B8%D1%82%D0%BE%D1%80%D0%B0">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.3.3</span>Переопределение обнаружения монитора</div>
+			</a>
+			
+			<ul id="toc-Переопределение_обнаружения_монитора-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Включение_SLI" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#%D0%92%D0%BA%D0%BB%D1%8E%D1%87%D0%B5%D0%BD%D0%B8%D0%B5_SLI">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.3.4</span>Включение SLI</div>
+			</a>
+			
+			<ul id="toc-Включение_SLI-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Несколько_мониторов" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#%D0%9D%D0%B5%D1%81%D0%BA%D0%BE%D0%BB%D1%8C%D0%BA%D0%BE_%D0%BC%D0%BE%D0%BD%D0%B8%D1%82%D0%BE%D1%80%D0%BE%D0%B2">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.4</span>Несколько мониторов</div>
+			</a>
+			
+			<ul id="toc-Несколько_мониторов-sublist" class="sidebar-toc-list">
+				<li id="toc-Использование_nvidia-settings" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#%D0%98%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5_nvidia-settings">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.4.1</span>Использование nvidia-settings</div>
+			</a>
+			
+			<ul id="toc-Использование_nvidia-settings-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-ConnectedMonitor" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#ConnectedMonitor">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.4.2</span>ConnectedMonitor</div>
+			</a>
+			
+			<ul id="toc-ConnectedMonitor-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-TwinView" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#TwinView">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.4.3</span>TwinView</div>
+			</a>
+			
+			<ul id="toc-TwinView-sublist" class="sidebar-toc-list">
+				<li id="toc-Вертикальная_синхронизация_при_использовании_TwinView" class="sidebar-toc-list-item sidebar-toc-level-4">
+			<a class="sidebar-toc-link" href="#%D0%92%D0%B5%D1%80%D1%82%D0%B8%D0%BA%D0%B0%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F_%D1%81%D0%B8%D0%BD%D1%85%D1%80%D0%BE%D0%BD%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%8F_%D0%BF%D1%80%D0%B8_%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B8_TwinView">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.4.3.1</span>Вертикальная синхронизация при использовании TwinView</div>
+			</a>
+			
+			<ul id="toc-Вертикальная_синхронизация_при_использовании_TwinView-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Запуск_игр_при_использовании_TwinView" class="sidebar-toc-list-item sidebar-toc-level-4">
+			<a class="sidebar-toc-link" href="#%D0%97%D0%B0%D0%BF%D1%83%D1%81%D0%BA_%D0%B8%D0%B3%D1%80_%D0%BF%D1%80%D0%B8_%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B8_TwinView">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.4.3.2</span>Запуск игр при использовании TwinView</div>
+			</a>
+			
+			<ul id="toc-Запуск_игр_при_использовании_TwinView-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Режим_Mosaic" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#%D0%A0%D0%B5%D0%B6%D0%B8%D0%BC_Mosaic">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.4.4</span>Режим Mosaic</div>
+			</a>
+			
+			<ul id="toc-Режим_Mosaic-sublist" class="sidebar-toc-list">
+				<li id="toc-Base_Mosaic" class="sidebar-toc-list-item sidebar-toc-level-4">
+			<a class="sidebar-toc-link" href="#Base_Mosaic">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.4.4.1</span>Base Mosaic</div>
+			</a>
+			
+			<ul id="toc-Base_Mosaic-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-SLI_Mosaic" class="sidebar-toc-list-item sidebar-toc-level-4">
+			<a class="sidebar-toc-link" href="#SLI_Mosaic">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.4.4.2</span>SLI Mosaic</div>
+			</a>
+			
+			<ul id="toc-SLI_Mosaic-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+	</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Wayland" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#Wayland">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>Wayland</div>
+			</a>
+			
+			<ul id="toc-Wayland-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Советы_и_рекомендации" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#%D0%A1%D0%BE%D0%B2%D0%B5%D1%82%D1%8B_%D0%B8_%D1%80%D0%B5%D0%BA%D0%BE%D0%BC%D0%B5%D0%BD%D0%B4%D0%B0%D1%86%D0%B8%D0%B8">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4</span>Советы и рекомендации</div>
+			</a>
+			
+			<ul id="toc-Советы_и_рекомендации-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Решение_проблем" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#%D0%A0%D0%B5%D1%88%D0%B5%D0%BD%D0%B8%D0%B5_%D0%BF%D1%80%D0%BE%D0%B1%D0%BB%D0%B5%D0%BC">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5</span>Решение проблем</div>
+			</a>
+			
+			<ul id="toc-Решение_проблем-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Смотрите_также" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#%D0%A1%D0%BC%D0%BE%D1%82%D1%80%D0%B8%D1%82%D0%B5_%D1%82%D0%B0%D0%BA%D0%B6%D0%B5">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6</span>Смотрите также</div>
+			</a>
+			
+			<ul id="toc-Смотрите_также-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../ru/NVIDIA.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="new mw-list-item"><a href="/index.php?title=Talk:NVIDIA_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)&amp;action=edit&amp;redlink=1" rel="discussion" title="Discussion about the content page (page does not exist) [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">русский</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../ru/NVIDIA.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=NVIDIA_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=NVIDIA_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../ru/NVIDIA.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=NVIDIA_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=NVIDIA_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="ru" dir="ltr">
+<div class="mw-parser-output">
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Состояние перевода:</strong> На этой странице представлен перевод статьи <a href="../en/NVIDIA.html" title="NVIDIA">NVIDIA</a>. Дата последней синхронизации: 2 ноября 2022. Вы можете <a href="../ru/ArchWiki:Translation_Team.html" title="ArchWiki:Translation Team (Русский)">помочь</a> синхронизировать перевод, если в английской версии произошли <a rel="nofollow" class="external text" href="https://wiki.archlinux.org/index.php?title=NVIDIA&amp;diff=0&amp;oldid=751382">изменения</a>.</div>
+<div class="archwiki-template-meta-related-articles-start">
+<p class="mw-no-invert">Ссылки по теме</p>
+<ul>
+<li><a href="../ru/NVIDIA/Tips_and_tricks.html" class="mw-redirect" title="NVIDIA/Советы и рекомендации">NVIDIA/Советы и рекомендации</a></li>
+<li><a href="../ru/NVIDIA/Troubleshooting.html" class="mw-redirect" title="NVIDIA/Решение проблем">NVIDIA/Решение проблем</a></li>
+<li><a href="../en/Nouveau.html" class="mw-redirect" title="Nouveau (Русский)">Nouveau (Русский)</a></li>
+<li><a href="../ru/NVIDIA_Optimus.html" title="NVIDIA Optimus (Русский)">NVIDIA Optimus (Русский)</a></li>
+<li><a href="../en/PRIME.html" title="PRIME">PRIME</a></li>
+<li><a href="../ru/Bumblebee.html" title="Bumblebee (Русский)">Bumblebee (Русский)</a></li>
+<li><a href="../ru/Nvidia-xrun.html" title="Nvidia-xrun (Русский)">nvidia-xrun (Русский)</a></li>
+<li><a href="../ru/Xorg.html" title="Xorg (Русский)">Xorg (Русский)</a></li>
+<li><a href="../ru/Vulkan.html" title="Vulkan (Русский)">Vulkan (Русский)</a></li>
+</ul>
+</div>
+<p>Данная статья описывает процесс установки и настройки проприетарного драйвера графических карт <a rel="nofollow" class="external text" href="https://www.nvidia.com/ru-ru/">NVIDIA</a>. Для получения информации о драйверах с открытым исходным кодом обратитесь к статье <a href="../en/Nouveau.html" class="mw-redirect" title="Nouveau (Русский)">Nouveau (Русский)</a>. Также есть отдельная статья для обладателей ноутбуков с гибридной графикой Intel и NVIDIA, см. <a href="../ru/NVIDIA_Optimus.html" title="NVIDIA Optimus (Русский)">NVIDIA Optimus (Русский)</a>.
+</p>
+<mw:tocplace></mw:tocplace>
+<h2>
+<span id=".D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0"></span><span class="mw-headline" id="Установка">Установка</span>
+</h2>
+<div class="archwiki-template-box archwiki-template-box-warning">
+<strong>Важно:</strong> Избегайте установки драйвера с сайта NVIDIA. Установка через <a href="../ru/Pacman.html" title="Pacman (Русский)">pacman</a> позволяет обновлять драйвер вместе с остальными компонентами системы.</div>
+<p>Данные инструкции предназначены для предоставляемых в дистрибутиве пакетов ядра <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=linux">linux</a></span> и <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=linux-lts">linux-lts</a></span>. Пользователи других пакетов ядра могут сразу перейти к <a href="#%D0%A1%D0%BE%D0%B1%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D0%BE%D0%B5_%D1%8F%D0%B4%D1%80%D0%BE">следующему</a> подразделу.
+</p>
+<p>1. Если вы не знаете модель установленной графической карты, воспользуйтесь следующей командой:
+</p>
+<dl><dd><pre>$ lspci -k | grep -A 2 -E "(VGA|3D)"</pre></dd></dl>
+<p>2. Определите версию драйвера, необходимую для вашей видеокарты:
+</p>
+<dl><dd><ul>
+<li>Посетив <a rel="nofollow" class="external text" href="https://www.nvidia.com/Download/index.aspx">страницу загрузки драйверов</a> на сайте NVIDIA и выбрав свою модель видеокарты;</li>
+<li>Используя поиск по кодовому имени (например, NV50, NVC0 и т.д.) на <a rel="nofollow" class="external text" href="https://nouveau.freedesktop.org/wiki/CodeNames/">странице Nouveau с кодовыми именами</a> или <a rel="nofollow" class="external text" href="https://gitlab.freedesktop.org/nouveau/wiki/-/blob/master/sources/CodeNames.mdwn">странице nouveau на GitLab</a>, а затем поискав название модели в <a rel="nofollow" class="external text" href="https://www.nvidia.com/object/IO_32667.html">списке устаревших графических карт</a> NVIDIA: если вашей карты нет в этом списке, используйте последний доступный драйвер.</li>
+</ul></dd></dl>
+<p>3. Установите подходящий драйвер для своей карты:
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Примечание:</strong> 
+<ul>
+<li>При установке <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=dkms">dkms</a></span> прочтите раздел <a href="../ru/Dynamic_Kernel_Module_Support.html#%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0" title="Dynamic Kernel Module Support (Русский)">Dynamic Kernel Module Support (Русский)#Установка</a>.</li>
+<li>Система может зависать во время загрузки при использовании <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=nvidia">nvidia</a></span> на системах с процессором Intel и ядром 5.18 или более новым из-за бага <a rel="nofollow" class="external text" href="https://bugs.archlinux.org/task/74886">FS#74886</a>/<a rel="nofollow" class="external text" href="https://bugs.archlinux.org/task/74891">FS#74891</a>. Пока это не исправлено, в качестве обходного пути можно отключить функцию безопасности процессора <a rel="nofollow" class="external text" href="https://edc.intel.com/content/www/us/en/design/ipla/software-development-platforms/client/platforms/alder-lake-desktop/12th-generation-intel-core-processors-datasheet-volume-1-of-2/007/indirect-branch-tracking/">Indirect Branch Tracking</a>, добавив <a href="../ru/Kernel_parameters.html" class="mw-redirect" title="Параметр ядра">параметр ядра</a> <code>ibt=off</code> в настройках <a href="../ru/Arch_boot_process.html#%D0%97%D0%B0%D0%B3%D1%80%D1%83%D0%B7%D1%87%D0%B8%D0%BA" title="Arch boot process (Русский)">загрузчика</a>. Эта функция <a rel="nofollow" class="external text" href="https://lwn.net/Articles/889475/">защищает от некоторых эксплоитов</a>, но <a rel="nofollow" class="external text" href="https://www.reddit.com/r/archlinux/comments/v0x3c4/psa_if_you_run_kernel_518_with_nvidia_pass_ibtoff/">временное отключение не слишком опасно</a>. В качестве альтернативы можно попробовать <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=nvidia-open">nvidia-open</a></span> и продолжить использовать IBT.</li>
+<li>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=nvidia-open">nvidia-open</a></span> не работает на системах с интегрированной графикой AMD из-за <a rel="nofollow" class="external text" href="https://github.com/NVIDIA/open-gpu-kernel-modules/issues/282">бага nvidia-open</a>.</li>
+</ul>
+</div>
+<dl><dd>
+<ul><li>Для карт <a rel="nofollow" class="external text" href="https://nouveau.freedesktop.org/CodeNames.html#NV110">Maxwell (NV110/GM<i>XXX</i>)</a> и новее <a href="../ru/Help:Reading.html#%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0_%D0%BF%D0%B0%D0%BA%D0%B5%D1%82%D0%BE%D0%B2" class="mw-redirect" title="Установите">установите</a> пакет <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=nvidia">nvidia</a></span> (для ядра <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=linux">linux</a></span>) или <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=nvidia-lts">nvidia-lts</a></span> (для ядра <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=linux-lts">linux-lts</a></span>).</li></ul>
+<dl><dd><ul><li>Если эти пакеты не работают, в <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/nvidia-beta/">nvidia-beta</a></span><sup><small>AUR</small></sup> может быть более новый драйвер с поддержкой вашего оборудования.</li></ul></dd></dl>
+<ul>
+<li>В качестве альтернативы для <a rel="nofollow" class="external text" href="https://nouveau.freedesktop.org/CodeNames.html#NV160">Turing (NV160/TU<i>XXX</i>)</a> и более новых карт можно установить пакет <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=nvidia-open">nvidia-open</a></span>, который предоставляет open-source модули для ядра <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=linux">linux</a></span> (для других ядер нужно использовать <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=nvidia-open-dkms">nvidia-open-dkms</a></span>).
+<ul><li>На данный момент они имеют <b>альфа-качество</b>, так что будут проблемы.</li></ul>
+</li>
+<li>Для карт <a rel="nofollow" class="external text" href="https://nouveau.freedesktop.org/CodeNames.html#NVE0">Kepler (NVE0/GK<i>XXX</i>)</a> <a href="../ru/Help:Reading.html#%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0_%D0%BF%D0%B0%D0%BA%D0%B5%D1%82%D0%BE%D0%B2" class="mw-redirect" title="Установите">установите</a> пакет <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/nvidia-470xx-dkms/">nvidia-470xx-dkms</a></span><sup><small>AUR</small></sup>.</li>
+<li>Для карт <a rel="nofollow" class="external text" href="https://nouveau.freedesktop.org/CodeNames.html#NVC0">Fermi (NVC0/GF1<i>XX</i>)</a> <a href="../ru/Help:Reading.html#%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0_%D0%BF%D0%B0%D0%BA%D0%B5%D1%82%D0%BE%D0%B2" class="mw-redirect" title="Установите">установите</a> пакет <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/nvidia-390xx-dkms/">nvidia-390xx-dkms</a></span><sup><small>AUR</small></sup>.</li>
+<li>Если у вас ещё более старая модель, обратитесь к разделу <a href="#%D0%9D%D0%B5%D0%BF%D0%BE%D0%B4%D0%B4%D0%B5%D1%80%D0%B6%D0%B8%D0%B2%D0%B0%D0%B5%D0%BC%D1%8B%D0%B5_%D0%B4%D1%80%D0%B0%D0%B9%D0%B2%D0%B5%D1%80%D0%B0">#Неподдерживаемые драйвера</a>.</li>
+</ul>
+</dd></dl>
+<p>4. Для поддержки 32-разрядных приложений также необходимо установить соответствующий пакет nvidia <i>lib32</i> из репозитория <a href="../ru/Official_repositories.html#multilib" class="mw-redirect" title="Multilib (Русский)">multilib</a> (например, <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=lib32-nvidia-utils">lib32-nvidia-utils</a></span> или <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/lib32-nvidia-390xx-utils/">lib32-nvidia-390xx-utils</a></span><sup><small>AUR</small></sup>).
+</p>
+<p>5. Перезагрузите систему. Пакет <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=nvidia">nvidia</a></span> содержит файл, который добавляет модуль <i>nouveau</i> в чёрный список, поэтому перезагрузка необходима.
+</p>
+<p>После установки драйвера можно перейти к разделу <a href="#%D0%9D%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0_Xorg">#Настройка Xorg</a> или <a href="#Wayland">#Wayland</a>.
+</p>
+<h3>
+<span id=".D0.9D.D0.B5.D0.BF.D0.BE.D0.B4.D0.B4.D0.B5.D1.80.D0.B6.D0.B8.D0.B2.D0.B0.D0.B5.D0.BC.D1.8B.D0.B5_.D0.B4.D1.80.D0.B0.D0.B9.D0.B2.D0.B5.D1.80.D0.B0"></span><span class="mw-headline" id="Неподдерживаемые_драйвера">Неподдерживаемые драйвера</span>
+</h3>
+<p>Если у вас совсем старая видеокарта, NVIDIA больше не поддерживает драйвера для неё. Это означает, что указанные выше драйвера <a rel="nofollow" class="external text" href="https://nvidia.custhelp.com/app/answers/detail/a_id/3142/">не поддерживают текущую версию Xorg</a>. В таком случае проще использовать драйвер <a href="../en/Nouveau.html" class="mw-redirect" title="Nouveau (Русский)">Nouveau</a>, который поддерживает старые видеокарты с текущей версией Xorg.
+</p>
+<p>Однако устаревшие драйверы NVIDIA всё ещё доступны и могут предоставлять более хорошую стабильность или производительность 3D, если вы готовы откатить версию <a href="../ru/Xorg.html" title="Xorg (Русский)">Xorg</a>:
+</p>
+<ul>
+<li>Для карт <a rel="nofollow" class="external text" href="https://nouveau.freedesktop.org/CodeNames.html#NV50">Tesla (NV50/G80-90-GT2<i>XX</i>)</a> <a href="../ru/Help:Reading.html#%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0_%D0%BF%D0%B0%D0%BA%D0%B5%D1%82%D0%BE%D0%B2" class="mw-redirect" title="Установите">установите</a> пакет <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/nvidia-340xx-dkms/">nvidia-340xx-dkms</a></span><sup><small>AUR</small></sup>.</li>
+<li>Карты <a rel="nofollow" class="external text" href="https://nouveau.freedesktop.org/CodeNames.html#NV40">Curie (NV40/G70)</a> и более старые не имеют пакетов для Arch Linux.</li>
+</ul>
+<h3>
+<span id=".D0.A1.D0.BE.D0.B1.D1.81.D1.82.D0.B2.D0.B5.D0.BD.D0.BD.D0.BE.D0.B5_.D1.8F.D0.B4.D1.80.D0.BE"></span><span class="mw-headline" id="Собственное_ядро">Собственное ядро</span>
+</h3>
+<p>Если вы используете собственное ядро, то сборка модулей NVIDIA может быть автоматизированна при помощи <a href="../ru/Dynamic_Kernel_Module_Support.html" title="Dynamic Kernel Module Support (Русский)">DKMS</a>. <a href="../ru/Help:Reading.html#%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0_%D0%BF%D0%B0%D0%BA%D0%B5%D1%82%D0%BE%D0%B2" class="mw-redirect" title="Установите">Установите</a> пакет <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=nvidia-dkms">nvidia-dkms</a></span> (или специфичную ветку для вашей карты) вместе с заголовочными файлами для вашего ядра.
+</p>
+<p>Убедитесь, что ядро собрано с опцией <code>CONFIG_DRM_SIMPLEDRM=y</code>, а при использовании <code>CONFIG_DEBUG_INFO_BTF</code> в PKGBUILD должно быть это (начиная с ядра 5.16):
+</p>
+<pre>install -Dt "$builddir/tools/bpf/resolve_btfids" tools/bpf/resolve_btfids/resolve_btfids
+</pre>
+<p>Модуль будет пересобираться после каждого обновления драйвера или ядра благодаря DKMS <a href="../ru/Pacman.html#%D0%A5%D1%83%D0%BA%D0%B8" title="Pacman (Русский)">Pacman Hook</a>.
+</p>
+<h3><span class="mw-headline" id="DRM_kernel_mode_setting">DRM kernel mode setting</span></h3>
+<p>Для включения DRM (<a href="https://en.wikipedia.org/wiki/ru:Direct_Rendering_Manager" class="extiw" title="wikipedia:ru:Direct Rendering Manager">Direct Rendering Manager</a>) <a href="../ru/Kernel_mode_setting.html" title="Kernel mode setting (Русский)">kernel mode setting</a> добавьте <a href="../ru/Kernel_parameters.html" class="mw-redirect" title="Параметр ядра">параметр ядра</a> <code>nvidia_drm.modeset=1</code>.
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Примечание:</strong> 
+<ul>
+<li>Драйвер NVIDIA <b>не</b> предоставляет драйвер <code>fbdev</code> для высокого разрешения в консоли для скомпилированного модуля ядра <code>vesafb</code>. Тем не менее, скомпилированный в ядро модуль <code>efifb</code> поддерживает высокое разрешение в консоли на EFI системах. Этот метод требует GRUB или rEFInd и описан в разделе <a href="../ru/NVIDIA/Tips_and_tricks.html#%D0%98%D1%81%D0%BF%D1%80%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5_%D1%80%D0%B0%D0%B7%D1%80%D0%B5%D1%88%D0%B5%D0%BD%D0%B8%D1%8F_%D1%82%D0%B5%D1%80%D0%BC%D0%B8%D0%BD%D0%B0%D0%BB%D0%B0" class="mw-redirect" title="NVIDIA/Советы и рекомендации">NVIDIA/Советы и рекомендации#Исправление разрешения терминала</a>.<a rel="nofollow" class="external autonumber" href="https://forums.fedoraforum.org/showthread.php?t=306271">[1]</a><a rel="nofollow" class="external autonumber" href="https://www.reddit.com/r/archlinux/comments/4gwukx/nvidia_drivers_and_high_resolution_tty_possible/">[2]</a><a rel="nofollow" class="external autonumber" href="https://www.reddit.com/r/archlinux/comments/86lqc5/tty_resolution_nvidia_psaish/">[3]</a>.</li>
+<li>Драйвера NVIDIA до версии 470 (например <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/nvidia-390xx-dkms/">nvidia-390xx-dkms</a></span><sup><small>AUR</small></sup>) не поддерживают аппаратное ускорение в Xwayland, так что у приложений, не являющихся родными для Wayland, может быть плохая производительность в Wayland-сеансах.</li>
+</ul>
+</div>
+<h4>
+<span id=".D0.A0.D0.B0.D0.BD.D0.BD.D1.8F.D1.8F_.D0.B7.D0.B0.D0.B3.D1.80.D1.83.D0.B7.D0.BA.D0.B0"></span><span class="mw-headline" id="Ранняя_загрузка">Ранняя загрузка</span>
+</h4>
+<p>Для базовой функциональности достаточно добавить параметр ядра. Если вы хотите, чтобы он загружался как можно раньше, или замечаете проблемы с запуском (например, модуль ядра <code>nvidia</code> загружается после <a href="../ru/Display_manager.html" title="Display manager (Русский)">экранного менеджера</a>), вы можете добавить <code>nvidia</code>, <code>nvidia_modeset</code>, <code>nvidia_uvm</code> и <code>nvidia_drm</code> в initramfs.
+</p>
+<h5><span class="mw-headline" id="mkinitcpio">mkinitcpio</span></h5>
+<p>Если вы используете <a href="../ru/Mkinitcpio.html" title="Mkinitcpio (Русский)">mkinitcpio</a>, добавьте модули как описано в разделе <a href="../ru/Mkinitcpio.html#MODULES" title="Mkinitcpio (Русский)">mkinitcpio (Русский)#MODULES</a>.
+</p>
+<p>После добавления не забывайте запускать <a href="../ru/Mkinitcpio.html" title="Mkinitcpio (Русский)">mkinitcpio</a> каждый раз после обновления пакета <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=nvidia">nvidia</a></span>. Можно использовать <a href="#pacman_hook">#pacman hook</a> для автоматизации этого действия.
+</p>
+<h5><span class="mw-headline" id="Booster">Booster</span></h5>
+<p>Если вы используете <a href="../en/Booster.html" title="Booster">Booster</a>, смотрите <a href="../en/Booster.html#Early_module_loading" title="Booster">Booster#Early module loading</a>.
+</p>
+<h5><span class="mw-headline" id="pacman_hook">pacman hook</span></h5>
+<p>Чтобы не забывать обновлять <a href="../ru/Arch_boot_process.html#initramfs" title="Arch boot process (Русский)">initramfs</a> после обновления драйвера NVIDIA, вы можете использовать <a href="../ru/Pacman.html#%D0%A5%D1%83%D0%BA%D0%B8" title="Pacman (Русский)">хук pacman</a>:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/pacman.d/hooks/nvidia.hook</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">[Trigger]
+Operation=Install
+Operation=Upgrade
+Operation=Remove
+Type=Package
+Target=nvidia
+Target=linux
+# Измените "linux" в строках Target и Exec, если вы используете другое ядро
+
+[Action]
+Description=Update NVIDIA module in initcpio
+Depends=mkinitcpio
+When=PostTransaction
+NeedsTargets
+Exec=/bin/sh -c 'while read -r trg; do case $trg in linux) exit 0; esac; done; /usr/bin/mkinitcpio -P'</pre>
+<p>Пропишите в <code>Target</code> тот пакет, который вы установили в шагах выше (то есть <code>nvidia</code>, <code>nvidia-dkms</code>, <code>nvidia-lts</code> или <code>nvidia-ck-<i>что-нибудь</i></code>).
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Примечание:</strong> Усложнение в строке <code>Exec</code> сделано для того, чтобы избежать многократного запуска <i>mkinitcpio</i> в случае одновременного обновления пакетов <code>nvidia</code> и <code>linux</code>. Если вас это не беспокоит, строки <code>Target=linux</code> и <code>NeedsTargets</code> можно убрать, а строку <code>Exec</code> сократить до простого <code>Exec=/usr/bin/mkinitcpio -P</code>.</div>
+<h3>
+<span id=".D0.90.D0.BF.D0.BF.D0.B0.D1.80.D0.B0.D1.82.D0.BD.D0.BE.D0.B5_.D0.B4.D0.B5.D0.BA.D0.BE.D0.B4.D0.B8.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_.D0.B2.D0.B8.D0.B4.D0.B5.D0.BE"></span><span class="mw-headline" id="Аппаратное_декодирование_видео">Аппаратное декодирование видео</span>
+</h3>
+<p>Аппаратное декодирование видео с помощью VDPAU поддерживается на картах серии GeForce 8 и новее. Аппаратное декодирование видео с помощью NVDEC поддерживается на картах Fermi (~400 серии) и новее. Подробности смотрите в статье <a href="../ru/Hardware_video_acceleration.html" class="mw-redirect" title="Аппаратное ускорение видео">Аппаратное ускорение видео</a>.
+</p>
+<h3>
+<span id=".D0.90.D0.BF.D0.BF.D0.B0.D1.80.D0.B0.D1.82.D0.BD.D0.BE.D0.B5_.D0.BA.D0.BE.D0.B4.D0.B8.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_.D0.B2.D0.B8.D0.B4.D0.B5.D0.BE_.D1.81_.D0.BF.D0.BE.D0.BC.D0.BE.D1.89.D1.8C.D1.8E_NVENC"></span><span class="mw-headline" id="Аппаратное_кодирование_видео_с_помощью_NVENC">Аппаратное кодирование видео с помощью NVENC</span>
+</h3>
+<p>Для NVENC нужен модуль <code>nvidia_uvm</code> и файлы устройств в <code>/dev</code>.
+</p>
+<p>Пакеты с последней версией драйвера содержат <a href="../ru/Udev.html#%D0%9E_%D0%BF%D1%80%D0%B0%D0%B2%D0%B8%D0%BB%D0%B0%D1%85_udev" title="Udev (Русский)">правила udev</a>, которые создают нужные файлы автоматически, так что дополнительные действия не требуются.
+</p>
+<p>Если у вас старый драйвер (например, <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/nvidia-340xx-dkms/">nvidia-340xx-dkms</a></span><sup><small>AUR</small></sup>), вам нужно создать файлы устройств самостоятельно. Вызов утилиты <code>nvidia-modprobe</code> создаст их. Вы можете создать <code>/etc/udev/rules.d/70-nvidia.rules</code> для автоматического её запуска:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/udev/rules.d/70-nvidia.rules</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">ACTION=="add", DEVPATH=="/bus/pci/drivers/nvidia", RUN+="/usr/bin/nvidia-modprobe -c0 -u"</pre>
+<h2>
+<span id=".D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0_Xorg"></span><span class="mw-headline" id="Настройка_Xorg">Настройка Xorg</span>
+</h2>
+<p>Проприетарный драйвер видеокарты NVIDIA не нуждается в файле конфигурации сервера Xorg. Вы можете <a href="../ru/Xorg.html#%D0%97%D0%B0%D0%BF%D1%83%D1%81%D0%BA" title="Xorg (Русский)">запустить X</a> для проверки корректной работы сервера Xorg без файла конфигурации. Однако может потребоваться создать файл (предпочтительнее <code>/etc/X11/xorg.conf.d/20-nvidia.conf</code>, чем <code>/etc/X11/xorg.conf</code>) для тонкой настройки некоторых параметров. Эта конфигурация может быть сгенерирована инструментом конфигурации NVIDIA Xorg или создана вручную. Если она создаётся вручную, она может быть минимальной (в том смысле, что она будет содержать только базовые настройки сервера Xorg), или она может включать в себя ряд настроек, которые могут обходить автоматически найденные или предварительно заданные настройки.
+</p>
+<div class="archwiki-template-box archwiki-template-box-tip">
+<strong>Совет:</strong> Больше информации о настройках можно прочитать в статье <a href="../ru/NVIDIA/Troubleshooting.html" class="mw-redirect" title="NVIDIA/Решение проблем">NVIDIA/Решение проблем</a>.</div>
+<h3>
+<span id=".D0.90.D0.B2.D1.82.D0.BE.D0.BC.D0.B0.D1.82.D0.B8.D1.87.D0.B5.D1.81.D0.BA.D0.B0.D1.8F_.D0.BD.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0"></span><span class="mw-headline" id="Автоматическая_настройка">Автоматическая настройка</span>
+</h3>
+<p>Пакет NVIDIA, включает в себя автоматический инструмент для создания файла конфигурации сервера Xorg (<code>xorg.conf</code>) и может быть запущен путем выполнения:
+</p>
+<pre># nvidia-xconfig
+</pre>
+<p>Данная команда автоматически обнаруживает и создаёт (или изменяет существующую) конфигурацию <code>/etc/X11/xorg.conf</code> в соответствии с текущим аппаратным обеспечением.
+</p>
+<p>Если есть строка с указанием загрузки DRI, убедитесь, что она закомментирована:
+</p>
+<pre>#    Load        "dri"
+</pre>
+<p>Проверьте ещё раз <code>/etc/X11/xorg.conf</code>, убедитесь, что глубина по умолчанию, горизонтальная синхронизация, частота кадров и разрешение допустимы.
+</p>
+<h3><span class="mw-headline" id="nvidia-settings">nvidia-settings</span></h3>
+<p>Пакет <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=nvidia-settings">nvidia-settings</a></span> позволяет редактировать большинство опций через консоль или графическую оболочку. Запуск <code>nvidia-settings</code> без параметров запустит графический интерфейс; опции командной строки можно узнать в <span class="plainlinks archwiki-template-man" title="$ man 1 nvidia-settings"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/nvidia-settings.1">nvidia-settings(1)</a></span>.
+</p>
+<p>Также вы можете запустить <code>nvidia-settings</code> от имени обычного пользователя и сохранить настройки в <code>~/.nvidia-settings-rc</code>, используя кнопку <i>Save Current Configuration</i> на вкладке <i>nvidia-settings Configuration</i>.
+</p>
+<p>Чтобы загрузить настройки из <code>~/.nvidia-settings-rc</code> для текущего пользователя:
+</p>
+<pre>$ nvidia-settings --load-config-only
+</pre>
+<p>Можно добавить эту команду в <a href="../ru/Autostarting.html" class="mw-redirect" title="Автозапуск">автозапуск</a>.
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Примечание:</strong> 
+<ul>
+<li>X-сервер может перестать запускаться после сохранения изменений в <code>nvidia-settings</code>. Изменение или удаление сгенерированных файлов <code>~/.nvidia-settings-rc</code> и/или <a href="../ru/Xorg.html" title="Xorg (Русский)">Xorg</a> поможет восстановить работоспособность.</li>
+<li>
+<a href="../en/Cinnamon.html" class="mw-redirect" title="Cinnamon (Русский)">Cinnamon</a> может переопределять настройки, сделанные в <code>nvidia-settings</code>. Вы можете <a href="../en/Cinnamon.html#Cinnamon_overrides_settings_in_xorg.conf" title="Cinnamon">настроить запуск Cinnamon, чтобы предотвратить это</a>.</li>
+</ul>
+</div>
+<h3>
+<span id=".D0.A0.D1.83.D1.87.D0.BD.D0.B0.D1.8F_.D0.BD.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0"></span><span class="mw-headline" id="Ручная_настройка">Ручная настройка</span>
+</h3>
+<p>Некоторые настройки (которые не могут быть включены <a href="#%D0%90%D0%B2%D1%82%D0%BE%D0%BC%D0%B0%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B0%D1%8F_%D0%BD%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0">автоматически</a> или с помощью <a href="#nvidia-settings">nvidia-settings</a>) можно изменить через файл конфигурации. Для применения изменений нужно будет перезапустить сервер Xorg.
+</p>
+<p>Подробности и доступные опции описаны в <a rel="nofollow" class="external text" href="https://download.nvidia.com/XFree86/Linux-x86_64/470.63.01/README/">NVIDIA Accelerated Linux Graphics Driver README and Installation Guide</a>.
+</p>
+<h4>
+<span id=".D0.9C.D0.B8.D0.BD.D0.B8.D0.BC.D0.B0.D0.BB.D1.8C.D0.BD.D0.B0.D1.8F_.D0.BD.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0"></span><span class="mw-headline" id="Минимальная_настройка">Минимальная настройка</span>
+</h4>
+<p>Минимальный блок настроек <code>20-nvidia.conf</code> может выглядеть так:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/X11/xorg.conf.d/20-nvidia.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">Section "Device"
+        Identifier "NVIDIA Card"
+        Driver "nvidia"
+        VendorName "NVIDIA Corporation"
+        BoardName "GeForce GTX 1050 Ti"
+EndSection
+</pre>
+<h4>
+<span id=".D0.9E.D1.82.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BB.D0.BE.D0.B3.D0.BE_.D0.BF.D1.80.D0.B8_.D0.B7.D0.B0.D0.BF.D1.83.D1.81.D0.BA.D0.B5"></span><span class="mw-headline" id="Отключение_лого_при_запуске">Отключение лого при запуске</span>
+</h4>
+<p>Добавьте <code>"NoLogo"</code> в секцию <code>Device</code>:
+</p>
+<pre>Option "NoLogo" "1"
+</pre>
+<h4>
+<span id=".D0.9F.D0.B5.D1.80.D0.B5.D0.BE.D0.BF.D1.80.D0.B5.D0.B4.D0.B5.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BE.D0.B1.D0.BD.D0.B0.D1.80.D1.83.D0.B6.D0.B5.D0.BD.D0.B8.D1.8F_.D0.BC.D0.BE.D0.BD.D0.B8.D1.82.D0.BE.D1.80.D0.B0"></span><span class="mw-headline" id="Переопределение_обнаружения_монитора">Переопределение обнаружения монитора</span>
+</h4>
+<p>Опция <code>"ConnectedMonitor"</code> в секции <code>Device</code> позволяет переопределить обнаружение монитора при запуске X-сервера, что может сэкономить значительное количество времени при запуске. Доступными опциями являются: <code>"CRT"</code> для аналоговых подключений, <code>"DFP"</code> для цифровых мониторов и <code>"TV"</code> для телевизоров.
+</p>
+<p>Следующая опция заставит драйвер NVIDIA обойти проверки при запуске и распознать монитор как DFP:
+</p>
+<pre>Option "ConnectedMonitor" "DFP"
+</pre>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Примечание:</strong> Используйте "CRT" для всех аналоговых 15-контактных VGA-подключений, даже если дисплей является плоской панелью. "DFP" предназначен только для цифровых соединений DVI, HDMI или DisplayPort.</div>
+<h4>
+<span id=".D0.92.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_SLI"></span><span class="mw-headline" id="Включение_SLI">Включение SLI</span>
+</h4>
+<div class="archwiki-template-box archwiki-template-box-warning">
+<strong>Важно:</strong> Начиная с серии GTX 10xx (1080, 1070, 1060 и т.д.) поддерживается только 2-way SLI. 3-way и 4-way SLI могут работать для приложений CUDA/OpenCL, но скорее всего сломают все приложения OpenGL.</div>
+<p>Взято из NVIDIA driver's <a rel="nofollow" class="external text" href="https://download.nvidia.com/XFree86/Linux-x86_64/515.65.01/README/xconfigoptions.html">README</a> Appendix B: <i>This option controls the configuration of SLI rendering in supported configurations.</i> "Supported configuration" — это компьютер с материнской платой, имеющей сертификацию SLI и 2 или 3 GPU GeForce с сертификацией SLI.
+</p>
+<p>Найдите идентификатор PCI-шины первого GPU с помощью <code>lspci</code>:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;"># lspci | grep "VGA|3D controller"</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">00:02.0 VGA compatible controller: Intel Corporation Xeon E3-1200 v2/3rd Gen Core processor Graphics Controller (rev 09)
+03:00.0 VGA compatible controller: NVIDIA Corporation GK107 [GeForce GTX 650] (rev a1)
+04:00.0 VGA compatible controller: NVIDIA Corporation GK107 [GeForce GTX 650] (rev a1)
+08:00.0 3D controller: NVIDIA Corporation GM108GLM [Quadro K620M / Quadro M500M] (rev a2)
+</pre>
+<p>Добавьте BusID (в данном примере 3) в секцию <code>Device</code>:
+</p>
+<pre>BusID "PCI:3:0:0"
+</pre>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Примечание:</strong> Формат значения BusID должен быть таким: <code>"PCI:&lt;BusID&gt;:0:0"</code>
+</div>
+<p>Добавьте нужное значение режима рендеринга SLI в секции <code>Screen</code>:
+</p>
+<pre>Option "SLI" "AA"
+</pre>
+<p>Таблица доступных режимов рендеринга:
+</p>
+<table class="wikitable">
+<tbody>
+<tr>
+<th>Значение</th>
+<th>Поведение
+</th>
+</tr>
+<tr>
+<td>0, no, off, false, Single</td>
+<td>Использовать только один GPU при рендеринге.
+</td>
+</tr>
+<tr>
+<td>1, yes, on, true, Auto</td>
+<td>Включить SLI и позволить драйверу автоматически выбрать подходящий режим рендеринга.
+</td>
+</tr>
+<tr>
+<td>AFR</td>
+<td>Включить SLI и использовать режим рендеринга чередующихся кадров (alternate frame rendering mode).
+</td>
+</tr>
+<tr>
+<td>SFR</td>
+<td>Включить SLI и использовать режим рендеринга с разделением кадров (split frame rendering mode).
+</td>
+</tr>
+<tr>
+<td>AA</td>
+<td>Включить SLI и использовать сглаживание SLI. Используйте это в сочетании с полным сглаживанием сцены для улучшения качества изображения.
+</td>
+</tr>
+</tbody>
+</table>
+<p>Также можно использовать <i>nvidia-xconfig</i> для внесения этих изменений в <code>xorg.conf</code> одной командой:
+</p>
+<pre># nvidia-xconfig --busid=PCI:3:0:0 --sli=AA
+</pre>
+<p>Проверка режима SLI:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">$ nvidia-settings -q all | grep SLIMode</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">  Attribute 'SLIMode' (arch:0.0): AA
+    'SLIMode' is a string attribute.
+    'SLIMode' is a read-only attribute.
+    'SLIMode' can use the following target types: X Screen.
+</pre>
+<div class="archwiki-template-box archwiki-template-box-warning">
+<strong>Важно:</strong> После включения SLI система может зависнуть/не реагировать при запуске xorg. Рекомендуется отключить экранный менеджер перед перезагрузкой.</div>
+<p>Если эта конфигурация не работает, может понадобиться использовать PCI Bus ID, который выдаст <code>nvidia-settings</code>,
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">$ nvidia-settings -q all | grep -i pcibus</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">Attribute 'PCIBus' (host:0[gpu:0]): 101.
+  'PCIBus' is an integer attribute.
+  'PCIBus' is a read-only attribute.
+  'PCIBus' can use the following target types: GPU, SDI Input Device.
+Attribute 'PCIBus' (host:0[gpu:1]): 23.
+  'PCIBus' is an integer attribute.
+  'PCIBus' is a read-only attribute.
+  'PCIBus' can use the following target types: GPU, SDI Input Device.
+</pre>
+<p>и закомментировать опцию Primary GPU в настройках xorg,
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/usr/share/X11/xorg.conf.d/10-nvidia-drm-outputclass.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">...
+
+Section "OutputClass"
+...
+    # Option "PrimaryGPU" "yes"
+...
+</pre>
+<p>Использование этой конфигурации также может решить проблемы с графической загрузкой.
+</p>
+<h3>
+<span id=".D0.9D.D0.B5.D1.81.D0.BA.D0.BE.D0.BB.D1.8C.D0.BA.D0.BE_.D0.BC.D0.BE.D0.BD.D0.B8.D1.82.D0.BE.D1.80.D0.BE.D0.B2"></span><span class="mw-headline" id="Несколько_мониторов">Несколько мониторов</span>
+</h3>
+<p>Смотрите <a href="../en/Multihead.html" title="Multihead">Multihead</a> для получения основной информации.
+</p>
+<h4>
+<span id=".D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_nvidia-settings"></span><span class="mw-headline" id="Использование_nvidia-settings">Использование nvidia-settings</span>
+</h4>
+<p>Можно использовать <a href="#nvidia-settings">nvidia-settings</a> для настройки нескольких мониторов.
+</p>
+<p>Для настройки через командную строку сперва узнайте <code>CurrentMetaMode</code>:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">$ nvidia-settings -q CurrentMetaMode</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">Attribute 'CurrentMetaMode' (hostnmae:0.0): id=50, switchable=no, source=nv-control :: DPY-1: 2880x1620 @2880x1620 +0+0 {ViewPortIn=2880x1620, ViewPortOut=2880x1620+0+0}</pre>
+<p>Сохраните всё после символов <code>::</code> и до конца атрибута (в данном примере <code>DPY-1: 2880x1620 @2880x1620 +0+0 {ViewPortIn=2880x1620, ViewPortOut=2880x1620+0+0}</code>) и используйте для перенастройки мониторов с помощью <code>nvidia-settings --assign "CurrentMetaMode=<i>your_meta_mode</i>"</code>.
+</p>
+<div class="archwiki-template-box archwiki-template-box-tip">
+<strong>Совет:</strong> Вы можете создать псевдонимы в командной облочке для различных конфигураций мониторов и разрешений, которые вы используете.</div>
+<h4><span class="mw-headline" id="ConnectedMonitor">ConnectedMonitor</span></h4>
+<p>Если драйвер не определил второй монитор, вы можете принудительно указать его с помощью опции ConnectedMonitor.
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/X11/xorg.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">
+
+Section "Monitor"
+    Identifier     "Monitor1"
+    VendorName     "Panasonic"
+    ModelName      "Panasonic MICRON 2100Ex"
+    HorizSync       30.0 - 121.0 # this monitor has incorrect EDID, hence Option "UseEDIDFreqs" "false"
+    VertRefresh     50.0 - 160.0
+    Option         "DPMS"
+EndSection
+
+Section "Monitor"
+    Identifier     "Monitor2"
+    VendorName     "Gateway"
+    ModelName      "GatewayVX1120"
+    HorizSync       30.0 - 121.0
+    VertRefresh     50.0 - 160.0
+    Option         "DPMS"
+EndSection
+
+Section "Device"
+    Identifier     "Device1"
+    Driver         "nvidia"
+    Option         "NoLogo"
+    Option         "UseEDIDFreqs" "false"
+    Option         "ConnectedMonitor" "CRT,CRT"
+    VendorName     "NVIDIA Corporation"
+    BoardName      "GeForce 6200 LE"
+    BusID          "PCI:3:0:0"
+    Screen          0
+EndSection
+
+Section "Device"
+    Identifier     "Device2"
+    Driver         "nvidia"
+    Option         "NoLogo"
+    Option         "UseEDIDFreqs" "false"
+    Option         "ConnectedMonitor" "CRT,CRT"
+    VendorName     "NVIDIA Corporation"
+    BoardName      "GeForce 6200 LE"
+    BusID          "PCI:3:0:0"
+    Screen          1
+EndSection
+
+</pre>
+<p>Дублирование устройств с опцией <code>Screen</code> описывает использование сервером Xorg двух мониторов на одной карте без технологии <code>TwinView</code>. Учтите, что <code>nvidia-settings</code> будет вырезать любое упоминание опции <code>ConnectedMonitor</code>.
+</p>
+<h4><span class="mw-headline" id="TwinView">TwinView</span></h4>
+<p>Если вы хотите только один большой экран вместо двух, установите значение опции <code>TwinView</code> в <code>1</code>. Эта опция должна использоваться, если вы хотите композитинг. Технология TwinView работает только на базе одной карты, когда все мониторы подключены к одной карте.
+</p>
+<pre>Option "TwinView" "1"
+</pre>
+<p>Пример конфигурации:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/X11/xorg.conf.d/10-monitor.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">Section "ServerLayout"
+    Identifier     "TwinLayout"
+    Screen         0 "metaScreen" 0 0
+EndSection
+
+Section "Monitor"
+    Identifier     "Monitor0"
+    Option         "Enable" "true"
+EndSection
+
+Section "Monitor"
+    Identifier     "Monitor1"
+    Option         "Enable" "true"
+EndSection
+
+Section "Device"
+    Identifier     "Card0"
+    Driver         "nvidia"
+    VendorName     "NVIDIA Corporation"
+
+    #refer to the link below for more information on each of the following options.
+    Option         "HorizSync"          "DFP-0: 28-33; DFP-1: 28-33"
+    Option         "VertRefresh"        "DFP-0: 43-73; DFP-1: 43-73"
+    Option         "MetaModes"          "1920x1080, 1920x1080"
+    Option         "ConnectedMonitor"   "DFP-0, DFP-1"
+    Option         "MetaModeOrientation" "DFP-1 LeftOf DFP-0"
+EndSection
+
+Section "Screen"
+    Identifier     "metaScreen"
+    Device         "Card0"
+    Monitor        "Monitor0"
+    DefaultDepth    24
+    Option         "TwinView" "True"
+    SubSection "Display"
+        Modes          "1920x1080"
+    EndSubSection
+EndSection
+</pre>
+<p><a rel="nofollow" class="external text" href="https://download.nvidia.com/XFree86/Linux-x86_64/440.31/README/configtwinview.html">Дополнительная информация о технологии TwinView (англ.)</a>.
+</p>
+<p>Если вы имеете несколько карт, которые совместимы с технологией SLI, вы можете использовать несколько мониторов, присоединённых к разным картам (пример: две карты в режиме SLI с подключением монитора на каждой карте). Опция "MetaModes" совместно с режимом SLI Mosaic позволяет это. Ниже указана конфигурация, которая работает для вышеупомянутого примера и безупречно запускает <a href="../ru/GNOME.html" title="GNOME (Русский)">GNOME</a>.
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/X11/xorg.conf.d/10-monitor.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">Section "Device"
+        Identifier      "Card A"
+        Driver          "nvidia"
+        BusID           "PCI:1:00:0"
+EndSection
+
+Section "Device"
+        Identifier      "Card B"
+        Driver          "nvidia"
+        BusID           "PCI:2:00:0"
+EndSection
+
+Section "Monitor"
+        Identifier      "Right Monitor"
+EndSection
+
+Section "Monitor"
+        Identifier      "Left Monitor"
+EndSection
+
+Section "Screen"
+        Identifier      "Right Screen"
+        Device          "Card A"
+        Monitor         "Right Monitor"
+        DefaultDepth    24
+        Option          "SLI" "Mosaic"
+        Option          "Stereo" "0"
+        Option          "BaseMosaic" "True"
+        Option          "MetaModes" "GPU-0.DFP-0: 1920x1200+4480+0, GPU-1.DFP-0:1920x1200+0+0"
+        SubSection      "Display"
+                        Depth           24
+        EndSubSection
+EndSection
+
+Section "Screen"
+        Identifier      "Left Screen"
+        Device          "Card B"
+        Monitor         "Left Monitor"
+        DefaultDepth    24
+        Option          "SLI" "Mosaic"
+        Option          "Stereo" "0"
+        Option          "BaseMosaic" "True"
+        Option          "MetaModes" "GPU-0.DFP-0: 1920x1200+4480+0, GPU-1.DFP-0:1920x1200+0+0"
+        SubSection      "Display"
+                        Depth           24
+        EndSubSection
+EndSection
+
+Section "ServerLayout"
+        Identifier      "Default"
+        Screen 0        "Right Screen" 0 0
+        Option          "Xinerama" "0"
+EndSection</pre>
+<h5>
+<span id=".D0.92.D0.B5.D1.80.D1.82.D0.B8.D0.BA.D0.B0.D0.BB.D1.8C.D0.BD.D0.B0.D1.8F_.D1.81.D0.B8.D0.BD.D1.85.D1.80.D0.BE.D0.BD.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D1.8F_.D0.BF.D1.80.D0.B8_.D0.B8.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B8_TwinView"></span><span class="mw-headline" id="Вертикальная_синхронизация_при_использовании_TwinView">Вертикальная синхронизация при использовании TwinView</span>
+</h5>
+<p>Если вы используете TwinView и вертикальную синхронизацию (опция "Sync to VBlank" в <b>nvidia-settings</b>), вы заметите, что только один экран корректно использует синхронизацию, если у вас нет двух одинаковых мониторов. Несмотря на то, что <b>nvidia-settings</b> имеет необходимую опцию для выбора, какой именно экран синхронизировать (опция "Sync to this display device"), это не всегда работает. Решением будет добавить следующие переменные окружения при запуске, например в <code>/etc/profile</code>:
+</p>
+<pre>export __GL_SYNC_TO_VBLANK=1
+export __GL_SYNC_DISPLAY_DEVICE=DFP-0
+export VDPAU_NVIDIA_SYNC_DISPLAY_DEVICE=DFP-0
+</pre>
+<p>Вы можете изменить <code>DFP-0</code> на ваш используемый монитор (<code>DFP-0</code> это DVI порт, а <code>CRT-0</code> - VGA порт). Идентификатор для вашего монитора можно найти с помощью <b>nvidia-settings</b> в секции "X Server XVideoSettings".
+</p>
+<h5>
+<span id=".D0.97.D0.B0.D0.BF.D1.83.D1.81.D0.BA_.D0.B8.D0.B3.D1.80_.D0.BF.D1.80.D0.B8_.D0.B8.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B8_TwinView"></span><span class="mw-headline" id="Запуск_игр_при_использовании_TwinView">Запуск игр при использовании TwinView</span>
+</h5>
+<p>Если вы захотите сыграть в полноэкранные игры при использовании TwinView, вероятно вы заметите, что игры распознают два экрана как один большой экран. Хотя это технически правильно (виртуальный экран X в действительности соответствует размеру ваших экранов вместе), вы, вероятно, не захотите так играть.
+</p>
+<p>Чтобы исправить это для SDL, попробуйте:
+</p>
+<pre>export SDL_VIDEO_FULLSCREEN_HEAD=1
+</pre>
+<p>Для OpenGL, добавьте Metamodes в свой xorg.conf в секции <code>Device</code> и перезапустите X:
+</p>
+<pre>Option "Metamodes" "1680x1050,1680x1050; 1280x1024,1280x1024; 1680x1050,NULL; 1280x1024,NULL;"
+</pre>
+<p>Еще один метод, который может работать самостоятельно, или в сочетании с упомянутыми выше: <a href="../en/Gaming.html#Starting_games_in_a_separate_X_server" title="Gaming">starting games in a separate X server</a>.
+</p>
+<h4>
+<span id=".D0.A0.D0.B5.D0.B6.D0.B8.D0.BC_Mosaic"></span><span class="mw-headline" id="Режим_Mosaic">Режим Mosaic</span>
+</h4>
+<p>Режим Mosaic единственный способ использовать более чем два монитора через несколько видеокарт с использованием композитинга. Ваш оконный менджер может распознать, а может и не распознать различия между мониторами.
+Режим Mosaic требует правильной конфигурации SLI. Даже если используется режим Base без SLI, видеокарты должны быть совместимы с SLI.
+</p>
+<h5><span class="mw-headline" id="Base_Mosaic">Base Mosaic</span></h5>
+<p>Режим Base Mosaic работает с картами Geforce 8000 series или выше. Его нельзя включить через графический интерфейс nvidia-setting. Вы должны использовать команду <code>nvidia-xconfig</code>, либо отредактировать <code>xorg.conf</code> самостоятельно. Опция  Metamodes должна быть указана. Следующий пример для четырёх DFP мониторов в конфигурации 2х2, каждый запущен в разрешении 1920x1024, по два подключенных DFP монитора на две карты:
+</p>
+<pre>$ nvidia-xconfig --base-mosaic --metamodes="GPU-0.DFP-0: 1920x1024+0+0, GPU-0.DFP-1: 1920x1024+1920+0, GPU-1.DFP-0: 1920x1024+0+1024, GPU-1.DFP-1: 1920x1024+1920+1024"
+</pre>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Примечание:</strong> Хотя в документации и указана конфигурация мониторов 2х2, <a rel="nofollow" class="external text" href="https://devtalk.nvidia.com/default/topic/579449/linux/basemosaic-v295-vs-v310-vs-v325-only-up-to-three-screens-/post/3954733/#3954733">карты GeForce имеют искусственное ограничение в 3 монитора</a>. Большее количество мониторов доступно в картах серии Quadro. С сентября 2014, Windows не имеет ограничение на количество мониторов с той же самой версией драйвера. Это не ошибка, так задумано по дизайну архитектуры.</div>
+<h5><span class="mw-headline" id="SLI_Mosaic">SLI Mosaic</span></h5>
+<p>Если вы имеете конфигурацию SLI и все графические ускорители серии Quadro FX 5800, Quadro Fermi или новее, тогда вы можете использовать режим SLI Mosaic. он можеть быть включен из графического интерфейса nvidia-settings или из командной строки:
+</p>
+<pre>$ nvidia-xconfig --sli=Mosaic --metamodes="GPU-0.DFP-0: 1920x1024+0+0, GPU-0.DFP-1: 1920x1024+1920+0, GPU-1.DFP-0: 1920x1024+0+1024, GPU-1.DFP-1: 1920x1024+1920+1024"
+</pre>
+<h2><span class="mw-headline" id="Wayland">Wayland</span></h2>
+<p>Смотрите <a href="../ru/Wayland.html#%D0%A2%D1%80%D0%B5%D0%B1%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F" title="Wayland (Русский)">Wayland (Русский)#Требования</a>.
+</p>
+<p>Дополнительные параметры конфигурации можно найти на страницах вики или в документации соответствующего композитора.
+</p>
+<p>Информацию об Xwayland смотрите в разделе <a href="../ru/Wayland.html#Xwayland" title="Wayland (Русский)">Wayland (Русский)#Xwayland</a>.
+</p>
+<p>Если вы используете GDM, смотрите <a href="../en/GDM.html#Wayland_and_the_proprietary_NVIDIA_driver" title="GDM">GDM#Wayland and the proprietary NVIDIA driver</a>.
+</p>
+<h2>
+<span id=".D0.A1.D0.BE.D0.B2.D0.B5.D1.82.D1.8B_.D0.B8_.D1.80.D0.B5.D0.BA.D0.BE.D0.BC.D0.B5.D0.BD.D0.B4.D0.B0.D1.86.D0.B8.D0.B8"></span><span class="mw-headline" id="Советы_и_рекомендации">Советы и рекомендации</span>
+</h2>
+<p>Смотрите <a href="../ru/NVIDIA/Tips_and_tricks.html" class="mw-redirect" title="NVIDIA/Советы и рекомендации">NVIDIA/Советы и рекомендации</a>.
+</p>
+<h2>
+<span id=".D0.A0.D0.B5.D1.88.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BF.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC"></span><span class="mw-headline" id="Решение_проблем">Решение проблем</span>
+</h2>
+<p>Смотрите <a href="../ru/NVIDIA/Troubleshooting.html" class="mw-redirect" title="NVIDIA/Решение проблем">NVIDIA/Решение проблем</a>.
+</p>
+<h2>
+<span id=".D0.A1.D0.BC.D0.BE.D1.82.D1.80.D0.B8.D1.82.D0.B5_.D1.82.D0.B0.D0.BA.D0.B6.D0.B5"></span><span class="mw-headline" id="Смотрите_также">Смотрите также</span>
+</h2>
+<ul>
+<li><a rel="nofollow" class="external text" href="https://forums.developer.nvidia.com/t/current-graphics-driver-releases/28500">Информация о текущих версиях драйверов на официальном форуме NVIDIA</a></li>
+<li><a rel="nofollow" class="external text" href="https://forums.developer.nvidia.com/c/gpu-unix-graphics/linux/148">NVIDIA Developers Forum - Linux Subforum</a></li>
+</ul>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../Special:Categories.html" title="Special:Categories">Categories</a>: <ul>
+<li><a href="../ru/Category:Graphics.html" title="Category:Graphics (Русский)">Graphics (Русский)</a></li>
+<li><a href="../ru/Category:X_server.html" title="Category:X server (Русский)">X server (Русский)</a></li>
+</ul>
+</div></div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=NVIDIA_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)&amp;oldid=782571">https://wiki.archlinux.org/index.php?title=NVIDIA_(Русский)&amp;oldid=782571</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 5 July 2023, at 07:23.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

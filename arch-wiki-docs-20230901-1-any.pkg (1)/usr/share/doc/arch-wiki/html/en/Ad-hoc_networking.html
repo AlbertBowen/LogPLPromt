@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>Ad-hoc networking - ArchWiki</title>
+<link rel="stylesheet" href="../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Ad-hoc_networking rootpage-Ad-hoc_networking skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Requirements" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Requirements">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Requirements</div>
+			</a>
+			
+			<ul id="toc-Requirements-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Wifi_link_layer" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Wifi_link_layer">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Wifi link layer</div>
+			</a>
+			
+				<button aria-controls="toc-Wifi_link_layer-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Wifi link layer subsection
+				</button>
+			
+			<ul id="toc-Wifi_link_layer-sublist" class="sidebar-toc-list">
+				<li id="toc-Manual_method" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Manual_method">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.1</span>Manual method</div>
+			</a>
+			
+			<ul id="toc-Manual_method-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-wpa_supplicant" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#wpa_supplicant">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.2</span>wpa_supplicant</div>
+			</a>
+			
+			<ul id="toc-wpa_supplicant-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Network_configuration" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Network_configuration">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>Network configuration</div>
+			</a>
+			
+			<ul id="toc-Network_configuration-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Tips_and_tricks" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Tips_and_tricks">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4</span>Tips and tricks</div>
+			</a>
+			
+				<button aria-controls="toc-Tips_and_tricks-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Tips and tricks subsection
+				</button>
+			
+			<ul id="toc-Tips_and_tricks-sublist" class="sidebar-toc-list">
+				<li id="toc-Using_NetworkManager" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Using_NetworkManager">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.1</span>Using NetworkManager</div>
+			</a>
+			
+			<ul id="toc-Using_NetworkManager-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Custom_systemd_service_(with_wpa_supplicant_and_static_IP)" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Custom_systemd_service_(with_wpa_supplicant_and_static_IP)">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.2</span>Custom systemd service (with wpa_supplicant and static IP)</div>
+			</a>
+			
+			<ul id="toc-Custom_systemd_service_(with_wpa_supplicant_and_static_IP)-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-See_also" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#See_also">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5</span>See also</div>
+			</a>
+			
+			<ul id="toc-See_also-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../en/Ad-hoc_networking.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="mw-list-item"><a href="../en/Talk:Ad-hoc_networking.html" rel="discussion" title="Discussion about the content page [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">English</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../en/Ad-hoc_networking.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=Ad-hoc_networking&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=Ad-hoc_networking&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../en/Ad-hoc_networking.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Ad-hoc_networking&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Ad-hoc_networking&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output">
+<div class="archwiki-template-meta-related-articles-start">
+<p class="mw-no-invert">Related articles</p>
+<ul>
+<li><a href="../en/Network_configuration.html" title="Network configuration">Network configuration</a></li>
+<li><a href="../en/Network_configuration/Wireless.html" class="mw-redirect" title="Wireless network configuration">Wireless network configuration</a></li>
+<li><a href="../en/Software_access_point.html" title="Software access point">Software access point</a></li>
+<li><a href="../en/Internet_sharing.html" title="Internet sharing">Internet sharing</a></li>
+</ul>
+</div>
+<p>An IBSS (Independent Basic Service Set) network, often called an ad-hoc network, is a way to have a group of devices talk to each other wirelessly, without a central controller. It is an example of a peer-to-peer network, in which all devices talk directly to each other, with no inherent relaying.
+</p>
+<p>For example, ad-hoc networking may be used to <a href="../en/Internet_sharing.html" title="Internet sharing">share an internet connection</a>.
+</p>
+<mw:tocplace></mw:tocplace>
+<h2><span class="mw-headline" id="Requirements">Requirements</span></h2>
+<ul><li>A <a rel="nofollow" class="external text" href="https://wireless.wiki.kernel.org/en/users/drivers%7C">nl80211 compatible</a> wireless device (e.g. ath9k) on all devices which will connect to the network</li></ul>
+<h2><span class="mw-headline" id="Wifi_link_layer">Wifi link layer</span></h2>
+<p>Since IBSS network is a peer-to-peer network, the steps necessary to set up the wifi link layer should be the same on all devices.
+</p>
+<div class="archwiki-template-box archwiki-template-box-tip">
+<strong>Tip:</strong> It is possible to create complex network topologies, see <a rel="nofollow" class="external text" href="https://wireless.wiki.kernel.org/en/users/documentation/iw/vif">Linux Wireless documentation</a> for advanced examples.</div>
+<h3><span class="mw-headline" id="Manual_method">Manual method</span></h3>
+<div class="archwiki-template-box archwiki-template-box-warning">
+<strong>Warning:</strong> This method creates <b>unencrypted</b> ad-hoc network. See <a href="#wpa_supplicant">#wpa_supplicant</a> for method using WPA encryption.</div>
+<p>See <a href="../en/Network_configuration/Wireless.html#iw" class="mw-redirect" title="Wireless network configuration">Wireless network configuration#iw</a> for a better explanation of the following commands. Make sure that <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=iw">iw</a></span> is <a href="../en/Pacman.html" title="Pacman">installed</a>.
+</p>
+<p>Set the operation mode to ibss:
+</p>
+<pre># iw <i>interface</i> set type ibss
+</pre>
+<p>Bring the interface up (an additional step like <code>rfkill unblock wifi</code> might be needed):
+</p>
+<pre># ip link set <i>interface</i> up
+</pre>
+<p>Now you can create an ad-hoc network. Replace <i>your_ssid</i> with the name of the network and <i>frequency</i> with the frequency in MHz, depending on which channel you want to use. See the Wikipedia page <a href="https://en.wikipedia.org/wiki/List_of_WLAN_channels#Interference_Concerns" class="extiw" title="wikipedia:List of WLAN channels">List of WLAN channels</a> for a table showing frequencies of individual channels.
+</p>
+<pre># iw <i>interface</i> ibss join <i>your_ssid</i> <i>frequency</i>
+</pre>
+<h3><span class="mw-headline" id="wpa_supplicant">wpa_supplicant</span></h3>
+<p>Ensure that <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=wpa_supplicant">wpa_supplicant</a></span> is <a href="../en/Pacman.html" title="Pacman">installed</a>, and create a configuration file for it (see <a href="../en/Wpa_supplicant.html" title="Wpa supplicant">wpa_supplicant</a> for details).
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/wpa_supplicant-adhoc.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">ctrl_interface=DIR=/run/wpa_supplicant GROUP=wheel
+
+# use 'ap_scan=2' on all devices connected to the network
+# this is unnecessary if you only want the network to be created when no other networks are available
+ap_scan=2
+
+network={
+    ssid="MySSID"
+    mode=1
+    frequency=2432
+    proto=RSN
+    key_mgmt=WPA-PSK
+    pairwise=CCMP
+    group=CCMP
+    psk="secret passphrase"
+}
+</pre>
+<p>Run <i>wpa_supplicant</i> on all devices connected to the network with the following command:
+</p>
+<pre># wpa_supplicant -B -i <i>interface</i> -c /etc/wpa_supplicant-adhoc.conf -D nl80211,wext
+</pre>
+<h2><span class="mw-headline" id="Network_configuration">Network configuration</span></h2>
+<p>The final step is to assign an IP address to all devices in the network. There are multiple ways to do this:
+</p>
+<ul>
+<li>Assign static IP addresses. See <a href="../en/Network_configuration.html#Static_IP_address" title="Network configuration">Network configuration#Static IP address</a> for details.</li>
+<li>Running DHCP server on one device. See <a href="../en/Dhcpd.html" title="Dhcpd">dhcpd</a> or <a href="../en/Dnsmasq.html" title="Dnsmasq">dnsmasq</a> for details.</li>
+<li>Running <i>avahi-autoipd</i>. See <a href="../en/Avahi.html#Obtaining_IPv4LL_IP_address" title="Avahi">Avahi#Obtaining IPv4LL IP address</a> for details.</li>
+</ul>
+<p>If you want to share an internet connection to the ad-hoc network, see <a href="../en/Internet_sharing.html" title="Internet sharing">Internet sharing</a>.
+</p>
+<h2><span class="mw-headline" id="Tips_and_tricks">Tips and tricks</span></h2>
+<h3><span class="mw-headline" id="Using_NetworkManager">Using NetworkManager</span></h3>
+<p>If you use <a href="../en/NetworkManager.html" title="NetworkManager">NetworkManager</a>, you can use <i>nm-applet</i> for ad-hoc network configuration instead of the manual method described above. See <a href="../en/NetworkManager.html#Sharing_internet_connection_over_Wi-Fi" title="NetworkManager">NetworkManager#Sharing internet connection over Wi-Fi</a> for details.
+</p>
+<h3>
+<span id="Custom_systemd_service_.28with_wpa_supplicant_and_static_IP.29"></span><span class="mw-headline" id="Custom_systemd_service_(with_wpa_supplicant_and_static_IP)">Custom systemd service (with wpa_supplicant and static IP)</span>
+</h3>
+<p>You can use the following templates to enable wireless ad-hoc networking:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/conf.d/network-wireless-adhoc@<i>interface</i></pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">addr=192.168.0.2
+mask=24</pre>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/systemd/system/network-wireless-adhoc@.service</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">[Unit]
+Description=Ad-hoc wireless network connectivity (%i)
+Wants=network.target
+Before=network.target
+BindsTo=sys-subsystem-net-devices-%i.device
+After=sys-subsystem-net-devices-%i.device
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+EnvironmentFile=/etc/conf.d/network-wireless-adhoc@%i
+
+# perhaps rfkill is not needed for you
+ExecStart=/usr/bin/rfkill unblock wifi
+ExecStart=/usr/bin/ip link set %i up
+ExecStart=/usr/bin/wpa_supplicant -B -i %i -D nl80211,wext -c /etc/wpa_supplicant-adhoc.conf
+ExecStart=/usr/bin/ip addr add ${addr}/${mask} dev %i
+
+ExecStop=/usr/bin/ip addr flush dev %i
+ExecStop=/usr/bin/ip link set %i down
+
+[Install]
+WantedBy=multi-user.target</pre>
+<h2><span class="mw-headline" id="See_also">See also</span></h2>
+<ul>
+<li><a rel="nofollow" class="external text" href="https://help.ubuntu.com/community/WifiDocs/Adhoc">Ubuntu community wiki WifiDocs/Adhoc</a></li>
+<li><a rel="nofollow" class="external text" href="https://www.ubuntugeek.com/creating-an-adhoc-host-with-ubuntu.html">Manual about creating an Ad-Hoc network on UbuntuGeek</a></li>
+<li><a rel="nofollow" class="external text" href="https://web.archive.org/web/20200225211430/http://go2linux.garron.me/linux/2011/03/share-your-3g-internet-connection-over-wifi-linux-ipod-touch-925">Share your 3G Internet connection over wifi</a></li>
+</ul>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="../en/Category:Wireless_networking.html" title="Category:Wireless networking">Wireless networking</a></li></ul>
+</div></div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=Ad-hoc_networking&amp;oldid=743231">https://wiki.archlinux.org/index.php?title=Ad-hoc_networking&amp;oldid=743231</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 25 August 2022, at 14:20.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

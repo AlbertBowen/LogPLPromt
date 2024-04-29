@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>Arch build system (Русский) - ArchWiki</title>
+<link rel="stylesheet" href="../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Arch_build_system_Русский rootpage-Arch_build_system_Русский skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Инструменты" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#%D0%98%D0%BD%D1%81%D1%82%D1%80%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D1%8B">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Инструменты</div>
+			</a>
+			
+				<button aria-controls="toc-Инструменты-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Инструменты subsection
+				</button>
+			
+			<ul id="toc-Инструменты-sublist" class="sidebar-toc-list">
+				<li id="toc-Структура_репозитория" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#%D0%A1%D1%82%D1%80%D1%83%D0%BA%D1%82%D1%83%D1%80%D0%B0_%D1%80%D0%B5%D0%BF%D0%BE%D0%B7%D0%B8%D1%82%D0%BE%D1%80%D0%B8%D1%8F">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.1</span>Структура репозитория</div>
+			</a>
+			
+			<ul id="toc-Структура_репозитория-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Способы_применения" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#%D0%A1%D0%BF%D0%BE%D1%81%D0%BE%D0%B1%D1%8B_%D0%BF%D1%80%D0%B8%D0%BC%D0%B5%D0%BD%D0%B5%D0%BD%D0%B8%D1%8F">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Способы применения</div>
+			</a>
+			
+			<ul id="toc-Способы_применения-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Использование" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#%D0%98%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>Использование</div>
+			</a>
+			
+				<button aria-controls="toc-Использование-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Использование subsection
+				</button>
+			
+			<ul id="toc-Использование-sublist" class="sidebar-toc-list">
+				<li id="toc-Получение_PKGBUILD" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#%D0%9F%D0%BE%D0%BB%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D0%B5_PKGBUILD">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.1</span>Получение PKGBUILD</div>
+			</a>
+			
+			<ul id="toc-Получение_PKGBUILD-sublist" class="sidebar-toc-list">
+				<li id="toc-С_помощью_pkgctl" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#%D0%A1_%D0%BF%D0%BE%D0%BC%D0%BE%D1%89%D1%8C%D1%8E_pkgctl">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.1.1</span>С помощью pkgctl</div>
+			</a>
+			
+			<ul id="toc-С_помощью_pkgctl-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-С_помощью_git_напрямую" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#%D0%A1_%D0%BF%D0%BE%D0%BC%D0%BE%D1%89%D1%8C%D1%8E_git_%D0%BD%D0%B0%D0%BF%D1%80%D1%8F%D0%BC%D1%83%D1%8E">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.1.2</span>С помощью git напрямую</div>
+			</a>
+			
+			<ul id="toc-С_помощью_git_напрямую-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Сборка_пакета" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#%D0%A1%D0%B1%D0%BE%D1%80%D0%BA%D0%B0_%D0%BF%D0%B0%D0%BA%D0%B5%D1%82%D0%B0">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.2</span>Сборка пакета</div>
+			</a>
+			
+			<ul id="toc-Сборка_пакета-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Советы_и_рекомендации" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#%D0%A1%D0%BE%D0%B2%D0%B5%D1%82%D1%8B_%D0%B8_%D1%80%D0%B5%D0%BA%D0%BE%D0%BC%D0%B5%D0%BD%D0%B4%D0%B0%D1%86%D0%B8%D0%B8">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4</span>Советы и рекомендации</div>
+			</a>
+			
+				<button aria-controls="toc-Советы_и_рекомендации-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Советы и рекомендации subsection
+				</button>
+			
+			<ul id="toc-Советы_и_рекомендации-sublist" class="sidebar-toc-list">
+				<li id="toc-Сохранение_изменённых_пакетов" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#%D0%A1%D0%BE%D1%85%D1%80%D0%B0%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5_%D0%B8%D0%B7%D0%BC%D0%B5%D0%BD%D1%91%D0%BD%D0%BD%D1%8B%D1%85_%D0%BF%D0%B0%D0%BA%D0%B5%D1%82%D0%BE%D0%B2">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.1</span>Сохранение изменённых пакетов</div>
+			</a>
+			
+			<ul id="toc-Сохранение_изменённых_пакетов-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Другие_инструменты" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#%D0%94%D1%80%D1%83%D0%B3%D0%B8%D0%B5_%D0%B8%D0%BD%D1%81%D1%82%D1%80%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D1%8B">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5</span>Другие инструменты</div>
+			</a>
+			
+			<ul id="toc-Другие_инструменты-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../ru/Arch_build_system.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="new mw-list-item"><a href="/index.php?title=Talk:Arch_build_system_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)&amp;action=edit&amp;redlink=1" rel="discussion" title="Discussion about the content page (page does not exist) [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">русский</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../ru/Arch_build_system.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=Arch_build_system_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=Arch_build_system_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../ru/Arch_build_system.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Arch_build_system_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Arch_build_system_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="ru" dir="ltr">
+<div class="mw-parser-output">
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Состояние перевода:</strong> На этой странице представлен перевод статьи <a href="../en/Arch_build_system.html" title="Arch build system">Arch build system</a>. Дата последней синхронизации: 21 мая 2023. Вы можете <a href="../ru/ArchWiki:Translation_Team.html" title="ArchWiki:Translation Team (Русский)">помочь</a> синхронизировать перевод, если в английской версии произошли <a rel="nofollow" class="external text" href="https://wiki.archlinux.org/index.php?title=Arch_build_system&amp;diff=0&amp;oldid=779203">изменения</a>.</div>
+<div class="archwiki-template-meta-related-articles-start">
+<p class="mw-no-invert">Ссылки по теме</p>
+<ul>
+<li><a href="../ru/Arch_package_guidelines.html" class="mw-redirect" title="Стандарты создания пакетов для Arch">Стандарты создания пакетов для Arch</a></li>
+<li><a href="../ru/Arch_User_Repository.html" class="mw-redirect" title="Пользовательский репозиторий Arch">Пользовательский репозиторий Arch</a></li>
+<li><a href="../ru/Creating_packages.html" class="mw-redirect" title="Создание пакетов">Создание пакетов</a></li>
+<li><a href="../ru/Kernel/Arch_Build_System.html" class="mw-redirect" title="Ядро/Система сборки Arch">Ядро/Система сборки Arch</a></li>
+<li><a href="../ru/Makepkg.html" title="Makepkg (Русский)">makepkg (Русский)</a></li>
+<li><a href="../ru/Official_repositories.html" class="mw-redirect" title="Официальные репозитории">Официальные репозитории</a></li>
+<li><a href="../ru/Pacman.html" title="Pacman (Русский)">pacman (Русский)</a></li>
+<li><a href="../ru/PKGBUILD.html" title="PKGBUILD (Русский)">PKGBUILD (Русский)</a></li>
+<li><a href="../en/Patching_packages.html" title="Patching packages">Patching packages</a></li>
+</ul>
+</div>
+<p>Система сборки Arch (Arch build system, ABS) — схожая с <i>портами</i> система сборки программных пакетов из исходного кода. В отличие от <a href="../ru/Pacman.html" title="Pacman (Русский)">pacman</a>, который является инструментом управления двоичными пакетами, система сборки Arch — набор утилит для компилирования исходников в устанавливаемые <i>.pkg.tar.zst</i> пакеты.
+</p>
+<p><i>Порты</i> используются в ОС семейства BSD для автоматизации процесса сборки программ из файлов с исходным кодом. <i>Порты</i> помогают загружать, распаковывать, патчить, компилировать и устанавливать программы. Сам по себе <i>порт</i> является небольшим каталогом на компьютере пользователя, название которого совпадает с названием устанавливаемой программы. Этот каталог содержит файлы с инструкциями по установке и сборке программ. Благодаря этому установка сильно упрощается: как правило, необходимо лишь выполнить команду <code>make</code> или <code>make install clean</code> в каталоге порта.
+</p>
+<p>Концепция системы сборки Arch во многом похожа. Она включает в себя коллекцию git-репозиториев для каждого пакета, доступного в Arch Linux. Каждый репозиторий содержит файл <a href="../ru/PKGBUILD.html" title="PKGBUILD (Русский)">PKGBUILD</a> (и иногда некоторые другие файлы), но в них нет ни исходников, ни двоичных файлов программ. При выполнении команды <a href="../ru/Makepkg.html" title="Makepkg (Русский)">makepkg</a> внутри каталога исходники программы загружаются и компилируются в двоичные файлы, которые затем упаковываются в пакет. После этого можно воспользоваться <a href="../ru/Pacman.html" title="Pacman (Русский)">pacman</a>, чтобы установить данный пакет в систему.
+</p>
+<mw:tocplace></mw:tocplace>
+<h2>
+<span id=".D0.98.D0.BD.D1.81.D1.82.D1.80.D1.83.D0.BC.D0.B5.D0.BD.D1.82.D1.8B"></span><span class="mw-headline" id="Инструменты">Инструменты</span>
+</h2>
+<p>Система сборки Arch опирается на несколько компонентов и инструментов, которые используются в процессе создания пакетов:
+</p>
+<dl>
+<dt>Репозиторий</dt>
+<dd>Набор каталогов, в которых хранятся необходимые для сборки всех официальных пакетов файлы — но не сами пакеты и не файлы с исходным кодом программ. Он доступен в виде <a href="../en/Git.html" title="Git">git</a>-репозиториев на <a rel="nofollow" class="external text" href="https://gitlab.archlinux.org/archlinux/packaging/packages">Gitlab</a>. Подробнее в разделе <a href="#%D0%A1%D1%82%D1%80%D1%83%D0%BA%D1%82%D1%83%D1%80%D0%B0_%D1%80%D0%B5%D0%BF%D0%BE%D0%B7%D0%B8%D1%82%D0%BE%D1%80%D0%B8%D1%8F">#Структура репозитория</a>.</dd>
+</dl>
+<dl>
+<dt><a href="../ru/PKGBUILD.html" title="PKGBUILD (Русский)">PKGBUILD</a></dt>
+<dd>
+<a href="../ru/Bash.html" title="Bash (Русский)">Bash</a>-скрипт, в котором находится URL для скачивания файлов с исходным кодом, а также инструкции по их компиляции в двоичный код и упаковке.</dd>
+</dl>
+<dl>
+<dt><a href="../ru/Makepkg.html" title="Makepkg (Русский)">makepkg</a></dt>
+<dd>Утилита командной строки, которая читает <a href="../ru/PKGBUILD.html" title="PKGBUILD (Русский)">PKGBUILD</a>, автоматически скачивает файлы с исходным кодом, компилирует их и создаёт пакет <i>.pkg.tar*</i> (какой конкретно суффикс будет у пакета, определяется параметром <code>PKGEXT</code> в файле <code>makepkg.conf</code>). <i>makepkg</i> также можно использовать для создания пакетов из <a href="../ru/Arch_User_Repository.html" title="Arch User Repository (Русский)">AUR</a> или сторонних источников, подробнее см. <a href="../ru/Creating_packages.html" class="mw-redirect" title="Создание пакетов">Создание пакетов</a>.</dd>
+</dl>
+<dl>
+<dt><a href="../ru/Pacman.html" title="Pacman (Русский)">pacman</a></dt>
+<dd>pacman является полностью отдельным проектом, но он вызывается (утилитой makepkg или вручную) каждый раз при установке или удалении собранных пакетов, а также для установки зависимостей.</dd>
+</dl>
+<dl>
+<dt><a href="../ru/Arch_User_Repository.html" title="Arch User Repository (Русский)">AUR</a></dt>
+<dd>Пользовательский репозиторий Arch (Arch User Repository, AUR) — отдельное от официальных репозиториев хранилище файлов PKGBUILD, но пакеты из AUR можно собирать теми же инструментами. В AUR находятся тысячи поддерживаемых пользователями файлов PKGBUILD для программ, которые не имеют официального пакета Arch. Если вам нужен пакет, которого нет в официальных репозиториях, стоит поискать его в AUR.</dd>
+</dl>
+<div class="archwiki-template-box archwiki-template-box-warning">
+<strong>Важно:</strong> Официальные файлы PKGBUILD разрабатываются исходя из предположения, что пакеты будут собираться в <a href="../DeveloperWiki:Building_in_a_clean_chroot.html" title="DeveloperWiki:Building in a clean chroot">чистом chroot-окружении</a>. <i>Грязная</i> cборка может привести к непредсказуемому поведению программы во время исполнения. Это связано с тем, что при сборке зависимости определяются динамически, и итоговый список зависит от того, какие пакеты были доступны на машине в момент сборки.
+</div>
+<h3>
+<span id=".D0.A1.D1.82.D1.80.D1.83.D0.BA.D1.82.D1.83.D1.80.D0.B0_.D1.80.D0.B5.D0.BF.D0.BE.D0.B7.D0.B8.D1.82.D0.BE.D1.80.D0.B8.D1.8F"></span><span class="mw-headline" id="Структура_репозитория">Структура репозитория</span>
+</h3>
+<p>Файлы PKGBUILD для пакетов из <a href="../ru/Official_repositories.html" title="Official repositories (Русский)">официальных репозиториев</a> <i>core</i>, <i>extra</i>, <i>core-testing</i> и <i>extra-testing</i> хранятся на <a rel="nofollow" class="external text" href="https://gitlab.archlinux.org/">Arch Linux Gitlab</a>.
+</p>
+<p>Каждый пакет находится в отдельном git-репозитории в пространстве имён <code>archlinux/packaging/packages</code>. В каждом репозитории есть файл PKGBUILD и файлы, используемые в официальных сборках. Также там можно найти некоторые файлы, которые используются разработчиками для процесса сборки.
+</p>
+<p>Например, дерево каталогов для <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=acl">acl</a></span> выглядит следующим образом:
+</p>
+<pre>acl
+├── keys
+│   └── pgp
+│       ├── 259B3792B3D6D319212CC4DCD5BF9FEB0313653A.asc
+│       ├── 600CD204FBCEA418BD2CA74F154343260542DF34.asc
+│       └── B902B5271325F892AC251AD441633B9FE837F581.asc
+└── PKGBUILD
+</pre>
+<p>Исходного кода пакета здесь нет. Вместо этого файл <code>PKGBUILD</code> содержит URL, из которого исходный код будет загружен во время сборки.
+</p>
+<h2>
+<span id=".D0.A1.D0.BF.D0.BE.D1.81.D0.BE.D0.B1.D1.8B_.D0.BF.D1.80.D0.B8.D0.BC.D0.B5.D0.BD.D0.B5.D0.BD.D0.B8.D1.8F"></span><span class="mw-headline" id="Способы_применения">Способы применения</span>
+</h2>
+<p>Система сборки Arch позволяет автоматизировать некоторые задачи, связанные с компиляцией из исходников. Например:
+</p>
+<ul>
+<li>Компиляция или перекомпиляция пакета;</li>
+<li>Сборка из исходных кодов и установка программ, для которых ещё нет официального пакета (см. <a href="../ru/Creating_packages.html" class="mw-redirect" title="Создание пакетов">Создание пакетов</a>);</li>
+<li>Изменение существующих пакетов под свои нужды (включение или отключение опций, внесение исправлений);</li>
+<li>Перестройка всей системы с использованием новых флагов компиляции "à la FreeBSD";</li>
+<li>Чистая сборка и установка собственного ядра (см. <a href="../ru/Kernel.html#%D0%9A%D0%BE%D0%BC%D0%BF%D0%B8%D0%BB%D1%8F%D1%86%D0%B8%D1%8F" class="mw-redirect" title="Ядро">Ядро#Компиляция</a>);</li>
+<li>Создание модулей для вашего собственного ядра;</li>
+<li>Компиляция и установка новой/старой/beta/devel версии Arch-пакета с помощью редактирования номера версии в PKGBUILD.</li>
+</ul>
+<h2>
+<span id=".D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5"></span><span class="mw-headline" id="Использование">Использование</span>
+</h2>
+<h3>
+<span id=".D0.9F.D0.BE.D0.BB.D1.83.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_PKGBUILD"></span><span class="mw-headline" id="Получение_PKGBUILD">Получение PKGBUILD</span>
+</h3>
+<p>Для получения файла <a href="../ru/PKGBUILD.html" title="PKGBUILD (Русский)">PKGBUILD</a> можно использовать инструмент <code>pkgctl</code> или напрямую <a href="../en/Git.html" title="Git">Git</a>.
+</p>
+<h4>
+<span id=".D0.A1_.D0.BF.D0.BE.D0.BC.D0.BE.D1.89.D1.8C.D1.8E_pkgctl"></span><span class="mw-headline" id="С_помощью_pkgctl">С помощью pkgctl</span>
+</h4>
+<p><a href="../ru/Help:Reading.html#%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0_%D0%BF%D0%B0%D0%BA%D0%B5%D1%82%D0%BE%D0%B2" class="mw-redirect" title="Установите">Установите</a> пакет <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=devtools">devtools</a></span>, который предоставляет команду <code>pkgctl</code> — инструмент для работы с исходными файлами пакетов Arch Linux с использованием Git.
+</p>
+<p>Чтобы склонировать git-репозиторий с актуальными исходными файлами пакета с помощью <code>pkgctl</code>, выполните:
+</p>
+<pre>$ pkgctl repo clone <i>название-пакета</i>
+</pre>
+<p>Фраза «исходные файлы пакета» означает файл <a href="../ru/PKGBUILD.html" title="PKGBUILD (Русский)">PKGBUILD</a> и, возможно, некоторые другие необходимые для сборки файлы, такие как ключи. То есть это основные файлы, которые требуются для системы сборки Arch. Исходники оригинальной программы, например файлы C или Python, сюда не относятся.
+</p>
+<p>Можно получить не только актуальные исходные файлы пакета, но и их предыдущие версии. Кроме того, вы можете использовать любые команды git для получения более старой версии пакета или для отслеживания пользовательских изменений.
+</p>
+<p>Для получения определённой версии пакета можно использовать примерно такую команду:
+</p>
+<pre>$ pkgctl repo clone --switch="2:1.19.5-1" go
+</pre>
+<p>Смотрите <span class="plainlinks archwiki-template-man" title="$ man 1 pkgctl-repo-clone"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/pkgctl-repo-clone.1">pkgctl-repo-clone(1)</a></span> для более подробной информации.
+</p>
+<h4>
+<span id=".D0.A1_.D0.BF.D0.BE.D0.BC.D0.BE.D1.89.D1.8C.D1.8E_git_.D0.BD.D0.B0.D0.BF.D1.80.D1.8F.D0.BC.D1.83.D1.8E"></span><span class="mw-headline" id="С_помощью_git_напрямую">С помощью git напрямую</span>
+</h4>
+<p>Используйте такую команду:
+</p>
+<pre>$ git clone https://gitlab.archlinux.org/archlinux/packaging/packages/<i>название-пакета</i>.git
+</pre>
+<p>Например, для получения исходных файлов пакета <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=apache">apache</a></span>:
+</p>
+<pre>$ git clone https://gitlab.archlinux.org/archlinux/packaging/packages/apache.git
+</pre>
+<h3>
+<span id=".D0.A1.D0.B1.D0.BE.D1.80.D0.BA.D0.B0_.D0.BF.D0.B0.D0.BA.D0.B5.D1.82.D0.B0"></span><span class="mw-headline" id="Сборка_пакета">Сборка пакета</span>
+</h3>
+<p>Перед сборкой пакета из файла <a href="../ru/PKGBUILD.html" title="PKGBUILD (Русский)">PKGBUILD</a> настройте <i>makepkg</i> в соответствии с указаниями из раздела <a href="../ru/Makepkg.html#%D0%9D%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0" title="Makepkg (Русский)">makepkg#Настройка</a>.
+</p>
+<p>Скопируйте каталог с файлом PKGBUILD в другое место, отредактируйте его, если необходимо, после чего соберите пакет и установите его в систему, как описано в разделе <a href="../ru/Makepkg.html#%D0%98%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5" title="Makepkg (Русский)">makepkg#Использование</a>.
+</p>
+<h2>
+<span id=".D0.A1.D0.BE.D0.B2.D0.B5.D1.82.D1.8B_.D0.B8_.D1.80.D0.B5.D0.BA.D0.BE.D0.BC.D0.B5.D0.BD.D0.B4.D0.B0.D1.86.D0.B8.D0.B8"></span><span class="mw-headline" id="Советы_и_рекомендации">Советы и рекомендации</span>
+</h2>
+<h3>
+<span id=".D0.A1.D0.BE.D1.85.D1.80.D0.B0.D0.BD.D0.B5.D0.BD.D0.B8.D0.B5_.D0.B8.D0.B7.D0.BC.D0.B5.D0.BD.D1.91.D0.BD.D0.BD.D1.8B.D1.85_.D0.BF.D0.B0.D0.BA.D0.B5.D1.82.D0.BE.D0.B2"></span><span class="mw-headline" id="Сохранение_изменённых_пакетов">Сохранение изменённых пакетов</span>
+</h3>
+<p>При первом же обновлении системы <a href="../ru/Pacman.html" title="Pacman (Русский)">pacman</a> заменит модифицированный вами пакет на стандартный пакет с таким же названием из официальных репозиториев. Ниже описано, как этого не допустить.
+</p>
+<p>Добавьте параметр <code>groups</code> в PKGBUILD пакета и укажите в нём группу <code>modified</code>.
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">PKGBUILD</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">groups=('modified')</pre>
+<p>Добавьте эту группу в раздел <code>IgnoreGroup</code> файла <code>/etc/pacman.conf</code>.
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/pacman.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">IgnoreGroup = modified</pre>
+<p>Если в официальных репозиториях появится новая версия этого пакета, то во время обновления системы pacman напечатает замечание, что он пропускает пакет, поскольку тот находится в разделе <code>IgnoreGroup</code>. После этого необходимо вручную обновить и пересобрать модифицированную версию пакета, чтобы ваша система не оказалась "частично обновлённой".
+</p>
+<h2>
+<span id=".D0.94.D1.80.D1.83.D0.B3.D0.B8.D0.B5_.D0.B8.D0.BD.D1.81.D1.82.D1.80.D1.83.D0.BC.D0.B5.D0.BD.D1.82.D1.8B"></span><span class="mw-headline" id="Другие_инструменты">Другие инструменты</span>
+</h2>
+<ul><li>
+<a rel="nofollow" class="external text" href="https://xyne.dev/projects/pbget/">pbget</a> — получение файлов PKGBUILD для конкретных пакетов прямо из веб-интерфейса. Также работает для AUR.</li></ul>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../Special:Categories.html" title="Special:Categories">Categories</a>: <ul>
+<li><a href="../ru/Category:About_Arch.html" title="Category:About Arch (Русский)">About Arch (Русский)</a></li>
+<li><a href="../ru/Category:Package_development.html" title="Category:Package development (Русский)">Package development (Русский)</a></li>
+<li><a href="../ru/Category:Package_management.html" title="Category:Package management (Русский)">Package management (Русский)</a></li>
+</ul>
+</div></div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=Arch_build_system_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)&amp;oldid=785250">https://wiki.archlinux.org/index.php?title=Arch_build_system_(Русский)&amp;oldid=785250</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 12 August 2023, at 06:15.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

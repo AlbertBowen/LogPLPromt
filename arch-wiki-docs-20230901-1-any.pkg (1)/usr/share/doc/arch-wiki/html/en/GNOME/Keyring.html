@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>GNOME/Keyring - ArchWiki</title>
+<link rel="stylesheet" href="../../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-GNOME_Keyring rootpage-GNOME skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Installation" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#Installation">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Installation</div>
+			</a>
+			
+			<ul id="toc-Installation-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Manage_using_GUI" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#Manage_using_GUI">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Manage using GUI</div>
+			</a>
+			
+			<ul id="toc-Manage_using_GUI-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Using_the_keyring" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#Using_the_keyring">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>Using the keyring</div>
+			</a>
+			
+				<button aria-controls="toc-Using_the_keyring-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Using the keyring subsection
+				</button>
+			
+			<ul id="toc-Using_the_keyring-sublist" class="sidebar-toc-list">
+				<li id="toc-PAM_step" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#PAM_step">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.1</span>PAM step</div>
+			</a>
+			
+			<ul id="toc-PAM_step-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-SSH_keys" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#SSH_keys">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4</span>SSH keys</div>
+			</a>
+			
+				<button aria-controls="toc-SSH_keys-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle SSH keys subsection
+				</button>
+			
+			<ul id="toc-SSH_keys-sublist" class="sidebar-toc-list">
+				<li id="toc-gcr-ssh-agent" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#gcr-ssh-agent">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.1</span>gcr-ssh-agent</div>
+			</a>
+			
+			<ul id="toc-gcr-ssh-agent-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id='toc-gnome-keyring-daemon_"ssh"_component' class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href='#gnome-keyring-daemon_"ssh"_component'>
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.2</span>gnome-keyring-daemon "ssh" component</div>
+			</a>
+			
+			<ul id='toc-gnome-keyring-daemon_"ssh"_component-sublist' class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Using" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Using">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.3</span>Using</div>
+			</a>
+			
+			<ul id="toc-Using-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Disabling" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Disabling">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.4</span>Disabling</div>
+			</a>
+			
+			<ul id="toc-Disabling-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Tips_and_tricks" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#Tips_and_tricks">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5</span>Tips and tricks</div>
+			</a>
+			
+				<button aria-controls="toc-Tips_and_tricks-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Tips and tricks subsection
+				</button>
+			
+			<ul id="toc-Tips_and_tricks-sublist" class="sidebar-toc-list">
+				<li id="toc-Integration_with_applications" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Integration_with_applications">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5.1</span>Integration with applications</div>
+			</a>
+			
+			<ul id="toc-Integration_with_applications-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Flushing_passphrases" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Flushing_passphrases">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5.2</span>Flushing passphrases</div>
+			</a>
+			
+			<ul id="toc-Flushing_passphrases-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Git_integration" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Git_integration">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5.3</span>Git integration</div>
+			</a>
+			
+			<ul id="toc-Git_integration-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-GnuPG_integration" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#GnuPG_integration">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5.4</span>GnuPG integration</div>
+			</a>
+			
+			<ul id="toc-GnuPG_integration-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Renaming_a_keyring" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Renaming_a_keyring">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5.5</span>Renaming a keyring</div>
+			</a>
+			
+			<ul id="toc-Renaming_a_keyring-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Automatically_change_keyring_password_with_user_password" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Automatically_change_keyring_password_with_user_password">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5.6</span>Automatically change keyring password with user password</div>
+			</a>
+			
+			<ul id="toc-Automatically_change_keyring_password_with_user_password-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Launching_gnome-keyring-daemon_outside_desktop_environments_(KDE,_GNOME,_XFCE,_...)" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Launching_gnome-keyring-daemon_outside_desktop_environments_(KDE,_GNOME,_XFCE,_...)">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5.7</span>Launching gnome-keyring-daemon outside desktop environments (KDE, GNOME, XFCE, ...)</div>
+			</a>
+			
+			<ul id="toc-Launching_gnome-keyring-daemon_outside_desktop_environments_(KDE,_GNOME,_XFCE,_...)-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Troubleshooting" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#Troubleshooting">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6</span>Troubleshooting</div>
+			</a>
+			
+				<button aria-controls="toc-Troubleshooting-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Troubleshooting subsection
+				</button>
+			
+			<ul id="toc-Troubleshooting-sublist" class="sidebar-toc-list">
+				<li id="toc-Passwords_are_not_remembered" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Passwords_are_not_remembered">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6.1</span>Passwords are not remembered</div>
+			</a>
+			
+			<ul id="toc-Passwords_are_not_remembered-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Resetting_the_keyring" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Resetting_the_keyring">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6.2</span>Resetting the keyring</div>
+			</a>
+			
+			<ul id="toc-Resetting_the_keyring-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Unable_to_locate_daemon_control_file" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Unable_to_locate_daemon_control_file">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6.3</span>Unable to locate daemon control file</div>
+			</a>
+			
+			<ul id="toc-Unable_to_locate_daemon_control_file-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-No_such_secret_collection_at_path:_/" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#No_such_secret_collection_at_path:_/">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6.4</span>No such secret collection at path: /</div>
+			</a>
+			
+			<ul id="toc-No_such_secret_collection_at_path:_/-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id='toc-Terminal_gives_the_message_"discover_other_daemon:_1"' class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href='#Terminal_gives_the_message_"discover_other_daemon:_1"'>
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6.5</span>Terminal gives the message "discover_other_daemon: 1"</div>
+			</a>
+			
+			<ul id='toc-Terminal_gives_the_message_"discover_other_daemon:_1"-sublist' class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-See_also" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#See_also">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">7</span>See also</div>
+			</a>
+			
+			<ul id="toc-See_also-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../../en/GNOME/Keyring.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="mw-list-item"><a href="../../en/Talk:GNOME/Keyring.html" rel="discussion" title="Discussion about the content page [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">English</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../../en/GNOME/Keyring.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=GNOME/Keyring&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=GNOME/Keyring&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../../en/GNOME/Keyring.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=GNOME/Keyring&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=GNOME/Keyring&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					<div id="contentSub"><span class="subpages">&lt; <a href="../../en/GNOME.html" title="GNOME">GNOME</a></span></div>
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output">
+<p><a rel="nofollow" class="external text" href="https://wiki.gnome.org/Projects/GnomeKeyring">GNOME Keyring</a> is "a collection of components in GNOME that store secrets, passwords, keys, certificates and make them available to applications."
+</p>
+<mw:tocplace></mw:tocplace>
+<h2><span class="mw-headline" id="Installation">Installation</span></h2>
+<p><span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=gnome-keyring">gnome-keyring</a></span> is a member of the <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/groups/x86_64/gnome/">gnome</a></span> group is thus usually present on systems running GNOME. The package can otherwise be <a href="../../en/Help:Reading.html#Installation_of_packages" class="mw-redirect" title="Install">installed</a> on its own. <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=libsecret">libsecret</a></span> should also be installed to grant other applications access to your keyrings. Although <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=libgnome-keyring">libgnome-keyring</a></span> is deprecated (and superseded by <i>libsecret</i>), it may still be required by certain applications.
+</p>
+<p>The gnome-keyring-daemon is automatically started via a systemd user service upon logging in. It can also be started upon request via a socket.
+</p>
+<p>Extra utilities related to GNOME Keyring include:
+</p>
+<ul><li>
+<b>secret-tool</b> — Access the GNOME Keyring (and any other service implementing the <a rel="nofollow" class="external text" href="https://specifications.freedesktop.org/secret-service/">DBus Secret Service API</a>) from the command line.</li></ul>
+<dl><dd>
+<a rel="nofollow" class="external free" href="https://wiki.gnome.org/Projects/Libsecret">https://wiki.gnome.org/Projects/Libsecret</a> || <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=libsecret">libsecret</a></span>
+</dd></dl>
+<ul><li>
+<b>lssecret</b> — List all secret items using <i>libsecret</i> (e.g. GNOME Keyring).</li></ul>
+<dl><dd>
+<a rel="nofollow" class="external free" href="https://gitlab.com/GrantMoyer/lssecret">https://gitlab.com/GrantMoyer/lssecret</a> || <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/lssecret-git/">lssecret-git</a></span><sup><small>AUR</small></sup>
+</dd></dl>
+<h2><span class="mw-headline" id="Manage_using_GUI">Manage using GUI</span></h2>
+<p>You can manage the contents of GNOME Keyring using Seahorse; <a href="../../en/Help:Reading.html#Installation_of_packages" class="mw-redirect" title="Install">install</a> the <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=seahorse">seahorse</a></span> package.
+</p>
+<p>Passwords for keyrings (e.g., the default keyring, "Login") can be changed and even removed. See <a rel="nofollow" class="external text" href="https://help.gnome.org/users/seahorse/stable/keyring-create.html">Create a new keyring</a> and <a rel="nofollow" class="external text" href="https://help.gnome.org/users/seahorse/stable/keyring-update-password.html">Update the keyring password</a> in GNOME Help for more information.
+</p>
+<h2><span class="mw-headline" id="Using_the_keyring">Using the keyring</span></h2>
+<p>The <a href="../../en/PAM.html" title="PAM">PAM</a> module <i>pam_gnome_keyring.so</i> initialises GNOME Keyring partially, unlocking the default <i>login</i> keyring in the process. The gnome-keyring-daemon is automatically started with a systemd user service.
+</p>
+<h3><span class="mw-headline" id="PAM_step">PAM step</span></h3>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> To use automatic unlocking <b>without automatic login</b>, the password for the user account should be the same as the default keyring. See <a href="#Automatically_change_keyring_password_with_user_password">#Automatically change keyring password with user password</a>.</div>
+<div class="archwiki-template-box archwiki-template-box-tip">
+<strong>Tip:</strong> 
+<ul>
+<li>To use automatic unlocking with automatic login, you can set a blank password for the default keyring. Note that the contents of the keyring are stored unencrypted in this case.</li>
+<li>Alternatively, if using GDM and LUKS, GDM can unlock your keyring if it matches your LUKS password. For this to work, you need to use the <a href="../../en/Mkinitcpio.html#Common_hooks" title="Mkinitcpio">systemd init in your mkinitcpio.conf</a> as well as the <a href="../../en/Dm-crypt/System_configuration.html#Using_systemd-cryptsetup-generator" title="Dm-crypt/System configuration">appropriate kernel parameters</a>. See <a rel="nofollow" class="external autonumber" href="https://reddit.com/r/Fedora/comments/jwnqq5/">[1]</a> for more details.</li>
+<li>If you desire to skip the PAM step, the default keyring must be unlocked manually or via another method. See <a href="#Launching_gnome-keyring-daemon_outside_desktop_environments_(KDE,_GNOME,_XFCE,_...)">#Launching gnome-keyring-daemon outside desktop environments (KDE, GNOME, XFCE, ...)</a> and the <a rel="nofollow" class="external text" href="https://wiki.gnome.org/Projects/GnomeKeyring/RunningDaemon">GnomeKeyring wiki</a>.</li>
+</ul>
+</div>
+<p>When using a display manager, the keyring works out of the box for most cases. <a href="../../en/GDM.html" title="GDM">GDM</a>, <a href="../../en/LightDM.html" title="LightDM">LightDM</a>, <a href="../../en/LXDM.html" title="LXDM">LXDM</a>, and <a href="../../en/SDDM.html" title="SDDM">SDDM</a> already have the necessary PAM configuration. For a display manager that does not automatically unlock the keyring edit the appropriate file instead of <code>/etc/pam.d/login</code> as mentioned below.
+</p>
+<p>When using console-based login, edit <code>/etc/pam.d/login</code>:
+</p>
+<p>Add <code>auth optional pam_gnome_keyring.so</code> at the end of the <code>auth</code> section and <code>session optional pam_gnome_keyring.so auto_start</code> at the end of the <code>session</code> section.
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/pam.d/login</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">#%PAM-1.0
+
+auth       required     pam_securetty.so
+auth       requisite    pam_nologin.so
+auth       include      system-local-login
+<b>auth       optional     pam_gnome_keyring.so</b>
+account    include      system-local-login
+session    include      system-local-login
+<b>session    optional     pam_gnome_keyring.so auto_start</b>
+</pre>
+<h2><span class="mw-headline" id="SSH_keys">SSH keys</span></h2>
+<p>GNOME Keyring can act as a wrapper around <a href="../../en/SSH_keys.html#ssh-agent" title="SSH keys">ssh-agent</a>. In that mode, it will display a GUI password entry dialog each time you need to unlock an SSH key. The dialog includes an checkbox to remember the password you type, which, if selected, will allow fully passwordless use of that key in the future as long as your login keyring is unlocked.
+</p>
+<p>From GNOME 41 (released September 2021) until at least this writing (April 2023), the SSH functionality of gnome-keyring-daemon has been <a rel="nofollow" class="external text" href="https://gitlab.gnome.org/GNOME/gcr/-/merge_requests/67">duplicated</a> into <code>/usr/lib/gcr-ssh-agent</code>, which is part of <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=gcr">gcr</a></span>. The eventual <a rel="nofollow" class="external text" href="https://fedoraproject.org/wiki/Changes/ModularGnomeKeyring">plan</a> is to remove the implementation in gnome-keyring-daemon, but that effort seems to have stalled. Until that happens, you should be aware of which implementation you're using, since each is set up and used in a different way:
+</p>
+<h3><span class="mw-headline" id="gcr-ssh-agent">gcr-ssh-agent</span></h3>
+<p>The gcr-ssh-agent implementation is the more plug-and-play of the two. Since it will also eventually be the only implementation, you should use it unless you have good reason not to.
+</p>
+<p>All you need to do to use this implementation is
+</p>
+<ol>
+<li>Enable the <code>gcr-ssh-agent.socket</code> systemd user unit, e.g. by running <code>systemctl --user enable gcr-ssh-agent.socket</code>.</li>
+<li>Run SSH commands with the <code>SSH_AUTH_SOCK</code> environment variable set to <code>$XDG_RUNTIME_DIR/gcr/ssh</code>. There are <a href="../../en/Environment_variables.html#Defining_variables" title="Environment variables">many ways</a> to set environment variables, and the one you use will depend on your specific setup and preferences.</li>
+</ol>
+<h3>
+<span id="gnome-keyring-daemon_.22ssh.22_component"></span><span class="mw-headline" id='gnome-keyring-daemon_"ssh"_component'>gnome-keyring-daemon "ssh" component</span>
+</h3>
+<p>If you do decide to use the older gnome-keyring-daemon implementation, you'll need to ensure <code>gnome-keyring-daemon</code> gets started with <b>ssh</b> in its <code>--components</code> argument. For desktop environments using <a href="../../en/XDG_Autostart.html" title="XDG Autostart">XDG Autostart</a>, that's done via <code>/etc/xdg/autostart/gnome-keyring-ssh.desktop</code> automatically. For others, you'll need to edit <code>ExecStart</code> of the <code>gnome-keyring-daemon.service</code> user unit, since it doesn't start the SSH component by default. See <a href="../../en/Systemd.html#Editing_provided_units" title="Systemd">Systemd#Editing provided units</a> for guidance.
+</p>
+<p>Once you've ensured the component runs, set <code>SSH_AUTH_SOCK</code> to <code>$XDG_RUNTIME_DIR/keyring/ssh</code> in the same manner described above. Note that gcr-ssh-agent and gnome-keyring-daemon listen on different socket paths despite containing nearly-identical implementations.
+</p>
+<h3><span class="mw-headline" id="Using">Using</span></h3>
+<p>Regardless of the implementation you choose, you can run
+</p>
+<pre>$ ssh-add -L
+</pre>
+<p>to list loaded SSH keys in the running agent. This can help ensure you started the appropriate service and set <code>SSH_AUTH_SOCK</code> correctly.
+</p>
+<p>To permanently save the a passphrase in the keyring, use ssh-askpass from the <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=seahorse">seahorse</a></span> package:
+</p>
+<pre>$ /usr/lib/seahorse/ssh-askpass my_key
+</pre>
+<p>To manually add an SSH key from another directory:
+</p>
+<pre>$ ssh-add ~/.private/id_rsa
+Enter passphrase for ~/.private/id_rsa:
+</pre>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> You have to have the corresponding <i>.pub</i> file in the same directory as the private key (<code>~/.ssh/id_rsa.pub</code> in the example). Also, make sure that the public key is the file name of the private key plus <i>.pub</i> (for example, <code>my_key.pub</code>).</div>
+<p>To disable all manually added keys:
+</p>
+<pre>$ ssh-add -D
+</pre>
+<h3><span class="mw-headline" id="Disabling">Disabling</span></h3>
+<p>If you wish to run an alternative SSH agent (e.g. <a href="../../en/SSH_keys.html#ssh-agent" title="SSH keys">ssh-agent</a> directly or <a href="../../en/GnuPG.html#gpg-agent" class="mw-redirect" title="Gpg-agent">gpg-agent</a>), it's a good idea to disable GNOME Keyring's ssh-agent wrapper. Doing so isn't strictly necessary, since each agent listens on a different socket and <code>SSH_AUTH_SOCK</code> can be used to choose between them, but it can make debugging issues easier.
+</p>
+<p>To disable the gcr-ssh-agent implementation, ensure <code>gcr-ssh-agent.socket</code> and <code>gcr-ssh-agent.service</code> are both disabled and stopped in systemd.
+</p>
+<p>To disable the gnome-keyring-daemon implementation in an account-local way, copy <code>/etc/xdg/autostart/gnome-keyring-ssh.desktop</code> to <code>~/.config/autostart/</code> and then append the line <code>Hidden=true</code> to the copied file. Also undo any <code>gnome-keyring-daemon.service</code> edits you made as per the above instructions.
+</p>
+<h2><span class="mw-headline" id="Tips_and_tricks">Tips and tricks</span></h2>
+<h3><span class="mw-headline" id="Integration_with_applications">Integration with applications</span></h3>
+<ul><li><a href="../../en/Chromium.html#Force_a_password_store" title="Chromium">Chromium</a></li></ul>
+<h3><span class="mw-headline" id="Flushing_passphrases">Flushing passphrases</span></h3>
+<pre>$ gnome-keyring-daemon -r -d
+</pre>
+<p>This command starts gnome-keyring-daemon, shutting down previously running instances.
+</p>
+<h3><span class="mw-headline" id="Git_integration">Git integration</span></h3>
+<p>The GNOME keyring is useful in conjunction with <a href="../../en/Git.html" title="Git">Git</a> when you are pushing over HTTPS. The <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=libsecret">libsecret</a></span> package <a href="#Installation">needs to be installed for this functionality to be available</a>.
+</p>
+<p>Configure Git to use the <i>libsecret</i> helper:
+</p>
+<pre>$ git config --global credential.helper /usr/lib/git-core/git-credential-libsecret
+</pre>
+<p>The next time you run <code>git push</code>, you will be asked to unlock your keyring if it is not already unlocked.
+</p>
+<h3><span class="mw-headline" id="GnuPG_integration">GnuPG integration</span></h3>
+<p>Several applications which use GnuPG require a <code>pinentry-program</code> to be set. Set the following to use GNOME 3 pinentry for GNOME Keyring to manage passphrase prompts.
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">~/.gnupg/gpg-agent.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">pinentry-program /usr/bin/pinentry-gnome3
+</pre>
+<p>Another option is to <a href="../../en/GnuPG.html#Unattended_passphrase" title="GnuPG">force loopback for GPG</a> which should allow the passphrase to be entered in the application.
+</p>
+<h3><span class="mw-headline" id="Renaming_a_keyring">Renaming a keyring</span></h3>
+<p>The display name for a keyring (i.e., the name that appears in Seahorse and from <code>file</code>) can be changed by <a rel="nofollow" class="external text" href="https://ttboj.wordpress.com/2013/01/27/renaming-a-gnome-keyring-for-seahorse-the-passwords-and-keyrings-application/">changing the value of display-name in the unencrypted keyring file</a>. Keyrings will usually be stored in <code>~/.local/share/keyrings/</code> with the <i>.keyring</i> file extension.
+</p>
+<h3><span class="mw-headline" id="Automatically_change_keyring_password_with_user_password">Automatically change keyring password with user password</span></h3>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> This only affects the default keyring.</div>
+<p>Add <code>password optional pam_gnome_keyring.so</code> to the end of <code>/etc/pam.d/passwd</code>.
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/pam.d/passwd</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">#%PAM-1.0
+
+#password	required	pam_cracklib.so difok=2 minlen=8 dcredit=2 ocredit=2 retry=3
+#password	required	pam_unix.so sha512 shadow use_authtok
+password	required	pam_unix.so sha512 shadow nullok
+<b>password	optional	pam_gnome_keyring.so</b></pre>
+<h3>
+<span id="Launching_gnome-keyring-daemon_outside_desktop_environments_.28KDE.2C_GNOME.2C_XFCE.2C_....29"></span><span class="mw-headline" id="Launching_gnome-keyring-daemon_outside_desktop_environments_(KDE,_GNOME,_XFCE,_...)">Launching gnome-keyring-daemon outside desktop environments (KDE, GNOME, XFCE, ...)</span>
+</h3>
+<div class="noprint archwiki-template-message">
+<p><a href="../../File:Tango-inaccurate.png" class="image"><img alt="Tango-inaccurate.png" src="../../File:Tango-inaccurate.png" decoding="async" width="48" height="48"></a><b>The factual accuracy of this article or section is disputed.</b><a href="../../File:Tango-inaccurate.png" class="image"><img alt="Tango-inaccurate.png" src="../../File:Tango-inaccurate.png" decoding="async" width="48" height="48"></a></p>
+<div>
+<b>Reason:</b> At least <a href="../../en/Xinit.html" title="Xinit">xinit</a> and <a href="../../en/SDDM.html" title="SDDM">SDDM</a> execute all scripts from <code>/etc/X11/xinit/xinitrc.d/</code> and <a href="../../en/Sway.html" title="Sway">sway</a> provides <code>/etc/sway/config.d/50-systemd-user.conf</code> so the problem is not being "outside desktop environments". If gnome-keyring requires <a href="../../en/XDG_Autostart.html" title="XDG Autostart">XDG Autostart</a>, the installation/configuration section should say so. (Discuss in <a href="../../en/Talk:GNOME/Keyring.html#Launching_gnome-keyring-daemon_outside_desktop_environments_(KDE,_GNOME,_XFCE,_...)" title="Talk:GNOME/Keyring">Talk:GNOME/Keyring#Launching gnome-keyring-daemon outside desktop environments (KDE,_GNOME,_XFCE,_...)</a>)</div>
+</div>
+<p>If you are using sway, i3, or any window manager that does not execute
+</p>
+<ul>
+<li><code>/etc/xdg/autostart/gnome-keyring-*.desktop</code></li>
+<li><code>/etc/X11/xinit/xinitrc.d/50-systemd-user.sh</code></li>
+</ul>
+<p>your window manager needs to execute the following commands during window manager startup. The commands do not need to be executed in any specific order.
+</p>
+<pre>dbus-update-activation-environment DISPLAY XAUTHORITY WAYLAND_DISPLAY</pre>
+<p>or
+</p>
+<pre>dbus-update-activation-environment --all</pre>
+<p>This command passes environment variables from the window manager to session dbus. Without this, GUI prompts cannot be triggered over DBus. For example, this is required for seahorse password prompt.
+</p>
+<p>This is required because session dbus is started before graphical environment is started. Thus, session dbus does not know about the graphical environment you are in. Someone or something has to teach session dbus about the graphical environment by passing environment variables describing the graphical environment to session dbus.
+</p>
+<pre>gnome-keyring-daemon --start --components=secrets</pre>
+<p>During login, PAM starts <code>gnome-keyring-daemon --login</code> which is responsible for keeping gnome-keyring unlocked with login password. If <code>gnome-keyring-daemon --login</code> is not connected to session dbus within a few minutes, <code>gnome-keyring-daemon --login</code> dies. If <code>gnome-keyring-daemon --start ...</code> is started against session dbus in a window manager, <code>gnome-keyring-daemon --login</code> is connected to session dbus. If your login session does not start <code>gnome-keyring-daemon --start ...</code> before <code>gnome-keyring-daemon --login</code> quits, you can also use any program that uses gnome-keyring or secret service API before <code>gnome-keyring-daemon --login</code> dies.
+</p>
+<h2><span class="mw-headline" id="Troubleshooting">Troubleshooting</span></h2>
+<h3><span class="mw-headline" id="Passwords_are_not_remembered">Passwords are not remembered</span></h3>
+<p>If you are prompted for a password after logging in and you find that your passwords are not saved, then you may need to create/set a default keyring. To do this using Seahorse (a.k.a. Passwords and Keys), see <a rel="nofollow" class="external text" href="https://help.gnome.org/users/seahorse/stable/keyring-create.html">Create a new keyring</a> and <a rel="nofollow" class="external text" href="https://help.gnome.org/users/seahorse/stable/keyring-change-default.html">Change the default keyring</a> in GNOME Help.
+</p>
+<h3><span class="mw-headline" id="Resetting_the_keyring">Resetting the keyring</span></h3>
+<p>You will need to <a href="#Manage_using_GUI">change your login keyring password</a> if you receive the following error message: "The password you use to login to your computer no longer matches that of your login keyring".
+</p>
+<p>Alternatively, you can remove the <code>login.keyring</code> and <code>user.keystore</code> files from <code>~/.local/share/keyrings/</code>. Be warned that this will permanently delete all saved keys. After removing the files, simply log out and log in again.
+</p>
+<h3><span class="mw-headline" id="Unable_to_locate_daemon_control_file">Unable to locate daemon control file</span></h3>
+<p>The following error may appear in the <a href="../../en/Systemd/Journal.html" class="mw-redirect" title="Journal">journal</a> after logging in:
+</p>
+<pre>gkr-pam: unable to locate daemon control file
+</pre>
+<p>This message "can be safely ignored" if there are no other related issues <a rel="nofollow" class="external autonumber" href="https://bbs.archlinux.org/viewtopic.php?pid=1940190#p1940190">[2]</a>.
+</p>
+<h3>
+<span id="No_such_secret_collection_at_path:_.2F"></span><span class="mw-headline" id="No_such_secret_collection_at_path:_/">No such secret collection at path: /</span>
+</h3>
+<p>If you use a custom <code>~/.xinitrc</code> and receive this error when trying to create a new keyring with Seahorse, this may be solved by adding the following line <a rel="nofollow" class="external autonumber" href="https://bbs.archlinux.org/viewtopic.php?pid=1640822#p1640822">[3]</a> 
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">~/.xinitrc</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">source /etc/X11/xinit/xinitrc.d/50-systemd-user.sh
+</pre>
+<h3>
+<span id="Terminal_gives_the_message_.22discover_other_daemon:_1.22"></span><span class="mw-headline" id='Terminal_gives_the_message_"discover_other_daemon:_1"'>Terminal gives the message "discover_other_daemon: 1"</span>
+</h3>
+<p>This is caused by <i>gnome-keyring-daemon</i> being started for the second time. Since a systemd service is delivered together with the daemon, you do not need to start it another way. So make sure to remove the start command from your <code>.zshenv</code>, <code>.bash_profile</code>, <code>.xinitrc</code>, <code>config.fish</code> or similar. Alternatively you can <a href="../../en/Help:Reading.html#Control_of_systemd_units" class="mw-redirect" title="Disable">disable</a> the <code>gnome-keyring-daemon.service</code> and <code>gnome-keyring-daemon.socket</code> <a href="../../en/Systemd/User.html" class="mw-redirect" title="User unit">user units</a>.
+</p>
+<h2><span class="mw-headline" id="See_also">See also</span></h2>
+<ul>
+<li><a rel="nofollow" class="external free" href="https://help.gnome.org/users/seahorse/stable/">https://help.gnome.org/users/seahorse/stable/</a></li>
+<li><a rel="nofollow" class="external text" href="https://wiki.gnome.org/action/show/Projects/GnomeKeyring">GNOME Wiki page</a></li>
+</ul>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface">
+<div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../../Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="../../en/Category:GNOME.html" title="Category:GNOME">GNOME</a></li></ul>
+</div>
+<div id="mw-hidden-catlinks" class="mw-hidden-catlinks mw-hidden-cats-hidden">Hidden category: <ul><li><a href="../../en/Category:Pages_or_sections_flagged_with_Template:Accuracy.html" title="Category:Pages or sections flagged with Template:Accuracy">Pages or sections flagged with Template:Accuracy</a></li></ul>
+</div>
+</div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=GNOME/Keyring&amp;oldid=776027">https://wiki.archlinux.org/index.php?title=GNOME/Keyring&amp;oldid=776027</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 22 April 2023, at 16:58.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>Binfmt misc for Java - ArchWiki</title>
+<link rel="stylesheet" href="../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Binfmt_misc_for_Java rootpage-Binfmt_misc_for_Java skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Setup" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Setup">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Setup</div>
+			</a>
+			
+				<button aria-controls="toc-Setup-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Setup subsection
+				</button>
+			
+			<ul id="toc-Setup-sublist" class="sidebar-toc-list">
+				<li id="toc-Mounting_binfmt_misc" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Mounting_binfmt_misc">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.1</span>Mounting binfmt_misc</div>
+			</a>
+			
+			<ul id="toc-Mounting_binfmt_misc-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Registering_file_type_with_binfmt_misc" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Registering_file_type_with_binfmt_misc">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.2</span>Registering file type with binfmt_misc</div>
+			</a>
+			
+			<ul id="toc-Registering_file_type_with_binfmt_misc-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Wrapper_scripts" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Wrapper_scripts">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.3</span>Wrapper scripts</div>
+			</a>
+			
+			<ul id="toc-Wrapper_scripts-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-A_simple_solution" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#A_simple_solution">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>A simple solution</div>
+			</a>
+			
+			<ul id="toc-A_simple_solution-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Testing" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Testing">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>Testing</div>
+			</a>
+			
+			<ul id="toc-Testing-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Notes" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Notes">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4</span>Notes</div>
+			</a>
+			
+			<ul id="toc-Notes-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../en/Binfmt_misc_for_Java.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="mw-list-item"><a href="../en/Talk:Binfmt_misc_for_Java.html" rel="discussion" title="Discussion about the content page [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">English</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../en/Binfmt_misc_for_Java.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=Binfmt_misc_for_Java&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=Binfmt_misc_for_Java&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../en/Binfmt_misc_for_Java.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Binfmt_misc_for_Java&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Binfmt_misc_for_Java&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output">
+<div class="archwiki-template-meta-related-articles-start">
+<p class="mw-no-invert">Related articles</p>
+<ul>
+<li><a href="../en/Binfmt_misc_for_Java/Wrapper_examples.html" title="Binfmt misc for Java/Wrapper examples">/Wrapper examples</a></li>
+</ul>
+</div>
+<p>From <a href="https://en.wikipedia.org/wiki/binfmt_misc" class="extiw" title="wikipedia:binfmt misc">Wikipedia</a>:
+</p>
+<dl><dd>
+<code>binfmt_misc</code> is a capability of the Linux kernel which allows arbitrary executable file formats to be recognized and passed to certain user space applications, such as emulators and virtual machines.</dd></dl>
+<p>In plain language, this allows you to take a file such as a <a href="../en/Java.html" title="Java">Java</a> jar or <a href="../en/Mono.html" title="Mono">Mono</a> exe that you would ordinarily run via a line such as
+</p>
+<pre>$ java -jar /path/to/MyProgram.jar
+$ mono /path/to/MyProgram.exe
+</pre>
+<p>and instead run it simply with
+</p>
+<pre>$ MyProgram.jar
+$ MyProgram.exe
+</pre>
+<p>as long as the executables are in the <code>$PATH</code>.
+</p>
+<p>The information in this article is almost entirely taken from the files <code>binfmt_misc.txt</code> and <code>java.txt</code> in the <code>Documentation</code> sub-directory of the Linux kernel source tree.
+</p>
+<mw:tocplace></mw:tocplace>
+<h2><span class="mw-headline" id="Setup">Setup</span></h2>
+<h3><span class="mw-headline" id="Mounting_binfmt_misc">Mounting binfmt_misc</span></h3>
+<p>For an ad-hoc mount:
+</p>
+<pre># mount binfmt_misc -t binfmt_misc /proc/sys/fs/binfmt_misc
+</pre>
+<p>For a persistent mount via fstab add the line:
+</p>
+<pre>none  /proc/sys/fs/binfmt_misc binfmt_misc defaults 0 0
+</pre>
+<h3><span class="mw-headline" id="Registering_file_type_with_binfmt_misc">Registering file type with binfmt_misc</span></h3>
+<p>Filetype registration on Arch is handled by <code>systemd-binfmt.service</code> (provided by <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=systemd">systemd</a></span>).
+</p>
+<p>Binfmt registration lines can be placed in a file in <code>/etc/binfmt.d</code>.
+</p>
+<p>The contents of the line is explained in the <code>Documentation/admin-guide/binfmt-misc.rst</code> file of the kernel source tree.
+</p>
+<p>The following lines will create registration files for running Java binaries without having to explicitly call the java command (you still need to have it installed). The first two work by redirecting Java class and jar files to a set of 'wrapper' scripts described in the next section. The final entry runs Java applets in the usual way.
+</p>
+<pre># binfmt_misc support for Java applications:
+echo ':Java:M::\xca\xfe\xba\xbe::/usr/local/bin/javawrapper:' &gt; /etc/binfmt.d/Java.conf
+# binfmt_misc support for executable Jar files:
+echo ':ExecutableJAR:E::jar::/usr/local/bin/jarwrapper:' &gt; /etc/binfmt.d/ExecutableJAR.conf
+# binfmt_misc support for Java Applets:
+echo ':Applet:E::html::/opt/java/bin/appletviewer:' &gt; /etc/binfmt.d/Applet.conf
+</pre>
+<p><a href="../en/Help:Reading.html#Control_of_systemd_units" class="mw-redirect" title="Restart">Restart</a> <code>systemd-binfmt.service</code> to register the new handlers. Registered binfmt handlers show up as files in <code>/proc/sys/fs/binfmt_misc</code>. Viewing this file should show the name of the registered wrapper script and either the magic bytes or file extension used to recognize that file type.
+</p>
+<h3><span class="mw-headline" id="Wrapper_scripts">Wrapper scripts</span></h3>
+<p>Please see <a href="../en/Binfmt_misc_for_Java/Wrapper_examples.html" title="Binfmt misc for Java/Wrapper examples">/Wrapper_examples</a> for <i>jarwrapper</i> and <i>javawrapper</i> scripts and related programs.
+</p>
+<h2><span class="mw-headline" id="A_simple_solution">A simple solution</span></h2>
+<p>This simple solution is suitable in most cases, no bugs are detected during execution.
+<a href="../en/Help:Reading.html#Append,_add,_create,_edit" class="mw-redirect" title="Create">Create</a> file <code>/etc/binfmt.d/java.conf</code>:
+</p>
+<pre>:Java:E::class::/usr/local/bin/javawrapper:
+</pre>
+<p>Create file <code>/usr/local/bin/javawrapper</code>:
+</p>
+<pre>#!/bin/sh
+file=${1%%.class}
+file=${file/.\//}
+java $file
+</pre>
+<p>Do not forget to make it <a href="../en/Help:Reading.html#Make_executable" class="mw-redirect" title="Executable">executable</a>
+</p>
+<p><a href="../en/Help:Reading.html#Control_of_systemd_units" class="mw-redirect" title="Restart">Restart</a> <code>systemd-binfmt.service</code>.  Now you can test!
+</p>
+<h2><span class="mw-headline" id="Testing">Testing</span></h2>
+<p><a href="../en/Help:Reading.html#Append,_add,_create,_edit" class="mw-redirect" title="Create">Create</a> a simple <code>HelloWorld.java</code> program such as the following:
+</p>
+<pre>class HelloWorld {
+    public static void main(String args[]) {
+        System.out.println("Hello World!");
+    }
+}
+</pre>
+<p>Compile it as normal and make the <code>.class</code> file <a href="../en/Help:Reading.html#Make_executable" class="mw-redirect" title="Executable">executable</a>. 
+</p>
+<p>You should then be able to run it by simply entering:
+</p>
+<pre>$ ./HelloWorld.class
+</pre>
+<h2><span class="mw-headline" id="Notes">Notes</span></h2>
+<ul>
+<li>Some of the material on <i>binfmt_misc</i> refers to it as a module but Arch builds it into the standard kernel.</li>
+<li>The setup given here works with both the Sun JRE &amp; openjdk6.</li>
+<li>
+<i>binfmt_misc</i> can be used for other file types as well. For example, to be able to run DOS/Windows files without having to explicitly specify the wine program, add the following registration entry:</li>
+</ul>
+<pre># binfmt_misc support for DOS / Windows applications via Wine
+echo ':DOSWin:M::MZ::/usr/bin/wine:' &gt; /proc/sys/fs/binfmt_misc/register
+</pre>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="../en/Category:System_administration.html" title="Category:System administration">System administration</a></li></ul>
+</div></div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=Binfmt_misc_for_Java&amp;oldid=709127">https://wiki.archlinux.org/index.php?title=Binfmt_misc_for_Java&amp;oldid=709127</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 9 January 2022, at 10:41.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

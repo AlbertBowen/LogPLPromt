@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>Anything-sync-daemon - ArchWiki</title>
+<link rel="stylesheet" href="../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Anything-sync-daemon rootpage-Anything-sync-daemon skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Installation" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Installation">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Installation</div>
+			</a>
+			
+			<ul id="toc-Installation-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Configuration" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Configuration">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Configuration</div>
+			</a>
+			
+			<ul id="toc-Configuration-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Usage" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Usage">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>Usage</div>
+			</a>
+			
+				<button aria-controls="toc-Usage-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Usage subsection
+				</button>
+			
+			<ul id="toc-Usage-sublist" class="sidebar-toc-list">
+				<li id="toc-Preview_(parse)_mode" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Preview_(parse)_mode">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.1</span>Preview (parse) mode</div>
+			</a>
+			
+			<ul id="toc-Preview_(parse)_mode-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Tips_and_tricks" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Tips_and_tricks">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4</span>Tips and tricks</div>
+			</a>
+			
+				<button aria-controls="toc-Tips_and_tricks-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Tips and tricks subsection
+				</button>
+			
+			<ul id="toc-Tips_and_tricks-sublist" class="sidebar-toc-list">
+				<li id="toc-Sync_at_more_frequent_intervals" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Sync_at_more_frequent_intervals">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.1</span>Sync at more frequent intervals</div>
+			</a>
+			
+			<ul id="toc-Sync_at_more_frequent_intervals-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Overlayfs_mode" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Overlayfs_mode">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.2</span>Overlayfs mode</div>
+			</a>
+			
+			<ul id="toc-Overlayfs_mode-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Snapshots" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Snapshots">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.3</span>Snapshots</div>
+			</a>
+			
+			<ul id="toc-Snapshots-sublist" class="sidebar-toc-list">
+				<li id="toc-Clean_all_the_snapshot_with_the_clean_mode" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Clean_all_the_snapshot_with_the_clean_mode">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.3.1</span>Clean all the snapshot with the clean mode</div>
+			</a>
+			
+			<ul id="toc-Clean_all_the_snapshot_with_the_clean_mode-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Support" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Support">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5</span>Support</div>
+			</a>
+			
+			<ul id="toc-Support-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../en/Anything-sync-daemon.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="mw-list-item"><a href="../en/Talk:Anything-sync-daemon.html" rel="discussion" title="Discussion about the content page [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">English</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../en/Anything-sync-daemon.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=Anything-sync-daemon&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=Anything-sync-daemon&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../en/Anything-sync-daemon.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Anything-sync-daemon&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Anything-sync-daemon&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output">
+<div class="archwiki-template-meta-related-articles-start">
+<p class="mw-no-invert">Related articles</p>
+<ul>
+<li><a href="../en/Profile-sync-daemon.html" title="Profile-sync-daemon">Profile-sync-daemon</a></li>
+</ul>
+</div>
+<p><span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=anything-sync-daemon">anything-sync-daemon</a></span> (asd) is a tiny pseudo-daemon designed to manage user specified directories referred to as sync targets from here on out, in tmpfs and to periodically sync them back to the physical disc (HDD/SSD). This is accomplished via a bind mounting step and an innovative use of <a href="../en/Rsync.html" title="Rsync">rsync</a> to maintain synchronization between a tmpfs copy and media-bound backups. Additionally, asd features several crash recovery features.
+</p>
+<p>The design goals and benefits of asd are:
+</p>
+<ol>
+<li>Transparent user experience</li>
+<li>Reduced wear to physical drives</li>
+<li>Speed</li>
+</ol>
+<p>Since the sync target(s) is relocated into <a href="../en/Tmpfs.html" title="Tmpfs">tmpfs</a> (RAM disk), the corresponding onslaught of I/O associated with system usage of them is also redirected from the physical drive to RAM, thus reducing wear to the physical drive and also improving speed and responsiveness. The access time of RAM is on the order of nanoseconds while the access time of physical discs is on the order of milliseconds. This is a difference of six orders of magnitude or 1,000,000 times faster.
+</p>
+<div class="archwiki-template-box archwiki-template-box-warning">
+<strong>Warning:</strong> If syncing browser profiles is desired, it is recommended NOT to use asd for this purpose.  Instead, use <a href="../en/Profile-sync-daemon.html" title="Profile-sync-daemon">Profile-sync-daemon</a> which has built in sanity checks for unique situations specific to running a browser profile in tmpfs.  Anything-sync-daemon does not have these checks; under certain circumstances, browser profile data can be lost.  You have been warned.</div>
+<mw:tocplace></mw:tocplace>
+<h2><span class="mw-headline" id="Installation">Installation</span></h2>
+<p><a href="../en/Help:Reading.html#Installation_of_packages" class="mw-redirect" title="Install">Install</a> the <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=anything-sync-daemon">anything-sync-daemon</a></span> package.
+</p>
+<h2><span class="mw-headline" id="Configuration">Configuration</span></h2>
+<p>User managed settings are defined in <code>/etc/asd.conf</code> which is included in the package. 
+</p>
+<ul>
+<li>At a minimum, define the sync target(s) to be managed by asd in the <code>WHATTOSYNC</code> array. Syntax below.</li>
+<li>Optionally uncomment and define the location of tmpfs in the <code>VOLATILE</code> variable.</li>
+<li>Optionally enable the use of overlayfs to improve sync speed even further and use a smaller memory footprint.  Note that this option requires your kernel be configured to use either the 'overlay' kernel module. See <a href="#Overlayfs_mode">#Overlayfs mode</a> for additional details.</li>
+</ul>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> The default value of <code>/tmp</code> should work just fine for the VOLATILE setting. If using <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=bleachbit">bleachbit</a></span>, do NOT invoke it with the <code>--clean system.tmp</code> switch or you will remove a key dot file (.foo) from <code>/tmp</code> that asd needs to keep track of sync status. Also note that using a value of <code>/dev/shm</code> can cause problems with systemd's NAMESPACE spawning only when users enable the overlayfs option.</div>
+<p>Example:
+</p>
+<pre>WHATTOSYNC=('/var/lib/monitorix' '/srv/http' '/foo/bar')
+</pre>
+<p>or
+</p>
+<pre>WHATTOSYNC=(
+'/var/lib/monitorix'
+'/srv/http'
+'/foo/bar'
+)
+</pre>
+<h2><span class="mw-headline" id="Usage">Usage</span></h2>
+<p><a href="../en/Help:Reading.html#Control_of_systemd_units" class="mw-redirect" title="Start/enable">Start/enable</a> <code>asd.service</code>. Additionally, a provided resync-timer will run an hourly resync from tmpfs back to the disk. The resync-timer is started automatically with <code>asd.service</code> so there is no need to manually start the timer.
+</p>
+<h3>
+<span id="Preview_.28parse.29_mode"></span><span class="mw-headline" id="Preview_(parse)_mode">Preview (parse) mode</span>
+</h3>
+<p>Run <code>asd parse</code> to view what what asd will do/is doing based on the entries in <code>/etc/asd.conf</code>. It will also provide useful information such as dir size, paths, and if any recovery snapshots have been created.
+</p>
+<h2><span class="mw-headline" id="Tips_and_tricks">Tips and tricks</span></h2>
+<h3><span class="mw-headline" id="Sync_at_more_frequent_intervals">Sync at more frequent intervals</span></h3>
+<p>The package provided re-sync timer triggers once per hour. Users may optionally redefine this behavior simply by <a href="../en/Systemd.html#Editing_provided_units" title="Systemd">extending the systemd unit</a>. The example below changes the timer to sync once every ten minutes (note that <code>OnUnitActiveSec</code> needs to be cleared before being re-assigned <a rel="nofollow" class="external autonumber" href="https://bugzilla.redhat.com/show_bug.cgi?id=756787#c9">[1]</a>):
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/systemd/system/asd-resync.timer.d/frequency.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">[Unit]
+Description=Timer for Anything-sync-daemon - 10min
+
+[Timer]
+OnUnitActiveSec=
+OnUnitActiveSec=10min</pre>
+<p>See <span class="plainlinks archwiki-template-man" title="$ man 5 systemd.timer"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/systemd.timer.5">systemd.timer(5)</a></span> for additional options.
+</p>
+<h3><span class="mw-headline" id="Overlayfs_mode">Overlayfs mode</span></h3>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> There are several versions of overlayfs available to the Linux kernel in production in various distributions. Versions 22 and lower have a module called 'overlayfs' while newer versions (23 and higher) have a module called 'overlay' -- note the lack of the 'fs' in the newer version. Asd will automatically detect the overlayfs available to your kernel if it is configured to use one of them.</div>
+<p>Overlayfs is a simple union file-system mainlined in the Linux kernel version 3.18.0. Starting with asd version 5.54, overlayfs can be used to reduce the memory footprint of asd's tmpfs space and to speed up sync and unsync operations. The magic is in how the overlay mount only writes out data that has changed rather than the entire sync target. The same recovery features asd uses in its default mode are also active when running in overlayfs mode. Overlayfs mode is enabled by uncommenting the <code>USE_OVERLAYFS="yes"</code> line in <code>/etc/asd.conf</code> followed by a <a href="../en/Help:Reading.html#Control_of_systemd_units" class="mw-redirect" title="Restart">restart</a> of the daemon.
+</p>
+<h3><span class="mw-headline" id="Snapshots">Snapshots</span></h3>
+<p>Odds are the "last good" backup of your sync target(s) is just fine still sitting happily on your filesystem. Upon restarting asd (on a reboot for example), a check is preformed to see if asd was exited in some corrupted state. If it is detected, asd will snapshot the "last good" backup before it rotates it back into place. Note that, since asd tries to decrease the disk usage, it never really "copies" the full contents of the directory and just uses the hardlinks to the previous files. And during the rsync step, it creates new files so that the previous hardlinks are untouched. So trying to modify the directory during the time asd is trying to backup can leave the directory in some corrupted state.
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> Users can disable the snapshot/backup feature entirely by uncommenting and setting the <code>USE_BACKUPS</code> variable to <code>"no"</code> in <code>/etc/asd.conf</code> if desired.</div>
+<p>You will find the snapshot in the same directory as the sync target and it will contain a date-time-stamp that corresponds to the time at which the recovery took place. For example, a <code>/foo/bar</code> snapshot will be <code>/foo/.bar-backup_asd-crashrecovery-20141221_070112.tar.zstd</code> -- of course, the date_time suffix will be different for you.
+</p>
+<p>To restore your snapshots:
+</p>
+<ul>
+<li>
+<a href="../en/Help:Reading.html#Control_of_systemd_units" class="mw-redirect" title="Stop">Stop</a> <code>asd.service</code>.</li>
+<li>Confirm that the directories created by asd is not present. If they are, asd did not stop correctly for other reasons.</li>
+<li>Move the "bad" copy of the sync target to a backup (do not blindly delete anything).</li>
+<li>Untar the snapshot archive to the expected sync target.</li>
+</ul>
+<p>Example using <code>/foo/bar</code>:
+</p>
+<pre>$ cd /foo
+$ mv bar bar-bad
+$ tar -xvf .bar-backup_asd-crashrecovery-20141221_070112.tar.zstd
+</pre>
+<h4><span class="mw-headline" id="Clean_all_the_snapshot_with_the_clean_mode">Clean all the snapshot with the clean mode</span></h4>
+<p>Running <code>asd clean</code> will delete ALL recovery snapshots that have accumulated. Run this only if you are sure that you want to delete them.
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> If a sync target is owned by root or another user, and if asd is called to clean, it will throw errors based on the permissions of the sync targets. One can call this function with sudo or as root to avoid these errors.</div>
+<h2><span class="mw-headline" id="Support">Support</span></h2>
+<p>Post in the <a rel="nofollow" class="external text" href="https://bbs.archlinux.org/viewtopic.php?id=139141">discussion thread</a> with comments or concerns.
+</p>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="../en/Category:System_administration.html" title="Category:System administration">System administration</a></li></ul>
+</div></div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=Anything-sync-daemon&amp;oldid=756838">https://wiki.archlinux.org/index.php?title=Anything-sync-daemon&amp;oldid=756838</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 12 November 2022, at 12:56.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

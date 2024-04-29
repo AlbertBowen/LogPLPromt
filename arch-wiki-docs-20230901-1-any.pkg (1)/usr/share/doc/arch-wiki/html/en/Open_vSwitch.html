@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>Open vSwitch - ArchWiki</title>
+<link rel="stylesheet" href="../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Open_vSwitch rootpage-Open_vSwitch skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Installation" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Installation">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Installation</div>
+			</a>
+			
+				<button aria-controls="toc-Installation-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Installation subsection
+				</button>
+			
+			<ul id="toc-Installation-sublist" class="sidebar-toc-list">
+				<li id="toc-Required_services_and_setup" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Required_services_and_setup">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.1</span>Required services and setup</div>
+			</a>
+			
+			<ul id="toc-Required_services_and_setup-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Create_a_Bridge" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Create_a_Bridge">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.2</span>Create a Bridge</div>
+			</a>
+			
+			<ul id="toc-Create_a_Bridge-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Add_physical_adapter_to_the_bridge" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Add_physical_adapter_to_the_bridge">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.3</span>Add physical adapter to the bridge</div>
+			</a>
+			
+			<ul id="toc-Add_physical_adapter_to_the_bridge-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Make_changes_persistent_over_reboots" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Make_changes_persistent_over_reboots">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.4</span>Make changes persistent over reboots</div>
+			</a>
+			
+			<ul id="toc-Make_changes_persistent_over_reboots-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Vlans" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Vlans">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Vlans</div>
+			</a>
+			
+			<ul id="toc-Vlans-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Virtual_ports" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Virtual_ports">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>Virtual ports</div>
+			</a>
+			
+			<ul id="toc-Virtual_ports-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-See_also" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#See_also">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4</span>See also</div>
+			</a>
+			
+			<ul id="toc-See_also-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../en/Open_vSwitch.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="mw-list-item"><a href="../en/Talk:Open_vSwitch.html" rel="discussion" title="Discussion about the content page [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">English</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../en/Open_vSwitch.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=Open_vSwitch&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=Open_vSwitch&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../en/Open_vSwitch.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Open_vSwitch&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Open_vSwitch&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output">
+<div class="archwiki-template-meta-related-articles-start">
+<p class="mw-no-invert">Related articles</p>
+<ul>
+<li><a href="../en/Network_bridge.html" title="Network bridge">Network bridge</a></li>
+<li><a href="../en/Network_configuration.html" title="Network configuration">Network configuration</a></li>
+<li><a href="../en/Category:Network_configuration.html" title="Category:Network configuration">Category:Network configuration</a></li>
+<li><a href="../en/Category:Virtualization.html" title="Category:Virtualization">Category:Virtualization</a></li>
+</ul>
+</div>
+<div class="noprint archwiki-template-message">
+<p><a href="../File:Tango-view-fullscreen.png" class="image"><img alt="Tango-view-fullscreen.png" src="../File:Tango-view-fullscreen.png" decoding="async" width="48" height="48"></a><b>This article or section needs expansion.</b><a href="../File:Tango-view-fullscreen.png" class="image"><img alt="Tango-view-fullscreen.png" src="../File:Tango-view-fullscreen.png" decoding="async" width="48" height="48"></a></p>
+<div>
+<b>Reason:</b> This article need better explanation and expansion. (Discuss in <a rel="nofollow" class="external text" href="https://wiki.archlinux.org/title/Talk:Open_vSwitch">Talk:Open vSwitch</a>)</div>
+</div>
+<p>Open vSwitch (OVS) is a multilayer software switch. It is designed to enable massive network automation through programmatic extension, while still supporting standard management interfaces and protocols. Open vSwitch is well suited to function as a virtual switch in environments with virtual machines.
+</p>
+<mw:tocplace></mw:tocplace>
+<h2><span class="mw-headline" id="Installation">Installation</span></h2>
+<p><a href="../en/Help:Reading.html#Installation_of_packages" class="mw-redirect" title="Install">Install</a> the <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=openvswitch">openvswitch</a></span> package.
+</p>
+<h3><span class="mw-headline" id="Required_services_and_setup">Required services and setup</span></h3>
+<p>To use <i>ovs-vswitchd</i>, <a href="../en/Help:Reading.html#Control_of_systemd_units" class="mw-redirect" title="Start/enable">start/enable</a> <code>ovs-vswitchd.service</code>.
+</p>
+<p><code>ovs-vswitchd.service</code> will also start the <code>ovsdb-server.service</code> which is used for saving the OVS configuration in a database for persistent settings across reboots.
+</p>
+<h3><span class="mw-headline" id="Create_a_Bridge">Create a Bridge</span></h3>
+<pre>$ ovs-vsctl add-br mybridge
+</pre>
+<p>Most commands can be reversed with replacing add with del, for example del-br.
+</p>
+<p>Print the newly created bridge with one port with an interface named <i>mybridge</i>.
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">$ ovs-vsctl show</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">e4e95383-2d81-45bd-b411-d289b11405b2
+    Bridge mybridge
+        Port mybridge
+            Interface mybridge
+                type: internal
+</pre>
+<h3><span class="mw-headline" id="Add_physical_adapter_to_the_bridge">Add physical adapter to the bridge</span></h3>
+<p>Get the current active interface and configuration:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">$ ip addr</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">2: eno1: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc fq_codel state UP group default qlen 1000
+    link/ether 52:54:00:91:11:95 brd ff:ff:ff:ff:ff:ff
+    inet 192.168.1.10/24 brd 192.168.1.255 scope global dynamic eno1
+       valid_lft 82284sec preferred_lft 82284sec
+    inet6 fe80::5054:ff:fe91:1195/64 scope link
+       valid_lft forever preferred_lft forever
+</pre>
+<p>Disable any running automated config, Either
+</p>
+<pre>$ dhcpcd -k eno1<i> # if dhcpcd is running</i>
+$ systemctl stop systemd-networkd.service # for systemd-networkd
+$ ip addr del 192.168.1.10/24 dev eno1 #  also remove the current ip configuration
+</pre>
+<p>Add physical interface to mybridge:
+</p>
+<pre>$ ovs-vsctl add-port mybridge eno1
+</pre>
+<div class="archwiki-template-box archwiki-template-box-warning">
+<strong>Warning:</strong> This will loose connectivity on this adapter, ensure you have another way to reach your system.</div>
+<p>Print the current setup:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">$ ovs-vsctl show</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">e4e95383-2d81-45bd-b411-d289b11405b2
+    Bridge mybridge
+        Port mybridge
+            Interface mybridge
+                type: internal
+        Port eno1
+            Interface eno1
+</pre>
+<p>Test the config:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">$ dhcpcd mybridge
+$ ip addr</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">2: eno1: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc fq_codel master ovs-system state UP group default qlen 1000
+    link/ether 52:54:00:91:11:95 brd ff:ff:ff:ff:ff:ff
+    inet6 fe80::5054:ff:fe91:1195/64 scope link
+       valid_lft forever preferred_lft forever
+3: ovs-system: &lt;BROADCAST,MULTICAST&gt; mtu 1500 qdisc noop state DOWN group default qlen 1000
+    link/ether 6e:a7:28:66:78:e2 brd ff:ff:ff:ff:ff:ff
+4: mybridge: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/ether ba:21:d0:cd:38:4f brd ff:ff:ff:ff:ff:ff
+    inet 192.168.1.11/24 brd 192.168.1.255 scope global dynamic noprefixroute mybridge
+       valid_lft 86372sec preferred_lft 75572sec
+    inet6 fe80::183e:d590:9014:eeb4/64 scope link
+       valid_lft forever preferred_lft forever
+</pre>
+<h3><span class="mw-headline" id="Make_changes_persistent_over_reboots">Make changes persistent over reboots</span></h3>
+<p>Open vSwitch will automatically apply any changes made with ovs-commands. But to get it working we need to change some things with systemd-networkd:
+</p>
+<p>First, remove any old configuration for eno1 and bring the interface up during boot. We will also run DHCP on <i>mybridge</i> with the following config:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/systemd/network/<i>eno1</i>.network</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">[Match]
+Name=eno1</pre>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/systemd/network/<i>mybridge</i>.network</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">[Match]
+Name=mybridge
+
+[Network]
+DHCP=ipv4</pre>
+<h2><span class="mw-headline" id="Vlans">Vlans</span></h2>
+<p>Setup trunk with vlan 10 + 20 plus tag untagged traffic to vlan 1 through the physical port:
+</p>
+<pre>$ ovs-vsctl set port eno1 vlan_mode=native-untagged
+$ ovs-vsctl set port eno1 tag=1 # tag untagged vlan 1
+$ ovs-vsctl set port eno1 trunks=10,20 # allow tagged vlans 10 and 20
+</pre>
+<div class="archwiki-template-box archwiki-template-box-tip">
+<strong>Tip:</strong> 
+<p>Do multiple actions in one command with -- as seperator, For example, the above is same as : <br>
+<code>$ ovs-vsctl set port eno1 vlan_mode=native-untagged -- set port eno1 tag=1 -- set port eno1 trunks=10,20</code>
+</p>
+</div>
+<p>Create a new vport1, type internal for use on the host system with vlan 10:
+</p>
+<pre>$ ovs-vsctl add-port mybridge vport1 tag=10 -- set Interface vport1 type=internal
+$ dhcpcd vport1 # to test it out!
+</pre>
+<h2><span class="mw-headline" id="Virtual_ports">Virtual ports</span></h2>
+<p>ip_forward is needed for virtual ports and support for vm's:
+</p>
+<pre>$ echo 1 &gt; /proc/sys/net/ipv4/ip_forward
+</pre>
+<p>Manually create a tuntap interface:
+</p>
+<pre>$ ip tuntap add mode tap vport2
+</pre>
+<p>To make both the above changes persistent across reboots:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/sysctl.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">net.ipv4.ip_forward = 1</pre>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/systemd/network/90-vport2.netdev</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">[NetDev]
+Name=vport2
+Kind=tap</pre>
+<p>Create a new port and tag it vlan 20:
+</p>
+<pre>$ ovs-vsctl add-port mybridge vport2 -- set port vport2 tag=20
+</pre>
+<p>vport2 can now be used in <a href="../en/Libvirt.html" title="Libvirt">libvirt</a>.
+</p>
+<h2><span class="mw-headline" id="See_also">See also</span></h2>
+<ul>
+<li><a rel="nofollow" class="external text" href="https://docs.openvswitch.org/">Official Open vSwitch web site</a></li>
+<li><a rel="nofollow" class="external text" href="https://docs.openvswitch.org/en/latest/intro/">Official documentation</a></li>
+</ul>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface">
+<div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../Special:Categories.html" title="Special:Categories">Categories</a>: <ul>
+<li><a href="../en/Category:Network_managers.html" title="Category:Network managers">Network managers</a></li>
+<li><a href="../en/Category:Virtualization.html" title="Category:Virtualization">Virtualization</a></li>
+</ul>
+</div>
+<div id="mw-hidden-catlinks" class="mw-hidden-catlinks mw-hidden-cats-hidden">Hidden category: <ul><li><a href="../en/Category:Pages_or_sections_flagged_with_Template:Expansion.html" title="Category:Pages or sections flagged with Template:Expansion">Pages or sections flagged with Template:Expansion</a></li></ul>
+</div>
+</div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=Open_vSwitch&amp;oldid=779356">https://wiki.archlinux.org/index.php?title=Open_vSwitch&amp;oldid=779356</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 22 May 2023, at 07:44.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

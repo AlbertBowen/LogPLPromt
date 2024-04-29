@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>AMDGPU PRO - ArchWiki</title>
+<link rel="stylesheet" href="../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-AMDGPU_PRO rootpage-AMDGPU_PRO skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Purpose_of_proprietary_components" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Purpose_of_proprietary_components">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Purpose of proprietary components</div>
+			</a>
+			
+			<ul id="toc-Purpose_of_proprietary_components-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Installation" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Installation">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Installation</div>
+			</a>
+			
+			<ul id="toc-Installation-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Usage" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Usage">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>Usage</div>
+			</a>
+			
+				<button aria-controls="toc-Usage-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Usage subsection
+				</button>
+			
+			<ul id="toc-Usage-sublist" class="sidebar-toc-list">
+				<li id="toc-Using_proprietary_OpenGL" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Using_proprietary_OpenGL">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.1</span>Using proprietary OpenGL</div>
+			</a>
+			
+			<ul id="toc-Using_proprietary_OpenGL-sublist" class="sidebar-toc-list">
+				<li id="toc-How_to_ensure_you_are_using_AMDGPU-PRO_driver" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#How_to_ensure_you_are_using_AMDGPU-PRO_driver">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.1.1</span>How to ensure you are using AMDGPU-PRO driver</div>
+			</a>
+			
+			<ul id="toc-How_to_ensure_you_are_using_AMDGPU-PRO_driver-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Using_proprietary_Vulkan" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Using_proprietary_Vulkan">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.2</span>Using proprietary Vulkan</div>
+			</a>
+			
+			<ul id="toc-Using_proprietary_Vulkan-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Using_Advanced_Multimedia_Framework" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Using_Advanced_Multimedia_Framework">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.3</span>Using Advanced Multimedia Framework</div>
+			</a>
+			
+			<ul id="toc-Using_Advanced_Multimedia_Framework-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Troubleshooting" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Troubleshooting">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4</span>Troubleshooting</div>
+			</a>
+			
+				<button aria-controls="toc-Troubleshooting-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Troubleshooting subsection
+				</button>
+			
+			<ul id="toc-Troubleshooting-sublist" class="sidebar-toc-list">
+				<li id="toc-Intel_+_AMD_hybrid_graphics" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Intel_+_AMD_hybrid_graphics">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.1</span>Intel + AMD hybrid graphics</div>
+			</a>
+			
+			<ul id="toc-Intel_+_AMD_hybrid_graphics-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Uninstalling_packages" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Uninstalling_packages">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.2</span>Uninstalling packages</div>
+			</a>
+			
+			<ul id="toc-Uninstalling_packages-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Southern_Islands_(SI)_or_Sea_Islands_(CIK)_GPUs" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Southern_Islands_(SI)_or_Sea_Islands_(CIK)_GPUs">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.3</span>Southern Islands (SI) or Sea Islands (CIK) GPUs</div>
+			</a>
+			
+			<ul id="toc-Southern_Islands_(SI)_or_Sea_Islands_(CIK)_GPUs-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Firmware_and_AMD_drivers" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Firmware_and_AMD_drivers">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.4</span>Firmware and AMD drivers</div>
+			</a>
+			
+			<ul id="toc-Firmware_and_AMD_drivers-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-See_also" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#See_also">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5</span>See also</div>
+			</a>
+			
+			<ul id="toc-See_also-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../en/AMDGPU_PRO.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="mw-list-item"><a href="../en/Talk:AMDGPU_PRO.html" rel="discussion" title="Discussion about the content page [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">English</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../en/AMDGPU_PRO.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=AMDGPU_PRO&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=AMDGPU_PRO&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../en/AMDGPU_PRO.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=AMDGPU_PRO&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=AMDGPU_PRO&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output">
+<div class="archwiki-template-meta-related-articles-start">
+<p class="mw-no-invert">Related articles</p>
+<ul>
+<li><a href="../en/AMDGPU.html" title="AMDGPU">AMDGPU</a></li>
+<li><a href="../en/Vulkan.html" title="Vulkan">Vulkan</a></li>
+<li><a href="../en/GPGPU.html" title="GPGPU">GPGPU</a></li>
+<li><a href="../en/DaVinci_Resolve.html" title="DaVinci Resolve">DaVinci Resolve</a></li>
+</ul>
+</div>
+<p>This page describes close source drivers for AMD GPUs.
+</p>
+<div class="archwiki-template-box archwiki-template-box-tip">
+<strong>Tip:</strong> Most users do not need these proprietary drivers.</div>
+<mw:tocplace></mw:tocplace>
+<h2><span class="mw-headline" id="Purpose_of_proprietary_components">Purpose of proprietary components</span></h2>
+<p>AMD releases their open source drivers via standard distribution channels. And they also periodically do releases of their <i>Radeon Software for Linux</i> suite, which includes both open and proprietary components. Open source components are not needed from there, and proprietary components are repacked from the latest  ubuntu lts version. They are published in AUR in the <a rel="nofollow" class="external text" href="https://aur.archlinux.org/pkgbase/amdgpu-pro-installer">amdgpu-pro-installer</a> package base.
+</p>
+<p><a rel="nofollow" class="external text" href="https://www.phoronix.com/forums/forum/phoronix/latest-phoronix-articles/1316628-radeon-software-for-linux-22-10-driver-being-prepared-for-release?p=1316713#post1316713">Comment</a> by John Bridgman from AMD explaining why they still package close source drivers:
+</p>
+<dl><dd>These days our packaged drivers are mostly intended for:
+<ul>
+<li>customers using slower moving enterprise/LTS distros which do not automatically pick up the latest graphics drivers - we offer them both open source and proprietary/workstation options</li>
+<li>customers using workstation apps who need the extra performance/certification from a workstation-oriented driver (although Marek has done a lot of great work over the last year to improve Mesa performance on workstation apps)</li>
+<li>The third target audience is customers looking for ready-to-go OpenCL, either for use with the packaged open/closed drivers or with the upstream-based stack in a recent distro.</li>
+</ul>
+</dd></dl>
+<p>There are several proprietary components: OpenGL, OpenCL, Vulkan and AMF. Sometimes you may want to use these components due to specific features that open source components may lack.
+</p>
+<p>AMDGPU PRO OpenGL is a proprietary, binary userland driver, which works on top of the open-source amdgpu kernel driver. From <a rel="nofollow" class="external text" href="https://www.phoronix.com/vr.php?view=27266">Radeon Software 18.50 vs Mesa 19 benchmarks</a> article: When it comes to OpenGL games, the RadeonSI Gallium3D driver simply dominates the proprietary AMD OpenGL driver. Users of graphic cards other than Radeon Pro are <a rel="nofollow" class="external text" href="https://www.amd.com/en/support/kb/release-notes/amdgpu-installation">advised to use the amdgpu graphics stack</a>. Mostly used because of lacking compatibility layers that some software relies on. See gentoo wiki linked below.
+</p>
+<p>AMDGPU PRO Vulkan - currently the only implementation that has ray tracing (however, reported by users as glitchy). Also it is required dependency for AMF.
+</p>
+<p>AMDGPU PRO OpenCL - used because Mesa OpenCL is not fully complete. Proprietary component only for Polaris GPUs. The onward GPUs use the open ROCm OpenCL.
+</p>
+<p>AMDGPU AMF - used for gpu encoding/decoding.
+</p>
+<h2><span class="mw-headline" id="Installation">Installation</span></h2>
+<p>For proprietary OpenGL implementation, use the <a rel="nofollow" class="external text" href="https://aur.archlinux.org/pkgbase/amdgpu-pro-installer">amdgpu-pro-installer</a> package base. It contains all the following packages:
+</p>
+<ul>
+<li>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/amdgpu-pro-oglp/">amdgpu-pro-oglp</a></span><sup><small>AUR</small></sup>: For proprietary OpenGL implementation</li>
+<li>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/lib32-amdgpu-pro-oglp/">lib32-amdgpu-pro-oglp</a></span><sup><small>AUR</small></sup>: For proprietary OpenGL implementation 32 bit applications support</li>
+<li>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/vulkan-amdgpu-pro/">vulkan-amdgpu-pro</a></span><sup><small>AUR</small></sup>: For proprietary Vulkan implementation</li>
+<li>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/lib32-vulkan-amdgpu-pro/">lib32-vulkan-amdgpu-pro</a></span><sup><small>AUR</small></sup>: For proprietary Vulkan implementation 32 bit applications support</li>
+<li>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/amf-amdgpu-pro/">amf-amdgpu-pro</a></span><sup><small>AUR</small></sup> : For Advanced Media Framework implementation</li>
+</ul>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong>  OGLP is not a performance optimization of opengl, it is an all-new GL driver codebase written from scratch, based on the PAL architecture. in version &gt; 22.20.5 it replaces the libgl</div>
+<p>For available OpenCL implementations see <a href="../en/GPGPU.html#AMD/ATI" title="GPGPU">GPGPU#AMD/ATI</a>.
+</p>
+<p>For OBS to work with it use <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/obs-studio-amf/">obs-studio-amf</a></span><sup><small>AUR</small></sup>
+</p>
+<h2><span class="mw-headline" id="Usage">Usage</span></h2>
+<h3><span class="mw-headline" id="Using_proprietary_OpenGL">Using proprietary OpenGL</span></h3>
+<p>Launch your application with progl prefix, for example:
+</p>
+<pre>$ progl glmark2
+</pre>
+<h4><span class="mw-headline" id="How_to_ensure_you_are_using_AMDGPU-PRO_driver">How to ensure you are using AMDGPU-PRO driver</span></h4>
+<p>Run the following command:
+</p>
+<pre>$ glxinfo | grep "OpenGL vendor string" | cut -f2 -d":" | xargs
+</pre>
+<p>If it returns <code>AMD</code>, then you are running open source driver. If it returns <code>Advanced Micro Devices, Inc.</code>, then you are running proprietary driver.
+</p>
+<p>Alternatively, run <a href="../en/Benchmarking.html#glmark2" title="Benchmarking">glmark2</a>. When using open driver, in OpenGL Information you will see:
+</p>
+<pre>   GL_VENDOR:     AMD
+   GL_RENDERER:   Radeon RX 580 Series (POLARIS10, DRM 3.40.0, 5.10.7-arch1-1, LLVM 11.0.1)
+   GL_VERSION:    4.6 (Compatibility Profile) Mesa 20.3.3
+</pre>
+<p>But when using closed driver, you will see:
+</p>
+<pre>   GL_VENDOR:     ATI Technologies Inc.
+   GL_RENDERER:   Radeon RX 580 Series
+   GL_VERSION:    4.6.14756 Compatibility Profile Context
+</pre>
+<h3><span class="mw-headline" id="Using_proprietary_Vulkan">Using proprietary Vulkan</span></h3>
+<p>Launch your application with <code>vk_pro</code>, for example:
+</p>
+<pre>$ vk_pro vkmark
+</pre>
+<p>See <a href="../en/Vulkan.html#Selecting_via_AMD_Vulkan_Prefixes" title="Vulkan">Vulkan#Selecting via AMD Vulkan Prefixes</a> for more information.
+</p>
+<h3><span class="mw-headline" id="Using_Advanced_Multimedia_Framework">Using Advanced Multimedia Framework</span></h3>
+<p>See <a href="../en/FFmpeg.html#AMD_AMF" title="FFmpeg">FFmpeg#AMD AMF</a>
+</p>
+<h2><span class="mw-headline" id="Troubleshooting">Troubleshooting</span></h2>
+<h3>
+<span id="Intel_.2B_AMD_hybrid_graphics"></span><span class="mw-headline" id="Intel_+_AMD_hybrid_graphics">Intel + AMD hybrid graphics</span>
+</h3>
+<p>For users of a hybrid setup with both an Intel GPU and an AMD GPU, usage of the proprietary AMDGPU Pro Workstation Driver might not work as expected due to different MESA implementations. 
+</p>
+<p>The symptom is the following: when you boot your machine, you get a black screen, but with your mouse cursor is moving normally. 
+</p>
+<p>Unfortunately, <a href="../en/PRIME.html#Reverse_PRIME" title="PRIME">Reverse PRIME</a> is not a solution. See the <a rel="nofollow" class="external text" href="https://gitlab.freedesktop.org/drm/amd/-/issues/985#note_359417">developer response</a>.
+</p>
+<h3><span class="mw-headline" id="Uninstalling_packages">Uninstalling packages</span></h3>
+<p>If you are in trouble, for example, you cannot login to your system due to black screen, you can revert all back by uninstalling all packages related to AMDGPU PRO. 
+</p>
+<p>Switch a <a href="../en/Linux_console.html#Virtual_consoles" class="mw-redirect" title="Virtual console">virtual console</a> (with e.g. <code>Ctrl+Alt+F2</code>), login and run: 
+</p>
+<pre># pacman -R $(pacman -Qg Radeon_Software_for_Linux | cut -f2 -d" ")
+</pre>
+<p>then reboot.
+</p>
+<h3>
+<span id="Southern_Islands_.28SI.29_or_Sea_Islands_.28CIK.29_GPUs"></span><span class="mw-headline" id="Southern_Islands_(SI)_or_Sea_Islands_(CIK)_GPUs">Southern Islands (SI) or Sea Islands (CIK) GPUs</span>
+</h3>
+<p>If using Southern Islands (SI) or Sea Islands (CIK) GPU, when running <code>clinfo</code>, you get:
+</p>
+<pre>amdgpu_device_initialize: DRM version is 2.50.0 but this driver is only compatible with 3.x.x.
+</pre>
+<p>then ensure you are using amdgpu driver, but not radeon. 
+</p>
+<p>Check which driver is currently in use: 
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">$ lspci -k</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">03:00.0 Display controller: Advanced Micro Devices, Inc. [AMD/ATI] Opal XT [Radeon R7 M265/M365X/M465]
+        Subsystem: Acer Incorporated [ALI] Aspire V5 Radeon R7 M265
+        <b>Kernel driver in use: radeon</b>
+        Kernel modules: radeon, amdgpu
+</pre>
+<p>See <a href="../en/AMDGPU.html#Enable_Southern_Islands_(SI)_and_Sea_Islands_(CIK)_support" title="AMDGPU">AMDGPU#Enable Southern Islands (SI) and Sea Islands (CIK) support</a> for more information.
+</p>
+<h3><span class="mw-headline" id="Firmware_and_AMD_drivers">Firmware and AMD drivers</span></h3>
+<p>AMD drivers and firmware (especially recent firmware) can get out of sync and create issues or not work at all. 
+You can search in the <a href="../en/Systemd/Journal.html" class="mw-redirect" title="Journal">journal</a> for <code>VNC</code>: 
+</p>
+<pre>system VCN FW Encode interface version=1.9, expected version=1.8
+</pre>
+<p><a href="../en/Downgrading_packages.html" class="mw-redirect" title="Downgrading">Downgrading</a> the firmware seems to fix the problem. 
+</p>
+<div class="archwiki-template-box archwiki-template-box-tip">
+<strong>Tip:</strong> 
+<ul>
+<li>As of 2023-05-06, the 7900 cards works with the <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=linux-firmware">linux-firmware</a></span> version 20221214.f3c283e-1, see  <a rel="nofollow" class="external text" href="https://github.com/Ashark/archlinux-amdgpu-pro/issues/85">amdgpu-pro GitHub issue</a>.</li>
+<li>As of 2023-05-30 version 23.10-1595145 of the AMDGPU PRO seems to fix the 7900 cards if use the <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/linux-firmware-git/">linux-firmware-git</a></span><sup><small>AUR</small></sup>
+</li>
+</ul>
+</div>
+<h2><span class="mw-headline" id="See_also">See also</span></h2>
+<ul><li><a href="https://wiki.gentoo.org/wiki/AMDGPU-PRO" class="extiw" title="gentoo:AMDGPU-PRO">Gentoo:AMDGPU-PRO</a></li></ul>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../Special:Categories.html" title="Special:Categories">Categories</a>: <ul>
+<li><a href="../en/Category:Graphics.html" title="Category:Graphics">Graphics</a></li>
+<li><a href="../en/Category:X_server.html" title="Category:X server">X server</a></li>
+</ul>
+</div></div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=AMDGPU_PRO&amp;oldid=779922">https://wiki.archlinux.org/index.php?title=AMDGPU_PRO&amp;oldid=779922</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 30 May 2023, at 16:32.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

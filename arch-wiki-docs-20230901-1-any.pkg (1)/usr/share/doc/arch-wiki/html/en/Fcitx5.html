@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>Fcitx5 - ArchWiki</title>
+<link rel="stylesheet" href="../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Fcitx5 rootpage-Fcitx5 skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Installation" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#Installation">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Installation</div>
+			</a>
+			
+				<button aria-controls="toc-Installation-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Installation subsection
+				</button>
+			
+			<ul id="toc-Installation-sublist" class="sidebar-toc-list">
+				<li id="toc-Input_method_module" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Input_method_module">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.1</span>Input method module</div>
+			</a>
+			
+			<ul id="toc-Input_method_module-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Usage" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#Usage">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Usage</div>
+			</a>
+			
+				<button aria-controls="toc-Usage-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Usage subsection
+				</button>
+			
+			<ul id="toc-Usage-sublist" class="sidebar-toc-list">
+				<li id="toc-Integration" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Integration">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.1</span>Integration</div>
+			</a>
+			
+			<ul id="toc-Integration-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Autostart" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Autostart">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.2</span>Autostart</div>
+			</a>
+			
+			<ul id="toc-Autostart-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Words_library" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Words_library">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.3</span>Words library</div>
+			</a>
+			
+			<ul id="toc-Words_library-sublist" class="sidebar-toc-list">
+				<li id="toc-Chinese" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Chinese">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.3.1</span>Chinese</div>
+			</a>
+			
+			<ul id="toc-Chinese-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Custom_words_library" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Custom_words_library">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.4</span>Custom words library</div>
+			</a>
+			
+			<ul id="toc-Custom_words_library-sublist" class="sidebar-toc-list">
+				<li id="toc-Chinese_2" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Chinese_2">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.4.1</span>Chinese</div>
+			</a>
+			
+			<ul id="toc-Chinese_2-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Configuration" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#Configuration">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>Configuration</div>
+			</a>
+			
+				<button aria-controls="toc-Configuration-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Configuration subsection
+				</button>
+			
+			<ul id="toc-Configuration-sublist" class="sidebar-toc-list">
+				<li id="toc-Configuration_tool" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Configuration_tool">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.1</span>Configuration tool</div>
+			</a>
+			
+			<ul id="toc-Configuration_tool-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Disable_overriding_XKB_settings" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Disable_overriding_XKB_settings">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.2</span>Disable overriding XKB settings</div>
+			</a>
+			
+			<ul id="toc-Disable_overriding_XKB_settings-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Themes_and_appearance" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Themes_and_appearance">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.3</span>Themes and appearance</div>
+			</a>
+			
+			<ul id="toc-Themes_and_appearance-sublist" class="sidebar-toc-list">
+				<li id="toc-Themes" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Themes">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.3.1</span>Themes</div>
+			</a>
+			
+			<ul id="toc-Themes-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Enable_single-line_mode" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Enable_single-line_mode">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.3.2</span>Enable single-line mode</div>
+			</a>
+			
+			<ul id="toc-Enable_single-line_mode-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Troubleshooting" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#Troubleshooting">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4</span>Troubleshooting</div>
+			</a>
+			
+				<button aria-controls="toc-Troubleshooting-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Troubleshooting subsection
+				</button>
+			
+			<ul id="toc-Troubleshooting-sublist" class="sidebar-toc-list">
+				<li id="toc-Diagnose_problems" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Diagnose_problems">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.1</span>Diagnose problems</div>
+			</a>
+			
+			<ul id="toc-Diagnose_problems-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Fcitx5_single-line_mode_not_working_in_some_applications" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Fcitx5_single-line_mode_not_working_in_some_applications">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.2</span>Fcitx5 single-line mode not working in some applications</div>
+			</a>
+			
+			<ul id="toc-Fcitx5_single-line_mode_not_working_in_some_applications-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Fcitx5_has_position_errors_in_JetBrains_IDEs" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Fcitx5_has_position_errors_in_JetBrains_IDEs">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.3</span>Fcitx5 has position errors in JetBrains IDEs</div>
+			</a>
+			
+			<ul id="toc-Fcitx5_has_position_errors_in_JetBrains_IDEs-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Fcitx5_is_not_working_in_JetBrains_IDEs" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Fcitx5_is_not_working_in_JetBrains_IDEs">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.4</span>Fcitx5 is not working in JetBrains IDEs</div>
+			</a>
+			
+			<ul id="toc-Fcitx5_is_not_working_in_JetBrains_IDEs-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Emoji_show_abnormally_in_the_candidate_box" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Emoji_show_abnormally_in_the_candidate_box">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.5</span>Emoji show abnormally in the candidate box</div>
+			</a>
+			
+			<ul id="toc-Emoji_show_abnormally_in_the_candidate_box-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Fcitx5_not_available_in_RStudio" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Fcitx5_not_available_in_RStudio">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.6</span>Fcitx5 not available in RStudio</div>
+			</a>
+			
+			<ul id="toc-Fcitx5_not_available_in_RStudio-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Fcitx5_not_available_on_Steam_and_Dota_2" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Fcitx5_not_available_on_Steam_and_Dota_2">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.7</span>Fcitx5 not available on Steam and Dota 2</div>
+			</a>
+			
+			<ul id="toc-Fcitx5_not_available_on_Steam_and_Dota_2-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Fcitx5_not_available_in_Chromium_running_on_Wayland" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Fcitx5_not_available_in_Chromium_running_on_Wayland">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.8</span>Fcitx5 not available in Chromium running on Wayland</div>
+			</a>
+			
+			<ul id="toc-Fcitx5_not_available_in_Chromium_running_on_Wayland-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Candidate_popup_misaligned_in_HiDPI_mode_of_GTK_environments" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Candidate_popup_misaligned_in_HiDPI_mode_of_GTK_environments">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.9</span>Candidate popup misaligned in HiDPI mode of GTK environments</div>
+			</a>
+			
+			<ul id="toc-Candidate_popup_misaligned_in_HiDPI_mode_of_GTK_environments-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Fcitx5_not_available_in_kitty" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Fcitx5_not_available_in_kitty">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.10</span>Fcitx5 not available in kitty</div>
+			</a>
+			
+			<ul id="toc-Fcitx5_not_available_in_kitty-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Fcitx5_right_alt_key_not_working_with_Electron_applications" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Fcitx5_right_alt_key_not_working_with_Electron_applications">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.11</span>Fcitx5 right alt key not working with Electron applications</div>
+			</a>
+			
+			<ul id="toc-Fcitx5_right_alt_key_not_working_with_Electron_applications-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Fcitx5_not_working_with_non-GTK/Qt_Wayland_applications_(Alacritty,_kitty,_etc)_in_KDE_Plasma" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Fcitx5_not_working_with_non-GTK/Qt_Wayland_applications_(Alacritty,_kitty,_etc)_in_KDE_Plasma">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.12</span>Fcitx5 not working with non-GTK/Qt Wayland applications (Alacritty, kitty, etc) in KDE Plasma</div>
+			</a>
+			
+			<ul id="toc-Fcitx5_not_working_with_non-GTK/Qt_Wayland_applications_(Alacritty,_kitty,_etc)_in_KDE_Plasma-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Software_using_Wayland_input_protocol_cannot_obtain_Wayland_popup_window" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Software_using_Wayland_input_protocol_cannot_obtain_Wayland_popup_window">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.13</span>Software using Wayland input protocol cannot obtain Wayland popup window</div>
+			</a>
+			
+			<ul id="toc-Software_using_Wayland_input_protocol_cannot_obtain_Wayland_popup_window-sublist" class="sidebar-toc-list">
+				<li id="toc-KDE" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#KDE">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.13.1</span>KDE</div>
+			</a>
+			
+			<ul id="toc-KDE-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Sway" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Sway">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.13.2</span>Sway</div>
+			</a>
+			
+			<ul id="toc-Sway-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-GNOME" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#GNOME">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.13.3</span>GNOME</div>
+			</a>
+			
+			<ul id="toc-GNOME-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Fcitx5_not_available_in_some_applications" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Fcitx5_not_available_in_some_applications">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.14</span>Fcitx5 not available in some applications</div>
+			</a>
+			
+			<ul id="toc-Fcitx5_not_available_in_some_applications-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Tips_and_tricks" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#Tips_and_tricks">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5</span>Tips and tricks</div>
+			</a>
+			
+				<button aria-controls="toc-Tips_and_tricks-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Tips and tricks subsection
+				</button>
+			
+			<ul id="toc-Tips_and_tricks-sublist" class="sidebar-toc-list">
+				<li id="toc-Customizing_traditional_and_simplified_Chinese_conversion" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Customizing_traditional_and_simplified_Chinese_conversion">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5.1</span>Customizing traditional and simplified Chinese conversion</div>
+			</a>
+			
+			<ul id="toc-Customizing_traditional_and_simplified_Chinese_conversion-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-View_the_Unicode_encoding_of_selected_characters" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#View_the_Unicode_encoding_of_selected_characters">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5.2</span>View the Unicode encoding of selected characters</div>
+			</a>
+			
+			<ul id="toc-View_the_Unicode_encoding_of_selected_characters-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Input_special_characters" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Input_special_characters">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5.3</span>Input special characters</div>
+			</a>
+			
+			<ul id="toc-Input_special_characters-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Switching_halfwidth_and_fullwidth_punctuation" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Switching_halfwidth_and_fullwidth_punctuation">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5.4</span>Switching halfwidth and fullwidth punctuation</div>
+			</a>
+			
+			<ul id="toc-Switching_halfwidth_and_fullwidth_punctuation-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Automatically_switch_input_methods_in_vim" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Automatically_switch_input_methods_in_vim">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5.5</span>Automatically switch input methods in vim</div>
+			</a>
+			
+			<ul id="toc-Automatically_switch_input_methods_in_vim-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Pinyin_input_method" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Pinyin_input_method">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5.6</span>Pinyin input method</div>
+			</a>
+			
+			<ul id="toc-Pinyin_input_method-sublist" class="sidebar-toc-list">
+				<li id="toc-Import_Sogou_words_library" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Import_Sogou_words_library">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5.6.1</span>Import Sogou words library</div>
+			</a>
+			
+			<ul id="toc-Import_Sogou_words_library-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Cloud_Pinyin" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Cloud_Pinyin">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5.6.2</span>Cloud Pinyin</div>
+			</a>
+			
+			<ul id="toc-Cloud_Pinyin-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Stroke_Filter" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Stroke_Filter">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5.6.3</span>Stroke Filter</div>
+			</a>
+			
+			<ul id="toc-Stroke_Filter-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-RIME/Zhongzhou_rhyme" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#RIME/Zhongzhou_rhyme">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5.7</span>RIME/Zhongzhou rhyme</div>
+			</a>
+			
+			<ul id="toc-RIME/Zhongzhou_rhyme-sublist" class="sidebar-toc-list">
+				<li id="toc-Import_words_library" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Import_words_library">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5.7.1</span>Import words library</div>
+			</a>
+			
+			<ul id="toc-Import_words_library-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Fuzzy_sound_settings" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Fuzzy_sound_settings">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5.7.2</span>Fuzzy sound settings</div>
+			</a>
+			
+			<ul id="toc-Fuzzy_sound_settings-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Special_symbols" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Special_symbols">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5.7.3</span>Special symbols</div>
+			</a>
+			
+			<ul id="toc-Special_symbols-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Load_librime-lua_plugin" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Load_librime-lua_plugin">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5.7.4</span>Load librime-lua plugin</div>
+			</a>
+			
+			<ul id="toc-Load_librime-lua_plugin-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+	</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../en/Fcitx5.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="mw-list-item"><a href="../en/Talk:Fcitx5.html" rel="discussion" title="Discussion about the content page [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">English</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../en/Fcitx5.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=Fcitx5&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=Fcitx5&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../en/Fcitx5.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Fcitx5&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Fcitx5&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output">
+<div class="archwiki-template-meta-related-articles-start">
+<p class="mw-no-invert">Related articles</p>
+<ul>
+<li><a href="../en/Fcitx.html" title="Fcitx">Fcitx</a></li>
+<li><a href="../en/IBus.html" title="IBus">IBus</a></li>
+</ul>
+</div>
+<p><a rel="nofollow" class="external text" href="https://fcitx-im.org/wiki/Fcitx_5">Fcitx5</a> is an <a href="../en/Input_method.html" title="Input method">input method</a> framework with a lightweight core, offering additional language support via addons. It is the successor to <a href="../en/Fcitx.html" title="Fcitx">Fcitx</a>.
+</p>
+<mw:tocplace></mw:tocplace>
+<h2><span class="mw-headline" id="Installation">Installation</span></h2>
+<p><a href="../en/Help:Reading.html#Installation_of_packages" class="mw-redirect" title="Install">Install</a> the <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=fcitx5">fcitx5</a></span> package.
+</p>
+<p>The <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/groups/x86_64/fcitx5-im/">fcitx5-im</a></span> group pulls the main <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=fcitx5">fcitx5</a></span> package, necessary <a href="#Input_method_module">#Input method module</a>, and <a href="#Configuration_tool">#Configuration tool</a>.
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=fcitx5">fcitx5</a></span> has only a basic framework, it just gives English support. If you want to input other languages, such as Chinese or Japanese, you need an Input Method Engine (IME).</div>
+<p>See <a href="../en/Input_method.html#List_of_available_input_method_editors" title="Input method">Input method#List of available input method editors</a> for a list of available IMEs.
+</p>
+<h3><span class="mw-headline" id="Input_method_module">Input method module</span></h3>
+<p>To get a better experience, you should install the following modules as per your needs. Without them, the input method may still work on most applications but you might experience input method hang up, preview window screen location error, or no preview error.
+</p>
+<ul>
+<li>For <a href="../en/Qt.html" title="Qt">Qt</a>5 programs, install <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=fcitx5-qt">fcitx5-qt</a></span>.</li>
+<li>For <a href="../en/GTK.html" title="GTK">GTK</a> programs, install <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=fcitx5-gtk">fcitx5-gtk</a></span>.</li>
+<li>For Qt4 programs, install <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/fcitx5-qt4-git/">fcitx5-qt4-git</a></span><sup><small>AUR</small></sup>.</li>
+<li>For Qt6 programs, install <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/fcitx5-qt6-git/">fcitx5-qt6-git</a></span><sup><small>AUR</small></sup>.</li>
+<li>For date and time support, install <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=fcitx5-lua">fcitx5-lua</a></span>.</li>
+</ul>
+<div class="archwiki-template-box archwiki-template-box-tip">
+<strong>Tip:</strong> Generally, installing <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=fcitx5-qt">fcitx5-qt</a></span> and <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=fcitx5-gtk">fcitx5-gtk</a></span> is enough to handle all situations.</div>
+<h2><span class="mw-headline" id="Usage">Usage</span></h2>
+<h3><span class="mw-headline" id="Integration">Integration</span></h3>
+<p>Set the following <a href="../en/Environment_variables.html" title="Environment variables">environment variables</a><a rel="nofollow" class="external autonumber" href="https://fcitx-im.org/wiki/Setup_Fcitx_5#Environment_variables">[1]</a>, then log in again.
+</p>
+<pre>GTK_IM_MODULE=fcitx
+QT_IM_MODULE=fcitx
+XMODIFIERS=@im=fcitx
+</pre>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> 
+<ul>
+<li>
+<a href="../en/Help:Reading.html#Append,_add,_create,_edit" class="mw-redirect" title="Append">Append</a> <code>SDL_IM_MODULE=fcitx</code> to enable support of some games that use a specific version of the SDL2 library.</li>
+<li>
+<a href="../en/Help:Reading.html#Append,_add,_create,_edit" class="mw-redirect" title="Append">Append</a> <code>GLFW_IM_MODULE=ibus</code> to enable support in <a href="../en/Kitty.html" title="Kitty">kitty</a>. The value of this environment variable can only be <code>ibus</code>.<a rel="nofollow" class="external autonumber" href="https://fcitx-im.org/wiki/Setup_Fcitx_5#Other_less_common_setup">[2]</a>
+</li>
+<li>As recommended by fcitx5 upstream, the environment variable should be set to <code>fcitx</code>. Some applications (such as <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=telegram-desktop">telegram-desktop</a></span>) need to set it to <code>fcitx5</code> for compatibility reasons.</li>
+</ul>
+</div>
+<p>If your locale is <code>en_US.UTF-8</code>, and your GTK2 application cannot activate fcitx5, you can set the input method to xim specifically for it, for example:
+</p>
+<pre>$ env GTK_IM_MODULE=xim <i>your_gtk2_application</i>
+</pre>
+<p>Do not set <code>GTK_IM_MODULE</code> to xim globally as it affects GTK3 programs as well. XIM has various problems (such as the input method cannot input after restarting), so try not to use it.
+</p>
+<h3><span class="mw-headline" id="Autostart">Autostart</span></h3>
+<p>If your <a href="../en/Desktop_environment.html" title="Desktop environment">desktop environment</a> implements <a href="../en/XDG_Autostart.html" title="XDG Autostart">XDG Autostart</a>, see <a href="../en/Autostarting.html#On_desktop_environment_startup" title="Autostarting">Autostarting#On desktop environment startup</a>.
+</p>
+<p>See <a href="../en/Autostarting.html#On_Xorg_startup" title="Autostarting">Autostarting#On Xorg startup</a> or <a href="../en/Autostarting.html#On_window_manager_startup" title="Autostarting">Autostarting#On window manager startup</a> depending on your needs.
+</p>
+<div class="archwiki-template-box archwiki-template-box-tip">
+<strong>Tip:</strong> To see if Fcitx5 is working correctly, open an application and press <code>Ctrl+Space</code> to switch between input methods (when configured), and input some words.</div>
+<h3><span class="mw-headline" id="Words_library">Words library</span></h3>
+<h4><span class="mw-headline" id="Chinese">Chinese</span></h4>
+<div class="noprint archwiki-template-message">
+<p><a href="../File:Merge-arrows-2.png" class="image"><img alt="Merge-arrows-2.png" src="../File:Merge-arrows-2.png" decoding="async" width="48" height="48"></a><b>This article or section is a candidate for merging with <a href="../en/Input_method.html#List_of_available_input_method_editors" title="Input method">Input method#List of available input method editors</a>.</b><a href="../File:Merge-arrows-2.png" class="image"><img alt="Merge-arrows-2.png" src="../File:Merge-arrows-2.png" decoding="async" width="48" height="48"></a></p>
+<div>
+<b>Notes:</b> Looks like it's already covered there. (Discuss in <a rel="nofollow" class="external text" href="https://wiki.archlinux.org/title/Talk:Fcitx5">Talk:Fcitx5</a>)</div>
+</div>
+<p>For the Chinese input method of Fcitx5, several words libraries are currently provided in the repository:
+</p>
+<ul>
+<li>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=fcitx5-pinyin-zhwiki">fcitx5-pinyin-zhwiki</a></span>: A words library created by felixonmars based on Chinese Wikipedia. Applicable to <b>Pinyin input method</b>.</li>
+<li>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=rime-pinyin-zhwiki">rime-pinyin-zhwiki</a></span>: A words library for <a href="../en/Rime.html" title="Rime">Rime</a> input method.</li>
+<li>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/fcitx5-pinyin-moegirl/">fcitx5-pinyin-moegirl</a></span><sup><small>AUR</small></sup> : A words library created by outloudvi based on Moegirlpedia.</li>
+<li>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/fcitx5-pinyin-moegirl-rime/">fcitx5-pinyin-moegirl-rime</a></span><sup><small>AUR</small></sup>: A words library for <a href="../en/Rime.html" title="Rime">Rime</a> input method.</li>
+<li>
+<a rel="nofollow" class="external text" href="https://github.com/cathaysia/fcitx5_dicts/releases/tag/0.0.1">cedict</a>: A words library converted from <a rel="nofollow" class="external text" href="https://www.mdbg.net/chinese/dictionary?page=cc-cedict">cedict dictionary</a>.</li>
+</ul>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> Manually downloaded words library files can be directly placed in the path of <code>~/.local/share/fcitx5/pinyin/dictionaries</code>. The suffix of the words library file should be .dict</div>
+<h3><span class="mw-headline" id="Custom_words_library">Custom words library</span></h3>
+<h4><span class="mw-headline" id="Chinese_2">Chinese</span></h4>
+<p>Generally speaking, since <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=fcitx5">fcitx5</a></span> supports <a href="#Import_Sogou_words_library">importing the Sogou words library</a>, there is no need to customize words library to a large extent, but <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=fcitx5">fcitx5</a></span> still provides related tools.
+</p>
+<ul><li>Install <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=libime">libime</a></span>
+</li></ul>
+<p>The original words library file is a text file, its format is: <code>Character Pinyin Frequency</code>
+</p>
+<p>After getting the original dictionary file, execute <code>libime_pinyindict <i>words-library.txt</i> <i>words-library.dict</i> </code>.
+</p>
+<p>The custom dictionary file can be placed in <code>~/.local/share/fcitx5/pinyin/dictionaries</code>
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> The following projects may help:
+<ul>
+<li><a rel="nofollow" class="external text" href="https://pypi.org/project/pypinyin/">Chinese characters to Pinyin</a></li>
+<li><a rel="nofollow" class="external text" href="https://pypi.org/project/OpenCC/">Simplified and Traditional Chinese Conversion</a></li>
+</ul>
+</div>
+<h2><span class="mw-headline" id="Configuration">Configuration</span></h2>
+<h3><span class="mw-headline" id="Configuration_tool">Configuration tool</span></h3>
+<p>The configuration file of <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=fcitx5">fcitx5</a></span> is located at <code>~/.config/fcitx5</code>. Although you can use a text editor to edit the configuration file, you might find a GUI configuration tool much more convenient, so install the <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=fcitx5-configtool">fcitx5-configtool</a></span> package.
+</p>
+<h3><span class="mw-headline" id="Disable_overriding_XKB_settings">Disable overriding XKB settings</span></h3>
+<p>By default Fcitx5 overrides X keyboard settings. (The ones you can set with <code>setxkbmap</code> command or graphical tools provided by <a href="../en/Desktop_environment.html" title="Desktop environment">desktop environments</a>.) If you do not want that, run <code>fcitx5-configtool</code> and uncheck <i>Addons &gt; XCB &gt; Allow Overriding System XKB Settings</i>.
+</p>
+<h3><span class="mw-headline" id="Themes_and_appearance">Themes and appearance</span></h3>
+<h4><span class="mw-headline" id="Themes">Themes</span></h4>
+<div class="noprint archwiki-template-message">
+<p><a href="../File:Tango-edit-clear.png" class="image"><img alt="Tango-edit-clear.png" src="../File:Tango-edit-clear.png" decoding="async" width="48" height="48"></a><b>This article or section needs language, wiki syntax or style improvements. See <a href="../en/Help:Style.html" title="Help:Style">Help:Style</a> for reference.</b><a href="../File:Tango-edit-clear.png" class="image"><img alt="Tango-edit-clear.png" src="../File:Tango-edit-clear.png" decoding="async" width="48" height="48"></a></p>
+<div>
+<b>Reason:</b> Use <a href="../en/Template:App.html" title="Template:App">Template:App</a>. (Discuss in <a rel="nofollow" class="external text" href="https://wiki.archlinux.org/title/Talk:Fcitx5">Talk:Fcitx5</a>)</div>
+</div>
+<p>The number of default themes is limited, you can find more themes on <a rel="nofollow" class="external text" href="https://github.com/search?q=fcitx5+theme&amp;type=Repositories">GitHub</a>.
+</p>
+<ul>
+<li>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/fcitx5-breeze/">fcitx5-breeze</a></span><sup><small>AUR</small></sup>: Fcitx5 theme to match the KDE Breeze style.</li>
+<li>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=fcitx5-nord">fcitx5-nord</a></span>: <a rel="nofollow" class="external text" href="https://github.com/tonyfettes/fcitx5-nord">Nord Color Themes</a>.</li>
+<li>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=fcitx5-material-color">fcitx5-material-color</a></span>: This theme gives a feeling like Microsoft PinYin. Its official repository is located at <a rel="nofollow" class="external text" href="https://github.com/hosxy/Fcitx5-Material-Color">GitHub: Fcitx5-Material-Color</a>. Its README.md file shows some beautiful configurations of one-line mode.</li>
+<li>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/fcitx5-solarized/">fcitx5-solarized</a></span><sup><small>AUR</small></sup>: <a rel="nofollow" class="external text" href="https://github.com/mingyech/fcitx5-solarized">Solarized</a> color theme for Fcitx5.</li>
+<li>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/fcitx5-skin-fluentdark-git/">fcitx5-skin-fluentdark-git</a></span><sup><small>AUR</small></sup>: Fluent-Design dark theme with blur effects and shadows.</li>
+</ul>
+<div class="archwiki-template-box archwiki-template-box-tip">
+<strong>Tip:</strong> If you are using KCM, then switch themes with: <i>Setting &gt; Location &gt; input method &gt; Configure addons &gt; Classic user interface &gt; Theme</i>.</div>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> Theming does not work for Fcitx5 if you are using <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/gnome-shell-extension-kimpanel-git/">gnome-shell-extension-kimpanel-git</a></span><sup><small>AUR</small></sup> with GNOME environment. <a rel="nofollow" class="external autonumber" href="https://yanqiyu.info/2020/11/06/fcitx5-fedora-updated/#60d50c0a87a8c64ae965e403">[3]</a>
+</div>
+<h4><span class="mw-headline" id="Enable_single-line_mode">Enable single-line mode</span></h4>
+<p>In the settings of the Pinyin input method (or Rime input method), enable <i>Show preedit within application</i> to enable single-line mode.
+</p>
+<h2><span class="mw-headline" id="Troubleshooting">Troubleshooting</span></h2>
+<h3><span class="mw-headline" id="Diagnose_problems">Diagnose problems</span></h3>
+<p>If you have problems using fcitx5, eg. if <code>Ctrl+Space</code> fails to work in all applications, then the first thing you should try is to diagnose using <code>fcitx5-diagnose</code>. The output of <code>fcitx5-diagnose</code> should contain clues for the most common problems.
+</p>
+<h3><span class="mw-headline" id="Fcitx5_single-line_mode_not_working_in_some_applications">Fcitx5 single-line mode not working in some applications</span></h3>
+<ol>
+<li>If the single-line mode does not work in gtk applications such as <a href="../en/Firefox.html" title="Firefox">Firefox</a>, please install <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=fcitx5-gtk">fcitx5-gtk</a></span>
+</li>
+<li>The single-line mode does not work in <a href="../en/WPS_Office.html" title="WPS Office">WPS Office</a> and Sublime Text, this is a problem of <a href="../en/WPS_Office.html" title="WPS Office">WPS Office</a> and Sublime Text itself, not a problem of <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=fcitx5">fcitx5</a></span>. <a rel="nofollow" class="external autonumber" href="https://github.com/fcitx/fcitx5/issues/60">[4]</a>
+</li>
+</ol>
+<h3><span class="mw-headline" id="Fcitx5_has_position_errors_in_JetBrains_IDEs">Fcitx5 has position errors in JetBrains IDEs</span></h3>
+<p>The cause of this issue is that the JBR shipped with the IDE is not correct, to fix this issue you need to:
+</p>
+<p>Download the <a rel="nofollow" class="external text" href="https://github.com/RikudouPatrickstar/JetBrainsRuntime-for-Linux-x64/releases">alternative JetBrainRuntime</a> and extract it, then follow <a rel="nofollow" class="external text" href="https://intellij-support.jetbrains.com/hc/en-us/articles/206544879-Selecting-the-JDK-version-the-IDE-will-run-under">JetBrains' support</a> to change the IDE's JBR.
+</p>
+<h3><span class="mw-headline" id="Fcitx5_is_not_working_in_JetBrains_IDEs">Fcitx5 is not working in JetBrains IDEs</span></h3>
+<p>Please verify that your system <a href="../en/Locale.html" title="Locale">locale</a> is correct and well generated, as an incorrect locale will prevent Fcitx5 from working correctly in JetBrains IDEs.
+</p>
+<h3><span class="mw-headline" id="Emoji_show_abnormally_in_the_candidate_box">Emoji show abnormally in the candidate box</span></h3>
+<ul>
+<li>Confirm you have a font with emoji support installed (such as <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=noto-fonts-emoji">noto-fonts-emoji</a></span>)</li>
+<li>Set the system font as <code>Noto Sans CJK SC</code> for Simplified Chinese, for example.</li>
+<li>Restart Fcitx5 by the following command:</li>
+</ul>
+<pre>$ kill `ps -A | grep fcitx5 | awk '{print $1}'` &amp;&amp; fcitx5&amp;
+</pre>
+<h3><span class="mw-headline" id="Fcitx5_not_available_in_RStudio">Fcitx5 not available in RStudio</span></h3>
+<p>Run the following command:
+</p>
+<pre>$ strings /usr/lib/rstudio/lib/libQt5Core.so.5 | grep "Qt 5"
+</pre>
+<p>Find out the version of the Qt library, use this version to recompile <code>libfcitx5platforminputcontextplugin.so</code> in <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=fcitx5-qt">fcitx5-qt</a></span>, and put it into <code>/usr/lib/rstudio/plugins/platforminputcontexts/</code> directory.
+</p>
+<p>If you are using <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/rstudio-desktop-bin/">rstudio-desktop-bin</a></span><sup><small>AUR</small></sup>, you can install <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/rstudio-fcitx5/">rstudio-fcitx5</a></span><sup><small>AUR</small></sup> directly.
+</p>
+<h3><span class="mw-headline" id="Fcitx5_not_available_on_Steam_and_Dota_2">Fcitx5 not available on Steam and Dota 2</span></h3>
+<p>The IME can be activated on Steam Big Screen mode and Dota 2 by using <code>Ctrl+Space</code> instead of <code>Ctrl+Shift</code>. <a rel="nofollow" class="external autonumber" href="https://github.com/fcitx/fcitx5/issues/442">[5]</a>
+</p>
+<h3><span class="mw-headline" id="Fcitx5_not_available_in_Chromium_running_on_Wayland">Fcitx5 not available in Chromium running on Wayland</span></h3>
+<p>This issue arises from Chromium not yet supporting GTK IM on Wayland, which can be resolved by adding <code>--gtk-version=4</code> to the startup flags. If still not working, please make sure you have installed <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=gtk4">gtk4</a></span>. <a rel="nofollow" class="external autonumber" href="https://bugs.chromium.org/p/chromium/issues/detail?id=1183262">[6]</a>
+</p>
+<h3><span class="mw-headline" id="Candidate_popup_misaligned_in_HiDPI_mode_of_GTK_environments">Candidate popup misaligned in HiDPI mode of GTK environments</span></h3>
+<p>If the position of your candidate popup is not anchored at your cursor position, <a href="../en/Help:Reading.html#Installation_of_packages" class="mw-redirect" title="Install">install</a> <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=fcitx5-gtk">fcitx5-gtk</a></span>.
+</p>
+<h3><span class="mw-headline" id="Fcitx5_not_available_in_kitty">Fcitx5 not available in kitty</span></h3>
+<p>See <a href="../en/Kitty.html#Enable_IME_support" title="Kitty">kitty#Enable IME support</a>.
+</p>
+<h3><span class="mw-headline" id="Fcitx5_right_alt_key_not_working_with_Electron_applications">Fcitx5 right alt key not working with Electron applications</span></h3>
+<p>If a non-system keyboard is used by an application (e.g. Discord, Element, etc.), the application may handle the <code>ISO_Level3_Shift</code> before the input method can. This results in some input methods failing in specific applications. One solution is to add another input method group, setting the system layout to correspond to this keyboard. For example, to type Polish letters like <code>ąćęłńóśźż</code> on a QWERTY keyboard with English as your primary system keyboard, you can use the Fcitx5 Configuration GUI to:
+</p>
+<ol>
+<li>Click the <i>Add Group</i> plus button.</li>
+<li>Select this group in the dropdown and now add your input method (the keyboard, e.g. <i>Keyboard - Polish</i>).</li>
+<li>Use <i>Select system keyboard layout</i> to pick the one that matches this input method, and apply changes.</li>
+</ol>
+<p>See comments from the Fcitx5 developers if you need another solution. <a rel="nofollow" class="external autonumber" href="https://github.com/fcitx/fcitx5/issues/740">[7]</a>
+</p>
+<h3>
+<span id="Fcitx5_not_working_with_non-GTK.2FQt_Wayland_applications_.28Alacritty.2C_kitty.2C_etc.29_in_KDE_Plasma"></span><span class="mw-headline" id="Fcitx5_not_working_with_non-GTK/Qt_Wayland_applications_(Alacritty,_kitty,_etc)_in_KDE_Plasma">Fcitx5 not working with non-GTK/Qt Wayland applications (Alacritty, kitty, etc) in KDE Plasma</span>
+</h3>
+<p>In <i>System Settings &gt; Input Devices &gt; Virtual Keyboard</i>, select Fcitx 5 as Virtual Editor, save and restart. <a rel="nofollow" class="external autonumber" href="https://fcitx-im.org/wiki/FAQ#Non_Gtk.2FQt_Wayland_Application_.28Alacritty.2C_kitty.2C_etc.29">[8]</a>
+</p>
+<h3><span class="mw-headline" id="Software_using_Wayland_input_protocol_cannot_obtain_Wayland_popup_window">Software using Wayland input protocol cannot obtain Wayland popup window</span></h3>
+<p>Software using the Wayland input protocol (such as wezterm and GTK software if the environment variable is set to <code>GTK_IM_MODULE=wayland</code>) can edit but not see the popup windows due to the lack of text-input-v3 support.
+</p>
+<p>Regarding Qt software and GTK software support for Wayland, according to the fcitx5 developer<a rel="nofollow" class="external autonumber" href="https://www.csslayer.info/wordpress/linux/use-plasma-5-24-to-type-in-alacritty-or-any-other-text-input-v3-client-with-fcitx-5-on-wayland/">[9]</a>:
+</p>
+<dl>
+<dd>Qt has text-input-v2 support. If QT_IM_MODULE is empty, it can be used, but there are some minor problems with pre-editing. In addition, for the current version of Wayland input method protocol, Wayland can only have one global input context. So now if you want to use the "per-application" input status supported by Fcitx 5, it may be a problem. However, there is a benefit to using Qt's text input protocol, which is that the input window will not flicker visually.</dd>
+<dd>Gtk has text-input-v3 support, but its pre-editing style is poor, with bold fonts highlighted. In addition, its text support is weak. So now, if you want to have all the Fcitx features, using <code>GTK_IM_MODULE=fcitx</code> may still be a good choice.</dd>
+</dl>
+<h4><span class="mw-headline" id="KDE">KDE</span></h4>
+<p>Enable the virtual keyboard support for fcitx5 in settings, searching for virtual keyboard in the control center, selecting fcitx5 and enabling it.
+</p>
+<h4><span class="mw-headline" id="Sway">Sway</span></h4>
+<p>Sway has merged the patch for the text-input-v3 protocol, but the input-method-v2 protocol is still not completely implemented and sway still can't show the popup window. There is a open pull request which can fix it: <a rel="nofollow" class="external free" href="https://github.com/swaywm/sway/pull/7226">https://github.com/swaywm/sway/pull/7226</a>. This fix is available on AUR: <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/sway-im/">sway-im</a></span><sup><small>AUR</small></sup>.
+</p>
+<h4><span class="mw-headline" id="GNOME">GNOME</span></h4>
+<p>Install the <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/gnome-shell-extension-kimpanel-git/">gnome-shell-extension-kimpanel-git</a></span><sup><small>AUR</small></sup> plugin.
+</p>
+<h3><span class="mw-headline" id="Fcitx5_not_available_in_some_applications">Fcitx5 not available in some applications</span></h3>
+<div class="noprint archwiki-template-message">
+<p><a href="../File:Tango-edit-clear.png" class="image"><img alt="Tango-edit-clear.png" src="../File:Tango-edit-clear.png" decoding="async" width="48" height="48"></a><b>This article or section needs language, wiki syntax or style improvements. See <a href="../en/Help:Style.html" title="Help:Style">Help:Style</a> for reference.</b><a href="../File:Tango-edit-clear.png" class="image"><img alt="Tango-edit-clear.png" src="../File:Tango-edit-clear.png" decoding="async" width="48" height="48"></a></p>
+<div>
+<b>Reason:</b> This does not explain why the solution works, nor what the exact issue is, no bugs are referenced. (Discuss in <a rel="nofollow" class="external text" href="https://wiki.archlinux.org/title/Talk:Fcitx5">Talk:Fcitx5</a>)</div>
+</div>
+<p>If you cannot use Fcitx5 in some application (e.g:<a href="../en/Anki.html" title="Anki">Anki</a> Qt6), check if you have <code>~/.xprofile</code>. If you do not have it then create the files with the <a href="#Integration">required environment variables</a> inside the <code>~/.xprofile</code>. Restart your graphical session to test.
+</p>
+<h2><span class="mw-headline" id="Tips_and_tricks">Tips and tricks</span></h2>
+<h3><span class="mw-headline" id="Customizing_traditional_and_simplified_Chinese_conversion">Customizing traditional and simplified Chinese conversion</span></h3>
+<p>Some IMEs assume Simplified Chinese by default, resulting in incorrect characters being displayed when using Traditional input, e.g. 爲什麼 instead of 為什麼. To fix this, the usage of the <code>Simplified and Traditional Chinese Translation</code> can be customized. 
+</p>
+<p>To configure conversion, set <code>OpenCC profile for Simplified to Traditional</code> to one of the following values:
+</p>
+<ul>
+<li>s2t - Simplified to Traditional (OpenCC) (this is the default and probably not what you are looking for)</li>
+<li>s2tw - Simplified to Traditional (Taiwan)</li>
+<li>s2twp - Simplified to Traditional (Taiwan) with Taiwanese idiom</li>
+<li>s2hk - Simplified to Traditional (Hong Kong)</li>
+</ul>
+<p>To configure the reverse, set <code>OpenCC profile for Traditional to Simplified</code> to one of the following values:
+</p>
+<ul>
+<li>t2s - Traditional (OpenCC) to Simplified (OpenCC) (this is the default and probably not what you are looking for)</li>
+<li>tw2s - Traditional (Taiwan) to Simplified (OpenCC)</li>
+<li>tw2sp - Traditional (Taiwan) to Simplified (OpenCC) with Mainland Chinese idiom</li>
+<li>t2hk - Traditional (OpenCC) to Hong Kong variant</li>
+<li>t2tw - Traditional (OpenCC) to Taiwan Standard</li>
+<li>tw2t - Traditional (Taiwan) to Traditional (OpenCC)</li>
+<li>hk2s - Traditional (Hong Kong) to Simplified (OpenCC)</li>
+<li>hk2t - Traditional (Hong Kong) to Traditional Chinese (OpenCC)</li>
+<li>t2jp - Traditional (Kyūjitai) to New Japanese Kanji (Shinjitai)</li>
+<li>jp2t - New Japanese Kanji (Shinjitai) to Traditional (Kyūjitai)</li>
+</ul>
+<p>Up to date list here: <a rel="nofollow" class="external text" href="https://github.com/BYVoid/OpenCC">OpenCC</a>
+</p>
+<h3><span class="mw-headline" id="View_the_Unicode_encoding_of_selected_characters">View the Unicode encoding of selected characters</span></h3>
+<ul>
+<li>If you want to view the Unicode encoding of the selected text in a text editor, then directly select the text, and then use the shortcut keys <code>Ctrl+Alt+Shift+u</code> to view the encoding of the selected text.</li>
+<li>If you want to view the Unicode encoding of some text in a non-editable area (such as this wiki), you need to first copy the text to the clipboard, then click on any editable area (such as the search box), and then use the shortcut keys <code>Ctrl+Alt+Shift+u</code> to view the encoding of the text in the clipboard.</li>
+</ul>
+<h3><span class="mw-headline" id="Input_special_characters">Input special characters</span></h3>
+<p>In general, for some simple symbols, such as <code>≤</code>, <code>ā</code>, <code>á</code>, <code>©</code>, etc., you can enter them through <a href="../en/Xorg/Keyboard_configuration.html#Configuring_compose_key" title="Xorg/Keyboard configuration">Configuring compose key</a>, but for more special symbols, such as <code>②</code>, <code>③</code>, <code>④</code>, etc., you Either customize <code>~/.XCompose</code>, or use Fcitx5's Unicode function to achieve.
+</p>
+<p>Take <code>①</code> as an example:
+</p>
+<p>Position the cursor in any input box, and then press <code>Ctrl+Alt+Shift+u</code>, and then enter <code>circle one</code>, you will see a variety of <code>①</code>, other special characters are similar here.
+</p>
+<h3><span class="mw-headline" id="Switching_halfwidth_and_fullwidth_punctuation">Switching halfwidth and fullwidth punctuation</span></h3>
+<p>For <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=fcitx5-chinese-addons">fcitx5-chinese-addons</a></span>, fullwidth punctuation is used by default, one may use <code>Ctrl+.</code> to switch between halfwidth and fullwidth punctuation.
+</p>
+<h3><span class="mw-headline" id="Automatically_switch_input_methods_in_vim">Automatically switch input methods in vim</span></h3>
+<p>It is recommended to use the <a rel="nofollow" class="external text" href="https://github.com/lilydjwg/fcitx.vim">fcitx.vim</a> plugin. This plugin will keep different buffer-specific input method states in their respective insert modes.
+</p>
+<p>For a simple solution, you can append the code to <code>~/.vimrc</code>: <a rel="nofollow" class="external autonumber" href="https://www.zhihu.com/question/341748857/answer/1739052604">[10]</a><a rel="nofollow" class="external autonumber" href="https://sur.moe/post/vim%E8%BE%93%E5%85%A5%E6%B3%95%E5%88%87%E6%8D%A2%E4%B8%8D%E4%BD%BF%E7%94%A8%E6%8F%92%E4%BB%B6/">[11]</a>
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">~/.vimrc</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">let fcitx5state=system("fcitx5-remote")
+autocmd InsertLeave * :silent let fcitx5state=system("fcitx5-remote")[0] | silent !fcitx5-remote -c " Disable the input method when exiting insert mode and save the state
+autocmd InsertEnter * :silent if fcitx5state == 2 | call system("fcitx5-remote -o") | endif " 2 means that the input method was opened in the previous state, and the input method is started when entering the insert mode
+</pre>
+<p>If you are using <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=neovim">neovim</a></span>, then append the above code to <code>~/.config/nvim/init.vim</code>.
+</p>
+<p>If you are using Vim9, then the code should be
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">~/.vimrc</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;"># Only taking affect after using vim9script grammar or has `vim9script` keyword.
+var fcitx5state = system("fcitx5-remote")
+autocmd InsertLeave * :silent fcitx5state = system("fcitx5-remote")[0] | silent !fcitx5-remote -c
+autocmd InsertEnter * :silent if fcitx5state == '2' | call system("fcitx5-remote -o") | endif
+</pre>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> If you add this code in vim.cmd, you may need to uncomment it.</div>
+<h3><span class="mw-headline" id="Pinyin_input_method">Pinyin input method</span></h3>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> The following functions are only valid for the Pinyin input method in <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=fcitx5-chinese-addons">fcitx5-chinese-addons</a></span>, please explore other input methods by yourself. </div>
+<h4><span class="mw-headline" id="Import_Sogou_words_library">Import Sogou words library</span></h4>
+<ul>
+<li>For <a href="../en/KDE.html" title="KDE">KDE</a> users, you can import Sogou words library through <i>Settings &gt; Regional Settings &gt; Input Method &gt; Pinyin &gt; Dictionary &gt; Import</i>.</li>
+<li>For users who use <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=fcitx5-configtool">fcitx5-configtool</a></span>, you need to manually open the software "Fcitx5 Configuration" and manually configure it in the Pinyin input method.</li>
+</ul>
+<p>You can import local words library or browse and import online words library.
+</p>
+<h4><span class="mw-headline" id="Cloud_Pinyin">Cloud Pinyin</span></h4>
+<p>On the settings page of the Pinyin input method, you can enable Cloud Pinyin. But if you need to change the default backend of Cloud Pinyin, you need to change it in the global settings of <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=fcitx5">fcitx5</a></span>. Provided backends are <code>Google</code>, <code>Baidu</code>, <code>GoogleCN</code>.
+</p>
+<h4><span class="mw-headline" id="Stroke_Filter">Stroke Filter</span></h4>
+<p>Set the shortcut key after the "stroke filter" of the pinyin input method you set (the default is <code>`</code>)
+Then after entering the text, press the shortcut key, the words <b>stroke filter</b> will appear in the candidate box of the input method, and the words can be filtered by strokes. The specific rules are: h horizontal stroke, s vertical stroke, p left-falling stroke, n right-falling stroke, z turning stroke.
+</p>
+<p>By default, the stroke filter is to filter the first character of a sentence, but you can switch between different characters in a sentence by using <b>determining characters by word</b>.
+</p>
+<p>For example, to perform stroke filtering on the third character in the word 中华人民共和国, you can press <code>]</code> twice in a row after enabling stroke filtering to let <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=fcitx5">fcitx5</a></span> perform stroke filtering on it.
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> By default, the shortcut keys of <b>Determining characters with words</b> are <code>[</code> and <code>]</code>, and the shortcut keys can be viewed in the settings of <b>Pinyin input method</b>.</div>
+<h3>
+<span id="RIME.2FZhongzhou_rhyme"></span><span class="mw-headline" id="RIME/Zhongzhou_rhyme">RIME/Zhongzhou rhyme</span>
+</h3>
+<div class="archwiki-template-box archwiki-template-box-tip">
+<strong>Tip:</strong> All changes need to be redeployed to take effect.</div>
+<h4><span class="mw-headline" id="Import_words_library">Import words library</span></h4>
+<p>Take importing words library <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=rime-pinyin-zhwiki">rime-pinyin-zhwiki</a></span> and <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/fcitx5-pinyin-moegirl-rime/">fcitx5-pinyin-moegirl-rime</a></span><sup><small>AUR</small></sup> as an example.
+</p>
+<div class="archwiki-template-box archwiki-template-box-tip">
+<strong>Tip:</strong> It is also possible to put the custom words library into <code>~/.local/share/fcitx5/rime/</code>, and the file name (filename.dict.yaml) should be the same as the words library name (<a rel="nofollow" class="external text" href="https://github.com/rime/home/wiki/RimeWithSchemata#%E7%A2%BC%E8%A1%A8%E8%88%87%E8%A9%9E%E5%85%B8">words library format</a>) </div>
+<p>1. Change the <code>~/.local/share/fcitx5/rime/luna_pinyin.custom.yaml</code> file (take <code>luna_pinyin</code> as an example, and modify the name of the other input schemes)
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">~/.local/share/fcitx5/rime/luna_pinyin.custom.yaml</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;"># There should only be one "patch:" in the file, if it already exists, just paste the following code
+# This file is used to modify a specific input scheme, change the above luna_pinyin to other input scheme names to complete the modification of other input schemes
+patch:
+    "translator/dictionary": extended #The dictionary name can be customized, just keep the same as the file name below
+</pre>
+<p>2. Create a new <code>~/.local/share/fcitx5/rime/extended.dict.yaml</code> file
+</p>
+<div class="archwiki-template-box archwiki-template-box-tip">
+<strong>Tip:</strong> Import custom words library just add the words library name after "import_tables:"</div>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">~/.local/share/fcitx5/rime/extended.dict.yaml</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;"># The following disables the default words library and does not enable the default "Baguwen" words library and word frequency system, if you do not want traditional characters and box characters to appear in candidate words
+---
+name: extended
+version: "2021.02.19"
+sort: by_weight
+use_preset_vocabulary: false #Whether to enable the default "Baguwen" words library and word frequency system, if you want to enable it, please set it to true.
+import_tables:
+  # - luna_pinyin #Default words library, please uncomment if you want to enable it
+  - zhwiki
+  - moegirl
+  # - custom words library name
+...
+</pre>
+<h4><span class="mw-headline" id="Fuzzy_sound_settings">Fuzzy sound settings</span></h4>
+<p>Please comment (#) or delete unnecessary fuzzy sounds as needed. If you need to add other fuzzy sounds, please refer to <a rel="nofollow" class="external text" href="https://gist.github.com/2320943">Mingyue Pinyin fuzzy sound custom template</a>
+</p>
+<p>If the <code>luna_pinyin.custom.yaml</code> file does not exist
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">~/.local/share/fcitx5/rime/luna_pinyin.custom.yaml</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">patch:
+    "speller/algebra":
+        - derive/^([zcs])h/$1/ #zh,ch,sh-&gt;z,c,s
+        - derive/^([zcs])([^h])/$1h$2/ #z,c,s-&gt;zh,ch,sh
+        - derive/^n/l #n-&gt;l
+        - derive/^l/n #l-&gt;n
+        - derive/([ei])n$/$1ng/  # en -&gt; eng, in -&gt; ing
+        - derive/([ei])ng$/$1n/ # eng-&gt;en, ing -&gt; in
+        - abbrev/^([a-z]).+$/$1/ #Jianpin support
+        - abbrev/^([zcs]h).+$/$1/ #fuzzy sounds support for Jianpin
+        delimiter: " '" #delimiter
+</pre>
+<p>If the file exists, paste the part below <code>patch:</code> to the end of the file (there is only one <code>patch:</code> in <code>luna_pinyin.custom.yaml</code>)
+</p>
+<h4><span class="mw-headline" id="Special_symbols">Special symbols</span></h4>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> Fcitx5 has built-in support for special symbols. See <a href="#Input_special_characters">#Input special characters</a>
+</div>
+<p>Import the <code>symbols.dict.yaml</code> words library in the <a rel="nofollow" class="external text" href="https://github.com/yangshann/rime-dict">rime-dict</a> project to input Greek letters, some mathematical symbols and Emoji expressions in Pinyin.
+</p>
+<p>Example:
+</p>
+<ul><li>Greek letters: input <code>alpha</code> to output <code>α</code>
+</li></ul>
+<ul><li>Mathematical symbols: input <code>jifen</code> to output <code>∫</code>
+</li></ul>
+<ul><li>Special symbols: Input <code>cha</code> to output <code>✕,✖</code>
+</li></ul>
+<ul><li>Serial number: input <code>qi</code> to output <code>Ⅶ,⑦</code>
+</li></ul>
+<ul><li>Emoji expression: Input <code>haha</code> to output <code>😃,😆</code>
+</li></ul>
+<h4><span class="mw-headline" id="Load_librime-lua_plugin">Load librime-lua plugin</span></h4>
+<p>If you want to load the librime-lua plugin, you must add the <code>lua</code> module in the Rime input method settings of the fcitx configuration tool.
+</p>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface">
+<div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="../en/Category:Input_methods.html" title="Category:Input methods">Input methods</a></li></ul>
+</div>
+<div id="mw-hidden-catlinks" class="mw-hidden-catlinks mw-hidden-cats-hidden">Hidden categories: <ul>
+<li><a href="../en/Category:Pages_or_sections_flagged_with_Template:Merge.html" title="Category:Pages or sections flagged with Template:Merge">Pages or sections flagged with Template:Merge</a></li>
+<li><a href="../en/Category:Pages_or_sections_flagged_with_Template:Style.html" title="Category:Pages or sections flagged with Template:Style">Pages or sections flagged with Template:Style</a></li>
+</ul>
+</div>
+</div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=Fcitx5&amp;oldid=786201">https://wiki.archlinux.org/index.php?title=Fcitx5&amp;oldid=786201</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 25 August 2023, at 18:52.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>Full system backup with tar - ArchWiki</title>
+<link rel="stylesheet" href="../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Full_system_backup_with_tar rootpage-Full_system_backup_with_tar skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Boot_with_LiveCD" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Boot_with_LiveCD">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Boot with LiveCD</div>
+			</a>
+			
+			<ul id="toc-Boot_with_LiveCD-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Changing_root" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Changing_root">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Changing root</div>
+			</a>
+			
+			<ul id="toc-Changing_root-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Mount_other_partitions" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Mount_other_partitions">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>Mount other partitions</div>
+			</a>
+			
+			<ul id="toc-Mount_other_partitions-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Exclude_file" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Exclude_file">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4</span>Exclude file</div>
+			</a>
+			
+			<ul id="toc-Exclude_file-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Backup_script" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Backup_script">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5</span>Backup script</div>
+			</a>
+			
+			<ul id="toc-Backup_script-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Restoring" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Restoring">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6</span>Restoring</div>
+			</a>
+			
+			<ul id="toc-Restoring-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Backup_with_parallel_compression" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Backup_with_parallel_compression">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">7</span>Backup with parallel compression</div>
+			</a>
+			
+			<ul id="toc-Backup_with_parallel_compression-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../en/Full_system_backup_with_tar.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="mw-list-item"><a href="../en/Talk:Full_system_backup_with_tar.html" rel="discussion" title="Discussion about the content page [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">English</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../en/Full_system_backup_with_tar.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=Full_system_backup_with_tar&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=Full_system_backup_with_tar&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../en/Full_system_backup_with_tar.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Full_system_backup_with_tar&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Full_system_backup_with_tar&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output">
+<div class="archwiki-template-meta-related-articles-start">
+<p class="mw-no-invert">Related articles</p>
+<ul>
+<li><a href="../en/System_backup.html" title="System backup">System backup</a></li>
+<li><a href="../en/Full_system_backup_with_SquashFS.html" title="Full system backup with SquashFS">Full system backup with SquashFS</a></li>
+</ul>
+</div>
+<div class="noprint archwiki-template-message">
+<p><a href="../File:Tango-edit-clear.png" class="image"><img alt="Tango-edit-clear.png" src="../File:Tango-edit-clear.png" decoding="async" width="48" height="48"></a><b>This article or section needs language, wiki syntax or style improvements. See <a href="../en/Help:Style.html" title="Help:Style">Help:Style</a> for reference.</b><a href="../File:Tango-edit-clear.png" class="image"><img alt="Tango-edit-clear.png" src="../File:Tango-edit-clear.png" decoding="async" width="48" height="48"></a></p>
+<div>
+<b>Reason:</b> Uses a half-baked script instead of explaining basic options and referring to the manual, duplication with articles such as <a href="../en/Help:Reading.html" title="Help:Reading">Help:Reading</a>, numerous <a href="../en/Help:Style.html" title="Help:Style">Help:Style</a> issues (Discuss in <a rel="nofollow" class="external text" href="https://wiki.archlinux.org/title/Talk:Full_system_backup_with_tar">Talk:Full system backup with tar</a>)</div>
+</div>
+<p>This article will show you how to do a full system backup with <a href="../en/Archiving_and_compression.html" class="mw-redirect" title="Tar">tar</a>.
+</p>
+<p>Backing up with tar has the advantages of using compression that can help save disk space, and simplicity.  The process only requires several steps, they are:
+</p>
+<ol>
+<li>Boot from a LiveCD</li>
+<li>Change root to the Linux install</li>
+<li>Mount additional (if any) partitions/drives</li>
+<li>Add exclusions</li>
+<li>Use the backup script to backup</li>
+</ol>
+<p>To minimize downtime the backup can alternatively be performed on a running system using <a href="../en/LVM.html#Snapshots" title="LVM">LVM snapshots</a>,
+if all filesystems reside on LVM volumes.
+</p>
+<mw:tocplace></mw:tocplace>
+<h2><span class="mw-headline" id="Boot_with_LiveCD">Boot with LiveCD</span></h2>
+<p>Many Linux bootable CDs, USBs... have the ability to let you change root to your install.  While changing root is not necessary to do a backup, it provides the ability to just run the script without need to transfer it to a temporary drive or having to locate it on the filesystem.  The Live medium must be of the same architecture that your Linux install currently is (i.e. i686 or x86_64).
+</p>
+<h2><span class="mw-headline" id="Changing_root">Changing root</span></h2>
+<p>First you should have a scripting environment set up on your current Linux install.  If you do not know what that is, it means that you are able to execute any scripts that you may have as if they are regular programs.  If you do not, see this <a rel="nofollow" class="external text" href="https://linuxtidbits.wordpress.com/2009/12/03/setting-up-a-scripting-environment/">article</a> on how to do that.  What you will need to do next is change root, to learn more about what changing root is, read <a href="../en/Chroot.html" class="mw-redirect" title="Change root">this</a>.  When you change root, you do not need to mount any temporary file systems (<code>/proc</code>, <code>/sys</code>, and <code>/dev</code>).  These temporary file systems get populated on boot and you actually do not want to backup them up because they can interfere with the normal (and necessary) population process which can change on any upgrade.  To change root, you will need to mount your current Linux installs root partition.  For example:
+</p>
+<pre># mkdir /mnt/arch
+# mount /dev/<i>your-partition-or-drive</i>
+</pre>
+<p>Use <code>fdisk -l</code> to discover you partitions and drives.  Now <a href="../en/Chroot.html" title="Chroot">chroot</a>:
+</p>
+<pre># cd /mnt/arch
+# chroot . /bin/bash
+</pre>
+<div class="archwiki-template-box archwiki-template-box-warning">
+<strong>Warning:</strong> Do not use <code>arch-chroot</code> to chroot into the target system - the backup process will fail as it will try to back up temporary file systems, all system memory and other interesting things. Use plain <code>chroot</code> instead.</div>
+<p>This example obviously uses bash but you can use other shells if available.  Now you will be in your scripted environment (this is provided that you have your <code>~/.bashrc</code> sourced on entry):
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">~/.bash_profile</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;"># If using bash, source the local .bashrc
+source ~/.bashrc
+</pre>
+<h2><span class="mw-headline" id="Mount_other_partitions">Mount other partitions</span></h2>
+<p>Other partitions that you use (if any) will need to be mounted in their proper places (e.g. if you have a separate <code>/home</code> partition).
+</p>
+<h2><span class="mw-headline" id="Exclude_file">Exclude file</span></h2>
+<p><i>tar</i> has the ability to ignore specified files and directories.  The syntax is one definition per line. <i>tar</i> also has the capability to understand regular expressions (regexps).  For example:
+</p>
+<pre># Not old backups                                                               
+/opt/backup/arch-full*                                                                   
+                                                                                
+# Not temporary files                                                           
+/tmp/*
+
+# Not the cache for pacman
+/var/cache/pacman/pkg/
+...
+</pre>
+<h2><span class="mw-headline" id="Backup_script">Backup script</span></h2>
+<p>Backing up with <code>bsdtar</code> is straight-forward process.  Here is a basic script that can do it and provides a couple checks.  You will need to modify this script to define your backup location, and exclude file (if you have one), and then just run this command after you have <code>chroot</code>ed and mounted all your partitions. Note that <a rel="nofollow" class="external text" href="https://bbs.archlinux.org/viewtopic.php?id=146269">GNU tar with <code>--xattrs</code> will not preserve extended attributes</a>.
+</p>
+<pre>#!/bin/bash
+# full system backup
+
+# Backup destination
+backdest=/opt/backup
+
+# Labels for backup name
+#PC=${HOSTNAME}
+pc=pavilion
+distro=arch
+type=full
+date=$(date "+%F")
+backupfile="$backdest/$distro-$type-$date.tar.gz"
+
+# Exclude file location
+prog=${0##*/} # Program name from filename
+excdir="/home/&lt;user&gt;/.bin/root/backup"
+exclude_file="$excdir/$prog-exc.txt"
+
+# Check if chrooted prompt.
+echo -n "First chroot from a LiveCD.  Are you ready to backup? (y/n): "
+read executeback
+
+# Check if exclude file exists
+if [ ! -f $exclude_file ]; then
+  echo -n "No exclude file exists, continue? (y/n): "
+  read continue
+  if [ $continue == "n" ]; then exit; fi
+fi
+
+if [ $executeback = "y" ]; then
+  # -p, --acls and --xattrs store all permissions, ACLs and extended attributes. 
+  # Without both of these, many programs will stop working!
+  # It is safe to remove the verbose (-v) flag. If you are using a 
+  # slow terminal, this can greatly speed up the backup process.
+  # Use bsdtar because GNU tar will not preserve extended attributes.
+  bsdtar --exclude-from=$exclude_file --acls --xattrs -cpvzf $backupfile /
+fi</pre>
+<h2><span class="mw-headline" id="Restoring">Restoring</span></h2>
+<p>To restore from a previous backup, mount all relevant partitions, change the current working directory to the root directory, and execute
+</p>
+<pre>$ bsdtar --acls --xattrs -xpzf <i>backupfile</i>
+</pre>
+<p>replacing <i>backupfile</i> with the backup archive. Removing all files that had been added since the backup was made must be done manually. Recreating the filesystem(s) is an easy way to do this.
+</p>
+<h2><span class="mw-headline" id="Backup_with_parallel_compression">Backup with parallel compression</span></h2>
+<p>To back up using parallel compression (<a href="https://en.wikipedia.org/wiki/Symmetric_multiprocessing" class="extiw" title="wikipedia:Symmetric multiprocessing">SMP</a>), use <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=pbzip2">pbzip2</a></span> (Parallel bzip2):
+</p>
+<pre># bsdtar -cvf /path/to/chosen/directory/etc-backup.tar.bz2 -I pbzip2 /etc
+</pre>
+<p>Store <code>etc-backup.tar.bz2</code> on one or more offline media, such as a USB stick, external hard drive, or CD-R. Occasionally verify the integrity of the backup process by comparing original files and directories with their backups. Possibly maintain a list of hashes of the backed up files to make the comparison quicker.
+</p>
+<p>Restore corrupted <code>/etc</code> files by extracting the <code>etc-backup.tar.bz2</code> file in a temporary working directory, and copying over individual files and directories as needed. To restore the entire <code>/etc</code> directory with all its contents execute the following command as root:
+</p>
+<pre># bsdtar -xvf etc-backup.tar.bz2 -C /
+</pre>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface">
+<div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="../en/Category:Backup.html" title="Category:Backup">Backup</a></li></ul>
+</div>
+<div id="mw-hidden-catlinks" class="mw-hidden-catlinks mw-hidden-cats-hidden">Hidden category: <ul><li><a href="../en/Category:Pages_or_sections_flagged_with_Template:Style.html" title="Category:Pages or sections flagged with Template:Style">Pages or sections flagged with Template:Style</a></li></ul>
+</div>
+</div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=Full_system_backup_with_tar&amp;oldid=769622">https://wiki.archlinux.org/index.php?title=Full_system_backup_with_tar&amp;oldid=769622</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 28 February 2023, at 06:55.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

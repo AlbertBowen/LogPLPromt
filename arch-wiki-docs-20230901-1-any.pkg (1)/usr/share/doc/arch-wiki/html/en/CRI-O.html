@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>CRI-O - ArchWiki</title>
+<link rel="stylesheet" href="../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-CRI-O rootpage-CRI-O skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Installation" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Installation">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Installation</div>
+			</a>
+			
+			<ul id="toc-Installation-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Configuration" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Configuration">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Configuration</div>
+			</a>
+			
+				<button aria-controls="toc-Configuration-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Configuration subsection
+				</button>
+			
+			<ul id="toc-Configuration-sublist" class="sidebar-toc-list">
+				<li id="toc-Network" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Network">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.1</span>Network</div>
+			</a>
+			
+			<ul id="toc-Network-sublist" class="sidebar-toc-list">
+				<li id="toc-Plugin_Installation" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Plugin_Installation">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.1.1</span>Plugin Installation</div>
+			</a>
+			
+			<ul id="toc-Plugin_Installation-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Plugin_Configuration" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Plugin_Configuration">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.1.2</span>Plugin Configuration</div>
+			</a>
+			
+			<ul id="toc-Plugin_Configuration-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Storage" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Storage">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.2</span>Storage</div>
+			</a>
+			
+			<ul id="toc-Storage-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Running" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Running">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>Running</div>
+			</a>
+			
+			<ul id="toc-Running-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Testing" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Testing">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4</span>Testing</div>
+			</a>
+			
+			<ul id="toc-Testing-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-See_also" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#See_also">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5</span>See also</div>
+			</a>
+			
+			<ul id="toc-See_also-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../en/CRI-O.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="new mw-list-item"><a href="/index.php?title=Talk:CRI-O&amp;action=edit&amp;redlink=1" rel="discussion" title="Discussion about the content page (page does not exist) [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">English</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../en/CRI-O.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=CRI-O&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=CRI-O&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../en/CRI-O.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=CRI-O&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=CRI-O&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output">
+<p>CRI-O is an <a href="https://en.wikipedia.org/wiki/Open_Container_Initiative" class="extiw" title="wikipedia:Open Container Initiative">OCI</a>-based implementation of the <a href="../en/Kubernetes.html" title="Kubernetes">Kubernetes</a> Container Runtime Interface.
+</p>
+<p>As such it is one of the container runtimes that can be used with a node of a Kubernetes cluster.
+</p>
+<mw:tocplace></mw:tocplace>
+<h2><span class="mw-headline" id="Installation">Installation</span></h2>
+<p><a href="../en/Help:Reading.html#Installation_of_packages" class="mw-redirect" title="Install">Install</a> the <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=cri-o">cri-o</a></span> package.
+</p>
+<p>The package will set the system up to load the <code>overlay</code> and <code>br_netfilter</code> modules and set the following <a href="../en/Sysctl.html" title="Sysctl">sysctl</a> options:
+</p>
+<pre> net.bridge.bridge-nf-call-iptables = 1
+ net.bridge.bridge-nf-call-ip6tables = 1
+ net.ipv4.ip_forward = 1
+</pre>
+<p>To use CRI-O without a reboot make sure to <a href="../en/Kernel_module.html#Manual_module_handling" title="Kernel module">load</a> the modules and <a href="../en/Sysctl.html#Configuration" title="Sysctl">configure</a> the sysctl values accordingly.
+</p>
+<h2><span class="mw-headline" id="Configuration">Configuration</span></h2>
+<p>CRI-O is configured via <code>/etc/crio/crio.conf</code> or via drop-in configuration files in <code>/etc/crio/crio.conf.d/</code>.
+</p>
+<h3><span class="mw-headline" id="Network">Network</span></h3>
+<h4><span class="mw-headline" id="Plugin_Installation">Plugin Installation</span></h4>
+<p>CRI-O can make use of container networking as provided by <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=cni-plugins">cni-plugins</a></span>, or plugins installed with in-cluster deployments such as weave, flannel, calico, etc.
+</p>
+<div class="archwiki-template-box archwiki-template-box-warning">
+<strong>Warning:</strong> Arch installs the plugins provided by <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=cni-plugins">cni-plugins</a></span> to both <code>/usr/lib/cni</code> and <code>/opt/cni/bin</code> but most other plugins (e.g. in-cluster deployments, kubelet managed plugins, etc) by default only install to the second directory.  
+<p>CRI-O is only configured to look for plugins in the first directory and as a result, any plugins in the second directory are unavailable without some configuration changes.  
+</p>
+<p>This may present itself as a non-working network and in the CRI-O logs something like the following error will show:
+</p>
+<pre>Error validating CNI config file /etc/cni/net.d/&lt;plugin-config-file&gt;.conf: [failed to find plugin "&lt;plugin&gt;" in path [/usr/lib/cni/]]</pre>
+<p>There are 2 solutions available to resolve this; have each of the other systems changed to use <code>/usr/lib/cni</code> instead or update CRI-O to use the latter directory instead of the first.  
+The second solution can be achieved with a drop-in configuration file in <code>/etc/crio/crio.conf.d/</code>:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">00-plugin-dir.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">[crio.network]
+plugin_dirs = [
+  "/opt/cni/bin/",
+]</pre>
+<p>As this is an array, you can also set both or any other directories here as possible plugin locations.
+</p>
+</div>
+<h4><span class="mw-headline" id="Plugin_Configuration">Plugin Configuration</span></h4>
+<p>Copy one of the examples from <code>/usr/share/doc/cri-o/examples/cni/</code> to <code>/etc/cni/net.d</code> and modify it as needed.
+</p>
+<div class="archwiki-template-box archwiki-template-box-warning">
+<strong>Warning:</strong> The <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=cri-o">cri-o</a></span> package installs the <code>10-crio-bridge.conf</code> and <code>99-loopback.conf</code> examples to <code>/etc/cni/net.d</code> by default (as <code>100-crio-bridge.conf</code> and <code>199-crio-loopback.conf</code> respectively). This may conflict with Kubernetes cluster network fabrics (weave, flannel, calico, etc) and require manual deletion to resolve this (e.g. <a rel="nofollow" class="external text" href="https://github.com/cri-o/cri-o/issues/2411">#2411</a> <a rel="nofollow" class="external text" href="https://github.com/cri-o/cri-o/issues/2885">#2885</a>).</div>
+<h3><span class="mw-headline" id="Storage">Storage</span></h3>
+<p>By default CRI-O makes use of the <code>overlay</code> driver as its <code>storage_driver</code> for the container storage in <code>/var/lib/containers/storage/</code>. However, it can also be configured to use <a href="../en/Btrfs.html" title="Btrfs">btrfs</a> or <a href="../en/ZFS.html" title="ZFS">ZFS</a> natively by changing the <code>driver</code> in <code>/etc/containers/storage.conf</code>:
+</p>
+<pre> sed -i 's/driver = ""/driver = "btrfs"/' /etc/containers/storage.conf
+</pre>
+<h2><span class="mw-headline" id="Running">Running</span></h2>
+<p><a href="../en/Help:Reading.html#Control_of_systemd_units" class="mw-redirect" title="Start">Start</a> and <a href="../en/Help:Reading.html#Control_of_systemd_units" class="mw-redirect" title="Enable">enable</a> the <code>crio.service</code> <a href="../en/Systemd.html" title="Systemd">systemd</a> unit.
+</p>
+<h2><span class="mw-headline" id="Testing">Testing</span></h2>
+<p>Use <code>crio-status</code> like this:
+</p>
+<pre> # crio-status info
+ cgroup driver: systemd
+ storage driver: vfs
+ storage root: /var/lib/containers/storage
+ default GID mappings (format &lt;container&gt;:&lt;host&gt;:&lt;size&gt;):
+   0:0:4294967295
+ default UID mappings (format &lt;container&gt;:&lt;host&gt;:&lt;size&gt;):
+   0:0:4294967295
+</pre>
+<p>and:
+</p>
+<pre> # crio-status config
+ ...
+</pre>
+<p>Now <a href="../en/Help:Reading.html#Installation_of_packages" class="mw-redirect" title="Install">Install</a> the <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=crictl">crictl</a></span> package, and see e.g. <a rel="nofollow" class="external free" href="https://kubernetes.io/docs/tasks/debug-application-cluster/crictl/">https://kubernetes.io/docs/tasks/debug-application-cluster/crictl/</a> or <a rel="nofollow" class="external free" href="https://github.com/kubernetes-sigs/cri-tools/blob/master/docs/crictl.md">https://github.com/kubernetes-sigs/cri-tools/blob/master/docs/crictl.md</a>, or simply:
+</p>
+<pre> source &lt;(crictl completion bash)
+</pre>
+<pre> crictl pull index.docker.io/busybox
+ crictl pull quay.io/prometheus/busybox
+ crictl images
+</pre>
+<pre> curl -O <a rel="nofollow" class="external free" href="https://raw.githubusercontent.com/kubernetes-sigs/cri-tools/master/docs/examples/podsandbox-config.yaml">https://raw.githubusercontent.com/kubernetes-sigs/cri-tools/master/docs/examples/podsandbox-config.yaml</a>
+ curl -O <a rel="nofollow" class="external free" href="https://raw.githubusercontent.com/kubernetes-sigs/cri-tools/master/docs/examples/container-config.yaml">https://raw.githubusercontent.com/kubernetes-sigs/cri-tools/master/docs/examples/container-config.yaml</a>
+ crictl run container-config.yaml podsandbox-config.yaml
+</pre>
+<pre> crictl logs $(crictl ps --last 1 --output yaml | yq -r .containers[0].id)
+ crictl exec -it $(crictl ps --last 1 --output yaml | yq -r .containers[0].id) /bin/sh
+</pre>
+<pre> crictl rm -af
+ crictl rmp -af
+</pre>
+<p>Note how Docker Hub is not hard-coded, so specify container registry explicitly. (See also <a rel="nofollow" class="external free" href="https://github.com/kubernetes-sigs/cri-tools/pull/718">https://github.com/kubernetes-sigs/cri-tools/pull/718</a>.)
+</p>
+<h2><span class="mw-headline" id="See_also">See also</span></h2>
+<ul>
+<li>
+<a rel="nofollow" class="external text" href="https://github.com/cri-o/cri-o">CRI-O on Github</a> - CRI-O repository on Github</li>
+<li>
+<a rel="nofollow" class="external text" href="https://cri-o.io">CRI-O Website</a> - The official CRI-O website</li>
+</ul>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="../en/Category:Virtualization.html" title="Category:Virtualization">Virtualization</a></li></ul>
+</div></div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=CRI-O&amp;oldid=763761">https://wiki.archlinux.org/index.php?title=CRI-O&amp;oldid=763761</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 11 January 2023, at 07:26.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>FAT - ArchWiki</title>
+<link rel="stylesheet" href="../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-FAT rootpage-FAT skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-File_system_creation" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#File_system_creation">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>File system creation</div>
+			</a>
+			
+			<ul id="toc-File_system_creation-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Kernel_configuration" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Kernel_configuration">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Kernel configuration</div>
+			</a>
+			
+			<ul id="toc-Kernel_configuration-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Writing_to_FAT32_as_normal_user" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Writing_to_FAT32_as_normal_user">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>Writing to FAT32 as normal user</div>
+			</a>
+			
+			<ul id="toc-Writing_to_FAT32_as_normal_user-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Detecting_FAT_type" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Detecting_FAT_type">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4</span>Detecting FAT type</div>
+			</a>
+			
+			<ul id="toc-Detecting_FAT_type-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-See_also" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#See_also">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5</span>See also</div>
+			</a>
+			
+			<ul id="toc-See_also-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../en/FAT.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="mw-list-item"><a href="../en/Talk:FAT.html" rel="discussion" title="Discussion about the content page [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">English</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../en/FAT.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=FAT&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=FAT&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../en/FAT.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=FAT&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=FAT&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output">
+<div class="archwiki-template-meta-related-articles-start">
+<p class="mw-no-invert">Related articles</p>
+<ul>
+<li><a href="../en/File_systems.html" title="File systems">File systems</a></li>
+</ul>
+</div>
+<div class="noprint archwiki-template-message">
+<p><a href="../File:Tango-view-fullscreen.png" class="image"><img alt="Tango-view-fullscreen.png" src="../File:Tango-view-fullscreen.png" decoding="async" width="48" height="48"></a><b>This article or section needs expansion.</b><a href="../File:Tango-view-fullscreen.png" class="image"><img alt="Tango-view-fullscreen.png" src="../File:Tango-view-fullscreen.png" decoding="async" width="48" height="48"></a></p>
+<div>
+<b>Reason:</b> Needs more information. (Discuss in <a href="../en/Talk:FAT.html#Needed_information" title="Talk:FAT">Talk:FAT#Needed information</a>)</div>
+</div>
+<p>From <a href="https://en.wikipedia.org/wiki/File_Allocation_Table" class="extiw" title="wikipedia:File Allocation Table">Wikipedia:File Allocation Table</a>:
+</p>
+<dl><dd>File Allocation Table (FAT) is a computer file system architecture and a family of industry-standard file systems utilizing it. The FAT file system is a legacy file system which is simple and robust. It offers good performance even in light-weight implementations, but cannot deliver the same performance, reliability and scalability as some modern file systems. It is, however, supported for compatibility reasons by nearly all currently developed operating systems for personal computers and many mobile devices and embedded systems, and thus is a well-suited format for data exchange between computers and devices of almost any type and age from 1981 up to the present.</dd></dl>
+<mw:tocplace></mw:tocplace>
+<h2><span class="mw-headline" id="File_system_creation">File system creation</span></h2>
+<p>To create a FAT filesystem, <a href="../en/Help:Reading.html#Installation_of_packages" class="mw-redirect" title="Install">install</a> <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=dosfstools">dosfstools</a></span>.
+</p>
+<p><code>mkfs.fat</code> supports creating FAT12, FAT16 and FAT32, see <a href="https://en.wikipedia.org/wiki/File_Allocation_Table#Types" class="extiw" title="wikipedia:File Allocation Table">Wikipedia:File Allocation Table#Types</a> for an explanation on their differences. <code>mkfs.fat</code> will select the FAT type based on the partition size, to explicitly create a certain type of FAT filesystem use the <code>-F</code> option. See <span class="plainlinks archwiki-template-man" title="$ man 8 mkfs.fat"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/mkfs.fat.8">mkfs.fat(8)</a></span> for more information.
+</p>
+<div class="archwiki-template-box archwiki-template-box-tip">
+<strong>Tip:</strong> For most situations you will want to use FAT32. To ensure the partition can be formatted to FAT32, it should be at least 36 MiB on drives with 512 byte logical sector size and 260 MiB on <a href="../en/Advanced_Format.html" title="Advanced Format">drives with 4096 logical sector size</a>.<a rel="nofollow" class="external autonumber" href="https://superuser.com/a/1717643">[1]</a>
+</div>
+<p>Format a partition to FAT32:
+</p>
+<pre># mkfs.fat -F 32 /dev/<i>partition</i>
+</pre>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> <code>mkfs.vfat</code> and <code>mkfs.msdos</code> are both symlinks to <code>mkfs.fat</code>, they are the same utility.</div>
+<h2><span class="mw-headline" id="Kernel_configuration">Kernel configuration</span></h2>
+<p>Here is an example of the default <i>mount</i> configuration in the kernel:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">$ zgrep -e FAT -e DOS /proc/config.gz | sort -r</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;"># DOS/FAT/NT Filesystems
+CONFIG_FAT_FS=m
+CONFIG_MSDOS_PARTITION=y
+CONFIG_FAT_FS=m
+CONFIG_MSDOS_FS=m
+CONFIG_VFAT_FS=m
+CONFIG_FAT_DEFAULT_CODEPAGE=437
+CONFIG_FAT_DEFAULT_IOCHARSET="iso8859-1"
+CONFIG_NCPFS_SMALLDOS=y</pre>
+<p>A short description of the options:
+</p>
+<ul>
+<li>Language settings: <code>CONFIG_FAT_DEFAULT_CODEPAGE</code>, <code>CONFIG_FAT_DEFAULT_IOCHARSET</code>
+</li>
+<li>All filenames to lower letters on a FAT partitions if enabled: <code>CONFIG_NCPFS_SMALLDOS</code>
+</li>
+<li>Enables support of the FAT file systems: <code>CONFIG_FAT_FS</code>, <code>CONFIG_MSDOS_FS</code>, <code>CONFIG_VFAT_FS</code>
+</li>
+<li>Enables support of a FAT partitioned harddisks on x86 PCs: <code>CONFIG_MSDOS_PARTITION</code>
+</li>
+</ul>
+<p>If the partition type detected by mount is VFAT then it will run the <code>/usr/bin/mount.vfat</code> script.
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/usr/bin/mount.vfat</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">#!/bin/bash
+#mount VFAT with full rw (read-write) permissions for all users
+#/usr/bin/mount -i -t vfat -oumask=0000,iocharset=utf8 "$@"
+#The above is the same as
+mount -i -t vfat -oiocharset=utf8,fmask=0000,dmask=0000 "$@"</pre>
+<h2><span class="mw-headline" id="Writing_to_FAT32_as_normal_user">Writing to FAT32 as normal user</span></h2>
+<p>To write on a FAT32 partition, you must make a few changes to the <a href="../en/Fstab.html" title="Fstab">fstab</a> file.
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/fstab</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">/dev/sd<i>xY</i>    /mnt/some_folder  vfat   <b>user</b>,rw</pre>
+<p>The <code>user</code> option means that any user (even non-root) can mount and unmount the partition <code>/dev/sd<i>xY</i></code>. <code>rw</code> gives read-write access.
+</p>
+<p>For example, if your FAT32 partition is on <code>/dev/sda9</code>, and you wish to mount it to <code>/mnt/fat32</code>, then you would use:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/fstab</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">/dev/sda9    /mnt/fat32        vfat   <b>user</b>,rw</pre>
+<p>Now, any user can mount it with:
+</p>
+<pre>$ mount /mnt/fat32
+</pre>
+<p>And unmount it with:
+</p>
+<pre>$ umount /mnt/fat32
+</pre>
+<p>Note that FAT does not support Linux file permissions. Each file will also appear to be executable. You may want to use the <code>showexec</code> option to only mark Windows executables (com, exe, bat) as executable. See <span class="plainlinks archwiki-template-man" title="$ man 8 mount"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/mount.8">mount(8)</a></span> for more options.
+</p>
+<h2><span class="mw-headline" id="Detecting_FAT_type">Detecting FAT type</span></h2>
+<p>If you need to know which <a href="https://en.wikipedia.org/wiki/File_Allocation_Table#Types" class="extiw" title="wikipedia:File Allocation Table">type of FAT file system</a> a partition uses, use the <i>file</i> command:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;"># file -s /dev/<i>partition</i></pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">/dev/<i>partition</i>: DOS/MBR boot sector, code offset 0x3c+2, OEM-ID "mkfs.fat", sectors/cluster 4, root entries 512, sectors 4096 (volumes &lt;=32 MB), Media descriptor 0xf8, sectors/FAT 3, sectors/track 32, heads 64, serial number 0x5bc09c21, unlabeled, <b>FAT (12 bit)</b></pre>
+<p>Alternatively you can use <i>minfo</i> from the <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=mtools">mtools</a></span> package:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;"># minfo -i /dev/<i>partition</i> ::</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">device information:
+===================
+filename="/dev/<i>partition</i>"
+sectors per track: 32
+heads: 64
+cylinders: 2
+
+media byte: f8
+
+mformat command line: mformat -t 2 -h 64 -s 32 -i "/dev/<i>partition</i>" ::
+
+bootsector information
+======================
+banner:"mkfs.fat"
+sector size: 512 bytes
+cluster size: 4 sectors
+reserved (boot) sectors: 1
+fats: 2
+max available root directory slots: 512
+small size: 4096 sectors
+media descriptor byte: 0xf8
+sectors per fat: 3
+sectors per track: 32
+heads: 64
+hidden sectors: 0
+big size: 0 sectors
+physical drive id: 0x80
+reserved=0x0
+dos4=0x29
+serial number: 5BC09C21
+disk label="NO NAME    "
+disk type="<b>FAT12</b>   "
+</pre>
+<h2><span class="mw-headline" id="See_also">See also</span></h2>
+<ul><li><a rel="nofollow" class="external text" href="https://web.archive.org/web/20190802000917/http://www2.nslu2-linux.org/wiki/pmwiki.php?pagename=HowTo/MountFATFileSystems">MountFATFileSystems</a></li></ul>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface">
+<div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="../en/Category:File_systems.html" title="Category:File systems">File systems</a></li></ul>
+</div>
+<div id="mw-hidden-catlinks" class="mw-hidden-catlinks mw-hidden-cats-hidden">Hidden category: <ul><li><a href="../en/Category:Pages_or_sections_flagged_with_Template:Expansion.html" title="Category:Pages or sections flagged with Template:Expansion">Pages or sections flagged with Template:Expansion</a></li></ul>
+</div>
+</div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=FAT&amp;oldid=783192">https://wiki.archlinux.org/index.php?title=FAT&amp;oldid=783192</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 15 July 2023, at 09:10.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

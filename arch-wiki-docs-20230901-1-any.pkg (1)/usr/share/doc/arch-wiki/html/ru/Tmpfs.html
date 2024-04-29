@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>tmpfs (Русский) - ArchWiki</title>
+<link rel="stylesheet" href="../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Tmpfs_Русский rootpage-Tmpfs_Русский skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Использование" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#%D0%98%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Использование</div>
+			</a>
+			
+			<ul id="toc-Использование-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Примеры" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#%D0%9F%D1%80%D0%B8%D0%BC%D0%B5%D1%80%D1%8B">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Примеры</div>
+			</a>
+			
+			<ul id="toc-Примеры-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Отключить_автоматическое_монтирование" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#%D0%9E%D1%82%D0%BA%D0%BB%D1%8E%D1%87%D0%B8%D1%82%D1%8C_%D0%B0%D0%B2%D1%82%D0%BE%D0%BC%D0%B0%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%B5_%D0%BC%D0%BE%D0%BD%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>Отключить автоматическое монтирование</div>
+			</a>
+			
+			<ul id="toc-Отключить_автоматическое_монтирование-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Решение_проблем" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#%D0%A0%D0%B5%D1%88%D0%B5%D0%BD%D0%B8%D0%B5_%D0%BF%D1%80%D0%BE%D0%B1%D0%BB%D0%B5%D0%BC">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4</span>Решение проблем</div>
+			</a>
+			
+				<button aria-controls="toc-Решение_проблем-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Решение проблем subsection
+				</button>
+			
+			<ul id="toc-Решение_проблем-sublist" class="sidebar-toc-list">
+				<li id="toc-Не_получается_открытие_символьных_ссылок_в_tmpfs_от_root" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#%D0%9D%D0%B5_%D0%BF%D0%BE%D0%BB%D1%83%D1%87%D0%B0%D0%B5%D1%82%D1%81%D1%8F_%D0%BE%D1%82%D0%BA%D1%80%D1%8B%D1%82%D0%B8%D0%B5_%D1%81%D0%B8%D0%BC%D0%B2%D0%BE%D0%BB%D1%8C%D0%BD%D1%8B%D1%85_%D1%81%D1%81%D1%8B%D0%BB%D0%BE%D0%BA_%D0%B2_tmpfs_%D0%BE%D1%82_root">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.1</span>Не получается открытие символьных ссылок в tmpfs от root</div>
+			</a>
+			
+			<ul id="toc-Не_получается_открытие_символьных_ссылок_в_tmpfs_от_root-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Смотрите_также" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#%D0%A1%D0%BC%D0%BE%D1%82%D1%80%D0%B8%D1%82%D0%B5_%D1%82%D0%B0%D0%BA%D0%B6%D0%B5">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5</span>Смотрите также</div>
+			</a>
+			
+			<ul id="toc-Смотрите_также-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../ru/Tmpfs.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="new mw-list-item"><a href="/index.php?title=Talk:Tmpfs_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)&amp;action=edit&amp;redlink=1" rel="discussion" title="Discussion about the content page (page does not exist) [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">русский</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../ru/Tmpfs.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=Tmpfs_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=Tmpfs_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../ru/Tmpfs.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Tmpfs_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Tmpfs_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="ru" dir="ltr">
+<div class="mw-parser-output">
+<p><span>
+</span>
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Состояние перевода:</strong> На этой странице представлен перевод статьи <a href="../en/Tmpfs.html" title="Tmpfs">tmpfs</a>. Дата последней синхронизации: 6 мая 2022. Вы можете <a href="../ru/ArchWiki:Translation_Team.html" title="ArchWiki:Translation Team (Русский)">помочь</a> синхронизировать перевод, если в английской версии произошли <a rel="nofollow" class="external text" href="https://wiki.archlinux.org/index.php?title=Tmpfs&amp;diff=0&amp;oldid=728056">изменения</a>.</div>
+<p><a href="https://en.wikipedia.org/wiki/ru:Tmpfs" class="extiw" title="wikipedia:ru:Tmpfs">tmpfs</a> - это временная файловая система, которая находится в памяти и/или вашем разделе(ах) подкачки, в зависимости от того, насколько вы её заполнили. Монтирование каталогов как TMPFS - это эффективный способ ускорения доступа к своим файлам. Также это полезно, если вам нужно, чтобы содержимое каталогов автоматически удалялось при перезагрузке.
+</p>
+<div class="archwiki-template-box archwiki-template-box-tip">
+<strong>Совет:</strong> Можно создавать временные файлы в каталогах tmpfs при загрузке системы с помощью <a href="../ru/Systemd.html#systemd-tmpfiles_%E2%80%94_%D0%B2%D1%80%D0%B5%D0%BC%D0%B5%D0%BD%D0%BD%D1%8B%D0%B5_%D1%84%D0%B0%D0%B9%D0%BB%D1%8B" title="Systemd (Русский)">systemd-tmpfiles</a>.</div>
+<mw:tocplace></mw:tocplace>
+<h2>
+<span id=".D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5"></span><span class="mw-headline" id="Использование">Использование</span>
+</h2>
+<p>Некоторые каталоги, где обычно используется <span class="plainlinks archwiki-template-man" title="$ man 5 tmpfs"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/tmpfs.5">tmpfs(5)</a></span>: <a rel="nofollow" class="external text" href="https://refspecs.linuxfoundation.org/FHS_3.0/fhs/ch03s18.html">/tmp</a>, <a rel="nofollow" class="external text" href="https://refspecs.linuxfoundation.org/FHS_3.0/fhs/ch05s09.html">/var/lock</a> и <a rel="nofollow" class="external text" href="https://refspecs.linuxfoundation.org/FHS_3.0/fhs/ch05s13.html">/var/run</a>. <b>Не</b> используйте его на <a rel="nofollow" class="external text" href="https://refspecs.linuxfoundation.org/FHS_3.0/fhs/ch05s15.html">/var/tmp</a>, так как этот каталог предназначен для временных файлов, которые сохраняются после перезагрузки.
+</p>
+<p>Arch использует tmpfs в каталоге <code>/run</code>, с симлинками для совместимости <code>/var/run</code> и <code>/var/lock</code>. Он также используется для <code>/tmp</code> в настройках по умолчанию systemd и не требует записи в <a href="../ru/Fstab.html" title="Fstab (Русский)">fstab</a>, если не требуется конкрентная настройка.
+</p>
+<p><span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=glibc">glibc</a></span> 2.2 и выше ожидает что <code>/dev/shm</code> будет смонтирован tmpfs для
+<a href="https://en.wikipedia.org/wiki/ru:%D0%A0%D0%B0%D0%B7%D0%B4%D0%B5%D0%BB%D1%8F%D0%B5%D0%BC%D0%B0%D1%8F_%D0%BF%D0%B0%D0%BC%D1%8F%D1%82%D1%8C#.D0.92_UNIX-.D0.BF.D0.BE.D0.B4.D0.BE.D0.B1.D0.BD.D1.8B.D1.85_.D0.BE.D0.BF.D0.B5.D1.80.D0.B0.D1.86.D0.B8.D0.BE.D0.BD.D0.BD.D1.8B.D1.85_.D1.81.D0.B8.D1.81.D1.82.D0.B5.D0.BC.D0.B0.D1.85" class="extiw" title="wikipedia:ru:Разделяемая память">POSIX разделяемой памяти</a>. Монтирование <code>/dev/shm</code> в tmpfs выполняется автоматически <a href="../ru/Systemd.html" title="Systemd (Русский)">systemd</a>, поэтому ручная настройка в <a href="../ru/Fstab.html" title="Fstab (Русский)">fstab</a> больше не требуется.
+</p>
+<p>Как правило, задачи и программы, которые выполняют частые операции чтения/записи, могут выиграть от использования каталога tmpfs. Некоторые приложения могут даже получить существенную выгоду при переносе некоторых (или всех) их данных на общую память. Например, <a href="../ru/Firefox/Profile_on_RAM.html" title="Firefox (Русский)/Profile on RAM (Русский)">перемещение профиля Firefox в оперативную память</a> показывает значительное улучшение производительности.
+</p>
+<h2>
+<span id=".D0.9F.D1.80.D0.B8.D0.BC.D0.B5.D1.80.D1.8B"></span><span class="mw-headline" id="Примеры">Примеры</span>
+</h2>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Примечание:</strong> Фактическое потребление памяти/подкачки зависит от того, насколько вы заполните разделы tmpfs, поскольку они не потребляют память до тех пор, пока она действительно не понадобится.</div>
+<p>По умолчанию раздел tmpfs имеет максимальный размер в половину от всей оперативной памяти, но это можно настроить.
+Чтобы точно установить максимальный размер, в данном примере, чтобы переопределить значение по умолчанию для монтирования <code>/tmp</code>, используем опцию монтирования <code>size</code>:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/fstab</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">tmpfs   /tmp         tmpfs   rw,nodev,nosuid,size=2G          0  0</pre>
+<p>Пример с опциями монтирования для большей безопасности:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/fstab</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">tmpfs   /www/cache    tmpfs  rw,size=1G,nr_inodes=5k,noexec,nodev,nosuid,uid=<i>пользователь</i>,gid=<i>группа</i>,mode=1700 0 0</pre>
+<p>Смотрите <span class="plainlinks archwiki-template-man" title="$ man 5 tmpfs"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/tmpfs.5">tmpfs(5)</a></span> и <a href="../ru/Security.html#%D0%A4%D0%B0%D0%B9%D0%BB%D0%BE%D0%B2%D1%8B%D0%B5_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D1%8B" class="mw-redirect" title="Безопасность">Безопасность#Файловые системы</a> для более подробной информации.
+</p>
+<p>Перезагрузитесь, для того чтобы изменения вступили в силу. Обратите внимание, что может быть заманчивым, выполнить <code>mount -a</code>, чтобы сделанные изменения вступили в силу немедленно, это сделает недоступными какие-либо файлы, которые в настоящее время находятся в этих каталогах (например, особенно проблематично для запуска программ с файлами блокировки). Тем не менее, если все они пусты, она должна быть безопасной для запуска <code>mount -a</code>, вместо перезагрузки (или смонтируйте их в индивидуальном порядке).
+</p>
+<p>После применения изменений, вы можете убедиться в том, что они вступили в силу, посмотрев в <code>/proc/mounts</code> и используя <code>findmnt</code>:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">$ findmnt /tmp</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">TARGET SOURCE FSTYPE OPTIONS
+/tmp   tmpfs  tmpfs  rw,nosuid,nodev,relatime</pre>
+<p>TMPFS также может быть временно изменен, без необходимости в перезагрузке, например, когда в ближайшее время необходимо выполнить большую работу компиляции. В этом случае вы можете запустить:
+</p>
+<pre># mount -o remount,size=4G /tmp
+</pre>
+<h2>
+<span id=".D0.9E.D1.82.D0.BA.D0.BB.D1.8E.D1.87.D0.B8.D1.82.D1.8C_.D0.B0.D0.B2.D1.82.D0.BE.D0.BC.D0.B0.D1.82.D0.B8.D1.87.D0.B5.D1.81.D0.BA.D0.BE.D0.B5_.D0.BC.D0.BE.D0.BD.D1.82.D0.B8.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5"></span><span class="mw-headline" id="Отключить_автоматическое_монтирование">Отключить автоматическое монтирование</span>
+</h2>
+<p><a href="../ru/Systemd.html" title="Systemd (Русский)">systemd</a> автоматически монтирует <code>/tmp</code> как tmpfs, даже если нет записи в <code>/etc/fstab</code>.
+Для отключения автоматического монтирования <a href="../ru/Systemd.html#%D0%98%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5_%D1%8E%D0%BD%D0%B8%D1%82%D0%BE%D0%B2" class="mw-redirect" title="Замаскируйте">замаскируйте</a> юнит <code>tmp.mount</code>.
+</p>
+<p>После этого файлы в <code>/tmp</code> станут храниться не в памяти, а на блочном устройстве.
+Содержимое <code>/tmp</code> теперь будет сохраняться между перезагрузками, что может быть нежелательно.
+Чтобы вернуть прежнее поведение и очищать каталог <code>/tmp</code> автоматически при перезагрузке, можно использовать <span class="plainlinks archwiki-template-man" title="$ man 5 tmpfiles.d"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/tmpfiles.d.5">tmpfiles.d(5)</a></span>:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/tmpfiles.d/tmp.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;"># смотрите tmpfiles.d(5)
+# очистка каталога /tmp всегда включена
+D! /tmp 1777 root root 0
+
+# удалить файлы в каталоге /var/tmp старше 10 дней
+D /var/tmp 1777 root root 10d
+
+# namespace mountpoints (PrivateTmp=yes) are excluded from removal
+x /tmp/systemd-private-*
+x /var/tmp/systemd-private-*
+X /tmp/systemd-private-*/tmp
+X /var/tmp/systemd-private-*/tmp</pre>
+<h2>
+<span id=".D0.A0.D0.B5.D1.88.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BF.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC"></span><span class="mw-headline" id="Решение_проблем">Решение проблем</span>
+</h2>
+<h3>
+<span id=".D0.9D.D0.B5_.D0.BF.D0.BE.D0.BB.D1.83.D1.87.D0.B0.D0.B5.D1.82.D1.81.D1.8F_.D0.BE.D1.82.D0.BA.D1.80.D1.8B.D1.82.D0.B8.D0.B5_.D1.81.D0.B8.D0.BC.D0.B2.D0.BE.D0.BB.D1.8C.D0.BD.D1.8B.D1.85_.D1.81.D1.81.D1.8B.D0.BB.D0.BE.D0.BA_.D0.B2_tmpfs_.D0.BE.D1.82_root"></span><span class="mw-headline" id="Не_получается_открытие_символьных_ссылок_в_tmpfs_от_root">Не получается открытие символьных ссылок в tmpfs от root</span>
+</h3>
+<p>Предполагая, что <code>/tmp</code> использует tmpfs, измените текущий каталог на <code>/tmp</code>, а затем создайте файл и создайте символическую ссылку на этот файл в том же каталоге <code>/tmp</code>. При попытке прочитать файл по символической ссылке иногда может возникать ошибка «Отказано в доступе». Это ожидаемое поведение, так как <code>/tmp</code> <a rel="nofollow" class="external text" href="https://wiki.ubuntu.com/Security/Features#Symlink_restrictions">имеет установленный sticky bit</a>.
+</p>
+<p>Поведение можно настроить через <code>/proc/sys/fs/protected_symlinks</code> или просто с помощью sysctl: <code>sysctl -w fs.protected_symlinks=0</code>. Чтобы сделать изменение постоянным, смотрите <a href="../ru/Sysctl.html#%D0%9D%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0" title="Sysctl (Русский)">sysctl (Русский)#Настройка</a>.
+</p>
+<div class="archwiki-template-box archwiki-template-box-warning">
+<strong>Важно:</strong> Изменение этого поведения может привести к проблемам безопасности! Отключите это, только если вы знаете что делаете.</div>
+<h2>
+<span id=".D0.A1.D0.BC.D0.BE.D1.82.D1.80.D0.B8.D1.82.D0.B5_.D1.82.D0.B0.D0.BA.D0.B6.D0.B5"></span><span class="mw-headline" id="Смотрите_также">Смотрите также</span>
+</h2>
+<ul><li><a rel="nofollow" class="external text" href="https://docs.kernel.org/filesystems/tmpfs.html">Linux kernel documentation</a></li></ul>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="../ru/Category:File_systems.html" title="Category:File systems (Русский)">File systems (Русский)</a></li></ul>
+</div></div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=Tmpfs_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)&amp;oldid=773008">https://wiki.archlinux.org/index.php?title=Tmpfs_(Русский)&amp;oldid=773008</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 17 March 2023, at 08:31.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

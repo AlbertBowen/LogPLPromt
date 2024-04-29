@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>Plex - ArchWiki</title>
+<link rel="stylesheet" href="../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Plex rootpage-Plex skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Plex_Media_Server_(PMS)" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#Plex_Media_Server_(PMS)">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Plex Media Server (PMS)</div>
+			</a>
+			
+				<button aria-controls="toc-Plex_Media_Server_(PMS)-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Plex Media Server (PMS) subsection
+				</button>
+			
+			<ul id="toc-Plex_Media_Server_(PMS)-sublist" class="sidebar-toc-list">
+				<li id="toc-Installation" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Installation">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.1</span>Installation</div>
+			</a>
+			
+			<ul id="toc-Installation-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Configuration" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Configuration">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.2</span>Configuration</div>
+			</a>
+			
+			<ul id="toc-Configuration-sublist" class="sidebar-toc-list">
+				<li id="toc-Custom_domain" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Custom_domain">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.2.1</span>Custom domain</div>
+			</a>
+			
+			<ul id="toc-Custom_domain-sublist" class="sidebar-toc-list">
+				<li id="toc-Nginx_reverse_proxy" class="sidebar-toc-list-item sidebar-toc-level-4">
+			<a class="sidebar-toc-link" href="#Nginx_reverse_proxy">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.2.1.1</span>Nginx reverse proxy</div>
+			</a>
+			
+			<ul id="toc-Nginx_reverse_proxy-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Plugins" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Plugins">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.3</span>Plugins</div>
+			</a>
+			
+			<ul id="toc-Plugins-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Plex_Live_TV_and_DVR" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Plex_Live_TV_and_DVR">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.4</span>Plex Live TV and DVR</div>
+			</a>
+			
+			<ul id="toc-Plex_Live_TV_and_DVR-sublist" class="sidebar-toc-list">
+				<li id="toc-Hauppauge" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Hauppauge">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.4.1</span>Hauppauge</div>
+			</a>
+			
+			<ul id="toc-Hauppauge-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Security" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Security">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.5</span>Security</div>
+			</a>
+			
+			<ul id="toc-Security-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Resource_management" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Resource_management">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.6</span>Resource management</div>
+			</a>
+			
+			<ul id="toc-Resource_management-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Network" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Network">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.7</span>Network</div>
+			</a>
+			
+			<ul id="toc-Network-sublist" class="sidebar-toc-list">
+				<li id="toc-UFW_Rule" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#UFW_Rule">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.7.1</span>UFW Rule</div>
+			</a>
+			
+			<ul id="toc-UFW_Rule-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Library_Updates" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Library_Updates">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.8</span>Library Updates</div>
+			</a>
+			
+			<ul id="toc-Library_Updates-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Troubleshooting" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Troubleshooting">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.9</span>Troubleshooting</div>
+			</a>
+			
+			<ul id="toc-Troubleshooting-sublist" class="sidebar-toc-list">
+				<li id="toc-Plex's_WebUI_returns_404" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Plex's_WebUI_returns_404">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.9.1</span>Plex's WebUI returns 404</div>
+			</a>
+			
+			<ul id="toc-Plex's_WebUI_returns_404-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Plex_Home_Theater_(PHT)" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#Plex_Home_Theater_(PHT)">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Plex Home Theater (PHT)</div>
+			</a>
+			
+				<button aria-controls="toc-Plex_Home_Theater_(PHT)-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Plex Home Theater (PHT) subsection
+				</button>
+			
+			<ul id="toc-Plex_Home_Theater_(PHT)-sublist" class="sidebar-toc-list">
+				<li id="toc-Installation_2" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Installation_2">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.1</span>Installation</div>
+			</a>
+			
+			<ul id="toc-Installation_2-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Plex_Media_Player_(PMP)" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#Plex_Media_Player_(PMP)">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>Plex Media Player (PMP)</div>
+			</a>
+			
+				<button aria-controls="toc-Plex_Media_Player_(PMP)-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Plex Media Player (PMP) subsection
+				</button>
+			
+			<ul id="toc-Plex_Media_Player_(PMP)-sublist" class="sidebar-toc-list">
+				<li id="toc-Installation_3" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Installation_3">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.1</span>Installation</div>
+			</a>
+			
+			<ul id="toc-Installation_3-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Kodi_and_PleXBMC" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#Kodi_and_PleXBMC">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4</span>Kodi and PleXBMC</div>
+			</a>
+			
+				<button aria-controls="toc-Kodi_and_PleXBMC-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Kodi and PleXBMC subsection
+				</button>
+			
+			<ul id="toc-Kodi_and_PleXBMC-sublist" class="sidebar-toc-list">
+				<li id="toc-Installation_4" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Installation_4">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.1</span>Installation</div>
+			</a>
+			
+			<ul id="toc-Installation_4-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../en/Plex.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="mw-list-item"><a href="../en/Talk:Plex.html" rel="discussion" title="Discussion about the content page [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">English</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../en/Plex.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=Plex&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=Plex&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../en/Plex.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Plex&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Plex&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output">
+<p><a rel="nofollow" class="external text" href="https://www.plex.tv/">Plex</a> is a media player system and software suite consisting of many player applications for <a href="https://en.wikipedia.org/wiki/10-foot_user_interface" class="extiw" title="wikipedia:10-foot user interface">10-foot user interfaces</a> and an associated media server that organizes personal media stored on local devices. Integrated Plex Channels provide users with access to a growing number of online content providers such as YouTube, Vimeo, TEDTalks, and CNN among others. Plex also provides integration for cloud services including Dropbox, Box, Google Drive, or Copy.
+</p>
+<p>Plex for Linux is split into a closed-source server Plex Media Server, and an open-source client Plex Home Theater, a fork of the popular <a href="../en/Kodi.html" title="Kodi">Kodi</a> project.
+</p>
+<mw:tocplace></mw:tocplace>
+<h2>
+<span id="Plex_Media_Server_.28PMS.29"></span><span class="mw-headline" id="Plex_Media_Server_(PMS)">Plex Media Server (PMS)</span>
+</h2>
+<h3><span class="mw-headline" id="Installation">Installation</span></h3>
+<p>Install <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/plex-media-server/">plex-media-server</a></span><sup><small>AUR</small></sup> (stable update channel) or <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/plex-media-server-plexpass/">plex-media-server-plexpass</a></span><sup><small>AUR</small></sup> (beta update channel). The latter is only available to Plex Pass subscribers and can provide early access to improvements and/or new functionalities, but also early access to potential bugs. Even though the beta update channel is typically quite stable, it is recommended to install the stable release unless you require specific early access content (<a rel="nofollow" class="external text" href="https://forums.plex.tv/t/plex-media-server/30447/430">release notes</a>).
+</p>
+<h3><span class="mw-headline" id="Configuration">Configuration</span></h3>
+<p><a href="../en/Help:Reading.html#Control_of_systemd_units" class="mw-redirect" title="Start/enable">Start/enable</a> the <code>plexmediaserver.service</code> systemd unit.
+</p>
+<p>To begin configuring the Plex Media Server, browse to <a rel="nofollow" class="external free" href="http://localhost:32400/web/">http://localhost:32400/web/</a>.
+</p>
+<p>To configure Plex Media Server remotely, you can first create an SSH tunnel (setup can only be done from <code>localhost</code>)
+</p>
+<pre>$ ssh ip.address.of.server -L 8888:localhost:32400</pre>
+<p>and then browse to <code><a rel="nofollow" class="external free" href="http://localhost:8888/web/">http://localhost:8888/web/</a></code>.
+</p>
+<p>or if you are running apache, with a reverse proxy, by adding this configuration in httpd-vhosts.conf
+</p>
+<pre> &lt;VirtualHost *:80&gt;
+   ServerName ip.address.of.server
+   ProxyPass        / <a rel="nofollow" class="external free" href="http://localhost:32400/">http://localhost:32400/</a>
+   ProxyPassReverse / <a rel="nofollow" class="external free" href="http://localhost:32400/">http://localhost:32400/</a>
+ &lt;/VirtualHost&gt;
+</pre>
+<h4><span class="mw-headline" id="Custom_domain">Custom domain</span></h4>
+<h5><span class="mw-headline" id="Nginx_reverse_proxy">Nginx reverse proxy</span></h5>
+<p>Below an example server configuration is given for a reverse proxy using Nginx, including certificate configuration.
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/nginx/sites-available/domain.com.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">server {
+    listen                  443 ssl http2;
+    listen                  [::]:443 ssl http2;
+    server_name             media.domain.com;
+
+    # SSL
+    ssl_certificate         /etc/letsencrypt/live/media.domain.com/fullchain.pem;
+    ssl_certificate_key     /etc/letsencrypt/live/media.domain.com/privkey.pem;
+    ssl_trusted_certificate /etc/letsencrypt/live/media.domain.com/chain.pem;
+
+    # logging
+    access_log              /var/log/nginx/media.domain.com.access.log;
+    error_log               /var/log/nginx/media.domain.com.error.log warn;
+
+    # reverse proxy
+    location / {
+        proxy_pass https://localhost:32400;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+}
+
+# HTTP redirect
+server {
+    listen      80;
+    listen      [::]:80;
+    server_name media.domain.com;
+    include     nginxconfig.io/letsencrypt.conf;
+
+    location / {
+        return 301 https://media.domain.com$request_uri;
+    }
+}
+</pre>
+<h3><span class="mw-headline" id="Plugins">Plugins</span></h3>
+<p>PMS can be expanded with additional plugins. For example, PMS can be used as an IPTV client with the <a rel="nofollow" class="external text" href="https://github.com/Cigaras/IPTV.bundle">IPTV plugin</a>.
+</p>
+<p>Plugins can be installed inside <code>/var/lib/plex/Plex Media Server/Plug-ins</code>.
+</p>
+<h3><span class="mw-headline" id="Plex_Live_TV_and_DVR">Plex Live TV and DVR</span></h3>
+<p>Plex live TV requires a plexpass.
+</p>
+<p>To enable live TV viewing and DVR support with plex, you must have one of the supported tuners listed on the <a rel="nofollow" class="external text" href="https://support.plex.tv/hc/en-us/articles/225877427-Supported-DVR-Tuners-and-Antennas">support page</a>. PMS will automatically recognize any connected tuners.
+</p>
+<p>The plex user needs to be part of the video group in order to access local tuners. This can be done by running <code>usermod -a -G video plex</code>
+</p>
+<p>To enable IPTV support via m3u playlist install <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/xTeVe/">xTeVe</a></span><sup><small>AUR</small></sup>.
+</p>
+<h4><span class="mw-headline" id="Hauppauge">Hauppauge</span></h4>
+<p>The drivers for all Hauppauge tuners have been included in the Linux kernel for some time now (e.g. ~v4.7 for WinTV-DualHD), however the firmware isn’t loaded by default. Look for a kernel message: <code>firmware file ‘dvb-demod-siXXXX-YY.fw’ not found</code> by e.g. starting a tail with <code>dmesg -w</code> and enable/insert the (USB) tuner device. If missing, download the respective <a rel="nofollow" class="external text" href="https://github.com/OpenELEC/dvb-firmware/blob/master/firmware/">firmware file</a> and copy it file to <code>/lib/firmware/</code>.
+</p>
+<h3><span class="mw-headline" id="Security">Security</span></h3>
+<p>It is recommended to store your media files outside of your home directory, as making it accessible to PMS would mean lowering its security. Having a separate <code>/media</code> or <code>/mnt/media</code> partition is a good setup for use with PMS.
+</p>
+<p>You can further increase security via systemd, by <a href="../en/Systemd.html#Editing_provided_units" class="mw-redirect" title="Edit">editing</a> <code>plexmediaserver.service</code> as follows: 
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/systemd/system/plexmediaserver.service.d/restrict.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">[Service]
+ReadOnlyPaths=/
+ReadWritePaths=/var/lib/plex /tmp</pre>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> Those mechanisms are currently limited. For instance, <code>ReadOnlyDirectories</code> do not apply to any submount, you have to list them as well.</div>
+<h3><span class="mw-headline" id="Resource_management">Resource management</span></h3>
+<p>Originally, PMS used ulimit to limit its allocated resources, however this is not compatible with running as a regular user. Instead, you can now set a maximum amount of memory via, again, systemd. For example, you can add:
+</p>
+<pre>MemoryMax=4G
+</pre>
+<p>to the file mentioned above.
+</p>
+<h3><span class="mw-headline" id="Network">Network</span></h3>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> PMS supports both IPv4 and IPv6. This section only assumes the use of IPv4.</div>
+<p>PMS and its DLNA server require several ports to be open:
+</p>
+<ul>
+<li>Plex Media Server: TCP 32400</li>
+<li>Plex DLNA Server: TCP 32469, UDP 1900</li>
+<li>Network Discovery: UDP 32410, 32412, 32413, 32414</li>
+<li>Bonjour/Avahi Network Discovery (legacy): UDP 5353</li>
+</ul>
+<p>A short example with iptables:
+</p>
+<pre># iptables -A INPUT -p tcp -m multiport --dports 32400,32469 -j ACCEPT
+# iptables -A INPUT -p udp -m multiport --dports 1900,32410,32412,32413,32414 -j ACCEPT
+</pre>
+<p>In order to connect to Plex through on a standard http port, this command can be used (for port 8080):
+</p>
+<pre># iptables -t nat -A PREROUTING -p tcp --dport 8080 -j REDIRECT --to-port 32400
+</pre>
+<p>Then you can connect directly to <a rel="nofollow" class="external free" href="http://yourplexaddress:8080">http://yourplexaddress:8080</a> on this port
+</p>
+<h4><span class="mw-headline" id="UFW_Rule">UFW Rule</span></h4>
+<p>If you use <a href="../en/Uncomplicated_Firewall.html" title="Uncomplicated Firewall">UFW</a> and would like to create an App List entry for Plex, create/edit <code>/etc/ufw/applications.d/plexmediaserver</code> and ensure it contains the following content:
+</p>
+<pre>[plexmediaserver]
+title=Plex Media Server (Standard)
+description=The Plex Media Server
+ports=32400/tcp|3005/tcp|5353/udp|8324/tcp|32410:32414/udp
+
+[plexmediaserver-dlna]
+title=Plex Media Server (DLNA)
+description=The Plex Media Server (additional DLNA capability only)
+ports=1900/udp|32469/tcp
+
+[plexmediaserver-all]
+title=Plex Media Server (Standard + DLNA)
+description=The Plex Media Server (with additional DLNA capability)
+ports=32400/tcp|3005/tcp|5353/udp|8324/tcp|32410:32414/udp|1900/udp|32469/tcp</pre>
+<p>Once you have saved the file, reload the UFW application definitions with:
+</p>
+<pre># ufw app update plexmediaserver
+</pre>
+<p>And then finally allow the Plex app with:
+</p>
+<pre># ufw allow plexmediaserver-all
+</pre>
+<h3><span class="mw-headline" id="Library_Updates">Library Updates</span></h3>
+<p>Plex Media Server has a setting "Update my library automatically" which can detect new media files as they are downloaded to your library. But as your library grows, these updates might stop working reliably. To fix, you need to increase the number of files non-root users are allowed to subscribe to via inotify. Create the file <code>/etc/sysctl.d/40-max-user-watches.conf</code>
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/sysctl.d/40-max-user-watches.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">fs.inotify.max_user_watches=524288</pre>
+<p>
+and run </p>
+<pre># sysctl --system</pre>
+<p> to apply without rebooting. Now plex should see any new files.
+</p>
+<h3><span class="mw-headline" id="Troubleshooting">Troubleshooting</span></h3>
+<div class="noprint archwiki-template-message">
+<p><a href="../File:Tango-view-fullscreen.png" class="image"><img alt="Tango-view-fullscreen.png" src="../File:Tango-view-fullscreen.png" decoding="async" width="48" height="48"></a><b>This article or section needs expansion.</b><a href="../File:Tango-view-fullscreen.png" class="image"><img alt="Tango-view-fullscreen.png" src="../File:Tango-view-fullscreen.png" decoding="async" width="48" height="48"></a></p>
+<div>
+<b>Reason:</b> Look if journalctl can be made equivalent with <code>SYSTEMD_LOG_LEVEL=debug</code>, currently appears unreliable, see <a href="../User_talk:Alucryd.html#Plex" title="User talk:Alucryd">User talk:Alucryd#Plex</a> (Discuss in <a rel="nofollow" class="external text" href="https://wiki.archlinux.org/title/Talk:Plex">Talk:Plex</a>)</div>
+</div>
+<p>Logs are located in <code>/var/lib/plex/Plex Media Server/Logs</code>. 
+</p>
+<p>In case there are no logs or they are not helpful, you might want to launch PMS manually to get some terminal output:
+</p>
+<pre>sudo -u plex /usr/bin/bash
+source /etc/conf.d/plexmediaserver
+export LD_LIBRARY_PATH=/usr/lib/plexmediaserver
+/usr/lib/plexmediaserver/Plex\ Media\ Server
+</pre>
+<h4>
+<span id="Plex.27s_WebUI_returns_404"></span><span class="mw-headline" id="Plex's_WebUI_returns_404">Plex's WebUI returns 404</span>
+</h4>
+<p>There may be a situation when updating Plex's WebUI will return <a href="https://en.wikipedia.org/wiki/HTTP_404" class="extiw" title="wikipedia:HTTP 404">404 Not Found</a>. To fix this you just need to <a href="../en/Help:Reading.html#Control_of_systemd_units" class="mw-redirect" title="Restart">restart</a> <code>plexmediaserver.service</code>.
+</p>
+<h2>
+<span id="Plex_Home_Theater_.28PHT.29"></span><span class="mw-headline" id="Plex_Home_Theater_(PHT)">Plex Home Theater (PHT)</span>
+</h2>
+<p>Previously known as Plex Media Center, Plex Home Theater is the software component used for a long time as the front-end media player for Plex's back-end server component Plex Media Server. This component came from a fork of XBMC Media Center software on May 21, 2008.
+</p>
+<p>Official support for Plex Home Theater (from Plex, Inc.) has been discontinued in favour of Plex Media Player (based on MPV). However, Plex Home Theater was forked and has been developed further by the Open Source community under the name <a rel="nofollow" class="external text" href="https://github.com/RasPlex/OpenPHT">OpenPHT</a>
+</p>
+<h3><span class="mw-headline" id="Installation_2">Installation</span></h3>
+<p><a href="../en/Help:Reading.html#Installation_of_packages" class="mw-redirect" title="Install">Install</a> the <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/openpht/">openpht</a></span><sup><small>AUR</small></sup><sup>[<a href="../en/Help:Procedures.html#Fix_broken_package_links" title="Help:Procedures">broken link</a>: package not found]</sup> package.
+</p>
+<p>Plex Home Theater can be launched by running <code>plexhometheater.sh</code>.
+</p>
+<h2>
+<span id="Plex_Media_Player_.28PMP.29"></span><span class="mw-headline" id="Plex_Media_Player_(PMP)">Plex Media Player (PMP)</span>
+</h2>
+<p>Plex Media Player is the current release of Plex's media client. It has officially replaced <a href="#Plex_Home_Theater_(PHT)">#Plex Home Theater (PHT)</a> (which is still receiving bug fixes) and builds upon previous functionality, such as using mpv. Plex has made PMP <a rel="nofollow" class="external text" href="https://www.plex.tv/blog/plex-media-player-now-ambidextrous-free-kodi-said/">available</a> to all users and it has also become compatible with Kodi. Keep in mind, PMP is <a rel="nofollow" class="external text" href="https://forums.plex.tv/t/plex-media-player-open-source-contributions-and-building-faq/119290">not open-source</a> (unlike PHT).
+</p>
+<h3><span class="mw-headline" id="Installation_3">Installation</span></h3>
+<p><a href="../en/Help:Reading.html#Installation_of_packages" class="mw-redirect" title="Install">Install</a> the <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/plex-media-player/">plex-media-player</a></span><sup><small>AUR</small></sup> package.
+</p>
+<h2><span class="mw-headline" id="Kodi_and_PleXBMC">Kodi and PleXBMC</span></h2>
+<p>With the PleXBMC add-on, Kodi can be used as a replacement for PHT.
+</p>
+<h3><span class="mw-headline" id="Installation_4">Installation</span></h3>
+<p>Install the <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=kodi">kodi</a></span> package, then follow the instructions at <a rel="nofollow" class="external free" href="https://kodi.wiki/view/Add-on:PleXBMC">https://kodi.wiki/view/Add-on:PleXBMC</a>.
+</p>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface">
+<div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="../en/Category:Home_theater.html" title="Category:Home theater">Home theater</a></li></ul>
+</div>
+<div id="mw-hidden-catlinks" class="mw-hidden-catlinks mw-hidden-cats-hidden">Hidden categories: <ul>
+<li><a href="../en/Category:Pages_or_sections_flagged_with_Template:Expansion.html" title="Category:Pages or sections flagged with Template:Expansion">Pages or sections flagged with Template:Expansion</a></li>
+<li><a href="../en/Category:Pages_with_broken_package_links.html" title="Category:Pages with broken package links">Pages with broken package links</a></li>
+</ul>
+</div>
+</div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=Plex&amp;oldid=782277">https://wiki.archlinux.org/index.php?title=Plex&amp;oldid=782277</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 1 July 2023, at 06:14.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

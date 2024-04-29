@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>TFTP - ArchWiki</title>
+<link rel="stylesheet" href="../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-TFTP rootpage-TFTP skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Server" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Server">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Server</div>
+			</a>
+			
+				<button aria-controls="toc-Server-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Server subsection
+				</button>
+			
+			<ul id="toc-Server-sublist" class="sidebar-toc-list">
+				<li id="toc-tftp-hpa" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#tftp-hpa">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.1</span>tftp-hpa</div>
+			</a>
+			
+			<ul id="toc-tftp-hpa-sublist" class="sidebar-toc-list">
+				<li id="toc-URL_rewriting" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#URL_rewriting">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.1.1</span>URL rewriting</div>
+			</a>
+			
+			<ul id="toc-URL_rewriting-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Debugging" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Debugging">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.1.2</span>Debugging</div>
+			</a>
+			
+			<ul id="toc-Debugging-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-atftp" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#atftp">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.2</span>atftp</div>
+			</a>
+			
+			<ul id="toc-atftp-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-uftpd" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#uftpd">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.3</span>uftpd</div>
+			</a>
+			
+			<ul id="toc-uftpd-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-dnsmasq" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#dnsmasq">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.4</span>dnsmasq</div>
+			</a>
+			
+			<ul id="toc-dnsmasq-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Client" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Client">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Client</div>
+			</a>
+			
+				<button aria-controls="toc-Client-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Client subsection
+				</button>
+			
+			<ul id="toc-Client-sublist" class="sidebar-toc-list">
+				<li id="toc-tftp-hpa_2" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#tftp-hpa_2">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.1</span>tftp-hpa</div>
+			</a>
+			
+			<ul id="toc-tftp-hpa_2-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-atftp_2" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#atftp_2">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.2</span>atftp</div>
+			</a>
+			
+			<ul id="toc-atftp_2-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-curl" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#curl">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.3</span>curl</div>
+			</a>
+			
+			<ul id="toc-curl-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../en/TFTP.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="mw-list-item"><a href="../en/Talk:TFTP.html" rel="discussion" title="Discussion about the content page [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">English</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../en/TFTP.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=TFTP&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=TFTP&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../en/TFTP.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=TFTP&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=TFTP&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output">
+<p>The <a href="https://en.wikipedia.org/wiki/Trivial_File_Transfer_Protocol" class="extiw" title="wikipedia:Trivial File Transfer Protocol">Trivial File Transfer Protocol</a> (TFTP) provides a minimalistic means for transferring files. It is generally used as a part of <a href="../en/Preboot_Execution_Environment.html" class="mw-redirect" title="PXE">PXE</a> booting or for updating configuration and firmware on devices which have limited memory such as routers, IP phones and printers.
+</p>
+<mw:tocplace></mw:tocplace>
+<h2><span class="mw-headline" id="Server">Server</span></h2>
+<p>There are several TFTP server implementations, some of which are listed below.
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> Make sure not to start different TFTP implementations at the same time. They will  fail with an error <code>got more than one socket</code>, because only one may listen to the default TFTP port <code>69</code>.</div>
+<h3><span class="mw-headline" id="tftp-hpa">tftp-hpa</span></h3>
+<p><a href="../en/Help:Reading.html#Installation_of_packages" class="mw-redirect" title="Install">Install</a> <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=tftp-hpa">tftp-hpa</a></span> and then <a href="../en/Help:Reading.html#Control_of_systemd_units" class="mw-redirect" title="Start">start</a> <code>tftpd.service</code>.
+</p>
+<p>To modify service parameters edit <code>/etc/conf.d/tftpd</code>.
+</p>
+<h4><span class="mw-headline" id="URL_rewriting">URL rewriting</span></h4>
+<p>This server includes a useful URL rewriting feature via the <code>--map-file</code> option (<code>--mapfile</code> in some versions). It allows requests to be altered via regular expressions so the files on the server do not have to match the view the client sees, and different files can be returned to different clients even if they request the same file.
+</p>
+<p>Configure a map by adding <code>--map-file /etc/tftpd.map</code> to <code>/etc/conf.d/tftpd</code> and creating a file such as this:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/tftpd.map</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;"># Add the remote IP address as a folder on the front of all requests.
+r ^ \i/</pre>
+<p>This example file will result in each TFTP request being prefixed with the remote IP address. For example if the machine at 192.168.0.1 requests "boot.bin" and the TFTP server root is <code>/srv/tftp</code> then the file <code>/srv/tftp/192.168.0.1/boot.bin</code> will be returned (or <code>/srv/tftp/::ffff:192.168.0.1/boot.bin</code> if the server is listening on an IPv6 port).
+</p>
+<p>The available map file options are documented in <span class="plainlinks archwiki-template-man" title="$ man 8 in.tftpd"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/in.tftpd.8#FILENAME_REMAPPING">in.tftpd(8) § FILENAME REMAPPING</a></span>.
+</p>
+<h4><span class="mw-headline" id="Debugging">Debugging</span></h4>
+<p>The <code>--verbosity 5</code> option can be used to turn on all debugging messages.  This is very useful for diagnosing why a machine will not successfully boot from the network, as the debug messages list all requests for files, whether rewrite rules were used, where the files were read from on the filesystem and whether the request was successful or not.
+</p>
+<p>It is not possible to log messages to stdout/stderr, as only syslog is supported.  This means the messages can be viewed with <a href="../en/Systemd/Journal.html" class="mw-redirect" title="Journalctl">journalctl</a> or similar.
+</p>
+<h3><span class="mw-headline" id="atftp">atftp</span></h3>
+<p><a href="../en/Help:Reading.html#Installation_of_packages" class="mw-redirect" title="Install">Install</a> <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=atftp">atftp</a></span> and then <a href="../en/Help:Reading.html#Control_of_systemd_units" class="mw-redirect" title="Start">start</a> <code>atftpd.service</code>.
+</p>
+<p>To modify service parameters edit <code>/etc/conf.d/atftpd</code>.
+</p>
+<h3><span class="mw-headline" id="uftpd">uftpd</span></h3>
+<p><span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/uftpd/">uftpd</a></span><sup><small>AUR</small></sup> is a <a rel="nofollow" class="external text" href="https://troglobit.com/2014/05/04/why-write-your-own-ftp-server/">simple</a> (T)FTP server that can be run from the command line:
+</p>
+<pre># uftpd -n -o ftp=0,tftp=69 /tmp/tftp
+</pre>
+<p>The option <code>-o ftp=0</code> disables the FTP server and only runs TFTP. The server runs in read-only mode by default and passing <code>-o writable</code> allows clients to put files on the server. The <code>-o tftp=69</code> is redundant in the case of default port, but shows a way to select a different one.
+</p>
+<h3><span class="mw-headline" id="dnsmasq">dnsmasq</span></h3>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> dnsmasq does not support file uploads.</div>
+<p>See <a href="../en/Dnsmasq.html#TFTP_server" title="Dnsmasq">dnsmasq#TFTP server</a>.
+</p>
+<h2><span class="mw-headline" id="Client">Client</span></h2>
+<h3><span class="mw-headline" id="tftp-hpa_2">tftp-hpa</span></h3>
+<p><a href="../en/Help:Reading.html#Installation_of_packages" class="mw-redirect" title="Install">Install</a> <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=tftp-hpa">tftp-hpa</a></span> and then tftp your day away!
+</p>
+<pre>$ tftp
+</pre>
+<h3><span class="mw-headline" id="atftp_2">atftp</span></h3>
+<p>The package <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=atftp">atftp</a></span> contains both a server and a client with interactive and batch mode. The client binary is <code>atftp</code> and supports both getting and putting files.
+</p>
+<h3><span class="mw-headline" id="curl">curl</span></h3>
+<p>Standard <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=curl">curl</a></span> has an ability to connect to a TFTP server and upload a file via:
+</p>
+<pre>$ curl -T FILE tftp://HOST
+</pre>
+<p>Download a file:
+</p>
+<pre>$ curl -o DESTINATION tftp://HOST/file
+</pre>
+<p>Where <code>file</code> is relative to the TFTP root directory.
+</p>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="../en/Category:File_Transfer_Protocol.html" title="Category:File Transfer Protocol">File Transfer Protocol</a></li></ul>
+</div></div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=TFTP&amp;oldid=735340">https://wiki.archlinux.org/index.php?title=TFTP&amp;oldid=735340</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 27 June 2022, at 23:24.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>MAC address spoofing (Português) - ArchWiki</title>
+<link rel="stylesheet" href="../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-MAC_address_spoofing_Português rootpage-MAC_address_spoofing_Português skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Manualmente" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Manualmente">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Manualmente</div>
+			</a>
+			
+				<button aria-controls="toc-Manualmente-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Manualmente subsection
+				</button>
+			
+			<ul id="toc-Manualmente-sublist" class="sidebar-toc-list">
+				<li id="toc-iproute2" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#iproute2">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.1</span>iproute2</div>
+			</a>
+			
+			<ul id="toc-iproute2-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-macchanger" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#macchanger">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.2</span>macchanger</div>
+			</a>
+			
+			<ul id="toc-macchanger-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Automaticamente" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Automaticamente">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Automaticamente</div>
+			</a>
+			
+				<button aria-controls="toc-Automaticamente-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Automaticamente subsection
+				</button>
+			
+			<ul id="toc-Automaticamente-sublist" class="sidebar-toc-list">
+				<li id="toc-systemd-networkd" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#systemd-networkd">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.1</span>systemd-networkd</div>
+			</a>
+			
+			<ul id="toc-systemd-networkd-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-systemd-udevd" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#systemd-udevd">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.2</span>systemd-udevd</div>
+			</a>
+			
+			<ul id="toc-systemd-udevd-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-systemd_unit" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#systemd_unit">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.3</span>systemd unit</div>
+			</a>
+			
+			<ul id="toc-systemd_unit-sublist" class="sidebar-toc-list">
+				<li id="toc-Criando_um_unit" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Criando_um_unit">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.3.1</span>Criando um <i>unit</i>
+</div>
+			</a>
+			
+			<ul id="toc-Criando_um_unit-sublist" class="sidebar-toc-list">
+				<li id="toc-iproute2_2" class="sidebar-toc-list-item sidebar-toc-level-4">
+			<a class="sidebar-toc-link" href="#iproute2_2">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.3.1.1</span>iproute2</div>
+			</a>
+			
+			<ul id="toc-iproute2_2-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-macchanger_2" class="sidebar-toc-list-item sidebar-toc-level-4">
+			<a class="sidebar-toc-link" href="#macchanger_2">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.3.1.2</span>macchanger</div>
+			</a>
+			
+			<ul id="toc-macchanger_2-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Habilitando_o_serviço" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Habilitando_o_servi%C3%A7o">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.3.2</span>Habilitando o serviço</div>
+			</a>
+			
+			<ul id="toc-Habilitando_o_serviço-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Interfaces_netctl" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Interfaces_netctl">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.4</span>Interfaces netctl</div>
+			</a>
+			
+			<ul id="toc-Interfaces_netctl-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-NetworkManager" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#NetworkManager">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.5</span>NetworkManager</div>
+			</a>
+			
+			<ul id="toc-NetworkManager-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-wpa_supplicant" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#wpa_supplicant">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.6</span>wpa_supplicant</div>
+			</a>
+			
+			<ul id="toc-wpa_supplicant-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-iwd" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#iwd">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.7</span>iwd</div>
+			</a>
+			
+			<ul id="toc-iwd-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Troubleshooting" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Troubleshooting">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>Troubleshooting</div>
+			</a>
+			
+				<button aria-controls="toc-Troubleshooting-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Troubleshooting subsection
+				</button>
+			
+			<ul id="toc-Troubleshooting-sublist" class="sidebar-toc-list">
+				<li id="toc-Falha_de_conexão_a_rede_DHCPv4" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Falha_de_conex%C3%A3o_a_rede_DHCPv4">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.1</span>Falha de conexão a rede DHCPv4</div>
+			</a>
+			
+			<ul id="toc-Falha_de_conexão_a_rede_DHCPv4-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Ver_também" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Ver_tamb%C3%A9m">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4</span>Ver também</div>
+			</a>
+			
+			<ul id="toc-Ver_também-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../pt/MAC_address_spoofing.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="new mw-list-item"><a href="/index.php?title=Talk:MAC_address_spoofing_(Portugu%C3%AAs)&amp;action=edit&amp;redlink=1" rel="discussion" title="Discussion about the content page (page does not exist) [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">português</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../pt/MAC_address_spoofing.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=MAC_address_spoofing_(Portugu%C3%AAs)&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=MAC_address_spoofing_(Portugu%C3%AAs)&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../pt/MAC_address_spoofing.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=MAC_address_spoofing_(Portugu%C3%AAs)&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=MAC_address_spoofing_(Portugu%C3%AAs)&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="pt" dir="ltr">
+<div class="mw-parser-output">
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Status de tradução:</strong> Esse artigo é uma tradução de <a href="../en/MAC_address_spoofing.html" title="MAC address spoofing">MAC address spoofing</a>. Data da última tradução: 2023-3-1. Você pode ajudar a sincronizar a tradução, se houver <a rel="nofollow" class="external text" href="https://wiki.archlinux.org/index.php?title=MAC_address_spoofing&amp;diff=0&amp;oldid=749786">alterações</a> na versão em inglês.</div>
+<p>
+Este artigo apresenta vários métodos para realizar o <i>spoofing</i> do endereço MAC (Media Access Control), ou seja, alterá-lo para dificultar a identificação de um dispositivo. </p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Nota:</strong> O termo foi traduzido como <i>mascarar</i> ou <i>alterar</i>, conforme o contexto.</div>
+<mw:tocplace></mw:tocplace>
+<h2><span class="mw-headline" id="Manualmente">Manualmente</span></h2>
+<p>Há dois métodos para mascarar um endereço MAC: <a href="../pt/Help:Reading.html#Instala%C3%A7%C3%A3o_de_pacotes" class="mw-redirect" title="Instalar">instalar</a> e configurar <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=iproute2">iproute2</a></span> ou <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=macchanger">macchanger</a></span>. Ambos os são descritos abaixo.
+</p>
+<h3><span class="mw-headline" id="iproute2">iproute2</span></h3>
+<p>Primeiro, você pode verificar o seu endereço MAC atual com o comando:
+</p>
+<pre># ip link show <i>interface</i>
+</pre>
+<p>onde <code><i>interface</i></code> é o nome da sua <a href="../pt/Network_configuration.html#Interfaces_de_rede" class="mw-redirect" title="Interface de rede">interface de rede</a>.
+</p>
+<p>A secção que nos interessa neste momento é a que tem "link/ether" seguido por um número de 6 bytes. Será provavelmente algo parecido com isto:
+</p>
+<pre>link/ether 00:1d:98:5a:d1:3a
+</pre>
+<p>O primeiro passo para mascarar o endereço MAC é desativar a interface de rede. Pode ser realizado com o comando:
+</p>
+<pre># ip link set dev <i>interface</i> down
+</pre>
+<p>Em seguida vamos de fato mascarar nosso MAC. Qualquer valor hexadecimal serve, mas algumas redes podem ser configuradas para recusar a atribuição de endereços IP a um cliente cujo MAC não corresponda a nenhum dos <i>vendors</i> conhecidos. Portanto, a menos que controle a(s) rede(s) a que se conecta, utilize o prefixo MAC de qualquer <i>vendor</i> real (basicamente, os três primeiros bytes), e utilize valores aleatórios para os três bytes seguintes. Para mais informações, por favor leia <a href="https://en.wikipedia.org/wiki/Organizationally_unique_identifier" class="extiw" title="wikipedia:Organizationally unique identifier">Wikipedia:Organizationally unique identifier</a>.
+</p>
+<p>Para alterar o MAC, precisamos rodar o comando:
+</p>
+<pre># ip link set dev <i>interface</i> address <i>XX:XX:XX:XX:XX:XX</i>
+</pre>
+<p>Onde qualquer valor de 6 bytes será suficiente para <code><i>XX:XX:XX:XX:XX:XX:XX</i></code>.
+</p>
+<p>O passo final é reativar a interface de rede. Isto pode ser feito através da execução do comando:
+</p>
+<pre># ip link set dev <i>interface</i> up
+</pre>
+<p>Se quiser verificar se o seu MAC foi mascarado, basta executar novamente <code>ip link show <i>interface</i></code> e verificar o valor para 'link/ether'. Se funcionou, 'link/ether' deve estar com o novo endereço que você definiu.
+</p>
+<h3><span class="mw-headline" id="macchanger">macchanger</span></h3>
+<p>Outro método utiliza <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=macchanger">macchanger</a></span> (também conhecido como GNU MAC Changer). Fornece uma variedade de funções, como alterar o endereço para corresponder a um determinado <i>vendor</i> ou randomizá-lo completamente.
+</p>
+<p><a href="../pt/Help:Reading.html#Instala%C3%A7%C3%A3o_de_pacotes" class="mw-redirect" title="Instalar">Instalar</a> o pacote <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=macchanger">macchanger</a></span>}.
+</p>
+<p>A alteração é feita por interface, especificar o nome da <a href="../pt/Network_configuration.html#Interfaces_de_rede" class="mw-redirect" title="Interface de rede">interface de rede</a> ao invés de <code><i>interface</i></code> em cada um dos seguintes comandos.
+</p>
+<p>O endereço MAC pode ser mascarado com um endereço totalmente aleatório:
+</p>
+<pre># macchanger -r <i>interface</i>
+</pre>
+<p>Para randomizar apenas bytes do endereço MAC atual específicos do dispositivo (ou seja, de forma que se o endereço MAC fosse verificado ainda se mostraria como sendo do mesmo <i>vendor</i>), você roda o comando:
+</p>
+<pre># macchanger -e <i>interface</i>
+</pre>
+<p>Para alterar o endereço MAC para um valor específico, você executaria:
+</p>
+<pre># macchanger --mac=<i>XX:XX:XX:XX:XX:XX</i> <i>interface</i>
+</pre>
+<p>Onde <code><i>XX:XX:XX:XX:XX:XX</i></code> é o MAC para o qual se deseja mudar.
+</p>
+<p>Finalmente, para devolver o endereço MAC ao seu valor de hardware, original e permanente:
+</p>
+<pre># macchanger -p <i>interface</i>
+</pre>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Nota:</strong> Um dispositivo não pode estar em uso (conectado de qualquer forma, ou com a sua interface habilitada) enquanto o endereço MAC estiver sendo alterado.</div>
+<h2><span class="mw-headline" id="Automaticamente">Automaticamente</span></h2>
+<h3><span class="mw-headline" id="systemd-networkd">systemd-networkd</span></h3>
+<p><a href="../en/Systemd-networkd.html" title="Systemd-networkd">systemd-networkd</a> suporta <i>spoofing</i> de endereço MAC através de <a href="../en/Systemd-networkd.html#link_files" title="Systemd-networkd">link files</a> (ver <span class="plainlinks archwiki-template-man" title="$ man 5 systemd.link"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/systemd.link.5">systemd.link(5)</a></span> para detalhes).
+</p>
+<p>Para definir um endereço MAC mascarado estático:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/systemd/network/00-default.link</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">[Match]
+MACAddress=<i>original MAC</i>
+
+[Link]
+MACAddress=<i>spoofed MAC</i>
+NamePolicy=kernel database onboard slot path</pre>
+<p>Para randomizar o endereço MAC a cada boot, defina <code>MACAddressPolicy=random</code> ao invés de <code>MACAddress=<i>spoofed MAC</i></code>.
+</p>
+<h3><span class="mw-headline" id="systemd-udevd">systemd-udevd</span></h3>
+<p>O <a href="../en/Udev.html" title="Udev">Udev</a> permite realizar o <i>spoofing</i> de endereços MAC através da criação de regras udev. Utilize o atributo <code>address</code> para encontrar o dispositivo correto pelo seu endereço MAC original, e altere-o utilizando o comando <i>ip</i>:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/udev/rules.d/81-mac-spoof.rules</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">ACTION=="add", SUBSYSTEM=="net", ATTR{address}=="XX:XX:XX:XX:XX:XX", RUN+="/usr/bin/ip link set dev $name address YY:YY:YY:YY:YY:YY"</pre>
+<p>onde <code>XX:XX:XX:XX:XX:XX</code> é o endereço MAC original e <code>YY:YY:YY:YY:YY:YY</code> é o novo, utilizar letra minúscula para o endereço MAC.
+</p>
+<h3><span class="mw-headline" id="systemd_unit">systemd unit</span></h3>
+<h4><span class="mw-headline" id="Criando_um_unit">Criando um <i>unit</i></span></h4>
+<p>Abaixo você encontra dois exemplos de unidades <a href="../en/Systemd.html" title="Systemd">systemd</a> para alterar um endereço MAC no <i>boot</i>, um deles configura um MAC estático usando <i>ip</i> e outro usa <i>macchanger</i> para atribuir um endereço MAC aleatório. O serviço systemd <code>network-pre.target</code> é utilizado para assegurar que o MAC é alterado antes de um gerenciador de rede como <a href="../en/Netctl.html" title="Netctl">Netctl</a> ou <a href="../en/NetworkManager.html" title="NetworkManager">NetworkManager</a>, <a href="../en/Systemd-networkd.html" title="Systemd-networkd">systemd-networkd</a> ou <a href="../en/Dhcpcd.html" title="Dhcpcd">dhcpcd</a> iniciar o serviço.
+</p>
+<h5><span class="mw-headline" id="iproute2_2">iproute2</span></h5>
+<p>Unidade <a href="../en/Systemd.html" title="Systemd">systemd</a> que configura um MAC pré-definido:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/systemd/system/macspoof@.service</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">[Unit]
+Description=MAC Address Change %I
+Wants=network-pre.target
+Before=network-pre.target
+BindsTo=sys-subsystem-net-devices-%i.device
+After=sys-subsystem-net-devices-%i.device
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/ip link set dev %i address 36:aa:88:c8:75:3a
+ExecStart=/usr/bin/ip link set dev %i up
+
+[Install]
+WantedBy=multi-user.target
+</pre>
+<h5><span class="mw-headline" id="macchanger_2">macchanger</span></h5>
+<p>Unidade <a href="../en/Systemd.html" title="Systemd">systemd</a> que configura um endereço aleatório, preservando os bytes de <i>vendor</i> originais da placa de rede (NIC). Confira se o <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=macchanger">macchanger</a></span> está <a href="../pt/Pacman.html#Instalando_pacotes_espec%C3%ADficos" title="Pacman (Português)">instalado</a>:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/systemd/system/macspoof@.service</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">[Unit]
+Description=macchanger on %I
+Wants=network-pre.target
+Before=network-pre.target
+BindsTo=sys-subsystem-net-devices-%i.device
+After=sys-subsystem-net-devices-%i.device
+
+[Service]
+ExecStart=/usr/bin/macchanger -e %I
+Type=oneshot
+
+[Install]
+WantedBy=multi-user.target
+</pre>
+<p>Um endereço completamente aleatório pode ser definido utilizando a opção <code>-r</code>, ver <a href="#macchanger">#macchanger</a>.
+</p>
+<h4>
+<span id="Habilitando_o_servi.C3.A7o"></span><span class="mw-headline" id="Habilitando_o_serviço">Habilitando o serviço</span>
+</h4>
+<p>Adicione a interface de rede desejada ao nome do serviço (por exemplo, <code>eth0</code>) e <a href="../en/Help:Reading.html#Control_of_systemd_units" class="mw-redirect" title="Enable">habilite</a> o serviço (por exemplo, <code>macspoof@eth0.service</code>).
+</p>
+<p>Reinicie, ou pare e inicie, os serviços pré-requeridos e requeridos na ordem correta. Se estiver no controle da sua rede, verifique se o MAC alterado foi aceito pelo seu roteador, examinando as tabelas de endereços estáticos, ou DHCP, do roteador.
+</p>
+<h3><span class="mw-headline" id="Interfaces_netctl">Interfaces netctl</span></h3>
+<p>Você pode usar um <a href="../en/Netctl.html#Using_hooks" title="Netctl">netctl hook</a> para executar um comando cada vez que um perfil netctl é reiniciado para uma interface de rede específica. Substitua <code><i>interface</i></code> pela sua interface: 
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/netctl/interfaces/<i>interface</i></pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">#!/usr/bin/env sh
+/usr/bin/macchanger -r <i>interface</i></pre>
+<p>Torne o script <a href="../pt/Help:Reading.html#Tornar_execut%C3%A1vel" class="mw-redirect" title="Executável">executável</a>. 
+</p>
+<p>Fonte: <a rel="nofollow" class="external text" href="https://blog.akendo.eu/archlinuxrandom-mac-address-for-new-wireless-connections/">akendo.eu</a><sup title="Status da última verificação: 404">[<a href="https://en.wikipedia.org/wiki/pt:Wikip%C3%A9dia:Liga%C3%A7%C3%A3o_inativa" class="extiw" title="wikipedia:pt:Wikipédia:Ligação inativa">link inativo</a> 2023-05-06 ⓘ]</sup>
+</p>
+<h3><span class="mw-headline" id="NetworkManager">NetworkManager</span></h3>
+<p>Veja <a href="../pt/NetworkManager.html#Configurando_aleatoriza%C3%A7%C3%A3o_de_endere%C3%A7o_MAC" title="NetworkManager (Português)">NetworkManager (Português)#Configurando aleatorização de endereço MAC</a>.
+</p>
+<h3><span class="mw-headline" id="wpa_supplicant">wpa_supplicant</span></h3>
+<p>wpa_supplicant pode usar um MAC aleatório para cada conexão ESS(AP) (ver <a rel="nofollow" class="external autonumber" href="https://w1.fi/cgit/hostap/plain/wpa_supplicant/wpa_supplicant.conf">[1]</a> para detalhes).
+</p>
+<p>Adicione o seguinte na sua configuração:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/wpa_supplicant/wpa_supplicant-wlan0.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">mac_addr=1
+preassoc_mac_addr=1
+gas_rand_mac_addr=1</pre>
+<h3><span class="mw-headline" id="iwd">iwd</span></h3>
+<p>Para randomizar o endereço MAC quando o iwd iniciar (ver <span class="plainlinks archwiki-template-man" title="$ man 5 iwd.config"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/iwd.config.5">iwd.config(5)</a></span>} para detalhes):
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/iwd/main.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">[General]
+AddressRandomization=once
+AddressRandomizationRange=nic</pre>
+<p>Especificar <code>AddressRandomizationRange</code> permite controlar qual a parte do endereço que é randomizada. Se definido para <code>nic</code>, apenas os octetos específicos da placa de rede (últimos três octetos) são randomizados. O endereço mac permanente da interface de rede é utilizado para os 3 octetos iniciais. Se colocado em <code>full</code>, todos os seis octetos do endereço são randomizados.
+</p>
+<h2><span class="mw-headline" id="Troubleshooting">Troubleshooting</span></h2>
+<h3>
+<span id="Falha_de_conex.C3.A3o_a_rede_DHCPv4"></span><span class="mw-headline" id="Falha_de_conexão_a_rede_DHCPv4">Falha de conexão a rede DHCPv4</span>
+</h3>
+<p>Se não conseguir conectar a uma rede DHCPv4 e estiver utilizando dhcpcd, que é o padrão para o NetworkManager, poderá ter que <a href="../en/Dhcpcd.html#Client_ID" title="Dhcpcd">modificar a configuração dhcpcd</a> para obter um IP.
+</p>
+<h2>
+<span id="Ver_tamb.C3.A9m"></span><span class="mw-headline" id="Ver_também">Ver também</span>
+</h2>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/MAC_spoofing" class="extiw" title="wikipedia:MAC spoofing">Wikipedia:MAC spoofing</a></li>
+<li><a rel="nofollow" class="external text" href="https://github.com/alobbs/macchanger">Macchanger GitHub page</a></li>
+<li>
+<a rel="nofollow" class="external text" href="https://www.debianadmin.com/change-your-network-card-mac-media-access-control-address.html">Article on DebianAdmin</a> with more <i>macchanger</i> options</li>
+</ul>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface">
+<div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../Special:Categories.html" title="Special:Categories">Categories</a>: <ul>
+<li><a href="../pt/Category:Network_configuration.html" title="Category:Network configuration (Português)">Network configuration (Português)</a></li>
+<li><a href="../pt/Category:Security.html" title="Category:Security (Português)">Security (Português)</a></li>
+</ul>
+</div>
+<div id="mw-hidden-catlinks" class="mw-hidden-catlinks mw-hidden-cats-hidden">Hidden category: <ul><li><a href="../en/Category:Pages_with_dead_links.html" title="Category:Pages with dead links">Pages with dead links</a></li></ul>
+</div>
+</div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=MAC_address_spoofing_(Portugu%C3%AAs)&amp;oldid=777191">https://wiki.archlinux.org/index.php?title=MAC_address_spoofing_(Português)&amp;oldid=777191</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 6 May 2023, at 19:59.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

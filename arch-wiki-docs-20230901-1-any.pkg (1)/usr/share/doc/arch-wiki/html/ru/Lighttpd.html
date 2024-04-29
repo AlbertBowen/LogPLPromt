@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>lighttpd (Русский) - ArchWiki</title>
+<link rel="stylesheet" href="../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Lighttpd_Русский rootpage-Lighttpd_Русский skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Установка" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Установка</div>
+			</a>
+			
+			<ul id="toc-Установка-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Настройка" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#%D0%9D%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Настройка</div>
+			</a>
+			
+				<button aria-controls="toc-Настройка-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Настройка subsection
+				</button>
+			
+			<ul id="toc-Настройка-sublist" class="sidebar-toc-list">
+				<li id="toc-Базовая_установка" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#%D0%91%D0%B0%D0%B7%D0%BE%D0%B2%D0%B0%D1%8F_%D1%83%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.1</span>Базовая установка</div>
+			</a>
+			
+			<ul id="toc-Базовая_установка-sublist" class="sidebar-toc-list">
+				<li id="toc-Настройка_журналов" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#%D0%9D%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0_%D0%B6%D1%83%D1%80%D0%BD%D0%B0%D0%BB%D0%BE%D0%B2">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.1.1</span>Настройка журналов</div>
+			</a>
+			
+			<ul id="toc-Настройка_журналов-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Включение_https" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#%D0%92%D0%BA%D0%BB%D1%8E%D1%87%D0%B5%D0%BD%D0%B8%D0%B5_https">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.1.2</span>Включение https</div>
+			</a>
+			
+			<ul id="toc-Включение_https-sublist" class="sidebar-toc-list">
+				<li id="toc-Самоподписанный_сертификат" class="sidebar-toc-list-item sidebar-toc-level-4">
+			<a class="sidebar-toc-link" href="#%D0%A1%D0%B0%D0%BC%D0%BE%D0%BF%D0%BE%D0%B4%D0%BF%D0%B8%D1%81%D0%B0%D0%BD%D0%BD%D1%8B%D0%B9_%D1%81%D0%B5%D1%80%D1%82%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%82">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.1.2.1</span>Самоподписанный сертификат</div>
+			</a>
+			
+			<ul id="toc-Самоподписанный_сертификат-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Let's_Encrypt" class="sidebar-toc-list-item sidebar-toc-level-4">
+			<a class="sidebar-toc-link" href="#Let's_Encrypt">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.1.2.2</span>Let's Encrypt</div>
+			</a>
+			
+			<ul id="toc-Let's_Encrypt-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Перенаправление_HTTP_на_HTTPS" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#%D0%9F%D0%B5%D1%80%D0%B5%D0%BD%D0%B0%D0%BF%D1%80%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5_HTTP_%D0%BD%D0%B0_HTTPS">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.1.3</span>Перенаправление HTTP на HTTPS</div>
+			</a>
+			
+			<ul id="toc-Перенаправление_HTTP_на_HTTPS-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Защита_каталога_паролем" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#%D0%97%D0%B0%D1%89%D0%B8%D1%82%D0%B0_%D0%BA%D0%B0%D1%82%D0%B0%D0%BB%D0%BE%D0%B3%D0%B0_%D0%BF%D0%B0%D1%80%D0%BE%D0%BB%D0%B5%D0%BC">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.1.4</span>Защита каталога паролем</div>
+			</a>
+			
+			<ul id="toc-Защита_каталога_паролем-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-CGI" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#CGI">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.2</span>CGI</div>
+			</a>
+			
+			<ul id="toc-CGI-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-FastCGI" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#FastCGI">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.3</span>FastCGI</div>
+			</a>
+			
+			<ul id="toc-FastCGI-sublist" class="sidebar-toc-list">
+				<li id="toc-PHP" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#PHP">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.3.1</span>PHP</div>
+			</a>
+			
+			<ul id="toc-PHP-sublist" class="sidebar-toc-list">
+				<li id="toc-С_помощью_php-cgi" class="sidebar-toc-list-item sidebar-toc-level-4">
+			<a class="sidebar-toc-link" href="#%D0%A1_%D0%BF%D0%BE%D0%BC%D0%BE%D1%89%D1%8C%D1%8E_php-cgi">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.3.1.1</span>С помощью php-cgi</div>
+			</a>
+			
+			<ul id="toc-С_помощью_php-cgi-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-С_помощью_php-fpm" class="sidebar-toc-list-item sidebar-toc-level-4">
+			<a class="sidebar-toc-link" href="#%D0%A1_%D0%BF%D0%BE%D0%BC%D0%BE%D1%89%D1%8C%D1%8E_php-fpm">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.3.1.2</span>С помощью php-fpm</div>
+			</a>
+			
+			<ul id="toc-С_помощью_php-fpm-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-uWSGI" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#uWSGI">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.4</span>uWSGI</div>
+			</a>
+			
+			<ul id="toc-uWSGI-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Сжатие_исходящих_данных" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#%D0%A1%D0%B6%D0%B0%D1%82%D0%B8%D0%B5_%D0%B8%D1%81%D1%85%D0%BE%D0%B4%D1%8F%D1%89%D0%B8%D1%85_%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.5</span>Сжатие исходящих данных</div>
+			</a>
+			
+			<ul id="toc-Сжатие_исходящих_данных-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Смотрите_также" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#%D0%A1%D0%BC%D0%BE%D1%82%D1%80%D0%B8%D1%82%D0%B5_%D1%82%D0%B0%D0%BA%D0%B6%D0%B5">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>Смотрите также</div>
+			</a>
+			
+			<ul id="toc-Смотрите_также-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../ru/Lighttpd.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="new mw-list-item"><a href="/index.php?title=Talk:Lighttpd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)&amp;action=edit&amp;redlink=1" rel="discussion" title="Discussion about the content page (page does not exist) [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">русский</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../ru/Lighttpd.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=Lighttpd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=Lighttpd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../ru/Lighttpd.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Lighttpd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Lighttpd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="ru" dir="ltr">
+<div class="mw-parser-output">
+<p><span>
+</span>
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Состояние перевода:</strong> На этой странице представлен перевод статьи <a href="../en/Lighttpd.html" title="Lighttpd">lighttpd</a>. Дата последней синхронизации: 10 апреля 2022. Вы можете <a href="../ru/ArchWiki:Translation_Team.html" title="ArchWiki:Translation Team (Русский)">помочь</a> синхронизировать перевод, если в английской версии произошли <a rel="nofollow" class="external text" href="https://wiki.archlinux.org/index.php?title=Lighttpd&amp;diff=0&amp;oldid=726084">изменения</a>.</div>
+<p><b>lighttpd</b> - веб-сервер, разрабатываемый с расчётом на быстроту и защищённость, а также соответствие стандартам. В lighttpd есть поддержка сжатия отдаваемого содержимого «на лету», HTTP-аутентификации, перезаписи URL, SSL и автоматической балансировки нагрузки (нагрузка может автоматически распределяться по нескольким запущенным серверам lighttpd). Веб-сервер также поддерживает интерфейсы CGI, SCGI, FastCGI.
+</p>
+<mw:tocplace></mw:tocplace>
+<h2>
+<span id=".D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0"></span><span class="mw-headline" id="Установка">Установка</span>
+</h2>
+<p><a href="../ru/Help:Reading.html#%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0_%D0%BF%D0%B0%D0%BA%D0%B5%D1%82%D0%BE%D0%B2" class="mw-redirect" title="Установите">Установите</a> пакет <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=lighttpd">lighttpd</a></span>.
+</p>
+<h2>
+<span id=".D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0"></span><span class="mw-headline" id="Настройка">Настройка</span>
+</h2>
+<h3>
+<span id=".D0.91.D0.B0.D0.B7.D0.BE.D0.B2.D0.B0.D1.8F_.D1.83.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0"></span><span class="mw-headline" id="Базовая_установка">Базовая установка</span>
+</h3>
+<p>Настройки lighttpd находятся в файле <code>/etc/lighttpd/lighttpd.conf</code>. Настройки по умолчанию позволяют проверить работоспособность сервера.
+</p>
+<p>Проверить правильность настроек и выявить ошибки можно с помощью команды:
+</p>
+<pre>$ lighttpd -t -f /etc/lighttpd/lighttpd.conf
+</pre>
+<p>Также доступна более тщательная проверка:
+</p>
+<pre>$ lighttpd -tt -f /etc/lighttpd/lighttpd.conf
+</pre>
+<p>По умолчанию в качестве document-root сервера служит директория <code>/srv/http/</code>.
+Для проверки установки создайте в ней файл главной страницы:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/srv/http/index.html</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">Hello world!</pre>
+<p><a href="../ru/Systemd.html#%D0%98%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5_%D1%8E%D0%BD%D0%B8%D1%82%D0%BE%D0%B2" class="mw-redirect" title="Запустите/включите">Запустите/включите</a> службу <code>lighttpd.service</code>.
+Затем откройте в своём браузере адрес <a rel="nofollow" class="external free" href="http://localhost">http://localhost</a> и вы должны увидеть тестовую страницу.
+</p>
+<p>Примеры конфигурационных файлов вы можете найти в <code>/usr/share/doc/lighttpd/config/</code>.
+</p>
+<h4>
+<span id=".D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0_.D0.B6.D1.83.D1.80.D0.BD.D0.B0.D0.BB.D0.BE.D0.B2"></span><span class="mw-headline" id="Настройка_журналов">Настройка журналов</span>
+</h4>
+<p>lighttpd может записывать журналы обращений (accesslog) и ошибок (errorlog). Журнал ошибок включен по умолчанию (настраивается опцией <code>server.errorlog</code>). Для включения журнала обращений отредактируйте файл <code>/etc/lighttpd/lighttpd.conf</code>:
+</p>
+<pre>server.modules += (
+   "mod_accesslog",
+)
+
+accesslog.filename = "/var/log/lighttpd/access.log"
+</pre>
+<h4>
+<span id=".D0.92.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_https"></span><span class="mw-headline" id="Включение_https">Включение https</span>
+</h4>
+<div class="archwiki-template-box archwiki-template-box-warning">
+<strong>Важно:</strong> Пользователи, планирующие внедрять SSL/TLS, должны знать, что некоторые варианты и реализации уязвимы для атак. Подробности описаны в статье <a href="../en/OpenSSL.html" title="OpenSSL">OpenSSL</a>.</div>
+<div class="archwiki-template-box archwiki-template-box-tip">
+<strong>Совет:</strong> 
+<ul>
+<li>Mozilla предоставляет <a rel="nofollow" class="external text" href="https://ssl-config.mozilla.org/#server=lighttpd">генератор настроек</a>, который можно использовать в том числе с lighttpd.</li>
+<li>Для проверки корректности настроек можно использовать сервис <a rel="nofollow" class="external text" href="https://www.ssllabs.com/ssltest/index.html">SSL Server Check</a> от Qualys SSL Labs.</li>
+</ul>
+</div>
+<h5>
+<span id=".D0.A1.D0.B0.D0.BC.D0.BE.D0.BF.D0.BE.D0.B4.D0.BF.D0.B8.D1.81.D0.B0.D0.BD.D0.BD.D1.8B.D0.B9_.D1.81.D0.B5.D1.80.D1.82.D0.B8.D1.84.D0.B8.D0.BA.D0.B0.D1.82"></span><span class="mw-headline" id="Самоподписанный_сертификат">Самоподписанный сертификат</span>
+</h5>
+<p>С помощью <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=openssl">openssl</a></span> можно сгенерировать самоподписанный SSL-сертификат.
+</p>
+<p>Создаем директорию для хранения сертификатов:
+</p>
+<pre># mkdir /etc/lighttpd/certs
+</pre>
+<p>Генерируем самоподписанный сертификат (пример команды):
+</p>
+<pre># openssl req -x509 -nodes -days 7300 -newkey rsa:2048 -sha256 -keyout /etc/lighttpd/certs/www.example.com.pem -out /etc/lighttpd/certs/www.example.com.pem
+</pre>
+<p>Выставляем владельца и нужные права:
+</p>
+<pre># chown http:http /etc/lighttpd/certs/www.example.com.pem
+# chmod 600 /etc/lighttpd/certs/www.example.com.pem</pre>
+<p>Теперь нужно включить SSL в настройках lighttpd (в <code>/etc/lighttpd/lighttpd.conf</code>).
+</p>
+<pre>server.modules += ( "mod_openssl" )
+
+$SERVER["socket"] == ":443" {
+   ssl.engine                  = "enable" 
+   ssl.pemfile                 = "/etc/lighttpd/certs/www.example.com.pem" 
+}
+</pre>
+<p>Подробнее о настройке можно почитать в документации: <a rel="nofollow" class="external text" href="https://redmine.lighttpd.net/projects/lighttpd/wiki/Docs_SSL">lighttpd TLS configuration</a>.
+</p>
+<h5>
+<span id="Let.27s_Encrypt"></span><span class="mw-headline" id="Let's_Encrypt">Let's Encrypt</span>
+</h5>
+<p>Можно использовать сертификаты, полученные от <a href="../ru/Certbot.html" title="Certbot (Русский)">Let's Encrypt</a>.
+</p>
+<p>В файл <code>/etc/lighttpd/lighttpd.conf</code> добавьте следующие строки:
+</p>
+<pre>$SERVER["socket"] == ":443" {
+    ssl.engine                  = "enable"
+    ssl.privkey                 = "/etc/letsencrypt/live/<i>домен</i>/privkey.pem" 
+    ssl.pemfile                 = "/etc/letsencrypt/live/<i>домен</i>/fullchain.pem"  
+}
+</pre>
+<p>Подробнее о настройке можно почитать в документации: <a rel="nofollow" class="external text" href="https://redmine.lighttpd.net/projects/lighttpd/wiki/HowToSimpleSSL">bootstrap Let's Encrypt</a>.
+</p>
+<h4>
+<span id=".D0.9F.D0.B5.D1.80.D0.B5.D0.BD.D0.B0.D0.BF.D1.80.D0.B0.D0.B2.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5_HTTP_.D0.BD.D0.B0_HTTPS"></span><span class="mw-headline" id="Перенаправление_HTTP_на_HTTPS">Перенаправление HTTP на HTTPS</span>
+</h4>
+<p>mod_redirect должен быть включён:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/lighttpd/lighttpd.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">server.modules += ( "mod_redirect" )</pre>
+<p>Перенаправляем трафик для домена example.org:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/lighttpd/lighttpd.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">$SERVER["socket"] == ":80" {
+   $HTTP["host"] == "example.org" {
+      url.redirect = ( "^/(.*)" =&gt; "https://example.org/$1" )
+      server.name                 = "example.org" 
+   }
+}</pre>
+<p>Чтобы перенаправить все хосты на их https-эквиваленты, используйте следующую конфигурацию сокета 80 вместо приведённой выше:
+</p>
+<pre>$SERVER["socket"] == ":80" {
+  $HTTP["host"] =~ ".*" {
+    url.redirect = (".*" =&gt; "https://%0$0")
+  }
+}
+</pre>
+<p>Перенаправляем запросы на HTTPS для части сайта (в примере ниже - <code>/secure</code>):
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/lighttpd/lighttpd.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">$SERVER["socket"] == ":80" {
+   $HTTP["url"] =~ "^/secure" {
+      url.redirect = ( "^/(.*)" =&gt; "https://example.com/$1" )
+   }
+}</pre>
+<h4>
+<span id=".D0.97.D0.B0.D1.89.D0.B8.D1.82.D0.B0_.D0.BA.D0.B0.D1.82.D0.B0.D0.BB.D0.BE.D0.B3.D0.B0_.D0.BF.D0.B0.D1.80.D0.BE.D0.BB.D0.B5.D0.BC"></span><span class="mw-headline" id="Защита_каталога_паролем">Защита каталога паролем</span>
+</h4>
+<p>Обратите внимание, что этот модуль требует установки <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=mariadb-libs">mariadb-libs</a></span>. Для аутентификации пользователей необходим passwd-файл, который является lighttpd-эквивалентом системного <code>/etc/passwd</code>. Настройка требует определённого формата и хеширования пароля md5sum, но пользователи могут быстро и легко создать запись, используя в качестве примера следующее:
+</p>
+<pre>$ user=foo
+$ password=b@R102
+$ realm='Password Required'
+$ hash=`echo -n "$user:$realm:$password" | md5sum | cut -b -32`
+
+# echo "$user:$realm:$hash" &gt;&gt; /etc/lighttpd/lighttpd.user
+</pre>
+<p>Измените <code>/etc/lighttpd/lighttpd.conf</code>, добавив в него строки, включающие защиту каталога:
+</p>
+<pre>server.modules = (
+   "mod_auth",
+ )
+
+auth.backend                = "htdigest"
+auth.backend.htdigest.userfile = "/etc/lighttpd/lighttpd.user"
+
+# note this entry is relative to the server.document-root
+auth.require = ( "/secret" =&gt;
+   (
+    "method" =&gt; "basic",
+    "realm" =&gt; "Password Required",
+    "require" =&gt; "valid-user"
+   )
+)
+</pre>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Примечание:</strong> Значение realm, введённое в файле <code>/etc/lighttpd/lighttpd.conf</code>, должно совпадать со значением из файла <code>/etc/lighttpd/lighttpd.user</code>, чтобы аутентификация работала.</div>
+<h3><span class="mw-headline" id="CGI">CGI</span></h3>
+<p>Скрипты <a href="https://en.wikipedia.org/wiki/Common_Gateway_Interface" class="extiw" title="wikipedia:Common Gateway Interface">Common Gateway Interface</a> (CGI) работают с lighttpd из коробки, вам просто нужно включить модуль CGI, добавить файл настроек и убедиться, что выбранный вами интерпретатор языка программирования установлен. (например, для python установите пакет <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=python">python</a></span>).
+</p>
+<p>Создайте файл <code>/etc/lighttpd/conf.d/cgi.conf</code> и добавьте в него следующее:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/lighttpd/conf.d/cgi.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">server.modules += ( "mod_cgi" )
+ 
+ cgi.assign                 = ( ".pl"  =&gt; "/usr/bin/perl",
+                                ".cgi" =&gt; "/usr/bin/perl",
+                                ".rb"  =&gt; "/usr/bin/ruby",
+                                ".erb" =&gt; "/usr/bin/eruby",
+                                ".py"  =&gt; "/usr/bin/python",
+                                ".php" =&gt; "/usr/bin/php-cgi" )
+ 
+ index-file.names           += ( "index.pl",   "default.pl",
+                                "index.rb",   "default.rb",
+                                "index.erb",  "default.erb",
+                                "index.py",   "default.py",
+                                "index.php",  "default.php" )
+}</pre>
+<p>Для php-скриптов в <code>/etc/php/php.ini</code> также добавьте:
+</p>
+<pre>cgi.fix_pathinfo = 1
+</pre>
+<p>Включаем эти настройки в <code>/etc/lighttpd/lighttpd.conf</code>:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/lighttpd/lighttpd.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">include "conf.d/cgi.conf"</pre>
+<h3><span class="mw-headline" id="FastCGI">FastCGI</span></h3>
+<p>Установите <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=fcgi">fcgi</a></span>.
+Теперь у вас есть lighttpd с поддержкой fcgi.
+Если это то, что вы хотели, то всё в порядке. Тем, кто хочет использовать Ruby on Rails, PHP или Python, нужно провести дополнительную настройку.
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Примечание:</strong> По умолчанию lighttpd будет запускать процессы от пользователя и группы "http".</div>
+<p>Сперва скопируйте пример настроек <code>/usr/share/doc/lighttpd/config/conf.d/fastcgi.conf</code> в <code>/etc/lighttpd/conf.d</code>
+</p>
+<p>Следующее содержимое нужно добавить в файл конфигурации
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/lighttpd/conf.d/fastcgi.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">server.modules += ( "mod_fastcgi" )
+
+#server.indexfiles += ( "dispatch.fcgi" ) #this is deprecated
+index-file.names += ( "dispatch.fcgi" ) #dispatch.fcgi if rails specified
+
+server.error-handler-404   = "/dispatch.fcgi" #too
+fastcgi.server = (
+    ".fcgi" =&gt; (
+      "localhost" =&gt; ( 
+        "socket" =&gt; "/run/lighttpd/rails-fastcgi.sock",
+        "bin-path" =&gt; "/path/to/rails/application/public/dispatch.fcgi"
+      )
+    )
+)</pre>
+<p>Включаем этот конфиг в <code>/etc/lighttpd/lighttpd.conf</code> строкой
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/lighttpd/lighttpd.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">include "conf.d/fastcgi.conf"</pre>
+<p>Для PHP и Ruby on Rails смотрите следующие разделы.
+</p>
+<h4><span class="mw-headline" id="PHP">PHP</span></h4>
+<h5>
+<span id=".D0.A1_.D0.BF.D0.BE.D0.BC.D0.BE.D1.89.D1.8C.D1.8E_php-cgi"></span><span class="mw-headline" id="С_помощью_php-cgi">С помощью php-cgi</span>
+</h5>
+<p>Установите пакеты <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=php">php</a></span> и <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=php-cgi">php-cgi</a></span> (смотрите также <a href="../en/PHP.html" class="mw-redirect" title="PHP (Русский)">PHP</a> и <a href="../ru/Category:Web_applications.html" title="Category:Web applications (Русский)">LAMP</a>).
+</p>
+<p>Проверяем, что php-cgi работает:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">$ php-cgi --version</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">PHP 5.3.8 with Suhosin-Patch (cgi-fcgi) (built: Sep 11 2011 10:04:49)
+Copyright (c) 1997-2011 The PHP Group
+Zend Engine v2.3.0, Copyright (c) 1998-2011 Zend Technologies</pre>
+<p>Если вы увидели похожий вывод, значит всё установлено правильно.
+</p>
+<p>Создайте новый файл настроек:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/lighttpd/conf.d/fastcgi.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">server.modules += ("mod_fastcgi")
+
+index-file.names += ("index.php")
+fastcgi.server = ( 
+    # Распределение запросов к этому адресу...
+    ".php" =&gt; (
+        # ... по следующим серверам FastCGI. Строка с именем сервера — это
+        # просто метка, которая позволяет идентифицировать сервер в журналах
+        "localhost" =&gt; ( 
+            "bin-path" =&gt; "/usr/bin/php-cgi",
+            "socket" =&gt; "/tmp/php-fastcgi.sock",
+            # breaks SCRIPT_FILENAME in a way that PHP can extract PATH_INFO
+            # from it 
+            "broken-scriptfilename" =&gt; "enable",
+            # Запуск (max-procs + (max-procs * PHP_FCGI_CHILDREN)) процессов, где
+            # max-procs это "watchers", а остальные это "workers". Смотрите:
+            # https://redmine.lighttpd.net/projects/1/wiki/frequentlyaskedquestions#How-many-php-CGI-processes-will-lighttpd-spawn
+            "max-procs" =&gt; "4", # значение по умолчанию
+            "bin-environment" =&gt; (
+                "PHP_FCGI_CHILDREN" =&gt; "1" # значение по умолчанию
+            )
+        )
+    )   
+)
+</pre>
+<p>Включаем этот конфиг в <code>/etc/lighttpd/lighttpd.conf</code> строкой
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/lighttpd/lighttpd.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">include "conf.d/fastcgi.conf"</pre>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Примечание:</strong> Помните, что порядок загрузки модулей важен, правильный порядок указан в <code>/usr/share/doc/lighttpd/config/modules.conf</code>.</div>
+<p><a href="../ru/Systemd.html#%D0%98%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5_%D1%8E%D0%BD%D0%B8%D1%82%D0%BE%D0%B2" class="mw-redirect" title="Перезагрузите">Перезагрузите</a> службу <code>lighttpd.service</code> с новыми настройками (reload).
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Примечание:</strong> 
+<ul>
+<li>Если вы получаете ошибки, подобные этим "<i>No input file found</i>" при попытке получить доступ к вашему php файлу, у этого могут быть разные причины; смотрите <a rel="nofollow" class="external text" href="https://redmine.lighttpd.net/projects/1/wiki/frequentlyaskedquestions#I-get-the-error-No-input-file-specified-when-trying-to-use-PHP">этот FAQ</a>.</li>
+<li>Убедитесь, что нет других модулей (например, <code>mod_cgi</code>), которые будут пытаться обрабатывать <i>.php</i> файлы.</li>
+</ul>
+</div>
+<h5>
+<span id=".D0.A1_.D0.BF.D0.BE.D0.BC.D0.BE.D1.89.D1.8C.D1.8E_php-fpm"></span><span class="mw-headline" id="С_помощью_php-fpm">С помощью php-fpm</span>
+</h5>
+<p><a href="../ru/Help:Reading.html#%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0_%D0%BF%D0%B0%D0%BA%D0%B5%D1%82%D0%BE%D0%B2" class="mw-redirect" title="Установите">Установите</a> пакет <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=php-fpm">php-fpm</a></span> и <a href="../ru/Systemd.html#%D0%98%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5_%D1%8E%D0%BD%D0%B8%D1%82%D0%BE%D0%B2" class="mw-redirect" title="Запустите/включите">запустите/включите</a> службу <code>php-fpm.service</code>.
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Примечание:</strong> Вы можете настроить количество серверов в пуле и изменить другие параметры конфигурации, отредактировав файл <code>/etc/php/php-fpm.conf</code>. Более подробную информацию о <i>php-fpm</i> можно найти на <a rel="nofollow" class="external text" href="https://php-fpm.org/">сайте php-fpm</a>. Не забывайте перезапускать <code>php-fpm.service</code> после изменения настроек.</div>
+<p>В файл <code>/etc/lighttpd/conf.d/fastcgi.conf</code> добавьте:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/lighttpd/conf.d/fastcgi.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">server.modules += ( "mod_fastcgi" )
+
+index-file.names += ( "index.php" ) 
+
+fastcgi.server = (
+    ".php" =&gt; (
+      "localhost" =&gt; ( 
+        "socket" =&gt; "/run/php-fpm/php-fpm.sock",
+        "broken-scriptfilename" =&gt; "enable"
+      ))
+)
+)</pre>
+<p>Аналогично предыдущему описанию включаем этот конфиг в <code>/etc/lighttpd/lighttpd.conf</code> строкой
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/lighttpd/lighttpd.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">include "conf.d/fastcgi.conf"</pre>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Примечание:</strong> Демон php-fpm необходимо запускать до lighttpd, иначе php-скрипты не будут обрабатываться (будут выдаваться ошибки 500 или 503).</div>
+<h3><span class="mw-headline" id="uWSGI">uWSGI</span></h3>
+<p>В файл <code>/etc/lighttpd/lighttpd.conf</code> добавьте
+</p>
+<pre>server.modules += ("mod_scgi")
+
+$HTTP["url"] =~ "^/uwsgi/" {
+    scgi.protocol = "uwsgi"
+    scgi.server   = (
+        "/uwsgi/foo" =&gt; ((
+            "socket"            =&gt; "/путь/к/сокету",
+            "check-local"       =&gt; "disable"
+        )),
+        "/uwsgi/bar" =&gt; ((
+            "host"              =&gt; "127.0.0.1",
+            "port"              =&gt; "8080",
+            "check-local"       =&gt; "disable"
+        ))
+    )
+}</pre>
+<p>Затем вы можете запустить приложение uwsgi либо как <a rel="nofollow" class="external text" href="https://uwsgi-docs.readthedocs.io/en/latest/Systemd.html">юнит systemd</a> либо <a rel="nofollow" class="external text" href="https://redmine.lighttpd.net/projects/lighttpd/wiki/HowToPythonWSGI">напрямую</a>. <a rel="nofollow" class="external text" href="https://www.digitalocean.com/community/tutorials/how-to-serve-flask-applications-with-uwsgi-and-nginx-on-ubuntu-16-04">Здесь</a> руководство от digitalocean о том, как настроить приложение flask с нуля.
+</p>
+<h3>
+<span id=".D0.A1.D0.B6.D0.B0.D1.82.D0.B8.D0.B5_.D0.B8.D1.81.D1.85.D0.BE.D0.B4.D1.8F.D1.89.D0.B8.D1.85_.D0.B4.D0.B0.D0.BD.D0.BD.D1.8B.D1.85"></span><span class="mw-headline" id="Сжатие_исходящих_данных">Сжатие исходящих данных</span>
+</h3>
+<p>Сжатие исходящих данных уменьшает нагрузку на сеть и может улучшить общую пропускную способность веб-сервера. 
+</p>
+<p>Скопируйте файл с примером настроек:
+</p>
+<pre># mkdir /etc/lighttpd/conf.d
+# cp /usr/share/doc/lighttpd/config/conf.d/deflate.conf /etc/lighttpd/conf.d/
+</pre>
+<p>Включите настройки, добавив в <code>/etc/lighttpd/lighttpd.conf</code>:
+</p>
+<pre>include "conf.d/deflate.conf"
+</pre>
+<p>Наконец, <a href="../ru/Systemd.html#%D0%98%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5_%D1%8E%D0%BD%D0%B8%D1%82%D0%BE%D0%B2" class="mw-redirect" title="Перезапустите">перезапустите</a> <code>lighttpd.service</code> с новыми настройками, и он будет динамически сжимать простой текст и html.
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Примечание:</strong> Можно не копировать файл, а добавить нужные параметры напрямую в <code>/etc/lighttpd/lighttpd.conf</code>.</div>
+<p>Также можно выбрать тип содержимого, которое должно быть сжато, изменив в файле <code>/etc/lighttpd/conf.d/deflate.conf</code> параметр <code>deflate.mimetypes</code>:
+</p>
+<pre>deflate.mimetypes           = ("text/plain", "text/html", "text/javascript", "text/css", "text/xml")
+</pre>
+<p>Можно создать каталог для хранения сжатых файлов.
+Создаём нужную директорию и задаём владельца:
+</p>
+<pre># mkdir /var/cache/lighttpd/compress/
+# chown http:http /var/cache/lighttpd/compress/</pre>
+<p>В файле <code>/etc/lighttpd/conf.d/deflate.conf</code> раскомментируйте и измените параметр <code>deflate.cache-dir</code>:
+</p>
+<pre>deflate.cache-dir = "/var/cache/lighttpd/compress"
+</pre>
+<h2>
+<span id=".D0.A1.D0.BC.D0.BE.D1.82.D1.80.D0.B8.D1.82.D0.B5_.D1.82.D0.B0.D0.BA.D0.B6.D0.B5"></span><span class="mw-headline" id="Смотрите_также">Смотрите также</span>
+</h2>
+<ul><li>
+<a rel="nofollow" class="external text" href="https://redmine.lighttpd.net/projects/lighttpd/wiki">Lighttpd wiki</a> (англ.)</li></ul>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="../ru/Category:Web_server.html" title="Category:Web server (Русский)">Web server (Русский)</a></li></ul>
+</div></div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=Lighttpd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)&amp;oldid=726087">https://wiki.archlinux.org/index.php?title=Lighttpd_(Русский)&amp;oldid=726087</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 10 April 2022, at 12:16.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

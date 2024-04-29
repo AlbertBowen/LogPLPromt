@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>ntop - ArchWiki</title>
+<link rel="stylesheet" href="../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Ntop rootpage-Ntop skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Installation_and_configuration" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Installation_and_configuration">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Installation and configuration</div>
+			</a>
+			
+			<ul id="toc-Installation_and_configuration-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Tips_and_tricks" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Tips_and_tricks">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Tips and tricks</div>
+			</a>
+			
+				<button aria-controls="toc-Tips_and_tricks-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Tips and tricks subsection
+				</button>
+			
+			<ul id="toc-Tips_and_tricks-sublist" class="sidebar-toc-list">
+				<li id="toc-Web_interface" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Web_interface">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.1</span>Web interface</div>
+			</a>
+			
+			<ul id="toc-Web_interface-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Group_and_user" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Group_and_user">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.2</span>Group and user</div>
+			</a>
+			
+			<ul id="toc-Group_and_user-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Troubleshooting" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Troubleshooting">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>Troubleshooting</div>
+			</a>
+			
+				<button aria-controls="toc-Troubleshooting-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Troubleshooting subsection
+				</button>
+			
+			<ul id="toc-Troubleshooting-sublist" class="sidebar-toc-list">
+				<li id="toc-**ERROR**_RRD:_Disabled_-_unable_to_create_base_directory_(err_13,_/var/lib/ntop/rrd)" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#**ERROR**_RRD:_Disabled_-_unable_to_create_base_directory_(err_13,_/var/lib/ntop/rrd)">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.1</span>**ERROR** RRD: Disabled - unable to create base directory (err 13, /var/lib/ntop/rrd)</div>
+			</a>
+			
+			<ul id="toc-**ERROR**_RRD:_Disabled_-_unable_to_create_base_directory_(err_13,_/var/lib/ntop/rrd)-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Please_enable_make_sure_that_the_ntop_html/_directory_is_properly_installed" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Please_enable_make_sure_that_the_ntop_html/_directory_is_properly_installed">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.2</span>Please enable make sure that the ntop html/ directory is properly installed</div>
+			</a>
+			
+			<ul id="toc-Please_enable_make_sure_that_the_ntop_html/_directory_is_properly_installed-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../en/Ntop.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="mw-list-item"><a href="../en/Talk:Ntop.html" rel="discussion" title="Discussion about the content page [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">English</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../en/Ntop.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=Ntop&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=Ntop&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../en/Ntop.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Ntop&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Ntop&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output">
+<p><span>
+</span>
+</p>
+<div class="noprint archwiki-template-message">
+<p><a href="../File:Tango-go-next.png" class="image"><img alt="Tango-go-next.png" src="../File:Tango-go-next.png" decoding="async" width="48" height="48"></a><b>This article or section is a candidate for moving to <a href="/index.php?title=Ntopng&amp;action=edit&amp;redlink=1" class="new" title="Ntopng (page does not exist)">ntopng</a>.</b><a href="../File:Tango-go-next.png" class="image"><img alt="Tango-go-next.png" src="../File:Tango-go-next.png" decoding="async" width="48" height="48"></a></p>
+<div>
+<b>Notes:</b> It's been 10 years since the last release, maybe we should focus on the successor? (Discuss in <a rel="nofollow" class="external text" href="https://wiki.archlinux.org/title/Talk:Ntop">Talk:Ntop</a>)</div>
+</div>
+<p><a rel="nofollow" class="external text" href="https://www.ntop.org/products/ntop/">ntop</a> is a network traffic probe based on <a rel="nofollow" class="external text" href="https://www.tcpdump.org/">libpcap</a>, that offers RMON-like network traffic statistics accessible via a web browser.
+</p>
+<p>ntop's final release was in 2012 and is currently unmaintained. It has been succeeded by ntopng (<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/ntopng/">ntopng</a></span><sup><small>AUR</small></sup>).
+</p>
+<mw:tocplace></mw:tocplace>
+<h2><span class="mw-headline" id="Installation_and_configuration">Installation and configuration</span></h2>
+<p><a href="../en/Help:Reading.html#Installation_of_packages" class="mw-redirect" title="Install">Install</a> the <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/ntop/">ntop</a></span><sup><small>AUR</small></sup> package.
+The first run of ntop, you must set the admin password:
+</p>
+<pre># ntop
+</pre>
+<div class="noprint archwiki-template-message">
+<p><a href="../File:Tango-inaccurate.png" class="image"><img alt="Tango-inaccurate.png" src="../File:Tango-inaccurate.png" decoding="async" width="48" height="48"></a><b>The factual accuracy of this article or section is disputed.</b><a href="../File:Tango-inaccurate.png" class="image"><img alt="Tango-inaccurate.png" src="../File:Tango-inaccurate.png" decoding="async" width="48" height="48"></a></p>
+<div>
+<b>Reason:</b> The previous default <code>/etc/conf.d/ntop</code> does not exist anymore. A configuration file may be passed via the <code>@<i>file</i></code> option, but that must be picked up (e.g. via <a href="../en/Systemd.html#Drop-in_snippets" title="Systemd">Systemd#Drop-in_snippets</a>) from the systemd service file, which - as a second point - does not work due to <a rel="nofollow" class="external text" href="https://bugs.archlinux.org/task/41849">FS#41849</a>. (Discuss in <a href="../en/Talk:Ntop.html#Configuration" title="Talk:Ntop">Talk:ntop#Configuration</a>)</div>
+</div>
+<p>Next, you need to edit the configuration file (<code>/etc/conf.d/ntop</code>) to adapt on your needs. Below is an example configuration, with the focus on the host to get as much as information from the hosts connections:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/conf.d/ntop</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;"># Parameters to be passed to ntop.
+NTOP_ARGS="-K -W 2323 -i enp1s0,wlp2s0 -M -s -4 -6 -s -u ntop -c -r 30 --w3c -t 3 -a /var/log/ntop/http.log -O /var/log/ntop/ -q --skip-version-check 0"
+
+# Location of the log file.
+NTOP_LOG="/var/log/ntop/ntop.log"
+</pre>
+<p>Before <a href="../en/Help:Reading.html#Control_of_systemd_units" class="mw-redirect" title="Starting">starting</a> and possibly enabling the <code>ntop</code> service, you may have to <a href="../en/Systemd.html#Editing_provided_units" class="mw-redirect" title="Edit">edit</a> its <i>ntop</i> command options:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/systemd/system/ntop.d/options.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">[Service]
+ExecStart=
+ExecStart=/usr/bin/ntop <i>options</i></pre>
+<h2><span class="mw-headline" id="Tips_and_tricks">Tips and tricks</span></h2>
+<h3><span class="mw-headline" id="Web_interface">Web interface</span></h3>
+<p>To access ntop's web interface, enter <a rel="nofollow" class="external text" href="http://127.0.0.1:3000/">http://127.0.0.1:3000/</a> into your web browser. To make changes to the server, you will need to enter your username (default = <i>admin</i>) and password.
+</p>
+<p>If ntop is not just used locally on your machine, but network wide by multiple users, you would be better off by allowing SSL connections (http<b>s</b>) <b>only</b>.
+</p>
+<pre># ntop -W 4223
+</pre>
+<p>On firefox, the self-signed certificat should be a problem. Page will not be shown like that.
+</p>
+<p>Additional paramethers are allowed. Now direct our browser to <a rel="nofollow" class="external text" href="https://127.0.0.1:4223/">https://127.0.0.1:4223/</a>.
+</p>
+<p>You can also provide ntop with your own SSL certificate. Simply put it in ntop's configuration directory and name it <code>ntop-cert.pem</code>
+</p>
+<pre># cd /usr/share/ntop
+# openssl req -x509 -nodes -days 365 
+  \-subj '/C=US/L=Portland/CN=swim' 
+  \-newkey rsa:1024 -keyout ntop-cert.pem -out ntop-cert.pem
+</pre>
+<p>Instead of make a self-signed certificat who will make your page unable to print on firefox, you should look at <a href="../en/Certbot.html" class="mw-redirect" title="Letsencrypt">letsencrypt</a> service. This service will make a free well recognized certificat for your domain. Then you will have to copy privkey.pem and fullchain.pem inside ntop-cert.pem:
+</p>
+<pre># cat /etc/letsencrypt/live/&lt;your domain&gt;/privkey.pem /etc/letsencrypt/live/&gt;your domain&gt;/fullchain.pem &gt; /usr/share/ntop/ntop-cert.pem
+</pre>
+<p>you can also copy your private key in the same place.
+</p>
+<h3><span class="mw-headline" id="Group_and_user">Group and user</span></h3>
+<p>In order for the <i>-u</i> parameter to work properly and to make your ntop setup a bit more secure, you should create your own group and user for it.
+</p>
+<pre># useradd -M -s /usr/bin/false ntop
+# passwd -l ntop
+</pre>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> The <code>passwd</code> command here is optional, but recommended, as it will render the system more secure regarding your sshd.</div>
+<h2><span class="mw-headline" id="Troubleshooting">Troubleshooting</span></h2>
+<h3>
+<span id=".2A.2AERROR.2A.2A_RRD:_Disabled_-_unable_to_create_base_directory_.28err_13.2C_.2Fvar.2Flib.2Fntop.2Frrd.29"></span><span class="mw-headline" id="**ERROR**_RRD:_Disabled_-_unable_to_create_base_directory_(err_13,_/var/lib/ntop/rrd)">**ERROR** RRD: Disabled - unable to create base directory (err 13, /var/lib/ntop/rrd)</span>
+</h3>
+<p>Directory <code>/var/lib/ntop/rrd/</code> may not exist. Create it and make sure it belongs to user nobody.
+</p>
+<h3>
+<span id="Please_enable_make_sure_that_the_ntop_html.2F_directory_is_properly_installed"></span><span class="mw-headline" id="Please_enable_make_sure_that_the_ntop_html/_directory_is_properly_installed">Please enable make sure that the ntop html/ directory is properly installed</span>
+</h3>
+<p>If you receive this warning while trying to access the web interface, edit <code>/etc/conf.d/ntop</code> to include your IP and restart the daemon. For example:
+</p>
+<pre>NTOP_ARGS="-i enp1s0 -w 127.0.0.1:3000"
+</pre>
+<p>This is the IP you will use to access the web interface.
+</p>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface">
+<div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="../en/Category:Networking.html" title="Category:Networking">Networking</a></li></ul>
+</div>
+<div id="mw-hidden-catlinks" class="mw-hidden-catlinks mw-hidden-cats-hidden">Hidden categories: <ul>
+<li><a href="../en/Category:Pages_or_sections_flagged_with_Template:Move.html" title="Category:Pages or sections flagged with Template:Move">Pages or sections flagged with Template:Move</a></li>
+<li><a href="../en/Category:Pages_or_sections_flagged_with_Template:Accuracy.html" title="Category:Pages or sections flagged with Template:Accuracy">Pages or sections flagged with Template:Accuracy</a></li>
+</ul>
+</div>
+</div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=Ntop&amp;oldid=743656">https://wiki.archlinux.org/index.php?title=Ntop&amp;oldid=743656</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 28 August 2022, at 10:32.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

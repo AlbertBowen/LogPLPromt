@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>iSCSI/Boot - ArchWiki</title>
+<link rel="stylesheet" href="../../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-ISCSI_Boot rootpage-ISCSI skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Boot_process" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Boot_process">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Boot process</div>
+			</a>
+			
+			<ul id="toc-Boot_process-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Preparation" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Preparation">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Preparation</div>
+			</a>
+			
+				<button aria-controls="toc-Preparation-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Preparation subsection
+				</button>
+			
+			<ul id="toc-Preparation-sublist" class="sidebar-toc-list">
+				<li id="toc-Target_setup" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Target_setup">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.1</span>Target setup</div>
+			</a>
+			
+			<ul id="toc-Target_setup-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Pre-installation" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Pre-installation">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.2</span>Pre-installation</div>
+			</a>
+			
+			<ul id="toc-Pre-installation-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-iSCSI_initiator_setup" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#iSCSI_initiator_setup">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.3</span>iSCSI initiator setup</div>
+			</a>
+			
+			<ul id="toc-iSCSI_initiator_setup-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-System_setup" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#System_setup">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>System setup</div>
+			</a>
+			
+				<button aria-controls="toc-System_setup-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle System setup subsection
+				</button>
+			
+			<ul id="toc-System_setup-sublist" class="sidebar-toc-list">
+				<li id="toc-iSCSI_daemon" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#iSCSI_daemon">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.1</span>iSCSI daemon</div>
+			</a>
+			
+			<ul id="toc-iSCSI_daemon-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Fstab" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Fstab">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.2</span>Fstab</div>
+			</a>
+			
+			<ul id="toc-Fstab-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-initramfs" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#initramfs">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.3</span>initramfs</div>
+			</a>
+			
+			<ul id="toc-initramfs-sublist" class="sidebar-toc-list">
+				<li id="toc-Connect_to_the_network_automatically" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Connect_to_the_network_automatically">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.3.1</span>Connect to the network automatically</div>
+			</a>
+			
+			<ul id="toc-Connect_to_the_network_automatically-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Start_the_iSCSI_session_automatically" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Start_the_iSCSI_session_automatically">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.3.2</span>Start the iSCSI session automatically</div>
+			</a>
+			
+			<ul id="toc-Start_the_iSCSI_session_automatically-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Tips_and_tricks" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Tips_and_tricks">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4</span>Tips and tricks</div>
+			</a>
+			
+				<button aria-controls="toc-Tips_and_tricks-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Tips and tricks subsection
+				</button>
+			
+			<ul id="toc-Tips_and_tricks-sublist" class="sidebar-toc-list">
+				<li id="toc-Using_an_iBFT-compatible_ROM" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Using_an_iBFT-compatible_ROM">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.1</span>Using an iBFT-compatible ROM</div>
+			</a>
+			
+			<ul id="toc-Using_an_iBFT-compatible_ROM-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Set_custom_configuration_values_for_iscsistart" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Set_custom_configuration_values_for_iscsistart">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.2</span>Set custom configuration values for iscsistart</div>
+			</a>
+			
+			<ul id="toc-Set_custom_configuration_values_for_iscsistart-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Make_the_iSCSI_daemon_resilient_to_network_problems" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Make_the_iSCSI_daemon_resilient_to_network_problems">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.3</span>Make the iSCSI daemon resilient to network problems</div>
+			</a>
+			
+			<ul id="toc-Make_the_iSCSI_daemon_resilient_to_network_problems-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Improving_performance" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Improving_performance">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.4</span>Improving performance</div>
+			</a>
+			
+			<ul id="toc-Improving_performance-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Troubleshooting" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Troubleshooting">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5</span>Troubleshooting</div>
+			</a>
+			
+				<button aria-controls="toc-Troubleshooting-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Troubleshooting subsection
+				</button>
+			
+			<ul id="toc-Troubleshooting-sublist" class="sidebar-toc-list">
+				<li id="toc-Detected_conn_error_(1011)" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Detected_conn_error_(1011)">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5.1</span>Detected conn error (1011)</div>
+			</a>
+			
+			<ul id="toc-Detected_conn_error_(1011)-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-See_also" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#See_also">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6</span>See also</div>
+			</a>
+			
+			<ul id="toc-See_also-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../../en/ISCSI/Boot.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="mw-list-item"><a href="../../en/Talk:ISCSI/Boot.html" rel="discussion" title="Discussion about the content page [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">English</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../../en/ISCSI/Boot.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=ISCSI/Boot&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=ISCSI/Boot&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../../en/ISCSI/Boot.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=ISCSI/Boot&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=ISCSI/Boot&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					<div id="contentSub"><span class="subpages">&lt; <a href="../../en/ISCSI.html" title="ISCSI">ISCSI</a></span></div>
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output">
+<p><span>
+</span>
+</p>
+<div class="archwiki-template-meta-related-articles-start">
+<p class="mw-no-invert">Related articles</p>
+<ul>
+<li><a href="../../en/ISCSI/LIO.html" class="mw-redirect" title="ISCSI Target">iSCSI Target</a></li>
+<li><a href="../../en/Open-iSCSI.html" class="mw-redirect" title="ISCSI Initiator">iSCSI Initiator</a></li>
+</ul>
+</div>
+<p>Arch Linux can be installed on an <a href="../../en/ISCSI.html" title="ISCSI">iSCSI</a> target. This allows the machine to only contain enough mass storage to contain a <a href="../../en/Arch_boot_process.html#Boot_loader" class="mw-redirect" title="Boot loader">boot loader</a>, such as an USB drive, while its root partition is accessed over the network with iSCSI. Any subsequent partitions can also be accessed with iSCSI, or with some other network storage protocol, such as <a href="../../en/NFS.html" title="NFS">NFS</a>. When combined with <a href="../../en/Preboot_Execution_Environment.html" class="mw-redirect" title="PXE">PXE</a>, iBFT, or some other method of network booting, it allows the machine to not contain any mass storage.
+</p>
+<mw:tocplace></mw:tocplace>
+<h2><span class="mw-headline" id="Boot_process">Boot process</span></h2>
+<p>There are various ways of mounting an iSCSI target at boot time:
+</p>
+<ul>
+<li>Using a standard <a href="../../en/Mkinitcpio.html" title="Mkinitcpio">initramfs</a> that is configured to initialise a network connection and mount the iSCSI target, and finally boot into it. The procedure for this is outlined below.</li>
+<li>Certain firmwares (<a href="https://en.wikipedia.org/wiki/BIOS" class="extiw" title="wikipedia:BIOS">BIOS</a> or <a href="../../en/Unified_Extensible_Firmware_Interface.html" class="mw-redirect" title="UEFI">UEFI</a>) and network adapters can initialise a network connection and mount an iSCSI target themselves before booting into the OS contained in the iSCSI target. This requires installing a boot loader in the target as well. This is common in server- and enterprise-grade hardware. Consult your hardware manual and manufacturer on how to achieve this.</li>
+<li>Using a custom PXE firmware, such as <a rel="nofollow" class="external text" href="https://ipxe.org/start">iPXE</a>, to mount the iSCSI target and boot into it.</li>
+</ul>
+<h2><span class="mw-headline" id="Preparation">Preparation</span></h2>
+<h3><span class="mw-headline" id="Target_setup">Target setup</span></h3>
+<p>Follow the procedure outlined in <a href="../../en/ISCSI.html" title="ISCSI">iSCSI</a> to setup an iSCSI target on a remote machine.
+</p>
+<h3><span class="mw-headline" id="Pre-installation">Pre-installation</span></h3>
+<p>Boot into the Arch Linux installer using the latest official installation media from the <a rel="nofollow" class="external text" href="https://archlinux.org/download/">download page</a>. Follow the <a href="../../en/Installation_guide.html" title="Installation guide">installation guide</a> up until <a href="../../en/Installation_guide.html#Partition_the_disks" title="Installation guide">partitioning</a>.
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> It is desirable to have a <a href="../../en/Network_configuration.html#Static_IP_address" title="Network configuration">static IP address</a> in the network when using iSCSI. This can be achieved either by setting the address manually, or by using a static reservation in the network's DHCP server.</div>
+<h3><span class="mw-headline" id="iSCSI_initiator_setup">iSCSI initiator setup</span></h3>
+<p>If needed, adjust your initiator name in the iSCSI configuration.
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/iscsi/initiatorname.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">InitiatorName=iqn.2011-03.example.org.istgt:arch</pre>
+<p>Discover the available iSCSI targets on the remote machine to ensure they are visible to the installer. Adjust the portal IP address to match your environment. The output will depend on your environment; ensure it matches the target you set up earlier.
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;"># iscsiadm -m discovery -t sendtargets -p <i>PORTAL_IP_ADDRESS</i></pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">192.168.1.100:3260,-1 iqn.2011-03.example.org.istgt:arch
+</pre>
+<p>Login to the iSCSI target.
+</p>
+<pre># iscsiadm -m node -T <i>TARGET_NAME</i> -p <i>PORTAL_IP_ADDRESS</i> -l
+</pre>
+<p>The iSCSI block device is now available. Verify the output of <a href="../../en/Device_file.html#lsblk" class="mw-redirect" title="Lsblk">lsblk</a> to ensure the block device is available. The kernel log messages may contain helpful information if accessing the target fails.
+</p>
+<p>Continue installing Arch on the iSCSI target as usual, up until you generate the initramfs and install the boot loader.
+</p>
+<h2><span class="mw-headline" id="System_setup">System setup</span></h2>
+<h3><span class="mw-headline" id="iSCSI_daemon">iSCSI daemon</span></h3>
+<p><a href="../../en/Help:Reading.html#Installation_of_packages" class="mw-redirect" title="Install">Install</a> the <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=open-iscsi">open-iscsi</a></span> package in the new system.
+</p>
+<p><a href="../../en/Help:Reading.html#Control_of_systemd_units" class="mw-redirect" title="Start/enable">Start/enable</a> <code>iscsid.service</code>.
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> The iSCSI daemon will detect and manage the iSCSI session originally started in the initramfs.</div>
+<h3><span class="mw-headline" id="Fstab">Fstab</span></h3>
+<p>The install procedure automatically generates <code>/etc/fstab</code> to match the new install. Ensure the root filesystem is added correctly. The iSCSI daemon handles any errors in the iSCSI kernel layer, so it is important to keep it running as long as the root filesystem - and any other iSCSI filesystems - are mounted. This can be achieved by appending <code>x-systemd.requires=iscsid.service</code> to the filesystem mount options. For example:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/fstab</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">UUID=12345678-1234-1234-1234-123456789012 /     ext4   defaults,_netdev,x-systemd.requires=iscsid.service   0      1</pre>
+<h3><span class="mw-headline" id="initramfs">initramfs</span></h3>
+<p>This guide outlines a method which uses a busybox-based init, as opposed to a <a href="../../en/Systemd.html" title="Systemd">systemd</a>-based init. The procedure will be different for a systemd-based init.
+</p>
+<h4><span class="mw-headline" id="Connect_to_the_network_automatically">Connect to the network automatically</span></h4>
+<p>The initcpio has to connect to the network before opening a connection to the iSCSI target. This can be achieved in various ways, but a simple way is to use the <a href="../../en/Mkinitcpio.html#Using_net" title="Mkinitcpio">net-hook</a> with the <code>ip=</code> <a href="../../en/Kernel_parameters.html" class="mw-redirect" title="Kernel parameter">kernel parameter</a>. This hook is designed to be used with an NFS-based root, but omitting the NFS-specific parameters lets it only configure the network adapter.
+</p>
+<p><a href="../../en/Help:Reading.html#Installation_of_packages" class="mw-redirect" title="Install">Install</a> the <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=mkinitcpio-nfs-utils">mkinitcpio-nfs-utils</a></span> in the new system.
+</p>
+<p>Insert the <code>net</code> hook in the <code>HOOKS</code> array:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/mkinitcpio.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">HOOKS=(base ... net block ...)</pre> 
+<p>Append the <code>ip=</code> parameter accordingly to the <a href="../../en/Kernel_parameters.html" title="Kernel parameters">kernel parameters</a>. For example, to configure the <code>eth0</code> network adapter with DHCP:
+</p>
+<pre>ip=dhcp</pre>
+<div class="archwiki-template-box archwiki-template-box-tip">
+<strong>Tip:</strong> Once the actual system boots from the initramfs, the network adpater will have its address left over. Ensure your network configuration respects this address, or otherwise uses the same address.</div>
+<h4><span class="mw-headline" id="Start_the_iSCSI_session_automatically">Start the iSCSI session automatically</span></h4>
+<p>In order to start the iSCSI session in the initramfs, a custom hook must be created for it. The hook consists of a build hook and a runtime hook, as explained in <a href="../../en/Mkinitcpio.html#HOOKS" title="Mkinitcpio">Mkinitcpio#HOOKS</a>.
+</p>
+<p>The build hook will add the required iSCSI modules to the initramfs, and the <code>iscsistart</code> binary.
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/initcpio/install/iscsi</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">build () {
+        map add_module iscsi_tcp iscsi_ibft libiscsi libiscsi_tcp scsi_transport_iscsi crc32c
+        add_checked_modules "/drivers/net"
+        add_binary iscsistart
+        add_runscript
+}
+
+help () {
+cat &lt;&lt;HELPEOF
+        This hook allows you to boot from an iSCSI target.
+HELPEOF
+}</pre>
+<div class="archwiki-template-box archwiki-template-box-warning">
+<strong>Warning:</strong> The <code>iscsistart</code> binary is specifically used to start an iSCSI session from a boot environment. It should <i>not</i> be used in conjunction with <code>iscsiadm</code> or <code>iscsid</code>!</div>
+<p>The runtime hook will start the iSCSI session using a given initiator name, target name and portal. Fill in the values according to your environment.
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/initcpio/hooks/iscsi</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">run_hook () {
+        msg "Mounting iSCSI target"
+        iscsistart -i <i>INITIATOR_NAME</i> -t <i>TARGET_NAME</i> -g 1 -a <i>PORTAL_IP_ADDRESS</i> -d 1
+}</pre>
+<p>Append the newly created <code>iscsi</code> hook after the <code>net</code> hook in the <code>HOOKS</code> array:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/mkinitcpio.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">HOOKS=(... net iscsi block ...)</pre>
+<p>Adjust the <code>root=</code> kernel parameter to match the iSCSI target.
+</p>
+<div class="archwiki-template-box archwiki-template-box-tip">
+<strong>Tip:</strong> Using a <a href="../../en/Persistent_block_device_naming.html" title="Persistent block device naming">persistent block device name</a> helps prevent mismatches with other block devices if using node names (<code>/dev/sda</code>, <code>/dev/sdb</code> etc.)</div>
+<p><a href="../../en/Mkinitcpio.html#Image_creation_and_activation" title="Mkinitcpio">Generate the initramfs image</a> and finish the installation guide.
+</p>
+<h2><span class="mw-headline" id="Tips_and_tricks">Tips and tricks</span></h2>
+<h3><span class="mw-headline" id="Using_an_iBFT-compatible_ROM">Using an iBFT-compatible ROM</span></h3>
+<p><code>iscsistart</code> can be used to configure the network and iSCSI target based on iBFT-supplied configuration values from the firmware.
+</p>
+<p>Modify the runtime hook for iBFT:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/initcpio/hooks/iscsi</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">run_hook ()
+{
+    modprobe iscsi_tcp
+    modprobe iscsi_ibft
+
+    echo "Network configuration based on iBFT"
+    iscsistart -N {{|}}{{|}} echo "Unable to configure network"
+
+    echo "iSCSI auto connect based on iBFT"
+    until iscsistart -b ; do
+        sleep 3
+    done
+}</pre>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> Ensure that whatever network management system you use does not bring the interface down too early during the shutdown process.</div>
+<h3><span class="mw-headline" id="Set_custom_configuration_values_for_iscsistart">Set custom configuration values for <code>iscsistart</code></span></h3>
+<p>Since the <code>iscsistart</code> binary in the initramfs does not use any iSCSI daemon, nor does it use a configuration file, it assumes default values for all configuration settings for the daemon. Individual settings can be set with the <code>-P</code>-command line parameter:
+</p>
+<pre>iscsistart ... -P 'node.conn[0].iscsi.MaxXmitDataSegmentLength=26144'</pre>
+<p>The parameter can be given multiple times to set multiple settings. All available settings and their default values can be found in <a rel="nofollow" class="external text" href="https://github.com/open-iscsi/open-iscsi/blob/master/etc/iscsid.conf">iscsid.conf</a>.
+</p>
+<h3><span class="mw-headline" id="Make_the_iSCSI_daemon_resilient_to_network_problems">Make the iSCSI daemon resilient to network problems</span></h3>
+<p>The <a rel="nofollow" class="external text" href="https://github.com/open-iscsi/open-iscsi/blob/master/README">open-iscsi README</a> describes optimal iSCSI daemon settings when using an iSCSI target for the root. The iSCSI timeouts should be adjusted so that the iSCSI kernel layer has several chances to try to re-establish a broken session, and so that commands are not quickly requeued to the SCSI layer. This is essentially the opposite of when using <code>dm-multipath</code>.
+</p>
+<p>Turn off iSCSI no-ops:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/iscsi/iscsid.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">node.conn[0].timeo.noop_out_interval = 0
+node.conn[0].timeo.noop_out_timeout = 0</pre>
+<p>Set the replacement timeout to a large value:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/iscsi/iscsid.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">node.session.timeo.replacement_timeout = 86400</pre>
+<p>If a network problem is detected by the iSCSI initiator, running commands are failed immediately. However, the SCSI error handler in the SCSI layer prevents them from failing until the iSCSI daemon's configured replacement timeout has elapsed. <code>iscsiadm</code> can be used to see if the SCSI error handler is currently running:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;"># iscsiadm -m session -P 3</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">************************
+Attached SCSI devices:
+************************
+Host Number: 0  State: running
+scsi0 Channel 00 Id 0 Lun: 0
+        Attached scsi disk sda          State: running</pre>
+<p>To modify the timeout of failing commands until the SCSI error handler is ran, modify the device's timeout value directly:
+</p>
+<pre># echo Y &gt; /sys/block/sdX/device/timeout</pre>
+<p>where the value is in seconds, or with an <a href="../../en/Udev.html" title="Udev">udev</a> rule:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/udev/rules.d/50-iscsi.rules</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">ACTION=="add", SUBSYSTEM=="scsi" , ATTR{type}=="0|7|14", RUN+="/bin/sh -c 'echo Y &gt; /sys$$DEVPATH/timeout'"
+</pre>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> The default timeout is 30 seconds.</div>
+<h3><span class="mw-headline" id="Improving_performance">Improving performance</span></h3>
+<p>Since low-level I/O-commands will go through the IO scheduler on the remote system, and are subsequently queued there, it is possible to disable any queuing algorithm on the initiator system by using the <code>none</code> setting for the queuing algorithm for the iSCSI device. See <a href="../../en/Improving_performance.html#Input/output_schedulers" title="Improving performance">Improving performance#Input/output schedulers</a> for details and configuration.
+</p>
+<h2><span class="mw-headline" id="Troubleshooting">Troubleshooting</span></h2>
+<h3>
+<span id="Detected_conn_error_.281011.29"></span><span class="mw-headline" id="Detected_conn_error_(1011)">Detected conn error (1011)</span>
+</h3>
+<p>This can occur for multiple reasons:
+</p>
+<ul>
+<li>The initiator, target, or network is overwhelmed from iSCSI no-ops, causing a busy connection be considered disconnected, in which case the SCSI error handler overrides the device, which can break the working-but-busy iSCSI session. See <a href="#Make_the_iSCSI_daemon_resilient_to_network_problems">#Make the iSCSI daemon resilient to network problems</a> on how to disable the no-ops.</li>
+<li>The network adapter's MTU is mismatched from that of the rest of the network.</li>
+<li>In rare cases, when TCP window scaling is enabled. It can be disabled with <a href="../../en/Sysctl.html" title="Sysctl">sysctl</a> with the <code>net.ipv4.tcp_window_scaling</code> setting.</li>
+</ul>
+<h2><span class="mw-headline" id="See_also">See also</span></h2>
+<ul>
+<li>
+<span class="plainlinks archwiki-template-man" title="$ man 8 iscsistart"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/iscsistart.8">iscsistart(8)</a></span>, <span class="plainlinks archwiki-template-man" title="$ man 8 iscsiadm"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/iscsiadm.8">iscsiadm(8)</a></span> and <span class="plainlinks archwiki-template-man" title="$ man 8 iscsid"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/iscsid.8">iscsid(8)</a></span>
+</li>
+<li><a rel="nofollow" class="external text" href="https://github.com/open-iscsi/open-iscsi">open-iscsi Github repository</a></li>
+</ul>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../../Special:Categories.html" title="Special:Categories">Categories</a>: <ul>
+<li><a href="../../en/Category:Installation_process.html" title="Category:Installation process">Installation process</a></li>
+<li><a href="../../en/Category:Networking.html" title="Category:Networking">Networking</a></li>
+<li><a href="../../en/Category:Storage.html" title="Category:Storage">Storage</a></li>
+</ul>
+</div></div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=ISCSI/Boot&amp;oldid=777634">https://wiki.archlinux.org/index.php?title=ISCSI/Boot&amp;oldid=777634</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 9 May 2023, at 21:56.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

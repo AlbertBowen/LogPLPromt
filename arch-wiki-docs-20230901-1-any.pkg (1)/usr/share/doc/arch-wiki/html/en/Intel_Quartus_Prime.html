@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>Intel Quartus Prime - ArchWiki</title>
+<link rel="stylesheet" href="../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Intel_Quartus_Prime rootpage-Intel_Quartus_Prime skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Installation" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Installation">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Installation</div>
+			</a>
+			
+			<ul id="toc-Installation-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Usage" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Usage">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Usage</div>
+			</a>
+			
+			<ul id="toc-Usage-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Standard_Edition_license_validation" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Standard_Edition_license_validation">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>Standard Edition license validation</div>
+			</a>
+			
+			<ul id="toc-Standard_Edition_license_validation-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Education_license" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Education_license">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4</span>Education license</div>
+			</a>
+			
+				<button aria-controls="toc-Education_license-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Education license subsection
+				</button>
+			
+			<ul id="toc-Education_license-sublist" class="sidebar-toc-list">
+				<li id="toc-Generating_license" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Generating_license">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.1</span>Generating license</div>
+			</a>
+			
+			<ul id="toc-Generating_license-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Choosing_right_license" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Choosing_right_license">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.2</span>Choosing right license</div>
+			</a>
+			
+			<ul id="toc-Choosing_right_license-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Setting_up_environment_variable" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Setting_up_environment_variable">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.3</span>Setting up environment variable</div>
+			</a>
+			
+			<ul id="toc-Setting_up_environment_variable-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Enabling_Eclipse_and_NIOS_IDE" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Enabling_Eclipse_and_NIOS_IDE">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.4</span>Enabling Eclipse and NIOS IDE</div>
+			</a>
+			
+			<ul id="toc-Enabling_Eclipse_and_NIOS_IDE-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Troubleshooting" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Troubleshooting">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5</span>Troubleshooting</div>
+			</a>
+			
+				<button aria-controls="toc-Troubleshooting-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Troubleshooting subsection
+				</button>
+			
+			<ul id="toc-Troubleshooting-sublist" class="sidebar-toc-list">
+				<li id="toc-Empty_greyish_windows_(XMonad)" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Empty_greyish_windows_(XMonad)">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5.1</span>Empty greyish windows (XMonad)</div>
+			</a>
+			
+			<ul id="toc-Empty_greyish_windows_(XMonad)-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-USB-Blaster_not_working" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#USB-Blaster_not_working">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5.2</span>USB-Blaster not working</div>
+			</a>
+			
+			<ul id="toc-USB-Blaster_not_working-sublist" class="sidebar-toc-list">
+				<li id="toc-No_JTAG_hardware_available" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#No_JTAG_hardware_available">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5.2.1</span>No JTAG hardware available</div>
+			</a>
+			
+			<ul id="toc-No_JTAG_hardware_available-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-JTAG_chain_broken" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#JTAG_chain_broken">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5.2.2</span>JTAG chain broken</div>
+			</a>
+			
+			<ul id="toc-JTAG_chain_broken-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Error_when_scanning_hardware_-_Server_error" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Error_when_scanning_hardware_-_Server_error">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5.2.3</span>Error when scanning hardware - Server error</div>
+			</a>
+			
+			<ul id="toc-Error_when_scanning_hardware_-_Server_error-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Eclipse_IDE_for_Nios_II_is_slow_or_unresponsive" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Eclipse_IDE_for_Nios_II_is_slow_or_unresponsive">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5.3</span>Eclipse IDE for Nios II is slow or unresponsive</div>
+			</a>
+			
+			<ul id="toc-Eclipse_IDE_for_Nios_II_is_slow_or_unresponsive-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-ModelSim" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#ModelSim">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5.4</span>ModelSim</div>
+			</a>
+			
+			<ul id="toc-ModelSim-sublist" class="sidebar-toc-list">
+				<li id="toc-Failure_to_access_library_'work'" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Failure_to_access_library_'work'">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5.4.1</span>Failure to access library 'work'</div>
+			</a>
+			
+			<ul id="toc-Failure_to_access_library_'work'-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Unreachable_host" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Unreachable_host">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5.4.2</span>Unreachable host</div>
+			</a>
+			
+			<ul id="toc-Unreachable_host-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-See_also" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#See_also">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6</span>See also</div>
+			</a>
+			
+			<ul id="toc-See_also-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../en/Intel_Quartus_Prime.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="mw-list-item"><a href="../en/Talk:Intel_Quartus_Prime.html" rel="discussion" title="Discussion about the content page [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">English</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../en/Intel_Quartus_Prime.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=Intel_Quartus_Prime&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=Intel_Quartus_Prime&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../en/Intel_Quartus_Prime.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Intel_Quartus_Prime&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Intel_Quartus_Prime&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output">
+<p>From the <a rel="nofollow" class="external text" href="https://www.intel.com/content/www/us/en/software/programmable/quartus-prime/overview.html">Intel Quartus Prime overview</a>:
+</p>
+<dl><dd>The revolutionary Intel® Quartus® Prime Design Software includes everything you need to design for Intel® FPGAs, SoCs, and complex programmable logic device (CPLD) from design entry and synthesis to optimization, verification, and simulation.</dd></dl>
+<p>This article focuses on the following Intel FPGA software components:
+</p>
+<ul>
+<li>Quartus Prime Lite
+<ul><li>Intel FPGA Download Cable (II)</li></ul>
+</li>
+<li>Questa-Intel FPGA Edition — included with Quartus Prime Lite Edition</li>
+</ul>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> 
+<ul>
+<li>Intel Quartus Prime was previously <a href="https://en.wikipedia.org/wiki/Intel_Quartus_Prime" class="extiw" title="wikipedia:Intel Quartus Prime">called Altera Quartus Prime</a>.</li>
+<li>Intel FPGA Download Cable was <a rel="nofollow" class="external text" href="https://www.intel.com/content/www/us/en/programmable/support/support-resources/download/drivers/dri-usb_b-lnx.html">formerly known as USB-Blaster</a>.</li>
+<li>ModelSim-Intel FPGA (Starter) Edition was <a rel="nofollow" class="external text" href="https://www.intel.com/content/www/us/en/software/programmable/quartus-prime/model-sim.html">discontinued and replaced by Questa</a>.</li>
+</ul>
+</div>
+<mw:tocplace></mw:tocplace>
+<h2><span class="mw-headline" id="Installation">Installation</span></h2>
+<p>Quartus Prime Lite and Questa can be <a href="../en/Help:Reading.html#Installation_of_packages" class="mw-redirect" title="Install">installed</a> with the <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/quartus-free/">quartus-free</a></span><sup><small>AUR</small></sup> meta-package. This meta-package will also install device support for every supported device family. To save on disk space once the package is built, you can install only the necessary components. For example:
+</p>
+<ul>
+<li>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/quartus-free-quartus/">quartus-free-quartus</a></span><sup><small>AUR</small></sup> for Quartus Prime Lite</li>
+<li>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/quartus-free-questa/">quartus-free-questa</a></span><sup><small>AUR</small></sup> for Questa</li>
+</ul>
+<p><i>quartus-free-quartus</i> requires <i>quartus-free-devinfo</i>, which is provided by any one of the <a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/?K=quartus-free-devinfo-">packages with a quartus-free-devinfo- prefix</a>. For example, install the <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/quartus-free-devinfo-cyclonev/">quartus-free-devinfo-cyclonev</a></span><sup><small>AUR</small></sup> dependency if you have a Cyclone V FPGA.
+</p>
+<p>Quartus II 13.0 Web Edition is "the last version to support Cyclone II and earlier FPGAs", so install <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/quartus-free-130/">quartus-free-130</a></span><sup><small>AUR</small></sup> instead of <i>quartus-free</i> if support for such devices is needed. See also <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/quartus-130/">quartus-130</a></span><sup><small>AUR</small></sup> for the SP1 Subscription Edition.
+</p>
+<p>Unlike ModelSim, Questa <a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/quartus-free/#comment-835325">requires a valid license file even for the free version</a>. Those who do not wish to provide one can install the last version of ModelSim (<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/modelsim-intel-starter/">modelsim-intel-starter</a></span><sup><small>AUR</small></sup>) instead.
+</p>
+<p><i>quartus-free-quartus</i> uses files in <code>/etc/profile.d/</code> to extend the <code>PATH</code> environment variable, so log into a new session to make commands like <b>quartus_sh</b> available.
+</p>
+<p>Being in the <code>plugdev</code> group to program an FPGA (via the USB-Blaster) is <a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/quartus-free/#comment-835325">optional</a>; logged in users are always allowed access.
+</p>
+<h2><span class="mw-headline" id="Usage">Usage</span></h2>
+<p>Run Quartus Prime Lite by running <code>quartus</code> or selecting its <a href="../en/Desktop_entries.html" class="mw-redirect" title="Desktop entry">desktop entry</a>. Use the <i>quartus_sh</i> utility to run Quartus Prime Shell. See <code>quartus_sh --help</code> for more information.
+</p>
+<p>Run ModelSim by running <code>vsim</code> or selecting its desktop entry. See <code>vsim -help</code> for more information.
+</p>
+<h2><span class="mw-headline" id="Standard_Edition_license_validation">Standard Edition license validation</span></h2>
+<p>Configuring the path to your Quartus Prime Standard Edition license file from the Quartus Prime settings interface is not enough for successful license validation. The license validation routine looks for your MAC address on interface <code>eth0</code>, the traditional name for your <a href="../en/Network_configuration/Ethernet.html" class="mw-redirect" title="Ethernet">Ethernet</a> controller. However, <a href="../en/Network_configuration.html#Network_interfaces" class="mw-redirect" title="Network interfaces">network interfaces</a> use predictable names by default—these can vary from machine to machine. Thus, the expected <code>eth0</code> name <i>must</i> be retained by following <a href="../en/Network_configuration.html#Revert_to_traditional_interface_names" title="Network configuration">Network configuration#Revert to traditional interface names</a>.
+</p>
+<p>Alternatively, a dummy <code>eth0</code> network interface can be dynamically created by <a href="../en/Systemd-networkd.html" title="Systemd-networkd">systemd-networkd</a> at boot. This may be desirable for systems without a wired Ethernet adapter. Create the following file (where <code><i>hostname</i></code> is your machine's <a href="../en/Network_configuration.html#Set_the_hostname" class="mw-redirect" title="Hostname">hostname</a>):
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/systemd/network/25-dummy.netdev</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">[Match]
+Host=<i>hostname</i>
+
+[NetDev]
+Name=eth0
+Kind=dummy
+MACAddress=<i>MAC_address</i></pre>
+<p>Ensure <code>systemd-networkd.service</code> is <a href="../en/Help:Reading.html#Control_of_systemd_units" class="mw-redirect" title="Started/enabled">started/enabled</a> afterwards.
+</p>
+<p>See also related articles on the <a rel="nofollow" class="external text" href="https://www.intel.com/content/www/us/en/programmable/support/support-resources/knowledge-base/kdb-filter.html">Intel Knowledge Base</a>:
+</p>
+<ul>
+<li><a rel="nofollow" class="external text" href="https://www.intel.com/content/altera-www/global/en_us/index/support/support-resources/knowledge-base/embedded/2017/why-quartus-opencl-license-doesnt-work-on-centos-7-x-.html">Why does my Quartus/OpenCL license not work on Red Hat 7.x?</a></li>
+<li><a rel="nofollow" class="external text" href="https://www.intel.com/content/altera-www/global/en_us/index/support/support-resources/knowledge-base/solutions/rd06112013_373.html">Why does OpenCL node locked license not work with multiple ethernet port?</a></li>
+</ul>
+<h2><span class="mw-headline" id="Education_license">Education license</span></h2>
+<h3><span class="mw-headline" id="Generating_license">Generating license</span></h3>
+<p>You can get the licenses you need from:
+<a rel="nofollow" class="external free" href="https://www.intel.com/content/www/us/en/my-intel/fpga-sslc-sign-in.html">https://www.intel.com/content/www/us/en/my-intel/fpga-sslc-sign-in.html</a>
+You first need to register to get access. Use Student as Profession.
+When you have access, sign in and select “Sign up for Evaluation of Free Licenses"
+You need to generate two license files.
+</p>
+<h3><span class="mw-headline" id="Choosing_right_license">Choosing right license</span></h3>
+<p>Select “Questa*-Intel® FPGA Starter Edition SW-QUESTA". Edit “# of Sets" to 1 and click
+“Get license".
+Select +New Computer (if this is your first time here) and fill in the following using a
+computer name of your choice and yourself as Primary Admin.
+</p>
+<p>Select Computer Type -&gt; NIC ID
+</p>
+<p>Computer ID -&gt; your MAC address
+</p>
+<p>You find your computer’s NIC ID (Physical address without ‘:‘) using the “Terminal" and typing <code>ip link</code>. This number should then replace 123456789ABC in Computer ID fields. Then click on “Generate License".
+</p>
+<p>You will now receive an email with two license file. You might want to put them in the Quartus program directory, e.g., under “licenses".
+</p>
+<h3><span class="mw-headline" id="Setting_up_environment_variable">Setting up environment variable</span></h3>
+<p>You need three variables:
+MGLM_LICENSE_FILE,
+LM_LICENSE_FILE and
+LS_LICENSE_FILE
+</p>
+<p><br>
+For MGLM_LICENSE_FILE and LS_LICENSE_FILE, you need to bind them to the file with the larger content.
+For LM_LICENSE_FILE, you need to bind this to the smaller file.
+</p>
+<p>you can bind these in a lot of different ways. But one way to do this is add the following to the /etc/environment :
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">cat /etc/environment</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">export MGLM_LICENSE_FILE=<i>Path to the larger license</i>
+export LS_LICENSE_FILE=<i>Path to the larger license</i>
+export LM_LICENSE_FILE=<i>Path to the smaller license</i></pre>
+<h3><span class="mw-headline" id="Enabling_Eclipse_and_NIOS_IDE">Enabling Eclipse and NIOS IDE</span></h3>
+<p>Follow this guide from intel. And disregard step "6)" Where it mentions and .exe file
+</p>
+<p><a rel="nofollow" class="external free" href="https://www.intel.com/content/www/us/en/docs/programmable/683525/21-3/linux-installation.html">https://www.intel.com/content/www/us/en/docs/programmable/683525/21-3/linux-installation.html</a>
+</p>
+<h2><span class="mw-headline" id="Troubleshooting">Troubleshooting</span></h2>
+<h3>
+<span id="Empty_greyish_windows_.28XMonad.29"></span><span class="mw-headline" id="Empty_greyish_windows_(XMonad)">Empty greyish windows (XMonad)</span>
+</h3>
+<p>Some of the built-in editors in Quartus Prime such as IP editors and <i>Tools &gt; Platform Designer</i> (aka Qsys) only show a blank window with <a href="../en/Xmonad.html" title="Xmonad">Xmonad</a>. A workaround is to <a rel="nofollow" class="external text" href="https://stackoverflow.com/a/14525340">change the window manager's name</a>. See also <a rel="nofollow" class="external text" href="https://hackage.haskell.org/package/xmonad-contrib/docs/XMonad-Hooks-SetWMName.html">XMonad.Hooks.SetWMName documentation</a> and <a href="../en/Xmonad.html#Problems_with_Java_applications" title="Xmonad">Xmonad#Problems with Java applications</a>.
+</p>
+<h3><span class="mw-headline" id="USB-Blaster_not_working">USB-Blaster not working</span></h3>
+<p>Run <code>jtagconfig</code> and depending on the output:
+</p>
+<h4><span class="mw-headline" id="No_JTAG_hardware_available">No JTAG hardware available</span></h4>
+<p>If the device is listed by <code>lsusb</code>, restart <code>jtagd</code> as root <a rel="nofollow" class="external autonumber" href="https://www.intel.com/content/www/us/en/programmable/support/support-resources/knowledge-base/embedded/2018/why-do-i-get-the-error-no-jtag-hardware-available-when-running-j.html">[1]</a>:
+</p>
+<pre># killall -9 jtagd
+# jtagd
+</pre>
+<h4><span class="mw-headline" id="JTAG_chain_broken">JTAG chain broken</span></h4>
+<pre>1) USB-Blaster [3-2]
+  Unable to read device chain - JTAG chain broken
+</pre>
+<p>Perform the steps under the "Linux" section in <a rel="nofollow" class="external free" href="https://ecen3350.rocks/static/usb-blaster.pdf">https://ecen3350.rocks/static/usb-blaster.pdf</a><sup title="Last check status: domain name not resolved">[<a href="https://en.wikipedia.org/wiki/Wikipedia:Link_rot" class="extiw" title="wikipedia:Wikipedia:Link rot">dead link</a> 2023-04-23 ⓘ]</sup>. Note that the Arch Linux path to <code>quartus/bin</code> in step 3 should be as follows:
+</p>
+<pre>/opt/intelFPGA/<i>PKGBUILD_mainver</i>/quartus/bin
+</pre>
+<p>Steps 3 and 5 should also be performed with root privileges.
+</p>
+<p>Another possible cause may be a missing 32-bit version of <code>libudev.so</code> <a rel="nofollow" class="external autonumber" href="https://www-acc.gsi.de/wiki/Timing/QuartusInstallUbuntu1404#Installing_the_USB_Blaster">[2]</a>. <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=lib32-systemd">lib32-systemd</a></span> provides this shared object, so make sure it is installed. (This should already be the case since it is a transitive dependency of <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/quartus-free-quartus/">quartus-free-quartus</a></span><sup><small>AUR</small></sup>.)
+</p>
+<p>If the error still persists, try installing <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=lib32-libudev0-shim">lib32-libudev0-shim</a></span>.
+</p>
+<h4><span class="mw-headline" id="Error_when_scanning_hardware_-_Server_error">Error when scanning hardware - Server error</span></h4>
+<pre>Connecting to server(s) [........          ]
+Error when scanning hardware - Server error
+</pre>
+<p>A workaround is to edit <code>/etc/jtagd.conf</code> or <code>~/.jtagd.conf</code> (depending on whether you want to run <code>jtagd</code> as root or as an unprivileged user) to include the following line:
+</p>
+<pre>Password = "<i>changeme</i>";
+</pre>
+<p>Add the server afterwards:
+</p>
+<pre>$ jtagconfig --addserver 127.0.0.1 <i>changeme</i>
+</pre>
+<p>If problems still persist, try restarting <code>jtagd</code>:
+</p>
+<pre># killall -9 jtagd
+$ jtagd
+</pre>
+<h3><span class="mw-headline" id="Eclipse_IDE_for_Nios_II_is_slow_or_unresponsive">Eclipse IDE for Nios II is slow or unresponsive</span></h3>
+<p>Try <a href="../en/Eclipse.html#Disable_GTK_3" title="Eclipse">disabling GTK 3 in eclipse.ini</a><sup>[<a href="../en/Help:Procedures.html#Fix_broken_section_links" title="Help:Procedures">broken link</a>: invalid section]</sup>. The <code>eclipse.ini</code> file path for Nios II may vary; one possibility on Arch Linux is as follows <a rel="nofollow" class="external autonumber" href="https://stackoverflow.com/a/65713986">[3]</a>:
+</p>
+<pre>/opt/intelFPGA/<i>PKGBUILD_mainver</i>/nios2eds/bin/eclipse_nios2/eclipse.ini
+</pre>
+<h3><span class="mw-headline" id="ModelSim">ModelSim</span></h3>
+<h4>
+<span id="Failure_to_access_library_.27work.27"></span><span class="mw-headline" id="Failure_to_access_library_'work'">Failure to access library 'work'</span>
+</h4>
+<p>The following error may be encountered when running a simulation in a new directory:
+</p>
+<pre>Error: (vcom-19) Failed to access library 'work' at "work". 
+</pre>
+<p>This can be resolved by creating the <code>work</code> directory from the ModelSim console <a rel="nofollow" class="external autonumber" href="https://jackeyblog.blogspot.com/2005/07/note-myself-modelsim-failed-to-access.html">[4]</a>:
+</p>
+<pre>ModelSim&gt; vlib work
+</pre>
+<h4><span class="mw-headline" id="Unreachable_host">Unreachable host</span></h4>
+<p>ModelSim may crash with the following error when trying to start a simulation:
+</p>
+<pre>Error: couldn't open socket: host is unreachable
+Trouble making server.
+</pre>
+<p>This can be resolved by adding <span class="plainlinks archwiki-template-man" title="$ man 5 hosts"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/hosts.5">hosts(5)</a></span> entries for <code>localhost</code> as specified in <a href="../en/Network_configuration.html#Local_network_hostname_resolution" title="Network configuration">Network configuration#Local network hostname resolution</a>.
+</p>
+<h2><span class="mw-headline" id="See_also">See also</span></h2>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Intel_Quartus_Prime" class="extiw" title="wikipedia:Intel Quartus Prime">Wikipedia:Intel Quartus Prime</a></li>
+<li><a rel="nofollow" class="external text" href="https://www.intel.com/content/www/us/en/programmable/support/support-resources.html">Intel FPGA Support Resources</a></li>
+<li><a rel="nofollow" class="external text" href="https://www.intel.com/content/www/us/en/programmable/documentation/esc1425946071433.html">Intel FPGA Software Installation and Licensing</a></li>
+</ul>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface">
+<div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="../en/Category:Electronic_design_automation.html" title="Category:Electronic design automation">Electronic design automation</a></li></ul>
+</div>
+<div id="mw-hidden-catlinks" class="mw-hidden-catlinks mw-hidden-cats-hidden">Hidden categories: <ul>
+<li><a href="../en/Category:Pages_with_dead_links.html" title="Category:Pages with dead links">Pages with dead links</a></li>
+<li><a href="../en/Category:Pages_with_broken_section_links.html" title="Category:Pages with broken section links">Pages with broken section links</a></li>
+</ul>
+</div>
+</div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=Intel_Quartus_Prime&amp;oldid=785016">https://wiki.archlinux.org/index.php?title=Intel_Quartus_Prime&amp;oldid=785016</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 10 August 2023, at 18:55.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

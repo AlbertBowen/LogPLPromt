@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>Arduino - ArchWiki</title>
+<link rel="stylesheet" href="../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Arduino rootpage-Arduino skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Installation" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#Installation">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Installation</div>
+			</a>
+			
+				<button aria-controls="toc-Installation-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Installation subsection
+				</button>
+			
+			<ul id="toc-Installation-sublist" class="sidebar-toc-list">
+				<li id="toc-Arduino_IDE_1.x" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Arduino_IDE_1.x">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.1</span>Arduino IDE 1.x</div>
+			</a>
+			
+			<ul id="toc-Arduino_IDE_1.x-sublist" class="sidebar-toc-list">
+				<li id="toc-AVR_Boards" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#AVR_Boards">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.1.1</span>AVR Boards</div>
+			</a>
+			
+			<ul id="toc-AVR_Boards-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Pinoccio_Scout" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Pinoccio_Scout">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.1.2</span>Pinoccio Scout</div>
+			</a>
+			
+			<ul id="toc-Pinoccio_Scout-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Intel_Galileo" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Intel_Galileo">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.1.3</span>Intel Galileo</div>
+			</a>
+			
+			<ul id="toc-Intel_Galileo-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Arduino_IDE_1.x_or_2.x" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Arduino_IDE_1.x_or_2.x">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.2</span>Arduino IDE 1.x or 2.x</div>
+			</a>
+			
+			<ul id="toc-Arduino_IDE_1.x_or_2.x-sublist" class="sidebar-toc-list">
+				<li id="toc-AVR_Boards_2" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#AVR_Boards_2">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.2.1</span>AVR Boards</div>
+			</a>
+			
+			<ul id="toc-AVR_Boards_2-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-SparkFun" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#SparkFun">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.2.2</span>SparkFun</div>
+			</a>
+			
+			<ul id="toc-SparkFun-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-RedBear_Duo" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#RedBear_Duo">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.2.3</span>RedBear Duo</div>
+			</a>
+			
+			<ul id="toc-RedBear_Duo-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Configuration" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#Configuration">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Configuration</div>
+			</a>
+			
+				<button aria-controls="toc-Configuration-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Configuration subsection
+				</button>
+			
+			<ul id="toc-Configuration-sublist" class="sidebar-toc-list">
+				<li id="toc-Accessing_serial" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Accessing_serial">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.1</span>Accessing serial</div>
+			</a>
+			
+			<ul id="toc-Accessing_serial-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-stty" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#stty">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>stty</div>
+			</a>
+			
+			<ul id="toc-stty-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Arduino-Builder" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#Arduino-Builder">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4</span>Arduino-Builder</div>
+			</a>
+			
+			<ul id="toc-Arduino-Builder-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Alternatives_to_the_IDE" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#Alternatives_to_the_IDE">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5</span>Alternatives to the IDE</div>
+			</a>
+			
+				<button aria-controls="toc-Alternatives_to_the_IDE-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Alternatives to the IDE subsection
+				</button>
+			
+			<ul id="toc-Alternatives_to_the_IDE-sublist" class="sidebar-toc-list">
+				<li id="toc-ArduIDE" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#ArduIDE">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5.1</span>ArduIDE</div>
+			</a>
+			
+			<ul id="toc-ArduIDE-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Arduino-CMake" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Arduino-CMake">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5.2</span>Arduino-CMake</div>
+			</a>
+			
+			<ul id="toc-Arduino-CMake-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Makefile" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Makefile">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5.3</span>Makefile</div>
+			</a>
+			
+			<ul id="toc-Makefile-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Arduino-mk" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Arduino-mk">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5.4</span>Arduino-mk</div>
+			</a>
+			
+			<ul id="toc-Arduino-mk-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Scons" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Scons">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5.5</span>Scons</div>
+			</a>
+			
+			<ul id="toc-Scons-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-PlatformIO" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#PlatformIO">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5.6</span>PlatformIO</div>
+			</a>
+			
+			<ul id="toc-PlatformIO-sublist" class="sidebar-toc-list">
+				<li id="toc-Installation_2" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Installation_2">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5.6.1</span>Installation</div>
+			</a>
+			
+			<ul id="toc-Installation_2-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Usage" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Usage">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5.6.2</span>Usage</div>
+			</a>
+			
+			<ul id="toc-Usage-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Emacs" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Emacs">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5.7</span>Emacs</div>
+			</a>
+			
+			<ul id="toc-Emacs-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Troubleshooting" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#Troubleshooting">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6</span>Troubleshooting</div>
+			</a>
+			
+				<button aria-controls="toc-Troubleshooting-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Troubleshooting subsection
+				</button>
+			
+			<ul id="toc-Troubleshooting-sublist" class="sidebar-toc-list">
+				<li id="toc-Consistent_naming_of_Arduino_devices" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Consistent_naming_of_Arduino_devices">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6.1</span>Consistent naming of Arduino devices</div>
+			</a>
+			
+			<ul id="toc-Consistent_naming_of_Arduino_devices-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Error_opening_serial_port" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Error_opening_serial_port">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6.2</span>Error opening serial port</div>
+			</a>
+			
+			<ul id="toc-Error_opening_serial_port-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Working_with_Uno/Mega2560" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Working_with_Uno/Mega2560">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6.3</span>Working with Uno/Mega2560</div>
+			</a>
+			
+			<ul id="toc-Working_with_Uno/Mega2560-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Not_recognizing_USB_port_with_Mega2560_cheap_Chinese_clones" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Not_recognizing_USB_port_with_Mega2560_cheap_Chinese_clones">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6.4</span>Not recognizing USB port with Mega2560 cheap Chinese clones</div>
+			</a>
+			
+			<ul id="toc-Not_recognizing_USB_port_with_Mega2560_cheap_Chinese_clones-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-1.x_Application_not_resizing_with_WM,_menus_immediately_closing" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#1.x_Application_not_resizing_with_WM,_menus_immediately_closing">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6.5</span>1.x Application not resizing with WM, menus immediately closing</div>
+			</a>
+			
+			<ul id="toc-1.x_Application_not_resizing_with_WM,_menus_immediately_closing-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Fails_to_upload:_programmer_is_not_responding" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Fails_to_upload:_programmer_is_not_responding">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6.6</span>Fails to upload: programmer is not responding</div>
+			</a>
+			
+			<ul id="toc-Fails_to_upload:_programmer_is_not_responding-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-1.x_Crashing_with_java.lang.NullPointerException_after_a_fresh_install" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#1.x_Crashing_with_java.lang.NullPointerException_after_a_fresh_install">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6.7</span>1.x Crashing with java.lang.NullPointerException after a fresh install</div>
+			</a>
+			
+			<ul id="toc-1.x_Crashing_with_java.lang.NullPointerException_after_a_fresh_install-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Serial_port_conflict_with_brltty" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Serial_port_conflict_with_brltty">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6.8</span>Serial port conflict with brltty</div>
+			</a>
+			
+			<ul id="toc-Serial_port_conflict_with_brltty-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Failure_to_upload_with_Nano_RP2040_Connect" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Failure_to_upload_with_Nano_RP2040_Connect">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6.9</span>Failure to upload with Nano RP2040 Connect</div>
+			</a>
+			
+			<ul id="toc-Failure_to_upload_with_Nano_RP2040_Connect-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-See_also" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#See_also">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">7</span>See also</div>
+			</a>
+			
+			<ul id="toc-See_also-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../en/Arduino.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="mw-list-item"><a href="../en/Talk:Arduino.html" rel="discussion" title="Discussion about the content page [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">English</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../en/Arduino.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=Arduino&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=Arduino&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../en/Arduino.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Arduino&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Arduino&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output">
+<div class="archwiki-template-meta-related-articles-start">
+<p class="mw-no-invert">Related articles</p>
+<ul>
+<li><a href="../en/AVR.html" title="AVR">AVR</a></li>
+</ul>
+</div>
+<p><a href="https://en.wikipedia.org/wiki/Arduino" class="extiw" title="wikipedia:Arduino">Arduino</a> is an open-source electronics prototyping platform based on flexible, easy-to-use hardware and software. It is intended for artists, designers, hobbyists, and anyone interested in creating interactive objects or environments.
+</p>
+<p>Once hooked up and configured the user may perform read/write tasks over the established serial connection. Examples are interfacing over UART using a <a href="../en/Working_with_the_serial_console.html#Making_Connections" title="Working with the serial console">serial monitoring program</a>, or programming the microcontroller. Writing, compiling and uploading your code is facilitated by using the official Arduino IDE, which is available in the official repositories. Equally the user may use a compiler and programmer of choice to program the microcontroller.
+</p>
+<mw:tocplace></mw:tocplace>
+<h2><span class="mw-headline" id="Installation">Installation</span></h2>
+<ul>
+<li>Install either <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=arduino">arduino</a></span> for the original 1.x version of the IDE, <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=arduino-cli">arduino-cli</a></span> for the official CLI or <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/arduino-ide-bin/">arduino-ide-bin</a></span><sup><small>AUR</small></sup> for the new 2.x release of the IDE. The offline documentation for the 1.x IDE can be installed via <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=arduino-docs">arduino-docs</a></span>.</li>
+<li>Add your user to the <code>uucp</code> <a href="../en/Users_and_groups.html#Group_management" class="mw-redirect" title="User group">user group</a> (more information in the <a href="#Accessing_serial">#Accessing serial</a> section).</li>
+<li>You may need to <a href="../en/Kernel_module.html" class="mw-redirect" title="Kernel modules">load</a> the <code>cdc_acm</code> module.</li>
+</ul>
+<h3><span class="mw-headline" id="Arduino_IDE_1.x">Arduino IDE 1.x</span></h3>
+<p>The following section only applies to the 1.x version of the IDE. However, it may be possible to adapt some of this for the new IDE.
+</p>
+<h4><span class="mw-headline" id="AVR_Boards">AVR Boards</span></h4>
+<p>To use AVR boards such as the Arduino Uno you can install <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=arduino-avr-core">arduino-avr-core</a></span> optionally to use Arch Linux upstream avr-gcc instead of the bundled older avr-core. If you still want to use the older arduino-core you need to <a rel="nofollow" class="external text" href="https://docs.arduino.cc/learn/starting-guide/cores">install it in the board manager</a>. You can always switch between the different cores in the "Tools&gt;Board" menu.
+</p>
+<h4><span class="mw-headline" id="Pinoccio_Scout">Pinoccio Scout</span></h4>
+<p><a rel="nofollow" class="external text" href="https://pinocc.io/">Pinoccio Scouts</a> can also be programmed using the Arduino IDE. Instructions can be found <a rel="nofollow" class="external text" href="https://pinocc.io/solo">here</a>.
+Alternative you can install <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/arduino-pinoccio/">arduino-pinoccio</a></span><sup><small>AUR</small></sup>.
+</p>
+<h4><span class="mw-headline" id="Intel_Galileo">Intel Galileo</span></h4>
+<p>To use the Intel Galileo boards with Arch Linux install the Arduino IDE and download the Galileo tools package via "Tools-&gt;Board-&gt;Boards Manager".
+To fix the installation you can follow <a rel="nofollow" class="external text" href="https://github.com/arduino/Arduino/issues/5523">this github post</a>.
+</p>
+<h3><span class="mw-headline" id="Arduino_IDE_1.x_or_2.x">Arduino IDE 1.x or 2.x</span></h3>
+<p>These steps should be valid for both versions of the IDE.
+</p>
+<h4><span class="mw-headline" id="AVR_Boards_2">AVR Boards</span></h4>
+<p>AVR boards are automatically installed by the 2.x release of the IDE however on both the 1.x and 2.x releases the AVR boards can be managed from the boards manager. For 1.x see <a rel="nofollow" class="external text" href="https://docs.arduino.cc/learn/starting-guide/cores">here</a>.
+</p>
+<h4><span class="mw-headline" id="SparkFun">SparkFun</span></h4>
+<p>To use SparkFun boards such as the Pro Micro you need to download their board definitions. More information <a rel="nofollow" class="external text" href="https://learn.sparkfun.com/tutorials/pro-micro--fio-v3-hookup-guide/installing-mac--linux">here</a> and <a rel="nofollow" class="external text" href="https://github.com/sparkfun/Arduino_Boards">here</a>.
+</p>
+<h4><span class="mw-headline" id="RedBear_Duo">RedBear Duo</span></h4>
+<p>You might need to install <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=perl-archive-zip">perl-archive-zip</a></span> or you will get an error about missing crc32.
+</p>
+<h2><span class="mw-headline" id="Configuration">Configuration</span></h2>
+<p>To interface over USB an interfacing chip is used on the Arduino. Genuine boards boards will typically use an ATmegaxU2, which registers itself as an ACM device. On Linux the <code>cdc_acm</code> <a href="../en/Kernel_module.html" class="mw-redirect" title="Kernel modules">module</a> is used. Hence, when connected, the Arduino will show up as <code>/dev/ttyACMx</code>.
+</p>
+<p>Non-genuine Arduino boards typically cheap out on the interfacing chip, typically using one from the Chinese CH34x family. The CH34x does not implement the aforementioned standard and exposes itself as a proprietary UART over USB device. Here the <code>ch341</code> <a href="../en/Kernel_module.html" class="mw-redirect" title="Kernel modules">module</a> is used, making such Arduinos show up as <code>/dev/ttyUSBx</code>. This naming pattern may be customized by <a href="#Consistent_naming_of_Arduino_devices">altering udev rules</a>.
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> Remember to keep any serial monitoring programs closed during uploading code in order to free the serial port for the programmer.</div>
+<h3><span class="mw-headline" id="Accessing_serial">Accessing serial</span></h3>
+<p>The arduino board communicates with the computer via a serial connection or a serial-over-USB connection, so the user needs read/write access to the serial device file. <a href="../en/Udev.html" title="Udev">Udev</a> creates files such as <code>/dev/ttyUSB0</code> owned by group <code>uucp</code> so adding the user to the <code>uucp</code> group gives the required read/write access.  See <a href="../en/Users_and_groups.html#Group_management" title="Users and groups">Users and groups#Group management</a> for details.
+</p>
+<p>Before uploading to the Arduino, be sure to set the correct serial port, board, and processor from the Tools menu in 1.x and the Select board option (located at the top of the IDE) in 2.x.
+</p>
+<h2><span class="mw-headline" id="stty">stty</span></h2>
+<p>Preparing:
+</p>
+<pre># stty -F /dev/ttyACM0 cs8 9600 ignbrk -brkint -imaxbel -opost -onlcr -isig -icanon -iexten -echo -echoe -echok -echoctl -echoke noflsh -ixon -crtscts
+</pre>
+<p>Sending commands through Terminal without new line after command
+</p>
+<pre># echo -n "Hello World" &gt; /dev/ttyACM0
+</pre>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong>  As autoreset on serial connection is activated by default on most boards, you need to disable this feature if you want to communicate directly with your board with the last command instead of a terminal emulator (arduino IDE, screen, picocom...). If you have a Leonardo board, you are not concerned by this, because it does not autoreset. If you have an Uno board, connect a 10 µF capacitor between the RESET and GND pins. If you have another board, connect a 120 ohms resistor between the RESET and 5V pins. See <a rel="nofollow" class="external free" href="https://playground.arduino.cc/Main/DisablingAutoResetOnSerialConnection">https://playground.arduino.cc/Main/DisablingAutoResetOnSerialConnection</a> for more details.</div>
+<p>Reading what your Arduino has to tell you: 
+</p>
+<pre>$ cat /dev/ttyACM0
+</pre>
+<h2><span class="mw-headline" id="Arduino-Builder">Arduino-Builder</span></h2>
+<div class="noprint archwiki-template-message">
+<p><a href="../File:Tango-view-refresh-red.png" class="image"><img alt="Tango-view-refresh-red.png" src="../File:Tango-view-refresh-red.png" decoding="async" width="48" height="48"></a><b>This article or section is out of date.</b><a href="../File:Tango-view-refresh-red.png" class="image"><img alt="Tango-view-refresh-red.png" src="../File:Tango-view-refresh-red.png" decoding="async" width="48" height="48"></a></p>
+<div>
+<b>Reason:</b> This section was written before the release of the 2.x version of the IDE and the description of the functions might be inaccurate. On the GitHub page for the Arduino-Builder it has been stated that the Arduino-Builder is being phased out in favor of the Arduino CLI (Discuss in <a rel="nofollow" class="external text" href="https://wiki.archlinux.org/title/Talk:Arduino">Talk:Arduino</a>)</div>
+</div>
+<p>You can also build Arduino sketches with the <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=arduino-builder">arduino-builder</a></span> command line tool. In order to use the provided <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=arduino-avr-core">arduino-avr-core</a></span> with upstream <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=avr-gcc">avr-gcc</a></span> and <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=avrdude">avrdude</a></span> you need to create a small settings file:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">build.options.json</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">{
+    "fqbn": "archlinux-arduino:avr:uno",
+    "hardwareFolders": "/usr/share/arduino/hardware",
+    "toolsFolders": "/usr/bin"
+}</pre>
+<p>Compile a sketch with:
+</p>
+<pre>$ arduino-builder -build-options-file build.options.json blink.ino
+</pre>
+<p>Or pass all options via command line:
+</p>
+<pre>$ arduino-builder -fqbn archlinux-arduino:avr:uno -hardware /usr/share/arduino/hardware -tools /usr/bin blink.ino
+</pre>
+<h2><span class="mw-headline" id="Alternatives_to_the_IDE">Alternatives to the IDE</span></h2>
+<h3><span class="mw-headline" id="ArduIDE">ArduIDE</span></h3>
+<p>ArduIDE is a Qt-based IDE for Arduino, available with <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/arduide-git/">arduide-git</a></span><sup><small>AUR</small></sup>.
+</p>
+<h3><span class="mw-headline" id="Arduino-CMake">Arduino-CMake</span></h3>
+<p>Using <a rel="nofollow" class="external text" href="https://github.com/a9183756-gh/Arduino-CMake-Toolchain">Arduino-CMake-Toolchain</a> and <a rel="nofollow" class="external text" href="https://www.cmake.org/cmake/resources/software.html">CMake</a> you can build Arduino firmware from the command line using multiple build systems. CMake lets you generate the build system that fits your needs, using the tools you like. It can generate any type of build system, from simple Makefiles, to complete projects for Eclipse, Visual Studio, XCode, etc.
+</p>
+<p>Requirements: <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=cmake">cmake</a></span>, <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=arduino">arduino</a></span>, <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=avr-gcc">avr-gcc</a></span>, <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=avr-binutils">avr-binutils</a></span>, <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=avr-libc">avr-libc</a></span>, <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=avrdude">avrdude</a></span>.
+</p>
+<h3><span class="mw-headline" id="Makefile">Makefile</span></h3>
+<p>Instead of using the Arduino IDE it is possible to use another editor and a Makefile.
+</p>
+<p>Set up a directory to program your Arduino and copy the Makefile into this directory. A copy of the Makefile can be obtained from <a rel="nofollow" class="external text" href="https://github.com/tomswartz07/arduino-makefile">this GitHub template</a>
+You will have to modify this a little bit to reflect your settings. The makefile should be pretty self explanatory. Here are some lines you may have to edit.
+</p>
+<pre>PORT = usually /dev/ttyUSBx, where x is the usb serial port your arduino is plugged into
+TARGET = your sketch's name
+ARDUINO = /usr/share/arduino/lib/targets/arduino
+</pre>
+<p>Depending on which library functions you call in your sketch, you may need to compile parts of the library. To do that you need to edit your SRC and CXXSRC to include the required libraries.
+</p>
+<p>Now you should be able to <code>make &amp;&amp; make upload</code> to your board to execute your sketch.
+</p>
+<h3><span class="mw-headline" id="Arduino-mk">Arduino-mk</span></h3>
+<p><span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/arduino-mk/">arduino-mk</a></span><sup><small>AUR</small></sup> is another alternative Makefile approach. It allows users to have a local Makefile that includes Arduino.mk. See <a rel="nofollow" class="external text" href="https://github.com/sudar/Arduino-Makefile">project page</a> for usage.
+</p>
+<p>For Arduino 1.5, try the following local Makefile (because Arduino 1.5's library directory structure is slightly different):
+</p>
+<pre>ARDUINO_DIR = /usr/share/arduino
+ARDMK_DIR = /usr/share/arduino
+AVR_TOOLS_DIR = /usr
+AVRDUDE_CONF = /etc/avrdude.conf
+ARDUINO_CORE_PATH = /usr/share/arduino/hardware/archlinux-arduino/avr/cores/arduino
+ARDUINO_PLATFORM_LIB_PATH = /usr/share/arduino/hardware/archlinux-arduino/avr/libraries
+BOARDS_TXT = /usr/share/arduino/hardware/archlinux-arduino/avr/boards.txt
+ARDUINO_VAR_PATH = /usr/share/arduino/hardware/archlinux-arduino/avr/variants
+BOOTLOADER_PARENT = /usr/share/arduino/hardware/archlinux-arduino/avr/bootloaders
+
+
+BOARD_TAG    = uno
+ARDUINO_LIBS =
+
+include /usr/share/arduino/Arduino.mk
+</pre>
+<p>In some cases you could need to install <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=avr-libc">avr-libc</a></span> and <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=avrdude">avrdude</a></span>.
+</p>
+<h3><span class="mw-headline" id="Scons">Scons</span></h3>
+<p>Using <a rel="nofollow" class="external text" href="https://www.scons.org/">scons</a> together with <a rel="nofollow" class="external text" href="https://github.com/suapapa/arscons">arscons</a> it is very easy to use to compile and upload Arduino projects from the command line. Scons is based on python and you will need python-pyserial to use the serial interface. Install <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=python-pyserial">python-pyserial</a></span> and <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=scons">scons</a></span>.
+</p>
+<p>That will get the dependencies you need too. You will also need Arduino itself so install it as described above. Create project directory (eg. test), then create a arduino project file in your new directory. Use the same name as the directory and add .ino (eg. test.ino). Get the <a rel="nofollow" class="external text" href="https://github.com/suapapa/arscons/blob/master/SConstruct">SConstruct</a> script from arscons and put it in your directory. Have a peek in it and, if necessary, edit it. It is a python script. Edit your project as you please, then run
+</p>
+<pre>$ scons                # This will build the project
+$ scons upload         # This will upload the project to your Arduino
+</pre>
+<h3><span class="mw-headline" id="PlatformIO">PlatformIO</span></h3>
+<p><a rel="nofollow" class="external text" href="https://docs.platformio.org/en/latest/core/quickstart.html">PlatformIO</a> is a <a href="../en/Python.html" title="Python">python</a> tool to build and upload sketches for multiple Hardware Platforms, at the moment of writing these are Arduino/AVR based boards, TI MSP430 and TI TM4C12x Boards. In the near future the author plans to add a library function that allows to search and include libraries directly from GitHub.
+</p>
+<h4><span class="mw-headline" id="Installation_2">Installation</span></h4>
+<p>Install the <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/platformio/">platformio</a></span><sup><small>AUR</small></sup> or <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/platformio-git/">platformio-git</a></span><sup><small>AUR</small></sup> package.
+</p>
+<h4><span class="mw-headline" id="Usage">Usage</span></h4>
+<pre>$ platformio platform install atmelavr
+$ platformio init
+</pre>
+<p><a href="../en/Help:Reading.html#Append,_add,_create,_edit" class="mw-redirect" title="Create">Create</a> <code>platformio.ini</code>: 
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">platformio.ini</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">#
+# Atmel AVR based board + Arduino Wiring Framework
+#
+[env:ArduinoMega2560]
+platform = atmelavr
+framework = arduino
+board = megaatmega2560   
+upload_port = /dev/ttyACM0 
+targets = upload</pre>
+<pre>$ platformio run
+</pre>
+<h3><span class="mw-headline" id="Emacs">Emacs</span></h3>
+<p>It is possible to configure <a href="../en/Emacs.html" title="Emacs">Emacs</a> as IDE.
+</p>
+<p>Install the package <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/emacs-arduino-mode-git/">emacs-arduino-mode-git</a></span><sup><small>AUR</small></sup> in order to enable the <code>arduino-mode</code> in emacs.
+</p>
+<p>Add to the init script:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">~/.emacs</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">;; arduino-mode
+(require 'cl)
+(autoload 'arduino-mode "arduino-mode" "Arduino editing mode." t)
+(add-to-list 'auto-mode-alist '("\.ino$" . arduino-mode))</pre>
+<p>You can compile and upload the sketches using <code>Arduino-mk</code> (see above) with <code>M-x compile</code> <code>make upload</code>.
+</p>
+<p>Main resource: <a rel="nofollow" class="external text" href="https://www.emacswiki.org/emacs/ArduinoSupport">here</a>.
+</p>
+<h2><span class="mw-headline" id="Troubleshooting">Troubleshooting</span></h2>
+<h3><span class="mw-headline" id="Consistent_naming_of_Arduino_devices">Consistent naming of Arduino devices</span></h3>
+<p>If you have more than one Arduino you may have noticed that they names <code>/dev/ttyUSB[0-9]</code> are assigned in the order of connection. In the IDE this is not so much of a problem, but when you have programmed your own software to communicate with an Arduino project in the background this can be annoying. Use the following <i>udev</i> rules to assign static symlinks to your Arduino's:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/udev/rules.d/52-arduino.rules</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">SUBSYSTEMS=="usb", KERNEL=="ttyUSB[0-9]*", ATTRS{idVendor}=="0403", ATTRS{idProduct}=="6001", SYMLINK+="sensors/ftdi_%s{serial}"
+</pre>
+<p>Your Arduino's will be available under names like <code>/dev/sensors/ftdi_A700dzaF</code>. If you want you can also assign more meaningfull names to several devices like this:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/udev/rules.d/52-arduino.rules</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">SUBSYSTEMS=="usb", KERNEL=="ttyUSB[0-9]*", ATTRS{idVendor}=="0403", ATTRS{idProduct}=="6001", ATTRS{serial}=="A700dzaF", SYMLINK+="arduino/nano"
+</pre>
+<p>which will create a symlink in <code>/dev/arduino/nano</code> to the device with the specified serialnumber.
+You do need to unplug and replug your Arduino for this to take effect or run
+</p>
+<pre># udevadm trigger
+</pre>
+<p>Common <code>idVendor</code>/<code>idProduct</code> pairs can be found in <code>/usr/share/arduino/hardware/archlinux-arduino/avr/boards.txt</code> in the distribution package. Note that some of them (notably <a href="https://en.wikipedia.org/wiki/FTDI" class="extiw" title="wikipedia:FTDI">FTDI</a> ones) are not unique to the Arduino platform. Using <code>serial</code> attribute is a good way to distinguish between various devices.
+</p>
+<h3><span class="mw-headline" id="Error_opening_serial_port">Error opening serial port</span></h3>
+<p>You may see the serial port initially when the IDE starts, but the TX/RX leds do nothing when uploading. You may have previously changed the baudrate in the serial monitor to something it does not like. Edit <code>~/.arduino/preferences.txt</code> so that <code>serial.debug_rate</code> is a different speed, like 115200.
+</p>
+<h3>
+<span id="Working_with_Uno.2FMega2560"></span><span class="mw-headline" id="Working_with_Uno/Mega2560">Working with Uno/Mega2560</span>
+</h3>
+<p>The Arduino Uno and Mega2560 have an onboard USB interface (an Atmel 8U2) that accepts serial data, so they are accessed through /dev/ttyACM0 created by the cdc-acm kernel module when it is plugged in.
+</p>
+<p>The 8U2 firmware may need an update to ease serial communications. See <a rel="nofollow" class="external autonumber" href="https://forum.arduino.cc/t/easy-to-brick-arduino-uno-on-linux/47039">[1]</a> for more details and reply #11 for a fix. The original arduino bbs, where you can find an image explaining how to get your Uno into DFU, is now in a read-only state. If you do not have an account to view the image, see <a rel="nofollow" class="external autonumber" href="https://www.scribd.com/doc/45913857/Arduino-UNO">[2]</a>.
+</p>
+<p>You can perform a general function test of the Uno by putting it in loopback mode and typing characters into the arduino serial monitor at 115200 baud. It should echo the characters back to you. To put it in loopback, short pins 0 -&gt; 1 on the digital side and either hold the reset button or short the GND -&gt; RESET pins while you type.
+</p>
+<h3><span class="mw-headline" id="Not_recognizing_USB_port_with_Mega2560_cheap_Chinese_clones">Not recognizing USB port with Mega2560 cheap Chinese clones</span></h3>
+<p>Try installing its driver: <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/i2c-ch341-dkms/">i2c-ch341-dkms</a></span><sup><small>AUR</small></sup>.
+</p>
+<h3>
+<span id="1.x_Application_not_resizing_with_WM.2C_menus_immediately_closing"></span><span class="mw-headline" id="1.x_Application_not_resizing_with_WM,_menus_immediately_closing">1.x Application not resizing with WM, menus immediately closing</span>
+</h3>
+<p>see <a href="../en/Java.html#Gray_window,_applications_not_resizing_with_WM,_menus_immediately_closing" title="Java">Java#Gray window, applications not resizing with WM, menus immediately closing</a>
+</p>
+<h3><span class="mw-headline" id="Fails_to_upload:_programmer_is_not_responding">Fails to upload: programmer is not responding</span></h3>
+<p>Changing processor setting from <code>ATmega328P</code> to <code>ATmega328P (Old Bootloader)</code> (See Tools-&gt;Processor in Arduino IDE) may help with upload failures.
+</p>
+<h3><span class="mw-headline" id="1.x_Crashing_with_java.lang.NullPointerException_after_a_fresh_install">1.x Crashing with java.lang.NullPointerException after a fresh install</span></h3>
+<p>You need to install <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=arduino-avr-core">arduino-avr-core</a></span>.
+</p>
+<h3><span class="mw-headline" id="Serial_port_conflict_with_brltty">Serial port conflict with brltty</span></h3>
+<p>If the serial port for the arduino is not visible at /dev/ttyUSB*, and dmesg outputs the following when the device is connected:
+</p>
+<pre>[  210.327434] usb 3-1: usbfs: interface 0 claimed by ch341 while 'brltty' sets config #1
+[  210.327884] ch341-uart ttyUSB0: ch341-uart converter now disconnected from ttyUSB0
+</pre>
+<p>Then you may need to uninstall the brltty package. See <a rel="nofollow" class="external autonumber" href="https://forum.manjaro.org/t/cant-connect-serial-port-error-ch341-uart-disconnected-from-ttyusb0/87208">[3]</a> for more details.
+</p>
+<h3><span class="mw-headline" id="Failure_to_upload_with_Nano_RP2040_Connect">Failure to upload with Nano RP2040 Connect</span></h3>
+<p>If your upload fails with
+</p>
+<pre>Failed uploading: uploading error: exit status 1
+</pre>
+<div class="noprint archwiki-template-message">
+<p><a href="../File:Tango-inaccurate.png" class="image"><img alt="Tango-inaccurate.png" src="../File:Tango-inaccurate.png" decoding="async" width="48" height="48"></a><b>The factual accuracy of this article or section is disputed.</b><a href="../File:Tango-inaccurate.png" class="image"><img alt="Tango-inaccurate.png" src="../File:Tango-inaccurate.png" decoding="async" width="48" height="48"></a></p>
+<div>
+<b>Reason:</b> Do not suggest to run arbitrary script, at least explain what it does. (Discuss in <a rel="nofollow" class="external text" href="https://wiki.archlinux.org/title/Talk:Arduino">Talk:Arduino</a>)</div>
+</div>
+<p>Try running the following script to setup Raspberry Pi RP2040 bootloader mode udev rules.
+</p>
+<pre># ~/.arduino15/packages/arduino/hardware/mbed_nano/3.5.1/post_install.sh
+</pre>
+<h2><span class="mw-headline" id="See_also">See also</span></h2>
+<ul>
+<li><a rel="nofollow" class="external text" href="https://www.arduino.cc/">Official website</a></li>
+<li><a rel="nofollow" class="external text" href="https://docs.arduino.cc/software/ide-v2/tutorials/getting-started-ide-v2">IDE v2 Getting Started Guide</a></li>
+<li><a rel="nofollow" class="external free" href="https://answers.ros.org/question/9097/how-can-i-get-a-unique-device-path-for-my-arduinoftdi-device/">https://answers.ros.org/question/9097/how-can-i-get-a-unique-device-path-for-my-arduinoftdi-device/</a></li>
+</ul>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface">
+<div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../Special:Categories.html" title="Special:Categories">Categories</a>: <ul>
+<li><a href="../en/Category:Development.html" title="Category:Development">Development</a></li>
+<li><a href="../en/Category:Science.html" title="Category:Science">Science</a></li>
+</ul>
+</div>
+<div id="mw-hidden-catlinks" class="mw-hidden-catlinks mw-hidden-cats-hidden">Hidden categories: <ul>
+<li><a href="../en/Category:Pages_or_sections_flagged_with_Template:Out_of_date.html" title="Category:Pages or sections flagged with Template:Out of date">Pages or sections flagged with Template:Out of date</a></li>
+<li><a href="../en/Category:Pages_or_sections_flagged_with_Template:Accuracy.html" title="Category:Pages or sections flagged with Template:Accuracy">Pages or sections flagged with Template:Accuracy</a></li>
+</ul>
+</div>
+</div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=Arduino&amp;oldid=772062">https://wiki.archlinux.org/index.php?title=Arduino&amp;oldid=772062</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 11 March 2023, at 17:47.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

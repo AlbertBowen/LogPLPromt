@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>Dynamic Kernel Module Support (Français) - ArchWiki</title>
+<link rel="stylesheet" href="../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Dynamic_Kernel_Module_Support_Français rootpage-Dynamic_Kernel_Module_Support_Français skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Installation" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Installation">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Installation</div>
+			</a>
+			
+			<ul id="toc-Installation-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Mises_à_jour" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Mises_%C3%A0_jour">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Mises à jour</div>
+			</a>
+			
+			<ul id="toc-Mises_à_jour-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Utilisation" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Utilisation">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>Utilisation</div>
+			</a>
+			
+				<button aria-controls="toc-Utilisation-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Utilisation subsection
+				</button>
+			
+			<ul id="toc-Utilisation-sublist" class="sidebar-toc-list">
+				<li id="toc-Liste_des_modules" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Liste_des_modules">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.1</span>Liste des modules</div>
+			</a>
+			
+			<ul id="toc-Liste_des_modules-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Reconstruction_des_modules" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Reconstruction_des_modules">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.2</span>Reconstruction des modules</div>
+			</a>
+			
+			<ul id="toc-Reconstruction_des_modules-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Supprimer_des_modules" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Supprimer_des_modules">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.3</span>Supprimer des modules</div>
+			</a>
+			
+			<ul id="toc-Supprimer_des_modules-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Création_de_paquets_DKMS" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Cr%C3%A9ation_de_paquets_DKMS">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4</span>Création de paquets DKMS</div>
+			</a>
+			
+			<ul id="toc-Création_de_paquets_DKMS-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Ramdisk_initial" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Ramdisk_initial">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5</span>Ramdisk initial</div>
+			</a>
+			
+			<ul id="toc-Ramdisk_initial-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Voir_aussi" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Voir_aussi">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6</span>Voir aussi</div>
+			</a>
+			
+			<ul id="toc-Voir_aussi-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../fr/Dynamic_Kernel_Module_Support.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="new mw-list-item"><a href="/index.php?title=Talk:Dynamic_Kernel_Module_Support_(Fran%C3%A7ais)&amp;action=edit&amp;redlink=1" rel="discussion" title="Discussion about the content page (page does not exist) [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">français</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../fr/Dynamic_Kernel_Module_Support.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=Dynamic_Kernel_Module_Support_(Fran%C3%A7ais)&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=Dynamic_Kernel_Module_Support_(Fran%C3%A7ais)&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../fr/Dynamic_Kernel_Module_Support.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Dynamic_Kernel_Module_Support_(Fran%C3%A7ais)&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Dynamic_Kernel_Module_Support_(Fran%C3%A7ais)&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="fr" dir="ltr">
+<div class="mw-parser-output">
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>État de la traduction:</strong> Cet article est la version francophone de <a href="../en/Dynamic_Kernel_Module_Support.html" title="Dynamic Kernel Module Support">Dynamic Kernel Module Support</a>. Date de la dernière traduction: 2022-02-27. Vous pouvez aider à synchroniser la traduction s'il y a eu des <a rel="nofollow" class="external text" href="https://wiki.archlinux.org/index.php?title=Dynamic_Kernel_Module_Support&amp;diff=0&amp;oldid=719721">changements</a> dans la version anglaise.</div>
+<p>Traduit de <a href="https://en.wikipedia.org/wiki/Dynamic_Kernel_Module_Support" class="extiw" title="wikipedia:Dynamic Kernel Module Support">Wikipedia</a> :
+</p>
+<dl><dd>Dynamic Kernel Module Support (DKMS) est un programme/framework qui permet de générer des modules du noyau Linux dont les sources résident généralement en dehors de l'arbre des sources du noyau. Le concept est de reconstruire automatiquement les modules DKMS lorsqu'un nouveau noyau est installé.</dd></dl>
+<p>Cela signifie qu'un utilisateur n'a pas à attendre qu'une entreprise, un projet ou un mainteneur de paquet publie une nouvelle version du module. Depuis l'introduction des <a href="../fr/Pacman.html#Hooks" title="Pacman (Français)">pacman hooks</a>, la reconstruction des modules est gérée automatiquement lorsqu'un noyau est mis à jour.
+</p>
+<mw:tocplace></mw:tocplace>
+<h2><span class="mw-headline" id="Installation">Installation</span></h2>
+<p><a href="../fr/Help:Reading.html#Installation_de_paquets" class="mw-redirect" title="Installez">Installez</a> le paquet <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=dkms">dkms</a></span> <b>et</b> les en-têtes pour le ou les noyaux cibles. Par exemple, pour le noyau <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=linux">linux</a></span> par défaut, ce sera <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=linux-headers">linux-headers</a></span>. Les autres noyaux ont leurs propres paquets d'en-têtes respectifs.
+</p>
+<p>Un bon nombre de modules qui se trouvent en dehors de l'arbre des sources du noyau ont une variante de DKMS ; quelques-uns sont hébergés dans les <a rel="nofollow" class="external text" href="https://archlinux.org/packages/?&amp;q=dkms">dépôts officiels</a>, la plupart se trouvent dans <a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/?SeB=n&amp;K=dkms">AUR</a>.
+</p>
+<h2>
+<span id="Mises_.C3.A0_jour"></span><span class="mw-headline" id="Mises_à_jour">Mises à jour</span>
+</h2>
+<p>Bien que la reconstruction des modules DKMS soit généralement transparente lors d'une mise à jour du noyau, il peut arriver que la reconstruction échoue. Vous devez prêter une attention particulière à la sortie de <a href="../fr/Pacman.html" title="Pacman (Français)">pacman</a>. Cela s'applique en particulier si le système dépend du module DKMS pour démarrer correctement et/ou si vous utilisez DKMS avec un noyau personnalisé qui ne se trouve pas dans les <a href="../fr/Official_repositories.html" class="mw-redirect" title="Dépôts officiels">dépôts officiels</a>. 
+</p>
+<p>Pour faire face aux changements du noyau, corriger les bogues ou ajouter des fonctionnalités nécessaires, pensez à mettre à jour le paquet DKMS avant de redémarrer.
+</p>
+<h2><span class="mw-headline" id="Utilisation">Utilisation</span></h2>
+<p>Utilisation pour invoquer DKMS manuellement.
+</p>
+<p>La complétion par tabulation est disponible en faisant :
+</p>
+<pre># source /usr/share/bash-completion/completions/dkms
+</pre>
+<h3><span class="mw-headline" id="Liste_des_modules">Liste des modules</span></h3>
+<p>Pour lister l'état actuel des modules, versions et noyaux dans l'arbre :
+</p>
+<pre># dkms status
+</pre>
+<h3><span class="mw-headline" id="Reconstruction_des_modules">Reconstruction des modules</span></h3>
+<p>Reconstruire tous les modules pour le noyau en cours d'exécution :
+</p>
+<pre># dkms autoinstall
+</pre>
+<p>ou pour un noyau spécifique :
+</p>
+<pre># dkms autoinstall -k 3.16.4-1-ARCH
+</pre>
+<p>Pour construire un module <i>spécifique</i> pour le noyau en cours d'exécution :
+</p>
+<pre># dkms install -m nvidia -v 334.21
+</pre>
+<p>ou simplement :
+</p>
+<pre># dkms install nvidia/334.21
+</pre>
+<p>Pour construire un module pour <i>tous</i> les noyaux :
+</p>
+<pre># dkms install nvidia/334.21 --all
+</pre>
+<h3><span class="mw-headline" id="Supprimer_des_modules">Supprimer des modules</span></h3>
+<p>Pour supprimer un module (les anciens modules ne sont pas automatiquement supprimés) :
+</p>
+<pre># dkms remove -m nvidia -v 331.49 --all
+</pre>
+<p>ou simplement :
+</p>
+<pre># dkms remove nvidia/331.49 --all
+</pre>
+<p>Si le paquet <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=dkms">dkms</a></span> est supprimé, les informations concernant les fichiers de construction des modules précédents sont perdues. Si c'est le cas, parcourez <code>/usr/lib/modules/<i>kernel_release</i></code> et <code>/var/lib/dkms/<i>package_name</i></code> et supprimez tous les fichiers et répertoires qui ne sont plus utilisés.
+</p>
+<h2>
+<span id="Cr.C3.A9ation_de_paquets_DKMS"></span><span class="mw-headline" id="Création_de_paquets_DKMS">Création de paquets DKMS</span>
+</h2>
+<p>Consultez les <a href="../en/DKMS_package_guidelines.html" title="DKMS package guidelines">Directives pour les paquets DKMS</a>.
+</p>
+<h2><span class="mw-headline" id="Ramdisk_initial">Ramdisk initial</span></h2>
+<p>Si vous avez installé des modules de noyau via DKMS qui sont utilisés dans <a href="../fr/Arch_boot_process.html#Initramfs" title="Arch boot process (Français)">le ramdisk initial</a>, par exemple <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/zfs-dkms/">zfs-dkms</a></span><sup><small>AUR</small></sup>, vous pouvez écrire un hook <a href="../fr/Pacman.html" title="Pacman (Français)">pacman</a> pour automatiser le processus de régénération des images initramfs.
+</p>
+<p>Par exemple, si vous utilisez <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=linux">linux</a></span> et <a href="../fr/Mkinitcpio.html" title="Mkinitcpio (Français)">mkinitcpio</a>, pour mettre à jour le module <a href="../en/ZFS.html" title="ZFS">ZFS</a> après chaque mise à jour de <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/zfs-dkms/">zfs-dkms</a></span><sup><small>AUR</small></sup>,
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/pacman.d/hooks/90-mkinitcpio-dkms-linux.hook</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">[Trigger]
+Operation=Install
+Operation=Upgrade
+Operation=Remove
+Type=Package
+Target=zfs-dkms
+Target=linux
+
+[Action]
+Description=Update dkms modules in Linux initcpio
+Depends=mkinitcpio
+When=PostTransaction
+NeedsTargets
+Exec=/bin/sh -c 'while read -r trg; do case $trg in linux) exit 0; esac; done; /usr/bin/mkinitcpio -p linux'</pre>
+<p>Vous pouvez ajouter d'autres cibles au hook et faire des copies supplémentaires du hook si vous avez installé d'autres noyaux. Notez que le préfixe <code>90-</code> est nécessaire pour s'assurer qu'il s'exécute après les hooks DKMS.
+</p>
+<h2><span class="mw-headline" id="Voir_aussi">Voir aussi</span></h2>
+<ul><li>
+<a rel="nofollow" class="external text" href="https://www.linuxjournal.com/article/6896">Linux Journal : Exploration de la prise en charge des modules dynamiques du noyau</a>.</li></ul>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="../fr/Category:Kernel.html" title="Category:Kernel (Français)">Kernel (Français)</a></li></ul>
+</div></div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=Dynamic_Kernel_Module_Support_(Fran%C3%A7ais)&amp;oldid=720444">https://wiki.archlinux.org/index.php?title=Dynamic_Kernel_Module_Support_(Français)&amp;oldid=720444</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 27 February 2022, at 08:31.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

@@ -1,0 +1,1410 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>Font configuration/Examples - ArchWiki</title>
+<link rel="stylesheet" href="../../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Font_configuration_Examples rootpage-Font_configuration skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Hinted_fonts" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Hinted_fonts">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Hinted fonts</div>
+			</a>
+			
+			<ul id="toc-Hinted_fonts-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-No_hinting_for_italic_or_bold" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#No_hinting_for_italic_or_bold">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>No hinting for italic or bold</div>
+			</a>
+			
+			<ul id="toc-No_hinting_for_italic_or_bold-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Enable_anti-aliasing_only_for_bigger_fonts_or_certain_fonts" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Enable_anti-aliasing_only_for_bigger_fonts_or_certain_fonts">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>Enable anti-aliasing only for bigger fonts or certain fonts</div>
+			</a>
+			
+			<ul id="toc-Enable_anti-aliasing_only_for_bigger_fonts_or_certain_fonts-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Disable_bold_font" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Disable_bold_font">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4</span>Disable bold font</div>
+			</a>
+			
+			<ul id="toc-Disable_bold_font-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Disable_ligatures_for_monospaced_fonts" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Disable_ligatures_for_monospaced_fonts">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5</span>Disable ligatures for monospaced fonts</div>
+			</a>
+			
+			<ul id="toc-Disable_ligatures_for_monospaced_fonts-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Default_fonts" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Default_fonts">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6</span>Default fonts</div>
+			</a>
+			
+				<button aria-controls="toc-Default_fonts-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Default fonts subsection
+				</button>
+			
+			<ul id="toc-Default_fonts-sublist" class="sidebar-toc-list">
+				<li id="toc-Arabic" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Arabic">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6.1</span>Arabic</div>
+			</a>
+			
+			<ul id="toc-Arabic-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Japanese" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Japanese">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6.2</span>Japanese</div>
+			</a>
+			
+			<ul id="toc-Japanese-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Chinese" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Chinese">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6.3</span>Chinese</div>
+			</a>
+			
+			<ul id="toc-Chinese-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Chinese_in_Noto_Fonts" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Chinese_in_Noto_Fonts">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6.4</span>Chinese in Noto Fonts</div>
+			</a>
+			
+			<ul id="toc-Chinese_in_Noto_Fonts-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-CJK,_but_other_Latin_fonts_are_preferred" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#CJK,_but_other_Latin_fonts_are_preferred">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6.5</span>CJK, but other Latin fonts are preferred</div>
+			</a>
+			
+			<ul id="toc-CJK,_but_other_Latin_fonts_are_preferred-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Alternate_stylistic_sets_for_fonts" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Alternate_stylistic_sets_for_fonts">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">7</span>Alternate stylistic sets for fonts</div>
+			</a>
+			
+			<ul id="toc-Alternate_stylistic_sets_for_fonts-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-See_also" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#See_also">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">8</span>See also</div>
+			</a>
+			
+			<ul id="toc-See_also-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../../en/Font_configuration/Examples.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="mw-list-item"><a href="../../en/Talk:Font_configuration/Examples.html" rel="discussion" title="Discussion about the content page [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">English</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../../en/Font_configuration/Examples.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=Font_configuration/Examples&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=Font_configuration/Examples&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../../en/Font_configuration/Examples.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Font_configuration/Examples&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Font_configuration/Examples&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					<div id="contentSub"><span class="subpages">&lt; <a href="../../en/Font_configuration.html" title="Font configuration">Font configuration</a></span></div>
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output">
+<p>See <a href="../../en/Font_configuration.html" title="Font configuration">Font configuration</a> for the main article.
+</p>
+<p>Configurations can vary to a degree.  Please post Fontconfig configurations with an explanation for why they were done.
+</p>
+<mw:tocplace></mw:tocplace>
+<h2><span class="mw-headline" id="Hinted_fonts">Hinted fonts</span></h2>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">~/.config/fontconfig/fonts.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">&lt;?xml version="1.0"?&gt;
+&lt;!DOCTYPE fontconfig SYSTEM "urn:fontconfig:fonts.dtd"&gt;
+&lt;fontconfig&gt;
+  &lt;match target="font"&gt;
+    &lt;edit mode="assign" name="antialias"&gt;
+      &lt;bool&gt;true&lt;/bool&gt;
+    &lt;/edit&gt;
+    &lt;edit mode="assign" name="embeddedbitmap"&gt;
+      &lt;bool&gt;false&lt;/bool&gt;
+    &lt;/edit&gt;
+    &lt;edit mode="assign" name="hinting"&gt;
+      &lt;bool&gt;true&lt;/bool&gt;
+    &lt;/edit&gt;
+    &lt;edit mode="assign" name="hintstyle"&gt;
+      &lt;const&gt;hintslight&lt;/const&gt;
+    &lt;/edit&gt;
+    &lt;edit mode="assign" name="lcdfilter"&gt;
+      &lt;const&gt;lcddefault&lt;/const&gt;
+    &lt;/edit&gt;
+    &lt;edit mode="assign" name="rgba"&gt;
+      &lt;const&gt;rgb&lt;/const&gt;
+    &lt;/edit&gt;
+  &lt;/match&gt;
+&lt;/fontconfig&gt;
+</pre>
+<h2><span class="mw-headline" id="No_hinting_for_italic_or_bold">No hinting for italic or bold</span></h2>
+<pre>&lt;?xml version="1.0"?&gt;
+&lt;!DOCTYPE fontconfig SYSTEM "urn:fontconfig:fonts.dtd"&gt;
+&lt;fontconfig&gt;
+  &lt;match target="font"&gt;
+    &lt;edit mode="assign" name="autohint"&gt;
+      &lt;bool&gt;true&lt;/bool&gt;
+    &lt;/edit&gt;
+    &lt;edit mode="assign" name="hinting"&gt;
+      &lt;bool&gt;false&lt;/bool&gt;
+    &lt;/edit&gt;
+    &lt;edit mode="assign" name="lcdfilter"&gt;
+      &lt;const&gt;lcddefault&lt;/const&gt;
+    &lt;/edit&gt;
+    &lt;edit mode="assign" name="hintstyle"&gt;
+      &lt;const&gt;hintslight&lt;/const&gt;
+    &lt;/edit&gt;
+    &lt;edit mode="assign" name="antialias"&gt;
+      &lt;bool&gt;true&lt;/bool&gt;
+    &lt;/edit&gt;
+    &lt;edit mode="assign" name="rgba"&gt;
+      &lt;const&gt;rgb&lt;/const&gt;
+    &lt;/edit&gt;
+  &lt;/match&gt;
+  &lt;match target="font"&gt;
+    &lt;test name="pixelsize" qual="any" compare="more"&gt;
+      &lt;double&gt;15&lt;/double&gt;
+    &lt;/test&gt;
+    &lt;edit mode="assign" name="lcdfilter"&gt;
+      &lt;const&gt;lcdlight&lt;/const&gt;
+    &lt;/edit&gt;
+    &lt;edit mode="assign" name="hintstyle"&gt;
+      &lt;const&gt;hintnone&lt;/const&gt;
+    &lt;/edit&gt;
+  &lt;/match&gt;
+  &lt;match target="font"&gt;
+    &lt;test name="weight" compare="more"&gt;
+      &lt;const&gt;medium&lt;/const&gt;
+    &lt;/test&gt;
+    &lt;edit mode="assign" name="hintstyle"&gt;
+      &lt;const&gt;hintnone&lt;/const&gt;
+    &lt;/edit&gt;
+    &lt;edit mode="assign" name="lcdfilter"&gt;
+      &lt;const&gt;lcdlight&lt;/const&gt;
+    &lt;/edit&gt;
+  &lt;/match&gt;
+  &lt;match target="font"&gt;
+    &lt;test name="slant" compare="not_eq"&gt;
+      &lt;double&gt;0&lt;/double&gt;
+    &lt;/test&gt;
+    &lt;edit mode="assign" name="hintstyle"&gt;
+      &lt;const&gt;hintnone&lt;/const&gt;
+    &lt;/edit&gt;
+    &lt;edit mode="assign" name="lcdfilter"&gt;
+      &lt;const&gt;lcdlight&lt;/const&gt;
+    &lt;/edit&gt;
+  &lt;/match&gt;
+&lt;/fontconfig&gt;
+</pre>
+<h2><span class="mw-headline" id="Enable_anti-aliasing_only_for_bigger_fonts_or_certain_fonts">Enable anti-aliasing only for bigger fonts or certain fonts</span></h2>
+<p>Some users prefer the sharper rendering that anti-aliasing does not offer:
+</p>
+<pre>&lt;?xml version="1.0"?&gt;
+&lt;!DOCTYPE fontconfig SYSTEM "urn:fontconfig:fonts.dtd"&gt;
+&lt;fontconfig&gt;
+  &lt;match target="font"&gt;
+    &lt;edit name="antialias" mode="assign"&gt;
+      &lt;bool&gt;false&lt;/bool&gt;
+    &lt;/edit&gt;
+  &lt;/match&gt;
+  &lt;match target="font"&gt;
+    &lt;test name="size" qual="any" compare="more"&gt;
+      &lt;double&gt;12&lt;/double&gt;
+    &lt;/test&gt;
+    &lt;edit name="antialias" mode="assign"&gt;
+      &lt;bool&gt;true&lt;/bool&gt;
+    &lt;/edit&gt;
+  &lt;/match&gt;
+  &lt;match target="font"&gt;
+    &lt;test name="pixelsize" qual="any" compare="more"&gt;
+      &lt;double&gt;16&lt;/double&gt;
+    &lt;/test&gt;
+    &lt;edit name="antialias" mode="assign"&gt;
+      &lt;bool&gt;true&lt;/bool&gt;
+    &lt;/edit&gt;
+  &lt;/match&gt;
+&lt;/fontconfig&gt;
+</pre>
+<p>You might also want to disable anti-aliasing only for fonts that look well without anti-aliasing. See <a href="../../en/Font_configuration/Examples/No_anti-aliasing.html" title="Font configuration/Examples/No anti-aliasing">Font configuration/Examples/No anti-aliasing</a>.
+</p>
+<h2><span class="mw-headline" id="Disable_bold_font">Disable bold font</span></h2>
+<p>For when a font does not present itself well in bold and you cannot disable bold fonts in the application (<a href="../../en/St.html" title="St">st</a> for example).
+</p>
+<pre>...
+&lt;match target="pattern"&gt;
+  &lt;test qual="any" name="family"&gt;
+    &lt;string&gt;Envy Code R&lt;/string&gt;
+  &lt;/test&gt;
+  &lt;test name="weight" compare="more"&gt;
+    &lt;const&gt;medium&lt;/const&gt;
+  &lt;/test&gt;
+  &lt;edit name="weight" mode="assign" binding="same"&gt;
+    &lt;const&gt;medium&lt;/const&gt;
+  &lt;/edit&gt;
+&lt;/match&gt;
+
+...
+</pre>
+<h2><span class="mw-headline" id="Disable_ligatures_for_monospaced_fonts">Disable ligatures for monospaced fonts</span></h2>
+<p>This prevents letter combinations like "ffi" from being squashed into a single-width character in some monospaced fonts.  The whole <code>&lt;match&gt;</code> block needs to be duplicated to include extra fonts.
+</p>
+<pre>&lt;?xml version="1.0"?&gt;
+&lt;!DOCTYPE fontconfig SYSTEM "urn:fontconfig:fonts.dtd"&gt;
+&lt;fontconfig&gt;
+  &lt;description&gt;Disable ligatures for monospaced fonts to avoid ff, fi, ffi, etc. becoming only one character wide&lt;/description&gt;
+  &lt;match target="font"&gt;
+    &lt;test name="family" compare="eq" ignore-blanks="true"&gt;
+      &lt;string&gt;Nimbus Mono PS&lt;/string&gt;
+    &lt;/test&gt;
+    &lt;edit name="fontfeatures" mode="append"&gt;
+      &lt;string&gt;liga off&lt;/string&gt;
+      &lt;string&gt;dlig off&lt;/string&gt;
+    &lt;/edit&gt;
+  &lt;/match&gt;
+&lt;/fontconfig&gt;
+</pre>
+<p>Some other fonts may also require disabling <a href="https://en.wikipedia.org/wiki/List_of_typographic_features" class="extiw" title="w:List of typographic features">features</a> such as <code>calt</code> and/or <code>clig</code>.
+</p>
+<p>You can test the effectiveness of this with the following command:
+</p>
+<pre>$ echo -e "| worksheet |\n| buffering |\n| difficult |\n| finishing |\n| different |\n| efficient |" | pango-view --font="Nimbus Mono PS" /dev/stdin
+</pre>
+<p>Some programs (such as Firefox) do not support the <code>fontfeatures</code> tag, so for those replacing the font with another is the only option. See <a href="../../en/Font_configuration.html#Set_default_or_fallback_fonts" title="Font configuration">Font configuration#Set default or fallback fonts</a> for details.
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> Starting with Firefox version 114, fontconfig settings such as <code>fontfeatures</code> will be <a rel="nofollow" class="external text" href="https://hg.mozilla.org/mozilla-central/rev/7a4fe637c12a">supported</a>.</div>
+<h2><span class="mw-headline" id="Default_fonts">Default fonts</span></h2>
+<p>For font consistency, all applications should be set to use the serif, sans-serif, and monospace aliases, which are mapped to particular fonts by fontconfig. See <a href="../../en/Metric-compatible_fonts.html" title="Metric-compatible fonts">Metric-compatible fonts</a> for options and examples.
+</p>
+<h3><span class="mw-headline" id="Arabic">Arabic</span></h3>
+<p>Example fonts.conf which specifies a default font for the Arabic language and keeps western style fonts for Latin letters. You will require either <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/ttf-arabeyes-fonts/">ttf-arabeyes-fonts</a></span><sup><small>AUR</small></sup> or <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=noto-fonts">noto-fonts</a></span> for the below to work. You can also choose to install any other Arabic fonts and accordingly change the font name below based on your preference
+</p>
+<pre>&lt;?xml version="1.0"?&gt;
+&lt;!DOCTYPE fontconfig SYSTEM "urn:fontconfig:fonts.dtd"&gt;
+&lt;fontconfig&gt;
+  &lt;!-- Default font for the Arabic language (no fc-match pattern) --&gt;
+  &lt;match&gt;
+    &lt;test compare="contains" name="lang"&gt;
+      &lt;string&gt;ar&lt;/string&gt;
+    &lt;/test&gt;
+    &lt;edit mode="prepend" name="family"&gt;
+      &lt;string&gt;Tholoth&lt;/string&gt;
+    &lt;/edit&gt;
+  &lt;/match&gt;
+&lt;/fontconfig&gt;
+</pre>
+<p>The above should work for most applications but some applications like Chromium do not work with the language match test. If you find some applications not using your selected fonts, you can use the below alias and prefer tags which seems to work.
+</p>
+<pre>&lt;?xml version="1.0"?&gt;
+&lt;!DOCTYPE fontconfig SYSTEM "urn:fontconfig:fonts.dtd"&gt;
+&lt;fontconfig&gt;
+  &lt;!-- Fallback fonts preference order --&gt;
+  &lt;alias&gt;
+    &lt;family&gt;sans-serif&lt;/family&gt;
+    &lt;prefer&gt;
+      &lt;family&gt;Noto Sans&lt;/family&gt;
+      &lt;family&gt;Open Sans&lt;/family&gt;
+      &lt;family&gt;Droid Sans&lt;/family&gt;
+      &lt;family&gt;Roboto&lt;/family&gt;
+      &lt;family&gt;Tholoth&lt;/family&gt;
+      &lt;family&gt;Noto Sans Arabic&lt;/family&gt;
+    &lt;/prefer&gt;
+  &lt;/alias&gt;
+  &lt;alias&gt;
+    &lt;family&gt;serif&lt;/family&gt;
+    &lt;prefer&gt;
+      &lt;family&gt;Noto Serif&lt;/family&gt;
+      &lt;family&gt;Droid Serif&lt;/family&gt;
+      &lt;family&gt;Roboto Slab&lt;/family&gt;
+      &lt;family&gt;Tholoth&lt;/family&gt;
+      &lt;family&gt;Noto Sans Arabic&lt;/family&gt;
+    &lt;/prefer&gt;
+  &lt;/alias&gt;
+  &lt;alias&gt;
+    &lt;family&gt;monospace&lt;/family&gt;
+    &lt;prefer&gt;
+      &lt;family&gt;Noto Sans Mono&lt;/family&gt;
+      &lt;family&gt;Inconsolata&lt;/family&gt;
+      &lt;family&gt;Droid Sans Mono&lt;/family&gt;
+      &lt;family&gt;Roboto Mono&lt;/family&gt;
+    &lt;/prefer&gt;
+  &lt;/alias&gt;
+&lt;/fontconfig&gt;
+</pre>
+<h3><span class="mw-headline" id="Japanese">Japanese</span></h3>
+<p>Example fonts.conf which also specifies a default font for the Japanese locale (ja_JP) and keeps western style fonts for Latin letters.
+</p>
+<pre>&lt;?xml version="1.0"?&gt;
+&lt;!DOCTYPE fontconfig SYSTEM "urn:fontconfig:fonts.dtd"&gt;
+&lt;fontconfig&gt;
+  &lt;!-- Default font (no fc-match pattern) --&gt;
+  &lt;match&gt;
+    &lt;edit mode="prepend" name="family"&gt;
+      &lt;string&gt;Noto Sans&lt;/string&gt;
+    &lt;/edit&gt;
+  &lt;/match&gt;
+  &lt;!-- Default font for the ja_JP locale (no fc-match pattern) --&gt;
+  &lt;match&gt;
+    &lt;test compare="contains" name="lang"&gt;
+      &lt;string&gt;ja&lt;/string&gt;
+    &lt;/test&gt;
+    &lt;edit mode="prepend" name="family"&gt;
+      &lt;string&gt;Noto Sans CJK JP&lt;/string&gt;
+    &lt;/edit&gt;
+  &lt;/match&gt;
+  &lt;!-- Default sans-serif font --&gt;
+  &lt;match target="pattern"&gt;
+    &lt;test qual="any" name="family"&gt;
+      &lt;string&gt;sans-serif&lt;/string&gt;
+    &lt;/test&gt;
+    &lt;!--&lt;test qual="any" name="lang"&gt;&lt;string&gt;ja&lt;/string&gt;&lt;/test&gt;--&gt;
+    &lt;edit name="family" mode="prepend" binding="same"&gt;
+      &lt;string&gt;Noto Sans&lt;/string&gt;
+    &lt;/edit&gt;
+  &lt;/match&gt;
+  &lt;!-- Default serif fonts --&gt;
+  &lt;match target="pattern"&gt;
+    &lt;test qual="any" name="family"&gt;
+      &lt;string&gt;serif&lt;/string&gt;
+    &lt;/test&gt;
+    &lt;edit name="family" mode="prepend" binding="same"&gt;
+      &lt;string&gt;Noto Serif&lt;/string&gt;
+    &lt;/edit&gt;
+    &lt;edit name="family" mode="append" binding="same"&gt;
+      &lt;string&gt;IPAPMincho&lt;/string&gt;
+    &lt;/edit&gt;
+    &lt;edit name="family" mode="append" binding="same"&gt;
+      &lt;string&gt;HanaMinA&lt;/string&gt;
+    &lt;/edit&gt;
+  &lt;/match&gt;
+  &lt;!-- Default monospace fonts --&gt;
+  &lt;match target="pattern"&gt;
+    &lt;test qual="any" name="family"&gt;
+      &lt;string&gt;monospace&lt;/string&gt;
+    &lt;/test&gt;
+    &lt;edit name="family" mode="prepend" binding="same"&gt;
+      &lt;string&gt;Noto Sans Mono&lt;/string&gt;
+    &lt;/edit&gt;
+    &lt;edit name="family" mode="append" binding="same"&gt;
+      &lt;string&gt;Inconsolatazi4&lt;/string&gt;
+    &lt;/edit&gt;
+    &lt;edit name="family" mode="append" binding="same"&gt;
+      &lt;string&gt;IPAGothic&lt;/string&gt;
+    &lt;/edit&gt;
+  &lt;/match&gt;
+  &lt;!-- Fallback fonts preference order --&gt;
+  &lt;alias&gt;
+    &lt;family&gt;sans-serif&lt;/family&gt;
+    &lt;prefer&gt;
+      &lt;family&gt;Noto Sans&lt;/family&gt;
+      &lt;family&gt;Open Sans&lt;/family&gt;
+      &lt;family&gt;Droid Sans&lt;/family&gt;
+      &lt;family&gt;Ubuntu&lt;/family&gt;
+      &lt;family&gt;Roboto&lt;/family&gt;
+      &lt;family&gt;NotoSansCJK&lt;/family&gt;
+      &lt;family&gt;Source Han Sans JP&lt;/family&gt;
+      &lt;family&gt;IPAPGothic&lt;/family&gt;
+      &lt;family&gt;VL PGothic&lt;/family&gt;
+      &lt;family&gt;Koruri&lt;/family&gt;
+    &lt;/prefer&gt;
+  &lt;/alias&gt;
+  &lt;alias&gt;
+    &lt;family&gt;serif&lt;/family&gt;
+    &lt;prefer&gt;
+      &lt;family&gt;Noto Serif&lt;/family&gt;
+      &lt;family&gt;Droid Serif&lt;/family&gt;
+      &lt;family&gt;Roboto Slab&lt;/family&gt;
+      &lt;family&gt;IPAPMincho&lt;/family&gt;
+    &lt;/prefer&gt;
+  &lt;/alias&gt;
+  &lt;alias&gt;
+    &lt;family&gt;monospace&lt;/family&gt;
+    &lt;prefer&gt;
+      &lt;family&gt;Noto Sans Mono&lt;/family&gt;
+      &lt;family&gt;Inconsolatazi4&lt;/family&gt;
+      &lt;family&gt;Ubuntu Mono&lt;/family&gt;
+      &lt;family&gt;Droid Sans Mono&lt;/family&gt;
+      &lt;family&gt;Roboto Mono&lt;/family&gt;
+      &lt;family&gt;IPAGothic&lt;/family&gt;
+    &lt;/prefer&gt;
+  &lt;/alias&gt;
+&lt;/fontconfig&gt;
+</pre>
+<h3><span class="mw-headline" id="Chinese">Chinese</span></h3>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">~/.config/fontconfig/fonts.conf
+or
+/etc/fonts/local.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">&lt;?xml version="1.0"?&gt;
+&lt;!DOCTYPE fontconfig SYSTEM "urn:fontconfig:fonts.dtd"&gt;
+&lt;fontconfig&gt;
+  &lt;match target="font"&gt;
+    &lt;edit name="embeddedbitmap" mode="assign"&gt;
+      &lt;bool&gt;false&lt;/bool&gt;
+    &lt;/edit&gt;
+  &lt;/match&gt;
+  &lt;match&gt;
+    &lt;test qual="any" name="family"&gt;
+      &lt;string&gt;serif&lt;/string&gt;
+    &lt;/test&gt;
+    &lt;edit name="family" mode="prepend" binding="strong"&gt;
+      &lt;string&gt;Noto Serif&lt;/string&gt;
+    &lt;/edit&gt;
+  &lt;/match&gt;
+  &lt;match target="pattern"&gt;
+    &lt;test qual="any" name="family"&gt;
+      &lt;string&gt;sans-serif&lt;/string&gt;
+    &lt;/test&gt;
+    &lt;edit name="family" mode="prepend" binding="strong"&gt;
+      &lt;string&gt;Roboto&lt;/string&gt;
+    &lt;/edit&gt;
+  &lt;/match&gt;
+  &lt;match target="pattern"&gt;
+    &lt;test qual="any" name="family"&gt;
+      &lt;string&gt;monospace&lt;/string&gt;
+    &lt;/test&gt;
+    &lt;edit name="family" mode="prepend" binding="strong"&gt;
+      &lt;string&gt;DejaVu Sans Mono&lt;/string&gt;
+    &lt;/edit&gt;
+  &lt;/match&gt;
+  &lt;match&gt;
+    &lt;test name="lang" compare="contains"&gt;
+      &lt;string&gt;zh&lt;/string&gt;
+    &lt;/test&gt;
+    &lt;test name="family"&gt;
+      &lt;string&gt;serif&lt;/string&gt;
+    &lt;/test&gt;
+    &lt;edit name="family" mode="prepend"&gt;
+      &lt;string&gt;Source Han Serif CN&lt;/string&gt;
+    &lt;/edit&gt;
+  &lt;/match&gt;
+  &lt;match&gt;
+    &lt;test name="lang" compare="contains"&gt;
+      &lt;string&gt;zh&lt;/string&gt;
+    &lt;/test&gt;
+    &lt;test name="family"&gt;
+      &lt;string&gt;sans-serif&lt;/string&gt;
+    &lt;/test&gt;
+    &lt;edit name="family" mode="prepend"&gt;
+      &lt;string&gt;Source Han Sans CN&lt;/string&gt;
+    &lt;/edit&gt;
+  &lt;/match&gt;
+  &lt;match&gt;
+    &lt;test name="lang" compare="contains"&gt;
+      &lt;string&gt;zh&lt;/string&gt;
+    &lt;/test&gt;
+    &lt;test name="family"&gt;
+      &lt;string&gt;monospace&lt;/string&gt;
+    &lt;/test&gt;
+    &lt;edit name="family" mode="prepend"&gt;
+      &lt;string&gt;Noto Sans Mono CJK SC&lt;/string&gt;
+    &lt;/edit&gt;
+  &lt;/match&gt;
+  &lt;!--Windows &amp; Linux Chinese fonts. --&gt;
+  &lt;match target="pattern"&gt;
+    &lt;test qual="any" name="family"&gt;
+      &lt;string&gt;WenQuanYi Zen Hei&lt;/string&gt;
+    &lt;/test&gt;
+    &lt;edit name="family" mode="assign" binding="same"&gt;
+      &lt;string&gt;Source Han Sans CN&lt;/string&gt;
+    &lt;/edit&gt;
+  &lt;/match&gt;
+  &lt;match target="pattern"&gt;
+    &lt;test qual="any" name="family"&gt;
+      &lt;string&gt;WenQuanYi Micro Hei&lt;/string&gt;
+    &lt;/test&gt;
+    &lt;edit name="family" mode="assign" binding="same"&gt;
+      &lt;string&gt;Source Han Sans CN&lt;/string&gt;
+    &lt;/edit&gt;
+  &lt;/match&gt;
+  &lt;match target="pattern"&gt;
+    &lt;test qual="any" name="family"&gt;
+      &lt;string&gt;WenQuanYi Micro Hei Light&lt;/string&gt;
+    &lt;/test&gt;
+    &lt;edit name="family" mode="assign" binding="same"&gt;
+      &lt;string&gt;Source Han Sans CN&lt;/string&gt;
+    &lt;/edit&gt;
+  &lt;/match&gt;
+  &lt;match target="pattern"&gt;
+    &lt;test qual="any" name="family"&gt;
+      &lt;string&gt;Microsoft YaHei&lt;/string&gt;
+    &lt;/test&gt;
+    &lt;edit name="family" mode="assign" binding="same"&gt;
+      &lt;string&gt;Source Han Sans CN&lt;/string&gt;
+    &lt;/edit&gt;
+  &lt;/match&gt;
+  &lt;match target="pattern"&gt;
+    &lt;test qual="any" name="family"&gt;
+      &lt;string&gt;SimHei&lt;/string&gt;
+    &lt;/test&gt;
+    &lt;edit name="family" mode="assign" binding="same"&gt;
+      &lt;string&gt;Source Han Sans CN&lt;/string&gt;
+    &lt;/edit&gt;
+  &lt;/match&gt;
+  &lt;match target="pattern"&gt;
+    &lt;test qual="any" name="family"&gt;
+      &lt;string&gt;SimSun&lt;/string&gt;
+    &lt;/test&gt;
+    &lt;edit name="family" mode="assign" binding="same"&gt;
+      &lt;string&gt;Source Han Serif CN&lt;/string&gt;
+    &lt;/edit&gt;
+  &lt;/match&gt;
+  &lt;match target="pattern"&gt;
+    &lt;test qual="any" name="family"&gt;
+      &lt;string&gt;SimSun-18030&lt;/string&gt;
+    &lt;/test&gt;
+    &lt;edit name="family" mode="assign" binding="same"&gt;
+      &lt;string&gt;Source Han Serif CN&lt;/string&gt;
+    &lt;/edit&gt;
+  &lt;/match&gt;
+&lt;/fontconfig&gt;
+</pre>
+<h3><span class="mw-headline" id="Chinese_in_Noto_Fonts">Chinese in Noto Fonts</span></h3>
+<p>Apply Noto Fonts while replacing Microsoft Fonts with WenQuanYi Micro Hei
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">~/.config/fontconfig/fonts.conf
+or
+/etc/fonts/local.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">&lt;?xml version="1.0"?&gt;
+&lt;!DOCTYPE fontconfig SYSTEM "urn:fontconfig:fonts.dtd"&gt;
+&lt;fontconfig&gt;
+  &lt;match target="font"&gt;
+    &lt;edit name="embeddedbitmap" mode="assign"&gt;
+      &lt;bool&gt;false&lt;/bool&gt;
+    &lt;/edit&gt;
+  &lt;/match&gt;
+  &lt;match&gt;
+    &lt;test qual="any" name="family"&gt;
+      &lt;string&gt;serif&lt;/string&gt;
+    &lt;/test&gt;
+    &lt;edit name="family" mode="prepend" binding="strong"&gt;
+      &lt;string&gt;Noto Serif&lt;/string&gt;
+    &lt;/edit&gt;
+  &lt;/match&gt;
+  &lt;match target="pattern"&gt;
+    &lt;test qual="any" name="family"&gt;
+      &lt;string&gt;sans-serif&lt;/string&gt;
+    &lt;/test&gt;
+    &lt;edit name="family" mode="prepend" binding="strong"&gt;
+      &lt;string&gt;Noto Sans&lt;/string&gt;
+    &lt;/edit&gt;
+  &lt;/match&gt;
+  &lt;match target="pattern"&gt;
+    &lt;test qual="any" name="family"&gt;
+      &lt;string&gt;monospace&lt;/string&gt;
+    &lt;/test&gt;
+    &lt;edit name="family" mode="prepend" binding="strong"&gt;
+      &lt;string&gt;Noto Sans Mono&lt;/string&gt;
+    &lt;/edit&gt;
+  &lt;/match&gt;
+  &lt;match&gt;
+    &lt;test name="lang" compare="contains"&gt;
+      &lt;string&gt;zh&lt;/string&gt;
+    &lt;/test&gt;
+    &lt;test name="family"&gt;
+      &lt;string&gt;serif&lt;/string&gt;
+    &lt;/test&gt;
+    &lt;edit name="family" mode="prepend"&gt;
+      &lt;string&gt;Noto Serif CJK SC&lt;/string&gt;
+    &lt;/edit&gt;
+  &lt;/match&gt;
+  &lt;match&gt;
+    &lt;test name="lang" compare="contains"&gt;
+      &lt;string&gt;zh&lt;/string&gt;
+    &lt;/test&gt;
+    &lt;test name="family"&gt;
+      &lt;string&gt;sans-serif&lt;/string&gt;
+    &lt;/test&gt;
+    &lt;edit name="family" mode="prepend"&gt;
+      &lt;string&gt;Noto Sans CJK SC&lt;/string&gt;
+    &lt;/edit&gt;
+  &lt;/match&gt;
+  &lt;match&gt;
+    &lt;test name="lang" compare="contains"&gt;
+      &lt;string&gt;zh&lt;/string&gt;
+    &lt;/test&gt;
+    &lt;test name="family"&gt;
+      &lt;string&gt;monospace&lt;/string&gt;
+    &lt;/test&gt;
+    &lt;edit name="family" mode="prepend"&gt;
+      &lt;string&gt;Noto Sans Mono CJK SC&lt;/string&gt;
+    &lt;/edit&gt;
+  &lt;/match&gt;
+  &lt;!--WenQuanYi Zen Hei -&gt; WenQuanYi Micro Hei --&gt;
+  &lt;match target="pattern"&gt;
+    &lt;test qual="any" name="family"&gt;
+      &lt;string&gt;WenQuanYi Zen Hei&lt;/string&gt;
+    &lt;/test&gt;
+    &lt;edit name="family" mode="assign" binding="same"&gt;
+      &lt;string&gt;WenQuanYi Micro Hei&lt;/string&gt;
+    &lt;/edit&gt;
+  &lt;/match&gt;
+  &lt;match target="pattern"&gt;
+    &lt;test qual="any" name="family"&gt;
+      &lt;string&gt;WenQuanYi Zen Hei Lite&lt;/string&gt;
+    &lt;/test&gt;
+    &lt;edit name="family" mode="assign" binding="same"&gt;
+      &lt;string&gt;WenQuanYi Micro Hei Lite&lt;/string&gt;
+    &lt;/edit&gt;
+  &lt;/match&gt;
+  &lt;match target="pattern"&gt;
+    &lt;test qual="any" name="family"&gt;
+      &lt;string&gt;WenQuanYi Zen Hei Mono&lt;/string&gt;
+    &lt;/test&gt;
+    &lt;edit name="family" mode="assign" binding="same"&gt;
+      &lt;string&gt;WenQuanYi Micro Hei Mono&lt;/string&gt;
+    &lt;/edit&gt;
+  &lt;/match&gt;
+  &lt;!--Microsoft YaHei, SimHei, SimSun -&gt; WenQuanYi Micro Hei --&gt;
+  &lt;match target="pattern"&gt;
+    &lt;test qual="any" name="family"&gt;
+      &lt;string&gt;Microsoft YaHei&lt;/string&gt;
+    &lt;/test&gt;
+    &lt;edit name="family" mode="assign" binding="same"&gt;
+      &lt;string&gt;WenQuanYi Micro Hei&lt;/string&gt;
+    &lt;/edit&gt;
+  &lt;/match&gt;
+  &lt;match target="pattern"&gt;
+    &lt;test qual="any" name="family"&gt;
+      &lt;string&gt;SimHei&lt;/string&gt;
+    &lt;/test&gt;
+    &lt;edit name="family" mode="assign" binding="same"&gt;
+      &lt;string&gt;WenQuanYi Micro Hei&lt;/string&gt;
+    &lt;/edit&gt;
+  &lt;/match&gt;
+  &lt;match target="pattern"&gt;
+    &lt;test qual="any" name="family"&gt;
+      &lt;string&gt;SimSun&lt;/string&gt;
+    &lt;/test&gt;
+    &lt;edit name="family" mode="assign" binding="same"&gt;
+      &lt;string&gt;WenQuanYi Micro Hei&lt;/string&gt;
+    &lt;/edit&gt;
+  &lt;/match&gt;
+  &lt;match target="pattern"&gt;
+    &lt;test qual="any" name="family"&gt;
+      &lt;string&gt;SimSun-18030&lt;/string&gt;
+    &lt;/test&gt;
+    &lt;edit name="family" mode="assign" binding="same"&gt;
+      &lt;string&gt;WenQuanYi Micro Hei&lt;/string&gt;
+    &lt;/edit&gt;
+  &lt;/match&gt;
+&lt;/fontconfig&gt;
+</pre>
+<h3>
+<span id="CJK.2C_but_other_Latin_fonts_are_preferred"></span><span class="mw-headline" id="CJK,_but_other_Latin_fonts_are_preferred">CJK, but other Latin fonts are preferred</span>
+</h3>
+<p>Requires <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=noto-fonts-cjk">noto-fonts-cjk</a></span>.
+</p>
+<p>You can replace <code>PT Serif</code>/<code>Roboto</code>/<code>Cascadia Code PL</code> with your favorite <code>serif</code>/<code>sans-serif</code>/<code>monospace</code> fonts.
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">~/.config/fontconfig/fonts.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">&lt;?xml version="1.0"?&gt;
+&lt;!DOCTYPE fontconfig SYSTEM "urn:fontconfig:fonts.dtd"&gt;
+&lt;fontconfig&gt;
+  &lt;!-- Default serif font --&gt;
+  &lt;alias binding="strong"&gt;
+    &lt;family&gt;serif&lt;/family&gt;
+    &lt;prefer&gt;
+      &lt;family&gt;PT Serif&lt;/family&gt;
+    &lt;/prefer&gt;
+  &lt;/alias&gt;
+  &lt;!-- Default sans-serif font --&gt;
+  &lt;alias binding="strong"&gt;
+    &lt;family&gt;sans-serif&lt;/family&gt;
+    &lt;prefer&gt;
+      &lt;family&gt;Roboto&lt;/family&gt;
+    &lt;/prefer&gt;
+  &lt;/alias&gt;
+  &lt;!-- Default monospace font --&gt;
+  &lt;alias binding="strong"&gt;
+    &lt;family&gt;monospace&lt;/family&gt;
+    &lt;prefer&gt;
+      &lt;family&gt;Cascadia Code PL&lt;/family&gt;
+    &lt;/prefer&gt;
+  &lt;/alias&gt;
+  &lt;!-- Default system-ui font --&gt;
+  &lt;alias binding="strong"&gt;
+    &lt;family&gt;system-ui&lt;/family&gt;
+    &lt;prefer&gt;
+      &lt;family&gt;Roboto&lt;/family&gt;
+    &lt;/prefer&gt;
+  &lt;/alias&gt;
+  &lt;!-- Serif CJK --&gt;
+  &lt;!-- Default serif when the "lang" attribute is not given --&gt;
+  &lt;!-- You can change this font to the language variant you want --&gt;
+  &lt;match target="pattern"&gt;
+    &lt;test name="family"&gt;
+      &lt;string&gt;serif&lt;/string&gt;
+    &lt;/test&gt;
+    &lt;edit name="family" mode="append" binding="strong"&gt;
+      &lt;string&gt;Noto Serif CJK SC&lt;/string&gt;
+    &lt;/edit&gt;
+  &lt;/match&gt;
+  &lt;!-- Japanese --&gt;
+  &lt;!-- "lang=ja" or "lang=ja-*" --&gt;
+  &lt;match target="pattern"&gt;
+    &lt;test name="lang" compare="contains"&gt;
+      &lt;string&gt;ja&lt;/string&gt;
+    &lt;/test&gt;
+    &lt;test name="family"&gt;
+      &lt;string&gt;serif&lt;/string&gt;
+    &lt;/test&gt;
+    &lt;edit name="family" mode="append" binding="strong"&gt;
+      &lt;string&gt;Noto Serif CJK JP&lt;/string&gt;
+    &lt;/edit&gt;
+  &lt;/match&gt;
+  &lt;!-- Korean --&gt;
+  &lt;!-- "lang=ko" or "lang=ko-*" --&gt;
+  &lt;match target="pattern"&gt;
+    &lt;test name="lang" compare="contains"&gt;
+      &lt;string&gt;ko&lt;/string&gt;
+    &lt;/test&gt;
+    &lt;test name="family"&gt;
+      &lt;string&gt;serif&lt;/string&gt;
+    &lt;/test&gt;
+    &lt;edit name="family" mode="append" binding="strong"&gt;
+      &lt;string&gt;Noto Serif CJK KR&lt;/string&gt;
+    &lt;/edit&gt;
+  &lt;/match&gt;
+  &lt;!-- Chinese --&gt;
+  &lt;!-- "lang=zh" or "lang=zh-*" --&gt;
+  &lt;match target="pattern"&gt;
+    &lt;test name="lang" compare="contains"&gt;
+      &lt;string&gt;zh&lt;/string&gt;
+    &lt;/test&gt;
+    &lt;test name="family"&gt;
+      &lt;string&gt;serif&lt;/string&gt;
+    &lt;/test&gt;
+    &lt;edit name="family" mode="append" binding="strong"&gt;
+      &lt;string&gt;Noto Serif CJK SC&lt;/string&gt;
+    &lt;/edit&gt;
+  &lt;/match&gt;
+  &lt;!-- "lang=zh-hans" or "lang=zh-hans-*" --&gt;
+  &lt;match target="pattern"&gt;
+    &lt;test name="lang" compare="contains"&gt;
+      &lt;string&gt;zh-hans&lt;/string&gt;
+    &lt;/test&gt;
+    &lt;test name="family"&gt;
+      &lt;string&gt;serif&lt;/string&gt;
+    &lt;/test&gt;
+    &lt;edit name="family" mode="append" binding="strong"&gt;
+      &lt;string&gt;Noto Serif CJK SC&lt;/string&gt;
+    &lt;/edit&gt;
+  &lt;/match&gt;
+  &lt;!-- "lang=zh-hant" or "lang=zh-hant-*" --&gt;
+  &lt;match target="pattern"&gt;
+    &lt;test name="lang" compare="contains"&gt;
+      &lt;string&gt;zh-hant&lt;/string&gt;
+    &lt;/test&gt;
+    &lt;test name="family"&gt;
+      &lt;string&gt;serif&lt;/string&gt;
+    &lt;/test&gt;
+    &lt;edit name="family" mode="append" binding="strong"&gt;
+      &lt;string&gt;Noto Serif CJK TC&lt;/string&gt;
+    &lt;/edit&gt;
+  &lt;/match&gt;
+  &lt;!-- Compatible --&gt;
+  &lt;!-- "lang=zh-cn" or "lang=zh-cn-*" --&gt;
+  &lt;match target="pattern"&gt;
+    &lt;test name="lang" compare="contains"&gt;
+      &lt;string&gt;zh-cn&lt;/string&gt;
+    &lt;/test&gt;
+    &lt;test name="family"&gt;
+      &lt;string&gt;serif&lt;/string&gt;
+    &lt;/test&gt;
+    &lt;edit name="family" mode="append" binding="strong"&gt;
+      &lt;string&gt;Noto Serif CJK SC&lt;/string&gt;
+    &lt;/edit&gt;
+  &lt;/match&gt;
+  &lt;!-- "lang=zh-tw" or "lang=zh-tw-*" --&gt;
+  &lt;match target="pattern"&gt;
+    &lt;test name="lang" compare="contains"&gt;
+      &lt;string&gt;zh-tw&lt;/string&gt;
+    &lt;/test&gt;
+    &lt;test name="family"&gt;
+      &lt;string&gt;serif&lt;/string&gt;
+    &lt;/test&gt;
+    &lt;edit name="family" mode="append" binding="strong"&gt;
+      &lt;string&gt;Noto Serif CJK TC&lt;/string&gt;
+    &lt;/edit&gt;
+  &lt;/match&gt;
+  &lt;!-- Sans CJK --&gt;
+  &lt;!-- Default sans-serif when the "lang" attribute is not given --&gt;
+  &lt;!-- You can change this font to the language variant you want --&gt;
+  &lt;match target="pattern"&gt;
+    &lt;test name="family"&gt;
+      &lt;string&gt;sans-serif&lt;/string&gt;
+    &lt;/test&gt;
+    &lt;edit name="family" mode="append" binding="strong"&gt;
+      &lt;string&gt;Noto Sans CJK SC&lt;/string&gt;
+    &lt;/edit&gt;
+  &lt;/match&gt;
+  &lt;!-- Japanese --&gt;
+  &lt;!-- "lang=ja" or "lang=ja-*" --&gt;
+  &lt;match target="pattern"&gt;
+    &lt;test name="lang" compare="contains"&gt;
+      &lt;string&gt;ja&lt;/string&gt;
+    &lt;/test&gt;
+    &lt;test name="family"&gt;
+      &lt;string&gt;sans-serif&lt;/string&gt;
+    &lt;/test&gt;
+    &lt;edit name="family" mode="append" binding="strong"&gt;
+      &lt;string&gt;Noto Sans CJK JP&lt;/string&gt;
+    &lt;/edit&gt;
+  &lt;/match&gt;
+  &lt;!-- Korean --&gt;
+  &lt;!-- "lang=ko" or "lang=ko-*" --&gt;
+  &lt;match target="pattern"&gt;
+    &lt;test name="lang" compare="contains"&gt;
+      &lt;string&gt;ko&lt;/string&gt;
+    &lt;/test&gt;
+    &lt;test name="family"&gt;
+      &lt;string&gt;sans-serif&lt;/string&gt;
+    &lt;/test&gt;
+    &lt;edit name="family" mode="append" binding="strong"&gt;
+      &lt;string&gt;Noto Sans CJK KR&lt;/string&gt;
+    &lt;/edit&gt;
+  &lt;/match&gt;
+  &lt;!-- Chinese --&gt;
+  &lt;!-- "lang=zh" or "lang=zh-*" --&gt;
+  &lt;match target="pattern"&gt;
+    &lt;test name="lang" compare="contains"&gt;
+      &lt;string&gt;zh&lt;/string&gt;
+    &lt;/test&gt;
+    &lt;test name="family"&gt;
+      &lt;string&gt;sans-serif&lt;/string&gt;
+    &lt;/test&gt;
+    &lt;edit name="family" mode="append" binding="strong"&gt;
+      &lt;string&gt;Noto Sans CJK SC&lt;/string&gt;
+    &lt;/edit&gt;
+  &lt;/match&gt;
+  &lt;!-- "lang=zh-hans" or "lang=zh-hans-*" --&gt;
+  &lt;match target="pattern"&gt;
+    &lt;test name="lang" compare="contains"&gt;
+      &lt;string&gt;zh-hans&lt;/string&gt;
+    &lt;/test&gt;
+    &lt;test name="family"&gt;
+      &lt;string&gt;sans-serif&lt;/string&gt;
+    &lt;/test&gt;
+    &lt;edit name="family" mode="append" binding="strong"&gt;
+      &lt;string&gt;Noto Sans CJK SC&lt;/string&gt;
+    &lt;/edit&gt;
+  &lt;/match&gt;
+  &lt;!-- "lang=zh-hant" or "lang=zh-hant-*" --&gt;
+  &lt;match target="pattern"&gt;
+    &lt;test name="lang" compare="contains"&gt;
+      &lt;string&gt;zh-hant&lt;/string&gt;
+    &lt;/test&gt;
+    &lt;test name="family"&gt;
+      &lt;string&gt;sans-serif&lt;/string&gt;
+    &lt;/test&gt;
+    &lt;edit name="family" mode="append" binding="strong"&gt;
+      &lt;string&gt;Noto Sans CJK TC&lt;/string&gt;
+    &lt;/edit&gt;
+  &lt;/match&gt;
+  &lt;!-- "lang=zh-hant-hk" or "lang=zh-hant-hk-*" --&gt;
+  &lt;match target="pattern"&gt;
+    &lt;test name="lang" compare="contains"&gt;
+      &lt;string&gt;zh-hant-hk&lt;/string&gt;
+    &lt;/test&gt;
+    &lt;test name="family"&gt;
+      &lt;string&gt;sans-serif&lt;/string&gt;
+    &lt;/test&gt;
+    &lt;edit name="family" mode="append" binding="strong"&gt;
+      &lt;string&gt;Noto Sans CJK HK&lt;/string&gt;
+    &lt;/edit&gt;
+  &lt;/match&gt;
+  &lt;!-- Compatible --&gt;
+  &lt;!-- "lang=zh-cn" or "lang=zh-cn-*" --&gt;
+  &lt;match target="pattern"&gt;
+    &lt;test name="lang" compare="contains"&gt;
+      &lt;string&gt;zh-cn&lt;/string&gt;
+    &lt;/test&gt;
+    &lt;test name="family"&gt;
+      &lt;string&gt;sans-serif&lt;/string&gt;
+    &lt;/test&gt;
+    &lt;edit name="family" mode="append" binding="strong"&gt;
+      &lt;string&gt;Noto Sans CJK SC&lt;/string&gt;
+    &lt;/edit&gt;
+  &lt;/match&gt;
+  &lt;!-- "lang=zh-tw" or "lang=zh-tw-*" --&gt;
+  &lt;match target="pattern"&gt;
+    &lt;test name="lang" compare="contains"&gt;
+      &lt;string&gt;zh-tw&lt;/string&gt;
+    &lt;/test&gt;
+    &lt;test name="family"&gt;
+      &lt;string&gt;sans-serif&lt;/string&gt;
+    &lt;/test&gt;
+    &lt;edit name="family" mode="append" binding="strong"&gt;
+      &lt;string&gt;Noto Sans CJK TC&lt;/string&gt;
+    &lt;/edit&gt;
+  &lt;/match&gt;
+  &lt;!-- "lang=zh-hk" or "lang=zh-hk-*" --&gt;
+  &lt;match target="pattern"&gt;
+    &lt;test name="lang" compare="contains"&gt;
+      &lt;string&gt;zh-hk&lt;/string&gt;
+    &lt;/test&gt;
+    &lt;test name="family"&gt;
+      &lt;string&gt;sans-serif&lt;/string&gt;
+    &lt;/test&gt;
+    &lt;edit name="family" mode="append" binding="strong"&gt;
+      &lt;string&gt;Noto Sans CJK HK&lt;/string&gt;
+    &lt;/edit&gt;
+  &lt;/match&gt;
+  &lt;!-- Mono CJK --&gt;
+  &lt;!-- Default monospace when the "lang" attribute is not given --&gt;
+  &lt;!-- You can change this font to the language variant you want --&gt;
+  &lt;match target="pattern"&gt;
+    &lt;test name="family"&gt;
+      &lt;string&gt;monospace&lt;/string&gt;
+    &lt;/test&gt;
+    &lt;edit name="family" mode="append" binding="strong"&gt;
+      &lt;string&gt;Noto Sans Mono CJK SC&lt;/string&gt;
+    &lt;/edit&gt;
+  &lt;/match&gt;
+  &lt;!-- Japanese --&gt;
+  &lt;!-- "lang=ja" or "lang=ja-*" --&gt;
+  &lt;match target="pattern"&gt;
+    &lt;test name="lang" compare="contains"&gt;
+      &lt;string&gt;ja&lt;/string&gt;
+    &lt;/test&gt;
+    &lt;test name="family"&gt;
+      &lt;string&gt;monospace&lt;/string&gt;
+    &lt;/test&gt;
+    &lt;edit name="family" mode="append" binding="strong"&gt;
+      &lt;string&gt;Noto Sans Mono CJK JP&lt;/string&gt;
+    &lt;/edit&gt;
+  &lt;/match&gt;
+  &lt;!-- Korean --&gt;
+  &lt;!-- "lang=ko" or "lang=ko-*" --&gt;
+  &lt;match target="pattern"&gt;
+    &lt;test name="lang" compare="contains"&gt;
+      &lt;string&gt;ko&lt;/string&gt;
+    &lt;/test&gt;
+    &lt;test name="family"&gt;
+      &lt;string&gt;monospace&lt;/string&gt;
+    &lt;/test&gt;
+    &lt;edit name="family" mode="append" binding="strong"&gt;
+      &lt;string&gt;Noto Sans Mono CJK KR&lt;/string&gt;
+    &lt;/edit&gt;
+  &lt;/match&gt;
+  &lt;!-- Chinese --&gt;
+  &lt;!-- "lang=zh" or "lang=zh-*" --&gt;
+  &lt;match target="pattern"&gt;
+    &lt;test name="lang" compare="contains"&gt;
+      &lt;string&gt;zh&lt;/string&gt;
+    &lt;/test&gt;
+    &lt;test name="family"&gt;
+      &lt;string&gt;monospace&lt;/string&gt;
+    &lt;/test&gt;
+    &lt;edit name="family" mode="append" binding="strong"&gt;
+      &lt;string&gt;Noto Sans Mono CJK SC&lt;/string&gt;
+    &lt;/edit&gt;
+  &lt;/match&gt;
+  &lt;!-- "lang=zh-hans" or "lang=zh-hans-*" --&gt;
+  &lt;match target="pattern"&gt;
+    &lt;test name="lang" compare="contains"&gt;
+      &lt;string&gt;zh-hans&lt;/string&gt;
+    &lt;/test&gt;
+    &lt;test name="family"&gt;
+      &lt;string&gt;monospace&lt;/string&gt;
+    &lt;/test&gt;
+    &lt;edit name="family" mode="append" binding="strong"&gt;
+      &lt;string&gt;Noto Sans Mono CJK SC&lt;/string&gt;
+    &lt;/edit&gt;
+  &lt;/match&gt;
+  &lt;!-- "lang=zh-hant" or "lang=zh-hant-*" --&gt;
+  &lt;match target="pattern"&gt;
+    &lt;test name="lang" compare="contains"&gt;
+      &lt;string&gt;zh-hant&lt;/string&gt;
+    &lt;/test&gt;
+    &lt;test name="family"&gt;
+      &lt;string&gt;monospace&lt;/string&gt;
+    &lt;/test&gt;
+    &lt;edit name="family" mode="append" binding="strong"&gt;
+      &lt;string&gt;Noto Sans Mono CJK TC&lt;/string&gt;
+    &lt;/edit&gt;
+  &lt;/match&gt;
+  &lt;!-- "lang=zh-hant-hk" or "lang=zh-hant-hk-*" --&gt;
+  &lt;match target="pattern"&gt;
+    &lt;test name="lang" compare="contains"&gt;
+      &lt;string&gt;zh-hant-hk&lt;/string&gt;
+    &lt;/test&gt;
+    &lt;test name="family"&gt;
+      &lt;string&gt;monospace&lt;/string&gt;
+    &lt;/test&gt;
+    &lt;edit name="family" mode="append" binding="strong"&gt;
+      &lt;string&gt;Noto Sans Mono CJK HK&lt;/string&gt;
+    &lt;/edit&gt;
+  &lt;/match&gt;
+  &lt;!-- Compatible --&gt;
+  &lt;!-- "lang=zh-cn" or "lang=zh-cn-*" --&gt;
+  &lt;match target="pattern"&gt;
+    &lt;test name="lang" compare="contains"&gt;
+      &lt;string&gt;zh-cn&lt;/string&gt;
+    &lt;/test&gt;
+    &lt;test name="family"&gt;
+      &lt;string&gt;monospace&lt;/string&gt;
+    &lt;/test&gt;
+    &lt;edit name="family" mode="append" binding="strong"&gt;
+      &lt;string&gt;Noto Sans Mono CJK SC&lt;/string&gt;
+    &lt;/edit&gt;
+  &lt;/match&gt;
+  &lt;!-- "lang=zh-tw" or "lang=zh-tw-*" --&gt;
+  &lt;match target="pattern"&gt;
+    &lt;test name="lang" compare="contains"&gt;
+      &lt;string&gt;zh-tw&lt;/string&gt;
+    &lt;/test&gt;
+    &lt;test name="family"&gt;
+      &lt;string&gt;monospace&lt;/string&gt;
+    &lt;/test&gt;
+    &lt;edit name="family" mode="append" binding="strong"&gt;
+      &lt;string&gt;Noto Sans Mono CJK TC&lt;/string&gt;
+    &lt;/edit&gt;
+  &lt;/match&gt;
+  &lt;!-- "lang=zh-hk" or "lang=zh-hk-*" --&gt;
+  &lt;match target="pattern"&gt;
+    &lt;test name="lang" compare="contains"&gt;
+      &lt;string&gt;zh-hk&lt;/string&gt;
+    &lt;/test&gt;
+    &lt;test name="family"&gt;
+      &lt;string&gt;monospace&lt;/string&gt;
+    &lt;/test&gt;
+    &lt;edit name="family" mode="append" binding="strong"&gt;
+      &lt;string&gt;Noto Sans Mono CJK HK&lt;/string&gt;
+    &lt;/edit&gt;
+  &lt;/match&gt;
+  &lt;!-- System UI CJK --&gt;
+  &lt;!-- Default system-ui when the "lang" attribute is not given --&gt;
+  &lt;!-- You can change this font to the language variant you want --&gt;
+  &lt;match target="pattern"&gt;
+    &lt;test name="family"&gt;
+      &lt;string&gt;system-ui&lt;/string&gt;
+    &lt;/test&gt;
+    &lt;edit name="family" mode="append" binding="strong"&gt;
+      &lt;string&gt;Noto Sans CJK SC&lt;/string&gt;
+    &lt;/edit&gt;
+  &lt;/match&gt;
+  &lt;!-- Japanese --&gt;
+  &lt;!-- "lang=ja" or "lang=ja-*" --&gt;
+  &lt;match target="pattern"&gt;
+    &lt;test name="lang" compare="contains"&gt;
+      &lt;string&gt;ja&lt;/string&gt;
+    &lt;/test&gt;
+    &lt;test name="family"&gt;
+      &lt;string&gt;system-ui&lt;/string&gt;
+    &lt;/test&gt;
+    &lt;edit name="family" mode="append" binding="strong"&gt;
+      &lt;string&gt;Noto Sans CJK JP&lt;/string&gt;
+    &lt;/edit&gt;
+  &lt;/match&gt;
+  &lt;!-- Korean --&gt;
+  &lt;!-- "lang=ko" or "lang=ko-*" --&gt;
+  &lt;match target="pattern"&gt;
+    &lt;test name="lang" compare="contains"&gt;
+      &lt;string&gt;ko&lt;/string&gt;
+    &lt;/test&gt;
+    &lt;test name="family"&gt;
+      &lt;string&gt;system-ui&lt;/string&gt;
+    &lt;/test&gt;
+    &lt;edit name="family" mode="append" binding="strong"&gt;
+      &lt;string&gt;Noto Sans CJK KR&lt;/string&gt;
+    &lt;/edit&gt;
+  &lt;/match&gt;
+  &lt;!-- Chinese --&gt;
+  &lt;!-- "lang=zh" or "lang=zh-*" --&gt;
+  &lt;match target="pattern"&gt;
+    &lt;test name="lang" compare="contains"&gt;
+      &lt;string&gt;zh&lt;/string&gt;
+    &lt;/test&gt;
+    &lt;test name="family"&gt;
+      &lt;string&gt;system-ui&lt;/string&gt;
+    &lt;/test&gt;
+    &lt;edit name="family" mode="append" binding="strong"&gt;
+      &lt;string&gt;Noto Sans CJK SC&lt;/string&gt;
+    &lt;/edit&gt;
+  &lt;/match&gt;
+  &lt;!-- "lang=zh-hans" or "lang=zh-hans-*" --&gt;
+  &lt;match target="pattern"&gt;
+    &lt;test name="lang" compare="contains"&gt;
+      &lt;string&gt;zh-hans&lt;/string&gt;
+    &lt;/test&gt;
+    &lt;test name="family"&gt;
+      &lt;string&gt;system-ui&lt;/string&gt;
+    &lt;/test&gt;
+    &lt;edit name="family" mode="append" binding="strong"&gt;
+      &lt;string&gt;Noto Sans CJK SC&lt;/string&gt;
+    &lt;/edit&gt;
+  &lt;/match&gt;
+  &lt;!-- "lang=zh-hant" or "lang=zh-hant-*" --&gt;
+  &lt;match target="pattern"&gt;
+    &lt;test name="lang" compare="contains"&gt;
+      &lt;string&gt;zh-hant&lt;/string&gt;
+    &lt;/test&gt;
+    &lt;test name="family"&gt;
+      &lt;string&gt;system-ui&lt;/string&gt;
+    &lt;/test&gt;
+    &lt;edit name="family" mode="append" binding="strong"&gt;
+      &lt;string&gt;Noto Sans CJK TC&lt;/string&gt;
+    &lt;/edit&gt;
+  &lt;/match&gt;
+  &lt;!-- "lang=zh-hant-hk" or "lang=zh-hant-hk-*" --&gt;
+  &lt;match target="pattern"&gt;
+    &lt;test name="lang" compare="contains"&gt;
+      &lt;string&gt;zh-hant-hk&lt;/string&gt;
+    &lt;/test&gt;
+    &lt;test name="family"&gt;
+      &lt;string&gt;system-ui&lt;/string&gt;
+    &lt;/test&gt;
+    &lt;edit name="family" mode="append" binding="strong"&gt;
+      &lt;string&gt;Noto Sans CJK HK&lt;/string&gt;
+    &lt;/edit&gt;
+  &lt;/match&gt;
+  &lt;!-- Compatible --&gt;
+  &lt;!-- "lang=zh-cn" or "lang=zh-cn-*" --&gt;
+  &lt;match target="pattern"&gt;
+    &lt;test name="lang" compare="contains"&gt;
+      &lt;string&gt;zh-cn&lt;/string&gt;
+    &lt;/test&gt;
+    &lt;test name="family"&gt;
+      &lt;string&gt;system-ui&lt;/string&gt;
+    &lt;/test&gt;
+    &lt;edit name="family" mode="append" binding="strong"&gt;
+      &lt;string&gt;Noto Sans CJK SC&lt;/string&gt;
+    &lt;/edit&gt;
+  &lt;/match&gt;
+  &lt;!-- "lang=zh-tw" or "lang=zh-tw-*" --&gt;
+  &lt;match target="pattern"&gt;
+    &lt;test name="lang" compare="contains"&gt;
+      &lt;string&gt;zh-tw&lt;/string&gt;
+    &lt;/test&gt;
+    &lt;test name="family"&gt;
+      &lt;string&gt;system-ui&lt;/string&gt;
+    &lt;/test&gt;
+    &lt;edit name="family" mode="append" binding="strong"&gt;
+      &lt;string&gt;Noto Sans CJK TC&lt;/string&gt;
+    &lt;/edit&gt;
+  &lt;/match&gt;
+  &lt;!-- "lang=zh-hk" or "lang=zh-hk-*" --&gt;
+  &lt;match target="pattern"&gt;
+    &lt;test name="lang" compare="contains"&gt;
+      &lt;string&gt;zh-hk&lt;/string&gt;
+    &lt;/test&gt;
+    &lt;test name="family"&gt;
+      &lt;string&gt;system-ui&lt;/string&gt;
+    &lt;/test&gt;
+    &lt;edit name="family" mode="append" binding="strong"&gt;
+      &lt;string&gt;Noto Sans CJK HK&lt;/string&gt;
+    &lt;/edit&gt;
+  &lt;/match&gt;
+&lt;/fontconfig&gt;
+</pre>
+<h2><span class="mw-headline" id="Alternate_stylistic_sets_for_fonts">Alternate stylistic sets for fonts</span></h2>
+<p>Certain fonts come with alternate stylistic sets for characters through an OpenType feature.
+Generally these stylistic sets are named <code>ss0x</code> and contain small changes to individual characters.
+This shows how to change the default dotted zero to a slashed zero for the monospace version of <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=ttf-ibm-plex">ttf-ibm-plex</a></span>.
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">~/.config/fontconfig/fonts.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">&lt;?xml version="1.0"?&gt;
+&lt;!DOCTYPE fontconfig SYSTEM "urn:fontconfig:fonts.dtd"&gt;
+&lt;fontconfig&gt;
+  &lt;match target="font"&gt;
+    &lt;test name="fontformat" compare="not_eq"&gt;
+      &lt;string /&gt;
+    &lt;/test&gt;
+    &lt;test name="family"&gt;
+      &lt;string&gt;IBM Plex Mono&lt;/string&gt;
+    &lt;/test&gt;
+    &lt;edit name="fontfeatures" mode="assign_replace"&gt;
+      &lt;string&gt;ss03&lt;/string&gt;
+    &lt;/edit&gt;
+  &lt;/match&gt;
+&lt;/fontconfig&gt;
+</pre>
+<p>See <a rel="nofollow" class="external text" href="https://www.typography.com/faq/question.php?faqID=157">What are "Stylistic Sets?"</a> for more information on this.
+</p>
+<h2><span class="mw-headline" id="See_also">See also</span></h2>
+<ul>
+<li><a rel="nofollow" class="external text" href="https://forums.gentoo.org/viewtopic-p-7273876.html#7273876">Gentoo forums</a></li>
+<li><a rel="nofollow" class="external text" href="https://wiki.ubuntu.com/BetterCJKSupportSpecification/FontConfig">Ubuntu Wiki</a></li>
+</ul>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../../Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="../../en/Category:Fonts.html" title="Category:Fonts">Fonts</a></li></ul>
+</div></div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=Font_configuration/Examples&amp;oldid=786491">https://wiki.archlinux.org/index.php?title=Font_configuration/Examples&amp;oldid=786491</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 30 August 2023, at 18:54.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

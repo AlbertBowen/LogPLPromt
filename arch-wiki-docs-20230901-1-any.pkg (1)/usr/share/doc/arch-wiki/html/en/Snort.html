@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>Snort - ArchWiki</title>
+<link rel="stylesheet" href="../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Snort rootpage-Snort skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Preamble" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Preamble">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Preamble</div>
+			</a>
+			
+			<ul id="toc-Preamble-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Installation" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Installation">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Installation</div>
+			</a>
+			
+			<ul id="toc-Installation-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Configuration" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Configuration">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>Configuration</div>
+			</a>
+			
+				<button aria-controls="toc-Configuration-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Configuration subsection
+				</button>
+			
+			<ul id="toc-Configuration-sublist" class="sidebar-toc-list">
+				<li id="toc-Inline_mode" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Inline_mode">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.1</span>Inline mode</div>
+			</a>
+			
+			<ul id="toc-Inline_mode-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-IDS_mode" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#IDS_mode">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.2</span>IDS mode</div>
+			</a>
+			
+			<ul id="toc-IDS_mode-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Updating_the_rules_with_Pulledpork" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Updating_the_rules_with_Pulledpork">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4</span>Updating the rules with Pulledpork</div>
+			</a>
+			
+				<button aria-controls="toc-Updating_the_rules_with_Pulledpork-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Updating the rules with Pulledpork subsection
+				</button>
+			
+			<ul id="toc-Updating_the_rules_with_Pulledpork-sublist" class="sidebar-toc-list">
+				<li id="toc-Configuration_2" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Configuration_2">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.1</span>Configuration</div>
+			</a>
+			
+			<ul id="toc-Configuration_2-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Drop_traffic_with_Pulledpork" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Drop_traffic_with_Pulledpork">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.2</span>Drop traffic with Pulledpork</div>
+			</a>
+			
+			<ul id="toc-Drop_traffic_with_Pulledpork-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Disabling_rules_with_Pulledpork" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Disabling_rules_with_Pulledpork">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.3</span>Disabling rules with Pulledpork</div>
+			</a>
+			
+			<ul id="toc-Disabling_rules_with_Pulledpork-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Running_Pulledpork" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Running_Pulledpork">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.4</span>Running Pulledpork</div>
+			</a>
+			
+			<ul id="toc-Running_Pulledpork-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Update_the_rules:_Oinkmaster" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Update_the_rules:_Oinkmaster">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5</span>Update the rules: Oinkmaster</div>
+			</a>
+			
+				<button aria-controls="toc-Update_the_rules:_Oinkmaster-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Update the rules: Oinkmaster subsection
+				</button>
+			
+			<ul id="toc-Update_the_rules:_Oinkmaster-sublist" class="sidebar-toc-list">
+				<li id="toc-Oinkmaster_setup" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Oinkmaster_setup">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5.1</span>Oinkmaster setup</div>
+			</a>
+			
+			<ul id="toc-Oinkmaster_setup-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Oinkmaster_usage" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Oinkmaster_usage">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5.2</span>Oinkmaster usage</div>
+			</a>
+			
+			<ul id="toc-Oinkmaster_usage-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-See_also" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#See_also">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6</span>See also</div>
+			</a>
+			
+			<ul id="toc-See_also-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../en/Snort.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="mw-list-item"><a href="../en/Talk:Snort.html" rel="discussion" title="Discussion about the content page [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">English</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../en/Snort.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=Snort&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=Snort&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../en/Snort.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Snort&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Snort&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output">
+<p>From the project <a rel="nofollow" class="external text" href="https://www.snort.org/">website</a>:
+</p>
+<dl><dd>Snort is the foremost Open Source Intrusion Prevention System (IPS) in the world. Snort IPS uses a series of rules that help define malicious network activity and uses those rules to find packets that match against them and generates alerts for users.</dd></dl>
+<mw:tocplace></mw:tocplace>
+<h2><span class="mw-headline" id="Preamble">Preamble</span></h2>
+<ul>
+<li>A Snort setup that sniffs WAN &lt;-&gt; LAN is more difficult to use. It does not show you which computer triggered the alert, and it requires you to set HOME_NET as your WAN IP address, which can change if your modem uses DHCP.</li>
+<li>Snort will bridge the two interfaces for you, you will not need to configure this.</li>
+</ul>
+<p>You can use Snort to sniff wireless traffic with two routers. For simplicity the router with <i>DHCP on and wireless off</i> will be called "router A" and the router with <i>wireless on and DHCP off</i> "router B". 
+</p>
+<ul>
+<li>Ensure the routers do not have the same IP address, but are on the same subnet.</li>
+<li>If the machine running Snort is configured for inline mode, you will need 3 network interface cards. One for management, one for incoming traffic, and one for outgoing traffic.</li>
+<li>Connect a ethernet cord from router B to a spare NIC on the Snort machine.</li>
+<li>Connect another ethernet cord from router A to a spare NIC on the Snort machine.</li>
+<li>Once Snort is running traffic should flow from router B &lt;-&gt; Snort machine &lt;-&gt; router A &lt;-&gt; internet.</li>
+<li>If you are not using inline mode, then the traffic will need to be forwarded to the Snort machine, see: <a href="https://en.wikipedia.org/wiki/Port_mirroring" class="extiw" title="wikipedia:Port mirroring">Port Mirroring</a>
+</li>
+</ul>
+<h2><span class="mw-headline" id="Installation">Installation</span></h2>
+<p><a href="../en/Help:Reading.html#Installation_of_packages" class="mw-redirect" title="Install">Install</a> the <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/snort/">snort</a></span><sup><small>AUR</small></sup> package.
+</p>
+<p>Cisco Telos team also provides a <a href="../en/Docker.html" title="Docker">Docker</a> image: <a rel="nofollow" class="external autonumber" href="https://hub.docker.com/r/ciscotalos/snort3">[1]</a>
+</p>
+<h2><span class="mw-headline" id="Configuration">Configuration</span></h2>
+<p>The main configuration file is located at <code>/etc/snort/snort.lua</code>.
+</p>
+<p>Local configuration can be set in <code>/etc/snort/local.lua</code>. It is recommended to use <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/pulledpork/">pulledpork</a></span><sup><small>AUR</small></sup> to download your rule set. By default the rules are stored under, $RULE_PATH/snort.rules.
+</p>
+<p>Home network can be set in <code>/etc/snort/homenet.lua</code>. If required, let Snort know what network (or networks) you want to monitor.
+</p>
+<pre>HOME_NET = [[ 10.0.0.0/8 172.16.0.0/12 192.168.0.0/16 ]]
+</pre>
+<h3><span class="mw-headline" id="Inline_mode">Inline mode</span></h3>
+<p>Inline mode means that packets pass <i>through</i> snort, rather than being diverted to snort. In this mode, snort can drop packets and abort exploitation attempts in real-time. In this mode, snort acts as an intrusion prevention system (IPS).
+</p>
+<p>By default, snort runs in inline mode, which is defined as under in <code>/etc/snort/local.lua</code>:
+</p>
+<pre>daq =
+{
+   modules =
+   {
+       {
+           name = 'afpacket',
+           
+           --For netfilter (NFQUEUE) based IPS
+           --name = 'nfq',
+           
+           mode = 'inline',
+       },
+   },
+   module_dirs =
+   {
+       '/usr/lib/daq',
+   },
+}
+
+ips =
+{
+   mode = inline,
+   ...
+}
+</pre>
+<h3><span class="mw-headline" id="IDS_mode">IDS mode</span></h3>
+<div class="noprint archwiki-template-message">
+<p><a href="../File:Tango-view-refresh-red.png" class="image"><img alt="Tango-view-refresh-red.png" src="../File:Tango-view-refresh-red.png" decoding="async" width="48" height="48"></a><b>This article or section is out of date.</b><a href="../File:Tango-view-refresh-red.png" class="image"><img alt="Tango-view-refresh-red.png" src="../File:Tango-view-refresh-red.png" decoding="async" width="48" height="48"></a></p>
+<div>
+<b>Reason:</b> This section applies to snort 2 and needs correction for snort 3 (Discuss in <a rel="nofollow" class="external text" href="https://wiki.archlinux.org/title/Talk:Snort">Talk:Snort</a>)</div>
+</div>
+<p>In intrusion detection mode (IDS), packets are diverted to snort. Snort can not drop packets, which means that it can only notify you that a exploitation attempt is occuring, or have already occured.
+</p>
+<p>In IDS mode <a href="../en/Help:Reading.html#Control_of_systemd_units" class="mw-redirect" title="Start">start</a> <code>snort@ens1</code>.
+</p>
+<h2><span class="mw-headline" id="Updating_the_rules_with_Pulledpork">Updating the rules with Pulledpork</span></h2>
+<p><a href="../en/Help:Reading.html#Installation_of_packages" class="mw-redirect" title="Install">Install</a> <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/pulledpork/">pulledpork</a></span><sup><small>AUR</small></sup>.
+</p>
+<h3><span class="mw-headline" id="Configuration_2">Configuration</span></h3>
+<p>The configuration files are located in <code>/etc/pulledpork</code>
+</p>
+<p>Edit <code>/etc/pulledpork/pulledpork.conf</code> and uncomment the rules you want to use. You will need an "oinkcode" to download some of the rules. 
+</p>
+<ul>
+<li>
+<code>dropsid.conf</code> any rules matched in this file will have its traffic dropped.</li>
+<li>
+<code>enablesid.conf</code> is used to enable signatures. All signatures seem to be enabled by default, no need to edit this file.</li>
+<li>
+<code>disablesid.conf</code> is used to completely remove a signature from Snort.</li>
+</ul>
+<p>The current categories that are within your rule set can be found by running the following:
+</p>
+<pre>$ pulledpork.pl -c /etc/snort/pulledpork.conf -Pw
+$ zgrep -E '\.rules' /var/tmp/*.gz | cut -d'/' -f3 | sort -u | perl -lne '/(.*).rules/ &amp;&amp; print $1' &gt; rules.`date +%F`
+</pre>
+<h3><span class="mw-headline" id="Drop_traffic_with_Pulledpork">Drop traffic with Pulledpork</span></h3>
+<p>If you want to drop <i>all</i> traffic that matches a Snort signature instead of just alerting, add the following to your <code>dropsid.conf</code>:
+</p>
+<pre>pcre:.
+</pre>
+<p>Or if you want to drop all traffic matching an entire category:
+</p>
+<pre>policy-social
+policy-other
+file-other
+</pre>
+<p>If you only want to drop a single rule:
+</p>
+<pre>118:7
+</pre>
+<h3><span class="mw-headline" id="Disabling_rules_with_Pulledpork">Disabling rules with Pulledpork</span></h3>
+<p>If you want to disable a single signature add its gen_id and sig_id to <code>/etc/pulledpork/disablesid.conf</code>
+</p>
+<pre>118:22
+</pre>
+<p>If you want to disable an entire category:
+</p>
+<pre>deleted
+protocol-icmp
+policy-social
+policy-other
+</pre>
+<h3><span class="mw-headline" id="Running_Pulledpork">Running Pulledpork</span></h3>
+<p>This will pull the new rules and write them to <code>/etc/snort/rules/snort.rules</code>
+</p>
+<pre>pulledpork.pl -c /etc/pulledpork/pulledpork.conf  -P
+</pre>
+<h2><span class="mw-headline" id="Update_the_rules:_Oinkmaster">Update the rules: Oinkmaster</span></h2>
+<p>There are two sets of rules distributed by Snort: "Community Ruleset" and "Snort Subscriber Rule Set". The former one is freely available to all of the users. The latter one is made available to subscribed and registered users. Paid subscribers receive rulesets in real-time as they are released. Registered users will receive rulesets 30 days after the subscribers. Registration is free and available at: <a rel="nofollow" class="external text" href="https://snort.org/users/sign_up">Snort: Sign up</a>.
+</p>
+<p>The <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/oinkmaster/">oinkmaster</a></span><sup><small>AUR</small></sup> package is available.
+</p>
+<h3><span class="mw-headline" id="Oinkmaster_setup">Oinkmaster setup</span></h3>
+<p>Edit <code>/etc/oinkmaster.conf</code> and look for the URL section and uncomment the 2.4 line. Make sure to replace <i>&lt;oinkcode&gt;</i> by the Oink code you generated after logging into your Snort account. For Bleeding Snort rules, uncomment the appropriate line.
+</p>
+<p>When you log into your new account, create an "Oink code".
+Another thing to change is
+</p>
+<pre>use_external_bins=1 # 1 uses wget, tar, gzip instead of Perl modules
+</pre>
+<p>The rest of the configuration file is fine.
+</p>
+<h3><span class="mw-headline" id="Oinkmaster_usage">Oinkmaster usage</span></h3>
+<pre>oinkmaster.pl -o /etc/snort/rules
+</pre>
+<p>Create an executable script with the exact command and place it in /etc/cron.daily to update the rules daily automatically.
+</p>
+<h2><span class="mw-headline" id="See_also">See also</span></h2>
+<ul>
+<li><a href="../en/Simple_stateful_firewall.html" title="Simple stateful firewall">Simple stateful firewall</a></li>
+<li><a href="../en/Router.html" title="Router">Router</a></li>
+</ul>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface">
+<div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="../en/Category:Intrusion_detection.html" title="Category:Intrusion detection">Intrusion detection</a></li></ul>
+</div>
+<div id="mw-hidden-catlinks" class="mw-hidden-catlinks mw-hidden-cats-hidden">Hidden category: <ul><li><a href="../en/Category:Pages_or_sections_flagged_with_Template:Out_of_date.html" title="Category:Pages or sections flagged with Template:Out of date">Pages or sections flagged with Template:Out of date</a></li></ul>
+</div>
+</div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=Snort&amp;oldid=769126">https://wiki.archlinux.org/index.php?title=Snort&amp;oldid=769126</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 23 February 2023, at 09:49.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

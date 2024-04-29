@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>Dovecot - ArchWiki</title>
+<link rel="stylesheet" href="../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Dovecot rootpage-Dovecot skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Installation" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Installation">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Installation</div>
+			</a>
+			
+			<ul id="toc-Installation-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Configuration" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Configuration">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Configuration</div>
+			</a>
+			
+				<button aria-controls="toc-Configuration-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Configuration subsection
+				</button>
+			
+			<ul id="toc-Configuration-sublist" class="sidebar-toc-list">
+				<li id="toc-Assumptions" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Assumptions">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.1</span>Assumptions</div>
+			</a>
+			
+			<ul id="toc-Assumptions-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Create_the_TLS_certificate" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Create_the_TLS_certificate">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.2</span>Create the TLS certificate</div>
+			</a>
+			
+			<ul id="toc-Create_the_TLS_certificate-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Dovecot_configuration" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Dovecot_configuration">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.3</span>Dovecot configuration</div>
+			</a>
+			
+			<ul id="toc-Dovecot_configuration-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Generate_DH_parameters" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Generate_DH_parameters">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.4</span>Generate DH parameters</div>
+			</a>
+			
+			<ul id="toc-Generate_DH_parameters-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-PAM_Authentication" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#PAM_Authentication">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.5</span>PAM Authentication</div>
+			</a>
+			
+			<ul id="toc-PAM_Authentication-sublist" class="sidebar-toc-list">
+				<li id="toc-PAM_Authentication_with_LDAP" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#PAM_Authentication_with_LDAP">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.5.1</span>PAM Authentication with LDAP</div>
+			</a>
+			
+			<ul id="toc-PAM_Authentication_with_LDAP-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-PAM_Authentication_with_SSSD" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#PAM_Authentication_with_SSSD">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.5.2</span>PAM Authentication with SSSD</div>
+			</a>
+			
+			<ul id="toc-PAM_Authentication_with_SSSD-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Sieve" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Sieve">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.6</span>Sieve</div>
+			</a>
+			
+			<ul id="toc-Sieve-sublist" class="sidebar-toc-list">
+				<li id="toc-Sieve_Interpreter_Plugin" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Sieve_Interpreter_Plugin">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.6.1</span>Sieve Interpreter Plugin</div>
+			</a>
+			
+			<ul id="toc-Sieve_Interpreter_Plugin-sublist" class="sidebar-toc-list">
+				<li id='toc-Example:_SpamAssassin_-_move_spam_to_"Junk"_folder' class="sidebar-toc-list-item sidebar-toc-level-4">
+			<a class="sidebar-toc-link" href='#Example:_SpamAssassin_-_move_spam_to_"Junk"_folder'>
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.6.1.1</span>Example: SpamAssassin - move spam to "Junk" folder</div>
+			</a>
+			
+			<ul id='toc-Example:_SpamAssassin_-_move_spam_to_"Junk"_folder-sublist' class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-ManageSieve_Server" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#ManageSieve_Server">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.6.2</span>ManageSieve Server</div>
+			</a>
+			
+			<ul id="toc-ManageSieve_Server-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Full_Text_Search" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Full_Text_Search">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>Full Text Search</div>
+			</a>
+			
+			<ul id="toc-Full_Text_Search-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Starting_the_server" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Starting_the_server">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4</span>Starting the server</div>
+			</a>
+			
+			<ul id="toc-Starting_the_server-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Tips_and_tricks" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Tips_and_tricks">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5</span>Tips and tricks</div>
+			</a>
+			
+			<ul id="toc-Tips_and_tricks-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Troubleshooting" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Troubleshooting">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6</span>Troubleshooting</div>
+			</a>
+			
+				<button aria-controls="toc-Troubleshooting-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Troubleshooting subsection
+				</button>
+			
+			<ul id="toc-Troubleshooting-sublist" class="sidebar-toc-list">
+				<li id="toc-warning:_pipe_flag_`D'_requires_dovecot_destination_recipient_limit_=_1" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#warning:_pipe_flag_`D'_requires_dovecot_destination_recipient_limit_=_1">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6.1</span>warning: pipe flag `D' requires dovecot_destination_recipient_limit = 1</div>
+			</a>
+			
+			<ul id="toc-warning:_pipe_flag_`D'_requires_dovecot_destination_recipient_limit_=_1-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../en/Dovecot.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="mw-list-item"><a href="../en/Talk:Dovecot.html" rel="discussion" title="Discussion about the content page [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">English</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../en/Dovecot.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=Dovecot&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=Dovecot&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../en/Dovecot.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Dovecot&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Dovecot&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output">
+<div class="archwiki-template-meta-related-articles-start">
+<p class="mw-no-invert">Related articles</p>
+<ul>
+<li><a href="../en/Mail_server.html" title="Mail server">Mail server</a></li>
+<li><a href="../en/SOGo.html" title="SOGo">SOGo</a></li>
+<li><a href="../en/Virtual_user_mail_system_with_Postfix,_Dovecot_and_Roundcube.html" class="mw-redirect" title="Virtual user mail system">Virtual user mail system</a></li>
+</ul>
+</div>
+<p><a rel="nofollow" class="external text" href="https://www.dovecot.org/">Dovecot</a> is an open source <a href="https://en.wikipedia.org/wiki/IMAP" class="extiw" title="wikipedia:IMAP">IMAP</a> and <a href="https://en.wikipedia.org/wiki/POP3" class="extiw" title="wikipedia:POP3">POP3</a> server for Linux/UNIX-like systems, written primarily with security in mind. Dovecot primarily aims to be a lightweight, fast and easy to set up open source mailserver.  For more detailed information, please see the official <a rel="nofollow" class="external text" href="https://wiki2.dovecot.org/">Dovecot Wiki</a>.
+</p>
+<p>This article describes how to set up Dovecot for personal or small office use.
+</p>
+<mw:tocplace></mw:tocplace>
+<h2><span class="mw-headline" id="Installation">Installation</span></h2>
+<p><a href="../en/Help:Reading.html#Installation_of_packages" class="mw-redirect" title="Install">Install</a> the <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=dovecot">dovecot</a></span> package.
+</p>
+<h2><span class="mw-headline" id="Configuration">Configuration</span></h2>
+<h3><span class="mw-headline" id="Assumptions">Assumptions</span></h3>
+<div class="noprint archwiki-template-message">
+<p><a href="../File:Tango-edit-clear.png" class="image"><img alt="Tango-edit-clear.png" src="../File:Tango-edit-clear.png" decoding="async" width="48" height="48"></a><b>This article or section needs language, wiki syntax or style improvements. See <a href="../en/Help:Style.html" title="Help:Style">Help:Style</a> for reference.</b><a href="../File:Tango-edit-clear.png" class="image"><img alt="Tango-edit-clear.png" src="../File:Tango-edit-clear.png" decoding="async" width="48" height="48"></a></p>
+<div>
+<b>Reason:</b> Do not make arbitrary assumptions. (Discuss in <a rel="nofollow" class="external text" href="https://wiki.archlinux.org/title/Talk:Dovecot">Talk:Dovecot</a>)</div>
+</div>
+<ul>
+<li>Each mail account served by Dovecot, has a local user account defined on the server.</li>
+<li>The server uses <a href="../en/PAM.html" title="PAM">PAM</a> to authenticate the user against the local user database (<code>/etc/passwd</code>).</li>
+<li>
+<a href="https://en.wikipedia.org/wiki/Transport_Layer_Security" class="extiw" title="wikipedia:Transport Layer Security">TLS</a> is used to encrypt the authentication password.</li>
+<li>The common <a href="https://en.wikipedia.org/wiki/Maildir" class="extiw" title="wikipedia:Maildir">Maildir</a> format is used to store the mail in the user's home directory.</li>
+<li>A <a href="https://en.wikipedia.org/wiki/Mail_delivery_agent" class="extiw" title="wikipedia:Mail delivery agent">MDA</a> has already been set up to deliver mail to the local users.</li>
+</ul>
+<h3><span class="mw-headline" id="Create_the_TLS_certificate">Create the TLS certificate</span></h3>
+<div class="archwiki-template-box archwiki-template-box-warning">
+<strong>Warning:</strong> If you deploy <a href="https://en.wikipedia.org/wiki/TLS" class="extiw" title="wikipedia:TLS">TLS</a>, be sure to follow <a rel="nofollow" class="external text" href="https://weakdh.org/sysadmin.html">weakdh.org's guide</a> to prevent vulnerabilities. <code>ssl_min_protocol</code> defaults to TLSv1. For more information see <a href="../en/Transport_Layer_Security.html#Server-side_recommendations" class="mw-redirect" title="Server-side TLS">Server-side TLS</a>.</div>
+<p>To obtain a certificate, see <a href="../en/OpenSSL.html#Usage" title="OpenSSL">OpenSSL#Usage</a>.
+</p>
+<p>Alternatively you can generate the certificate using a script that comes with the <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=dovecot">dovecot</a></span> package:
+</p>
+<ol>
+<li>Copy the example configuration: <code>cp /usr/share/doc/dovecot/dovecot-openssl.cnf /etc/ssl/dovecot-openssl.cnf</code> as the root user.</li>
+<li>Edit <code>/etc/ssl/dovecot-openssl.cnf</code> to configure the certificate.</li>
+<li>Execute <code>/usr/lib/dovecot/mkcert.sh</code> as the root user to generate the certificate.</li>
+</ol>
+<p>The certificate/key pair is created as <code>/etc/ssl/certs/dovecot.pem</code> and <code>/etc/ssl/private/dovecot.pem</code>.
+</p>
+<p>Run <code>cp /etc/ssl/certs/dovecot.pem /etc/ca-certificates/trust-source/anchors/dovecot.crt</code> and then <code>trust extract-compat</code> as the root user whenever you have
+changed your certificate.
+</p>
+<h3><span class="mw-headline" id="Dovecot_configuration">Dovecot configuration</span></h3>
+<ul>
+<li>Create the dovecot configuration folder <code>/etc/dovecot</code>.</li>
+<li>Copy the <code>dovecot.conf</code> and <code>conf.d/*</code> configuration files from <code>/usr/share/doc/dovecot/example-config</code> to <code>/etc/dovecot</code>:</li>
+</ul>
+<pre># mkdir /etc/dovecot
+# cp /usr/share/doc/dovecot/example-config/dovecot.conf /etc/dovecot/dovecot.conf
+# cp -r /usr/share/doc/dovecot/example-config/conf.d /etc/dovecot
+</pre>
+<p><b>pacman</b> by default some containers is configured not to extract the doc directories to packages. Please edit /etc/pacman.conf to prevent this. 
+</p>
+<p>The default configuration is ok for most systems, but make sure to read through the configuration files to see what options are available.  See the <a rel="nofollow" class="external text" href="https://doc.dovecot.org/configuration_manual/quick_configuration/">quick configuration guide</a> and <a rel="nofollow" class="external text" href="https://doc.dovecot.org/configuration_manual/">dovecot configuration</a> for more instructions.
+</p>
+<p>By default dovecot will try to detect what mail storage system is in use on the system. To use the Maildir format edit <code>/etc/dovecot/conf.d/10-mail.conf</code> to set <code>mail_location = maildir:~/Maildir</code>.
+</p>
+<h3><span class="mw-headline" id="Generate_DH_parameters">Generate DH parameters</span></h3>
+<p>To generate a new DH parameters file (this will take a long time):
+</p>
+<pre># openssl dhparam -out /etc/dovecot/dh.pem 4096
+</pre>
+<p>then add the file to <code>/etc/dovecot/conf.d/10-ssl.conf</code>
+</p>
+<pre>ssl_dh = &lt;/etc/dovecot/dh.pem
+</pre>
+<h3><span class="mw-headline" id="PAM_Authentication">PAM Authentication</span></h3>
+<p>To enable PAM authentication with Dovecot follow this section and then either <a href="#PAM_Authentication_with_LDAP">#PAM Authentication with LDAP</a> or <a href="#PAM_Authentication_with_SSSD">#PAM Authentication with SSSD</a>.
+</p>
+<p>Edit <code>/etc/dovecot/conf.d/auth-system.conf.ext</code> by removing the comment in front of the PAM authentication section , like this:
+</p>
+<pre># PAM authentication. Preferred nowadays by most systems.
+# PAM is typically used with either userdb passwd or userdb static.
+# REMEMBER: You'll need /etc/pam.d/dovecot file created for PAM
+# authentication to actually work. &lt;doc/wiki/PasswordDatabase.PAM.txt&gt;
+passdb {
+  driver = pam
+  # [session=yes] [setcred=yes] [failure_show_msg=yes] [max_requests=&lt;n&gt;]
+  # [cache_key=&lt;key&gt;] [&lt;service name&gt;]
+  args = session=yes dovecot
+}</pre>
+<p>If you also want to log login failures add <code>failure_show_msg=yes</code> to args.
+</p>
+<p>By using the <code>pam_mkhomedir.so</code> module and by adding the <code>session</code> part in the <code>passdb</code> directive, if an LDAP user logs in for the first time the corresponding home directory will be automatically created.
+</p>
+<div class="archwiki-template-box archwiki-template-box-warning">
+<strong>Warning:</strong>  The pam session is cleared after the initial authentication request; you may experience race conditions where the home directory gets cleared during the imap session. </div>
+<h4><span class="mw-headline" id="PAM_Authentication_with_LDAP">PAM Authentication with LDAP</span></h4>
+<p>If you are using an <a href="../en/OpenLDAP.html" title="OpenLDAP">OpenLDAP</a> or <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=389-ds-base">389-ds-base</a></span> server for authentication instead, be sure to be able to login with your LDAP users first, as described in <a href="../en/LDAP_authentication.html" title="LDAP authentication">LDAP authentication</a>.
+You can then write the following in <code>/etc/pam.d/dovecot</code> remembering that the entries order is very important:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/pam.d/dovecot</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">auth    sufficient      pam_ldap.so
+auth    required        pam_unix.so     nullok
+account sufficient      pam_ldap.so
+account required        pam_unix.so
+session required        pam_mkhomedir.so skel=/etc/skel umask=0022
+session sufficient      pam_ldap.so</pre>
+<p>In this way both LDAP and system users have their mailbox.
+</p>
+<h4><span class="mw-headline" id="PAM_Authentication_with_SSSD">PAM Authentication with SSSD</span></h4>
+<p>If you are using <a href="../en/LDAP_authentication.html#Online_and_offline_authentication_with_SSSD" class="mw-redirect" title="SSSD">SSSD</a> for authentication
+You can then write the following in <code>/etc/pam.d/dovecot</code> remembering that the entries order is very important:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/pam.d/dovecot</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">auth    sufficient      pam_sss.so
+auth    required        pam_unix.so     nullok
+account sufficient      pam_sss.so
+account required        pam_unix.so
+session required        pam_mkhomedir.so skel=/etc/skel umask=0022
+session sufficient      pam_sss.so</pre>
+<p>In this way both LDAP and system users have their mailbox.
+</p>
+<h3><span class="mw-headline" id="Sieve">Sieve</span></h3>
+<p><a href="https://en.wikipedia.org/wiki/Sieve_(mail_filtering_language)" class="extiw" title="wikipedia:Sieve (mail filtering language)">Sieve</a> is a programming language that can be used to create filters for email on mail server.
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong>  You must be using Dovecot as a local delivery agent (through LMTP or LDA) for plugins like Sieve to work. If you are following the <a href="../en/Virtual_user_mail_system_with_Postfix,_Dovecot_and_Roundcube.html" class="mw-redirect" title="Virtual user mail system">Virtual user mail system</a> guide, this is most likely not the case and you will need to modify your Postfix configuration. A guide can be found in the <a rel="nofollow" class="external text" href="https://wiki2.dovecot.org/HowTo/PostfixDovecotLMTP">Dovecot Wiki</a>.</div>
+<h4><span class="mw-headline" id="Sieve_Interpreter_Plugin">Sieve Interpreter Plugin</span></h4>
+<p>This facilitates the actual Sieve filtering upon delivery. 
+</p>
+<ul>
+<li>Install <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=pigeonhole">pigeonhole</a></span>.</li>
+<li>Depending on your usage, add <code>sieve</code> to <code>mail_plugins</code> in
+<ul>
+<li>
+<code>/etc/dovecot/conf.d/15-lda.conf</code><pre>protocol lda {
+  mail_plugins = $mail_plugins sieve
+}
+</pre>
+</li>
+<li>and/or <code>/etc/dovecot/conf.d/20-lmtp.conf</code><pre>protocol lmtp {
+  mail_plugins = $mail_plugins sieve
+}
+</pre>
+</li>
+</ul>
+</li>
+</ul>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong>  Nowadays it is recommended to use LMTP instead of LDA. Nevertheless the Dovecot LDA can still be used for small mailservers. More information can be found in the <a rel="nofollow" class="external text" href="https://doc.dovecot.org/configuration_manual/protocols/lmtp_server/">Dovecot Manual</a>.</div>
+<ul><li>Optionally, add configuration in <code>plugin</code> section. See <a rel="nofollow" class="external text" href="https://doc.dovecot.org/configuration_manual/sieve/configuration/">Sieve Interpreter Documentation</a> for configuration options and default values.<br> Example: run <code>cp /usr/share/doc/dovecot/example-config/conf.d/90-sieve.conf /etc/dovecot/conf.d/90-sieve.conf</code> and verify in <code>/etc/dovecot/conf.d/90-sieve.conf</code>: <pre>plugin {
+  sieve = file:~/sieve;active=~/.dovecot.sieve 
+}
+</pre>
+</li></ul>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong>  Configuration files in <code>/etc/dovecot/conf.d/</code> will not be read without a line in <code>/etc/dovecot/dovecot.conf</code> like <code>!include /etc/dovecot/conf.d/*.conf</code>. If you are following the <a href="../en/Virtual_user_mail_system_with_Postfix,_Dovecot_and_Roundcube.html" class="mw-redirect" title="Virtual user mail system">Virtual user mail system</a> guide, you may need to add this line.</div>
+<h5>
+<span id="Example:_SpamAssassin_-_move_spam_to_.22Junk.22_folder"></span><span class="mw-headline" id='Example:_SpamAssassin_-_move_spam_to_"Junk"_folder'>Example: SpamAssassin - move spam to "Junk" folder</span>
+</h5>
+<ul><li>Add spamtest configuration</li></ul>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/dovecot/conf.d/90-sieve.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">plugin {
+  sieve_extensions = +spamtest +spamtestplus
+
+  sieve_spamtest_status_type = score
+  sieve_spamtest_status_header = \ 
+    X-Spam_score: (-?[[:digit:]]+\.[[:digit:]]).* 
+  sieve_spamtest_max_value = 5.0 
+
+  sieve_before = /var/lib/dovecot/sieve/global_sieves/move_to_spam_folder.sieve
+}
+</pre> <p><b>Note:</b> This tests for "X-Spam_score" (which is the spam header format in default Exim configuration). Your header might look different, ie "X-Spam-Score".
+</p>
+<ul><li>Create sieve script: <code>mkdir -p /var/lib/dovecot/sieve/global_sieves</code>
+</li></ul>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/var/lib/dovecot/sieve/global_sieves/move_to_spam_folder.sieve</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">require "spamtestplus";
+require "fileinto";
+require "relational";
+require "comparator-i;ascii-numeric";
+
+if spamtest :value "ge" :comparator "i;ascii-numeric" "5" {
+  fileinto "Junk";
+}
+</pre>
+<ul><li>To compile sieve, execute in shell <pre>sievec /var/lib/dovecot/sieve/global_sieves
+</pre> and make sure the <code>move_to_spam_folder.sieve</code> and the resulting <code>move_to_spam_folder.svbin</code> files are world readable.</li></ul>
+<h4><span class="mw-headline" id="ManageSieve_Server">ManageSieve Server</span></h4>
+<p>This implements the ManageSieve protocol through which users can remotely manage Sieve scripts on the server.
+</p>
+<ul>
+<li>Follow the steps in <a href="#Sieve_Interpreter_Plugin">#Sieve Interpreter Plugin</a> above.</li>
+<li>Add <code>sieve</code> to <code>protocols</code> in <code>dovecot.conf</code> <pre>protocols = imap pop3 sieve
+</pre>
+</li>
+<li>Add minimal <code>/etc/dovecot/conf.d/20-managesieve.conf</code> <pre>service managesieve-login {
+}
+
+service managesieve {
+}
+
+protocol sieve {
+}
+</pre>
+</li>
+<li>Restart <code>dovecot</code>. The managesieve daemon will listen on port 4190 by default.</li>
+</ul>
+<h2><span class="mw-headline" id="Full_Text_Search">Full Text Search</span></h2>
+<p>By default Dovecot does not index the full message content, which will result in slow response times for <code>IMAP SEARCH</code> queries for bigger mailboxes. There is a number of <a rel="nofollow" class="external text" href="https://doc.dovecot.org/configuration_manual/fts/">FTS backends</a> Dovecot can be hooked up to.
+</p>
+<p>Dovecot needs a plugin for the chosen search backend. The <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=solr">solr</a></span> plugin is included in <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=dovecot">dovecot</a></span> but solr itself is not the easiest to set up. There are packages for <a href="https://en.wikipedia.org/wiki/Xapian" class="extiw" title="wikipedia:Xapian">Xapian</a> (<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=dovecot-fts-xapian">dovecot-fts-xapian</a></span>) and <a href="../en/Elasticsearch.html" title="Elasticsearch">Elasticsearch</a> (<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=dovecot-fts-elastic">dovecot-fts-elastic</a></span>).
+</p>
+<h2><span class="mw-headline" id="Starting_the_server">Starting the server</span></h2>
+<p><a href="../en/Help:Reading.html#Control_of_systemd_units" class="mw-redirect" title="Start/enable">Start/enable</a> <code>dovecot.service</code>.
+</p>
+<h2><span class="mw-headline" id="Tips_and_tricks">Tips and tricks</span></h2>
+<p>Generate hashes with non-default hash functions:
+</p>
+<pre>$ doveadm pw -s SHA512-CRYPT -p "<i>password</i>"
+</pre>
+<p>Ensure that the column in the database is large enough. A warning will be emitted if it is too small.
+</p>
+<p>Remember to set the password password scheme:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">dovecot-sql.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">default_pass_scheme = SHA512-CRYPT</pre>
+<h2><span class="mw-headline" id="Troubleshooting">Troubleshooting</span></h2>
+<h3>
+<span id="warning:_pipe_flag_.60D.27_requires_dovecot_destination_recipient_limit_.3D_1"></span><span class="mw-headline" id="warning:_pipe_flag_`D'_requires_dovecot_destination_recipient_limit_=_1">warning: pipe flag `D' requires dovecot_destination_recipient_limit = 1</span>
+</h3>
+<p>If you cannot receive emails with multiple recipients and there is something like this is your logs:
+</p>
+<pre>mail postfix/pipe[663]: 72A62733: to=&lt;user2@example.com&gt;, relay=dovecot, delay=495, delays=495/0.01/0/0.08, dsn=4.3.5, status=deferred (mail system configuration error)
+mail postfix/pipe[663]: 72A62733: to=&lt;user1@example.com&gt;, relay=dovecot, delay=495, delays=495/0.01/0/0.06, dsn=4.3.5, status=deferred (mail system configuration error)
+mail postfix/pipe[1614231]: warning: pipe flag `D' requires dovecot_destination_recipient_limit = 1
+</pre>
+<p>Add <code>dovecot_destination_recipient_limit = 1</code> to <code>/etc/postfix/main.cf</code> and reload postfix.
+</p>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface">
+<div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="../en/Category:Mail_server.html" title="Category:Mail server">Mail server</a></li></ul>
+</div>
+<div id="mw-hidden-catlinks" class="mw-hidden-catlinks mw-hidden-cats-hidden">Hidden category: <ul><li><a href="../en/Category:Pages_or_sections_flagged_with_Template:Style.html" title="Category:Pages or sections flagged with Template:Style">Pages or sections flagged with Template:Style</a></li></ul>
+</div>
+</div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=Dovecot&amp;oldid=784170">https://wiki.archlinux.org/index.php?title=Dovecot&amp;oldid=784170</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 31 July 2023, at 04:32.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

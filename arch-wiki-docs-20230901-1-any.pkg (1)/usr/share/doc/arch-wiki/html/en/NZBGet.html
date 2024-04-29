@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>NZBGet - ArchWiki</title>
+<link rel="stylesheet" href="../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-NZBGet rootpage-NZBGet skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Installation" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Installation">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Installation</div>
+			</a>
+			
+			<ul id="toc-Installation-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Configuring_NZBGet" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Configuring_NZBGet">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Configuring NZBGet</div>
+			</a>
+			
+			<ul id="toc-Configuring_NZBGet-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Starting_NZBGet" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Starting_NZBGet">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>Starting NZBGet</div>
+			</a>
+			
+			<ul id="toc-Starting_NZBGet-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Running_NZBGet_under_a_different_user" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Running_NZBGet_under_a_different_user">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4</span>Running NZBGet under a different user</div>
+			</a>
+			
+			<ul id="toc-Running_NZBGet_under_a_different_user-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Troubleshooting" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Troubleshooting">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5</span>Troubleshooting</div>
+			</a>
+			
+				<button aria-controls="toc-Troubleshooting-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Troubleshooting subsection
+				</button>
+			
+			<ul id="toc-Troubleshooting-sublist" class="sidebar-toc-list">
+				<li id="toc-Default_NZBGet_credentials" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Default_NZBGet_credentials">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5.1</span>Default NZBGet credentials</div>
+			</a>
+			
+			<ul id="toc-Default_NZBGet_credentials-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-NZBGet_crashes_on_start" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#NZBGet_crashes_on_start">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5.2</span>NZBGet crashes on start</div>
+			</a>
+			
+			<ul id="toc-NZBGet_crashes_on_start-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Alternative_systemd_service" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Alternative_systemd_service">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5.3</span>Alternative systemd service</div>
+			</a>
+			
+			<ul id="toc-Alternative_systemd_service-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Unable_to_extract_archives" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Unable_to_extract_archives">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5.4</span>Unable to extract archives</div>
+			</a>
+			
+			<ul id="toc-Unable_to_extract_archives-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-See_also" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#See_also">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6</span>See also</div>
+			</a>
+			
+			<ul id="toc-See_also-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../en/NZBGet.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="mw-list-item"><a href="../en/Talk:NZBGet.html" rel="discussion" title="Discussion about the content page [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">English</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../en/NZBGet.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=NZBGet&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=NZBGet&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../en/NZBGet.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=NZBGet&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=NZBGet&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output">
+<p><a rel="nofollow" class="external text" href="https://nzbget.net/">NZBGet</a> is an Usenet-client written in C++ and designed with performance in mind to achieve maximum download speed by using very little system resources.
+</p>
+<mw:tocplace></mw:tocplace>
+<h2><span class="mw-headline" id="Installation">Installation</span></h2>
+<p>Install the <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=nzbget">nzbget</a></span> package and the optional <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/nzbget-systemd/">nzbget-systemd</a></span><sup><small>AUR</small></sup> that provides a <code>nzbget</code> <a href="../en/Systemd.html" title="Systemd">systemd</a> service. Alternatively, install the development version from the <a href="../en/Arch_User_Repository.html" title="Arch User Repository">Arch User Repository</a> (<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/nzbget-git/">nzbget-git</a></span><sup><small>AUR</small></sup>), which also includes the <a href="../en/Systemd.html" title="Systemd">systemd</a> service.
+</p>
+<h2><span class="mw-headline" id="Configuring_NZBGet">Configuring NZBGet</span></h2>
+<p>Copy the template configuration file to a custom directory:
+</p>
+<pre># cp /usr/share/nzbget/nzbget.conf /var/lib/nzbget/.nzbget
+</pre>
+<p>Update the configuration before starting NZBGet:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/var/lib/nzbget/.nzbget</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">..
+WebDir=/usr/share/nzbget/webui
+ScriptDir=/usr/share/nzbget/scripts
+LockFile=/var/lib/nzbget/nzbget.lock
+ConfigTemplate=/usr/share/nzbget/nzbget.conf
+DaemonUsername=nzbget
+..</pre>
+<p>Make sure the permissions are set correctly:
+</p>
+<pre># chown -R nzbget:nzbget /var/lib/nzbget
+# chmod -R 750 /var/lib/nzbget
+</pre>
+<h2><span class="mw-headline" id="Starting_NZBGet">Starting NZBGet</span></h2>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> The official <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=nzbget">nzbget</a></span> package does not provide a systemd service file. You will have to start NZBGet manually instead.</div>
+<ul><li>Running as root in console-mode: <pre># nzbget -c /var/lib/nzbget/.nzbget -s</pre>
+</li></ul>
+<ul><li>Running as root in daemon-mode: <pre># nzbget -c /var/lib/nzbget/.nzbget -D</pre>
+</li></ul>
+<p>NZBGet should now be accessible on <a rel="nofollow" class="external free" href="http://localhost:6789">http://localhost:6789</a>.
+</p>
+<h2><span class="mw-headline" id="Running_NZBGet_under_a_different_user">Running NZBGet under a different user</span></h2>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/nzbget-systemd/">nzbget-systemd</a></span><sup><small>AUR</small></sup> and <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/nzbget-git/">nzbget-git</a></span><sup><small>AUR</small></sup> already provide the <code>nzbget</code> <a href="../en/Users_and_groups.html" class="mw-redirect" title="User">user</a> and <a href="../en/Users_and_groups.html#Group_management" class="mw-redirect" title="User group">user group</a>.</div>
+<p>See <a href="../en/Users_and_groups.html#Example_adding_a_system_user" title="Users and groups">system user</a> for an example and reasons why it may be useful.
+</p>
+<p>After adding a system user, update the main configuration file using the webinterface or by manually editing <code>/var/lib/nzbget/.nzbget</code>:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/var/lib/nzbget/.nzbget</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">..
+DaemonUsername=nzbget # system user
+MainDir=/home/myuser/Downloads/NZBGet
+UMask=0002 # 775 for dirs - 664 for files</pre>
+<p>Create and set permissions for the desired directories:
+</p>
+<pre># mkdir /home/myuser/Downloads/NZBGet
+# chown -R nzbget:nzbget /home/myuser/Downloads/NZBGet
+# chmod 775 /home/myuser/Downloads/NZBGet
+</pre>
+<p>The <code>/home/myuser/Downloads/NZBGet</code> will be accessible for the user <code>nzbget</code> and for the <code>nzbget</code> group. Making the target directory world read/writable is highly discouraged (i.e. do not <i>chmod</i> the directory to <i>777</i>). Instead, give individual users/groups appropriate permissions to the appropriate directories (e.g. by adding 'yourself' to the <code>nzbget</code> group).
+</p>
+<p>Starting NZBGet as user <code>nzbget</code> in daemon-mode, or start NZBGet by using the <code>nzbget.service</code> if installed with the <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/nzbget-systemd/">nzbget-systemd</a></span><sup><small>AUR</small></sup> instead:
+</p>
+<pre>$ sudo -u nzbget /usr/bin/nzbget -c /var/lib/nzbget/.nzbget -D
+</pre>
+<h2><span class="mw-headline" id="Troubleshooting">Troubleshooting</span></h2>
+<h3><span class="mw-headline" id="Default_NZBGet_credentials">Default NZBGet credentials</span></h3>
+<p>The default credentials for NZBGet are <code>nzbget</code> as user and <code>tegbzn6789</code> as password. For security reasons it is recommended to change the default credentials.
+</p>
+<h3><span class="mw-headline" id="NZBGet_crashes_on_start">NZBGet crashes on start</span></h3>
+<p>This may happen when the user edited the NZBGet configuration by the Web-interface (located at <a rel="nofollow" class="external free" href="http://localhost:6789">http://localhost:6789</a>), corrupting the configuration-file. Clean-up the configuration-file and restart the server/daemon again.
+</p>
+<h3><span class="mw-headline" id="Alternative_systemd_service">Alternative systemd service</span></h3>
+<p>The following <code>nzbget.service</code> provides an alternative solution for (re)starting NZBGet when using <a href="../en/Systemd.html" title="Systemd">systemd</a>:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/usr/lib/systemd/system/nzbget.service</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">[Unit]
+Description=NZBGet Daemon
+Documentation=<a rel="nofollow" class="external free" href="https://nzbget.net/Documentation">https://nzbget.net/Documentation</a>
+After=network.target
+
+[Service]
+User=nzbget
+Group=nzbget
+Type=forking
+PIDFile=/var/lib/nzbget/nzbget.lock
+ExecStart=/usr/bin/nzbget -c /var/lib/nzbget/.nzbget -D
+ExecStop=/usr/bin/nzbget -c /var/lib/nzbget/.nzbget -Q
+ExecReload=/usr/bin/nzbget -c /var/lib/nzbget/.nzbget -O
+KillMode=process
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target</pre>
+<h3><span class="mw-headline" id="Unable_to_extract_archives">Unable to extract archives</span></h3>
+<p>Verify if <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=unzip">unzip</a></span>, <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=unrar">unrar</a></span>, <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=p7zip">p7zip</a></span> and <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=par2cmdline">par2cmdline</a></span> have been installed.
+</p>
+<h2><span class="mw-headline" id="See_also">See also</span></h2>
+<ul>
+<li><a rel="nofollow" class="external text" href="https://nzbget.net/Documentation">NZBGet Documentation</a></li>
+<li><a rel="nofollow" class="external text" href="https://nzbget.net/performance-tips">Performance Tips</a></li>
+</ul>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="../en/Category:Usenet_clients.html" title="Category:Usenet clients">Usenet clients</a></li></ul>
+</div></div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=NZBGet&amp;oldid=749942">https://wiki.archlinux.org/index.php?title=NZBGet&amp;oldid=749942</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 30 September 2022, at 17:34.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

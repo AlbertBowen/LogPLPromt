@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>systemd (Français)/Timers (Français) - ArchWiki</title>
+<link rel="stylesheet" href="../../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Systemd_Français_Timers_Français rootpage-Systemd_Français skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Unités_timer" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Unit%C3%A9s_timer">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Unités timer</div>
+			</a>
+			
+			<ul id="toc-Unités_timer-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Unités_service" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Unit%C3%A9s_service">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Unités service</div>
+			</a>
+			
+			<ul id="toc-Unités_service-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Gestion" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Gestion">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>Gestion</div>
+			</a>
+			
+			<ul id="toc-Gestion-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Exemples" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Exemples">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4</span>Exemples</div>
+			</a>
+			
+				<button aria-controls="toc-Exemples-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Exemples subsection
+				</button>
+			
+			<ul id="toc-Exemples-sublist" class="sidebar-toc-list">
+				<li id="toc-Minuterie_monotone" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Minuterie_monotone">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.1</span>Minuterie monotone</div>
+			</a>
+			
+			<ul id="toc-Minuterie_monotone-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Minuterie_en_temps_réel" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Minuterie_en_temps_r%C3%A9el">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.2</span>Minuterie en temps réel</div>
+			</a>
+			
+			<ul id="toc-Minuterie_en_temps_réel-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Unités_transitoires_timer" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Unit%C3%A9s_transitoires_timer">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5</span>Unités transitoires timer</div>
+			</a>
+			
+			<ul id="toc-Unités_transitoires_timer-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-En_tant_que_remplacement_de_cron" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#En_tant_que_remplacement_de_cron">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6</span>En tant que remplacement de cron</div>
+			</a>
+			
+				<button aria-controls="toc-En_tant_que_remplacement_de_cron-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle En tant que remplacement de cron subsection
+				</button>
+			
+			<ul id="toc-En_tant_que_remplacement_de_cron-sublist" class="sidebar-toc-list">
+				<li id="toc-Avantages" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Avantages">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6.1</span>Avantages</div>
+			</a>
+			
+			<ul id="toc-Avantages-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Avertissements" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Avertissements">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6.2</span>Avertissements</div>
+			</a>
+			
+			<ul id="toc-Avertissements-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-MAILTO" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#MAILTO">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6.3</span>MAILTO</div>
+			</a>
+			
+			<ul id="toc-MAILTO-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Utilisation_d'une_crontab" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Utilisation_d'une_crontab">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6.4</span>Utilisation d'une crontab</div>
+			</a>
+			
+			<ul id="toc-Utilisation_d'une_crontab-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Voir_aussi" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Voir_aussi">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">7</span>Voir aussi</div>
+			</a>
+			
+			<ul id="toc-Voir_aussi-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../../fr/Systemd/Timers.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="new mw-list-item"><a href="/index.php?title=Talk:Systemd_(Fran%C3%A7ais)/Timers_(Fran%C3%A7ais)&amp;action=edit&amp;redlink=1" rel="discussion" title="Discussion about the content page (page does not exist) [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">français</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../../fr/Systemd/Timers.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=Systemd_(Fran%C3%A7ais)/Timers_(Fran%C3%A7ais)&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=Systemd_(Fran%C3%A7ais)/Timers_(Fran%C3%A7ais)&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../../fr/Systemd/Timers.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Systemd_(Fran%C3%A7ais)/Timers_(Fran%C3%A7ais)&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Systemd_(Fran%C3%A7ais)/Timers_(Fran%C3%A7ais)&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					<div id="contentSub"><span class="subpages">&lt; <a href="../../fr/Systemd.html" title="Systemd (Français)">Systemd (Français)</a></span></div>
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="fr" dir="ltr">
+<div class="mw-parser-output">
+<p><span>
+</span>
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>État de la traduction:</strong> Cet article est la version francophone de <a href="../../en/Systemd/Timers.html" title="Systemd/Timers">systemd/Timers</a>. Date de la dernière traduction: 2022-01-11. Vous pouvez aider à synchroniser la traduction s'il y a eu des <a rel="nofollow" class="external text" href="https://wiki.archlinux.org/index.php?title=Systemd/Timers&amp;diff=0&amp;oldid=709593">changements</a> dans la version anglaise.</div>
+<div class="archwiki-template-meta-related-articles-start">
+<p class="mw-no-invert">Related articles</p>
+<ul>
+<li><a href="../../fr/Systemd.html" title="Systemd (Français)">systemd (Français)</a></li>
+<li><a href="../../fr/Systemd/User.html" title="Systemd (Français)/User (Français)">systemd (Français)/User (Français)</a></li>
+<li><a href="../../en/Systemd/FAQ.html" class="mw-redirect" title="Systemd FAQ">systemd FAQ</a></li>
+<li><a href="../../fr/Cron.html" title="Cron (Français)">Cron (Français)</a></li>
+</ul>
+</div>
+<p>Les «timers» (minuteurs) sont des fichiers d'unité <a href="../../fr/Systemd.html" title="Systemd (Français)">systemd</a> dont le nom se termine par <i>.timer</i> et qui contrôlent des fichiers ou des événements <i>.service</i>. Les timers peuvent être utilisés comme une alternative à <a href="../../en/Cron.html" title="Cron">cron</a>. (lire <a href="#En_tant_que_remplacement_de_cron">#En tant que remplacement de cron</a>). Les timers prennent en charge par défaut les événements du calendrier, les événements monotones, et peuvent être exécutés de manière asynchrone.
+</p>
+<mw:tocplace></mw:tocplace>
+<h2>
+<span id="Unit.C3.A9s_timer"></span><span class="mw-headline" id="Unités_timer">Unités timer</span>
+</h2>
+<p>Les «timers» sont des fichiers d'unités <i>systemd</i> avec un suffixe <i>.timer</i>. Les timers sont comme les autres <a href="../../fr/Systemd.html#%C3%89crire_des_unit%C3%A9s" title="Systemd (Français)">fichiers de configuration d'unité</a> et sont chargés à partir des mêmes chemins mais incluent une section <code>[Timer]</code> qui définit quand et comment le timer s'active. Les timers sont définis comme l'un des deux types suivants :
+</p>
+<ul>
+<li>Les timers en <b>temps réel</b> (aussi appelés timers d'«horloge murale») sont activés par un événement du calendrier, de la même manière que les tâches de cron. L'option <code>OnCalendar=</code> est utilisée pour les définir.</li>
+<li>Les timers <b>monotoniques</b> s'activent après un laps de temps relatif à un point de départ variable. Ils s'arrêtent si l'ordinateur est temporairement suspendu ou éteint. Il existe un certain nombre de timers monotones différents mais tous ont la forme suivante : <code>On<i>Type</i>Sec=</code>. Les timers monotones courants comprennent <code>OnBootSec</code> et <code>OnUnitActiveSec</code>.</li>
+</ul>
+<p>Pour une explication complète des options des timers, consultez <span class="plainlinks archwiki-template-man" title="$ man 5 systemd.timer"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/systemd.timer.5">systemd.timer(5)</a></span>. La syntaxe des arguments pour les événements du calendrier et les intervalles de temps est définie dans <span class="plainlinks archwiki-template-man" title="$ man 7 systemd.time"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/systemd.time.7">systemd.time(7)</a></span>.
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> <i>systemd</i> offre la cible <code>timers.target</code> qui configure tous les timers qui doivent être actifs après le démarrage (consultez <span class="plainlinks archwiki-template-man" title="$ man 7 systemd.special"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/systemd.special.7">systemd.special(7)</a></span> pour plus de détails). Pour l'utiliser, ajoutez <code>WantedBy=timers.target</code> à la section <code>[Install]</code> de votre timer et <a href="../../fr/Systemd.html#Utilisation_des_unit%C3%A9s" class="mw-redirect" title="Activez">activez</a> l'unité timer.</div>
+<h2>
+<span id="Unit.C3.A9s_service"></span><span class="mw-headline" id="Unités_service">Unités service</span>
+</h2>
+<p>Pour chaque fichier ".timer", il existe un fichier ".service" correspondant (par exemple, <code>truc.timer</code> et <code>truc.service</code>). Le fichier <i>timer</i> active et contrôle le fichier <i>service</i>. Le <i>service</i> ne nécessite pas de section <code>[Install]</code> car ce sont les unités <i>timer</i> qui sont activées. Si nécessaire, il est possible de contrôler une unité portant un nom différent en utilisant l'option <code>Unit=</code> dans la section <code>[Timer]</code> du timer.
+</p>
+<h2><span class="mw-headline" id="Gestion">Gestion</span></h2>
+<p>Pour utiliser une unité <i>timer</i> <a href="../../fr/Systemd.html#Utilisation_des_unit%C3%A9s" class="mw-redirect" title="Activez">activez</a> et <a href="../../fr/Systemd.html#Utilisation_des_unit%C3%A9s" class="mw-redirect" title="Démarrez">démarrez</a>-la comme toute autre unité (n'oubliez pas d'ajouter le suffixe <i>.timer</i>). Pour voir tous les timers démarrés, exécutez :
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">$ systemctl list-timers</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">NEXT                          LEFT        LAST                          PASSED     UNIT                         ACTIVATES
+Thu 2014-07-10 19:37:03 CEST  11h left    Wed 2014-07-09 19:37:03 CEST  12h ago    systemd-tmpfiles-clean.timer systemd-tmpfiles-clean.service
+Fri 2014-07-11 00:00:00 CEST  15h left    Thu 2014-07-10 00:00:13 CEST  8h ago     logrotate.timer              logrotate.service
+</pre>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> 
+<ul>
+<li>Pour lister tous les timers (y compris les inactifs), utilisez <code>systemctl list-timers --all</code>.</li>
+<li>L'état d'un service démarré par un timer sera probablement inactif, sauf s'il est en cours de déclenchement.</li>
+<li>Si un timer s'est désynchronisé, il peut être utile de supprimer son fichier <code>stamp-*</code> dans <code>/var/lib/systemd/timers</code>. (ou <code>~/.local/share/systemd/</code> dans le cas de timers utilisateur). Ce sont des fichiers de longueur nulle qui marquent la dernière fois que chaque minuterie a été exécutée. S'ils sont supprimés, ils seront reconstruits au prochain démarrage de leur timer.</li>
+</ul>
+</div>
+<h2><span class="mw-headline" id="Exemples">Exemples</span></h2>
+<p>Un fichier d'unité de service peut être planifié avec un timer par défaut. Les exemples suivants planifient l'exécution de <code>truc.service</code> avec un temporisateur correspondant appelé <code>truc.timer</code>.
+</p>
+<h3><span class="mw-headline" id="Minuterie_monotone">Minuterie monotone</span></h3>
+<p>Une minuterie qui démarre 15 minutes après le démarrage et qui recommence toutes les semaines pendant que le système fonctionne.
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/systemd/system/truc.timer</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">[Unit]
+Description=Exécuter truc chaque semaine et au démarrage
+
+[Timer]
+OnBootSec=15min
+OnUnitActiveSec=1w
+
+[Install]
+WantedBy=timers.target
+</pre>
+<h3>
+<span id="Minuterie_en_temps_r.C3.A9el"></span><span class="mw-headline" id="Minuterie_en_temps_réel">Minuterie en temps réel</span>
+</h3>
+<p>Une minuterie qui se déclenche une fois par semaine (à 12h00 le lundi). Lorsqu'il est activé, il déclenche le service immédiatement s'il a manqué la dernière heure de démarrage (option <code>Persistent=true</code>), par exemple en raison de la mise hors tension du système :
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/systemd/system/truc.timer</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">[Unit]
+Description=Exécuter truc chaque semaine
+
+[Timer]
+OnCalendar=weekly
+Persistent=true
+
+[Install]
+WantedBy=timers.target</pre>
+<p>Lorsque des dates et des heures plus spécifiques sont requises, les événements <code>OnCalendar</code> utilisent le format suivant :
+</p>
+<pre>DayOfWeek Year-Month-Day Hour:Minute:Second
+</pre>
+<p>Un astérisque peut être utilisé pour spécifier n'importe quelle valeur et des virgules peuvent être utilisées pour énumérer les valeurs possibles. Deux valeurs séparées par <code>..</code> indiquent une plage contiguë.
+</p>
+<p>Dans l'exemple ci-dessous, le service est lancé les quatre premiers jours de chaque mois à 12h00, mais <i>seulement</i> si ce jour est un lundi ou un mardi.
+</p>
+<pre>OnCalendar=Mon,Tue *-*-01..04 12:00:00
+</pre>
+<p>Pour lancer un service le premier samedi de chaque mois, utilisez :
+</p>
+<pre>OnCalendar=Sat *-*-1..7 18:00:00
+</pre>
+<p>Lorsque vous utilisez la partie <code>DayOfWeek</code>, vous devez spécifier au moins un jour de la semaine. Si vous voulez que quelque chose s'exécute tous les jours à 4 heures du matin, utilisez :
+</p>
+<pre>OnCalendar=*-*-* 4:00:00
+</pre>
+<p>Pour exécuter un service à différents moments, <code>OnCalendar</code> peut être spécifié plusieurs fois. Dans l'exemple ci-dessous, le service fonctionne à 22h30 les jours de semaine et à 20h00 le week-end.
+</p>
+<pre>OnCalendar=Mon..Fri 22:30
+OnCalendar=Sat,Sun 20:00
+</pre>
+<p>De plus amples informations sont disponibles dans <span class="plainlinks archwiki-template-man" title="$ man 7 systemd.time"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/systemd.time.7">systemd.time(7)</a></span>.
+</p>
+<div class="archwiki-template-box archwiki-template-box-tip">
+<strong>Astuce:</strong> 
+<ul>
+<li>Les spécifications temporelles de <code>OnCalendar</code> peuvent être testées afin de vérifier leur validité et de calculer le temps suivant où la condition s'écoulera lorsqu'elles sont utilisées sur un fichier d'unité de temporisation avec l'option <code>calendar</code> de l'utilitaire <i>systemd-analyze</i>. Par exemple, on peut utiliser <code>systemd-analyze calendar weekly</code> ou <code>systemd-analyze calendar "Mon,Tue *-*-01..04 12:00:00"</code>.</li>
+<li>La commande <code>faketime</code> est particulièrement utile pour tester divers scénarios avec la commande ci-dessus ; elle est fournie avec le paquet<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=libfaketime">libfaketime</a></span>.</li>
+<li>Les expressions d'événements spéciaux comme <code>daily</code> et <code>weekly</code> font référence à des <i>heures de début spécifiques</i> et, par conséquent, toutes les minuteries partageant ces événements de calendrier démarreront simultanément. Les minuteries partageant des événements de démarrage peuvent entraîner une baisse des performances du système si les services des minuteries sont en concurrence pour les ressources du système. L'option <code>RandomizedDelaySec</code> de la section <code>[Timer]</code> évite ce problème en décalant de manière aléatoire l'heure de démarrage de chaque minuterie. Consultez <span class="plainlinks archwiki-template-man" title="$ man 5 systemd.timer"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/systemd.timer.5">systemd.timer(5)</a></span>.</li>
+<li>Ajouter l'option <code>AccuracySec=1us</code> à la section <code>[Timer]</code>, pour éviter l'imprécision de la valeur par défaut de <code>AccuracySec</code> de <i>1m</i>. Consultez également <span class="plainlinks archwiki-template-man" title="$ man 5 systemd.timer"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/systemd.timer.5">systemd.timer(5)</a></span>.</li>
+</ul>
+</div>
+<h2>
+<span id="Unit.C3.A9s_transitoires_timer"></span><span class="mw-headline" id="Unités_transitoires_timer">Unités transitoires timer</span>
+</h2>
+<p>On peut utiliser <code>systemd-run</code> pour créer des unités transitoires <i>.timer</i>. C'est-à-dire que l'on peut configurer une commande pour qu'elle s'exécute à un moment précis sans avoir de fichier de service. Par exemple, la commande suivante touche un fichier après 30 secondes :
+</p>
+<pre># systemd-run --on-active=30 /bin/touch /tmp/truc
+</pre>
+<p>On peut également spécifier un fichier de service préexistant qui n'a pas de fichier de temporisation. Par exemple, la commande suivante démarre l'unité systemd nommée <code><i>unitequelconque</i>.service</code> après que 12,5 heures se soient écoulées :
+</p>
+<pre># systemd-run --on-active="12h 30m" --unit <i>unitequelconque</i>.service
+</pre>
+<p>Consultez <span class="plainlinks archwiki-template-man" title="$ man 1 systemd-run"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/systemd-run.1">systemd-run(1)</a></span> pour plus d'informations et d'exemples.
+</p>
+<h2><span class="mw-headline" id="En_tant_que_remplacement_de_cron">En tant que remplacement de cron</span></h2>
+<p>Bien que <a href="../../fr/Cron.html" title="Cron (Français)">cron</a> soit sans doute le planificateur de tâches le plus connu, les minuteries <i>systemd</i> peuvent être une alternative.
+</p>
+<h3><span class="mw-headline" id="Avantages">Avantages</span></h3>
+<p>Les principaux avantages de l'utilisation des timers proviennent du fait que chaque tâche a son propre service <i>systemd</i>. Certains de ces avantages sont :
+</p>
+<ul>
+<li>Les tâches peuvent être facilement lancées indépendamment de leurs timers. Cela simplifie le débogage.</li>
+<li>Chaque tâche peut être configurée pour s'exécuter dans un environnement spécifique (consultez <span class="plainlinks archwiki-template-man" title="$ man 5 systemd.exec"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/systemd.exec.5">systemd.exec(5)</a></span>).</li>
+<li>Les tâches peuvent être attachées à des <a href="../../en/Cgroups.html" title="Cgroups">cgroups</a>.</li>
+<li>Les tâches peuvent être configurées pour dépendre d'autres unités <i>systemd</i>.</li>
+<li>Les tâches sont enregistrées dans le journal <i>systemd</i> pour faciliter le débogage.</li>
+</ul>
+<h3><span class="mw-headline" id="Avertissements">Avertissements</span></h3>
+<p>Certaines choses qui sont faciles à faire avec cron sont difficiles à faire avec les unités de temporisation seules :
+</p>
+<ul>
+<li>Création : pour configurer une tâche minutée avec <i>systemd</i>, vous devez créer deux fichiers et exécuter des commandes <code>systemctl</code>, alors qu'il suffit d'ajouter une simple ligne à une crontab.</li>
+<li>Courriers électroniques : il n'y a pas d'équivalent intégré à <code>MAILTO</code> de cron pour l'envoi de courriers électroniques en cas d'échec de la tâche. Consultez la section suivante pour un exemple de mise en place d'une fonctionnalité similaire en utilisant <code>OnFailure=</code>.</li>
+</ul>
+<p>Notez également que les minuteries de l'<a href="../../fr/Systemd/User.html" title="Systemd (Français)/User (Français)">utilisateur</a> ne s'exécutent par défaut que lorsqu'une session de connexion de l'utilisateur est active. Cependant, <a href="../../fr/Systemd/User.html#D%C3%A9marrage_automatique_des_instances_utilisateur_systemd" title="Systemd (Français)/User (Français)">la persistance</a> peut permettre aux services de s'exécuter au démarrage même lorsque l'utilisateur n'a pas de session de connexion active.
+</p>
+<h3><span class="mw-headline" id="MAILTO">MAILTO</span></h3>
+<p>Vous pouvez configurer systemd pour qu'il envoie un courrier électronique lorsqu'une unité échoue. Cron envoie un courrier à <code>MAILTO</code> si la tâche affiche du contenu sur stdout ou stderr, mais de nombreuses tâches sont configurés pour n'afficher qu'en cas d'erreur. Vous avez d'abord besoin de deux fichiers : un exécutable pour envoyer le courrier et un <i>.service</i> pour démarrer l'exécutable. Pour cet exemple, l'exécutable est juste un script shell utilisant <code>sendmail</code>, qui se trouve dans les paquets qui fournissent <code>smtp-forwarder</code>.
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/usr/local/bin/systemd-email</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">#!/bin/sh
+
+/usr/bin/sendmail -t &lt;&lt;ERRMAIL
+To: $1
+From: systemd &lt;root@$HOSTNAME&gt;
+Subject: $2
+Content-Transfer-Encoding: 8bit
+Content-Type: text/plain; charset=UTF-8
+
+$(systemctl status --full "$2")
+ERRMAIL</pre>
+<p>Quel que soit l'exécutable que vous utilisez, il devrait probablement accepter au moins deux arguments comme le fait ce script shell : l'adresse à laquelle envoyer et le fichier de l'unité dont il faut obtenir l'état. Le <i>.service</i> que nous créons passera ces arguments :
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/systemd/system/status_email_<i>user</i>@.service</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">[Unit]
+Description=Courriel d'état pour %i à <i>utilisateur</i>.
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/systemd-email <i>adresse</i> %i
+User=nobody
+Group=systemd-journal</pre>
+<p>Où <code><i>user</i></code> est l'utilisateur qui reçoit le courriel et <code><i>address</i></code> est l'adresse courriel de cet utilisateur. Bien que le destinataire soit codé en dur, le fichier de l'unité à rapporter est transmis comme paramètre d'instance, de sorte que ce service unique peut envoyer des courriels pour de nombreuses autres unités. À ce stade, <a href="../../fr/Systemd.html#Utilisation_des_unit%C3%A9s" class="mw-redirect" title="Démarrez">démarrez</a> <code>status_email_<i>user</i>@dbus.service</code> pour vérifier que vous pouvez recevoir les courriels.
+</p>
+<p>Ensuite, <a href="../../fr/Systemd.html#Modifier_les_unit%C3%A9s_fournies" class="mw-redirect" title="Éditez">éditez</a> simplement le service pour lequel vous voulez recevoir des courriels et ajoutez <code>OnFailure=status_email_<i>user</i>@%n.service</code> à la section <code>[Unit]</code>. <code>%n</code> transmet le nom de l'unité au modèle.
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> 
+<ul>
+<li>Si vous configurez la sécurité sSMTP conformément à <a href="../../en/SSMTP.html#Security" title="SSMTP">sSMTP#Security</a>, l'utilisateur <code>nobody</code> n'aura pas accès à <code>/etc/ssmtp/ssmtp.conf</code>, et la commande <code>systemctl start status_email_<i>user</i>@dbus.service</code> échouera. Une solution consiste à utiliser <code>root</code> comme utilisateur dans l'unité <code>status_email_<i>user</i>@.service</code>.</li>
+<li>Si vous essayez d'utiliser <code>mail -s somelogs <i>address</i></code> dans votre script de courriel, <code>mail</code> va forker et systemd va tuer le processus de courriel lorsqu'il consultera votre script. Évitez ce comportement en faisant <code>mail -Ssendwait -s somelogs <i>address</i></code>.</li>
+</ul>
+</div>
+<h3>
+<span id="Utilisation_d.27une_crontab"></span><span class="mw-headline" id="Utilisation_d'une_crontab">Utilisation d'une crontab</span>
+</h3>
+<p>Plusieurs de ces problèmes peuvent être contournés en installant un paquet qui analyse une crontab traditionnelle pour configurer les timers. <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/systemd-cron-next/">systemd-cron-next</a></span><sup><small>AUR</small></sup> et <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/systemd-cron/">systemd-cron</a></span><sup><small>AUR</small></sup> sont deux de ces paquets. Ils peuvent fournir la fonctionnalité <code>MAILTO</code> manquante.
+</p>
+<p>De plus, comme avec les crontabs, une vue unifiée de tous les travaux planifiés peut être obtenue avec <code>systemctl</code>. Consultez <a href="#Gestion">#Gestion</a>.
+</p>
+<h2><span class="mw-headline" id="Voir_aussi">Voir aussi</span></h2>
+<ul>
+<li><span class="plainlinks archwiki-template-man" title="$ man 5 systemd.timer"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/systemd.timer.5">systemd.timer(5)</a></span></li>
+<li><a href="https://fedoraproject.org/wiki/Features/SystemdCalendarTimers" class="extiw" title="fedora:Features/SystemdCalendarTimers">Fedora:Features/SystemdCalendarTimers</a></li>
+<li><a href="https://wiki.gentoo.org/wiki/Systemd#Timer_services" class="extiw" title="gentoo:Systemd">Gentoo:Systemd#Timer services</a></li>
+<li>
+<b>systemd-cron-next</b> — outil pour générer des minuteries/services à partir des fichiers crontab et anacrontab</li>
+</ul>
+<dl><dd>
+<a rel="nofollow" class="external free" href="https://github.com/systemd-cron/systemd-cron-next">https://github.com/systemd-cron/systemd-cron-next</a> || <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/systemd-cron-next/">systemd-cron-next</a></span><sup><small>AUR</small></sup>
+</dd></dl>
+<ul><li>
+<b>systemd-cron</b> — provides systemd units to run cron scripts ; using <i>systemd-crontab-generator</i> to convert crontabs</li></ul>
+<dl><dd>
+<a rel="nofollow" class="external free" href="https://github.com/systemd-cron/systemd-cron">https://github.com/systemd-cron/systemd-cron</a> || <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/systemd-cron/">systemd-cron</a></span><sup><small>AUR</small></sup>
+</dd></dl>
+<ul><li><a rel="nofollow" class="external text" href="https://fedoramagazine.org/systemd-timers-for-scheduling-tasks/">Timers Systemd pour la planification des tâches</a></li></ul>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../../Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="../../fr/Category:System_administration.html" title="Category:System administration (Français)">System administration (Français)</a></li></ul>
+</div></div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=Systemd_(Fran%C3%A7ais)/Timers_(Fran%C3%A7ais)&amp;oldid=762760">https://wiki.archlinux.org/index.php?title=Systemd_(Français)/Timers_(Français)&amp;oldid=762760</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 1 January 2023, at 12:12.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

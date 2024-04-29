@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>Running GUI applications as root - ArchWiki</title>
+<link rel="stylesheet" href="../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Running_GUI_applications_as_root rootpage-Running_GUI_applications_as_root skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Circumvent_running_graphical_applications_as_root" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Circumvent_running_graphical_applications_as_root">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Circumvent running graphical applications as root</div>
+			</a>
+			
+				<button aria-controls="toc-Circumvent_running_graphical_applications_as_root-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Circumvent running graphical applications as root subsection
+				</button>
+			
+			<ul id="toc-Circumvent_running_graphical_applications_as_root-sublist" class="sidebar-toc-list">
+				<li id="toc-sudoedit" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#sudoedit">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.1</span>sudoedit</div>
+			</a>
+			
+			<ul id="toc-sudoedit-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-GVFS" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#GVFS">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.2</span>GVFS</div>
+			</a>
+			
+			<ul id="toc-GVFS-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Xorg" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Xorg">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Xorg</div>
+			</a>
+			
+				<button aria-controls="toc-Xorg-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Xorg subsection
+				</button>
+			
+			<ul id="toc-Xorg-sublist" class="sidebar-toc-list">
+				<li id="toc-Punctual_methods" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Punctual_methods">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.1</span>Punctual methods</div>
+			</a>
+			
+			<ul id="toc-Punctual_methods-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Alternate_methods" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Alternate_methods">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.2</span>Alternate methods</div>
+			</a>
+			
+			<ul id="toc-Alternate_methods-sublist" class="sidebar-toc-list">
+				<li id="toc-Xhost" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Xhost">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.2.1</span>Xhost</div>
+			</a>
+			
+			<ul id="toc-Xhost-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Permanently_allow_root_access" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Permanently_allow_root_access">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.2.2</span>Permanently allow root access</div>
+			</a>
+			
+			<ul id="toc-Permanently_allow_root_access-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Wayland" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Wayland">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>Wayland</div>
+			</a>
+			
+				<button aria-controls="toc-Wayland-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Wayland subsection
+				</button>
+			
+			<ul id="toc-Wayland-sublist" class="sidebar-toc-list">
+				<li id="toc-Using_xhost" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Using_xhost">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.1</span>Using xhost</div>
+			</a>
+			
+			<ul id="toc-Using_xhost-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Using_sudo_-E" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Using_sudo_-E">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.2</span>Using sudo -E</div>
+			</a>
+			
+			<ul id="toc-Using_sudo_-E-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../en/Running_GUI_applications_as_root.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="mw-list-item"><a href="../en/Talk:Running_GUI_applications_as_root.html" rel="discussion" title="Discussion about the content page [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">English</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../en/Running_GUI_applications_as_root.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=Running_GUI_applications_as_root&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=Running_GUI_applications_as_root&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../en/Running_GUI_applications_as_root.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Running_GUI_applications_as_root&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Running_GUI_applications_as_root&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output">
+<div class="archwiki-template-box archwiki-template-box-warning">
+<strong>Warning:</strong> All of the following methods have security implications that users should be aware of. As <a rel="nofollow" class="external text" href="https://bugzilla.gnome.org//show_bug.cgi?id=772875#c5">described</a> by Emmanuele Bassi, a GNOME developer: 
+<dl>
+<dd>[...] there are no *real*, substantiated, technological reasons why anybody should run a GUI application as root. By running GUI applications as an admin user you are literally running millions of lines of code that have not been audited properly to run under elevated privileges; you are also running code that will touch files inside your $HOME and may change their ownership on the file system; connect, via IPC, to even more running code, etc.</dd>
+<dd>You are opening up a massive, gaping security hole [...].</dd>
+</dl>
+</div>
+<p>Avoid running graphical applications as <a href="../en/Users_and_groups.html#Overview" class="mw-redirect" title="Root user">root</a> if possible, see <a href="#Circumvent_running_graphical_applications_as_root">#Circumvent running graphical applications as root</a>.
+</p>
+<mw:tocplace></mw:tocplace>
+<h2><span class="mw-headline" id="Circumvent_running_graphical_applications_as_root">Circumvent running graphical applications as root</span></h2>
+<h3><span class="mw-headline" id="sudoedit">sudoedit</span></h3>
+<p>To edit files as root, use <a href="../en/Sudo.html#Editing_files" class="mw-redirect" title="Sudoedit">sudoedit</a>.
+</p>
+<h3><span class="mw-headline" id="GVFS">GVFS</span></h3>
+<p>Access to privileged files and directories is possible through <a href="../en/File_manager_functionality.html#Mounting" class="mw-redirect" title="GVFS">GVFS</a> by specifying the <code>admin</code> <a rel="nofollow" class="external text" href="https://wiki.gnome.org/Projects/gvfs/backends">backend</a> in the URI scheme<a rel="nofollow" class="external autonumber" href="https://bugzilla.redhat.com/show_bug.cgi?id=1274451#c27">[1]</a><a rel="nofollow" class="external autonumber" href="https://bugzilla.gnome.org//show_bug.cgi?id=772875#c2">[2]</a>, e.g.:
+</p>
+<pre>$ nautilus admin:///root/
+</pre>
+<p>or
+</p>
+<pre>$ gedit admin:///etc/fstab
+</pre>
+<div class="archwiki-template-box archwiki-template-box-tip">
+<strong>Tip:</strong> This can also be done from the application location bar/file selector: e.g. in <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=nautilus">nautilus</a></span> or <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=gedit">gedit</a></span>, type <code>Ctrl+l</code> and then prepend the <code>admin://</code> scheme to the resource path. The same effect can be attained via the <a rel="nofollow" class="external text" href="https://wiki.gnome.org/Apps/Files?action=AttachFile&amp;do=get&amp;target=network.png">Other locations</a> server address bar.</div>
+<h2><span class="mw-headline" id="Xorg">Xorg</span></h2>
+<p>By default, and for security reasons, root will be unable to connect to a non-root user's <a href="../en/Xorg.html" class="mw-redirect" title="X server">X server</a>. There are multiple ways of allowing root to do so however, if necessary.
+</p>
+<p>The proper, recommended way to run GUI applications under X with elevated privileges is to create a <a href="../en/Polkit.html" title="Polkit">Polkit</a> policy, as shown in <a rel="nofollow" class="external text" href="https://bbs.archlinux.org/viewtopic.php?pid=999328#p999328">this forum post</a>. This should however "only be used for legacy programs", as <span class="plainlinks archwiki-template-man" title="$ man 1 pkexec"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/pkexec.1">pkexec(1)</a></span> reminds. Applications should rather "defer the privileged operations to an auditable, self-contained, <b>minimal</b> piece of code that gets executed after doing a privilege escalation, and gets dropped when not needed"<a rel="nofollow" class="external autonumber" href="https://bugzilla.gnome.org//show_bug.cgi?id=772875#c5">[3]</a>. This may be the object of a bug report to the upstream project.
+</p>
+<h3><span class="mw-headline" id="Punctual_methods">Punctual methods</span></h3>
+<p>These methods wrap the application in an elevation framework and drop the acquired privileges once it exits:
+</p>
+<ul><li>
+<span class="plainlinks archwiki-template-man" title="$ man 1 kdesu"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/kdesu.1">kdesu(1)</a></span> (from <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=kde-cli-tools">kde-cli-tools</a></span>)</li></ul>
+<pre>$ kdesu <i>application</i>
+</pre>
+<ul><li>
+<a href="../en/Sudo.html" title="Sudo">sudo</a> (must be <a href="../en/Sudo.html#Configuration" title="Sudo">properly configured</a>)</li></ul>
+<pre>$ sudo <i>application</i>
+</pre>
+<ul><li>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/sux/">sux</a></span><sup><small>AUR</small></sup> (wrapper around su which will transfer your X credentials)</li></ul>
+<pre>$ sux root <i>application</i>
+</pre>
+<h3><span class="mw-headline" id="Alternate_methods">Alternate methods</span></h3>
+<p>These methods will allow root to connect to a non-root user's X server, but present varying levels of security risks, especially if you run ssh. If you are behind a firewall, you may consider them to be safe enough for your requirements.
+</p>
+<h4><span class="mw-headline" id="Xhost">Xhost</span></h4>
+<p><a href="../en/Xhost.html" title="Xhost">Xhost</a> can be used to temporarily allow root access.
+</p>
+<h4><span class="mw-headline" id="Permanently_allow_root_access">Permanently allow root access</span></h4>
+<dl><dd>
+<b>Method 1</b>: Add the line</dd></dl>
+<pre>session         optional        pam_xauth.so
+</pre>
+<p>to both <code>/etc/pam.d/su</code> and <code>/etc/pam.d/su-l</code>. Then switch to your root user using <code>su</code> or <code>su -</code>.
+</p>
+<dl><dd>
+<b>Method 2</b>: Globally in <code>/etc/profile</code>
+</dd></dl>
+<p>Add the following line to <code>/etc/profile</code>:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/profile</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">export XAUTHORITY=/home/<i>username</i>/.Xauthority</pre>
+<p>This will permanently allow root to connect to a non-root user's X server.
+</p>
+<p>Or, merely specify a particular app:
+</p>
+<pre># XAUTHORITY=/home/<i>username</i>/.Xauthority <i>appname</i>
+</pre>
+<p>where <code><i>appname</i></code> is the name of the particular app. (e.g. <i>kwrite</i>)
+</p>
+<h2><span class="mw-headline" id="Wayland">Wayland</span></h2>
+<p>Trying to run a graphical application as root via <a href="../en/Su.html" title="Su">su</a>, <a href="../en/Sudo.html" title="Sudo">sudo</a> or <a href="../en/Polkit.html" title="Polkit">pkexec</a> in a Wayland session (e.g. <a href="../en/Parted.html" class="mw-redirect" title="GParted">GParted</a> or <a href="../en/GNOME/Gedit.html" class="mw-redirect" title="Gedit">Gedit</a>), will fail with an error similar to this:
+</p>
+<pre>$ sudo gedit
+No protocol specified
+Unable to init server: Could not connect: Connection refused
+
+(gedit:2349): Gtk-WARNING **: cannot open display: :0
+</pre>
+<p>Before Wayland, running GUI applications with elevated privileges could be properly implemented by creating a <a href="../en/Polkit.html" title="Polkit">Polkit</a> policy, or more dangerously done by running the command in a terminal by prepending the command with <code>sudo</code>; but under (X)Wayland this does not work anymore as the default has been made to only allow the user who started the X server to connect clients to it (see the <a rel="nofollow" class="external text" href="https://bugzilla.redhat.com/show_bug.cgi?id=1266771">bug report</a> and <a rel="nofollow" class="external text" href="https://gitlab.freedesktop.org/xorg/xserver/-/commit/c4534a3">the</a> <a rel="nofollow" class="external text" href="https://gitlab.freedesktop.org/xorg/xserver/-/commit/4b4b908">upstream</a> <a rel="nofollow" class="external text" href="https://gitlab.freedesktop.org/xorg/xserver/-/commit/76636ac">commits</a> it refers to).
+</p>
+<p>Avoid running graphical applications as root if possible, see <a href="#Circumvent_running_graphical_applications_as_root">#Circumvent running graphical applications as root</a>.
+</p>
+<p>A more versatile though more insecure workaround allows any graphical application to be run as root <a href="#Using_xhost">#Using xhost</a>.
+</p>
+<h3><span class="mw-headline" id="Using_xhost">Using xhost</span></h3>
+<div class="noprint archwiki-template-message">
+<p><a href="../File:Tango-view-fullscreen.png" class="image"><img alt="Tango-view-fullscreen.png" src="../File:Tango-view-fullscreen.png" decoding="async" width="48" height="48"></a><b>This article or section needs expansion.</b><a href="../File:Tango-view-fullscreen.png" class="image"><img alt="Tango-view-fullscreen.png" src="../File:Tango-view-fullscreen.png" decoding="async" width="48" height="48"></a></p>
+<div>
+<b>Reason:</b> Mention that xhost only works under Xwayland. (Discuss in <a rel="nofollow" class="external text" href="https://wiki.archlinux.org/title/Talk:Running_GUI_applications_as_root">Talk:Running GUI applications as root</a>)</div>
+</div>
+<p>A more versatile —though much less secure— workaround is to use <a href="../en/Xhost.html" title="Xhost">xhost</a> to temporarily allow the root user to access the local user's X session<a rel="nofollow" class="external autonumber" href="https://bugzilla.redhat.com/show_bug.cgi?id=1274451#c64">[4]</a>. To do so, execute the following command as the current (unprivileged) user:
+</p>
+<pre>$ xhost si:localuser:root
+</pre>
+<p>To remove this access after the application has been closed:
+</p>
+<pre>$ xhost -si:localuser:root
+</pre>
+<h3><span class="mw-headline" id="Using_sudo_-E">Using sudo -E</span></h3>
+<p>You can launch an application with:
+</p>
+<pre>$ sudo -E <i>program</i>
+</pre>
+<p>which preserves environment variables like WAYLAND_DISPLAY.
+</p>
+<p>If you want the HOME environment variable to be set to the target user, use:
+</p>
+<pre>$ sudo -EH <i>program</i>
+</pre>
+<p>See <span class="plainlinks archwiki-template-man" title="$ man 8 sudo"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/sudo.8">sudo(8)</a></span>.
+</p>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface">
+<div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../Special:Categories.html" title="Special:Categories">Categories</a>: <ul>
+<li><a href="../en/Category:Graphical_user_interfaces.html" title="Category:Graphical user interfaces">Graphical user interfaces</a></li>
+<li><a href="../en/Category:Security.html" title="Category:Security">Security</a></li>
+</ul>
+</div>
+<div id="mw-hidden-catlinks" class="mw-hidden-catlinks mw-hidden-cats-hidden">Hidden category: <ul><li><a href="../en/Category:Pages_or_sections_flagged_with_Template:Expansion.html" title="Category:Pages or sections flagged with Template:Expansion">Pages or sections flagged with Template:Expansion</a></li></ul>
+</div>
+</div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=Running_GUI_applications_as_root&amp;oldid=782553">https://wiki.archlinux.org/index.php?title=Running_GUI_applications_as_root&amp;oldid=782553</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 5 July 2023, at 07:14.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

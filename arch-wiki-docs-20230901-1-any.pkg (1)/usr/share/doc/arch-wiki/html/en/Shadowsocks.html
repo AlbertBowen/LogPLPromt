@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>Shadowsocks - ArchWiki</title>
+<link rel="stylesheet" href="../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Shadowsocks rootpage-Shadowsocks skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Installation" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Installation">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Installation</div>
+			</a>
+			
+			<ul id="toc-Installation-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Configuration" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Configuration">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Configuration</div>
+			</a>
+			
+			<ul id="toc-Configuration-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Usage" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Usage">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>Usage</div>
+			</a>
+			
+				<button aria-controls="toc-Usage-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Usage subsection
+				</button>
+			
+			<ul id="toc-Usage-sublist" class="sidebar-toc-list">
+				<li id="toc-Client" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Client">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.1</span>Client</div>
+			</a>
+			
+			<ul id="toc-Client-sublist" class="sidebar-toc-list">
+				<li id="toc-From_the_command_line" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#From_the_command_line">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.1.1</span>From the command line</div>
+			</a>
+			
+			<ul id="toc-From_the_command_line-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Daemon_management" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Daemon_management">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.1.2</span>Daemon management</div>
+			</a>
+			
+			<ul id="toc-Daemon_management-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Server" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Server">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.2</span>Server</div>
+			</a>
+			
+			<ul id="toc-Server-sublist" class="sidebar-toc-list">
+				<li id="toc-From_the_command_line_2" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#From_the_command_line_2">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.2.1</span>From the command line</div>
+			</a>
+			
+			<ul id="toc-From_the_command_line_2-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Daemon_management_2" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Daemon_management_2">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.2.2</span>Daemon management</div>
+			</a>
+			
+			<ul id="toc-Daemon_management_2-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Tips_and_tricks" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Tips_and_tricks">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4</span>Tips and tricks</div>
+			</a>
+			
+				<button aria-controls="toc-Tips_and_tricks-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Tips and tricks subsection
+				</button>
+			
+			<ul id="toc-Tips_and_tricks-sublist" class="sidebar-toc-list">
+				<li id="toc-Performance_optimization" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Performance_optimization">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.1</span>Performance optimization</div>
+			</a>
+			
+			<ul id="toc-Performance_optimization-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Encryption" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Encryption">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.2</span>Encryption</div>
+			</a>
+			
+			<ul id="toc-Encryption-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-See_also" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#See_also">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5</span>See also</div>
+			</a>
+			
+			<ul id="toc-See_also-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../en/Shadowsocks.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="new mw-list-item"><a href="/index.php?title=Talk:Shadowsocks&amp;action=edit&amp;redlink=1" rel="discussion" title="Discussion about the content page (page does not exist) [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">English</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../en/Shadowsocks.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=Shadowsocks&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=Shadowsocks&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../en/Shadowsocks.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Shadowsocks&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Shadowsocks&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output">
+<div class="noprint archwiki-template-message">
+<p><a href="../File:Tango-view-fullscreen.png" class="image"><img alt="Tango-view-fullscreen.png" src="../File:Tango-view-fullscreen.png" decoding="async" width="48" height="48"></a><b>This article or section needs expansion.</b><a href="../File:Tango-view-fullscreen.png" class="image"><img alt="Tango-view-fullscreen.png" src="../File:Tango-view-fullscreen.png" decoding="async" width="48" height="48"></a></p>
+<div>
+<b>Reason:</b> See <a href="https://wiki.archlinuxcn.org/wiki/Shadowsocks#%E4%B8%BA%E5%85%B6%E5%AE%83%E7%A8%8B%E5%BA%8F%E9%85%8D%E7%BD%AE%E4%BB%A3%E7%90%86" class="extiw" title="zh-hans:Shadowsocks">zh-hans:Shadowsocks#为其它程序配置代理</a>. (Discuss in <a rel="nofollow" class="external text" href="https://wiki.archlinux.org/title/Talk:Shadowsocks">Talk:Shadowsocks</a>)</div>
+</div>
+<div class="archwiki-template-meta-related-articles-start">
+<p class="mw-no-invert">Related articles</p>
+<ul>
+<li><a href="../en/Trojan.html" title="Trojan">Trojan</a></li>
+</ul>
+</div>
+<p><a rel="nofollow" class="external text" href="https://shadowsocks.org/">Shadowsocks</a> is a lightweight proxy. It is based on the <a href="https://en.wikipedia.org/wiki/SOCKS5" class="extiw" title="wikipedia:SOCKS5">SOCKS5</a> protocol, but additionally uses encryption, which improves security and helps to bypass firewalls.
+</p>
+<mw:tocplace></mw:tocplace>
+<h2><span class="mw-headline" id="Installation">Installation</span></h2>
+<p>Several implementations are packaged for Arch Linux. You can <a href="../en/Help:Reading.html#Installation_of_packages" class="mw-redirect" title="Install">install</a> one of them:
+</p>
+<ul>
+<li>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=shadowsocks">shadowsocks</a></span> — the initial implementation written in Python.</li>
+<li>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/shadowsocks-rust/">shadowsocks-rust</a></span><sup><small>AUR</small></sup> — the newest and actively developed implementation written in Rust.</li>
+<li>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/go-shadowsocks2/">go-shadowsocks2</a></span><sup><small>AUR</small></sup>, <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/shadowsocks-go/">shadowsocks-go</a></span><sup><small>AUR</small></sup> — written in Go.</li>
+<li>
+<span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/shadowsocks-libev-static/">shadowsocks-libev-static</a></span><sup><small>AUR</small></sup> — written in C. No longer in development, superseded by <i>shadowsocks-rust</i>.</li>
+</ul>
+<h2><span class="mw-headline" id="Configuration">Configuration</span></h2>
+<p>Shadowsocks configuration is done with a JSON formatted file. See <a rel="nofollow" class="external text" href="https://github.com/shadowsocks/shadowsocks/wiki/Configuration-via-Config-File">Configuration via Config File</a>.
+</p>
+<div class="archwiki-template-box archwiki-template-box-tip">
+<strong>Tip:</strong> 
+<ul>
+<li>To specify multiple server IPs, the following syntax can be used <code>"server":["1.1.1.1","2.2.2.2"],</code>.</li>
+<li>To find out the fastest method running on your machine, you can benchmark with the script <a rel="nofollow" class="external text" href="https://raw.githubusercontent.com/shadowsocks/shadowsocks-libev/0437e05aa8ec7f36f1eeb8c366dfd2b2b3b0288b/scripts/iperf.sh">iperf.sh</a>.</li>
+</ul>
+</div>
+<h2><span class="mw-headline" id="Usage">Usage</span></h2>
+<h3><span class="mw-headline" id="Client">Client</span></h3>
+<div class="archwiki-template-box archwiki-template-box-warning">
+<strong>Warning:</strong> The <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=udns">udns</a></span> package is used as a stub resolver for DNS. In order to prevent DNS request leaking of client applications (like browsers), further applications must be employed. For example, <a href="../en/Privoxy.html" title="Privoxy">privoxy</a> or a full DNS resolver on the client. <a rel="nofollow" class="external autonumber" href="https://github.com/shadowsocks/shadowsocks-libev/issues/1542">[1]</a> <a rel="nofollow" class="external autonumber" href="https://github.com/shadowsocks/shadowsocks-libev/issues/1641">[2]</a>
+</div>
+<h4><span class="mw-headline" id="From_the_command_line">From the command line</span></h4>
+<p>The client is started with the <code>ss-local</code> (<i>shadowsocks-libev</i>) or <code>sslocal</code> (<i>shadowsocks</i>) command. See <span class="plainlinks archwiki-template-man" title="$ man 1 ss-local"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/ss-local.1">ss-local(1)</a></span><sup>[<a href="https://en.wikipedia.org/wiki/Wikipedia:Link_rot" class="extiw" title="wikipedia:Wikipedia:Link rot">dead link</a> 2023-04-22]</sup> and <span class="plainlinks archwiki-template-man" title="$ man 1 sslocal"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/sslocal.1">sslocal(1)</a></span>.
+</p>
+<h4><span class="mw-headline" id="Daemon_management">Daemon management</span></h4>
+<p>The Shadowsocks client can be controlled with an instance of <code>shadowsocks@.service</code> (<i>shadowsocks</i>) or <code>shadowsocks-libev@.service</code> (<i>shadowsocks-libev</i>) through <a href="../en/Systemd.html#Basic_systemctl_usage" class="mw-redirect" title="Systemctl">systemctl</a>. To use the configuration file <code>/etc/shadowsocks/<i>config</i>.json</code>, <a href="../en/Help:Reading.html#Control_of_systemd_units" class="mw-redirect" title="Start">start</a> and <a href="../en/Help:Reading.html#Control_of_systemd_units" class="mw-redirect" title="Enable">enable</a> <code>shadowsocks-libev-server@<i>config</i>.service</code> or <code>shadowsocks-server@<i>config</i>.service</code>.
+</p>
+<p>You may also be interested in running an instance of <code>shadowsocks@</code> or <code>shadowsocks-libev@</code> <a href="../en/Systemd.html#Running_services_after_the_network_is_up" title="Systemd">after the network is up</a>.
+</p>
+<h3><span class="mw-headline" id="Server">Server</span></h3>
+<h4><span class="mw-headline" id="From_the_command_line_2">From the command line</span></h4>
+<p>The server is started with the <code>ss-server</code> (<i>shadowsocks-libev</i>) or <code>ssserver</code> (<i>shadowsocks</i>) command. See <span class="plainlinks archwiki-template-man" title="$ man 1 ss-server"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/ss-server.1">ss-server(1)</a></span><sup>[<a href="https://en.wikipedia.org/wiki/Wikipedia:Link_rot" class="extiw" title="wikipedia:Wikipedia:Link rot">dead link</a> 2023-04-22]</sup> and <span class="plainlinks archwiki-template-man" title="$ man 1 ssserver"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/ssserver.1">ssserver(1)</a></span>.
+</p>
+<h4><span class="mw-headline" id="Daemon_management_2">Daemon management</span></h4>
+<p>The Shadowsocks server can be controlled with an instance of <code>shadowsocks-libev-server@.service</code> (<i>shadowsocks-libev</i>) or <code>shadowsocks-server@.service</code> (<i>shadowsocks</i>). To use the configuration file <code>/etc/shadowsocks/<i>config</i>.json</code>, <a href="../en/Help:Reading.html#Control_of_systemd_units" class="mw-redirect" title="Start">start</a> and <a href="../en/Help:Reading.html#Control_of_systemd_units" class="mw-redirect" title="Enable">enable</a> <code>shadowsocks-libev-server@<i>config</i>.service</code> or <code>shadowsocks-server@<i>config</i>.service</code>.
+</p>
+<p>To bind Shadowsocks to a privileged port (less than <code>1024</code>), the server should be started as user root:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/systemd/system/shadowsocks-server@.service.d/start-as-root.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">[Service]
+User=root
+</pre>
+<h2><span class="mw-headline" id="Tips_and_tricks">Tips and tricks</span></h2>
+<h3><span class="mw-headline" id="Performance_optimization">Performance optimization</span></h3>
+<ul>
+<li>Use common ports such as <code>443</code>. The <a href="https://en.wikipedia.org/wiki/Great_Firewall" class="extiw" title="wikipedia:Great Firewall">Great Firewall</a> checks relatively few commonly used ports to reduce stress.</li>
+<li>
+<a href="../en/Sysctl.html#Enable_TCP_Fast_Open" title="Sysctl">Enable TCP Fast Open</a>.</li>
+<li>
+<a href="../en/Sysctl.html#Enable_BBR" title="Sysctl">Enable BBR</a>.</li>
+<li>Install <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=python-gevent">python-gevent</a></span> to increase the speed of <i>shadowsocks</i>.</li>
+<li>Optimize kernel parameters, see <a rel="nofollow" class="external text" href="https://github.com/shadowsocks/shadowsocks/wiki/Optimizing-Shadowsocks">Optimizing Shadowsocks</a>.</li>
+</ul>
+<h3><span class="mw-headline" id="Encryption">Encryption</span></h3>
+<p>See <a rel="nofollow" class="external text" href="https://shadowsocks.org/guide/aead.html">AEAD Ciphers</a><sup title="Last check status: 404">[<a href="https://en.wikipedia.org/wiki/Wikipedia:Link_rot" class="extiw" title="wikipedia:Wikipedia:Link rot">dead link</a> 2023-05-20 ⓘ]</sup>.
+</p>
+<p>Installing the <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=python-m2crypto">python-m2crypto</a></span> package will make encryption a little faster.
+</p>
+<p>To use <a href="https://en.wikipedia.org/wiki/Salsa20" class="extiw" title="wikipedia:Salsa20">Salsa20</a> or <a href="https://en.wikipedia.org/wiki/ChaCha20" class="extiw" title="wikipedia:ChaCha20">ChaCha20</a> ciphers, install the <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=libsodium">libsodium</a></span> package.
+</p>
+<h2><span class="mw-headline" id="See_also">See also</span></h2>
+<ul>
+<li><a rel="nofollow" class="external text" href="https://shadowsocks.org/">Shadowsocks Home Page</a></li>
+<li><a rel="nofollow" class="external text" href="https://github.com/shadowsocks/shadowsocks">GitHub project (shadowsocks)</a></li>
+<li><a rel="nofollow" class="external text" href="https://github.com/shadowsocks/shadowsocks-libev">GitHub project (shadowsocks-libev)</a></li>
+<li><a rel="nofollow" class="external text" href="https://pypi.python.org/pypi/shadowsocks">Python package</a></li>
+<li>
+<a rel="nofollow" class="external text" href="https://github.com/shadowsocks/shadowsocks/wiki">GitHub wiki</a> (some suggestions for optimization)</li>
+</ul>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface">
+<div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="../en/Category:Proxy_servers.html" title="Category:Proxy servers">Proxy servers</a></li></ul>
+</div>
+<div id="mw-hidden-catlinks" class="mw-hidden-catlinks mw-hidden-cats-hidden">Hidden categories: <ul>
+<li><a href="../en/Category:Pages_or_sections_flagged_with_Template:Expansion.html" title="Category:Pages or sections flagged with Template:Expansion">Pages or sections flagged with Template:Expansion</a></li>
+<li><a href="../en/Category:Pages_with_dead_links.html" title="Category:Pages with dead links">Pages with dead links</a></li>
+</ul>
+</div>
+</div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=Shadowsocks&amp;oldid=778937">https://wiki.archlinux.org/index.php?title=Shadowsocks&amp;oldid=778937</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 20 May 2023, at 14:35.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

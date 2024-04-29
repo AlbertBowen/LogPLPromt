@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>pacman/Package signing - ArchWiki</title>
+<link rel="stylesheet" href="../../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Pacman_Package_signing rootpage-Pacman skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Setup" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#Setup">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Setup</div>
+			</a>
+			
+				<button aria-controls="toc-Setup-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Setup subsection
+				</button>
+			
+			<ul id="toc-Setup-sublist" class="sidebar-toc-list">
+				<li id="toc-Configuring_pacman" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Configuring_pacman">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.1</span>Configuring pacman</div>
+			</a>
+			
+			<ul id="toc-Configuring_pacman-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Initializing_the_keyring" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Initializing_the_keyring">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.2</span>Initializing the keyring</div>
+			</a>
+			
+			<ul id="toc-Initializing_the_keyring-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Managing_the_keyring" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#Managing_the_keyring">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Managing the keyring</div>
+			</a>
+			
+				<button aria-controls="toc-Managing_the_keyring-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Managing the keyring subsection
+				</button>
+			
+			<ul id="toc-Managing_the_keyring-sublist" class="sidebar-toc-list">
+				<li id="toc-Verifying_the_master_keys" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Verifying_the_master_keys">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.1</span>Verifying the master keys</div>
+			</a>
+			
+			<ul id="toc-Verifying_the_master_keys-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Adding_developer_keys" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Adding_developer_keys">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.2</span>Adding developer keys</div>
+			</a>
+			
+			<ul id="toc-Adding_developer_keys-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Adding_unofficial_keys" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Adding_unofficial_keys">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.3</span>Adding unofficial keys</div>
+			</a>
+			
+			<ul id="toc-Adding_unofficial_keys-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Debugging_with_gpg" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Debugging_with_gpg">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.4</span>Debugging with gpg</div>
+			</a>
+			
+			<ul id="toc-Debugging_with_gpg-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Tips_and_tricks" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#Tips_and_tricks">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>Tips and tricks</div>
+			</a>
+			
+				<button aria-controls="toc-Tips_and_tricks-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Tips and tricks subsection
+				</button>
+			
+			<ul id="toc-Tips_and_tricks-sublist" class="sidebar-toc-list">
+				<li id="toc-Upgrade_system_regularly" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Upgrade_system_regularly">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.1</span>Upgrade system regularly</div>
+			</a>
+			
+			<ul id="toc-Upgrade_system_regularly-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Update_system_time_regularly" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Update_system_time_regularly">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.2</span>Update system time regularly</div>
+			</a>
+			
+			<ul id="toc-Update_system_time_regularly-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Troubleshooting" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#Troubleshooting">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4</span>Troubleshooting</div>
+			</a>
+			
+				<button aria-controls="toc-Troubleshooting-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Troubleshooting subsection
+				</button>
+			
+			<ul id="toc-Troubleshooting-sublist" class="sidebar-toc-list">
+				<li id="toc-Invalid_signature_errors" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Invalid_signature_errors">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.1</span>Invalid signature errors</div>
+			</a>
+			
+			<ul id="toc-Invalid_signature_errors-sublist" class="sidebar-toc-list">
+				<li id="toc-Removing_packages_from_cache" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Removing_packages_from_cache">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.1.1</span>Removing packages from cache</div>
+			</a>
+			
+			<ul id="toc-Removing_packages_from_cache-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Resetting_all_the_keys" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Resetting_all_the_keys">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.1.2</span>Resetting all the keys</div>
+			</a>
+			
+			<ul id="toc-Resetting_all_the_keys-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Disabling_signature_checking" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Disabling_signature_checking">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.1.3</span>Disabling signature checking</div>
+			</a>
+			
+			<ul id="toc-Disabling_signature_checking-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Cannot_import_keys" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Cannot_import_keys">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.2</span>Cannot import keys</div>
+			</a>
+			
+			<ul id="toc-Cannot_import_keys-sublist" class="sidebar-toc-list">
+				<li id="toc-Upgrade_the_system" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Upgrade_the_system">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.2.1</span>Upgrade the system</div>
+			</a>
+			
+			<ul id="toc-Upgrade_the_system-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Change_keyserver" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Change_keyserver">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.2.2</span>Change keyserver</div>
+			</a>
+			
+			<ul id="toc-Change_keyserver-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Clean_cached_packages" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Clean_cached_packages">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.2.3</span>Clean cached packages</div>
+			</a>
+			
+			<ul id="toc-Clean_cached_packages-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Signature_is_unknown_trust" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Signature_is_unknown_trust">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.3</span>Signature is unknown trust</div>
+			</a>
+			
+			<ul id="toc-Signature_is_unknown_trust-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Updating_keys_via_proxy" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Updating_keys_via_proxy">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.4</span>Updating keys via proxy</div>
+			</a>
+			
+			<ul id="toc-Updating_keys_via_proxy-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-See_also" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#See_also">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5</span>See also</div>
+			</a>
+			
+			<ul id="toc-See_also-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../../en/Pacman/Package_signing.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="mw-list-item"><a href="../../en/Talk:Pacman/Package_signing.html" rel="discussion" title="Discussion about the content page [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">English</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../../en/Pacman/Package_signing.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=Pacman/Package_signing&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=Pacman/Package_signing&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../../en/Pacman/Package_signing.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Pacman/Package_signing&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Pacman/Package_signing&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					<div id="contentSub"><span class="subpages">&lt; <a href="../../en/Pacman.html" title="Pacman">Pacman</a></span></div>
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output">
+<p><span>
+</span>
+</p>
+<div class="archwiki-template-meta-related-articles-start">
+<p class="mw-no-invert">Related articles</p>
+<ul>
+<li><a href="../../en/GnuPG.html" title="GnuPG">GnuPG</a></li>
+<li><a href="../../DeveloperWiki:Package_signing.html" title="DeveloperWiki:Package signing">DeveloperWiki:Package signing</a></li>
+</ul>
+</div>
+<p>To determine if packages are authentic, <i>pacman</i> uses <a rel="nofollow" class="external text" href="https://www.gnupg.org/">GnuPG keys</a> in a <a rel="nofollow" class="external text" href="https://www.gnupg.org/gph/en/manual.html#AEN385">web of trust</a> model. The current Master Signing Keys are found <a rel="nofollow" class="external text" href="https://archlinux.org/master-keys/">here</a>. At least three of these Master Signing Keys are used to sign the Developer's and Trusted User's own keys. They are then used to sign their packages. Each user also has a unique PGP key, which is generated when you configure <i>pacman-key</i>. It is this web of trust that links the user's key to the master keys.
+</p>
+<p>Examples of webs of trust:
+</p>
+<ul>
+<li>
+<b>Custom packages</b>: Packages made and signed with a local key.</li>
+<li>
+<b>Unofficial packages</b>: Packages made and signed by a developer. Then, a local key was used to sign the developer's key.</li>
+<li>
+<b>Official packages</b>: Packages made and signed by a developer. The developer's key was signed by the Arch Linux master keys. You used your key to sign the master keys, and you trust them to vouch for developers.</li>
+</ul>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> The HKP protocol uses 11371/tcp for communication. In order to get the signed keys from the servers (using <i>pacman-key</i>), this port is required for communication.</div>
+<mw:tocplace></mw:tocplace>
+<h2><span class="mw-headline" id="Setup">Setup</span></h2>
+<h3><span class="mw-headline" id="Configuring_pacman">Configuring pacman</span></h3>
+<p>The <code>SigLevel</code> option in <code>/etc/pacman.conf</code> determines the level of trust required to install a package with <code>pacman -S</code>. For a detailed explanation of <code>SigLevel</code>, see <span class="plainlinks archwiki-template-man" title="$ man 5 pacman.conf"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/pacman.conf.5#PACKAGE_AND_DATABASE_SIGNATURE_CHECKING">pacman.conf(5) § PACKAGE AND DATABASE SIGNATURE CHECKING</a></span>, and the file comments. One can set signature checking globally, or per repository. If <code>SigLevel</code> is set globally in the <code>[options]</code> section, all packages installed with <code>pacman -S</code> will require signing. With the <code>LocalFileSigLevel</code> setting from the default <code>pacman.conf</code>, any packages you build, and install with <code>pacman -U</code>, will not need to be signed using <i>makepkg</i>.
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> Although all official packages are now signed, as of November 2018 signing of the databases is a <a rel="nofollow" class="external text" href="https://bbs.archlinux.org/viewtopic.php?id=242258">work in progress</a>. If <code>Required</code> is set then <code>DatabaseOptional</code> should also be set.</div>
+<p>For remote packages, the default configuration will only support the installation of packages signed by trusted keys:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/pacman.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">SigLevel = Required DatabaseOptional</pre>
+<p><code>TrustedOnly</code> is a default compiled-in <i>pacman</i> parameter. The default configuration is identical to using the global option of:
+</p>
+<pre>SigLevel = Required DatabaseOptional TrustedOnly
+</pre>
+<p>The above can be achieved too on a repository level further below in the configuration, e.g.:
+</p>
+<pre>[core]
+SigLevel = PackageRequired
+Include = /etc/pacman.d/mirrorlist
+</pre>
+<p>explicitly adds signature checking for the packages of the repository, but does not require the database to be signed. <code>Optional</code> here would turn off a global <code>Required</code> for this repository.
+</p>
+<div class="archwiki-template-box archwiki-template-box-warning">
+<strong>Warning:</strong> The SigLevel <code>TrustAll</code> option exists for debugging purposes and makes it very easy to trust keys that have not been verified. You should use <code>TrustedOnly</code> for all official repositories.</div>
+<h3><span class="mw-headline" id="Initializing_the_keyring">Initializing the keyring</span></h3>
+<p>To initialize the <i>pacman</i> keyring run:
+</p>
+<pre># pacman-key --init
+</pre>
+<h2><span class="mw-headline" id="Managing_the_keyring">Managing the keyring</span></h2>
+<h3><span class="mw-headline" id="Verifying_the_master_keys">Verifying the master keys</span></h3>
+<p>The initial setup of keys is achieved using:
+</p>
+<pre># pacman-key --populate
+</pre>
+<p>Take time to verify the <a rel="nofollow" class="external text" href="https://archlinux.org/master-keys/">Master Signing Keys</a> when prompted as these are used to co-sign (and therefore trust) all other packager's keys.
+</p>
+<p>PGP keys are too large (2048 bits or more) for humans to work with, so they are usually hashed to create a 40-hex-digit fingerprint which can be used to check by hand that two keys are the same. The last eight digits of the fingerprint serve as a name for the key known as the '(short) key ID' (the last <i>sixteen</i> digits of the fingerprint would be the 'long key ID').
+</p>
+<h3><span class="mw-headline" id="Adding_developer_keys">Adding developer keys</span></h3>
+<p>The official developer and <a href="../../en/Trusted_Users.html" title="Trusted Users">Trusted Users</a> <i>(TU)</i> keys are signed by the master keys, so you do not need to use <i>pacman-key</i> to sign them yourself. Whenever <i>pacman</i> encounters a key it does not recognize, it will prompt you to download it from a <code>keyserver</code> configured in <code>/etc/pacman.d/gnupg/gpg.conf</code> (or by using the <code>--keyserver</code> option on the command line). Wikipedia maintains a <a href="https://en.wikipedia.org/wiki/Key_server_(cryptographic)" class="extiw" title="wikipedia:Key server (cryptographic)">list of keyservers</a>.
+</p>
+<p>Once you have downloaded a developer key, you will not have to download it again, and it can be used to verify any other packages signed by that developer.
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> The <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=archlinux-keyring">archlinux-keyring</a></span> package, which is a dependency of <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=pacman">pacman</a></span>, contains the latest keys. However keys can also be updated manually using <code>pacman-key --refresh-keys</code> (as root). While doing <code>--refresh-keys</code>, your local key will also be looked up on the remote keyserver, and you will receive a message about it not being found. This is nothing to be concerned about.</div>
+<h3><span class="mw-headline" id="Adding_unofficial_keys">Adding unofficial keys</span></h3>
+<div class="noprint archwiki-template-message">
+<p><a href="../../File:Tango-view-fullscreen.png" class="image"><img alt="Tango-view-fullscreen.png" src="../../File:Tango-view-fullscreen.png" decoding="async" width="48" height="48"></a><b>This article or section needs expansion.</b><a href="../../File:Tango-view-fullscreen.png" class="image"><img alt="Tango-view-fullscreen.png" src="../../File:Tango-view-fullscreen.png" decoding="async" width="48" height="48"></a></p>
+<div>
+<b>Reason:</b> Explain how to roll out custom keyring packages following <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=archlinux-keyring">archlinux-keyring</a></span>. (Discuss in <a href="../../en/Talk:Pacman/Package_signing.html#Addition_of_guide_to_create_unofficial_keyrings" title="Talk:Pacman/Package signing">Talk:Pacman/Package_signing#Addition_of_guide_to_create_unofficial_keyrings</a>)</div>
+</div>
+<p>This method can be utilized to add a key to the <i>pacman</i> keyring, or to enable signed <a href="../../en/Unofficial_user_repositories.html" title="Unofficial user repositories">unofficial user repositories</a>.
+</p>
+<p>First, get the <b>key ID</b> (<code><i>keyid</i></code>) from its owner. Then add it to the keyring using one of the two methods:
+</p>
+<ol>
+<li>If the key is found on a keyserver, import it with: <pre># pacman-key --recv-keys <i>keyid</i></pre>
+</li>
+<li>If otherwise a link to a keyfile is provided, download it and then run: <pre># pacman-key --add <i>/path/to/downloaded/keyfile</i></pre>
+</li>
+</ol>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> Within official packages you will find the gpg keys which need to be imported under <code>keys/pgp/</code> within the root of the repository.</div>
+<p>It is recommended to verify the fingerprint, as with any master key or any other key you are going to sign:
+</p>
+<pre>$ pacman-key --finger <i>keyid</i>
+</pre>
+<p>Finally, you must locally sign the imported key:
+</p>
+<pre># pacman-key --lsign-key <i>keyid</i>
+</pre>
+<p>You now trust this key to sign packages.
+</p>
+<h3><span class="mw-headline" id="Debugging_with_gpg">Debugging with gpg</span></h3>
+<p>For debugging purposes, you can access <i>pacman'</i>s keyring directly with <i>gpg</i>, e.g.:
+</p>
+<pre># gpg --homedir /etc/pacman.d/gnupg --list-keys
+</pre>
+<h2><span class="mw-headline" id="Tips_and_tricks">Tips and tricks</span></h2>
+<h3><span class="mw-headline" id="Upgrade_system_regularly">Upgrade system regularly</span></h3>
+<p>Upgrading the system regularly via <a href="../../en/Pacman.html#Upgrading_packages" title="Pacman">pacman#Upgrading packages</a> prevents most signing errors. If delay is unavoidable and system upgrade gets delayed for an extended period, manually sync the package database and upgrade the <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=archlinux-keyring">archlinux-keyring</a></span> package before system upgrade:
+</p>
+<pre># pacman -Sy archlinux-keyring &amp;&amp; pacman -Su
+</pre>
+<p>This command is not considered a <a href="../../en/System_maintenance.html#Partial_upgrades_are_unsupported" class="mw-redirect" title="Partial upgrade">partial upgrade</a> since it syncs the package database and upgrades the keyring package first. Both must be processed just before starting system upgrade to ensure signatures of all upgraded packages can be properly verified.
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> Since <a rel="nofollow" class="external text" href="https://gitlab.archlinux.org/archlinux/archlinux-keyring/-/commit/ad8698e96c423dfc68405b547f310f2e1075a95d">2022-07-29</a>, the <code>archlinux-keyring-wkd-sync.service</code> and the associated <a href="../../en/Systemd/Timers.html" class="mw-redirect" title="Systemd timer">systemd timer</a> have been created and enabled by default, solving <code>signature from "<i>Some Developer</i> &lt;<i>developer_email</i>@archlinux.org&gt;" is marginal trust</code> issues (e.g. <a rel="nofollow" class="external text" href="https://bbs.archlinux.org/viewtopic.php?id=278332">BBS#278332</a>) without requiring any user intervention, by fetching new signatures of already trusted keys once a week.</div>
+<h3><span class="mw-headline" id="Update_system_time_regularly">Update system time regularly</span></h3>
+<p>When the <a href="../../en/System_time.html" title="System time">system time</a> is faulty, signing keys could be considered expired (or invalid) and signature checks on packages will fail. Synchronize the system clock regularly by using the <a href="../../en/Network_Time_Protocol_daemon.html" title="Network Time Protocol daemon">Network Time Protocol daemon</a>.
+</p>
+<h2><span class="mw-headline" id="Troubleshooting">Troubleshooting</span></h2>
+<h3><span class="mw-headline" id="Invalid_signature_errors">Invalid signature errors</span></h3>
+<p><i>pacman-key</i> depends on <a href="../../en/System_time.html" title="System time">system time</a>. If your system clock is not synchronized, system installation/upgrade may fail with:
+</p>
+<pre>error: PackageName: signature from "User &lt;email@archlinux.org&gt;" is invalid
+error: failed to commit transaction (invalid or corrupted package (PGP signature))
+Errors occurred, no packages were upgraded.
+</pre>
+<p>If using ntpd, correct the system time (as root) with <code>ntpd -qg</code> followed by <code>hwclock -w</code>.
+</p>
+<p>Other NTP clients can be used. See <a href="../../en/System_time.html#Time_synchronization" class="mw-redirect" title="Time synchronization">time synchronization</a>.
+</p>
+<p>If correction of the system clock does not resolve the failure, try one of the following approaches:
+</p>
+<h4><span class="mw-headline" id="Removing_packages_from_cache">Removing packages from cache</span></h4>
+<p>Some packages could be corrupted or may be unsigned, causing failure. Remove each offending package from the system cache <code>rm /var/cache/pacman/pkg/<i>pkgname</i></code> so it gets freshly downloaded, or <a href="../../en/Pacman.html#Cleaning_the_package_cache" title="Pacman">clear the entire cache</a>.
+</p>
+<h4><span class="mw-headline" id="Resetting_all_the_keys">Resetting all the keys</span></h4>
+<p>Remove or reset all the keys installed in your system by removing the <code>/etc/pacman.d/gnupg</code> directory (as root) and by rerunning <code>pacman-key --init</code> followed by <code>pacman-key --populate</code> to re-add the default keys.
+</p>
+<h4><span class="mw-headline" id="Disabling_signature_checking">Disabling signature checking</span></h4>
+<div class="archwiki-template-box archwiki-template-box-warning">
+<strong>Warning:</strong> Use with caution. Disabling package signing will allow <i>pacman</i> to install untrusted packages.</div>
+<p>If you are not concerned about package signing, you can disable PGP signature checking completely. Edit <code>/etc/pacman.conf</code> to have the following lines under <code>[options]</code>:
+</p>
+<pre>SigLevel = Never
+#LocalFileSigLevel = Optional
+#RemoteFileSigLevel = Required
+</pre>
+<p>You need to comment out any repository-specific <code>SigLevel</code> settings because they override the global settings. This will result in no signature checking, which was the behavior before pacman 4. If you do this, you do not need to set up a keyring with <i>pacman-key</i>. You can change those options later if you decide to enable package verification.
+</p>
+<h3><span class="mw-headline" id="Cannot_import_keys">Cannot import keys</span></h3>
+<div class="noprint archwiki-template-message">
+<p><a href="../../File:Tango-edit-clear.png" class="image"><img alt="Tango-edit-clear.png" src="../../File:Tango-edit-clear.png" decoding="async" width="48" height="48"></a><b>This article or section needs language, wiki syntax or style improvements. See <a href="../../en/Help:Style.html" title="Help:Style">Help:Style</a> for reference.</b><a href="../../File:Tango-edit-clear.png" class="image"><img alt="Tango-edit-clear.png" src="../../File:Tango-edit-clear.png" decoding="async" width="48" height="48"></a></p>
+<div>
+<b>Reason:</b> Instructions could be clearer. Not clear how this section is different from the preceding one. Redundant information. (Discuss in <a rel="nofollow" class="external text" href="https://wiki.archlinux.org/title/Talk:Pacman/Package_signing">Talk:Pacman/Package signing</a>)</div>
+</div>
+<p>There are multiple possible sources of this problem:
+</p>
+<ul>
+<li>An outdated <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=archlinux-keyring">archlinux-keyring</a></span> package.</li>
+<li>The clock being set to an incorrect date.</li>
+<li>Your ISP blocked the port used to import PGP keys.</li>
+<li>Your <i>pacman</i> cache contains copies of unsigned packages from previous attempts.</li>
+<li>
+<code>dirmngr</code> is not correctly configured.</li>
+</ul>
+<p>You might be stuck because of an outdated <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=archlinux-keyring">archlinux-keyring</a></span> package when doing an upgrade synchronization.
+</p>
+<p>Below are a few solutions that could work depending on your case.
+</p>
+<h4><span class="mw-headline" id="Upgrade_the_system">Upgrade the system</span></h4>
+<p>See if <a href="../../en/Pacman.html#Upgrading_packages" title="Pacman">upgrading the system</a> can fix it first.
+</p>
+<h4><span class="mw-headline" id="Change_keyserver">Change keyserver</span></h4>
+<p>If you suspect that something is not working right with the keyserver, you could try to switch to the Ubuntu keyserver. To do this, edit <code>/etc/pacman.d/gnupg/gpg.conf</code> and change the <code>keyserver</code> line to:
+</p>
+<pre>keyserver hkp://keyserver.ubuntu.com
+</pre>
+<h4><span class="mw-headline" id="Clean_cached_packages">Clean cached packages</span></h4>
+<p>If you suspect that your pacman cache at <code>/var/cache/pacman/pkg/</code> might contain unsigned packages, try cleaning the cache manually or run:
+</p>
+<pre># pacman -Sc
+</pre>
+<p>which removes all cached packages that have not been installed.
+</p>
+<h3><span class="mw-headline" id="Signature_is_unknown_trust">Signature is unknown trust</span></h3>
+<p>Sometimes when running <code>pacman -Syu</code> you might encounter this error:
+</p>
+<pre>error: <i>package-name</i>: signature from "<i>packager</i>" is unknown trust
+</pre>
+<p>This occurs because the <code><i>packager</i></code>'s key used in the package <code><i>package-name</i></code> is not present and/or not trusted in the local pacman-key gpg database. Pacman does not seem to always be able to check if the key was received and marked as trusted before continuing. This could also be because a key has expired since it was added to your keychain.
+</p>
+<p>Mitigate by:
+</p>
+<ul>
+<li>
+<a href="#Upgrade_system_regularly">Manually upgrading the archlinux-keyring package prior to the system upgrade</a>, or</li>
+<li>refreshing your keys with <code>pacman-key --refresh-keys</code>, or</li>
+<li>
+<a href="#Resetting_all_the_keys">resetting all the keys</a>, or</li>
+<li>
+<a href="#Adding_unofficial_keys">manually signing the untrusted key locally</a> (not recommended), or</li>
+<li>setting temporarily <code>SigLevel</code> to <code>TrustAll</code> (not recommended).</li>
+</ul>
+<p>The last two options above break the chain of trust, and should be used with care.
+</p>
+<h3><span class="mw-headline" id="Updating_keys_via_proxy">Updating keys via proxy</span></h3>
+<p>In order to use a proxy when updating keys the <code>honor-http-proxy</code> option must be set in both <code>/etc/gnupg/dirmngr.conf</code> and <code>/etc/pacman.d/gnupg/dirmngr.conf</code>. See <a href="../../en/GnuPG.html#Use_a_keyserver" title="GnuPG">GnuPG#Use a keyserver</a> for more information.
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> If <i>pacman-key</i> is used without the <code>honor-http-proxy</code> option and fails, a reboot may solve the issue.</div>
+<h2><span class="mw-headline" id="See_also">See also</span></h2>
+<ul>
+<li><a href="../../DeveloperWiki:Package_Signing_Proposal_for_Pacman.html" title="DeveloperWiki:Package Signing Proposal for Pacman">DeveloperWiki:Package Signing Proposal for Pacman</a></li>
+<li><a rel="nofollow" class="external text" href="http://allanmcrae.com/2011/08/pacman-package-signing-1-makepkg-and-repo-add/">Pacman Package Signing – 1: Makepkg and Repo-add</a></li>
+<li><a rel="nofollow" class="external text" href="http://allanmcrae.com/2011/08/pacman-package-signing-2-pacman-key/">Pacman Package Signing – 2: Pacman-key</a></li>
+<li><a rel="nofollow" class="external text" href="http://allanmcrae.com/2011/08/pacman-package-signing-3-pacman/">Pacman Package Signing – 3: Pacman</a></li>
+<li><a rel="nofollow" class="external text" href="http://allanmcrae.com/2011/12/pacman-package-signing-4-arch-linux/">Pacman Package Signing – 4: Arch Linux</a></li>
+</ul>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface">
+<div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../../Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="../../en/Category:Package_manager.html" title="Category:Package manager">Package manager</a></li></ul>
+</div>
+<div id="mw-hidden-catlinks" class="mw-hidden-catlinks mw-hidden-cats-hidden">Hidden categories: <ul>
+<li><a href="../../en/Category:Pages_or_sections_flagged_with_Template:Expansion.html" title="Category:Pages or sections flagged with Template:Expansion">Pages or sections flagged with Template:Expansion</a></li>
+<li><a href="../../en/Category:Pages_or_sections_flagged_with_Template:Style.html" title="Category:Pages or sections flagged with Template:Style">Pages or sections flagged with Template:Style</a></li>
+</ul>
+</div>
+</div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=Pacman/Package_signing&amp;oldid=785347">https://wiki.archlinux.org/index.php?title=Pacman/Package_signing&amp;oldid=785347</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 13 August 2023, at 08:51.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>

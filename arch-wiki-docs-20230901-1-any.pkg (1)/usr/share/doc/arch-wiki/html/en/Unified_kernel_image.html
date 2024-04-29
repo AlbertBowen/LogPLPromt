@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>Unified kernel image - ArchWiki</title>
+<link rel="stylesheet" href="../ArchWikiOffline.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.39.4">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Unified_kernel_image rootpage-Unified_kernel_image skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled">
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="vector-sidebar-container ">
+			</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Preparing_a_unified_kernel_image" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Preparing_a_unified_kernel_image">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Preparing a unified kernel image</div>
+			</a>
+			
+				<button aria-controls="toc-Preparing_a_unified_kernel_image-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Preparing a unified kernel image subsection
+				</button>
+			
+			<ul id="toc-Preparing_a_unified_kernel_image-sublist" class="sidebar-toc-list">
+				<li id="toc-mkinitcpio" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#mkinitcpio">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.1</span>mkinitcpio</div>
+			</a>
+			
+			<ul id="toc-mkinitcpio-sublist" class="sidebar-toc-list">
+				<li id="toc-Kernel_command_line" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Kernel_command_line">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.1.1</span>Kernel command line</div>
+			</a>
+			
+			<ul id="toc-Kernel_command_line-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-.preset_file" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#.preset_file">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.1.2</span>.preset file</div>
+			</a>
+			
+			<ul id="toc-.preset_file-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-pacman_hook" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#pacman_hook">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.1.3</span>pacman hook</div>
+			</a>
+			
+			<ul id="toc-pacman_hook-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Signing_the_UKIs_for_Secure_Boot" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Signing_the_UKIs_for_Secure_Boot">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.1.4</span>Signing the UKIs for Secure Boot</div>
+			</a>
+			
+			<ul id="toc-Signing_the_UKIs_for_Secure_Boot-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Building_the_UKIs" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Building_the_UKIs">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.1.5</span>Building the UKIs</div>
+			</a>
+			
+			<ul id="toc-Building_the_UKIs-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-kernel-install" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#kernel-install">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.2</span>kernel-install</div>
+			</a>
+			
+			<ul id="toc-kernel-install-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-dracut" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#dracut">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.3</span>dracut</div>
+			</a>
+			
+			<ul id="toc-dracut-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-sbctl" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#sbctl">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.4</span>sbctl</div>
+			</a>
+			
+			<ul id="toc-sbctl-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-ukify" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#ukify">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.5</span>ukify</div>
+			</a>
+			
+			<ul id="toc-ukify-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Manually" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Manually">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.6</span>Manually</div>
+			</a>
+			
+			<ul id="toc-Manually-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Booting" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#Booting">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Booting</div>
+			</a>
+			
+				<button aria-controls="toc-Booting-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle">
+					Toggle Booting subsection
+				</button>
+			
+			<ul id="toc-Booting-sublist" class="sidebar-toc-list">
+				<li id="toc-systemd-boot" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#systemd-boot">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.1</span>systemd-boot</div>
+			</a>
+			
+			<ul id="toc-systemd-boot-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-rEFInd" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#rEFInd">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.2</span>rEFInd</div>
+			</a>
+			
+			<ul id="toc-rEFInd-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-GRUB" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#GRUB">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.3</span>GRUB</div>
+			</a>
+			
+			<ul id="toc-GRUB-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Directly_from_UEFI" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Directly_from_UEFI">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.4</span>Directly from UEFI</div>
+			</a>
+			
+			<ul id="toc-Directly_from_UEFI-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-See_also" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-expanded">
+			<a class="sidebar-toc-link" href="#See_also">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>See also</div>
+			</a>
+			
+			<ul id="toc-See_also-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main" style="margin: 0">
+				<a id="top"></a>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-nstab-main" class="selected mw-list-item"><a href="../en/Unified_kernel_image.html" title="View the content page [c]" accesskey="c"><span>Page</span></a></li>
+<li id="ca-talk" class="mw-list-item"><a href="../en/Talk:Unified_kernel_image.html" rel="discussion" title="Discussion about the content page [t]" accesskey="t"><span>Discussion</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">English</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-view" class="selected mw-list-item"><a href="../en/Unified_kernel_image.html"><span>Read</span></a></li>
+<li id="ca-viewsource" class="mw-list-item"><a href="/index.php?title=Unified_kernel_image&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e"><span>View source</span></a></li>
+<li id="ca-history" class="mw-list-item"><a href="/index.php?title=Unified_kernel_image&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="../en/Unified_kernel_image.html"><span>Read</span></a></li>
+<li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Unified_kernel_image&amp;action=edit"><span>View source</span></a></li>
+<li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/index.php?title=Unified_kernel_image&amp;action=history"><span>View history</span></a></li>
+</ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container>
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+<div class="mw-parser-output">
+<p>A <a rel="nofollow" class="external text" href="https://uapi-group.org/specifications/specs/boot_loader_specification/#type-2-efi-unified-kernel-images">unified kernel image</a> (UKI) is a single executable which can be booted directly from UEFI firmware, or automatically sourced by boot-loaders with little or no configuration. 
+</p>
+<p>Although Arch supported kernels themselves <a href="../en/EFISTUB.html" title="EFISTUB">can be loaded by UEFI firmware</a>, a unified image allows to incorporate all or a subset of the following:
+</p>
+<ul>
+<li>a UEFI stub loader like <span class="plainlinks archwiki-template-man" title="$ man 7 systemd-stub"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/systemd-stub.7">systemd-stub(7)</a></span>,</li>
+<li>the <a href="../en/Kernel_parameters.html" class="mw-redirect" title="Kernel command line">kernel command line</a>,</li>
+<li>
+<a href="../en/Microcode.html" title="Microcode">microcode</a>,</li>
+<li>an <a href="../en/Arch_boot_process.html#initramfs" title="Arch boot process">initramfs image</a>,</li>
+<li>a <a href="../en/Arch_boot_process.html#Kernel" title="Arch boot process">kernel image</a>,</li>
+<li>a splash screen.</li>
+</ul>
+<p>The resulting executable, and therefore all these elements can then be easily <a href="../en/Unified_Extensible_Firmware_Interface/Secure_Boot.html#Signing_EFI_binaries" title="Unified Extensible Firmware Interface/Secure Boot">signed</a> for use with <a href="../en/Unified_Extensible_Firmware_Interface/Secure_Boot.html" class="mw-redirect" title="Secure Boot">Secure Boot</a>.
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> In the entire article <code><i>esp</i></code> denotes the mountpoint of the <a href="../en/EFI_system_partition.html" title="EFI system partition">EFI system partition</a>.</div>
+<mw:tocplace></mw:tocplace>
+<h2><span class="mw-headline" id="Preparing_a_unified_kernel_image">Preparing a unified kernel image</span></h2>
+<h3><span class="mw-headline" id="mkinitcpio">mkinitcpio</span></h3>
+<h4><span class="mw-headline" id="Kernel_command_line">Kernel command line</span></h4>
+<p><a href="../en/Mkinitcpio.html" title="Mkinitcpio">mkinitcpio</a> supports reading <a href="../en/Kernel_parameters.html" title="Kernel parameters">kernel parameters</a> from command line files in the <code>/etc/cmdline.d</code> directory. Mkinitcpio will concatenate the contents of all files with a <code>.conf</code> extension in this directory and use them to generate the kernel command line. Any lines in the command line file that start with a <b>#</b> character are treated as comments and ignored by mkinitcpio. Take care to <b>remove entries</b> pointing to microcode and initramfs. 
+</p>
+<p>For example:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/cmdline.d/root.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">root=UUID=0a3407de-014b-458b-b5c1-848e92a327a3 rw</pre>
+<div class="archwiki-template-box archwiki-template-box-tip">
+<strong>Tip:</strong> 
+<ul>
+<li>If your root file system is on a non-default Btrfs subvolume, make sure to set necessary mount flags in <code>rootflags</code>. See <a href="../en/Btrfs.html#Mounting_subvolume_as_root" title="Btrfs">Btrfs#Mounting subvolume as root</a>.</li>
+<li>For example, if your system subvolume ID is <code>256</code> (you can see your subvolume ID using <code>btrfs subvolume list <i>btrfs_mountpoint</i></code>, or you can see the flags in <code>/etc/fstab</code>), you should add <code>rootflags=subvolid=256</code> to your kernel command line.</li>
+<li>It is not necessary to copy all flags in <code>/etc/fstab</code> since <code>rootflags</code> is only used during boot. Systemd will read fstab, remount and apply flags listed there automatically after boot.</li>
+</ul>
+</div>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/cmdline.d/security.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;"># enable apparmor
+lsm=landlock,lockdown,yama,integrity,apparmor,bpf audit=1 audit_backlog_limit=256</pre>
+<p>Alternatively, <code>/etc/kernel/cmdline</code> can be used to configure the kernel command line.
+</p>
+<p>For example:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/kernel/cmdline</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">root=UUID=0a3407de-014b-458b-b5c1-848e92a327a3 rw quiet bgrt_disable</pre>
+<div class="archwiki-template-box archwiki-template-box-tip">
+<strong>Tip:</strong> 
+<ul>
+<li>The <code>root=</code> parameter may be omitted if the root partition is <a href="../en/Systemd.html#GPT_partition_automounting" title="Systemd">automounted by systemd</a>.</li>
+<li>The <code>bgrt_disable</code> parameter tells Linux to not display the OEM logo after loading the ACPI tables.</li>
+</ul>
+</div>
+<h4><span class="mw-headline" id=".preset_file">.preset file</span></h4>
+<p>Next, modify <code>/etc/mkinitcpio.d/linux.preset</code>, or the preset that you are using, as follows, with the appropriate mount point of the <a href="../en/EFI_system_partition.html" title="EFI system partition">EFI system partition</a> :
+</p>
+<ul>
+<li>Un-comment (i.e. remove <code>#</code>) the <code><i>PRESET</i>_uki=</code> parameter for each item in <code>PRESETS=</code>,</li>
+<li>Optionally, comment out <code><i>PRESET</i>_image=</code> to avoid storing a redundant <code>initramfs-*.img</code> file,</li>
+<li>Optionally, add or un-comment the <code>--splash</code> parameter to each <code><i>PRESET</i>_options=</code> line for which you want to add a splash image.</li>
+</ul>
+<p>Here is a working example <code>linux.preset</code> for the <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=linux">linux</a></span> kernel and the Arch splash screen.
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/mkinitcpio.d/linux.preset</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;"># mkinitcpio preset file for the 'linux' package
+
+#ALL_config="/etc/mkinitcpio.conf"
+ALL_kver="/boot/vmlinuz-linux"
+ALL_microcode=(/boot/*-ucode.img)
+
+PRESETS=('default' 'fallback')
+
+#default_config="/etc/mkinitcpio.conf"
+#default_image="/boot/initramfs-linux.img"
+default_uki="<i>esp</i>/EFI/Linux/arch-linux.efi"
+default_options="--splash=/usr/share/systemd/bootctl/splash-arch.bmp"
+
+#fallback_config="/etc/mkinitcpio.conf"
+#fallback_image="/boot/initramfs-linux-fallback.img"
+fallback_uki="<i>esp</i>/EFI/Linux/arch-linux-fallback.efi"
+fallback_options="-S autodetect"</pre>
+<div class="archwiki-template-box archwiki-template-box-tip">
+<strong>Tip:</strong> 
+<ul>
+<li>If all you want to do is boot from the unified kernel images, you can <a href="../en/EFI_system_partition.html#Typical_mount_points" title="EFI system partition">mount the ESP</a> to <code>/efi</code> and only those need to reside on the <a href="../en/EFI_system_partition.html" class="mw-redirect" title="ESP">ESP</a> partition.</li>
+<li>You can append <code>--cmdline /etc/kernel/<i>fallback_cmdline</i></code> to <code>fallback_options</code> to use different a different <a href="#Kernel_command_line">cmdline</a> than above for the fallback image (e.g. without <code>quiet</code>).</li>
+<li>To omit embedding the kernel command line, add <code>--no-cmdline</code> to <code><i>PRESET</i>_options=</code>. Kernel parameters will need to be passed via the boot loader.</li>
+</ul>
+</div>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> <code><i>PRESET</i>_uki</code> options were previously known as <code><i>PRESET</i>_efi_image</code>, <a rel="nofollow" class="external text" href="https://gitlab.archlinux.org/archlinux/mkinitcpio/mkinitcpio/-/issues/134">changed November 2022</a>, with older option deprecated but working for now </div>
+<h4><span class="mw-headline" id="pacman_hook">pacman hook</span></h4>
+<p>A <a href="../en/Pacman.html#Hooks" class="mw-redirect" title="Pacman hook">pacman hook</a> is needed to trigger a rebuild after a microcode upgrade.
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/pacman.d/hooks/ucode.hook</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">[Trigger]
+Operation=Install
+Operation=Upgrade
+Operation=Remove
+Type=Package
+# Change to appropriate microcode package
+Target=amd-ucode
+# Change the linux part above and in the Exec line if a different kernel is used
+Target=linux
+
+[Action]
+Description=Update Microcode module in initcpio
+Depends=mkinitcpio
+When=PostTransaction
+NeedsTargets
+Exec=/bin/sh -c 'while read -r trg; do case $trg in linux) exit 0; esac; done; /usr/bin/mkinitcpio -P'</pre>
+<div class="archwiki-template-box archwiki-template-box-tip">
+<strong>Tip:</strong> Consider merging this hook with other hooks that monitor the kernel package, such as the one for the <a href="../en/NVIDIA.html#pacman_hook" title="NVIDIA">NVIDIA driver</a>, to avoid repeated mkinitcpio runs.</div>
+<h4><span class="mw-headline" id="Signing_the_UKIs_for_Secure_Boot">Signing the UKIs for Secure Boot</span></h4>
+<p>By using a mkinitcpio post hook (<span class="plainlinks archwiki-template-man" title="$ man 8 mkinitcpio"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/mkinitcpio.8#ABOUT_POST_HOOKS">mkinitcpio(8) § ABOUT POST HOOKS</a></span>), the generated unified kernel images can be signed for <a href="../en/Unified_Extensible_Firmware_Interface/Secure_Boot.html" class="mw-redirect" title="Secure Boot">Secure Boot</a>. <a href="../en/Help:Reading.html#Append,_add,_create,_edit" class="mw-redirect" title="Create">Create</a> the following file and make it <a href="../en/Help:Reading.html#Make_executable" class="mw-redirect" title="Executable">executable</a>:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/initcpio/post/uki-sbsign</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">#!/usr/bin/env bash
+
+uki="$3"
+[[ -n "$uki" ]] || exit 0
+
+keypairs=(<i>/path/to/</i>db.key <i>/path/to/</i>db.crt)
+
+for (( i=0; i&lt;${#keypairs[@]}; i+=2 )); do
+    key="${keypairs[$i]}" cert="${keypairs[(( i + 1 ))]}"
+    if ! sbverify --cert "$cert" "$uki" &amp;&gt;/dev/null; then
+        sbsign --key "$key" --cert "$cert" --output "$uki" "$uki"
+    fi
+done</pre>
+<p>Replace <code><i>/path/to/</i>db.key</code> and <code><i>/path/to/</i>db.crt</code> with the paths to the key pair you want to use for signing the image.
+</p>
+<h4><span class="mw-headline" id="Building_the_UKIs">Building the UKIs</span></h4>
+<p>Finally, make sure that the directory for the UKIs exists and <a href="../en/Mkinitcpio.html#Image_creation_and_activation" class="mw-redirect" title="Regenerate the initramfs">regenerate the initramfs</a>. For example, for the <i>linux</i> preset:
+</p>
+<pre># mkdir -p <i>esp</i>/EFI/Linux
+# mkinitcpio -p linux
+</pre>
+<p>Optionally, remove any leftover <code>initramfs-*.img</code> from <code>/boot</code> or <code>/efi</code>.
+</p>
+<h3><span class="mw-headline" id="kernel-install">kernel-install</span></h3>
+<p>You can use <a href="../en/Systemd.html" title="Systemd">systemd</a>'s <span class="plainlinks archwiki-template-man" title="$ man 8 kernel-install"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/kernel-install.8">kernel-install(8)</a></span> script to automatically install kernels in the UKI format to the <i>esp</i> both for custom kernels and for kernel packages (installed using Pacman) by switching Pacman hooks from <i>mkinitcpio</i> to <i>kernel-install</i>. 
+</p>
+<p><code>kernel-install</code> is not an initramfs generator, but it is a framework where packages can hook into the installation/generation of kernels of the system, through its "plugin" system. During its execution it will call the proper initramfs generator of the system (i.e.: <i>mkinitcpio</i>). The plugins are involved in kernel image/initramfs generation, signing, installation, etc. Packages that care about doing something during kernel installation can be notified by installing their own "plugin" for <code>kernel-install</code>. (The "plugins" are located in <code>/usr/lib/kernel/install.d/</code>.)
+</p>
+<p>There are configuration options like "layout" available that affect where and how the kernel is installed when  <code>kernel-install</code> is getting called.
+</p>
+<p><i>mkinitcpio</i> ships with a <code>kernel-install</code> plugin that generates the appropriate image (a UKI image for layout=uki). Other programs, such as <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=sbctl">sbctl</a></span>, also ship with a <code>kernel-install</code> plugin.
+</p>
+<p>To setup kernel-install to produce UKIs:
+</p>
+<ul>
+<li>Set the kernel-install layout to 'uki'. e.g.: <pre># echo "layout=uki" &gt;&gt; /etc/kernel/install.conf</pre>
+</li>
+<li>Mask the direct kernel installation Pacman hooks:<pre># ln -s /dev/null /etc/pacman.d/hooks/60-mkinitcpio-remove.hook
+# ln -s /dev/null /etc/pacman.d/hooks/90-mkinitcpio-install.hook
+</pre>
+</li>
+<li>Create a Pacman hook for <i>kernel-install</i>. You can use <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/pacman-hook-kernel-install/">pacman-hook-kernel-install</a></span><sup><small>AUR</small></sup>.</li>
+<li>Remove and reinstall the kernel packages that you use.</li>
+</ul>
+<h3><span class="mw-headline" id="dracut">dracut</span></h3>
+<p>See <a href="../en/Dracut.html#Unified_kernel_image" title="Dracut">dracut#Unified kernel image</a> and  <a href="../en/Dracut.html#Generate_a_new_initramfs_on_kernel_upgrade" title="Dracut">dracut#Generate a new initramfs on kernel upgrade</a>.
+</p>
+<h3><span class="mw-headline" id="sbctl">sbctl</span></h3>
+<p><a href="../en/Help:Reading.html#Installation_of_packages" class="mw-redirect" title="Install">Install</a> the <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=sbctl">sbctl</a></span> package. Store the kernel command line in <code>/etc/kernel/cmdline</code>. Use the <code>sbctl bundle</code> command with the <code>--save</code> parameter to create a bundle and have it be regenerated by a Pacman hook at appropriate times:
+</p>
+<pre># sbctl bundle --save <i>esp</i>/EFI/Linux/arch-linux.efi
+</pre>
+<p>To create more EFI binaries for other kernels and initramfs images, repeat the above command with parameters <code>--kernel-img</code> and <code>--initramfs</code>, see <span class="plainlinks archwiki-template-man" title="$ man 8 sbctl"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/sbctl.8#EFI_BINARY_COMMANDS">sbctl(8) § EFI BINARY COMMANDS</a></span>. The EFI binaries can be regenerated at any time with <code>sbctl generate-bundles</code>.
+</p>
+<h3><span class="mw-headline" id="ukify">ukify</span></h3>
+<p><a href="../en/Help:Reading.html#Installation_of_packages" class="mw-redirect" title="Install">Install</a> the <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=systemd-ukify">systemd-ukify</a></span> package. Since <i>ukify</i> cannot generate an initramfs on its own, if required, it must be generated using <a href="../en/Dracut.html" title="Dracut">dracut</a>, <a href="../en/Mkinitcpio.html" title="Mkinitcpio">mkinitcpio</a> or <a href="../en/Booster.html" title="Booster">booster</a>.
+</p>
+<p>A minimal working example can look something like this:
+</p>
+<pre># /usr/lib/systemd/ukify build --linux=<i>/boot/vmlinuz-linux</i> --initrd=<i>/boot/intel-ucode.img</i> \
+--initrd=<i>/boot/initramfs-linux.img</i> \
+--cmdline="<i>quiet rw</i>"
+</pre>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> If <a href="../en/Microcode.html#Early_loading" title="Microcode">external microcode initramfs images</a> are used (<code>/boot/amd-ucode.img</code> or <code>/boot/intel-ucode.img</code>), they must always be placed <b>first</b>, before the main initramfs image (e.g. <code>/boot/initramfs-linux.img</code>).</div>
+<p>Then, copy the resulting file to the EFI system partition:
+</p>
+<pre># cp <i>filename</i>.efi <i>esp</i>/EFI/Linux/
+</pre>
+<div class="archwiki-template-box archwiki-template-box-tip">
+<strong>Tip:</strong> 
+<ul>
+<li>To skip having copy over the resulting EFI executable to the EFI System Partition, use the <code>--output=<i>esp</i>/EFI/Linux/<i>filename</i>.efi</code> command line option to <i>ukify</i>.</li>
+<li>When specifying the <code>--cmdline</code> option, one can specify a file name to read the kernel parameters from (e.g. <code>/etc/kernel/cmdline</code> by adding the <code>@</code> symbol before the file name, like <code>--cmdline=@<i>/path/to/cmdline</i></code>.</li>
+</ul>
+</div>
+<p>An example for automatic UKI building with a systemd service for normal kernel image with intel ucode and /efi mounted ESP:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/ukify.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">KERNEL=/boot/vmlinuz-linux
+UCODE=/boot/intel-ucode.img
+INITRD=/boot/initramfs-linux.img
+CMDLINE=/etc/kernel/cmdline
+SPLASH=/usr/share/systemd/bootctl/splash-arch.bmp
+EFI=<i>esp</i>/EFI/Linux/arch-linux.efi
+/usr/lib/systemd/ukify build --linux=${KERNEL} --initrd=${UCODE} --initrd=${INITRD} --cmdline=@${CMDLINE} \
+    --splash=${SPLASH} --output=${EFI}</pre>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/systemd/system/run_ukify.service</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">[Unit]
+Description=Run systemd ukify
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/bash -c "source /etc/ukify.conf"</pre>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/systemd/system/run_ukify.path</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">[Unit]
+Description=Run systemd ukify
+[Path]
+PathChanged=/boot/initramfs-linux.img
+PathChanged=/boot/intel-ucode.img
+Unit=run_ukify.service
+[Install]
+WantedBy=multi-user.target</pre>
+<p>Then <a href="../en/Help:Reading.html#Control_of_systemd_units" class="mw-redirect" title="Enable">enable</a> <code>run_ukify.path</code>.
+</p>
+<h3><span class="mw-headline" id="Manually">Manually</span></h3>
+<p>Put the kernel command line you want to use in a file, and create the bundle file using <span class="plainlinks archwiki-template-man" title="$ man 1 objcopy"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/objcopy.1">objcopy(1)</a></span>.
+</p>
+<p>For <a href="../en/Microcode.html" title="Microcode">microcode</a>, first concatenate the microcode file and your initrd, as follows:
+</p>
+<pre>$ cat <i>esp</i>/<i>cpu_manufacturer</i>-ucode.img <i>esp</i>/initramfs-linux.img &gt; /tmp/combined_initrd.img
+</pre>
+<p>When building the unified kernel image, pass in <code>/tmp/combined_initrd.img</code> as the initrd. This file can be removed afterwards.
+</p>
+<pre>$ align="$(objdump -p /usr/lib/systemd/boot/efi/linuxx64.efi.stub | awk '{ if ($1 == "SectionAlignment"){print $2} }')"
+$ align=$((16#$align))
+$ osrel_offs="$(objdump -h "/usr/lib/systemd/boot/efi/linuxx64.efi.stub" | awk 'NF==7 {size=strtonum("0x"$3); offset=strtonum("0x"$4)} END {print size + offset}')"
+$ osrel_offs=$((osrel_offs + "$align" - osrel_offs % "$align"))
+$ cmdline_offs=$((osrel_offs + $(stat -Lc%s "/usr/lib/os-release")))
+$ cmdline_offs=$((cmdline_offs + "$align" - cmdline_offs % "$align"))
+$ splash_offs=$((cmdline_offs + $(stat -Lc%s "/etc/kernel/cmdline")))
+$ splash_offs=$((splash_offs + "$align" - splash_offs % "$align"))
+$ initrd_offs=$((splash_offs + $(stat -Lc%s "/usr/share/systemd/bootctl/splash-arch.bmp")))
+$ initrd_offs=$((initrd_offs + "$align" - initrd_offs % "$align"))
+$ linux_offs=$((initrd_offs + $(stat -Lc%s "<i>initrd-file</i>")))
+$ linux_offs=$((linux_offs + "$align" - linux_offs % "$align"))
+
+$ objcopy \
+    --add-section .osrel="/usr/lib/os-release" --change-section-vma .osrel=$(printf 0x%x $osrel_offs) \
+    --add-section .cmdline="/etc/kernel/cmdline" \
+    --change-section-vma .cmdline=$(printf 0x%x $cmdline_offs) \
+    --add-section .splash="/usr/share/systemd/bootctl/splash-arch.bmp" \
+    --change-section-vma .splash=$(printf 0x%x $splash_offs) \
+    --add-section .initrd="<i>initrd-file</i>" \
+    --change-section-vma .initrd=$(printf 0x%x $initrd_offs) \
+    --add-section .linux="<i>vmlinuz-file</i>" \
+    --change-section-vma .linux=$(printf 0x%x $linux_offs) \
+    "/usr/lib/systemd/boot/efi/linuxx64.efi.stub" "<i>linux</i>.efi"</pre>
+<p>A few things to note:
+</p>
+<ul>
+<li>The offsets are dynamically calculated so no sections overlap, as recommended in <a rel="nofollow" class="external autonumber" href="https://github.com/systemd/systemd/commit/0fa2cac4f0cdefaf1addd7f1fe0fd8113db9360b#commitcomment-76747223">[1]</a>.</li>
+<li>The sections are aligned to what the <code>SectionAlignment</code> field of the PE stub indicates (usually 0x1000).</li>
+<li>The kernel image must be in the last section, to prevent in-place decompression from overwriting the sections that follow, as stated in <a rel="nofollow" class="external autonumber" href="https://github.com/systemd/systemd/commit/0fa2cac4f0cdefaf1addd7f1fe0fd8113db9360b#commitcomment-84868898">[2]</a>.</li>
+</ul>
+<p>After creating the image, copy it to the EFI system partition:
+</p>
+<pre># cp <i>linux</i>.efi <i>esp</i>/EFI/Linux/
+</pre>
+<h2><span class="mw-headline" id="Booting">Booting</span></h2>
+<h3><span class="mw-headline" id="systemd-boot">systemd-boot</span></h3>
+<p><a href="../en/Systemd-boot.html#Unified_kernel_images" title="Systemd-boot">systemd-boot</a> searches in <code><i>esp</i>/EFI/Linux/</code> for unified kernel images, and there is no further configuration needed. See <span class="plainlinks archwiki-template-man" title="$ man 7 sd-boot"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/sd-boot.7#FILES">sd-boot(7) § FILES</a></span> 
+</p>
+<h3><span class="mw-headline" id="rEFInd">rEFInd</span></h3>
+<p><a href="../en/REFInd.html" title="REFInd">rEFInd</a> will autodetect unified kernel images on your EFI system partition, and is capable of loading them. They can also be manually specified in <code>refind.conf</code>, by default located at:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;"><i>esp</i>/EFI/refind/refind.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">menuentry "Arch Linux" {
+    icon \EFI\refind\icons\os_arch.png
+    ostype Linux
+    loader \EFI\Linux\arch-linux.efi
+}</pre>
+<p>Recall that no kernel parameters from <code><i>esp</i>/EFI/refind_linux.conf</code> will be passed when booting this way. If the UKI was generated without a <code>.cmdline</code> section, specify the kernel parameters in the menu entry with an <code>options</code> line.
+</p>
+<h3><span class="mw-headline" id="GRUB">GRUB</span></h3>
+<p>Similar to rEFInd, <a href="../en/GRUB.html" title="GRUB">GRUB</a> can chainload EFI UKIs as described in <a href="../en/GRUB.html#Chainloading_a_unified_kernel_image" title="GRUB">GRUB#Chainloading a unified kernel image</a>.
+</p>
+<h3><span class="mw-headline" id="Directly_from_UEFI">Directly from UEFI</span></h3>
+<p><a href="../en/Unified_Extensible_Firmware_Interface.html#efibootmgr" class="mw-redirect" title="Efibootmgr">efibootmgr</a> can be used to create a UEFI boot entry for the <i>.efi</i> file:
+</p>
+<pre># efibootmgr --create --disk /dev/sdX --part <i>partition_number</i> --label "Arch Linux" --loader 'EFI\Linux\arch-linux.efi' --unicode
+</pre>
+<p>See <span class="plainlinks archwiki-template-man" title="$ man 8 efibootmgr"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/efibootmgr.8">efibootmgr(8)</a></span> for an explanation of the options.
+</p>
+<div class="archwiki-template-box archwiki-template-box-note">
+<strong>Note:</strong> If <code>options</code> is present in a boot entry and <a href="../en/Unified_Extensible_Firmware_Interface/Secure_Boot.html" class="mw-redirect" title="Secure Boot">Secure Boot</a> is disabled, the value of <code>options</code> will override any <code>.cmdline</code> string embedded in a UKI that is specified by <code>efi</code> or <code>linux</code> (see <a href="#Preparing_a_unified_kernel_image">#Preparing a unified kernel image</a>). With Secure Boot, however, <code>options</code> (and any edits made to the kernel command line in the bootloader UI) will be ignored, and only the embedded <code>.cmdline</code> will be used.</div>
+<h2><span class="mw-headline" id="See_also">See also</span></h2>
+<ul>
+<li><a rel="nofollow" class="external text" href="https://uapi-group.org/specifications/specs/unified_kernel_image/">Unified kernel image specification</a></li>
+<li><a rel="nofollow" class="external text" href="https://linderud.dev/blog/mkinitcpio-v31-and-uefi-stubs/">mkinitcpio v31 and UEFI stubs</a></li>
+</ul>
+</div>
+</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="../Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="../en/Category:Boot_loaders.html" title="Category:Boot loaders">Boot loaders</a></li></ul>
+</div></div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" style="margin: 0">
+	<ul id="footer-info">
+	<li data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=Unified_kernel_image&amp;oldid=785357">https://wiki.archlinux.org/index.php?title=Unified_kernel_image&amp;oldid=785357</a>"</li>
+<li id="footer-info-lastmod"> This page was last edited on 13 August 2023, at 11:54.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+<br>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="../en/ArchWiki:About.html">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="../en/ArchWiki:General_disclaimer.html">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+</body>
+</html>
